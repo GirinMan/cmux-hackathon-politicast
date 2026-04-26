@@ -1,0 +1,901 @@
+{
+  "region_id": "daegu_dalseo_gap",
+  "timestep": 2,
+  "cutoff_ts": "2026-05-13T00:00:00",
+  "scenario_id": "daegu_dalseo_gap_2026",
+  "nodes": [
+    {
+      "id": "Candidate:c_dalseo_dpk",
+      "type": "Candidate",
+      "label": "서재헌",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_dalseo_dpk",
+        "contest_id": "daegu_dalseo_gap_2026",
+        "name": "서재헌",
+        "party": "p_dem",
+        "party_name": "더불어민주당",
+        "background": "서재헌 김민석 의원실 선임비서관, 전 더불어민주당 대구시장 후보. 2026-04-17 대구 국회의원 보궐선거 출마를 선언했고, 대구 달성군 또는 유영하 지역구인 달서구갑 보궐 출마 가능성이 보도됨. prediction-only 시나리오의 민주당 단일 후보.",
+        "key_pledges": "['대구 균형발전', '이재명 정부 직결', '먹고사는 문제 해결', '달서구 청년 정책', '2026-04-17 대구 국회의원 보궐선거 출마 선언. 달성군 또는 달서갑 보궐 가능성이 모두 보도됨.', '대구시장 김부겸, 국회의원 서재헌 구도를 통해 먹고사는 문제 해결을 호소했다는 보도.']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "Candidate:c_dalseo_ppp_hong",
+      "type": "Candidate",
+      "label": "홍성주",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_dalseo_ppp_hong",
+        "contest_id": "daegu_dalseo_gap_2026",
+        "name": "홍성주",
+        "party": "p_ppp",
+        "party_name": "국민의힘",
+        "background": "전 대구시 경제부시장. 2026-04-23 지역 보도에서 유영하 의원이 대구시장 후보로 확정되어 달서갑이 빌 경우, 달서구청장 출마를 준비하던 홍성주가 국민의힘 유력 대체 카드로 부상한다고 언급됨. prediction-only 시나리오의 국민의힘 단일 후보.",
+        "key_pledges": "['행정 경험', '대구시 경제부시장 경력', '성서권 지역경제', '보수 안정', '유영하 의원이 대구시장 후보가 되어 달서갑이 비면 홍성주 전 대구시 경제부시장이 국민의힘 유력 대체 카드로 부상한다는 지역 보도.', '행정·경제부시장 경력을 통한 지역경제 안정 프레임.', '이진숙 전 방통위원장의 2026-04-25 대구시장 불출마 선언은 보수 표 분산을 줄이고 국민의힘 최종 후보 지원으로 이어지는 지역 보수 결집 이벤트로 처리한다.']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "Candidate:c_dalseo_ppp_kim",
+      "type": "Candidate",
+      "label": "김민수",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_dalseo_ppp_kim",
+        "contest_id": "daegu_dalseo_gap_2026",
+        "name": "김민수",
+        "party": "p_ppp",
+        "party_name": "국민의힘",
+        "background": "국민의힘 최고위원. 장동혁 대표 측근 전략공천설이 대구 보궐 전반에서 거론되나, 기사상 달서갑보다 달성군 가능성이 더 직접적으로 언급된다. 정당별 1명 달서갑 시나리오에서는 비활성 대안.",
+        "key_pledges": "['보수 정통', 'TK 결집', '당권파 전략공천 논란', '김민수 최고위원 전략공천설은 대구 보궐 전반의 낙하산 공천 논란으로 보도됨. 달서갑 단일 후보로 확정된 것은 아님.']",
+        "withdrawn": true
+      }
+    },
+    {
+      "id": "Contest:daegu_dalseo_gap_2026",
+      "type": "Contest",
+      "label": "daegu_dalseo_gap/national_assembly_by_election",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "contest_id": "daegu_dalseo_gap_2026",
+        "election_id": "election_2026_local",
+        "position_type": "national_assembly_by_election"
+      }
+    },
+    {
+      "id": "District:daegu_dalseo_gap",
+      "type": "District",
+      "label": "대구",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "province": "대구",
+        "district": "대구-달서구",
+        "population": 540000,
+        "scenario_notes": "Prediction-only 가상 시나리오. NESDC 등록 여론조사 0건이며, raw_polls는 공식 poll label이 아니라 달서갑 보수 강세 historical baseline과 언론 기사 기반 후보군 prior다. 정당별 1명 후보 가정: 민주당 서재헌, 국민의힘 홍성주. 김민수는 대구 보궐/전략공천 대안으로 KG에 남기되 withdrawn=true. 이진숙은 2026-04-25 대구시장 예비후보직 사퇴 및 불출마 선언 후 국힘 후보 지원 이벤트로만 KG에 보존하며 달서갑 후보군에서 제외."
+      }
+    },
+    {
+      "id": "Election:election_2026_local",
+      "type": "Election",
+      "label": "제9회 전국동시지방선거",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "election_id": "election_2026_local",
+        "name": "제9회 전국동시지방선거",
+        "date": "2026-06-03T00:00:00",
+        "election_type": "local"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_daegu_lee_jinsook_exit_support_20260425",
+      "type": "MediaEvent",
+      "label": "이진숙, 대구시장 예비후보직 사퇴 및 불출마 선언 — 국민의힘 최종 후보 지원 의사",
+      "ts": "2026-04-25T11:39:00",
+      "sentiment": 0.25,
+      "frame_id": "f_strong_right",
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "ev_daegu_lee_jinsook_exit_support_20260425",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/politics_general/2026/04/25/FK53IBR3X5FNDOT2LQ445P2YDE/",
+        "title": "이진숙, 대구시장 예비후보직 사퇴 및 불출마 선언 — 국민의힘 최종 후보 지원 의사",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "이진숙",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_dalseo_conditional_vacancy",
+      "type": "MediaEvent",
+      "label": "유영하·추경호 대구시장 경선 향배에 달서갑·달성 보궐 대진표 요동",
+      "ts": "2026-04-23T17:30:00",
+      "sentiment": 0.05,
+      "frame_id": "f_ppp_split",
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "ev_dalseo_conditional_vacancy",
+        "source": "대구 지역 보도/다음뉴스",
+        "title": "유영하·추경호 대구시장 경선 향배에 달서갑·달성 보궐 대진표 요동"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_dalseo_conditional_vacancy_20260423",
+      "type": "MediaEvent",
+      "label": "유영하·추경호 대구시장 경선 향배에 달서갑·달성 보궐 대진표 요동",
+      "ts": "2026-04-23T17:30:00",
+      "sentiment": 0.05,
+      "frame_id": "f_ppp_split",
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "ev_dalseo_conditional_vacancy_20260423",
+        "source": "다음뉴스",
+        "source_url": "https://v.daum.net/v/20260423173036753?f=p",
+        "title": "유영하·추경호 대구시장 경선 향배에 달서갑·달성 보궐 대진표 요동",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null
+      }
+    },
+    {
+      "id": "MediaEvent:ev_dalseo_hong_likely_card_20260423",
+      "type": "MediaEvent",
+      "label": "유영하 확정 시 달서갑 보궐에서 홍성주 전 경제부시장이 국민의힘 대체 카드로 부상",
+      "ts": "2026-04-23T17:30:00",
+      "sentiment": 0.25,
+      "frame_id": "f_strong_right",
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "ev_dalseo_hong_likely_card_20260423",
+        "source": "다음뉴스",
+        "source_url": "https://v.daum.net/v/20260423173036753?f=p",
+        "title": "유영하 확정 시 달서갑 보궐에서 홍성주 전 경제부시장이 국민의힘 대체 카드로 부상",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null
+      }
+    },
+    {
+      "id": "MediaEvent:ev_dalseo_kim_parachute_rumor_20260422",
+      "type": "MediaEvent",
+      "label": "김민수 최고위원 대구 보궐 전략공천설과 TK 낙하산 공천 논란",
+      "ts": "2026-04-22T12:00:00",
+      "sentiment": -0.2,
+      "frame_id": "f_ppp_split",
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "ev_dalseo_kim_parachute_rumor_20260422",
+        "source": "경북매일",
+        "source_url": "https://www.kbmaeil.com/article/20260422500671",
+        "title": "김민수 최고위원 대구 보궐 전략공천설과 TK 낙하산 공천 논란",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_min_park_revolt__daegu_dalseo_gap",
+      "type": "MediaEvent",
+      "label": "국힘 소장파 (김용태/김재섭/이성권) — '장동혁, 국민에 전쟁 선포 / 절연해야' 반발. 박형준 부산시장: '국민 마음에 공감 노력 필요'",
+      "ts": "2026-02-21T10:00:00",
+      "sentiment": -0.4,
+      "frame_id": "f_judgement",
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_min_park_revolt__daegu_dalseo_gap",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/02/21/IE2Y62DES5CZPPAOZP4YA5BGEQ/",
+        "title": "국힘 소장파 (김용태/김재섭/이성권) — '장동혁, 국민에 전쟁 선포 / 절연해야' 반발. 박형준 부산시장: '국민 마음에 공감 노력 필요'",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_us_visit__daegu_dalseo_gap",
+      "type": "MediaEvent",
+      "label": "장동혁 빈손 방미 논란 — 차관보급이 아닌 '비서실장' 면담 / 실무상 착오 해명. NBS 정당지지도 15% 창당 후 최저",
+      "ts": "2026-04-23T10:00:00",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_us_visit__daegu_dalseo_gap",
+        "source": "한겨레",
+        "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1255715.html",
+        "title": "장동혁 빈손 방미 논란 — 차관보급이 아닌 '비서실장' 면담 / 실무상 착오 해명. NBS 정당지지도 15% 창당 후 최저",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_yt_fake__daegu_dalseo_gap",
+      "type": "MediaEvent",
+      "label": "장동혁 유튜브 '장대표 어디가?' — 시민 인터뷰 사전 섭외 의혹 (실제는 당협 관계자) → '연출된 공감' 비판",
+      "ts": "2026-04-08T10:00:00",
+      "sentiment": -0.4,
+      "frame_id": "f_judgement",
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_yt_fake__daegu_dalseo_gap",
+        "source": "오마이뉴스 (국민일보 인용)",
+        "source_url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003222650",
+        "title": "장동혁 유튜브 '장대표 어디가?' — 시민 인터뷰 사전 섭외 의혹 (실제는 당협 관계자) → '연출된 공감' 비판",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "NarrativeFrame:f_judgement",
+      "type": "NarrativeFrame",
+      "label": "정권심판",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_judgement",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "NarrativeFrame:f_ppp_split",
+      "type": "NarrativeFrame",
+      "label": "국힘 본경선 잡음",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_ppp_split",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "NarrativeFrame:f_strong_right",
+      "type": "NarrativeFrame",
+      "label": "강성 보수 결집",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_strong_right",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "Party:p_dem",
+      "type": "Party",
+      "label": "더불어민주당",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_dem",
+        "name": "더불어민주당",
+        "ideology": -0.4
+      }
+    },
+    {
+      "id": "Party:p_ppp",
+      "type": "Party",
+      "label": "국민의힘",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_ppp",
+        "name": "국민의힘",
+        "ideology": 0.5
+      }
+    },
+    {
+      "id": "Person:person_lee_jinsook",
+      "type": "Person",
+      "label": "이진숙",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "person_id": "person_lee_jinsook",
+        "name": "이진숙",
+        "role": "전 방송통신위원장 / 2026-04-25 대구시장 불출마 및 국민의힘 후보 지원 선언",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "Person:person_seo_jaeheon",
+      "type": "Person",
+      "label": "서재헌",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "person_id": "person_seo_jaeheon",
+        "name": "서재헌",
+        "role": "김민석 의원실 선임비서관 / 전 민주당 대구시장 후보",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "PollPublication:ev_ppp_lowest_15pct__daegu_dalseo_gap",
+      "type": "PollPublication",
+      "label": "NBS 4월 4주 — 국민의힘 정당지지도 15% (2020년 NBS 시작 이래 최저, 창당 후 최저)",
+      "ts": "2026-04-23T10:00:00",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "ev_ppp_lowest_15pct__daegu_dalseo_gap",
+        "source": "엠브레인퍼블릭·케이스탯리서치·코리아리서치·한국리서치 NBS",
+        "source_url": "https://www.donga.com/news/Politics/article/all/20260424/133805044/1",
+        "title": "NBS 4월 4주 — 국민의힘 정당지지도 15% (2020년 NBS 시작 이래 최저, 창당 후 최저)",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PollPublication:prediction_prior_dalseo_20260426",
+      "type": "PollPublication",
+      "label": "poll#prediction_prior_dalseo_20260426",
+      "ts": "2026-04-26T00:00:00",
+      "sentiment": 0.0,
+      "frame_id": null,
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "prediction_prior_dalseo_20260426",
+        "poll_id": "prediction_prior_dalseo_20260426",
+        "contest_id": "daegu_dalseo_gap_2026",
+        "sample_size": 0,
+        "leader_candidate": null,
+        "leader_share": null,
+        "title": "여론조사 #prediction_prior_dalseo_20260426",
+        "source": ""
+      }
+    },
+    {
+      "id": "PressConference:ev_dalseo_seo_announce_20260417",
+      "type": "PressConference",
+      "label": "서재헌, 대구 국회의원 보궐선거 출마 선언",
+      "ts": "2026-04-17T17:34:00",
+      "sentiment": 0.25,
+      "frame_id": "f_strong_right",
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "ev_dalseo_seo_announce_20260417",
+        "source": "이데일리",
+        "source_url": "https://www.edaily.co.kr/News/Read?newsId=05336566645417104&mediaCodeNo=257",
+        "title": "서재헌, 대구 국회의원 보궐선거 출마 선언",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "서재헌",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "PressConference:ev_ppp_jdh_lower_voting_age__daegu_dalseo_gap",
+      "type": "PressConference",
+      "label": "장동혁, '선거 연령 만 16세 하향' 제안 — 응답자 77% 반대 (한국갤럽)",
+      "ts": "2026-02-13T10:00:00",
+      "sentiment": -0.3,
+      "frame_id": "f_judgement",
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_lower_voting_age__daegu_dalseo_gap",
+        "source": "국제일보 (연합뉴스 인용)",
+        "source_url": "https://www.kookjeilbo.com/news/article.html?no=98823",
+        "title": "장동혁, '선거 연령 만 16세 하향' 제안 — 응답자 77% 반대 (한국갤럽)",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_ppp_jdh_yoon_again__daegu_dalseo_gap",
+      "type": "PressConference",
+      "label": "장동혁, 윤석열 1심 무기징역 후에도 '계엄이 곧 내란 아니다' 절연 거부 — 당내 갈등 격화",
+      "ts": "2026-02-20T10:00:00",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "region_id": "daegu_dalseo_gap",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_yoon_again__daegu_dalseo_gap",
+        "source": "조선일보 / 경향신문",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/02/20/5LYCG77CSNDGDCZGYBVBFLYP5A/",
+        "title": "장동혁, 윤석열 1심 무기징역 후에도 '계엄이 곧 내란 아니다' 절연 거부 — 당내 갈등 격화",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "Source:s_chosun",
+      "type": "Source",
+      "label": "조선일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_chosun",
+        "name": "조선일보",
+        "url_root": "https://www.chosun.com/",
+        "media_type": "newspaper",
+        "ideology": 0.5
+      }
+    },
+    {
+      "id": "Source:s_donga",
+      "type": "Source",
+      "label": "동아일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_donga",
+        "name": "동아일보",
+        "url_root": "https://www.donga.com/",
+        "media_type": "newspaper",
+        "ideology": 0.4
+      }
+    },
+    {
+      "id": "Source:s_hani",
+      "type": "Source",
+      "label": "한겨레",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_hani",
+        "name": "한겨레",
+        "url_root": "https://www.hani.co.kr/",
+        "media_type": "newspaper",
+        "ideology": -0.4
+      }
+    },
+    {
+      "id": "Source:s_kookje",
+      "type": "Source",
+      "label": "국제일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_kookje",
+        "name": "국제일보",
+        "url_root": "https://www.kookjeilbo.com/",
+        "media_type": "newspaper",
+        "ideology": 0.3
+      }
+    },
+    {
+      "id": "Source:s_ohmy",
+      "type": "Source",
+      "label": "오마이뉴스",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_ohmy",
+        "name": "오마이뉴스",
+        "url_root": "https://www.ohmynews.com/",
+        "media_type": "newspaper",
+        "ideology": -0.5
+      }
+    },
+    {
+      "id": "Source:src_chosun_lee_exit_20260425",
+      "type": "Source",
+      "label": "조선일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "src_chosun_lee_exit_20260425",
+        "name": "조선일보",
+        "url_root": "https://www.chosun.com",
+        "media_type": "newspaper",
+        "ideology": 0.0
+      }
+    },
+    {
+      "id": "Source:src_daegu_byelection_20260423",
+      "type": "Source",
+      "label": "대구 지역 보도/다음 뉴스",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "src_daegu_byelection_20260423",
+        "name": "대구 지역 보도/다음 뉴스",
+        "url_root": "https://v.daum.net",
+        "media_type": "news_aggregation",
+        "ideology": 0.0
+      }
+    },
+    {
+      "id": "Source:src_edaily_seo_20260417",
+      "type": "Source",
+      "label": "이데일리",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "src_edaily_seo_20260417",
+        "name": "이데일리",
+        "url_root": "https://www.edaily.co.kr",
+        "media_type": "newspaper",
+        "ideology": 0.0
+      }
+    },
+    {
+      "id": "Source:src_kbmaeil_kimminsoo_20260422",
+      "type": "Source",
+      "label": "경북매일",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "src_kbmaeil_kimminsoo_20260422",
+        "name": "경북매일",
+        "url_root": "https://www.kbmaeil.com",
+        "media_type": "newspaper",
+        "ideology": 0.0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "src": "Contest:daegu_dalseo_gap_2026",
+      "dst": "Election:election_2026_local",
+      "rel": "inElection",
+      "attrs": {}
+    },
+    {
+      "src": "Contest:daegu_dalseo_gap_2026",
+      "dst": "District:daegu_dalseo_gap",
+      "rel": "heldIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_dalseo_dpk",
+      "dst": "Contest:daegu_dalseo_gap_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_dalseo_dpk",
+      "dst": "Party:p_dem",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_dalseo_ppp_kim",
+      "dst": "Contest:daegu_dalseo_gap_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_dalseo_ppp_kim",
+      "dst": "Party:p_ppp",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_dalseo_ppp_hong",
+      "dst": "Contest:daegu_dalseo_gap_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_dalseo_ppp_hong",
+      "dst": "Party:p_ppp",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_conditional_vacancy",
+      "dst": "Candidate:c_dalseo_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_conditional_vacancy",
+      "dst": "Candidate:c_dalseo_ppp_hong",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_conditional_vacancy",
+      "dst": "NarrativeFrame:f_ppp_split",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:prediction_prior_dalseo_20260426",
+      "dst": "Contest:daegu_dalseo_gap_2026",
+      "rel": "publishesPoll",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__daegu_dalseo_gap",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__daegu_dalseo_gap",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__daegu_dalseo_gap",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.7
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__daegu_dalseo_gap",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__daegu_dalseo_gap",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__daegu_dalseo_gap",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.5
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__daegu_dalseo_gap",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__daegu_dalseo_gap",
+      "dst": "Source:s_ohmy",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__daegu_dalseo_gap",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.5
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_us_visit__daegu_dalseo_gap",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_us_visit__daegu_dalseo_gap",
+      "dst": "Source:s_hani",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_us_visit__daegu_dalseo_gap",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.6
+      }
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_lower_voting_age__daegu_dalseo_gap",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_lower_voting_age__daegu_dalseo_gap",
+      "dst": "Source:s_kookje",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_ppp_lowest_15pct__daegu_dalseo_gap",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_ppp_lowest_15pct__daegu_dalseo_gap",
+      "dst": "Source:s_donga",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_ppp_lowest_15pct__daegu_dalseo_gap",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.9
+      }
+    },
+    {
+      "src": "Person:person_seo_jaeheon",
+      "dst": "Party:p_dem",
+      "rel": "affiliatedTo",
+      "attrs": {}
+    },
+    {
+      "src": "Person:person_lee_jinsook",
+      "dst": "Party:p_ppp",
+      "rel": "affiliatedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_dalseo_seo_announce_20260417",
+      "dst": "Candidate:c_dalseo_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_dalseo_seo_announce_20260417",
+      "dst": "NarrativeFrame:f_strong_right",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_dalseo_seo_announce_20260417",
+      "dst": "Person:person_seo_jaeheon",
+      "rel": "speakerIs",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_dalseo_seo_announce_20260417",
+      "dst": "Source:src_edaily_seo_20260417",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_conditional_vacancy_20260423",
+      "dst": "Candidate:c_dalseo_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_conditional_vacancy_20260423",
+      "dst": "Candidate:c_dalseo_ppp_hong",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_conditional_vacancy_20260423",
+      "dst": "NarrativeFrame:f_ppp_split",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_conditional_vacancy_20260423",
+      "dst": "Source:src_daegu_byelection_20260423",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_hong_likely_card_20260423",
+      "dst": "Candidate:c_dalseo_ppp_hong",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_hong_likely_card_20260423",
+      "dst": "NarrativeFrame:f_strong_right",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_hong_likely_card_20260423",
+      "dst": "Source:src_daegu_byelection_20260423",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_kim_parachute_rumor_20260422",
+      "dst": "Candidate:c_dalseo_ppp_kim",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_kim_parachute_rumor_20260422",
+      "dst": "NarrativeFrame:f_ppp_split",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_dalseo_kim_parachute_rumor_20260422",
+      "dst": "Source:src_kbmaeil_kimminsoo_20260422",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_daegu_lee_jinsook_exit_support_20260425",
+      "dst": "Person:person_lee_jinsook",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_daegu_lee_jinsook_exit_support_20260425",
+      "dst": "Person:person_lee_jinsook",
+      "rel": "speakerIs",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_daegu_lee_jinsook_exit_support_20260425",
+      "dst": "Party:p_ppp",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_daegu_lee_jinsook_exit_support_20260425",
+      "dst": "NarrativeFrame:f_strong_right",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_daegu_lee_jinsook_exit_support_20260425",
+      "dst": "Source:src_chosun_lee_exit_20260425",
+      "rel": "attributedTo",
+      "attrs": {}
+    }
+  ],
+  "stats": {
+    "node_count": 35,
+    "edge_count": 50
+  }
+}

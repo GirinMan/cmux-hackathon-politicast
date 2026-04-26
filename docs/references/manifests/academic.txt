@@ -1,0 +1,81 @@
+# Academic papers / research (selected from perplexity conversation)
+# 카테고리: 학술 논문 (선거·투표행태 / valence / 분할투표 / 2차 선거 / scandal / LLM voting / agent-based forecasting / KG)
+
+# === Election forecasting & agent-based simulation ===
+https://arxiv.org/abs/2410.20746
+https://huggingface.co/papers/2410.20746
+https://www.themoonlight.io/ko/review/electionsim-massive-population-election-simulation-powered-by-large-language-model-driven-agents
+https://www.themoonlight.io/tw/review/electionsim-massive-population-election-simulation-powered-by-large-language-model-driven-agents
+https://github.com/amazingljy1206/ElectionSim
+https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0270194
+https://journals.plos.org/plosone/article/file?type=printable&id=10.1371%2Fjournal.pone.0270194
+https://ui.adsabs.harvard.edu/abs/2022PLoSO..1770194G/abstract
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9246136/
+https://arxiv.org/abs/2503.24199
+https://arxiv.org/abs/2402.01766
+https://arxiv.org/html/2402.01766v1
+https://arxiv.org/html/2604.02618v1
+https://arxiv.org/html/2508.14444v2
+https://arxiv.org/html/2404.03437v1
+https://arxiv.org/abs/2205.14400
+https://www.themoonlight.io/ko/review/the-complexity-of-strategic-behavior-in-primary-elections
+
+# === LLM voting / multi-agent decision making ===
+https://www.academia.edu/124529513/LLM_Voting_Human_Choices_and_AI_Collective_Decision_Making
+https://www.southampton.ac.uk/~eg/AAMAS2023/pdfs/p2730.pdf
+https://aclanthology.org/2024.politicalnlp-1.6/
+https://openreview.net/pdf?id=i4Jcu0p87D
+
+# === Scandals / media effects ===
+https://www.marcelgarz.com/wp-content/uploads/Political-Scandals-Apr2019-web.pdf
+https://researchnow.flinders.edu.au/en/publications/the-electoral-consequences-of-scandals-a-meta-analysis/
+https://www.cambridge.org/core/journals/british-journal-of-political-science/article/scandal-potential-how-political-context-and-news-congestion-affect-the-presidents-vulnerability-to-media-scandal/A6A03867465E764ACF9E97FB37C1A793
+http://webhotel4.ruc.dk/~henning/publications/PoliticalContext.pdf
+
+# === Polls / bandwagon / underdog ===
+http://www.kaspermhansen.eu/Work/wps_2016.pdf
+https://academic.oup.com/ijpor/article/33/2/412/5857291
+https://www.aeaweb.org/conference/2020/preliminary/paper/i4a3Qy36
+https://faculty.haas.berkeley.edu/rjmorgan/Information
+
+# === Second-order elections ===
+https://en.wikipedia.org/wiki/Second-order_election
+https://hal.science/hal-04862262v1/file/226.pdf
+https://cis01.ucv.ro/revistadestiintepolitice/files/numarul87_2025/10.pdf
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9912226/
+
+# === Korean elections / split-ticket / valence (Korean academic) ===
+https://s-space.snu.ac.kr/bitstream/10371/96444/1/7.Institutional-Interaction-and-Strategic-Voting-in-Koreas-New-Mixed-Electoral-System-JungugChoi.pdf
+https://s-space.snu.ac.kr/bitstream/10371/90256/1/2
+https://scholarworks.bwise.kr/hanyang/bitstream/2021.sw.hanyang/197001/1/Valence
+https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE02245487
+https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE09355965
+https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11724875
+https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12025121
+https://kiss.kstudy.com/Detail/Ar?key=10903
+https://accesson.kisti.re.kr/archive/pdfDown.do?arti_id=ATN0004015411
+https://eee.inha.ac.kr/bbs/eee/3919/122958/download.do
+https://scholar.kyobobook.co.kr/article/detail/4010021624486
+
+# === Knowledge graphs / political ontology ===
+https://adimen.ehu.eus/~rigau/publications/jws2016.pdf
+https://ceur-ws.org/Vol-3967/PD_paper_159.pdf
+https://ceur-ws.org/Vol-3977/SemGenAge-6.pdf
+https://www.themoonlight.io/ko/review/leverage-knowledge-graph-and-large-language-model-for-law-article-recommendation-a-case-study-of-chinese-criminal-law
+https://pdfs.semanticscholar.org/1e42/7bdafe3c01586cf6d0dfc930dc0259c2a72b.pdf
+
+# === Knowledge cutoff / temporal grounding ===
+https://www.themoonlight.io/ko/review/dated-data-tracing-knowledge-cutoffs-in-large-language-models
+https://inblog.ai/ko/glossary/knowledge-cutoff
+
+# === Voter behavior / turnout ===
+http://websites.umich.edu/~wmebane/mw18A.pdf
+https://people.hec.edu/hill/wp-content/uploads/sites/25/2023/05/CCA_Hill0424.pdf
+https://dl.acm.org/doi/10.5555/3545946.3599059
+https://dl.acm.org/doi/abs/10.5555/3545946.3599059
+https://www.cs.stir.ac.uk/~kjt/techreps/pdf/TR168.pdf
+https://www.cs.stir.ac.uk/~kjt/techreps/pdf/TR169.pdf
+https://www.di.fc.ul.pt/~fjmc/files/workshop
+https://www.silvioamir.com/assets/pdf/moreira2011power.pdf
+https://www.etd.ceu.edu/2025/hgaig_ghadena.pdf
+https://cdn6.f-cdn.com/files/download/287157208/thegreeksemanticparliamentport.pdf

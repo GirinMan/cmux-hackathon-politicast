@@ -1,0 +1,176 @@
+{
+  "_doc": "Perplexity-curated facts for KG P2/P3 enrichment. All facts source_url 박제. ts ≤ 2026-04-26 (temporal firewall). Fetched via mcp__perplexity__perplexity_search at 2026-04-26 15:38 KST.",
+  "region_id": "daegu_mayor",
+  "fetched_at": "2026-04-26T15:38:00+09:00",
+  "candidate_event_facts": [
+    {
+      "event_id": "ev_daegu_kbg_announce",
+      "type": "PressConference",
+      "ts": "2026-03-30T10:00:00",
+      "source": "조선일보",
+      "source_url": "https://www.chosun.com/politics/assembly/2026/03/30/JLXKKCJZWRBXDASARFJ24G462Q/",
+      "title": "김부겸, 대구시장 출마 공식 선언 — '대구가 국힘 버려야 진짜 보수 살아난다'",
+      "sentiment": 0.4,
+      "frame_id": "f_dpk_unity",
+      "speaker": "김부겸",
+      "party_id": "p_dem",
+      "about": ["c_daegu_dpk"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_daegu_kbg_228park",
+      "type": "PressConference",
+      "ts": "2026-03-30T15:00:00",
+      "source": "MBC 뉴스",
+      "source_url": "https://imnews.imbc.com/replay/2026/nwtoday/article/6811140_37012.html",
+      "title": "김부겸, 2·28 민주운동기념공원 출마 공식 발표 — TK·신공항·2차 공공기관 이전",
+      "sentiment": 0.3,
+      "frame_id": "f_dpk_unity",
+      "speaker": "김부겸",
+      "party_id": "p_dem",
+      "about": ["c_daegu_dpk"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_daegu_kbg_lead_poll",
+      "type": "MediaEvent",
+      "ts": "2026-03-25T10:00:00",
+      "source": "연합뉴스TV",
+      "source_url": "https://www.yonhapnewstv.co.kr/news/MYH20260325211615ZM3",
+      "title": "여론조사 — 김부겸, 추경호 대비 9.9%p 우위 (양자 대결)",
+      "sentiment": 0.3,
+      "about": ["c_daegu_dpk"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_daegu_pp_primary_advance",
+      "type": "PressConference",
+      "ts": "2026-04-17T15:00:00",
+      "source": "조선일보",
+      "source_url": "https://www.chosun.com/politics/assembly/2026/04/17/3UUVEILIFBCM3H76YOURAEFWJU/",
+      "title": "국민의힘 대구시장 본경선 — 추경호·유영하 진출 (윤재옥/최은석/홍석준/이재만 탈락)",
+      "sentiment": 0.0,
+      "frame_id": "f_tk_identity",
+      "party_id": "p_ppp",
+      "about": ["c_daegu_ppp_choo", "c_daegu_ppp_yoo"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_daegu_chu_remarks",
+      "type": "PressConference",
+      "ts": "2026-04-17T16:00:00",
+      "source": "조선일보",
+      "source_url": "https://www.chosun.com/politics/assembly/2026/04/17/3UUVEILIFBCM3H76YOURAEFWJU/",
+      "title": "추경호, 본경선 진출 — '우리 안의 작은 차이는 뒤로, 당의 승리를 위해 처절하게 준비'",
+      "sentiment": 0.1,
+      "speaker": "추경호",
+      "party_id": "p_ppp",
+      "about": ["c_daegu_ppp_choo"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_daegu_yyh_remarks",
+      "type": "PressConference",
+      "ts": "2026-04-17T16:00:00",
+      "source": "조선일보",
+      "source_url": "https://www.chosun.com/politics/assembly/2026/04/17/3UUVEILIFBCM3H76YOURAEFWJU/",
+      "title": "유영하, 본경선 진출 — '떠나는 도시가 아닌 다시 돌아오고 싶은 대구로'",
+      "sentiment": 0.2,
+      "speaker": "유영하",
+      "party_id": "p_ppp",
+      "about": ["c_daegu_ppp_yoo"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_daegu_lee_jinsuk_protest",
+      "type": "PressConference",
+      "ts": "2026-04-14T14:00:00",
+      "source": "한겨레",
+      "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1254224.html",
+      "title": "이진숙, 컷오프 반발 — '장동혁 대표, 공정한 경선 절차 복원하라' 무소속 가능성 언급(이후 4/25 불출마 선언)",
+      "sentiment": -0.4,
+      "frame_id": "f_tk_identity",
+      "speaker": "이진숙",
+      "party_id": "p_ppp",
+      "about": ["p_ppp"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_daegu_mayor_lee_jinsook_exit_support_20260425",
+      "type": "MediaEvent",
+      "ts": "2026-04-25T11:39:00+09:00",
+      "source": "조선일보",
+      "source_url": "https://www.chosun.com/politics/politics_general/2026/04/25/FK53IBR3X5FNDOT2LQ445P2YDE/",
+      "title": "이진숙, 대구시장 예비후보직 사퇴 및 불출마 선언 — 국민의힘 후보 지원 의사",
+      "sentiment": 0.1,
+      "frame_id": "f_tk_identity",
+      "speaker": "이진숙",
+      "party_id": "p_ppp",
+      "about": ["p_lee_js", "p_ppp"],
+      "mentions": ["i_tk_identity", "i_lee_check"]
+    },
+    {
+      "event_id": "ev_daegu_pp_cutoff_dispute",
+      "type": "MediaEvent",
+      "ts": "2026-03-30T10:00:00",
+      "source": "MBC 뉴스",
+      "source_url": "https://imnews.imbc.com/replay/2026/nwtoday/article/6811140_37012.html",
+      "title": "국힘 대구시장 공천 갈등 — 이진숙·주호영 컷오프 반발 / 6명 경선 토론회",
+      "sentiment": -0.3,
+      "frame_id": "f_tk_identity",
+      "party_id": "p_ppp",
+      "about": ["p_ppp"],
+      "mentions": []
+    }
+  ],
+  "candidate_pledge_extras": {
+    "c_daegu_dpk": [
+      "AI 대전환 / 신공항 / 2차 공공기관 이전 (3대 핵심 정책)",
+      "대구경북 행정통합",
+      "민군공항 이전",
+      "행정안전부 장관 시절 2·28 민주운동 국가기념일 지정",
+      "지역주의 극복 / 마지막 정치적 소명",
+      "민주당 대구시장 만들면 '드러누워서라도' 지원 이끌어내기"
+    ],
+    "c_daegu_ppp_choo": [
+      "전 부총리 겸 기획재정부 장관, 4선 (대구 달성)",
+      "비상계엄 해제 의결 방해 혐의로 재판 중 (2026-04 시점)",
+      "본경선 양자대결 9.9%p 열세 (vs 김부겸)",
+      "이진숙 2026-04-25 대구시장 불출마 및 국민의힘 후보 지원 선언으로 보수 분열 리스크 일부 완화"
+    ],
+    "c_daegu_ppp_yoo": [
+      "초선 의원 (대구 달서갑)",
+      "박근혜 전 대통령 최측근 — 박근혜 사면 정신 계승",
+      "본경선 진출 — 추경호와 4월 19일 토론, 26일 최종 후보 발표"
+    ]
+  },
+  "people": [
+    {"person_id": "p_jcr", "name": "정청래", "role": "더불어민주당 대표 — 김부겸 영입", "party_id": "p_dem"},
+    {"person_id": "p_jdh", "name": "장동혁", "role": "국민의힘 대표 — 대구 컷오프 결정", "party_id": "p_ppp"},
+    {"person_id": "p_lee_js", "name": "이진숙", "role": "전 방송통신위원장 — 대구시장 컷오프 후 2026-04-25 불출마 및 국민의힘 후보 지원 선언", "party_id": "p_ppp"},
+    {"person_id": "p_joo_hy", "name": "주호영", "role": "5선 의원 — 대구시장 컷오프 후 재심청구", "party_id": "p_ppp"},
+    {"person_id": "p_yoon_jo", "name": "윤재옥", "role": "4선 의원 (대구 달서을) — 본경선 탈락", "party_id": "p_ppp"},
+    {"person_id": "p_park_dh", "name": "박덕흠", "role": "국민의힘 공천관리위원장", "party_id": "p_ppp"},
+    {"person_id": "p_lee_in", "name": "이인선", "role": "국민의힘 대구시당위원장", "party_id": "p_ppp"},
+    {"person_id": "p_park_gh", "name": "박근혜", "role": "전 대통령 — 유영하 멘토", "party_id": "p_ppp"}
+  ],
+  "sources": [
+    {"source_id": "s_hani", "name": "한겨레", "url_root": "https://www.hani.co.kr/", "media_type": "newspaper", "ideology": -0.4},
+    {"source_id": "s_chosun", "name": "조선일보", "url_root": "https://www.chosun.com/", "media_type": "newspaper", "ideology": 0.5},
+    {"source_id": "s_imbc", "name": "MBC 뉴스", "url_root": "https://imnews.imbc.com/", "media_type": "broadcast", "ideology": -0.2},
+    {"source_id": "s_yonhap_tv", "name": "연합뉴스TV", "url_root": "https://www.yonhapnewstv.co.kr/", "media_type": "broadcast", "ideology": 0.0},
+    {"source_id": "s_etnews", "name": "전자신문", "url_root": "https://www.etnews.com/", "media_type": "newspaper", "ideology": 0.0},
+    {"source_id": "s_khan", "name": "경향신문", "url_root": "https://www.khan.co.kr/", "media_type": "newspaper", "ideology": -0.4}
+  ],
+  "event_source_links": [
+    {"event_id": "ev_daegu_kbg_announce", "source_id": "s_chosun"},
+    {"event_id": "ev_daegu_kbg_228park", "source_id": "s_imbc"},
+    {"event_id": "ev_daegu_kbg_lead_poll", "source_id": "s_yonhap_tv"},
+    {"event_id": "ev_daegu_pp_primary_advance", "source_id": "s_chosun"},
+    {"event_id": "ev_daegu_chu_remarks", "source_id": "s_chosun"},
+    {"event_id": "ev_daegu_yyh_remarks", "source_id": "s_chosun"},
+    {"event_id": "ev_daegu_lee_jinsuk_protest", "source_id": "s_hani"},
+    {"event_id": "ev_daegu_mayor_lee_jinsook_exit_support_20260425", "source_id": "s_chosun"},
+    {"event_id": "ev_daegu_pp_cutoff_dispute", "source_id": "s_imbc"}
+  ]
+}

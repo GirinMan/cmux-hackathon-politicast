@@ -1,0 +1,37 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: politikast:dev
+    container_name: politikast-app
+    env_file:
+      - .env
+    working_dir: /app
+    volumes:
+      - .:/app
+      - ${NEMOTRON_PARQUET_DIR:-/Users/girinman/datasets/Nemotron-Personas-Korea/data}:/data/nemotron:ro
+    ports:
+      - "8501:8501"   # Streamlit
+      - "8888:8888"   # Jupyter (선택)
+    stdin_open: true
+    tty: true
+    command: bash
+
+  dashboard:
+    image: politikast:dev
+    container_name: politikast-dashboard
+    depends_on:
+      - app
+    env_file:
+      - .env
+    working_dir: /app
+    volumes:
+      - .:/app
+      - ${NEMOTRON_PARQUET_DIR:-/Users/girinman/datasets/Nemotron-Personas-Korea/data}:/data/nemotron:ro
+    ports:
+      - "8502:8501"
+    profiles: ["ui"]   # `docker compose --profile ui up dashboard`
+    command: >
+      bash -lc "streamlit run ui/dashboard/app.py
+        --server.port=8501 --server.address=0.0.0.0"

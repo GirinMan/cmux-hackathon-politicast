@@ -1,0 +1,703 @@
+{
+  "scenario_id": "rolling_v2_20260426T052420Z",
+  "region_id": "busan_buk_gap",
+  "contest_id": "busan_buk_gap_2026",
+  "timestep_count": 2,
+  "persona_n": 270,
+  "candidates": [
+    {
+      "id": "c_busan_dpk",
+      "name": "하정우",
+      "party": "p_indep"
+    },
+    {
+      "id": "c_busan_ppp",
+      "name": "박민식",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_busan_indep_han",
+      "name": "한동훈",
+      "party": "p_indep"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "c_busan_dpk": 0.015503875968992248,
+        "c_busan_ppp": 0.6782945736434108,
+        "c_busan_indep_han": 0.3062015503875969
+      },
+      "turnout_intent": 1,
+      "consensus_var": 0.0735833183101977
+    },
+    {
+      "timestep": 1,
+      "date": "2026-04-27",
+      "support_by_candidate": {
+        "c_busan_dpk": 0,
+        "c_busan_ppp": 0.13703703703703704,
+        "c_busan_indep_han": 0.8629629629629629
+      },
+      "turnout_intent": 1,
+      "consensus_var": 0.14338363054412437
+    }
+  ],
+  "final_outcome": {
+    "turnout": 1,
+    "vote_share_by_candidate": {
+      "c_busan_dpk": 0,
+      "c_busan_ppp": 0,
+      "c_busan_indep_han": 1
+    },
+    "winner": "c_busan_indep_han",
+    "n_responses": 270,
+    "n_abstain": 0
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "50s": {
+        "c_busan_indep_han": 1
+      },
+      "40s": {
+        "c_busan_indep_han": 1
+      },
+      "60s+": {
+        "c_busan_indep_han": 1
+      },
+      "30s": {
+        "c_busan_indep_han": 1
+      },
+      "20s": {
+        "c_busan_indep_han": 1
+      }
+    },
+    "by_education": {
+      "2~3년제 전문대학": {
+        "c_busan_indep_han": 1
+      },
+      "4년제 대학교": {
+        "c_busan_indep_han": 1
+      },
+      "중학교": {
+        "c_busan_indep_han": 1
+      },
+      "초등학교": {
+        "c_busan_indep_han": 1
+      },
+      "고등학교": {
+        "c_busan_indep_han": 1
+      },
+      "무학": {
+        "c_busan_indep_han": 1
+      },
+      "대학원": {
+        "c_busan_indep_han": 1
+      }
+    },
+    "by_district": {
+      "부산-북구": {
+        "c_busan_indep_han": 1
+      }
+    }
+  },
+  "virtual_interviews": [
+    {
+      "persona_id": "f7cdecd55bbc425ebd2246e2f3009dc8",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평소 한동훈에 대한 신뢰가 높고, 우리 지역 문제에 더 적극적으로 나설 사람이라고 믿기 때문입니다.",
+      "key_factors": [
+        "한동훈에 대한 높은 지지",
+        "지역 현안 해결 기대감",
+        "기존 정치권에 대한 피로감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "c5153a3692c946b78a291d2705f1a5ec",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈 후보의 행보와 그가 가진 무게감, 그리고 지역 민심의 압도적인 지지를 보며 부산의 발전을 맡길 적임자라 판단했습니다.",
+      "key_factors": [
+        "한동훈 후보의 높은 지지율",
+        "공학적 기준에 부합하는 인물 신뢰도",
+        "부산 지역 변화에 대한 기대감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "0b63e6f50a93460e96694d3a249d2eaf",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "우리 동네로 이사 와서 직접 얼굴 비추는 한동훈 씨가 우리 동네 사람들을 더 잘 챙겨줄 것 같아 마음이 갑니다.",
+      "key_factors": [
+        "한동훈 후보의 우리 동네 전입",
+        "인물 중심의 신뢰감",
+        "높은 지지 여론"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "411e81fed0cd4058aa8fc63f07407178",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생 부산 살며 우리 동네 사정 잘 아는 인물이고, 무엇보다 한동훈이가 내려와서 직접 뛴다니 이번에는 믿고 한번 밀어줘 볼랍니다.",
+      "key_factors": [
+        "한동훈 인지도",
+        "보수 정서 결집",
+        "지역 발전 기대감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "bd67909f2ff0453db936eb9da4f46b31",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈이라는 사람이 우리 동네까지 찾아와서 직접 뛴다고 하니, 다른 거 다 떠나서 그 사람 추진력을 믿어보고 싶네.",
+      "key_factors": [
+        "한동훈 후보의 지역구 전입 및 직접 출마",
+        "기존 정치권에 대한 피로감",
+        "인물 중심의 투표 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "9d029037f97c46bcafa7e24eedb65c0a",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "우리 동네 만덕으로 직접 오신 분이기도 하고, 워낙 대세라 믿음이 가서 한 표 던지려고요.",
+      "key_factors": [
+        "인물 지명도",
+        "부산 전입 상징성",
+        "높은 여론조사 지지율"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "f61cfcd522734d1ebd4d58ff63a850b9",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "동네에 직접 이사 와서 얼굴을 비추는 사람이라면 우리 동네 살림을 더 잘 챙겨줄 것 같아 마음이 갑니다.",
+      "key_factors": [
+        "한동훈 후보의 우리 동네 전입",
+        "지역 밀착형 행보에 대한 호감",
+        "이혼 후 혼자 살아온 삶 속의 실질적 변화 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "68bc253dee374de89fb7fcc01bac6d08",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈 후보가 부산으로 직접 이사까지 오며 지역에 애정을 보여준 점이 인상적이고, 기성 정당보다는 새로운 변화를 이끌어줄 인물이라는 기대가 큽니다.",
+      "key_factors": [
+        "한동훈 후보의 적극적인 부산 정착 행보",
+        "지역 민심을 반영한 인물론",
+        "기존 정당 정치에 대한 피로감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "24677c207300427b815c5c8797e274dc",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈 씨가 우리 동네로 직접 이사까지 오면서 의지를 보였고, 사람 자체가 야무지고 똑부러져서 믿음이 갑니다.",
+      "key_factors": [
+        "한동훈 후보의 지역구 전입",
+        "인물 중심의 정치적 신뢰",
+        "기존 정당에 대한 피로감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "6d93cdd97f3e48d8b62dbedf75aaa709",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "군 통신 장비의 비효율을 개선하며 살아온 제게, 기존 정당의 관습을 깨고 부산에 내려온 한동훈의 혁신적인 행보가 가장 실질적인 변화를 가져올 것 같아 신뢰가 갑니다.",
+      "key_factors": [
+        "한동훈의 인물 경쟁력 및 파괴력",
+        "기존 정당 정치에 대한 피로감",
+        "실질적인 변화를 지향하는 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "8df8aefa8d7e41e594f6576f000c90bf",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생 우리 동네에서 산 사람으로서, 인물 보고 찍는 게 마음 편하고 우리 부산을 잘 챙겨줄 사람이라는 믿음이 듭니다.",
+      "key_factors": [
+        "한동훈의 우리 동네 전입",
+        "높은 지지율과 신뢰감",
+        "평소 사람을 보고 투표하는 습관"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "f7662c75ac6949bcaf569bf3bc885770",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈 후보의 지역구 전입이라는 확실한 행보와 압도적인 여론 지지가 일 처리의 효율성을 중시하는 제 평소 가치관과 일치합니다.",
+      "key_factors": [
+        "압도적인 여론 지지율",
+        "지역구 전입을 통한 진정성",
+        "기존 정치권과 차별화된 인물 경쟁력"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "f12499ef71d84b4aa723e4b300bf7df7",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평소 한동훈이라는 인물의 결단력과 추진력을 지켜봐 왔고, 우리 동네에 직접 전입까지 와서 출마하니 이번엔 정당보다 사람을 보고 뽑으려 합니다.",
+      "key_factors": [
+        "한동훈 후보의 지역구 전입 및 직접적인 출마 의지",
+        "기존 정당 정치에 대한 무관심 및 실망감",
+        "인물 중심의 투표 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "293d4c37901142e0b4faf93e6a58a332",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "기술직으로서 현장감 있는 리더십을 선호하며, 무소속임에도 압도적인 지지를 받는 한동훈 후보의 행보와 인물 경쟁력에 신뢰가 갑니다.",
+      "key_factors": [
+        "한동훈 후보의 높은 인지도 및 지지율",
+        "기존 정당 정치에 대한 피로감",
+        "실무 중심의 엄격한 자기관리 가치관 반영"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d1a1acb9db564d9c99393a63d3640eec",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈 후보의 부산 북구 전입과 행보가 지역 유권자들에게 강력한 임팩트를 주고 있어, 정당 구도를 떠나 인물 자체의 영향력을 선택하게 되었습니다.",
+      "key_factors": [
+        "한동훈 후보의 인물 경쟁력 및 파급력",
+        "기존 정당 후보들에 대한 피로감",
+        "부산 지역 연고 및 유대감 강화"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "639a8f7124b845e19bcadde8522e8f10",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈 후보의 부산 지역 행보와 높은 지지세가 정서적으로 신뢰감을 주며, 실질적인 변화를 이끌 인물이라 판단됩니다.",
+      "key_factors": [
+        "한동훈 후보의 압도적인 여론조사 지지율",
+        "부산 지역 정서 반영",
+        "인물 중심의 정치적 기대감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "9cad9490cfb94a1bb54ba3cd148a9f2b",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "매일 북구 골목을 누비며 주민들의 변화를 피부로 느끼는데, 한동훈 후보가 직접 우리 동네로 전입까지 오며 보여준 강한 의지에 마음이 끌립니다.",
+      "key_factors": [
+        "한동훈 후보의 적극적인 현장 밀착 행보",
+        "기존 정당에 대한 피로감과 인물 위주의 선택",
+        "부산 지역 발전과 변화에 대한 개인적인 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "eef29451190142c3ae0e7e6f00ae88ed",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "오랫동안 북구에서 살아온 주민으로서, 지역의 변화와 인물 자체의 영향력을 고려할 때 압도적인 지지를 받는 후보를 선택하는 것이 현실적입니다.",
+      "key_factors": [
+        "후보의 압도적인 여론조사 지지율",
+        "부산 지역 정서와 인물 경쟁력",
+        "실질적인 변화에 대한 기대감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7f8c37395cbb4133ab626dad5ca35096",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "살림을 챙길 때도 든든한 중심이 필요한데, 우리 지역에 오신 한동훈 후보가 가장 믿음직하고 일 잘할 사람처럼 느껴져서 소중한 한 표를 행사하겠습니다.",
+      "key_factors": [
+        "한동훈 후보의 인물 경쟁력",
+        "지역 내 압도적인 지지 여론",
+        "가정의 안정과 지역의 변화를 중시하는 가치관"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "752ce53135b44b068080de38e3af6261",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈이라는 인물 자체가 가진 무게감과 우리 동네에 직접 전입해 와서 뛰는 모습에 정이 가고 기대를 하게 됩니다.",
+      "key_factors": [
+        "한동훈 후보의 지역구 전입",
+        "기성 정치에 대한 염증",
+        "인물 중심의 지지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "3008665d5fd441f29c15f454614b2be9",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "건설 안전 전문가로서 원칙을 중시하는 입장에서 한동훈 후보가 보여준 새로운 정치적 행보와 압도적인 지지율이 신뢰를 줍니다.",
+      "key_factors": [
+        "한동훈 후보의 압도적인 여론조사 지지율",
+        "기존 정당 정치에 대한 피로감",
+        "안전과 원칙을 중시하는 직업적 가치관"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "31c347f3f53e4dfca7e5f52cde75f593",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "데이터 분석가로서 여론의 흐름이 한동훈 후보로 압도적으로 쏠린 상황에서, 지역의 정치적 영향력과 파급력을 고려한 전략적 선택입니다.",
+      "key_factors": [
+        "압도적인 여론조사 지지율",
+        "지역 기반 강화 기대감",
+        "기존 정당 프레임을 넘어선 인물 선택"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "c58d1c981b3d4bc5941ca6bc09694dcf",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평소 한동훈이라는 인물의 결단력과 추진력을 동경해왔고, 우리 동네로 직접 이사를 왔다는 소식에 친근감을 느껴 투표하기로 했습니다.",
+      "key_factors": [
+        "한동훈의 만덕동 전입",
+        "개인적 추진력에 대한 선호",
+        "여론조사 압도적 우세"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "8ab5f9d8d41e4ea5b3347c3e83fc7402",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "우리 동네로 직접 이사까지 오면서 의지를 보인 한동훈 후보가 지역 문제를 더 잘 해결할 것 같아 마음이 갑니다.",
+      "key_factors": [
+        "한동훈 후보의 부산 북구 전입",
+        "높은 지지율",
+        "지역 밀착형 행보에 대한 기대감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "33ac351806da4536bbbd44c3666a9708",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평소 한동훈의 강직한 인품과 부산 지역 현안에 대한 실질적인 관심이 우리 동네에 긍정적인 변화를 가져올 것이라 기대합니다.",
+      "key_factors": [
+        "한동훈의 부산 만덕동 전입 및 지역 밀착 행보",
+        "기존 정치권에 대한 피로감과 참신한 인물에 대한 갈망",
+        "가족의 안정을 최우선으로 생각하는 40대 가장의 정책 기대치"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "8735e637200f483c92004ed83db38ab3",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평소 한동훈이라는 인물의 결단력을 높게 보고 있었는데, 우리 북구로 직접 내려와 출마한다니 이 사람이라면 지역 발전을 위해 확실히 움직여줄 것 같아서 찍으렵니다.",
+      "key_factors": [
+        "한동훈 후보의 지역구 전입 및 인지도",
+        "기존 정당 후보들에 대한 실망감",
+        "부산 지역의 변화 기대 심리"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "82424bf2dbb040eb99fec7f57948c882",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "우리 동네 북구의 미래와 변화를 위해 실질적인 영향력을 발휘할 수 있는 강한 인물을 선택하고자 합니다.",
+      "key_factors": [
+        "한동훈의 높은 지지율",
+        "지역 발전에 대한 기대감",
+        "무소속 후보의 영향력"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "0279645283d44c3b892cf2baeca93d77",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "동네에 직접 전입까지 해온 한동훈 후보가 우리 같은 서민들의 마음을 제일 잘 대변해 줄 사람이라 믿음이 갑니다.",
+      "key_factors": [
+        "한동훈 후보의 지역구 직접 전입",
+        "압도적인 여론조사 지지율",
+        "기성 정당에 대한 실망감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "556a12843a7c40d99de7c5df6a5fee15",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈이라는 사람은 TV에서 많이 봤고, 우리 동네로 온다니 반가운 마음에 그 사람을 찍어주고 싶소.",
+      "key_factors": [
+        "한동훈 후보의 인지도",
+        "동네 정서 및 친근감",
+        "무소속 후보에 대한 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "dc0f0880d5734cbaa79b8d8dd7d1a4aa",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈 후보가 우리 동네로 직접 이사를 왔다는 소식에 책임감 있는 일꾼이라는 믿음이 생겨 한 표를 던지기로 했습니다.",
+      "key_factors": [
+        "한동훈 후보 지역 전입",
+        "높은 지지 여론",
+        "지역 밀착형 인물 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "bfa55bc496dc444281af77267e162e3b",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생 구포시장 지키며 살았는데, 우리 동네에 직접 내려와서 발로 뛰겠다는 한동훈 씨 모습이 믿음직해서 마음이 갑니다.",
+      "key_factors": [
+        "한동훈 후보의 부산 전입 및 직접 출마",
+        "지역 밀착형 행보에 대한 신뢰",
+        "민생을 챙기는 실무 능력 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "e669ca3c6b484ba684f1ed49c8012d3b",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생 혼자 아이 키우며 치열하게 살아왔는데, 우리 동네에 내려온 한동훈의 당당한 모습이 신뢰가 가서 그를 믿어보기로 했습니다.",
+      "key_factors": [
+        "한동훈의 높은 지지율과 인지도",
+        "이혼 후 홀로 자녀를 키운 삶의 굴곡",
+        "기존 정당 정치에 대한 피로감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "f151ba77952b444d844fceb786d1a5aa",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "기술자로서 원칙과 전문성을 중시하는데, 인물 본연의 역량과 인지도가 압도적인 한동훈 후보가 지역 변화를 이끌 적임자라고 판단했습니다.",
+      "key_factors": [
+        "인물 경쟁력 우위",
+        "높은 여론 지지율 반영",
+        "지역 현안 해결 기대감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "60cfab79c1c54812a1477eb40769bf2e",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "우리 동네로 직접 이사까지 와서 챙겨주겠다 하니 마음이 끌리고, 워낙 인지도가 높아 힘 있는 사람이 우리 동네를 더 잘 살게 해줄 것 같아서 선택했습니다.",
+      "key_factors": [
+        "한동훈 후보의 지역 전입",
+        "높은 지지율과 신뢰도",
+        "지역 발전에 대한 기대감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7001d18c99e94057843fc4c2d1a243d6",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈 후보가 부산으로 직접 전입까지 해오며 보여준 결단력과 인물됨을 우리 동네 사람들이 높게 평가하고 있기 때문입니다.",
+      "key_factors": [
+        "한동훈 후보의 지역 연고 전입",
+        "인물 중심의 지지세",
+        "압도적인 여론조사 추세"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "47e9e03742c148778c9487805d1853d5",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생 부산 살며 지켜본 사람으로서, 정당보다도 내가 믿고 따를 만한 확실한 인물이 이번에 북구에 온다니 마음이 기웁니다.",
+      "key_factors": [
+        "한동훈 후보의 인물 경쟁력",
+        "북구 정서와 부합하는 인물론",
+        "지역 현안 해결 기대감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "4c3683312e9840fbaf4e4d29845b2788",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈 씨가 우리 동네로 직접 이사까지 오며 진심을 보였고, 평소 바르게 일할 사람이라는 인상이 깊어 믿고 뽑으려 합니다.",
+      "key_factors": [
+        "한동훈의 만덕동 전입",
+        "높은 지지율",
+        "인물 중심의 신뢰"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "f5573a205b20426e9f0809af43378355",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "북구 지역에서 압도적인 지지세와 인물 경쟁력을 보여주는 한동훈 후보가 우리 지역의 새로운 변화를 이끌 적임자라고 생각합니다.",
+      "key_factors": [
+        "높은 지지율과 인물론",
+        "부산 지역 정서 반영",
+        "기존 정치권의 답답함 해소"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "f153e1bb63ab4258935c9c3ac4ba8400",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈이가 우리 동네로 직접 이사까지 오고 열심히 뛰니까 믿음이 가서 이번에는 이 사람한테 힘을 실어주려고 합니다.",
+      "key_factors": [
+        "한동훈 후보의 지역 전입",
+        "높은 지지 여론",
+        "지역 현안에 대한 신뢰"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "087ed18df7ca4a2cb92670f5bf6fe2fd",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "한동훈 씨가 우리 동네로 직접 이사까지 오고 열심히 하니, 당을 떠나서 일 잘할 사람에게 믿음이 갑니다.",
+      "key_factors": [
+        "동네 거주 사실",
+        "인물 중심 투표",
+        "높은 지지 여론"
+      ],
+      "timestep": 2
+    }
+  ],
+  "kg_events_used": [
+    {
+      "event_id": "ev_busan_jeon_resign",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_busan_han_jeonip",
+      "type": "MediaEvent",
+      "target": "c_busan_indep_han",
+      "timestep": 1
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-26T05:24:24.390892+00:00",
+    "policy_version": "v2.0_validation",
+    "env": "dev",
+    "voter_stats": {
+      "calls": 850,
+      "parse_fail": 0,
+      "abstain": 12,
+      "latency_ms_sum": 1690847.3479750142,
+      "calls_by_model": {
+        "nano": 618,
+        "mini": 192,
+        "sonnet": 40
+      },
+      "mean_latency_ms": 1989.2,
+      "parse_fail_rate": 0,
+      "abstain_rate": 0.0141
+    },
+    "pool_stats": {
+      "provider": "gemini",
+      "model": "gemini/gemini-3.1-flash-lite-preview",
+      "per_key": [
+        {
+          "key_index": 0,
+          "current_rpm": 79,
+          "limit_rpm": 500,
+          "total_calls": 284,
+          "total_429": 0
+        },
+        {
+          "key_index": 1,
+          "current_rpm": 78,
+          "limit_rpm": 500,
+          "total_calls": 283,
+          "total_429": 0
+        },
+        {
+          "key_index": 2,
+          "current_rpm": 78,
+          "limit_rpm": 500,
+          "total_calls": 283,
+          "total_429": 0
+        }
+      ],
+      "cache_hits": 0,
+      "cache_misses": 850,
+      "total_calls": 850,
+      "n_keys": 3,
+      "iam_mode": false,
+      "cost_usd": {
+        "openai": 0,
+        "anthropic": 0,
+        "gemini": 0,
+        "vertex_ai": 0,
+        "azure": 0,
+        "bedrock": 0,
+        "groq": 0,
+        "openrouter": 0
+      },
+      "cost_thresholds": {
+        "openai": 50,
+        "anthropic": 20,
+        "gemini": 5,
+        "vertex_ai": 5,
+        "azure": 50,
+        "bedrock": 20,
+        "groq": 50,
+        "openrouter": 50
+      },
+      "cost_tracking_enabled": false,
+      "cache_hit_rate": 0
+    },
+    "actual_keys_used": 3,
+    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
+    "effective_provider": "gemini",
+    "official_poll_validation": {
+      "target_series": "missing",
+      "as_of_date": null,
+      "method_version": "none",
+      "cutoff_ts": "2026-04-19T00:00:00+09:00",
+      "source_poll_ids": [],
+      "metrics": {
+        "mae": null,
+        "rmse": null,
+        "margin_error": null,
+        "leader_match": null
+      },
+      "by_candidate": {}
+    },
+    "finished_at": "2026-04-26T05:27:58.841285+00:00",
+    "wall_seconds": 214.45,
+    "original_scenario_id": "busan_buk_gap_2026",
+    "finalized_at": "2026-04-26T05:28:02.942999+00:00"
+  }
+}

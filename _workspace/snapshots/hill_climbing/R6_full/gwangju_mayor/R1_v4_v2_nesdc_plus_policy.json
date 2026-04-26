@@ -1,0 +1,125 @@
+{
+  "variant": "v4_v2_nesdc_plus_policy",
+  "n_personas": 10,
+  "n_abstain": 0,
+  "votes": [
+    {
+      "persona_id": "02ec3e28f4f24f6db066743b781c821a",
+      "vote": "c_gwangju_dpk_alt",
+      "reason": "광주 지역 민심을 반영해 민주당 후보로서의 정책 연속성과 안정적인 지역 발전을 기대합니다.",
+      "key_factors": [
+        "민주당 후보 지지 성향",
+        "광주형 기본소득 공약",
+        "지역 선호도 1위"
+      ]
+    },
+    {
+      "persona_id": "01d563e68cb04a4bb87077369b355a45",
+      "vote": "c_gwangju_dpk_alt",
+      "reason": "아이를 혼자 키우며 당장 체감되는 경제적 어려움을 해결해 줄 수 있는 현실적인 복지 공약을 기대합니다.",
+      "key_factors": [
+        "광주형 기본소득",
+        "생활 안정 지원",
+        "소득 격차 완화"
+      ]
+    },
+    {
+      "persona_id": "008822545140446b81b0f5b4f01abaad",
+      "vote": "c_gwangju_dpk_alt",
+      "reason": "광주 지역 민심을 대변하고 광주형 기본소득을 통한 실질적인 삶의 질 개선을 기대합니다.",
+      "key_factors": [
+        "민형배 선호도 우위",
+        "광주형 기본소득",
+        "지역 정서 반영"
+      ]
+    },
+    {
+      "persona_id": "0e773ce1057c4edeac1a1e8dbfbd561e",
+      "vote": "c_gwangju_dpk_alt",
+      "reason": "광주의 발전과 민주당의 가치를 계승하며 가장 높은 지지를 받는 후보에게 투표하는 것이 합리적이라고 생각합니다.",
+      "key_factors": [
+        "민주당 지지 성향",
+        "높은 후보 선호도",
+        "지역 정책 연속성"
+      ]
+    },
+    {
+      "persona_id": "09d96ba8b5094af9bf7c0ba962a92f7d",
+      "vote": "c_gwangju_dpk_alt",
+      "reason": "광주 토박이로서 지역 정서상 민주당 후보를 지지하는 것이 가장 자연스럽고 익숙한 선택입니다.",
+      "key_factors": [
+        "민주당 후보 선호도",
+        "지역 정서",
+        "정치적 관성"
+      ]
+    },
+    {
+      "persona_id": "0158a1e8c2cf407ba1edb18db0611350",
+      "vote": "c_gwangju_dpk_alt",
+      "reason": "광주 지역에서 민주당의 가치를 이어가고 기본소득 등 실생활에 도움이 되는 정책을 제시한 후보를 선택했습니다.",
+      "key_factors": [
+        "민주당 소속",
+        "기본소득 공약",
+        "지역 정서 반영"
+      ]
+    },
+    {
+      "persona_id": "00b789834649476b93c4fd8286164d7e",
+      "vote": "c_gwangju_dpk_alt",
+      "reason": "오랫동안 우리 지역 정서를 대변해온 민주당 후보를 지지하는 것이 관례이자 마음 편한 선택입니다.",
+      "key_factors": [
+        "지역 민심 반영",
+        "민주당 후보 선호",
+        "안정적 지역 정책 기대"
+      ]
+    },
+    {
+      "persona_id": "00dc97ce7487499ba024b346a9fb6020",
+      "vote": "c_gwangju_dpk_alt",
+      "reason": "광주에서 오래 살아온 평범한 시민으로서 민주당 후보가 우리 지역의 가치를 잘 대변할 것이라 믿습니다.",
+      "key_factors": [
+        "정당 선호도",
+        "지역 여론 및 인지도",
+        "안정적인 지역 발전 기대"
+      ]
+    },
+    {
+      "persona_id": "00004c5031964802aaffb41a5265e1b0",
+      "vote": "c_gwangju_dpk_alt",
+      "reason": "광주에서는 평생 민주당을 찍어왔고, 민형배 후보가 지역 여론 선두라 힘을 실어주는 게 맞다고 생각합니다.",
+      "key_factors": [
+        "민주당 후보 선호도",
+        "지역 정서",
+        "정당 일체감"
+      ]
+    },
+    {
+      "persona_id": "00032b0e0be349c18e45eca272f55fe2",
+      "vote": "c_gwangju_dpk_alt",
+      "reason": "우리 동네 민심과 민주당 후보라는 정통성을 고려해 민형배 후보에게 투표했습니다.",
+      "key_factors": [
+        "민주당 후보 선호도",
+        "광주 지역 정서",
+        "안정적인 후보 선호"
+      ]
+    }
+  ],
+  "vote_count": {
+    "c_gwangju_dpk_alt": 10
+  },
+  "renorm_share": {},
+  "official_consensus": {},
+  "metrics": {
+    "available": false,
+    "reason": "no NESDC poll_consensus_daily for region",
+    "mae": null,
+    "rmse": null,
+    "margin_error": null,
+    "leader_match": null,
+    "kl_div": null,
+    "n_rated": 0,
+    "n_distinct_votes": 1
+  },
+  "system_prompt_sample": "당신은 한국 유권자입니다. 아래 페르소나를 1인칭으로 체화하여 답하세요.\n- 거주: 광주 광주-광산구\n- 연령: 24, 성별: 남자\n- 직업: 경영 기획 사무원, 학력: 4년제 대학교\n- 가족: 미혼\n\n=== 서사 ===\n이한수 씨는 공학적 분석력으로 금융 실무를 처리하는 유능한 직장인이자, 건강 관리와 식도락 사이에서 갈등하며 어머니와 함께 살아가는 20대 청년입니다.\n\n\n광주 광산구의 계획도시 분위기 속에서 성장하며 실용적인 사고방식을 익혔고, 주변 사람들의 기분을 세심하게 살피는 성격 덕분에 친구들 사이에서 갈등을 중재하는 역할을 주로 맡습니다.\n\n=== 규칙 ===\n1. 제공된 컨텍스트(이슈·여론조사·이벤트) 외 정보를 사용하지 마세요.\n2. 출마를 포기한 후보는 선택할 수 없습니다.\n3. 미래 결과를 안다고 가정하지 마세요. 페르소나의 가치관·관심사로만 추론하세요.\n4. 반드시 단일 JSON 객체로만 응답합니다 (코드펜스 금지). 스키마:\n   {\"vote\": \"<candidate_id|null>\", \"turnout\": true|false, \"confidence\": 0.0~1.0, \"reason\": \"<짧은 한 줄>\", \"key_factors\": [\"<핵심 요인 최대 3개>\"]}",
+  "user_prompt_sample": "=== (region) (timestep t=0) ===\n[모드] secret_ballot\n지금은 투표소 안입니다. 비공개 투표용지에 단 한 명을 기표하세요. reason은 한 줄로 짧게.\n\n[후보]\n- [출마 포기] c_gwangju_dpk | 강기정 (p_dem)\n    배경: 현 광주시장. 광주MBC/뉴시스/무등일보 2026-01-01 공표 조사에서 14%로 민형배(33%)에 뒤진 민주당 경선 대안. prediction-only 단일 후보 가정에서는 민주당 후보를 민형배로 고정하므로 비활…\n    핵심공약: 광주형 일자리 2.0 · AI 거점 도시 · 민주당 경선 대안 후보\n- c_gwangju_dpk_alt | 민형배 (p_dem)\n    배경: 현 국회의원(광산을). 광주MBC/뉴시스/무등일보 2026-01-01 공표 조사에서 광주시장 후보 선호도 33%로 강기정(14%)을 오차범위 밖에서 앞선 것으로 보도됨. prediction-only 시나리오의 민주당…\n    핵심공약: 검찰개혁 연계 · 광주형 기본소득 · 광주MBC 신년조사 민주당 후보군 선두\n- c_gwangju_ppp | 안태욱 (p_ppp)\n    배경: 국민의힘 광주시당위원장. 광주MBC/뉴시스/무등일보 2026-01-01 공표 조사에서 국민의힘 후보군 중 안태욱 2%, 강현구 1%로 보도되어, 정당별 1명 가정에서 국민의힘 대표 후보로 고정.\n    핵심공약: 호남 균형발전 · 정권 안정 · 국민의힘 광주 지역조직 대표성\n- c_gwangju_rebuild | 서왕진 (p_rebuild)\n    배경: 조국혁신당 국회의원. 광주MBC/뉴시스/무등일보 2026-01-01 공표 조사에서 1%로 보도된 혁신당 후보군. prediction-only 시나리오의 조국혁신당 단일 후보.\n    핵심공약: 정치개혁 · 검찰개혁 · 진보 표 분산 효과\n\n[컨텍스트 (t≤0)]\n[참고 NESDC 등록 여론조사 (DuckDB poll_consensus_daily, weighted_v1)]\n- 미정·모름·기타 100%\n  (이는 컷오프 시점 등록 여론조사 합의이며 미래 결과가 아닙니다.)\n"
+}

@@ -1,0 +1,41 @@
+# Foundation tooling: Nemotron-Personas-Korea, CAMEL, Election ontology, Knowledge Graph
+# 카테고리: 우리 시스템이 의존/참조할 핵심 기술 스택
+
+# === Nemotron Personas (Korea) ===
+https://huggingface.co/datasets/nvidia/Nemotron-Personas-Korea
+https://huggingface.co/datasets/nvidia/Nemotron-Personas-Japan
+https://huggingface.co/blog/nvidia/build-korean-agents-with-nemotron-personas
+https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemotron-personas/resources/nemotron-personas-dataset-ko_kr
+https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemotron-personas/resources/nemotron-personas-dataset-en_sg
+https://www.modelscope.cn/datasets/AI-ModelScope/Nemotron-Personas
+https://www.nvidia.com/ko-kr/ai-data-science/foundation-models/nemotron/
+https://blogs.nvidia.co.kr/blog/korea-nvidia-nemotron-developer-days-seoul-2026/
+https://blogs.nvidia.co.kr/blog/nemotron-developer-days-seoul-2026-highlights-korean-leaders-accelerating-sovereign-ai/
+https://blogs.nvidia.co.kr/blog/nemotron-open-source-ai/
+https://nvidianews.nvidia.com/news/south-korea-ai-infrastructure
+https://developer.nvidia.com/ko-kr/blog/how-to-build-a-document-processing-pipeline-for-rag-with-nemotron/
+https://databubble.co/news/how-to-ground-a-korean-ai-agent-in-real-demographics-with-synthetic-personas
+https://kr.linkedin.com/posts/jayshin94_how-to-ground-a-korean-ai-agent-in-real-demographics-activity-7452377929340096512-3RM4
+https://theagenttimes.com/articles/nvidia-ships-7-million-synthetic-korean-personas-to-ground-o-5a257af0
+https://royzero.tistory.com/entry/nvidia-nemotron-3-open-model
+
+# === CAMEL multi-agent framework ===
+https://github.com/camel-ai/camel
+https://github.com/camel-ai/camel/
+https://github.com/camel-ai
+https://github.com/camel-ai/multi-agent-streamlit-ui
+https://github.com/syntax-syndicate/camel-ai-multiagent-framework/blob/master/.env.example
+https://docs.camel-ai.org/key_modules/societies
+https://kitemetric.com/blogs/camel-ai-a-multi-agent-framework-for-collaborative-ai
+https://www.requesty.ai/blog/camel-gpt-5-in-requesty-multi-agent-roleplay-for-complex-projects
+https://dev.to/jauhar/simulating-a-united-nations-session-with-camel-multi-agent-systems-5dhi
+
+# === Election ontology / Political KG ===
+https://ukparliament.github.io/ontologies/election/election-ontology.html
+https://www.ontotext.com/knowledgehub/case-studies/rappler-created-first-philippine-politics-knowledge-graph/
+https://www.reddit.com/r/KnowledgeGraph/comments/16bnsby/campaign_strategy_with_knowledge_graphs/
+
+# === Election visualization ===
+https://electionsgroup.com/resource/data-visualization-basics/
+https://infogram.com/create/election-data-visualization
+https://www.toucantoco.com/en/blog/data-visualization-influencing-election

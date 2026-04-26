@@ -1,0 +1,809 @@
+{
+  "region_id": "gwangju_mayor",
+  "timestep": 0,
+  "cutoff_ts": "2026-04-19T00:00:00",
+  "scenario_id": "gwangju_mayor_2026",
+  "nodes": [
+    {
+      "id": "Candidate:c_gwangju_dpk",
+      "type": "Candidate",
+      "label": "강기정",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_gwangju_dpk",
+        "contest_id": "gwangju_mayor_2026",
+        "name": "강기정",
+        "party": "p_dem",
+        "party_name": "더불어민주당",
+        "background": "현 광주시장. 광주MBC/뉴시스/무등일보 2026-01-01 공표 조사에서 14%로 민형배(33%)에 뒤진 민주당 경선 대안. prediction-only 단일 후보 가정에서는 민주당 후보를 민형배로 고정하므로 비활성 처리.",
+        "key_pledges": "['광주형 일자리 2.0', 'AI 거점 도시', '민주당 경선 대안 후보', '현직 시장이지만 같은 2026-01-01 공표 조사에서 14%로 보도되어 prediction-only 단일 후보 가정에서는 비활성 대안.']",
+        "withdrawn": true
+      }
+    },
+    {
+      "id": "Candidate:c_gwangju_dpk_alt",
+      "type": "Candidate",
+      "label": "민형배",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_gwangju_dpk_alt",
+        "contest_id": "gwangju_mayor_2026",
+        "name": "민형배",
+        "party": "p_dem",
+        "party_name": "더불어민주당",
+        "background": "현 국회의원(광산을). 광주MBC/뉴시스/무등일보 2026-01-01 공표 조사에서 광주시장 후보 선호도 33%로 강기정(14%)을 오차범위 밖에서 앞선 것으로 보도됨. prediction-only 시나리오의 민주당 단일 후보.",
+        "key_pledges": "['검찰개혁 연계', '광주형 기본소득', '광주MBC 신년조사 민주당 후보군 선두', '광주MBC/뉴시스/무등일보-코리아리서치 2026-01-01 공표 조사에서 광주시장 후보 선호도 33%로 1위.', '같은 조사에서 민주당 지지층과 조국혁신당 지지층 모두 평균 이상의 선호를 얻었다는 보도.']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "Candidate:c_gwangju_ppp",
+      "type": "Candidate",
+      "label": "안태욱",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_gwangju_ppp",
+        "contest_id": "gwangju_mayor_2026",
+        "name": "안태욱",
+        "party": "p_ppp",
+        "party_name": "국민의힘",
+        "background": "국민의힘 광주시당위원장. 광주MBC/뉴시스/무등일보 2026-01-01 공표 조사에서 국민의힘 후보군 중 안태욱 2%, 강현구 1%로 보도되어, 정당별 1명 가정에서 국민의힘 대표 후보로 고정.",
+        "key_pledges": "['호남 균형발전', '정권 안정', '국민의힘 광주 지역조직 대표성', '안태욱 국민의힘 광주시당위원장은 같은 조사에서 2%로 보도된 국민의힘 후보군.']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "Candidate:c_gwangju_rebuild",
+      "type": "Candidate",
+      "label": "서왕진",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_gwangju_rebuild",
+        "contest_id": "gwangju_mayor_2026",
+        "name": "서왕진",
+        "party": "p_rebuild",
+        "party_name": "조국혁신당",
+        "background": "조국혁신당 국회의원. 광주MBC/뉴시스/무등일보 2026-01-01 공표 조사에서 1%로 보도된 혁신당 후보군. prediction-only 시나리오의 조국혁신당 단일 후보.",
+        "key_pledges": "['정치개혁', '검찰개혁', '진보 표 분산 효과', '서왕진 조국혁신당 국회의원은 같은 조사에서 1%로 보도된 혁신당 후보군.']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "CohortPrior:gwangju_jeonra_ALL",
+      "type": "CohortPrior",
+      "label": "gwangju_jeonra_ALL",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "gwangju_mayor",
+      "attrs": {
+        "cohort_id": "gwangju_jeonra_ALL",
+        "age_band": "ALL",
+        "gender": "ALL",
+        "scope": "region",
+        "party_lean": "{'ppp': 0.12, 'dpk': 0.63, 'rebuild': 0.04, 'other': 0.06, 'undecided': 0.15}",
+        "ideological_lean": "{}",
+        "n_polls": 2,
+        "sample_size": 2000,
+        "source": "한국갤럽 2026-01 (광주/전라 민주 63% / 국힘 12%) + 리얼미터 2026-02 (75.7%)",
+        "source_url": "https://www.kyeonggi.com/article/20260123580070",
+        "publish_ts": "2026-01-23T00:00:00",
+        "notes": "광주/전라는 더민주 텃밭. 이재명 정부 출범 후 더 강화. 광주 통합특별시장 경선은 김영록·민형배·신정훈·강기정 5강 구도 → 신정훈/강기정 단일화 (2026-03-30).",
+        "additional_context": "",
+        "provenance": "cohort_priors"
+      }
+    },
+    {
+      "id": "Contest:gwangju_mayor_2026",
+      "type": "Contest",
+      "label": "gwangju_mayor/metropolitan_mayor",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "gwangju_mayor",
+      "attrs": {
+        "contest_id": "gwangju_mayor_2026",
+        "election_id": "election_2026_local",
+        "position_type": "metropolitan_mayor"
+      }
+    },
+    {
+      "id": "District:gwangju_mayor",
+      "type": "District",
+      "label": "광주",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "gwangju_mayor",
+      "attrs": {
+        "province": "광주",
+        "district": null,
+        "population": 1430000,
+        "scenario_notes": "Prediction-only 가상 시나리오. NESDC 직접 validation target으로 쓰지 않는다. 정당별 1명 후보 가정: 민주당 민형배, 국민의힘 안태욱, 조국혁신당 서왕진. 강기정은 같은 당 경선 대안으로 KG에 남기되 withdrawn=true."
+      }
+    },
+    {
+      "id": "Election:election_2026_local",
+      "type": "Election",
+      "label": "제9회 전국동시지방선거",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "election_id": "election_2026_local",
+        "name": "제9회 전국동시지방선거",
+        "date": "2026-06-03T00:00:00",
+        "election_type": "local"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_gwangju_newsis_undecided_20260101",
+      "type": "MediaEvent",
+      "label": "부동층 32%와 전략공천 긍정 응답으로 광주시장 경선 불확실성 보도",
+      "ts": "2026-01-01T18:00:00",
+      "sentiment": 0.05,
+      "frame_id": "f_progressive_unity",
+      "region_id": "gwangju_mayor",
+      "attrs": {
+        "event_id": "ev_gwangju_newsis_undecided_20260101",
+        "source": "뉴시스",
+        "source_url": "https://www.newsis.com/view/NISX20260101_0003462213",
+        "title": "부동층 32%와 전략공천 긍정 응답으로 광주시장 경선 불확실성 보도",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_min_park_revolt__gwangju_mayor",
+      "type": "MediaEvent",
+      "label": "국힘 소장파 (김용태/김재섭/이성권) — '장동혁, 국민에 전쟁 선포 / 절연해야' 반발. 박형준 부산시장: '국민 마음에 공감 노력 필요'",
+      "ts": "2026-02-21T10:00:00",
+      "sentiment": -0.4,
+      "frame_id": "f_judgement",
+      "region_id": "gwangju_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_min_park_revolt__gwangju_mayor",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/02/21/IE2Y62DES5CZPPAOZP4YA5BGEQ/",
+        "title": "국힘 소장파 (김용태/김재섭/이성권) — '장동혁, 국민에 전쟁 선포 / 절연해야' 반발. 박형준 부산시장: '국민 마음에 공감 노력 필요'",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_yt_fake__gwangju_mayor",
+      "type": "MediaEvent",
+      "label": "장동혁 유튜브 '장대표 어디가?' — 시민 인터뷰 사전 섭외 의혹 (실제는 당협 관계자) → '연출된 공감' 비판",
+      "ts": "2026-04-08T10:00:00",
+      "sentiment": -0.4,
+      "frame_id": "f_judgement",
+      "region_id": "gwangju_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_yt_fake__gwangju_mayor",
+        "source": "오마이뉴스 (국민일보 인용)",
+        "source_url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003222650",
+        "title": "장동혁 유튜브 '장대표 어디가?' — 시민 인터뷰 사전 섭외 의혹 (실제는 당협 관계자) → '연출된 공감' 비판",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "NarrativeFrame:f_judgement",
+      "type": "NarrativeFrame",
+      "label": "정권심판",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_judgement",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "NarrativeFrame:f_progressive_unity",
+      "type": "NarrativeFrame",
+      "label": "진보 단결",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_progressive_unity",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "Party:p_dem",
+      "type": "Party",
+      "label": "더불어민주당",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_dem",
+        "name": "더불어민주당",
+        "ideology": -0.4
+      }
+    },
+    {
+      "id": "Party:p_ppp",
+      "type": "Party",
+      "label": "국민의힘",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_ppp",
+        "name": "국민의힘",
+        "ideology": 0.5
+      }
+    },
+    {
+      "id": "Party:p_rebuild",
+      "type": "Party",
+      "label": "조국혁신당",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_rebuild",
+        "name": "조국혁신당",
+        "ideology": -0.6
+      }
+    },
+    {
+      "id": "PolicyIssue:i_gov_alliance",
+      "type": "PolicyIssue",
+      "label": "이재명 정부 협력",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "issue_id": "i_gov_alliance",
+        "name": "이재명 정부 협력",
+        "issue_type": "정치"
+      }
+    },
+    {
+      "id": "PollPublication:ev_gwangju_kjmbc_poll_min_leads_20260101",
+      "type": "PollPublication",
+      "label": "광주시장 후보 선호도: 민형배 33%, 강기정 14%, 정준호 6%, 문인 5%, 없음·모름 32%",
+      "ts": "2026-01-01T20:40:00",
+      "sentiment": 0.35,
+      "frame_id": "f_progressive_unity",
+      "region_id": "gwangju_mayor",
+      "attrs": {
+        "event_id": "ev_gwangju_kjmbc_poll_min_leads_20260101",
+        "source": "광주MBC",
+        "source_url": "https://kjmbc.co.kr/NewsArticle/1498852",
+        "title": "광주시장 후보 선호도: 민형배 33%, 강기정 14%, 정준호 6%, 문인 5%, 없음·모름 32%",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "광주MBC"
+      }
+    },
+    {
+      "id": "PollPublication:ev_gwangju_media_poll_min_leads",
+      "type": "PollPublication",
+      "label": "광주시장 후보 선호도 민형배 33%, 강기정 14%, 안태욱 2%, 서왕진 1%",
+      "ts": "2026-01-01T20:40:00",
+      "sentiment": 0.25,
+      "frame_id": "f_progressive_unity",
+      "region_id": "gwangju_mayor",
+      "attrs": {
+        "event_id": "ev_gwangju_media_poll_min_leads",
+        "source": "광주MBC/뉴시스/무등일보-코리아리서치",
+        "title": "광주시장 후보 선호도 민형배 33%, 강기정 14%, 안태욱 2%, 서왕진 1%"
+      }
+    },
+    {
+      "id": "PollPublication:ev_gwangju_newstomato_integrated_poll_20260319",
+      "type": "PollPublication",
+      "label": "전남·광주 통합시장 민주당 후보 적합도에서 민형배 28.0%, 강기정 10.0%",
+      "ts": "2026-03-19T06:00:00",
+      "sentiment": 0.25,
+      "frame_id": "f_progressive_unity",
+      "region_id": "gwangju_mayor",
+      "attrs": {
+        "event_id": "ev_gwangju_newstomato_integrated_poll_20260319",
+        "source": "뉴스토마토",
+        "source_url": "https://www.newstomato.com/ReadNews.aspx?no=1294667",
+        "title": "전남·광주 통합시장 민주당 후보 적합도에서 민형배 28.0%, 강기정 10.0%",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null
+      }
+    },
+    {
+      "id": "PollPublication:media_prior_gwangju_kjmbc_20260101",
+      "type": "PollPublication",
+      "label": "poll#media_prior_gwangju_kjmbc_20260101",
+      "ts": "2026-01-01T20:40:00",
+      "sentiment": 0.0,
+      "frame_id": null,
+      "region_id": "gwangju_mayor",
+      "attrs": {
+        "event_id": "media_prior_gwangju_kjmbc_20260101",
+        "poll_id": "media_prior_gwangju_kjmbc_20260101",
+        "contest_id": "gwangju_mayor_2026",
+        "sample_size": 800,
+        "leader_candidate": "c_gwangju_dpk_alt",
+        "leader_share": 0.33,
+        "title": "여론조사 #media_prior_gwangju_kjmbc_20260101",
+        "source": ""
+      }
+    },
+    {
+      "id": "PressConference:ev_ppp_jdh_lower_voting_age__gwangju_mayor",
+      "type": "PressConference",
+      "label": "장동혁, '선거 연령 만 16세 하향' 제안 — 응답자 77% 반대 (한국갤럽)",
+      "ts": "2026-02-13T10:00:00",
+      "sentiment": -0.3,
+      "frame_id": "f_judgement",
+      "region_id": "gwangju_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_lower_voting_age__gwangju_mayor",
+        "source": "국제일보 (연합뉴스 인용)",
+        "source_url": "https://www.kookjeilbo.com/news/article.html?no=98823",
+        "title": "장동혁, '선거 연령 만 16세 하향' 제안 — 응답자 77% 반대 (한국갤럽)",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_ppp_jdh_yoon_again__gwangju_mayor",
+      "type": "PressConference",
+      "label": "장동혁, 윤석열 1심 무기징역 후에도 '계엄이 곧 내란 아니다' 절연 거부 — 당내 갈등 격화",
+      "ts": "2026-02-20T10:00:00",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "region_id": "gwangju_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_yoon_again__gwangju_mayor",
+        "source": "조선일보 / 경향신문",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/02/20/5LYCG77CSNDGDCZGYBVBFLYP5A/",
+        "title": "장동혁, 윤석열 1심 무기징역 후에도 '계엄이 곧 내란 아니다' 절연 거부 — 당내 갈등 격화",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "Source:s_chosun",
+      "type": "Source",
+      "label": "조선일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_chosun",
+        "name": "조선일보",
+        "url_root": "https://www.chosun.com/",
+        "media_type": "newspaper",
+        "ideology": 0.5
+      }
+    },
+    {
+      "id": "Source:s_kookje",
+      "type": "Source",
+      "label": "국제일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_kookje",
+        "name": "국제일보",
+        "url_root": "https://www.kookjeilbo.com/",
+        "media_type": "newspaper",
+        "ideology": 0.3
+      }
+    },
+    {
+      "id": "Source:s_ohmy",
+      "type": "Source",
+      "label": "오마이뉴스",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_ohmy",
+        "name": "오마이뉴스",
+        "url_root": "https://www.ohmynews.com/",
+        "media_type": "newspaper",
+        "ideology": -0.5
+      }
+    },
+    {
+      "id": "Source:src_kjmbc_gwangju_20260101",
+      "type": "Source",
+      "label": "광주MBC",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "src_kjmbc_gwangju_20260101",
+        "name": "광주MBC",
+        "url_root": "https://kjmbc.co.kr",
+        "media_type": "broadcaster",
+        "ideology": 0.0
+      }
+    },
+    {
+      "id": "Source:src_newsis_gwangju_20260101",
+      "type": "Source",
+      "label": "뉴시스",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "src_newsis_gwangju_20260101",
+        "name": "뉴시스",
+        "url_root": "https://www.newsis.com",
+        "media_type": "wire",
+        "ideology": 0.0
+      }
+    },
+    {
+      "id": "Source:src_newstomato_gwangju_20260319",
+      "type": "Source",
+      "label": "뉴스토마토",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "src_newstomato_gwangju_20260319",
+        "name": "뉴스토마토",
+        "url_root": "https://www.newstomato.com",
+        "media_type": "newspaper",
+        "ideology": 0.0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "src": "Contest:gwangju_mayor_2026",
+      "dst": "Election:election_2026_local",
+      "rel": "inElection",
+      "attrs": {}
+    },
+    {
+      "src": "Contest:gwangju_mayor_2026",
+      "dst": "District:gwangju_mayor",
+      "rel": "heldIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_gwangju_dpk",
+      "dst": "Contest:gwangju_mayor_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_gwangju_dpk",
+      "dst": "Party:p_dem",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_gwangju_dpk_alt",
+      "dst": "Contest:gwangju_mayor_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_gwangju_dpk_alt",
+      "dst": "Party:p_dem",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_gwangju_ppp",
+      "dst": "Contest:gwangju_mayor_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_gwangju_ppp",
+      "dst": "Party:p_ppp",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_gwangju_rebuild",
+      "dst": "Contest:gwangju_mayor_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_gwangju_rebuild",
+      "dst": "Party:p_rebuild",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_media_poll_min_leads",
+      "dst": "Candidate:c_gwangju_dpk_alt",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_media_poll_min_leads",
+      "dst": "Candidate:c_gwangju_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_media_poll_min_leads",
+      "dst": "Candidate:c_gwangju_ppp",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_media_poll_min_leads",
+      "dst": "Candidate:c_gwangju_rebuild",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_media_poll_min_leads",
+      "dst": "PolicyIssue:i_gov_alliance",
+      "rel": "mentions",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_media_poll_min_leads",
+      "dst": "NarrativeFrame:f_progressive_unity",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:media_prior_gwangju_kjmbc_20260101",
+      "dst": "Contest:gwangju_mayor_2026",
+      "rel": "publishesPoll",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:media_prior_gwangju_kjmbc_20260101",
+      "dst": "Candidate:c_gwangju_dpk_alt",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__gwangju_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__gwangju_mayor",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__gwangju_mayor",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.7
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__gwangju_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__gwangju_mayor",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__gwangju_mayor",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.5
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__gwangju_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__gwangju_mayor",
+      "dst": "Source:s_ohmy",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__gwangju_mayor",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.5
+      }
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_lower_voting_age__gwangju_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_lower_voting_age__gwangju_mayor",
+      "dst": "Source:s_kookje",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_kjmbc_poll_min_leads_20260101",
+      "dst": "Candidate:c_gwangju_dpk_alt",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_kjmbc_poll_min_leads_20260101",
+      "dst": "Candidate:c_gwangju_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_kjmbc_poll_min_leads_20260101",
+      "dst": "Candidate:c_gwangju_ppp",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_kjmbc_poll_min_leads_20260101",
+      "dst": "Candidate:c_gwangju_rebuild",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_kjmbc_poll_min_leads_20260101",
+      "dst": "PolicyIssue:i_gov_alliance",
+      "rel": "mentions",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_kjmbc_poll_min_leads_20260101",
+      "dst": "NarrativeFrame:f_progressive_unity",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_kjmbc_poll_min_leads_20260101",
+      "dst": "Source:src_kjmbc_gwangju_20260101",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_gwangju_newsis_undecided_20260101",
+      "dst": "Candidate:c_gwangju_dpk_alt",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_gwangju_newsis_undecided_20260101",
+      "dst": "Candidate:c_gwangju_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_gwangju_newsis_undecided_20260101",
+      "dst": "PolicyIssue:i_gov_alliance",
+      "rel": "mentions",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_gwangju_newsis_undecided_20260101",
+      "dst": "NarrativeFrame:f_progressive_unity",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_gwangju_newsis_undecided_20260101",
+      "dst": "Source:src_newsis_gwangju_20260101",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_newstomato_integrated_poll_20260319",
+      "dst": "Candidate:c_gwangju_dpk_alt",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_newstomato_integrated_poll_20260319",
+      "dst": "Candidate:c_gwangju_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_newstomato_integrated_poll_20260319",
+      "dst": "PolicyIssue:i_gov_alliance",
+      "rel": "mentions",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_newstomato_integrated_poll_20260319",
+      "dst": "NarrativeFrame:f_progressive_unity",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_gwangju_newstomato_integrated_poll_20260319",
+      "dst": "Source:src_newstomato_gwangju_20260319",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "CohortPrior:gwangju_jeonra_ALL",
+      "dst": "District:gwangju_mayor",
+      "rel": "appliesToRegion",
+      "attrs": {}
+    },
+    {
+      "src": "CohortPrior:gwangju_jeonra_ALL",
+      "dst": "Party:p_ppp",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.12
+      }
+    },
+    {
+      "src": "CohortPrior:gwangju_jeonra_ALL",
+      "dst": "Party:p_dem",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.63
+      }
+    },
+    {
+      "src": "CohortPrior:gwangju_jeonra_ALL",
+      "dst": "Party:p_rebuild",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.04
+      }
+    }
+  ],
+  "stats": {
+    "node_count": 29,
+    "edge_count": 50
+  }
+}

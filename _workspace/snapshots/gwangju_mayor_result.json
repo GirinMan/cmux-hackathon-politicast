@@ -1,0 +1,738 @@
+{
+  "scenario_id": "rolling_v2_20260426T054111Z",
+  "region_id": "gwangju_mayor",
+  "contest_id": "gwangju_mayor_2026",
+  "timestep_count": 2,
+  "persona_n": 200,
+  "candidates": [
+    {
+      "id": "c_gwangju_dpk",
+      "name": "강기정",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_gwangju_dpk_alt",
+      "name": "민형배",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_gwangju_ppp",
+      "name": "주기환",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_gwangju_rebuild",
+      "name": "안철수",
+      "party": "p_rebuild"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "c_gwangju_dpk": 1.0,
+        "c_gwangju_dpk_alt": 0.0,
+        "c_gwangju_ppp": 0.0,
+        "c_gwangju_rebuild": 0.0
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.1875
+    },
+    {
+      "timestep": 1,
+      "date": "2026-04-27",
+      "support_by_candidate": {
+        "c_gwangju_dpk": 1.0,
+        "c_gwangju_dpk_alt": 0.0,
+        "c_gwangju_ppp": 0.0,
+        "c_gwangju_rebuild": 0.0
+      },
+      "turnout_intent": 0.995,
+      "consensus_var": 0.1875
+    }
+  ],
+  "final_outcome": {
+    "turnout": 1.0,
+    "vote_share_by_candidate": {
+      "c_gwangju_dpk": 1.0,
+      "c_gwangju_dpk_alt": 0.0,
+      "c_gwangju_ppp": 0.0,
+      "c_gwangju_rebuild": 0.0
+    },
+    "winner": "c_gwangju_dpk",
+    "n_responses": 200,
+    "n_abstain": 0
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "50s": {
+        "c_gwangju_dpk": 1.0
+      },
+      "60s+": {
+        "c_gwangju_dpk": 1.0
+      },
+      "20s": {
+        "c_gwangju_dpk": 1.0
+      },
+      "40s": {
+        "c_gwangju_dpk": 1.0
+      },
+      "30s": {
+        "c_gwangju_dpk": 1.0
+      }
+    },
+    "by_education": {
+      "고등학교": {
+        "c_gwangju_dpk": 1.0
+      },
+      "대학원": {
+        "c_gwangju_dpk": 1.0
+      },
+      "중학교": {
+        "c_gwangju_dpk": 1.0
+      },
+      "초등학교": {
+        "c_gwangju_dpk": 1.0
+      },
+      "2~3년제 전문대학": {
+        "c_gwangju_dpk": 1.0
+      },
+      "4년제 대학교": {
+        "c_gwangju_dpk": 1.0
+      },
+      "무학": {
+        "c_gwangju_dpk": 1.0
+      }
+    },
+    "by_district": {
+      "광주-광산구": {
+        "c_gwangju_dpk": 1.0
+      },
+      "광주-북구": {
+        "c_gwangju_dpk": 1.0
+      },
+      "광주-동구": {
+        "c_gwangju_dpk": 1.0
+      },
+      "광주-남구": {
+        "c_gwangju_dpk": 1.0
+      },
+      "광주-서구": {
+        "c_gwangju_dpk": 1.0
+      }
+    }
+  },
+  "virtual_interviews": [
+    {
+      "persona_id": "b1d8a49e7d0545d48e08ac314121be74",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "우리 동네 광주에서 살림 잘하고 진보 쪽 힘 실어주는 게 내 자식 손주들 사는 데 도움 될 것 같아서요.",
+      "key_factors": [
+        "현 시장 강기정의 재선 도전",
+        "진보 단결 및 안정적 지지",
+        "광주형 일자리 정책에 대한 신뢰"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "695f73b64ed14f0291c1f60d9f4fee31",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리 2.0 정책이 현장 안전을 챙기는 실무자 입장에서 일자리 안정성과 지역 경제에 긍정적인 영향을 줄 것으로 기대합니다.",
+      "key_factors": [
+        "광주형 일자리 2.0",
+        "지역 고용 안정성",
+        "진보 진영의 결집력"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "37a0be4af1204c7da29279d12f78f7bb",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리 2.0 정책이 취업을 준비하는 저에게 실질적인 지역 일자리 창출로 이어지길 기대하며 기존 현직자의 안정감에 투표합니다.",
+      "key_factors": [
+        "광주형 일자리 2.0 정책",
+        "지역 경제 안정성",
+        "더불어민주당 지지 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "8d2b179ce3754b40b245a1067a1b7555",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리 2.0을 통해 제조업 현장의 내실을 다지고 지역 정서에 부합하는 안정적인 시정을 이끌어온 강기정 후보를 지지합니다.",
+      "key_factors": [
+        "현직 시장의 정책 연속성",
+        "광주형 일자리 2.0에 대한 기술직 종사자로서의 공감",
+        "지역 정서 및 안정적 시정 운영 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "f48b1e26394e48798947c2b1a878a23b",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리 2.0으로 기술직 일자리가 늘어날 것 같아 현 시장인 강기정 후보를 지지합니다.",
+      "key_factors": [
+        "광주형 일자리 2.0",
+        "현 시장 재선 도전 우위",
+        "지역 내 더불어민주당 지지세"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "11e5989cc54b42f280e27123d6beaa16",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "우리 광주의 발전을 위해 추진 중인 광주형 일자리 정책을 이어가고 진보 진영이 단결하여 힘을 실어주는 강기정 후보가 가장 믿음직합니다.",
+      "key_factors": [
+        "광주형 일자리 정책의 연속성",
+        "진보 진영의 결집",
+        "현 시장으로서의 안정적인 시정 운영 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "85396acad7984345bb2e4f29f9487671",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "우리 동네에서 평생을 살았으니, 묵묵히 일해온 사람을 뽑는 게 인지상정이지요.",
+      "key_factors": [
+        "광주형 일자리 성과",
+        "민주당 지지 성향",
+        "안정적인 재선 분위기"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "88d73bfcb09d455e88c1425746fed127",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리 2.0으로 내 미래와 일자리에 실질적인 변화를 기대하며, 가장 안정적으로 지역을 이끌어갈 후보라고 생각해요.",
+      "key_factors": [
+        "광주형 일자리 2.0 정책",
+        "더불어민주당 지지 성향",
+        "현 시장에 대한 정책 연속성 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "81d9491580bf4f009759b13f10cedcd5",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리 2.0과 같은 지역 경제 정책이 현장직인 저에게 실질적인 비전으로 느껴져 안정적인 시정을 이끄는 강기정 시장을 지지합니다.",
+      "key_factors": [
+        "광주형 일자리 2.0 정책",
+        "지역 경제 안정성",
+        "현 시장 재선 프리미엄"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "57f93ee836204e09a36bf70ce5fe1ee7",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리 등 그간의 시정 살림을 지켜보며 익숙한 안정감과 우리 지역 정서를 잘 대변해 줄 후보라고 생각합니다.",
+      "key_factors": [
+        "안정적인 시정 연속성",
+        "광주형 일자리 성과",
+        "지역 내 강한 민주당 지지 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "fa4d9df4dd444e9a94b896f427cd0a78",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 평생 살아온 입장에서 민주당의 연속성 있는 정책 추진과 지역 안정을 가장 중요하게 생각합니다.",
+      "key_factors": [
+        "민주당 후보 정통성",
+        "광주형 일자리 성과",
+        "지역 정서 및 안정 추구"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b6a3c48a57a04feda6c1a0810533e656",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 수십 년 살아오며 민주당의 가치를 지지해왔고, 현 시장의 광주형 일자리 정책이 지역 경제에 안정감을 준다고 생각합니다.",
+      "key_factors": [
+        "지역 정서와 민주당 지지 성향",
+        "광주형 일자리 2.0 정책의 연속성",
+        "현직 시장에 대한 신뢰"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "1d8831a7e67a44c89f24c3cfef89b85b",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리 2.0 등 지역 경제 활성화를 위한 실질적인 정책 추진력과 당의 정체성을 중요하게 생각합니다.",
+      "key_factors": [
+        "민주당 지지 성향",
+        "광주형 일자리 정책",
+        "현직 시장의 안정적 시정 운영"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "0e49084bf5b74282973a92661007eaf9",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "우리 동네에서 평생 민주당 찍어왔고, 강기정 시장이 하던 일들 잘 마무리해서 광주가 더 살기 좋아지길 바라는 마음뿐이여.",
+      "key_factors": [
+        "당의 정통성",
+        "현직 시장의 안정감",
+        "지역 화합과 발전"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b302f36289a04e9a8c4ae09f90b5eaa6",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "아이를 홀로 키우며 안정적인 생활을 중시하는 입장에서, 검증된 행정과 광주형 일자리 등 실질적인 지역 경제 정책을 이어가는 후보에게 믿음이 갑니다.",
+      "key_factors": [
+        "안정적인 시정 운영",
+        "지역 경제 활성화 정책",
+        "민주당 지지 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "a8f8148b1fe9456c81c70cffefc25d0b",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "오랫동안 우리 광주 바닥에서 일해온 사람으로서, 민주당 간판을 달고 광주형 일자리처럼 현실적으로 우리 지역 살림을 챙기는 사람을 뽑는 게 인지상정이지요.",
+      "key_factors": [
+        "민주당 지지 성향",
+        "광주형 일자리 정책 신뢰",
+        "현직 시장 재선 프리미엄"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "c94541a4831444528e78b1801974250f",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "오랫동안 우리 광주를 위해 일해왔고 광주형 일자리도 챙기는 사람이니 믿고 한 번 더 맡기는 게 맞지 않겠나 싶어.",
+      "key_factors": [
+        "현 시장으로서의 업무 연속성",
+        "광주형 일자리 성과",
+        "더불어민주당 지지 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "48b2be5050bd40e79d4d9e658c430c03",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "우리 광주에서 오랫동안 익숙하게 봐온 당이고, 일자리 문제도 열심히 챙긴다고 하니 살림하는 입장에서 큰 변화 없이 믿고 뽑으려 합니다.",
+      "key_factors": [
+        "광주형 일자리 정책",
+        "더불어민주당 지지 기반",
+        "현직 시장의 안정감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "a5524b44932646b8b15acaa3910e256a",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 오랜 기간 공직에 몸담아온 입장에서, 지역 경제와 행정의 연속성을 위해 광주형 일자리 2.0을 추진하는 현 시장을 지지하는 것이 합리적입니다.",
+      "key_factors": [
+        "광주형 일자리 2.0 정책 만족",
+        "진보 진영 단결 기조",
+        "현직 시장의 행정 연속성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "6380b89b7b504d7799c6e2290c045aeb",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주 지역의 정서적 결속력과 현 시장이 추진해 온 광주형 일자리 2.0 정책이 직장인으로서의 제 실무 지향적 가치관과 부합한다고 생각합니다.",
+      "key_factors": [
+        "광주형 일자리 2.0 정책 추진",
+        "민주당 중심의 지역적 안정성",
+        "실무 효율성을 중시하는 행정 기조"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "3c6463a9fa1d4905a31fcd8193edfea8",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 오랫동안 익숙한 정당의 후보가 안정적이고 광주형 일자리 같은 현실적인 정책을 제시하고 있어 가장 거부감이 적습니다.",
+      "key_factors": [
+        "광주형 일자리 2.0 정책",
+        "지역 내 정당 지지세",
+        "현직 시장의 안정적 재선 흐름"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b68e7302911d49049fcc22f382e9ab25",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 성실히 일하는 노동자로서 우리 지역의 일자리 문제를 지속적으로 고민해 온 현직 시장의 정책 방향성에 신뢰가 갑니다.",
+      "key_factors": [
+        "광주형 일자리 2.0 정책",
+        "지역 내 진보 단결 기조",
+        "현직 시장으로서의 안정적인 현장 경험"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "c4dbc3ca93db4a4c9e1f454e758463f5",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주 지역의 정서와 현 강기정 시장이 추진하는 광주형 일자리 정책이 지역 경제 안정에 기여할 것이라 판단했습니다.",
+      "key_factors": [
+        "지역 정서",
+        "광주형 일자리 2.0 정책",
+        "현직 시장의 행정 연속성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b6ffdcf68cf044db979a5a88474be455",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 오래 살아온 사람으로서, 지역 경제 안정과 진보의 가치를 지켜온 강기정 시장을 믿고 지지하는 것이 당연하다고 생각합니다.",
+      "key_factors": [
+        "지역 경제 안정성",
+        "민주당 중심의 정치 신념",
+        "광주형 일자리 2.0 정책"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "e2ce74e327ad4ffa96f67d3931ab2562",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 평생을 살아오며 진보 진영의 가치를 중요하게 생각하고, 강기정 시장이 추진하는 광주형 일자리 같은 정책이 우리 가족의 내일에도 도움이 될 것이라 믿습니다.",
+      "key_factors": [
+        "진보 진영 단결",
+        "광주형 일자리 2.0 정책",
+        "현직 시장의 안정적 행정"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "6d35a68c2f974b7fbe67f66ef862bb16",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 우리 당을 지키고 광주형 일자리처럼 지역 살림을 챙기는 사람에게 힘을 실어주는 게 당연하지 않겠습니까.",
+      "key_factors": [
+        "민주당 지지 성향",
+        "현 시장에 대한 신뢰",
+        "지역 일자리 정책 공감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "a60b164031454eb3ae237604fba879a4",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리 2.0과 같은 실질적인 경제 정책의 연속성과 진보 진영의 안정적인 행정력을 우선 고려했습니다.",
+      "key_factors": [
+        "정책의 연속성",
+        "진보 진영의 안정적 결집",
+        "광주형 일자리 성과"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "68d90b58d13e44c0acf18e7804104e44",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "우리 지역은 늘 그래왔듯 당을 보고 찍는 게 마음 편하고, 현 시장이 현장 경험도 있고 하니 일하던 대로 계속하는 게 낫지 싶습니다.",
+      "key_factors": [
+        "지역 정서상 민주당 지지",
+        "현직 시장의 안정적 행보",
+        "광주형 일자리 2.0 정책"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "df9a489884bf4467845ee7be30e2d740",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 소매업 기획 업무를 하는 입장에서 현 시장의 일자리 정책이 체감 경제에 미칠 안정적인 변화를 기대하기 때문입니다.",
+      "key_factors": [
+        "광주형 일자리 2.0 정책",
+        "진보 진영 내 안정적인 지지세",
+        "재선 도전의 연속성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "2d58c7d6e4aa47988ab7d9aa463c4546",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "평생을 우리 편이라 생각하며 살아온 당이고, 지금 시장님이 일도 잘하고 계신 것 같아서 마음이 놓여서요.",
+      "key_factors": [
+        "당에 대한 오랜 신뢰",
+        "현직 시장의 안정감",
+        "익숙함과 일관성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "aa68c654ea564664b6e78de9cfe59735",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "우리 지역 광주를 위해 그간 애써왔고, 광주형 일자리 같은 정책을 추진해 온 현 시장이 그대로 일을 잘 마무리했으면 하는 마음입니다.",
+      "key_factors": [
+        "현직 프리미엄 및 연속성",
+        "광주형 일자리 정책",
+        "더불어민주당 지지 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "866092e55c7e435aa61f713f27547c91",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 익숙한 정당의 후보이자 현직인 강기정이 추진하는 정책이 지역 내 일자리 안정성에 도움이 될 것 같아 선택했습니다.",
+      "key_factors": [
+        "광주형 일자리 2.0 정책",
+        "더불어민주당 지지 성향",
+        "현직 시장에 대한 익숙함과 안정감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "8317828144ec467887c33ba352879592",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리 2.0 등 지역 경제 활성화를 위한 실질적인 정책을 추진해 온 현 시장의 안정적인 시정 운영을 신뢰합니다.",
+      "key_factors": [
+        "광주형 일자리 정책의 연속성",
+        "민주당 지지 성향",
+        "지역 경제 안정에 대한 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5c31398855d147858c2620d82975af52",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주의 지역적 특성과 현 시장의 광주형 일자리 2.0 정책이 실질적인 경제 활력으로 이어지길 기대하기 때문입니다.",
+      "key_factors": [
+        "민주당 지지 성향",
+        "광주형 일자리 2.0 정책 기대감",
+        "현직 시장의 안정적 시정 운영"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "fcadd608db9d4b21b641ebf0bb475354",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리 2.0 등 지역 경제 활성화를 위한 실질적 정책 성과와 현직 시장으로서의 안정적인 시정 운영 능력을 높게 평가합니다.",
+      "key_factors": [
+        "현직 시장의 안정적 시정 운영",
+        "광주형 일자리 2.0 정책 효과",
+        "지역 내 더불어민주당 지지 기반"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "fda749c4f534499d8472605eb7399c65",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "평생을 광주에서 살며 우리 지역 살림을 챙겨온 민주당 시장님이 그간 해온 일도 있고 하니 믿음이 가서 이번에도 찍으려 합니다.",
+      "key_factors": [
+        "광주 지역 내 민주당 지지 성향",
+        "현직 강기정 시장의 안정적인 시정 운영",
+        "광주형 일자리 사업 등 지역 경제 정책"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "60ebddde94d847c8a227387d667e5a55",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주의 정서상 우리 지역의 목소리를 대변하고 정책 연속성을 보여주는 후보를 지지하는 것이 자연스럽습니다.",
+      "key_factors": [
+        "민주당 지지 성향",
+        "광주형 일자리 2.0 정책 기대",
+        "지역 내 강기정 시장의 영향력"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "25164e39627e4ac1bb663c9b64a71258",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 아이들을 키우며 살아가는 입장에서 민주당의 안정적인 정책 기조가 우리 가족의 미래에 가장 도움이 된다고 생각합니다.",
+      "key_factors": [
+        "광주형 일자리 정책의 연속성",
+        "민주당 중심의 지역 정서",
+        "가정 내 안정을 중시하는 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "0d40481b7a6c456f9ab2e114990051a6",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "데이터 기반의 실무자로서 광주형 일자리 2.0 등 구체적인 정책 성과와 연속성을 보여준 현 시장의 행보가 가장 합리적인 선택이라고 판단됩니다.",
+      "key_factors": [
+        "정책 연속성",
+        "광주형 일자리 2.0 성과",
+        "지역 내 압도적 지지 기반"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "047ca521a44a42c8a17a927f7831663a",
+      "persona_summary": "",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리 등 지역 경제 활성화를 위한 정책을 추진해온 현 시장이 다시 한번 일을 맡아 우리 같은 서민들이 기댈 곳을 만들어주길 바라는 마음입니다.",
+      "key_factors": [
+        "광주형 일자리 정책",
+        "현직 시장의 안정적 행정",
+        "지역 민심 반영"
+      ],
+      "timestep": 2
+    }
+  ],
+  "kg_events_used": [
+    {
+      "event_id": "1",
+      "type": "PollPublication",
+      "target": "c_daegu_ppp_choo",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_gwangju_strong_kang",
+      "type": "MediaEvent",
+      "target": "c_gwangju_dpk",
+      "timestep": 0
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-26T05:41:13.931329+00:00",
+    "policy_version": "v2.0_validation_first",
+    "env": "dev",
+    "llm_cache_enabled": true,
+    "voter_stats": {
+      "calls": 642,
+      "parse_fail": 3,
+      "abstain": 1,
+      "latency_ms_sum": 1288091.2512119724,
+      "calls_by_model": {
+        "nano": 425,
+        "sonnet": 40,
+        "mini": 177
+      },
+      "mean_latency_ms": 2006.4,
+      "parse_fail_rate": 0.0047,
+      "abstain_rate": 0.0016
+    },
+    "pool_stats": {
+      "provider": "gemini",
+      "model": "gemini/gemini-3.1-flash-lite-preview",
+      "per_key": [
+        {
+          "key_index": 0,
+          "current_rpm": 94,
+          "limit_rpm": 500,
+          "total_calls": 256,
+          "total_429": 0
+        },
+        {
+          "key_index": 1,
+          "current_rpm": 94,
+          "limit_rpm": 500,
+          "total_calls": 256,
+          "total_429": 0
+        },
+        {
+          "key_index": 2,
+          "current_rpm": 94,
+          "limit_rpm": 500,
+          "total_calls": 256,
+          "total_429": 0
+        },
+        {
+          "key_index": 3,
+          "current_rpm": 95,
+          "limit_rpm": 500,
+          "total_calls": 256,
+          "total_429": 0
+        },
+        {
+          "key_index": 4,
+          "current_rpm": 95,
+          "limit_rpm": 500,
+          "total_calls": 256,
+          "total_429": 0
+        }
+      ],
+      "cache_hits": 2,
+      "cache_misses": 1280,
+      "total_calls": 1280,
+      "n_keys": 5,
+      "iam_mode": false,
+      "cost_usd": {
+        "openai": 0.0,
+        "anthropic": 0.0,
+        "gemini": 0.0,
+        "vertex_ai": 0.0,
+        "azure": 0.0,
+        "bedrock": 0.0,
+        "groq": 0.0,
+        "openrouter": 0.0
+      },
+      "cost_thresholds": {
+        "openai": 50.0,
+        "anthropic": 20.0,
+        "gemini": 5.0,
+        "vertex_ai": 5.0,
+        "azure": 50.0,
+        "bedrock": 20.0,
+        "groq": 50.0,
+        "openrouter": 50.0
+      },
+      "cost_tracking_enabled": false,
+      "cache_hit_rate": 0.0016
+    },
+    "actual_keys_used": 5,
+    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
+    "effective_provider": "gemini",
+    "official_poll_validation": {
+      "target_series": "missing",
+      "as_of_date": null,
+      "method_version": "none",
+      "cutoff_ts": "2026-04-26T00:00:00+09:00",
+      "source_poll_ids": [],
+      "metrics": {
+        "mae": null,
+        "rmse": null,
+        "margin_error": null,
+        "leader_match": null
+      },
+      "by_candidate": {}
+    },
+    "finished_at": "2026-04-26T05:44:00.895251+00:00",
+    "wall_seconds": 166.96,
+    "original_scenario_id": "gwangju_mayor_2026",
+    "finalized_at": "2026-04-26T05:44:17.131430+00:00"
+  }
+}

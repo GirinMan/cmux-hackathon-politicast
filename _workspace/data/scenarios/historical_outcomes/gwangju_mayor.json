@@ -1,0 +1,25 @@
+{
+  "_doc": "광주광역시장 직전 본 선거 final outcome. 출처: 위키백과 (제8회 전국동시지방선거 광역자치단체장 페이지, perplexity 13:50 KST).",
+  "region_id": "gwangju_mayor",
+  "election": {
+    "name": "제8회 전국동시지방선거 — 광주광역시장",
+    "date": "2022-06-01",
+    "election_id": "election_2022_local_mayor_gwangju",
+    "type": "local_mayor"
+  },
+  "turnout": 0.377,
+  "total_valid_votes": 446770,
+  "results": [
+    {"rank": 1, "name": "강기정",   "party": "더불어민주당", "votes": 334699, "vote_share": 0.7491, "elected": true},
+    {"rank": 2, "name": "주기환",   "party": "국민의힘",     "votes":  71062, "vote_share": 0.1590, "elected": false},
+    {"rank": 3, "name": "장연주",   "party": "정의당",       "votes":  21070, "vote_share": 0.0471, "elected": false},
+    {"rank": 4, "name": "김주업",   "party": "진보당",       "votes":  16595, "vote_share": 0.0371, "elected": false},
+    {"rank": 5, "name": "문현철",   "party": "기본소득당",   "votes":   3344, "vote_share": 0.0074, "elected": false}
+  ],
+  "lead_pp": 0.5901,
+  "winner_party_id_in_scenario": "p_dem",
+  "sources": [
+    "https://ko.wikipedia.org/wiki/제8회_전국동시지방선거_광역자치단체장",
+    "https://www.newsis.com/2022election/"
+  ]
+}

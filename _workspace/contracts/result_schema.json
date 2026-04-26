@@ -1,0 +1,115 @@
+{
+  "_doc": "시뮬레이션 출력 → 대시보드 입력 shape. sim-engineer가 write, dashboard-engineer가 read.",
+  "scenario_result": {
+    "scenario_id": "string",
+    "region_id": "string",
+    "contest_id": "string",
+    "timestep_count": "int",
+    "persona_n": "int",
+    "candidates": [{"id": "string", "name": "string", "party": "string"}],
+    "poll_trajectory": [
+      {"timestep": "int", "date": "ISO date", "support_by_candidate": {"candidate_id": "float (share 0..1)"}, "turnout_intent": "float", "consensus_var": "float"}
+    ],
+    "final_outcome": {
+      "turnout": "float",
+      "vote_share_by_candidate": {"candidate_id": "float"},
+      "winner": "candidate_id"
+    },
+    "demographics_breakdown": {
+      "by_age_group": {"age_group": {"candidate_id": "float"}},
+      "by_education": {"education_level": {"candidate_id": "float"}},
+      "by_district": {"district": {"candidate_id": "float"}}
+    },
+    "virtual_interviews": [
+      {"persona_id": "uuid", "persona_summary": "string", "vote": "candidate_id|null", "reason": "string", "timestep": "int"}
+    ],
+    "kg_events_used": [{"event_id": "string", "type": "string", "target": "string", "timestep": "int"}],
+    "meta": {
+      "env": "dev|prod|test",
+      "started_at": "ISO datetime",
+      "finished_at": "ISO datetime",
+      "wall_seconds": "float",
+      "policy_version": "string",
+      "concurrency": "int",
+      "effective_provider": "string",
+      "effective_model": "string",
+      "actual_keys_used": "int",
+      "llm_cache_enabled": "bool",
+      "final_poll_feedback_enabled": "bool",
+      "poll_targets_visible_to_agents": "bool (default false; true only for explicit poll-exposure ablation)",
+      "counterfactual": {
+        "enabled": "bool",
+        "intervention_id": "string|null",
+        "base_region_id": "string|null",
+        "base_scenario_id": "string|null",
+        "mode": "counterfactual_prediction|ablation|null",
+        "calibration_profile": "string|null",
+        "frozen_params": "bool|null",
+        "poll_targets_visible_to_agents": "bool",
+        "intervention_path": "string|null",
+        "source_urls": ["string"],
+        "event_patches": ["object"],
+        "candidate_patches": ["object"],
+        "delta_vs_baseline": {
+          "baseline_path": "string|null",
+          "baseline_scenario_id": "string|null",
+          "baseline_winner": "candidate_id|null",
+          "intervention_winner": "candidate_id|null",
+          "winner_changed": "bool|null",
+          "vote_share_delta": {"candidate_id": "float"}
+        }
+      },
+      "pool_stats": {
+        "provider": "string",
+        "model": "string",
+        "cache_hits": "int",
+        "cache_misses": "int",
+        "total_calls": "int",
+        "n_keys": "int",
+        "cache_hit_rate": "float 0..1",
+        "per_key": [{"key_index": "int", "current_rpm": "int", "limit_rpm": "int", "total_calls": "int", "total_429": "int"}]
+      },
+      "voter_stats": {
+        "calls": "int",
+        "parse_fail": "int",
+        "abstain": "int",
+        "mean_latency_ms": "float",
+        "parse_fail_rate": "float 0..1",
+        "abstain_rate": "float 0..1",
+        "calls_by_model": {"routing_bucket": "int"}
+      },
+      "official_poll_validation": {
+        "target_series": "poll_consensus_daily|scenario_fallback_v1|prediction_only|counterfactual_prediction|missing|missing_candidate_overlap|error",
+        "as_of_date": "ISO date|null",
+        "method_version": "weighted_v1|scenario_fallback_v1|not_applicable|null",
+        "cutoff_ts": "ISO datetime",
+        "source_poll_ids": ["string"],
+        "poll_targets_visible_to_agents": "bool|null",
+        "prediction_only": "bool|null",
+        "counterfactual_prediction": "bool|null",
+        "reason": "string|null",
+        "intervention_id": "string|null",
+        "base_region_id": "string|null",
+        "calibration_profile": "string|null",
+        "frozen_params": "bool|null",
+        "metrics": {
+          "mae": "float|null",
+          "rmse": "float|null",
+          "margin_error": "float|null",
+          "leader_match": "bool|null"
+        },
+        "by_candidate": {
+          "candidate_id": {
+            "simulated_share": "float|null",
+            "official_consensus": "float|null",
+            "error": "float|null"
+          }
+        }
+      }
+    }
+  },
+  "result_index_path": "_workspace/snapshots/results_index.json",
+  "result_dir": "_workspace/snapshots/results",
+  "_filled_by": "sim-engineer",
+  "_status": "skeleton"
+}

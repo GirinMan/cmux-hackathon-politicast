@@ -1,0 +1,154 @@
+{
+  "regions": {
+    "seoul_mayor": {
+      "n": 50,
+      "waves": {
+        "t0_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 50
+        },
+        "t1_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 50
+        },
+        "t2_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 50
+        },
+        "t3_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 50
+        },
+        "t4_secret_ballot": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 50
+        }
+      },
+      "system_prompt_distinct": 50,
+      "distinct_pairs_total_across_waves": 250,
+      "total_voter_calls_expected": 250,
+      "pair_collision_rate": 0.0
+    },
+    "busan_buk_gap": {
+      "n": 35,
+      "waves": {
+        "t0_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 35
+        },
+        "t1_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 35
+        },
+        "t2_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 35
+        },
+        "t3_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 35
+        },
+        "t4_secret_ballot": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 35
+        }
+      },
+      "system_prompt_distinct": 35,
+      "distinct_pairs_total_across_waves": 175,
+      "total_voter_calls_expected": 175,
+      "pair_collision_rate": 0.0
+    },
+    "daegu_dalseo_gap": {
+      "n": 35,
+      "waves": {
+        "t0_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 35
+        },
+        "t1_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 35
+        },
+        "t2_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 35
+        },
+        "t3_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 35
+        },
+        "t4_secret_ballot": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 35
+        }
+      },
+      "system_prompt_distinct": 35,
+      "distinct_pairs_total_across_waves": 175,
+      "total_voter_calls_expected": 175,
+      "pair_collision_rate": 0.0
+    },
+    "gwangju_mayor": {
+      "n": 25,
+      "waves": {
+        "t0_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 25
+        },
+        "t1_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 25
+        },
+        "t2_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 25
+        },
+        "t3_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 25
+        },
+        "t4_secret_ballot": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 25
+        }
+      },
+      "system_prompt_distinct": 25,
+      "distinct_pairs_total_across_waves": 125,
+      "total_voter_calls_expected": 125,
+      "pair_collision_rate": 0.0
+    },
+    "daegu_mayor": {
+      "n": 25,
+      "waves": {
+        "t0_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 25
+        },
+        "t1_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 25
+        },
+        "t2_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 25
+        },
+        "t3_poll_response": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 25
+        },
+        "t4_secret_ballot": {
+          "distinct_user_prompts": 1,
+          "distinct_pairs_in_wave": 25
+        }
+      },
+      "system_prompt_distinct": 25,
+      "distinct_pairs_total_across_waves": 125,
+      "total_voter_calls_expected": 125,
+      "pair_collision_rate": 0.0
+    }
+  },
+  "summary": {
+    "all_5_region_total_voter_calls_expected_at_n_above": 850,
+    "all_5_region_distinct_pairs": 850,
+    "interpretation": "If distinct_pairs == total_voter_calls_expected for every region, system_prompt+user_prompt is unique per voter call → cache hits CANNOT come from prompt collision. Hits must come from inter-region overlap or pool counter bug."
+  }
+}

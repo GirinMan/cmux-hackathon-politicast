@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-04-26T14:25:22+09:00",
+  "method_version": "weighted_v1",
+  "half_life_days": 7,
+  "raw_poll_result_inserts": 10,
+  "consensus_rows": 57,
+  "regions": {
+    "seoul_mayor": {
+      "contest_id": "seoul_mayor_2026",
+      "n_polls_with_shares": 4,
+      "n_candidates_with_shares": 2,
+      "as_of_window": [
+        "2026-04-12",
+        "2026-04-26"
+      ],
+      "as_of_dates": 15
+    },
+    "daegu_mayor": {
+      "contest_id": "daegu_mayor_2026",
+      "n_polls_with_shares": 3,
+      "n_candidates_with_shares": 3,
+      "as_of_window": [
+        "2026-04-12",
+        "2026-04-26"
+      ],
+      "as_of_dates": 15
+    },
+    "busan_buk_gap": {
+      "contest_id": "busan_buk_gap_2026",
+      "n_polls_with_shares": 3,
+      "n_candidates_with_shares": 3,
+      "as_of_window": [
+        "2026-04-12",
+        "2026-04-26"
+      ],
+      "as_of_dates": 15
+    },
+    "gwangju_mayor": {
+      "n_polls_with_shares": 0,
+      "as_of_dates": 0
+    },
+    "daegu_dalseo_gap": {
+      "n_polls_with_shares": 0,
+      "as_of_dates": 0
+    }
+  },
+  "curated_sources": [
+    {
+      "poll_id": "nesdc-16200",
+      "region_id": "seoul_mayor",
+      "source_note": "KSOI/CBS 2026-04-22~23 n=1001; 정원오 45.6 / 오세훈 35.4 (digitaltimes/munhwa/hankookilbo coverage)"
+    },
+    {
+      "poll_id": "nesdc-16198",
+      "region_id": "seoul_mayor",
+      "source_note": "조원씨앤아이/스트레이트뉴스 2026-04-20~21 n=802; 양자대결 정원오 49.7 / 오세훈 35.9 (munhwa)"
+    },
+    {
+      "poll_id": "nesdc-16158",
+      "region_id": "daegu_mayor",
+      "source_note": "Ace Research/대구MBC 2026-04-18~19 n=1002; 김부겸 45.3 / 이진숙 17.2 / 추경호 16.2 / 주호영 7.4 / 유영하 5.4. 이진숙·주호영 unmapped to scenario."
+    },
+    {
+      "poll_id": "nesdc-16169",
+      "region_id": "busan_buk_gap",
+      "source_note": "KOPRA/인싸잇 2026-04-19~20 n=505; 하정우 31 / 한동훈 26 / 박민식 21 / 이영풍 5. ±4.4pp. (mediawatch/dt/daum)"
+    }
+  ]
+}

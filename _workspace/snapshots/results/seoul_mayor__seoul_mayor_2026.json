@@ -1,0 +1,898 @@
+{
+  "scenario_id": "seoul_mayor_2026",
+  "region_id": "seoul_mayor",
+  "contest_id": "seoul_mayor_2026",
+  "timestep_count": 1,
+  "persona_n": 200,
+  "candidates": [
+    {
+      "id": "c_seoul_dpk",
+      "name": "정원오",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_seoul_ppp",
+      "name": "오세훈",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_seoul_rebuild",
+      "name": "한민수",
+      "party": "p_rebuild"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "c_seoul_dpk": 0.8693467336683417,
+        "c_seoul_ppp": 0.1306532663316583,
+        "c_seoul_rebuild": 0.0
+      },
+      "turnout_intent": 0.995,
+      "consensus_var": 0.14650022866987084
+    }
+  ],
+  "final_outcome": {
+    "turnout": 0.995,
+    "vote_share_by_candidate": {
+      "c_seoul_dpk": 0.9447236180904522,
+      "c_seoul_ppp": 0.05527638190954774,
+      "c_seoul_rebuild": 0.0
+    },
+    "winner": "c_seoul_dpk",
+    "n_responses": 200,
+    "n_abstain": 1
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "50s": {
+        "c_seoul_dpk": 1.0
+      },
+      "30s": {
+        "c_seoul_dpk": 1.0
+      },
+      "60s+": {
+        "c_seoul_dpk": 0.8305084745762712,
+        "c_seoul_ppp": 0.1694915254237288
+      },
+      "40s": {
+        "c_seoul_dpk": 0.972972972972973,
+        "c_seoul_ppp": 0.02702702702702703
+      },
+      "20s": {
+        "c_seoul_dpk": 0.9777777777777777
+      }
+    },
+    "by_education": {
+      "고등학교": {
+        "c_seoul_dpk": 0.9411764705882353,
+        "c_seoul_ppp": 0.058823529411764705
+      },
+      "4년제 대학교": {
+        "c_seoul_dpk": 0.9722222222222222,
+        "c_seoul_ppp": 0.027777777777777776
+      },
+      "초등학교": {
+        "c_seoul_dpk": 0.75,
+        "c_seoul_ppp": 0.25
+      },
+      "2~3년제 전문대학": {
+        "c_seoul_dpk": 0.967741935483871
+      },
+      "중학교": {
+        "c_seoul_dpk": 0.8333333333333334,
+        "c_seoul_ppp": 0.16666666666666666
+      },
+      "대학원": {
+        "c_seoul_dpk": 0.9523809523809523,
+        "c_seoul_ppp": 0.047619047619047616
+      },
+      "무학": {
+        "c_seoul_dpk": 1.0
+      }
+    },
+    "by_district": {
+      "서울-종로구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-강남구": {
+        "c_seoul_dpk": 0.8461538461538461,
+        "c_seoul_ppp": 0.15384615384615385
+      },
+      "서울-노원구": {
+        "c_seoul_dpk": 0.8571428571428571,
+        "c_seoul_ppp": 0.14285714285714285
+      },
+      "서울-은평구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-구로구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-영등포구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-강북구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-관악구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-성북구": {
+        "c_seoul_dpk": 0.8571428571428571,
+        "c_seoul_ppp": 0.07142857142857142
+      },
+      "서울-송파구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-도봉구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-서초구": {
+        "c_seoul_dpk": 0.8571428571428571,
+        "c_seoul_ppp": 0.14285714285714285
+      },
+      "서울-마포구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-양천구": {
+        "c_seoul_ppp": 0.125,
+        "c_seoul_dpk": 0.875
+      },
+      "서울-성동구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-강서구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-중구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-동작구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-강동구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-금천구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-서대문구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-중랑구": {
+        "c_seoul_dpk": 0.9090909090909091,
+        "c_seoul_ppp": 0.09090909090909091
+      },
+      "서울-용산구": {
+        "c_seoul_dpk": 0.8333333333333334,
+        "c_seoul_ppp": 0.16666666666666666
+      },
+      "서울-광진구": {
+        "c_seoul_dpk": 0.75,
+        "c_seoul_ppp": 0.25
+      },
+      "서울-동대문구": {
+        "c_seoul_dpk": 1.0
+      }
+    }
+  },
+  "virtual_interviews": [
+    {
+      "persona_id": "8642d0146a084256b320199505bc50f9",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "오랜 현장 노동자로 살며 물가 상승과 경제적 어려움을 피부로 느끼고 있는데, 이번 정권의 실정에 대한 심판론과 정원오 후보의 실질적인 생활 밀착형 복지 공약이 더 신뢰가 갑니다.",
+      "key_factors": [
+        "정권심판론에 대한 공감",
+        "실무 행정 경험을 강조한 복지 정책",
+        "생활 안정화에 대한 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "6b19edc0bf0a40ee9bf28e5f3339edcc",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "성동구청장으로서 입증된 실무 행정 능력과 아이를 키우는 입장에서 체감되는 현실적인 복지 정책이 신뢰를 줍니다.",
+      "key_factors": [
+        "성동구 행정 성과 기반의 실무 능력",
+        "신청 없는 복지 및 효율적인 행정 정책",
+        "정권심판론에 대한 공감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "7736731c6edf42aeab1aad6bfef09db7",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "평생 가계부를 써온 사람으로서, 실무 경험이 풍부하고 생활 밀착형 복지를 내세운 후보가 서민들의 살림에 더 실질적인 도움을 줄 것 같아 마음이 기웁니다.",
+      "key_factors": [
+        "성동구청장으로서 보여준 지방행정 실무 능력",
+        "기본사회 서울 등 서민 경제를 위한 공약",
+        "현 정권에 대한 실망감과 교체 여론"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "544adbe86bfd4b2e88a5dc9a55eca7ee",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "구청장 시절의 실무 역량과 기본사회 공약이 현재 살림을 꾸리는 입장에서 보다 실질적인 도움과 변화를 줄 것으로 기대됩니다.",
+      "key_factors": [
+        "구청장 3선 실무 경험",
+        "기본사회 서울 공약",
+        "정권심판론에 대한 공감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "ceb0bdf1c82242b8a3343971f6c2340a",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "고학력 무직자로서 정체된 현실과 사회적 무력감을 느끼는 가운데, 현 정권의 실정에 대한 심판과 실질적인 복지 정책인 '기본사회 서울'에 더 큰 매력을 느낍니다.",
+      "key_factors": [
+        "정권심판론에 대한 공감",
+        "실질적인 복지 정책(기본사회 서울)",
+        "기존 행정의 무능함에 대한 변화 요구"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "bde805bdd59f4635bfa5e67dab295506",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "변호사로서 논리적 검증을 중시하는데, 정원오 후보의 행정 실무 경험과 데이터 기반의 AI 행정 공약이 서울의 복잡한 현안을 해결할 실질적인 대안으로 느껴집니다.",
+      "key_factors": [
+        "지방행정 실무 성과와 전문성",
+        "데이터 기반의 AI 행정 시스템 도입",
+        "현재 정권에 대한 심판론적 정서"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "7c6047b333f74457898930929cade131",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "정권 심판론이 강하게 작용하는 시기에 검증된 실무 능력을 갖춘 정원오 후보의 행정 혁신 공약이 개발자로서의 실리적이고 효율적인 가치관과 부합함.",
+      "key_factors": [
+        "정권 심판 정서",
+        "실무 중심의 행정 효율성",
+        "AI 행정 및 신청 없는 복지 공약"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "3a15f19026b448cf993ef234a2a8e912",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "오랜 상담원 생활로 서민의 고충을 잘 아는 입장에서, 성동구청장으로서 행정 실무를 입증했고 기본사회 공약을 내세운 정원오 후보가 우리 같은 평범한 시민의 삶을 더 살뜰히 챙겨줄 것 같아서 선택했습니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "기본사회 서울 공약",
+        "정권 심판론"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "1debda9f781c473c9801f4b3fd0519ce",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랫동안 서초에서 살며 정권 심판보다는 익숙한 시정의 연속성과 내 집 값, 동네 재개발 같은 실질적인 변화를 더 중요하게 생각합니다.",
+      "key_factors": [
+        "현 시정 연속성",
+        "재개발 및 규제 완화",
+        "70대 이상 연령층의 보수적 성향"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "dc256b3923bc4a8691a5589ec67d7ca0",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "현장에서 복잡한 행정 처리에 피로감을 느끼는 입장에서, 신청 없이 알아서 챙겨주는 정원오 후보의 AI 기반 행정 효율화 공약이 실질적으로 와닿았습니다.",
+      "key_factors": [
+        "AI 시민주권 행정 및 행정 자동화",
+        "정권 심판론에 따른 변화 필요성",
+        "실무 중심의 행정 경험"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "7ae89082a0d6475fa60f1de855bbb76e",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "40대 가장으로서 현 정권의 무능에 답답함을 느끼고 있으며, 구청장으로서 실무 능력을 보여준 정원오 후보의 생활 밀착형 정책에 더 신뢰가 갑니다.",
+      "key_factors": [
+        "정권 심판 정서",
+        "40대 연령층의 지지 성향",
+        "생활 밀착형 복지 정책"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "fd509b7a5f074d4f80fb0c9e1b997269",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "강남에 거주하지만, 최근 실장직 준비와 부모님 부양 등으로 행정 서비스와 복지 체계의 실질적인 개선을 갈망하고 있어 정원오 후보의 실무 중심 행정에 더 기대가 큽니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "복지 체계 개선 공약",
+        "정권심판론에 대한 공감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "e30ce9468ea048c19d03764f21992248",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "지방행정 실무 능력을 검증받은 후보의 AI 행정 공약이 효율성을 중시하는 제 직업적 가치관과 부합하며, 현 정부와 여당의 무능함에 대한 피로감이 큽니다.",
+      "key_factors": [
+        "지방행정 경험을 통한 실무 역량",
+        "AI 기반 행정 혁신 공약",
+        "현 정권 심판 정서"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "a8f6bacd5ee14ec48463f28d750a02f6",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "행정학을 공부한 지식인으로서 실질적인 구정 경험을 갖추고 행정의 효율성을 강조하는 정원오 후보의 실무 능력과 변화에 대한 열망이 더 신뢰가 갑니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "행정 효율성 및 복지 개선 공약",
+        "정권 심판론에 대한 공감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "986e5e63b9014ffc9afd76d95e6a0b43",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "사무직으로서 행정의 효율성을 중시하는데, 성동구청장 시절 실무 능력이 검증된 정원오 후보의 행정 혁신 공약이 무능한 중앙정부와 대비되어 신뢰가 갑니다.",
+      "key_factors": [
+        "정원오의 검증된 실무 행정 능력",
+        "현 정권 심판에 대한 공감대",
+        "40대 기혼 여성의 실질적 정책 체감도"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "adb1018a4588468cb777a492ce932a0b",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "고된 노동을 하며 가정을 지키는 입장에서, 피부에 와닿는 실질적인 복지와 행정 혁신을 강조하는 정원오 후보의 '기본사회' 공약이 더 신뢰가 갑니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "기본사회 복지 공약",
+        "정권 심판 여론"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "be2fa946212c400a942ddcd59eed0f13",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "건설 기술자로서 현장의 실무 능력을 중시하는데, 정원오 후보의 행정 실무 경험과 문제 해결 방식이 현 시정의 무능함을 바로잡을 적임자라 판단했습니다.",
+      "key_factors": [
+        "실무 행정 경험",
+        "정권 심판론",
+        "기본사회 서울 공약"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "00d3334e66e1424ea911677bd5556050",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "40대 가장이자 직장인으로서 실질적인 행정 효율성과 민생 중심의 복지 정책을 내건 정원오 후보의 실무 역량이 더욱 신뢰가 갑니다.",
+      "key_factors": [
+        "40대 남성층의 민주당 지지 성향",
+        "지방행정 실무 및 복지 효율성 기대",
+        "현 정권에 대한 부정적 여론"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "30dcff7b8c7246ddad6a3cc78f1eb989",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "구청장 시절부터 행정을 빈틈없이 챙기며 실무 능력을 증명한 사람에게 서울의 살림도 맡겨보고 싶습니다.",
+      "key_factors": [
+        "구청장 3선 실무 행정 경험",
+        "기본사회 서울 복지 공약",
+        "현 정권 심판 정서"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "1e99ed31a3284372997ba5ea59e68e4b",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "청년 구직자 입장에서 실질적인 행정 경험을 바탕으로 기본사회와 복지 정책을 약속한 정원오 후보가 더 체감되는 공약을 제시한다고 판단했습니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "기본사회 서울 공약",
+        "정권심판 프레임"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "eddc1f6ec7a040f0b22609e9a0345323",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "현장의 안전을 책임지는 사람으로서, 지금의 답답한 물가와 정권의 무능함을 보며 이제는 서울 행정도 실무 경험이 풍부하고 시민 피부에 와닿는 복지를 챙길 사람이 필요하다고 느꼈습니다.",
+      "key_factors": [
+        "정권심판 정서",
+        "실무 중심의 행정 능력",
+        "생활 밀착형 기본사회 공약"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "c7bd97edd8cc408b8f0e9dc77e271180",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "행정 전문가로서 기본사회 서울 공약이 보여준 구체성과 현재 정부에 대한 실망감이 투표 결정을 이끌었습니다.",
+      "key_factors": [
+        "정권심판론의 확산",
+        "기본사회 및 AI 행정 공약의 실현 가능성",
+        "지방행정 실무 경험에 대한 신뢰"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "fa24a526f167419c8f48662a08e76bb2",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "구로구에서 살림을 도맡아 하는 사람으로서, 말만 앞서는 것보다 실질적인 행정 경험으로 복지 체계를 확실히 챙기는 정원오 후보의 실무 능력이 더 믿음직스럽기 때문입니다.",
+      "key_factors": [
+        "성동구청장으로서 입증된 실무 행정 능력",
+        "기본사회 서울을 통한 확실한 복지 체감",
+        "현 정권에 대한 실망감과 교체 필요성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "9ccaf0fa00ee4a19af5784142de65b2e",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "청소 노동자로서 실질적인 삶의 개선을 위해 '신청 없는 복지'와 '기본사회 서울' 공약이 내 현실에 더 큰 도움이 될 것이라 기대합니다.",
+      "key_factors": [
+        "기본사회 서울 복지 공약",
+        "성동구청장으로서의 행정 실무 능력",
+        "현 정권에 대한 심판 심리"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "a3f35fea7ad14d5ba25f55520fdbc10e",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "전화 상담원으로 일하며 겪는 감정 노동과 고물가 속에서 실질적인 복지 체감도를 높일 수 있는 정원오 후보의 '신청 없는 복지'와 '기본사회 서울' 공약이 더 와닿았습니다.",
+      "key_factors": [
+        "복지 정책의 실효성과 접근성",
+        "지방행정 실무 경험에 대한 기대",
+        "정권심판론에 대한 공감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "666286604e3a4c22a687c0b689906f68",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "오랜 기간 정체된 생활 속에서 무능함이 느껴지는 현 시정을 교체하고, 실무 행정 경험을 갖춘 정원오 후보의 복지 공약이 현실적인 도움이 될 것이라 기대합니다.",
+      "key_factors": [
+        "현 정권 심판 심리",
+        "기본사회 서울 복지 공약",
+        "구청장 3선 실무 행정 능력"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "0e58309578d041669a904646824081dc",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "평생을 무거운 주거 문제로 고민해온 입장에서, 실무 능력이 검증된 정원오 후보의 생활 밀착형 복지 공약이 노년의 삶에 더 실질적인 도움을 줄 것 같아 마음이 기웁니다.",
+      "key_factors": [
+        "구청장 3선 실무 경험",
+        "기본사회 복지 공약",
+        "정권심판 여론 확산"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "7550679226b348d183253ccfdbc561a5",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "평생 재봉틀 돌리며 성실히 살아온 사람으로서, 화려한 변화보다는 익숙하고 안정적인 행정을 이어가는 후보에게 마음이 더 갑니다.",
+      "key_factors": [
+        "현 시정의 연속성",
+        "익숙한 인물에 대한 신뢰",
+        "생활 안정에 대한 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "121a5d0d6f424ce5b265498e434ba0be",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "40대 가장으로서 현 정권에 대한 심판 심리와 실질적인 생활 밀착형 행정 경험을 강조한 정원오 후보의 공약이 더 신뢰가 갑니다.",
+      "key_factors": [
+        "정권심판론",
+        "40대 연령층의 정치 성향",
+        "실무 행정 경험에 대한 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "5a68b19231df410f991cb166fdb558cd",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "구청장 시절 보여준 실무적인 행정 능력과 '기본사회' 공약이 취업 준비와 생활 안정에 관심이 많은 제 상황에 더 현실적인 도움을 줄 것으로 기대됩니다.",
+      "key_factors": [
+        "성동구청장으로서 검증된 실무 행정 경험",
+        "기본사회 공약의 경제적 안정 기대감",
+        "현 정권에 대한 심판 심리"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "255b5662be714ff8946526153ab22382",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "취업 준비생으로서 실무 경험이 풍부하고 실질적인 복지 정책을 내세운 정원오 후보의 '기본사회 서울' 공약이 현재의 막막한 상황에 더 큰 희망을 줍니다.",
+      "key_factors": [
+        "정권심판 여론",
+        "기본사회 서울 복지 공약",
+        "실무 행정 경험에 대한 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "9b876059d6d04e768f111aa70e2911f2",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "학예사로서 예산의 효율적 집행과 생활 밀착형 행정을 중요시하는데, 정원오 후보의 실무 경험과 '신청 없는 복지' 정책이 육아와 가사를 병행하는 워킹맘의 삶에 더 실질적인 도움이 될 것이라 판단했습니다.",
+      "key_factors": [
+        "구청장 시절 증명된 행정 실무 능력",
+        "기본사회 서울을 통한 육아 복지 강화",
+        "현 정권 심판론에 대한 공감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "4003aa56e6f9419690910a32ac6dcf48",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "성동구청장으로서 현장에서 발로 뛰며 실무 능력을 증명한 정원오 후보가 노인 일자리 등 현실적인 민생 해결에 더 적합해 보이기 때문입니다.",
+      "key_factors": [
+        "구청장 3선 실무 경험",
+        "생활밀착형 복지 정책",
+        "현 정권에 대한 실망감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "08f7995665ec4d6199b47ead3a0d636e",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "평생 청소일 하며 힘들게 살아왔는데, 복지를 직접 챙겨주고 행정을 살뜰히 하는 사람을 뽑아야 살림이 조금이라도 나아질 것 같아서 마음이 기웁니다.",
+      "key_factors": [
+        "실무 경험과 기본사회 공약",
+        "생활고를 고려한 민생 정치",
+        "현 정부·여당에 대한 실망감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "24cefb1217d945f4977de8a6335cd7bc",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "혼자 사는 노인으로서 실질적인 복지 혜택과 기본 사회에 대한 기대를 정원오 후보의 실무 경험과 함께 높게 평가합니다.",
+      "key_factors": [
+        "기본사회 서울 복지 공약",
+        "성동구청장 시절의 실무 역량",
+        "정권심판 여론과 변화의 필요성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "a3ff27561c0647bfae94da570b2e5001",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "평생 공장에서 성실히 일하며 살아왔는데, 최근 정권과 여당의 모습이 실망스럽고 서민의 살림을 제대로 돌보지 않는 것 같아 행정 실무 경험이 검증된 후보를 선택했습니다.",
+      "key_factors": [
+        "정권심판론",
+        "지방행정 실무 능력",
+        "민생 정책 우선"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "f0c39ffe041f468a9ddae43c55889b7b",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "온라인 쇼핑몰 운영자로서 현 정부의 실정과 경기 침체에 피로감을 느끼며, 실무 능력이 검증된 후보의 변화된 행정 서비스에 기대를 걸고 있습니다.",
+      "key_factors": [
+        "정권 심판론",
+        "행정 실무 능력",
+        "기본사회 공약에 대한 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "0fd06701d64d4fefbc69694fb2cebb2f",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "청년으로서 자립을 꿈꾸는 입장에서 현 정부와 서울시의 정체된 민생 정책보다는, 실무 행정 경험을 바탕으로 실질적인 기본사회와 복지 효율화를 제시한 정원오 후보에게 더 큰 기대가 갑니다.",
+      "key_factors": [
+        "부동산 및 주거 자립에 대한 갈증",
+        "현 정부·서울시 시정에 대한 심판 심리",
+        "정원오 후보의 실무 행정 및 복지 공약 실현 가능성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "c1ecef4fc3fd4fff8d52fb6c5f35cd68",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "1인 가구로서 실질적인 삶의 질을 높여줄 기본사회 공약과 행정 경험이 신뢰가 가고, 정권 심판의 필요성에 공감합니다.",
+      "key_factors": [
+        "기본사회 서울 공약",
+        "지방행정 실무 경험",
+        "정권심판론"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "a178b39b14024f549be4a88f89bf639b",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "꼼꼼한 행정 관리와 시스템적 복지를 강조하는 정원오 후보의 '신청 없는 복지'와 실무 경험이 체계적인 삶을 지향하는 제 가치관과 일치합니다.",
+      "key_factors": [
+        "AI 시민주권 행정 및 체계적인 복지 정책",
+        "지방행정 실무 경험에 대한 신뢰",
+        "현 정권 심판 여론"
+      ],
+      "timestep": 1
+    }
+  ],
+  "kg_events_used": [
+    {
+      "event_id": "1",
+      "type": "PollPublication",
+      "target": "c_daegu_ppp_choo",
+      "timestep": 0
+    },
+    {
+      "event_id": "2",
+      "type": "PollPublication",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "3",
+      "type": "PollPublication",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_lower_voting_age__seoul_mayor",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_min_park_revolt__seoul_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_yoon_again__seoul_mayor",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_yt_fake__seoul_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_jwo_announce",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_jwo_culture_pledge",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_jwo_gangnam_pledge",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_oh_announce",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_oh_minsaeng",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_oh_realestate_clash",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_ppp_pick",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_us_visit__seoul_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_ppp_lowest_15pct__seoul_mayor",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_seoul_dpk_pick",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 1
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "cohort_prior",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-26T07:04:17.017378+00:00",
+    "policy_version": "v2.2_kg_ab",
+    "env": "dev",
+    "llm_cache_enabled": false,
+    "final_poll_feedback_enabled": false,
+    "voter_stats": {
+      "calls": 548,
+      "parse_fail": 0,
+      "abstain": 2,
+      "latency_ms_sum": 1365195.8087129935,
+      "calls_by_model": {
+        "nano": 317,
+        "mini": 179,
+        "sonnet": 52
+      },
+      "mean_latency_ms": 2491.2,
+      "parse_fail_rate": 0.0,
+      "abstain_rate": 0.0036
+    },
+    "pool_stats": {
+      "provider": "gemini",
+      "model": "gemini/gemini-3.1-flash-lite-preview",
+      "per_key": [
+        {
+          "key_index": 0,
+          "current_rpm": 69,
+          "limit_rpm": 500,
+          "total_calls": 328,
+          "total_429": 0
+        },
+        {
+          "key_index": 1,
+          "current_rpm": 68,
+          "limit_rpm": 500,
+          "total_calls": 327,
+          "total_429": 0
+        },
+        {
+          "key_index": 2,
+          "current_rpm": 68,
+          "limit_rpm": 500,
+          "total_calls": 0,
+          "total_429": 0
+        },
+        {
+          "key_index": 3,
+          "current_rpm": 69,
+          "limit_rpm": 500,
+          "total_calls": 328,
+          "total_429": 0
+        },
+        {
+          "key_index": 4,
+          "current_rpm": 69,
+          "limit_rpm": 500,
+          "total_calls": 328,
+          "total_429": 0
+        }
+      ],
+      "cache_hits": 0,
+      "cache_misses": 1641,
+      "total_calls": 1641,
+      "n_keys": 5,
+      "iam_mode": false,
+      "cost_usd": {
+        "openai": 0.0,
+        "anthropic": 0.0,
+        "gemini": 0.0,
+        "vertex_ai": 0.0,
+        "azure": 0.0,
+        "bedrock": 0.0,
+        "groq": 0.0,
+        "openrouter": 0.0
+      },
+      "cost_thresholds": {
+        "openai": 50.0,
+        "anthropic": 20.0,
+        "gemini": 5.0,
+        "vertex_ai": 5.0,
+        "azure": 50.0,
+        "bedrock": 20.0,
+        "groq": 50.0,
+        "openrouter": 50.0
+      },
+      "cost_tracking_enabled": false,
+      "cache_hit_rate": 0.0
+    },
+    "actual_keys_used": 5,
+    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
+    "effective_provider": "gemini",
+    "official_poll_validation": {
+      "target_series": "poll_consensus_daily",
+      "as_of_date": "2026-04-26",
+      "method_version": "weighted_v1",
+      "cutoff_ts": "2026-04-26T00:00:00+09:00",
+      "source_poll_ids": [
+        "nesdc-16198",
+        "nesdc-16200"
+      ],
+      "metrics": {
+        "mae": 0.3745,
+        "rmse": 0.3745,
+        "margin_error": 0.7491,
+        "leader_match": true
+      },
+      "by_candidate": {
+        "c_seoul_dpk": {
+          "simulated_share": 0.9447,
+          "official_consensus": 0.5702,
+          "error": 0.3745
+        },
+        "c_seoul_ppp": {
+          "simulated_share": 0.0553,
+          "official_consensus": 0.4298,
+          "error": -0.3745
+        }
+      }
+    },
+    "finished_at": "2026-04-26T07:08:01.635972+00:00",
+    "wall_seconds": 224.62
+  }
+}

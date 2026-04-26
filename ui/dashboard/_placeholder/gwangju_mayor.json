@@ -1,0 +1,57 @@
+{
+  "_placeholder": true,
+  "scenario_id": "gwangju_baseline",
+  "region_id": "gwangju_mayor",
+  "contest_id": "gwangju_mayor_2026",
+  "timestep_count": 4,
+  "persona_n": 150,
+  "candidates": [
+    {"id": "C_G_A", "name": "후보 A", "party": "더불어민주당"},
+    {"id": "C_G_B", "name": "후보 B", "party": "국민의힘"},
+    {"id": "C_G_C", "name": "후보 C", "party": "진보당"}
+  ],
+  "poll_trajectory": [
+    {"timestep": 0, "date": "2026-03-15", "support_by_candidate": {"C_G_A": 0.62, "C_G_B": 0.20, "C_G_C": 0.10}, "turnout_intent": 0.58, "consensus_var": 0.014},
+    {"timestep": 1, "date": "2026-03-29", "support_by_candidate": {"C_G_A": 0.64, "C_G_B": 0.19, "C_G_C": 0.11}, "turnout_intent": 0.60, "consensus_var": 0.012},
+    {"timestep": 2, "date": "2026-04-12", "support_by_candidate": {"C_G_A": 0.66, "C_G_B": 0.18, "C_G_C": 0.10}, "turnout_intent": 0.62, "consensus_var": 0.011},
+    {"timestep": 3, "date": "2026-04-26", "support_by_candidate": {"C_G_A": 0.68, "C_G_B": 0.17, "C_G_C": 0.10}, "turnout_intent": 0.64, "consensus_var": 0.010}
+  ],
+  "final_outcome": {
+    "turnout": 0.64,
+    "vote_share_by_candidate": {"C_G_A": 0.69, "C_G_B": 0.18, "C_G_C": 0.10, "abstain": 0.03},
+    "winner": "C_G_A"
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "20s": {"C_G_A": 0.66, "C_G_B": 0.18, "C_G_C": 0.13, "abstain": 0.03},
+      "30s": {"C_G_A": 0.68, "C_G_B": 0.17, "C_G_C": 0.12, "abstain": 0.03},
+      "40s": {"C_G_A": 0.72, "C_G_B": 0.18, "C_G_C": 0.07, "abstain": 0.03},
+      "50s": {"C_G_A": 0.70, "C_G_B": 0.20, "C_G_C": 0.07, "abstain": 0.03},
+      "60+": {"C_G_A": 0.66, "C_G_B": 0.25, "C_G_C": 0.05, "abstain": 0.04}
+    },
+    "by_education": {
+      "고졸 이하": {"C_G_A": 0.65, "C_G_B": 0.22, "C_G_C": 0.08, "abstain": 0.05},
+      "전문대졸": {"C_G_A": 0.68, "C_G_B": 0.19, "C_G_C": 0.10, "abstain": 0.03},
+      "대졸": {"C_G_A": 0.71, "C_G_B": 0.16, "C_G_C": 0.10, "abstain": 0.03},
+      "대학원졸": {"C_G_A": 0.72, "C_G_B": 0.14, "C_G_C": 0.11, "abstain": 0.03}
+    },
+    "by_district": {
+      "동구": {"C_G_A": 0.70, "C_G_B": 0.18, "C_G_C": 0.09, "abstain": 0.03},
+      "서구": {"C_G_A": 0.68, "C_G_B": 0.19, "C_G_C": 0.10, "abstain": 0.03},
+      "남구": {"C_G_A": 0.69, "C_G_B": 0.18, "C_G_C": 0.10, "abstain": 0.03},
+      "북구": {"C_G_A": 0.70, "C_G_B": 0.17, "C_G_C": 0.10, "abstain": 0.03},
+      "광산구": {"C_G_A": 0.71, "C_G_B": 0.16, "C_G_C": 0.10, "abstain": 0.03}
+    }
+  },
+  "virtual_interviews": [
+    {"persona_id": "p-101", "persona_summary": "40대 공무원, 광주 서구 거주", "vote": "C_G_A", "reason": "지역 정체성과 민주화 유산을 공유하는 정당 연대", "key_factors": ["지역", "이념"], "timestep": 3},
+    {"persona_id": "p-102", "persona_summary": "20대 대학생, 광주 북구 거주", "vote": "C_G_C", "reason": "주류 진보정당의 변화 부족, 노동 의제 강조", "key_factors": ["노동", "청년"], "timestep": 3},
+    {"persona_id": "p-103", "persona_summary": "60대 자영업, 광주 동구 거주", "vote": "C_G_A", "reason": "경제 회복 공약과 지역 건설 사업 약속", "key_factors": ["경제", "지역개발"], "timestep": 3},
+    {"persona_id": "p-104", "persona_summary": "50대 보수 성향 시민, 광주 남구 거주", "vote": "C_G_B", "reason": "지역 일당우위에 대한 견제 필요성", "key_factors": ["견제", "이념"], "timestep": 3},
+    {"persona_id": "p-105", "persona_summary": "30대 직장인, 광주 광산구 거주", "vote": "C_G_A", "reason": "후보 A의 청년 주거 지원안", "key_factors": ["주거", "청년"], "timestep": 3}
+  ],
+  "kg_events_used": [
+    {"event_id": "E101", "type": "endorsement", "target": "C_G_A", "timestep": 1},
+    {"event_id": "E102", "type": "discourse", "target": "지역균형발전", "timestep": 2}
+  ]
+}

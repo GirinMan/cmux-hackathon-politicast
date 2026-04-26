@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-04-26T02:30:24.731684+00:00",
+  "provider": "gemini",
+  "model": "gemini/gemini-3-flash-preview",
+  "duration_sec": 60,
+  "n_keys": 1,
+  "per_key_rpm": [
+    48.0
+  ],
+  "total_rpm": 48.0,
+  "verdict": "same_project",
+  "raw_counts": {
+    "k0": {
+      "success": 48,
+      "rate_limited": 0,
+      "other_errors": 0
+    }
+  },
+  "heuristic_note": "verdict = same_project if total < 1.5x max_single_key, separate_project if total > 3.0x, else inconclusive."
+}

@@ -1,0 +1,822 @@
+{
+  "scenario_id": "busan_buk_gap_2026",
+  "region_id": "busan_buk_gap",
+  "contest_id": "busan_buk_gap_2026",
+  "timestep_count": 1,
+  "persona_n": 200,
+  "candidates": [
+    {
+      "id": "c_busan_dpk",
+      "name": "하정우",
+      "party": "p_indep"
+    },
+    {
+      "id": "c_busan_ppp",
+      "name": "박민식",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_busan_indep_han",
+      "name": "한동훈",
+      "party": "p_indep"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "c_busan_dpk": 0.5543478260869565,
+        "c_busan_ppp": 0.14673913043478262,
+        "c_busan_indep_han": 0.29891304347826086
+      },
+      "turnout_intent": 0.995,
+      "consensus_var": 0.028283186305398025
+    }
+  ],
+  "final_outcome": {
+    "turnout": 1,
+    "vote_share_by_candidate": {
+      "c_busan_dpk": 0.515,
+      "c_busan_ppp": 0.11,
+      "c_busan_indep_han": 0.375
+    },
+    "winner": "c_busan_dpk",
+    "n_responses": 200,
+    "n_abstain": 0
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "20s": {
+        "c_busan_indep_han": 0.36363636363636365,
+        "c_busan_dpk": 0.6363636363636364
+      },
+      "30s": {
+        "c_busan_dpk": 0.5714285714285714,
+        "c_busan_indep_han": 0.39285714285714285,
+        "c_busan_ppp": 0.03571428571428571
+      },
+      "60s+": {
+        "c_busan_indep_han": 0.7236842105263158,
+        "c_busan_ppp": 0.2631578947368421,
+        "c_busan_dpk": 0.013157894736842105
+      },
+      "40s": {
+        "c_busan_dpk": 1
+      },
+      "50s": {
+        "c_busan_dpk": 0.95,
+        "c_busan_ppp": 0.025,
+        "c_busan_indep_han": 0.025
+      }
+    },
+    "by_education": {
+      "2~3년제 전문대학": {
+        "c_busan_indep_han": 0.3488372093023256,
+        "c_busan_dpk": 0.6511627906976745
+      },
+      "4년제 대학교": {
+        "c_busan_dpk": 0.8205128205128205,
+        "c_busan_indep_han": 0.15384615384615385,
+        "c_busan_ppp": 0.02564102564102564
+      },
+      "고등학교": {
+        "c_busan_indep_han": 0.4090909090909091,
+        "c_busan_dpk": 0.5151515151515151,
+        "c_busan_ppp": 0.07575757575757576
+      },
+      "중학교": {
+        "c_busan_ppp": 0.24,
+        "c_busan_indep_han": 0.48,
+        "c_busan_dpk": 0.28
+      },
+      "무학": {
+        "c_busan_indep_han": 0.6666666666666666,
+        "c_busan_ppp": 0.3333333333333333
+      },
+      "초등학교": {
+        "c_busan_ppp": 0.42857142857142855,
+        "c_busan_indep_han": 0.5714285714285714
+      },
+      "대학원": {
+        "c_busan_dpk": 0.6666666666666666,
+        "c_busan_indep_han": 0.3333333333333333
+      }
+    },
+    "by_district": {
+      "부산-북구": {
+        "c_busan_indep_han": 0.375,
+        "c_busan_dpk": 0.515,
+        "c_busan_ppp": 0.11
+      }
+    }
+  },
+  "virtual_interviews": [
+    {
+      "persona_id": "6cdc1bb8783c4a24a0d6e67027b9dc70",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "40대 남성으로서 현 정부의 정책 방향과 AI 산업 거점 공약에 기대가 크고, 보수 진영의 내분으로 인해 정책 중심의 안정적인 선택이 필요하다고 판단했습니다.",
+      "key_factors": [
+        "40대 남성 지지층 결집",
+        "보수 진영의 분열 및 내분",
+        "북구 균형발전 및 AI 산업 공약"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "eab0b26bb6d143d09f0ec13b8478c3ac",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "행정 실무자로서 체계적인 정책 추진과 지역 발전을 이끌 수 있는 안정적인 후보가 필요하다고 판단했습니다.",
+      "key_factors": [
+        "40대 여성 유권자의 성향",
+        "보수 후보 분열에 따른 반사이익",
+        "실질적인 지역 균형 발전 공약"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "fe2cb835d79d457ca981b7ca23ae98f2",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "보수 진영이 박민식과 한동훈으로 갈라져 싸우는 동안, 묵묵히 실리적인 미래 먹거리를 제시하는 하정우 후보에게 마음이 기웁니다.",
+      "key_factors": [
+        "보수 후보 분열로 인한 반사 이익",
+        "AI 산업 유치를 통한 지역 발전 기대",
+        "이재명 정부와의 정책 연속성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "8d54360f0874482399097cf19cc0284b",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "살림을 꾸리며 실질적인 균형 발전과 지역 경제 활성화에 도움이 되는 정책을 우선적으로 고려했습니다.",
+      "key_factors": [
+        "북구 균형발전 공약",
+        "이재명 정부와의 협력 기대",
+        "보수 진영의 내분으로 인한 후보 선택의 필요성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "94d8b7ec07a34404975314708605dbda",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "오랫동안 보수를 지지해 온 입장에서 우리 지역에 새로 터를 잡고 보수 재건을 외치는 한동훈 후보에게 마음이 기웁니다.",
+      "key_factors": [
+        "보수 재건 의지",
+        "지역 전입 및 정착 진정성",
+        "박민식 후보 약세"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "552fec19fdfb499a8f70332d2b6dcc2b",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생 현장에서 거칠게 살아온 사람으로서, 보수 정당의 혼란 속에서도 확실한 자기 색깔을 보여주는 인물에게 마음이 갑니다.",
+      "key_factors": [
+        "한동훈의 부산 전입 및 독자 행보에 대한 호감",
+        "기존 보수 정당 후보들에 대한 실망과 갈등",
+        "가장으로서 책임감을 중시하는 보수적 가치관"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "8008530b83b643fbb3a15f73ebfd7d39",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "오랫동안 보수 정당을 지지해온 마음이 남아있어, 당 내부 갈등으로 약해진 국민의힘보다는 새로운 길을 택한 한동훈 후보의 결단에 마음이 갑니다.",
+      "key_factors": [
+        "한동훈 후보의 지역 전입 및 출마 결단",
+        "보수 지지층의 고착화된 정서",
+        "국민의힘 내부 갈등으로 인한 지지층 이탈"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "7fb8d86206d242a0ba86183b4b0da5d8",
+      "persona_summary": "",
+      "vote": "c_busan_ppp",
+      "reason": "우리 동네는 예부터 보수 색이 짙은 곳이고, 그래도 평생 지켜온 정당의 뿌리를 무시할 수 없어 박민식 후보를 선택했습니다.",
+      "key_factors": [
+        "보수 정당에 대한 오랜 신뢰",
+        "시장 민심의 보수적 성향",
+        "손주들의 미래를 위한 안정감 중시"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "1fa02c6b48884668a1793197b376aa71",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "보수 진영이 박민식 후보와 한동훈 전 대표로 갈라져 표가 분산되는 상황에서, 우리 동네 발전을 위해 실질적으로 힘을 쓸 수 있는 집권당 후보를 택하는 게 현실적이라 판단했습니다.",
+      "key_factors": [
+        "보수 표 분열 및 박민식-한동훈 갈등",
+        "이재명 정부와 직결된 후보의 지역 발전 기대감",
+        "북구 균형발전을 위한 실용적 선택"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "242854993524475a80363bec44828ce7",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생 보수를 지지해온 사람으로서, 보수 재건을 외치며 직접 우리 동네로 찾아온 한동훈의 결기가 믿음직스러워 그에게 힘을 실어주기로 했습니다.",
+      "key_factors": [
+        "보수 가치 회복",
+        "한동훈의 직접적인 결단과 행보",
+        "기존 정당 정치에 대한 실망"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "9fa4cf9a398148219021526af049bdf2",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "보수 정체성을 지키면서도 참신한 인물이 지역 발전을 이끌어주길 바라는 마음에서 한동훈 후보를 선택했습니다.",
+      "key_factors": [
+        "보수 결집을 위한 전략적 투표",
+        "기존 정치권의 내부 갈등에 대한 피로감",
+        "한동훈 후보의 인물 경쟁력 및 지역 전입에 따른 기대감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "06b0d9fbe99b4cf088301d6e217f6a90",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "기술자로서 실질적인 성과와 북구의 균형 발전을 책임 있게 추진할 수 있는 준비된 후보라고 판단했습니다.",
+      "key_factors": [
+        "실무 중심의 안정적인 지역 발전 공약",
+        "보수 진영의 분열로 인한 정당 기반의 투표 효율성",
+        "전문성을 중시하는 유권자의 성향과 후보의 AI 전문성 부합"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "2adff1e340444ea4a73c66def6095d2b",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "오랫동안 우리 동네에서 일하며 현장의 안정적인 변화를 원하게 되었고, 보수 진영의 분열로 인한 혼란보다는 AI 산업 거점 등 확실한 비전을 제시하는 후보가 북구 발전에 더 도움이 될 것이라 판단했습니다.",
+      "key_factors": [
+        "보수 진영의 후보 분열",
+        "지역 균형발전을 위한 미래 비전",
+        "50대 세대의 정치적 성향 및 안정 지향"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "d9728cdb003d4ee8a8e676f7e6d7fe7b",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "오랫동안 보수를 지지해온 마음이 남아있고, 한동훈 후보가 직접 우리 동네로 전입까지 오며 열심히 하는 모습에 마음이 끌립니다.",
+      "key_factors": [
+        "한동훈 후보의 지역 전입 진정성",
+        "보수 성향 결집",
+        "기존 정당에 대한 실망"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "3a40d13176ef416b9af87fdc846288a0",
+      "persona_summary": "",
+      "vote": "c_busan_ppp",
+      "reason": "평생 보수를 지지해 온 사람으로서, 갈라지는 보수 표가 안타깝지만 그래도 끝까지 당을 지켜온 후보에게 마음이 기웁니다.",
+      "key_factors": [
+        "보수 정당에 대한 오랜 신뢰",
+        "보수 표 분열에 대한 우려",
+        "동네 마당발로서의 정치적 소신"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "214f2070a9bd447f95284418f3320a9c",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "우리 동네에 직접 이사까지 와서 큰소리 내는 사람이니, 그래도 뚝심 있게 보수를 다시 세우겠다고 나선 사람한테 한번 기대를 걸어보는 게 맞지 싶어.",
+      "key_factors": [
+        "보수 재건에 대한 기대",
+        "직접 전입신고한 책임감",
+        "인물 중심의 신뢰"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "88b6126dfb26486d9976df343e47fc51",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "기술자로서 원칙과 안정성을 중시하는데, 현재 보수 진영의 분열과 내홍은 공정의 불확실성을 높인다고 판단하여 합리적이고 미래지향적인 AI 산업 공약을 내건 후보를 택했습니다.",
+      "key_factors": [
+        "보수 진영 후보 간의 갈등 및 표 분산",
+        "산업 발전 및 실용적 공약의 중요성",
+        "안정적인 지역 발전 지향"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "5ae8e839ce21410ea403239ff022d9b9",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생을 보수 정당을 지지해왔는데, 이번엔 한동훈이 직접 부산으로 들어와 보수를 재건하겠다 하니 그 기백을 믿어보고 싶습니다.",
+      "key_factors": [
+        "보수 가치관 결집",
+        "한동훈의 부산 직접 출마",
+        "기존 정당 정치에 대한 실망"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "be24f535b30a46d19a544edc5c8f4728",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "보수 진영의 분열로 인한 혼란 속에서, AI 산업 거점 등 북구의 실질적 발전과 미래 비전을 제시하는 하정우 후보의 정책이 경영학 전공자로서 효율성을 중시하는 내 성향에 더 부합한다고 판단함.",
+      "key_factors": [
+        "보수 진영 후보 분열(박민식 vs 한동훈)",
+        "지역 경제 발전을 위한 AI 산업 공약",
+        "이재명 정부와의 정책 연계성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "ba29d88f6b6145928e3970d7abd6af1a",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "전문직으로서 실용적인 변화와 보수의 재건을 기대하며, 기존 정당의 이권 다툼보다 소신 있는 행보를 보이는 후보를 선택함.",
+      "key_factors": [
+        "보수 재건에 대한 기대",
+        "기성 정당 정치에 대한 실망",
+        "개인의 판단을 중시하는 독립적 가치관"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "b0131c8c73b0484e8aec3f88d966417d",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평소 보수 성향을 가지고 있고, 한동훈이라는 인물의 무게감과 결단력이 우리 동네를 위해 더 큰 역할을 해줄 것이라는 기대감이 생깁니다.",
+      "key_factors": [
+        "한동훈의 인물 경쟁력",
+        "보수 가치 수호 기대",
+        "박민식 후보의 당내 갈등과 약세"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "2babe0a0f9e7413f8a6c07b69b4fbf4e",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생 남에게 기대지 않고 살아온 내 고집처럼, 보수 정치를 다시 세우겠다는 한동훈의 뚝심이 우리 북구에 새로운 변화를 가져올 것 같아서 믿고 찍으려 합니다.",
+      "key_factors": [
+        "보수 가치 회복",
+        "한동훈의 인물 경쟁력",
+        "보수 분열 위기 극복"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "d0c0d25795a14e5ba763a83a0c0aa242",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "오랫동안 보수를 지지해왔는데, 우리 동네로 직접 이사까지 와서 열심히 하겠다는 사람을 보니 그래도 마음이 가서 한 번 믿어보기로 했습니다.",
+      "key_factors": [
+        "보수 성향",
+        "한동훈 후보의 지역 전입",
+        "인물 중심 투표"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "f0fbed99a2c94db3aff4d411d02804c1",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "상담원으로 일하며 꼼꼼하게 살림을 꾸려온 입장에서, 우리 북구의 발전을 위해 정부와 확실히 소통하고 미래 산업을 가져올 수 있는 안정적인 후보를 선택하는 것이 가장 실질적이라 판단했습니다.",
+      "key_factors": [
+        "정부와의 원활한 소통 및 북구 발전 공약",
+        "50대 여성층의 진보 성향",
+        "보수 후보 분열에 따른 안정적 선택의 필요성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "7a97534b53a34942baa959a6303354b4",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "40대 남성으로서 실질적인 지역 발전과 AI 산업 거점 공약을 내건 하정우 후보가 현재 혼란스러운 보수 분열 상황보다 안정적인 선택지로 판단됩니다.",
+      "key_factors": [
+        "하정우 후보의 AI 산업 육성 전문성",
+        "국민의힘과 무소속 간의 보수 표 분산",
+        "40대 유권자의 이재명 정부 지지 성향 반영"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "023dcee8c998473db86eb2ced34214c4",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생 보수 정당을 지지해왔는데, 이번에 우리 동네로 직접 이사를 와서 출마까지 한다니 한번 믿어보고 힘을 실어주고 싶습니다.",
+      "key_factors": [
+        "보수 가치 수호",
+        "동네 거주 의지 확인",
+        "보수 분열에 대한 고민"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "17f2ef6d021f4eb9855db4d4321ac097",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "전세 살며 자식들 뒷바라지하느라 팍팍한 삶인데, 살림 살이가 좀 나아지려면 우리 동네를 챙겨줄 힘 있는 사람을 뽑아야 할 것 같아서요.",
+      "key_factors": [
+        "지역 균형발전 기대",
+        "생활 경제 안정 희망",
+        "보수 진영 후보 분열에 대한 피로감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "1146fe8c0b9742e6b2acd697abb28bc4",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "혼자 아이를 키우며 고단하게 살아온 입장에서, 우리 북구의 발전을 확실하게 챙겨줄 힘 있는 여당 후보의 공약이 가장 현실적으로 와닿았습니다.",
+      "key_factors": [
+        "북구 균형발전 및 지역 경제 활성화 기대",
+        "이재명 정부와 직결된 안정적인 정책 추진",
+        "보수 진영의 분열로 인한 민주당 후보의 경쟁력 우위"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "4ebd48fb0c2041258928cd3ea57f5c78",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생 보수를 지지해 온 사람으로서 우리 지역에 새로 내려와 보수를 다시 세우겠다는 한동훈 후보의 결단이 눈에 띄어 마음이 갑니다.",
+      "key_factors": [
+        "보수 가치 수호 및 재건 의지",
+        "인물 중심의 정서적 교감",
+        "보수 진영의 결집 필요성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "e396dd48a87549cbb7da8445d7bef739",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "오랫동안 보수 쪽을 응원해왔는데, 이번에 우리 동네로 직접 이사를 온 양반이 꿋꿋하게 나서는 모습이 밉지 않고 오히려 믿음이 가서 찍기로 마음먹었어.",
+      "key_factors": [
+        "보수 가치관 계승",
+        "한동훈 후보의 지역 연고(전입)",
+        "보수 정당의 내분 실망"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "164c883c59d342aeabbde520998353fa",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "장사하는 입장에서 보수층의 재건과 강한 인물에 대한 기대감이 커서, 무소속이라도 당당하게 만덕에 온 한동훈 후보에게 마음이 기웁니다.",
+      "key_factors": [
+        "한동훈 후보의 부산 전입 및 출마 결심",
+        "보수 재건에 대한 기대감",
+        "박민식 후보의 내부 갈등 및 약세"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "f2533b8bf83c4da8bf4ce1141b5d7231",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "현장에서 땀 흘려 일하는 저에게는 화려한 정치적 말싸움보다 실질적인 지역 발전과 AI 산업 등 미래 먹거리를 가져올 후보가 더 절실합니다.",
+      "key_factors": [
+        "실무 중심의 지역 경제 발전 공약",
+        "보수 진영의 내부 분열 및 후보 간 갈등",
+        "40대 연령층의 정책 지향성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "7e9e2b164e62475e97a510cb3073e41c",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생을 보수 정당을 지지해왔는데, 이번에 우리 동네로 직접 이사를 와서 출마까지 한다니 믿음이 가고 마음이 쓰여서 한동훈 후보를 찍기로 했습니다.",
+      "key_factors": [
+        "보수 성향 결집",
+        "한동훈 개인의 진정성",
+        "오랜 보수 지지 기반"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "4d2922feb778487f96e6f8b13fca2755",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "보수 진영이 박민식과 한동훈으로 나뉘어 갈등하는 동안, 안정적인 생활과 지역 발전을 이끌어 줄 실질적인 후보에게 투표하는 것이 가족을 지키는 가장이라고 판단했습니다.",
+      "key_factors": [
+        "보수 후보 분열에 따른 실망감",
+        "이재명 정부와 직결된 지역 개발 공약",
+        "가족의 미래를 위한 안정적인 선택"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "b0a1f729c67e403e91bb9fcb7b3d3147",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "평생 보수 정당을 지지해왔는데, 이번에 우리 동네로 직접 이사까지 온 사람을 그냥 지나칠 수가 없어서 마음이 끌립니다.",
+      "key_factors": [
+        "한동훈의 만덕동 전입 및 출마 진정성",
+        "보수 가치 수호",
+        "동네 주민으로서의 유대감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "bb5bf1ce4d734c6287f140c268f349d2",
+      "persona_summary": "",
+      "vote": "c_busan_indep_han",
+      "reason": "오랫동안 보수 정당을 지지해온 마음이 남아있고, 한동훈이라는 인물이 부산에 직접 와서 마음을 바꿨다고 하니 한번 믿어보고 싶은 생각이 듭니다.",
+      "key_factors": [
+        "보수 정당에 대한 오랜 신뢰",
+        "한동훈의 부산 전입과 정착 의지",
+        "박민식 후보와 당내 갈등에 대한 실망"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "10697e81602145c7ad5a9bafab1a1f70",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "AI와 디지털 콘텐츠 산업 육성이라는 공약이 제가 영상 편집을 업으로 삼으려는 관심사와 잘 맞고, 보수 진영의 분열로 인해 변화가 필요하다고 느꼈습니다.",
+      "key_factors": [
+        "AI 산업 거점 공약",
+        "보수 진영 분열",
+        "미래 성장성 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "1452676bb55045bb83e084769847c292",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "보수 진영의 분열로 혼란스러운 상황에서, 안정적인 국정 운영과 우리 지역의 실질적인 발전을 이끌 수 있는 후보에게 투표하기로 했습니다.",
+      "key_factors": [
+        "보수 진영 내 후보 간 갈등 및 표 분산",
+        "40대 연령층의 더불어민주당 지지 성향",
+        "지역 균형 발전을 위한 실무 역량 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "9c7fe0171fec401ba303967420c3ff17",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "어머니를 모시는 가장으로서 지역의 경제적 안정과 미래 산업인 AI 거점 유치를 통해 노후의 실질적인 삶의 질을 개선할 수 있는 후보를 선택했습니다.",
+      "key_factors": [
+        "AI 산업 거점 유치",
+        "지역 균형 발전",
+        "노후 대비 경제 안정"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "d4c9d6134cfc449cadb56348153ce05d",
+      "persona_summary": "",
+      "vote": "c_busan_dpk",
+      "reason": "40대 남성으로서 이재명 정부에 대한 지지가 확고하며, 보수 진영의 분열로 인해 하정우 후보가 당선 가능성이 가장 높다고 판단했습니다.",
+      "key_factors": [
+        "보수 표 분산",
+        "이재명 정부 지지",
+        "40대 남성 투표 성향"
+      ],
+      "timestep": 1
+    }
+  ],
+  "kg_events_used": [
+    {
+      "event_id": "ev_busan_jeon_resign",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_lower_voting_age__busan_buk_gap",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_min_park_revolt__busan_buk_gap",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_yoon_again__busan_buk_gap",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_busan_dpk_jcr_recruit",
+      "type": "PressConference",
+      "target": "c_busan_dpk",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_busan_dpk_postpone_proposal",
+      "type": "MediaEvent",
+      "target": "c_busan_dpk",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_busan_han_house",
+      "type": "MediaEvent",
+      "target": "c_busan_indep_han",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_busan_han_jeonip",
+      "type": "MediaEvent",
+      "target": "c_busan_indep_han",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_busan_han_relocate",
+      "type": "PressConference",
+      "target": "c_busan_indep_han",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_busan_han_signal",
+      "type": "MediaEvent",
+      "target": "c_busan_indep_han",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_busan_jeon_resign_signal",
+      "type": "MediaEvent",
+      "target": "c_busan_dpk",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_busan_park_announce",
+      "type": "PressConference",
+      "target": "c_busan_ppp",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_busan_park_post_chair_meet",
+      "type": "MediaEvent",
+      "target": "c_busan_indep_han",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_busan_pp_proxy_debate",
+      "type": "MediaEvent",
+      "target": "c_busan_ppp",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_ppp_jdh_yt_fake__busan_buk_gap",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 1
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "cohort_prior",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-26T07:04:21.422972+00:00",
+    "policy_version": "v2.2_kg_ab",
+    "env": "dev",
+    "llm_cache_enabled": false,
+    "final_poll_feedback_enabled": false,
+    "voter_stats": {
+      "calls": 535,
+      "parse_fail": 0,
+      "abstain": 16,
+      "latency_ms_sum": 1401512.8157190122,
+      "calls_by_model": {
+        "nano": 392,
+        "mini": 95,
+        "sonnet": 48
+      },
+      "mean_latency_ms": 2619.7,
+      "parse_fail_rate": 0,
+      "abstain_rate": 0.0299
+    },
+    "pool_stats": {
+      "provider": "gemini",
+      "model": "gemini/gemini-3.1-flash-lite-preview",
+      "per_key": [
+        {
+          "key_index": 0,
+          "current_rpm": 69,
+          "limit_rpm": 500,
+          "total_calls": 328,
+          "total_429": 0
+        },
+        {
+          "key_index": 1,
+          "current_rpm": 70,
+          "limit_rpm": 500,
+          "total_calls": 327,
+          "total_429": 0
+        },
+        {
+          "key_index": 2,
+          "current_rpm": 70,
+          "limit_rpm": 500,
+          "total_calls": 0,
+          "total_429": 0
+        },
+        {
+          "key_index": 3,
+          "current_rpm": 70,
+          "limit_rpm": 500,
+          "total_calls": 327,
+          "total_429": 0
+        },
+        {
+          "key_index": 4,
+          "current_rpm": 70,
+          "limit_rpm": 500,
+          "total_calls": 326,
+          "total_429": 0
+        }
+      ],
+      "cache_hits": 0,
+      "cache_misses": 1640,
+      "total_calls": 1640,
+      "n_keys": 5,
+      "iam_mode": false,
+      "cost_usd": {
+        "openai": 0,
+        "anthropic": 0,
+        "gemini": 0,
+        "vertex_ai": 0,
+        "azure": 0,
+        "bedrock": 0,
+        "groq": 0,
+        "openrouter": 0
+      },
+      "cost_thresholds": {
+        "openai": 50,
+        "anthropic": 20,
+        "gemini": 5,
+        "vertex_ai": 5,
+        "azure": 50,
+        "bedrock": 20,
+        "groq": 50,
+        "openrouter": 50
+      },
+      "cost_tracking_enabled": false,
+      "cache_hit_rate": 0
+    },
+    "actual_keys_used": 5,
+    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
+    "effective_provider": "gemini",
+    "official_poll_validation": {
+      "target_series": "poll_consensus_daily",
+      "as_of_date": "2026-04-26",
+      "method_version": "weighted_v1",
+      "cutoff_ts": "2026-04-26T00:00:00+09:00",
+      "source_poll_ids": [
+        "nesdc-16169"
+      ],
+      "metrics": {
+        "mae": 0.1062,
+        "rmse": 0.1168,
+        "margin_error": 0.0759,
+        "leader_match": true
+      },
+      "by_candidate": {
+        "c_busan_dpk": {
+          "simulated_share": 0.515,
+          "official_consensus": 0.3974,
+          "error": 0.1176
+        },
+        "c_busan_indep_han": {
+          "simulated_share": 0.375,
+          "official_consensus": 0.3333,
+          "error": 0.0417
+        },
+        "c_busan_ppp": {
+          "simulated_share": 0.11,
+          "official_consensus": 0.2692,
+          "error": -0.1592
+        }
+      }
+    },
+    "finished_at": "2026-04-26T07:08:00.693927+00:00",
+    "wall_seconds": 219.27
+  }
+}

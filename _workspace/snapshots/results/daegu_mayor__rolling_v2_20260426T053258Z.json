@@ -1,0 +1,779 @@
+{
+  "scenario_id": "rolling_v2_20260426T053258Z",
+  "region_id": "daegu_mayor",
+  "contest_id": "daegu_mayor_2026",
+  "timestep_count": 2,
+  "persona_n": 200,
+  "candidates": [
+    {
+      "id": "c_daegu_ppp_choo",
+      "name": "추경호",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_daegu_ppp_yoo",
+      "name": "유영하",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_daegu_dpk",
+      "name": "김부겸",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_daegu_ourrep",
+      "name": "조원진",
+      "party": "p_ourrep"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "c_daegu_ppp_choo": 0.9698492462311558,
+        "c_daegu_ppp_yoo": 0.0,
+        "c_daegu_dpk": 0.03015075376884422,
+        "c_daegu_ourrep": 0.0
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.1728791570919926
+    },
+    {
+      "timestep": 1,
+      "date": "2026-04-27",
+      "support_by_candidate": {
+        "c_daegu_ppp_choo": 0.995,
+        "c_daegu_ppp_yoo": 0.0,
+        "c_daegu_dpk": 0.005,
+        "c_daegu_ourrep": 0.0
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.1850125
+    }
+  ],
+  "final_outcome": {
+    "turnout": 1.0,
+    "vote_share_by_candidate": {
+      "c_daegu_ppp_choo": 1.0,
+      "c_daegu_ppp_yoo": 0.0,
+      "c_daegu_dpk": 0.0,
+      "c_daegu_ourrep": 0.0
+    },
+    "winner": "c_daegu_ppp_choo",
+    "n_responses": 200,
+    "n_abstain": 0
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "40s": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "20s": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "30s": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "50s": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "60s+": {
+        "c_daegu_ppp_choo": 1.0
+      }
+    },
+    "by_education": {
+      "고등학교": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "4년제 대학교": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "2~3년제 전문대학": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "초등학교": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "무학": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "중학교": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대학원": {
+        "c_daegu_ppp_choo": 1.0
+      }
+    },
+    "by_district": {
+      "대구-남구": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-북구": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-달성군": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-서구": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-동구": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-달서구": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-수성구": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-군위군": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-중구": {
+        "c_daegu_ppp_choo": 1.0
+      }
+    }
+  },
+  "virtual_interviews": [
+    {
+      "persona_id": "83b40d15ae0f4dba96e49a2b3cd78aad",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수 정당의 뿌리를 지키는 게 당연하고, 이진숙 후보도 결국 보수 결집을 위해 물러난 만큼 추경호 후보를 지지하는 것이 우리 지역을 위한 길이라 생각합니다.",
+      "key_factors": [
+        "보수 결집",
+        "대구 지역 정서",
+        "보수 후보 단일화 효과"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7480e8b57a7c44689057bfd5f99eeb33",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 보수 성향으로 살아온 대구 시민으로서, 정체성 유지와 산업단지의 안정적 운영을 위해 보수 결집이 우선이라고 판단했습니다.",
+      "key_factors": [
+        "보수 세력 결집",
+        "현장 실무 중심의 안정적 리더십",
+        "산업단지 경제 정책 계승"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "2639e04e94764be9a3cb10f5a19d7f02",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수 정체성을 지키는 게 당연하고, 이진숙 후보의 사퇴로 보수 표심이 결집되는 상황이라 추경호 후보를 찍는 게 맞다고 봅니다.",
+      "key_factors": [
+        "보수 결집",
+        "TK 정체성 유지",
+        "이진숙 사퇴 이후의 안정적인 선택"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "18f0f92fa1f341ab90996c1333ec336d",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구는 보수의 중심지인데 보수 분열을 막기 위해 안정적인 후보인 추경호 후보를 지지하는 것이 당연하다고 생각합니다.",
+      "key_factors": [
+        "보수 결집 흐름",
+        "TK 정체성 중시",
+        "이진숙 사퇴로 인한 단일화 효과"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "30a28eb0c45a4bd6b56ed910ff9533fe",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생 대구를 지켜온 보수 정통성과 이진숙 후보의 사퇴로 다시 하나로 뭉쳐야 한다는 책임감 때문입니다.",
+      "key_factors": [
+        "보수 대결집",
+        "TK 정체성 유지",
+        "이진숙 후보 출마 포기 영향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "da4e1cfebc7241ba8e6094f67fb8c718",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 보수적 정서와 이진숙 후보의 사퇴로 인한 보수 결집 흐름이 제가 평소 중요하게 생각하는 원칙과 안정성에 부합합니다.",
+      "key_factors": [
+        "보수 대통합의 흐름",
+        "이진숙 후보 사퇴에 따른 보수 결집",
+        "안정적인 지역 정책 수행 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "9962b187b2964c0587d329fd056cf612",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생 우리 고장 대구를 지켜온 보수 정당의 후보를 뽑는 것이 당연한 도리라고 생각합니다.",
+      "key_factors": [
+        "보수 가치 수호",
+        "이진숙 후보 출마 포기로 인한 보수 결집",
+        "지역 정서와 정당 일체감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "22b956aad96a4dccadd8dffb2cd50e84",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 보수 터전에서 살아온 대구 사람으로서, 보수 분열을 막고 우리 당 후보를 밀어주는 것이 당연한 도리라고 생각합니다.",
+      "key_factors": [
+        "보수 결집 및 정통성",
+        "이진숙 후보 사퇴에 따른 보수 단일 대오",
+        "평생 지켜온 정치적 소신"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "19d01420162c44f98c4153661caec340",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수의 정체성을 지키는 것이 무엇보다 중요하며, 이진숙 씨의 당부처럼 좌파에게 우리 지역을 넘겨줄 수는 없기 때문입니다.",
+      "key_factors": [
+        "보수 가치 수호",
+        "이진숙 무소속 출마 포기로 인한 보수 결집",
+        "당내 경선 우위 및 TK 지역 정서"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7cb83a25dda24268b97e2d67fe20c58f",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수 정당에 대한 믿음이 크고, 이진숙 후보의 사퇴 이후 보수 결집이 절실하다고 느껴 추경호 후보를 선택했습니다.",
+      "key_factors": [
+        "보수 결집",
+        "TK 지역 정체성",
+        "이진숙 후보 출마 포기"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "fb66ea9a80fa4a2eb3bb61fcf29fc4d1",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 정서와 보수 결집의 흐름을 고려할 때, 안정적인 시정 운영을 위해 추경호 후보를 선택하는 것이 합리적이라고 판단했습니다.",
+      "key_factors": [
+        "보수 지지층 결집",
+        "이진숙 후보 출마 포기",
+        "안정적인 지역 기반"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "80c5abbae12b46f08a029e684d5495c3",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 수성구에서 아이들을 키우며 보수적인 정서를 중요하게 생각하기에, 보수 결집의 중심인 추경호 후보를 지지합니다.",
+      "key_factors": [
+        "보수 가치 수호",
+        "이진숙 후보 출마 포기로 인한 보수 결집",
+        "안정적인 지역 정서 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "0a6e5eed21894c4fa2612c0c59677625",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "보수의 본산인 대구에서 정체성을 지키고 보수 진영의 결집력을 가장 확실하게 보여주는 후보라고 판단했습니다.",
+      "key_factors": [
+        "보수 진영의 결집",
+        "TK 정체성 유지",
+        "이진숙 후보의 출마 포기에 따른 보수 표심 통합"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7aa74f64fe6e470280ac0e6722fd3362",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 보수 정체성을 지키고 정권 안정에 기여할 수 있는 유일한 대안으로 판단됩니다.",
+      "key_factors": [
+        "보수 결집을 위한 이진숙 후보의 사퇴",
+        "TK 지역의 강력한 보수 지지 성향",
+        "추경호 후보의 안정적인 경선 우위"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "17ecf79d54d34e40affaf95fe256d493",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "TK 지역에서 보수의 정통성을 지키고 안정적인 지역 발전을 이끄는 것이 우리 가족의 미래와 경제적 울타리를 위해 가장 중요하다고 생각합니다.",
+      "key_factors": [
+        "보수 결집의 필요성",
+        "이진숙 후보 사퇴로 인한 보수 단일 대오",
+        "TK 지역 정서 및 정체성 수호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "fbbaafa4997248f3b536608c5bd60d84",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 보수 정서가 공고한 가운데, 이진숙 후보의 사퇴로 보수 결집이 확실시되어 안정적인 추경호 후보를 선택했습니다.",
+      "key_factors": [
+        "보수 결집의 명분",
+        "이진숙 출마 포기 영향",
+        "압도적인 여론조사 지지율"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "9b509312019743d19160a1f8c4ebc5b6",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 근본을 지키는 것이 중요하고, 이진숙 후보도 보수 단합을 위해 뜻을 꺾은 만큼 우리 당 후보를 찍는 것이 당연합니다.",
+      "key_factors": [
+        "보수 결집 및 정통성",
+        "이진숙 출마 포기 영향",
+        "지역 정서와 안정 추구"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "ce5ebc5707dc46f1b5bcf75d3a568ace",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 보수의 결집과 안정적인 시정 운영을 위해 우리 지역의 뿌리인 국민의힘 후보를 찍는 것이 당연한 도리라고 생각합니다.",
+      "key_factors": [
+        "보수 진영의 결집",
+        "TK 지역 정체성",
+        "안정적인 시정 수행 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "80f1141a69604e4a98f068f1dc28f43f",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수 정당의 뿌리를 지키는 것이 중요하며, 이진숙 후보의 사퇴로 보수 결집이 명확해진 만큼 추경호 후보를 찍는 것이 당연한 도리입니다.",
+      "key_factors": [
+        "TK 보수 결집",
+        "이진숙 후보 사퇴로 인한 보수 단일화",
+        "지역 정체성 유지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "ca9810918e184592af06aa0b60932e83",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역 정서상 보수 후보를 지지하는 것이 자연스럽고, 이진숙 후보의 사퇴로 보수 결집의 명분이 더욱 확실해졌기 때문입니다.",
+      "key_factors": [
+        "TK 지역의 보수적 정치 성향",
+        "이진숙 후보 출마 포기에 따른 보수 표심 결집",
+        "가정의 평화를 중시하는 성향에 따른 안정을 지향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7c2b027e37574333a0079ce11c055800",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 정서와 보수 결집의 흐름을 볼 때, 안정적인 정권 운영을 위해 추경호 후보를 선택하는 것이 당연하다고 생각합니다.",
+      "key_factors": [
+        "보수 결집 흐름",
+        "이진숙 후보 출마 포기에 따른 여파",
+        "TK 지역 정체성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "0e0e2ccb9e9b41a2863c2405d29e8c6e",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 정서와 보수 결집 흐름을 고려할 때, 마케팅 전문가로서 안정적이고 효율적인 시정 운영을 실현할 후보에게 투표하는 것이 합리적이라고 판단했습니다.",
+      "key_factors": [
+        "보수 결집 흐름",
+        "이진숙 후보 출마 포기로 인한 우파 단일화",
+        "데이터 중심의 효율적 시정 운영 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "296dd8b676504bd49d219b8a25d2673d",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수의 가치를 지키는 것이 우선이며, 이진숙 후보의 사퇴로 보수 표심이 추경호 후보로 확실히 결집되었다고 판단했습니다.",
+      "key_factors": [
+        "보수 대결집 기류",
+        "TK 지역 정서 고려",
+        "이진숙 후보 사퇴 및 메시지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "6e746c46bdea41b2b046d68c7dba01c4",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 보수 정서와 이진숙 후보의 사퇴로 인한 보수 지지층의 결집, 그리고 추경호 후보의 안정적인 본경선 입지를 고려했습니다.",
+      "key_factors": [
+        "보수 결집",
+        "이진숙 후보 출마 포기",
+        "지역 내 압도적인 지지율"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "db0c36cd46e749f3b5e85031746d2a55",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 보수적 정서와 부모님의 가치관을 고려할 때, 보수 결집의 중심인 안정적인 후보를 선택하는 것이 가장 합리적이라고 판단했습니다.",
+      "key_factors": [
+        "보수 결집",
+        "안정적인 지역 정서",
+        "부모님의 영향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "fbe8999f541042708fc31514feeda567",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "보수의 본고장인 대구에서 평생을 살아온 시민으로서, 정체성 정치를 지키고 보수 진영의 결집력을 중시하는 입장에서 추경호 후보를 선택했습니다.",
+      "key_factors": [
+        "보수 결집",
+        "TK 정체성 유지",
+        "이진숙 출마 포기로 인한 보수 표심 통합"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "6189363d8c7a414f94a6091cceca142a",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수 정당을 지키는 게 당연하고, 이진숙 후보도 사퇴하면서 보수 표가 한 곳으로 모이는 게 맞다고 봅니다.",
+      "key_factors": [
+        "보수 결집",
+        "TK 지역 정서",
+        "이진숙 사퇴로 인한 보수 단일화 효과"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "fb3265af820f480a8ac7920d38592bb5",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "우리 대구 사람은 대대로 파란색보다는 빨간색을 찍는 것이 도리이고, 추경호 후보가 우리 보수를 지켜줄 적임자라고 생각합니다.",
+      "key_factors": [
+        "보수 결집",
+        "지역 정서",
+        "당 정체성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "ef7f896d2b3847e99fd16951b0843ea9",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "이진숙 후보의 사퇴로 보수 결집이 명확해졌고, 대구 정서상 압도적인 지지를 받는 추경호 후보가 안정적이라고 판단했습니다.",
+      "key_factors": [
+        "보수 진영의 결집",
+        "여론조사 압도적 우위",
+        "TK 지역 정체성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "a100d33436ca4a70a1bbb1235b441810",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 보수 정당을 지지해온 대구 사람으로서, 이진숙 후보의 사퇴 이후 보수 결집 흐름과 경선에서 입증된 추경호 후보의 안정감을 신뢰합니다.",
+      "key_factors": [
+        "보수 지지층 결집",
+        "이진숙 후보 출마 포기",
+        "안정적인 TK 정체성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7a0f03808fb348c7bc52e9e6d916e861",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 대구에서 보수 정당을 지지해온 사람으로서, 보수 분열을 막고 안정적으로 지역을 이끌 인물을 선택하는 것이 도리라고 생각합니다.",
+      "key_factors": [
+        "TK 지역의 보수 정체성",
+        "보수 대통합을 위한 결집",
+        "이진숙 후보 사퇴로 인한 표심 결집"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "2bd3698c2a3447b188c73500bdf1c29f",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생 우리 고장 대구의 보수 뿌리를 지켜왔으니, 좌파에 대구를 넘겨줄 수는 없어 보수 후보인 추경호에게 마음이 갑니다.",
+      "key_factors": [
+        "보수 결집",
+        "TK 지역 정서",
+        "이진숙 후보 출마 포기 영향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7d8b9b599fe14ac2aaa2b1dafcf4c094",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수 정당의 가치를 지키는 것이 우선이며, 이진숙 후보의 사퇴로 보수 표심이 추경호 후보로 확실히 뭉쳤기 때문입니다.",
+      "key_factors": [
+        "보수 결집 및 TK 정체성",
+        "이진숙 후보 출마 포기에 따른 표심 이동",
+        "정당 기반의 안정감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5d635aff713f43228940ee7fe77582d7",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수 정당의 뿌리를 지키는 것이 중요하고, 이진숙 후보의 사퇴 이후 보수 결집 흐름에 따라 당연히 추경호 후보를 찍어야 한다고 생각합니다.",
+      "key_factors": [
+        "보수 결집",
+        "TK 정체성 유지",
+        "이진숙 후보 출마 포기 영향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "23b94c9a123f4d71b88c1b201233de5d",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수의 가치를 지키는 것이 당연하며, 이진숙 후보의 사퇴로 보수 결집이 확실시되는 추경호 후보를 선택합니다.",
+      "key_factors": [
+        "TK 지역의 보수 정체성",
+        "보수 대결집 분위기",
+        "이진숙 후보 사퇴 및 보수 결집 메시지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "ba8aca8abe154cca857133670897eebe",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생 대구에서 보수를 지지해온 사람으로서, 보수 분열을 막기 위해 당의 후보로 확정된 추경호 후보를 찍는 것이 가장 당연한 선택입니다.",
+      "key_factors": [
+        "보수 결집",
+        "이진숙 후보 사퇴",
+        "TK 지역 정서"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "af5a1d6917b242cd94188515a5926bb4",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 정서상 보수 결집은 명확하며, 이진숙 후보의 사퇴 이후 보수 후보로서 실무적 능력을 갖춘 추경호 후보에게 대안이 없다고 판단합니다.",
+      "key_factors": [
+        "보수 결집 흐름",
+        "이진숙 후보 출마 포기 영향",
+        "지역 내 압도적 여론조사 우위"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "013e7bb1a6524befbfab16fce49c0dea",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수 정당의 안정성을 중시하며, 보수 결집의 흐름 속에서 추경호 후보가 가장 신뢰할 만한 인물이라고 생각합니다.",
+      "key_factors": [
+        "보수 결집",
+        "TK 정체성",
+        "이진숙 출마 포기로 인한 보수 단일화 흐름"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "6f930a5ded5743a3adf63833c5360a07",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "우리 대구 사람은 예로부터 그래왔듯이, 정권이 흔들리지 않게 지키는 것이 가장 중요하다고 생각해서 보수 후보를 찍어야 마음이 놓입니다.",
+      "key_factors": [
+        "보수 정통성 유지",
+        "이진숙 사퇴로 인한 보수 결집",
+        "지역 정서와 신뢰"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "9d8171936cf143b5a621ea50642f291d",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "보수의 본거지인 대구에서 실질적인 효율과 안정을 중시하는 입장에서, 가장 높은 지지세를 보이는 추경호 후보가 정책 연속성과 지역 안정성 측면에서 가장 합리적인 선택이라 판단했습니다.",
+      "key_factors": [
+        "보수 결집 및 이진숙 후보의 사퇴로 인한 표심 정리",
+        "산업단지 디지털화 및 업무 효율화를 중요시하는 실용주의적 가치관",
+        "지역 내 압도적인 후보 지지율과 정책 안정성 기대"
+      ],
+      "timestep": 2
+    }
+  ],
+  "kg_events_used": [
+    {
+      "event_id": "1",
+      "type": "PollPublication",
+      "target": "c_daegu_ppp_choo",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_cutoff",
+      "type": "PressConference",
+      "target": "c_daegu_ppp_choo",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_kbg_rally",
+      "type": "MediaEvent",
+      "target": "c_daegu_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_lee_jinsuk_out",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 1
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-26T05:31:46.779746+00:00",
+    "policy_version": "v2.0_validation_first",
+    "env": "dev",
+    "voter_stats": {
+      "calls": 640,
+      "parse_fail": 0,
+      "abstain": 1,
+      "latency_ms_sum": 510636.65744896966,
+      "calls_by_model": {
+        "nano": 426,
+        "sonnet": 40,
+        "mini": 174
+      },
+      "mean_latency_ms": 797.9,
+      "parse_fail_rate": 0.0,
+      "abstain_rate": 0.0016
+    },
+    "pool_stats": {
+      "provider": "gemini",
+      "model": "gemini/gemini-3.1-flash-lite-preview",
+      "per_key": [
+        {
+          "key_index": 0,
+          "current_rpm": 45,
+          "limit_rpm": 500,
+          "total_calls": 51,
+          "total_429": 0
+        },
+        {
+          "key_index": 1,
+          "current_rpm": 45,
+          "limit_rpm": 500,
+          "total_calls": 51,
+          "total_429": 0
+        },
+        {
+          "key_index": 2,
+          "current_rpm": 46,
+          "limit_rpm": 500,
+          "total_calls": 51,
+          "total_429": 0
+        },
+        {
+          "key_index": 3,
+          "current_rpm": 46,
+          "limit_rpm": 500,
+          "total_calls": 51,
+          "total_429": 0
+        },
+        {
+          "key_index": 4,
+          "current_rpm": 46,
+          "limit_rpm": 500,
+          "total_calls": 51,
+          "total_429": 0
+        }
+      ],
+      "cache_hits": 385,
+      "cache_misses": 255,
+      "total_calls": 255,
+      "n_keys": 5,
+      "iam_mode": false,
+      "cost_usd": {
+        "openai": 0.0,
+        "anthropic": 0.0,
+        "gemini": 0.0,
+        "vertex_ai": 0.0,
+        "azure": 0.0,
+        "bedrock": 0.0,
+        "groq": 0.0,
+        "openrouter": 0.0
+      },
+      "cost_thresholds": {
+        "openai": 50.0,
+        "anthropic": 20.0,
+        "gemini": 5.0,
+        "vertex_ai": 5.0,
+        "azure": 50.0,
+        "bedrock": 20.0,
+        "groq": 50.0,
+        "openrouter": 50.0
+      },
+      "cost_tracking_enabled": false,
+      "cache_hit_rate": 0.6016
+    },
+    "actual_keys_used": 5,
+    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
+    "effective_provider": "gemini",
+    "official_poll_validation": {
+      "target_series": "poll_consensus_daily",
+      "as_of_date": "2026-04-26",
+      "method_version": "weighted_v1",
+      "cutoff_ts": "2026-04-26T00:00:00+09:00",
+      "source_poll_ids": [
+        "[\"nesdc-16158\"]"
+      ],
+      "metrics": {
+        "mae": 0.5052,
+        "rmse": 0.5886,
+        "margin_error": 0.565,
+        "leader_match": false
+      },
+      "by_candidate": {
+        "c_daegu_dpk": {
+          "simulated_share": 0.0,
+          "official_consensus": 0.6771,
+          "error": -0.6771
+        },
+        "c_daegu_ppp_choo": {
+          "simulated_share": 1.0,
+          "official_consensus": 0.2422,
+          "error": 0.7578
+        },
+        "c_daegu_ppp_yoo": {
+          "simulated_share": 0.0,
+          "official_consensus": 0.0807,
+          "error": -0.0807
+        }
+      }
+    },
+    "finished_at": "2026-04-26T05:32:54.121567+00:00",
+    "wall_seconds": 67.34,
+    "original_scenario_id": "daegu_mayor_2026",
+    "finalized_at": "2026-04-26T05:32:58.050317+00:00"
+  }
+}

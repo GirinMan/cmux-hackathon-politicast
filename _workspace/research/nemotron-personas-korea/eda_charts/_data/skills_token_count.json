@@ -1,0 +1,9 @@
+{
+  "rows": 1000000,
+  "unique_items": 1453619,
+  "items_per_row_mean": 4.089132,
+  "items_per_row_median": 4.0,
+  "items_per_row_min": 3,
+  "items_per_row_max": 5,
+  "rows_with_zero_items": 0
+}

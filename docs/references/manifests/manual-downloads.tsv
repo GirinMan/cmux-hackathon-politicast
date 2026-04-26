@@ -1,0 +1,8 @@
+# Manual downloads → raw mapping
+# Tab-separated: <filename relative to docs/downloads/>	<category>	<original URL>
+# Lines starting with # ignored. Add a row whenever you place a file under docs/downloads/
+# that should be promoted into docs/references/raw/<category>/<slug>.md.
+226.pdf	academic	https://hal.science/hal-04862262v1/file/226.pdf
+3545946.3599059.pdf	academic	https://dl.acm.org/doi/10.5555/3545946.3599059
+7.Institutional-Interaction-and-Strategic-Voting-in-Koreas-New-Mixed-Electoral-System-JungugChoi.pdf	academic	https://s-space.snu.ac.kr/bitstream/10371/96444/1/7.Institutional-Interaction-and-Strategic-Voting-in-Koreas-New-Mixed-Electoral-System-JungugChoi.pdf
+edaa008.pdf	academic	https://academic.oup.com/ijpor/article/33/2/412/5857291

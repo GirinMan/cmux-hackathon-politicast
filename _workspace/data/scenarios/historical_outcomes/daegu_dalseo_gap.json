@@ -1,0 +1,27 @@
+{
+  "_doc": "대구 달서구 갑 보궐선거 baseline — 직전 본 선거 = 2024-04 제22대 총선. 출처: 위키백과 + 나무위키 + ywelly11.tistory (perplexity 13:50 KST).",
+  "region_id": "daegu_dalseo_gap",
+  "election": {
+    "name": "대한민국 제22대 국회의원선거 — 대구 달서구 갑 (죽전동, 장기동, 용산1·2동, 이곡1·2동, 신당동)",
+    "date": "2024-04-10",
+    "election_id": "election_2024_general_dalseo_gap",
+    "type": "national_assembly"
+  },
+  "turnout": 0.6348,
+  "total_valid_votes": 84138,
+  "results": [
+    {"rank": 1, "name": "유영하",   "party": "국민의힘",     "votes": 60070, "vote_share": 0.7139, "elected": true,  "note": "박근혜 전 대통령 변호사 출신, 초선."},
+    {"rank": 2, "name": "권택흥",   "party": "더불어민주당", "votes": 24068, "vote_share": 0.2860, "elected": false}
+  ],
+  "lead_pp": 0.4279,
+  "winner_party_id_in_scenario": "p_ppp",
+  "by_election_caveat": {
+    "note": "2026-04 보궐 사유 미박제 — 직전 본 선거 결과를 baseline으로 쓸 때, 의석 변화 사유가 baseline distribution을 왜곡할 수 있음.",
+    "previous_winner_status": "유영하 (PPP) 초선 — 보궐 사유 별도 확인 필요"
+  },
+  "sources": [
+    "https://ko.wikipedia.org/wiki/대한민국_제22대_국회의원_선거_대구광역시",
+    "https://namu.wiki/w/제22대%20국회의원%20선거/지역구%20국회의원/대구광역시",
+    "https://ywelly11.tistory.com/entry/22대-총선-대구-국회의원당선자"
+  ]
+}

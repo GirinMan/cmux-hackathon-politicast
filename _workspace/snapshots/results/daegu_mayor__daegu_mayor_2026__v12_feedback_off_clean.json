@@ -1,0 +1,788 @@
+{
+  "scenario_id": "daegu_mayor_2026",
+  "region_id": "daegu_mayor",
+  "contest_id": "daegu_mayor_2026",
+  "timestep_count": 2,
+  "persona_n": 200,
+  "candidates": [
+    {
+      "id": "c_daegu_ppp_choo",
+      "name": "추경호",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_daegu_ppp_yoo",
+      "name": "유영하",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_daegu_dpk",
+      "name": "김부겸",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_daegu_ourrep",
+      "name": "조원진",
+      "party": "p_ourrep"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "c_daegu_ppp_choo": 0.8615384615384616,
+        "c_daegu_ppp_yoo": 0.005128205128205128,
+        "c_daegu_dpk": 0.13333333333333333,
+        "c_daegu_ourrep": 0.0
+      },
+      "turnout_intent": 0.99,
+      "consensus_var": 0.1275131492439185
+    },
+    {
+      "timestep": 1,
+      "date": "2026-04-27",
+      "support_by_candidate": {
+        "c_daegu_ppp_choo": 0.9387755102040817,
+        "c_daegu_ppp_yoo": 0.0,
+        "c_daegu_dpk": 0.061224489795918366,
+        "c_daegu_ourrep": 0.0
+      },
+      "turnout_intent": 0.99,
+      "consensus_var": 0.1587619741774261
+    }
+  ],
+  "final_outcome": {
+    "turnout": 1.0,
+    "vote_share_by_candidate": {
+      "c_daegu_ppp_choo": 0.98,
+      "c_daegu_ppp_yoo": 0.0,
+      "c_daegu_dpk": 0.02,
+      "c_daegu_ourrep": 0.0
+    },
+    "winner": "c_daegu_ppp_choo",
+    "n_responses": 200,
+    "n_abstain": 0
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "40s": {
+        "c_daegu_ppp_choo": 0.9761904761904762,
+        "c_daegu_dpk": 0.023809523809523808
+      },
+      "20s": {
+        "c_daegu_ppp_choo": 0.9230769230769231,
+        "c_daegu_dpk": 0.07692307692307693
+      },
+      "30s": {
+        "c_daegu_ppp_choo": 0.972972972972973,
+        "c_daegu_dpk": 0.02702702702702703
+      },
+      "50s": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "60s+": {
+        "c_daegu_ppp_choo": 1.0
+      }
+    },
+    "by_education": {
+      "고등학교": {
+        "c_daegu_ppp_choo": 0.9811320754716981,
+        "c_daegu_dpk": 0.018867924528301886
+      },
+      "4년제 대학교": {
+        "c_daegu_ppp_choo": 0.9827586206896551,
+        "c_daegu_dpk": 0.017241379310344827
+      },
+      "2~3년제 전문대학": {
+        "c_daegu_ppp_choo": 0.9767441860465116,
+        "c_daegu_dpk": 0.023255813953488372
+      },
+      "초등학교": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "무학": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "중학교": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대학원": {
+        "c_daegu_ppp_choo": 0.8571428571428571,
+        "c_daegu_dpk": 0.14285714285714285
+      }
+    },
+    "by_district": {
+      "대구-남구": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-북구": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-달성군": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-서구": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-동구": {
+        "c_daegu_ppp_choo": 0.9629629629629629,
+        "c_daegu_dpk": 0.037037037037037035
+      },
+      "대구-달서구": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-수성구": {
+        "c_daegu_ppp_choo": 0.9166666666666666,
+        "c_daegu_dpk": 0.08333333333333333
+      },
+      "대구-군위군": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-중구": {
+        "c_daegu_ppp_choo": 1.0
+      }
+    }
+  },
+  "virtual_interviews": [
+    {
+      "persona_id": "6f930a5ded5743a3adf63833c5360a07",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "우리 대구 사람은 평생 보수 정당을 지지해왔는데, 나라 살림을 맡았던 추경호 후보가 든든하게 대구를 잘 이끌어 줄 것이라 믿습니다.",
+      "key_factors": [
+        "보수 정당에 대한 오랜 신뢰",
+        "경제 부총리 출신의 경력",
+        "보수 결집을 위한 전략적 선택"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "988f092bd82b4bea9bd92667f0a9bc9c",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "현장의 실물 경제를 잘 아는 경제 전문가이자, 보수 진영의 분열을 막고 안정적인 지역 발전을 이끌 수 있는 후보라고 판단했기 때문입니다.",
+      "key_factors": [
+        "재정 및 경제 전문성",
+        "보수 대통합 및 결집",
+        "지역 경제 활성화 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "18f0f92fa1f341ab90996c1333ec336d",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수의 뿌리를 지키고 경제 살림을 잘 아는 실무형 인물을 뽑는 것이 도리라고 생각합니다.",
+      "key_factors": [
+        "보수 정통성 유지",
+        "경제 부총리 출신의 실무 역량",
+        "이진숙 후보 사퇴로 인한 보수 결집"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "1f00515e585e4546a61e57f43c7c65be",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 보수적 정서와 전기 감리로서의 합리적 실용주의를 고려할 때, 경제 전문성을 갖춘 추경호 후보가 지역 발전에 더 적합하다고 판단함.",
+      "key_factors": [
+        "경제 전문가로서의 경력",
+        "보수 정당에 대한 지역적 신뢰",
+        "이진숙 후보 사퇴로 인한 보수층 결집"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "e07a65b3e8434e71abad5dafa6293d24",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "대구 토박이이자 4선 의원 출신으로 능력과 실력을 갖춘 김부겸 후보가 침체된 대구 경제와 일자리 문제에 실질적인 변화를 줄 수 있을 것 같아서 기대된다.",
+      "key_factors": [
+        "일자리 창출 및 지역 경제 활성화 기대",
+        "김부겸의 TK 출신 실력파 이미지",
+        "보수 고착화된 대구 분위기에 대한 변화 열망"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "75f3ec2560334968803bcd73474b67c3",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "안정적인 행정 실무 경험과 경제 전문성을 갖춘 후보가 지역 발전에 더 적합하다고 생각합니다.",
+      "key_factors": [
+        "경제 전문가로서의 역량",
+        "보수 정당에 대한 신뢰",
+        "안정적인 지역 행정 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "db0c36cd46e749f3b5e85031746d2a55",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "보수 성향이 강한 대구 수성구 거주자로서, 경제 전문성을 갖춘 추경호 후보의 안정적인 도정 운영에 신뢰를 느낍니다.",
+      "key_factors": [
+        "재정 및 경제 전문성",
+        "보수 가치 수호",
+        "대구 지역 정서 부합"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "0d252f58442c4a509b198916b5df5d22",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 대구에서 살며 보수의 자존심을 지켜왔는데, 경력이 탄탄한 경제 전문가인 추경호 후보가 그래도 우리 동네를 가장 잘 이끌 것 같아서 선택했네.",
+      "key_factors": [
+        "보수 결집 및 정체성 유지",
+        "경제 관료 출신 전문성",
+        "이진숙 후보 사퇴로 인한 보수 표심 통합"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "23251184cf3942ef9cd20e03182758bb",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "가풍과 지역 정서를 고려할 때 보수 진영의 안정적인 행정 전문가인 추경호 후보를 선택하는 것이 가장 합리적인 판단이라고 생각합니다.",
+      "key_factors": [
+        "보수 정통성 및 안정성",
+        "재정 및 경제 전문성",
+        "부모님의 가풍 및 지역 사회 분위기"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "618b0eedf8064121988aea9a144725cf",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 보수 정서와 안정적인 경제 전문가로서의 능력을 고려해 보수 후보를 지지하기로 했습니다.",
+      "key_factors": [
+        "보수 가치 수호",
+        "경제 전문성",
+        "지역 내 안정적 리더십 요구"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "ca9810918e184592af06aa0b60932e83",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구라는 지역 사회의 정서와 보수적 가치를 중시하는 분위기 속에서, 경제 전문가로서 실질적인 발전을 이끌 수 있는 추경호 후보가 안정적이라고 생각합니다.",
+      "key_factors": [
+        "보수 지지층 결집",
+        "경제 전문성 및 실무 능력",
+        "지역 정서 부합"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b9d06daae7ce41648eb8b5fe1b2aeb0b",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 보수 정당에 몸담아온 사람으로서, 경제 전문가인 추경호 후보가 대구의 살림을 책임지고 실질적인 발전을 이끌어줄 것이라 믿기 때문입니다.",
+      "key_factors": [
+        "보수 정통성 및 당 정체성",
+        "재정 및 경제 정책 전문성",
+        "이진숙 후보 사퇴로 인한 보수 결집"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "29d7e4c6f5dd448e92e845d427eac729",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "우리 달성군 출신인 추경호 후보의 경제 전문성과 행정 능력이 지역 발전에 실질적인 도움이 될 것이라 믿습니다.",
+      "key_factors": [
+        "경제 전문가로서의 행정 역량",
+        "달성군 지역 연고",
+        "보수 결집을 통한 안정적 정계 운영"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "9b509312019743d19160a1f8c4ebc5b6",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수의 중심을 지켜야 한다는 생각과, 경제를 잘 아는 추경호 후보가 우리 살림살이를 더 낫게 만들 것이라 믿기 때문입니다.",
+      "key_factors": [
+        "보수 정통성 및 정권 지지",
+        "경제 전문성 및 실용주의",
+        "이진숙 후보 사퇴에 따른 보수 결집"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "18e7b1ff929c45108a40cfae1bf36eea",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 보수 정통성을 지키고 경제를 안정시킬 수 있는 경력 있는 후보가 필요하다고 생각합니다.",
+      "key_factors": [
+        "보수 정당에 대한 신뢰",
+        "이진숙 후보 사퇴로 인한 보수 결집",
+        "경제 전문가로서의 전문성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "06d2eb3781fb4d5387c8129f4756c22f",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "우리 달성 지역구 출신인 추경호 후보의 경제 전문성이 지역 경제와 현장 실무자인 제 직업에 실질적인 도움이 될 것이라 믿습니다.",
+      "key_factors": [
+        "달성군 지역 연고",
+        "경제 부총리 경력의 실무 전문성",
+        "이진숙 후보 사퇴로 인한 보수 결집"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "a43a9a7fcf0c4b46ac7a54214bbd4616",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "정밀한 공학자로서 국가 경제와 재정을 다뤄본 추경호 후보의 전문성이 대구의 미래 설계를 위한 안정적인 토대가 될 것이라 판단했습니다.",
+      "key_factors": [
+        "재정 및 경제 분야의 전문성",
+        "보수 가치 수호 및 결집",
+        "체계적인 문제 해결 능력"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b6f138a2382e4739852e88a65d47eaa0",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "실무자로서 경제 전문성과 안정적 시정 운영 능력을 갖춘 추경호 후보가 대구의 현실적인 경제 발전에 더 적합하다고 판단했습니다.",
+      "key_factors": [
+        "경제 및 재정 전문성",
+        "보수 지지층의 결집",
+        "실용적인 대구 지역 발전 공약"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "da4e1cfebc7241ba8e6094f67fb8c718",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "경제 전문성과 보수 정당의 안정적인 정책 기조를 중요하게 생각하며, 산업 현장에서 실질적인 변화를 이끌 수 있는 인물을 선호합니다.",
+      "key_factors": [
+        "경제 전문성 및 재정 능력",
+        "보수 정당의 정책 일관성",
+        "산업 현장의 현실적인 발전 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "fcb20c785fd1413e9249b93f06494ac1",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 토박이로서 보수의 가치를 지키면서도 경제 관료 출신인 추경호 후보의 실무적인 전문성이 고물가로 힘든 자영업자의 삶에 더 실질적인 도움이 될 것이라 판단했습니다.",
+      "key_factors": [
+        "보수 정체성",
+        "경제 관료 전문성",
+        "민주당 거부감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "29ff06dcb1c84496b5edeb9312610379",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "보수적인 부모님과 다른 나만의 라이프스타일을 추구하는 입장에서, 정체된 지역 정치에 변화와 실질적인 통합 메시지를 던지는 후보에게 마음이 기웁니다.",
+      "key_factors": [
+        "김부겸의 통합 및 탕평 메시지",
+        "개인적 성향과 지역 기득권의 괴리",
+        "대구의 변화 가능성 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "8389d5ee0e914897aa7b2cf7dbc44b8a",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "오랫동안 보수 정당을 지지해온 대구 사람으로서, 경제 전문가인 추경호 후보가 우리 지역 발전을 가장 잘 이끌 것이라 믿기 때문입니다.",
+      "key_factors": [
+        "보수 정당에 대한 신뢰",
+        "경제 관료 출신의 전문성",
+        "이진숙 후보 사퇴로 인한 보수 결집"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b736705c36344f21af5803da12abe0db",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 대구에서 보수 정당만 보고 살아왔는데, 집안 살림 꾸리듯 경제를 잘 아는 추경호 후보가 그래도 대구 경제를 믿고 맡길 수 있을 것 같아서요.",
+      "key_factors": [
+        "보수 정당에 대한 오랜 신뢰",
+        "경제 부총리 출신의 전문성",
+        "보수 분열을 막으려는 책임감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "bd9ba4d073604c37bc3c12744fe98c17",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 보수 정당을 지지해온 대구 사람으로서, 경제 전문가인 추경호 후보가 지역 경제를 다시 살려줄 것이라는 믿음이 큽니다.",
+      "key_factors": [
+        "보수 정통성 지지",
+        "경제 관료 출신의 실무 능력",
+        "이진숙 후보 사퇴로 인한 보수 결집"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "0a653de8e0a14093abdace188f79b5fb",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평소 보수 정당을 지지해왔고, 우리 지역 달성군 출신인 추경호 후보가 경제 전문가로서 지역 발전을 안정적으로 이끌어줄 것이라 기대합니다.",
+      "key_factors": [
+        "지역 연고와 보수 정당에 대한 신뢰",
+        "경제 전문성 및 안정적인 지역 발전 기대",
+        "보수 결집을 위한 이진숙 후보의 출마 포기 영향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "a100d33436ca4a70a1bbb1235b441810",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "경제 전문가로서 대구의 실질적인 재정 발전과 안정적인 변화를 이끌어줄 인물이라고 생각합니다.",
+      "key_factors": [
+        "경제 전문성 및 재정 운영 능력",
+        "보수 결집을 통한 안정적인 지역 정치",
+        "이진숙 후보 사퇴로 인한 보수 단일화 흐름"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5e8fee0c1247433b85d43fd3d14d1d81",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 보수 지지자로 살아왔고, 대구에서 민주당을 찍기는 마음이 허락하지 않아 우리 쪽 후보인 추경호 의원을 선택합니다.",
+      "key_factors": [
+        "보수 정체성 고수",
+        "이진숙 사퇴로 인한 보수 결집",
+        "경제 전문성 및 지역 발전 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "50c659ed66b54376b1bcf5d38f66c676",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수의 가치를 지키는 것이 우선이고, 경제를 잘 아는 추경호 후보가 우리 살림살이를 더 낫게 해줄 것 같아서 선택했습니다.",
+      "key_factors": [
+        "보수 정통성 유지",
+        "경제 관료 출신의 전문성",
+        "지역 정서와 안정감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "bc3b8ef166b24e68a85b7848cff590b5",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "집안 어른들의 보수적인 성향과 대구라는 지역 정서를 무시하기 어려워, 보수 정통성을 지키면서도 경제 전문성을 갖춘 추경호 후보를 선택했습니다.",
+      "key_factors": [
+        "가족 내 보수적 가치관과 소속감",
+        "보수 결집을 위한 이진숙 후보의 사퇴",
+        "경제 전문성을 강조한 후보의 안정적 이미지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d1486d43148e486597844970cf101af8",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "달성군에서 활동해 온 4선 의원이자 경제 전문성을 갖춘 후보로서, 대구의 보수적 정서와 지역 발전을 고려할 때 가장 현실적이고 안정적인 선택이라고 판단했습니다.",
+      "key_factors": [
+        "경제 및 재정 전문성",
+        "보수 정통성 및 지역 기반",
+        "보수층 결집 효과"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d4c3496e69864e36995d5813682215cc",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "달성군 지역구 의원이자 경제 전문성을 갖춘 추경호 후보가 실질적인 일자리 창출과 지역 경제 회복을 이끌어 줄 적임자라고 생각합니다.",
+      "key_factors": [
+        "지역구 연고 및 실무 경제 능력",
+        "보수 결집을 통한 안정적인 지역 발전",
+        "구직자로서의 일자리 정책 기대감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5953db23d9ce4bf9b5c927624cbe0813",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 대구에서 보수로 살아왔고, 지역 살림을 아는 경제 전문가가 시장이 되어야 우리 서구도 다시 살아날 것이라 믿습니다.",
+      "key_factors": [
+        "보수 정당에 대한 오랜 신뢰",
+        "경제 부총리 출신의 실무 능력 기대",
+        "보수 결집을 통한 지역 발전 염원"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7c2b027e37574333a0079ce11c055800",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 토박이이자 보수층 유권자로서 경제 전문성을 갖춘 추경호 후보가 우리 지역의 미래와 실질적인 경제 발전을 이끌 적임자라고 생각합니다.",
+      "key_factors": [
+        "보수 정당에 대한 전통적 지지",
+        "경제 부총리 출신의 실무 능력",
+        "보수 후보 단일화 및 결집 효과"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "2501eb607dd743b6ba7141f6a18cf15b",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 보수적 정서와 경제적 안정을 중시하는 입장에서, 민주당 후보보다는 경제 관료 출신인 추경호 후보가 실질적인 지역 발전을 이끌 적임자라고 판단했습니다.",
+      "key_factors": [
+        "보수 지지층의 결집",
+        "기획재정부 장관 출신의 경제 전문성",
+        "대구 지역 정서 반영"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7a7b0a3c872a41b3a5ccd978a2fa1f14",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 대구에서 보수 정당을 지지해온 사람으로서, 보수의 중심을 잡고 경제를 챙길 수 있는 경험 많은 인물이 필요하다고 생각합니다.",
+      "key_factors": [
+        "보수 정체성 유지",
+        "경제 전문성",
+        "지역 균형 발전"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7d8b9b599fe14ac2aaa2b1dafcf4c094",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 보수 정통성을 지키면서도, 경제와 재정을 잘 아는 추경호 후보가 실질적인 지역 발전을 이끌 적임자라고 생각합니다.",
+      "key_factors": [
+        "보수 정통성 및 결집",
+        "경제 전문성 및 실용주의",
+        "지역 균형 발전 공약"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "551ffb8d973f4365b42fa3fcdd33e6a1",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 대구에서 살아온 보수 사람으로서, 경제도 잘 아는 추경호 후보가 우리 지역을 위해 제대로 일해주길 바라는 마음입니다.",
+      "key_factors": [
+        "보수 정통성 유지",
+        "경제 관료 출신의 전문성",
+        "이진숙 후보 사퇴로 인한 보수 결집"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "2bd3698c2a3447b188c73500bdf1c29f",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 보수 정당만 지지해왔고, 우리 손주들이 살아갈 대구는 그래도 나라를 생각하는 당이 맡아야 마음이 놓이기 때문입니다.",
+      "key_factors": [
+        "보수 정통성 유지",
+        "재정 및 경제 전문성",
+        "이진숙 후보 출마 포기로 인한 보수 결집"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "42a04514f76548f2b34717c1309bccd6",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 보수 정당만 지지해왔고, 우리 동네와 대구 경제를 살리려면 경제 전문가인 추경호 후보가 낫다고 생각합니다.",
+      "key_factors": [
+        "보수 정당에 대한 오랜 신뢰",
+        "경제 부총리 출신의 전문성",
+        "이진숙 후보 사퇴로 인한 보수 결집"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b195cfe9acd34b7b8c35acf161638874",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생 대구에서 보수 정치를 지켜온 사람으로서, 경제도 잘 알고 우리 지역을 안정적으로 이끌어줄 인물이 필요하다고 생각합니다.",
+      "key_factors": [
+        "경제 전문성",
+        "보수 가치 수호",
+        "대구 지역 안정"
+      ],
+      "timestep": 2
+    }
+  ],
+  "kg_events_used": [
+    {
+      "event_id": "1",
+      "type": "PollPublication",
+      "target": "c_daegu_ppp_choo",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_cutoff",
+      "type": "PressConference",
+      "target": "c_daegu_ppp_choo",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_kbg_rally",
+      "type": "MediaEvent",
+      "target": "c_daegu_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_lee_jinsuk_out",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 1
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-26T06:40:33.746795+00:00",
+    "policy_version": "v12_feedback_off_clean",
+    "env": "dev",
+    "llm_cache_enabled": false,
+    "final_poll_feedback_enabled": false,
+    "voter_stats": {
+      "calls": 795,
+      "parse_fail": 0,
+      "abstain": 9,
+      "latency_ms_sum": 1206251.6876379927,
+      "calls_by_model": {
+        "nano": 527,
+        "sonnet": 50,
+        "mini": 218
+      },
+      "mean_latency_ms": 1517.3,
+      "parse_fail_rate": 0.0,
+      "abstain_rate": 0.0113
+    },
+    "pool_stats": {
+      "provider": "gemini",
+      "model": "gemini/gemini-3.1-flash-lite-preview",
+      "per_key": [
+        {
+          "key_index": 0,
+          "current_rpm": 51,
+          "limit_rpm": 500,
+          "total_calls": 159,
+          "total_429": 0
+        },
+        {
+          "key_index": 1,
+          "current_rpm": 51,
+          "limit_rpm": 500,
+          "total_calls": 159,
+          "total_429": 0
+        },
+        {
+          "key_index": 2,
+          "current_rpm": 51,
+          "limit_rpm": 500,
+          "total_calls": 0,
+          "total_429": 0
+        },
+        {
+          "key_index": 3,
+          "current_rpm": 52,
+          "limit_rpm": 500,
+          "total_calls": 159,
+          "total_429": 0
+        },
+        {
+          "key_index": 4,
+          "current_rpm": 52,
+          "limit_rpm": 500,
+          "total_calls": 159,
+          "total_429": 0
+        }
+      ],
+      "cache_hits": 0,
+      "cache_misses": 795,
+      "total_calls": 795,
+      "n_keys": 5,
+      "iam_mode": false,
+      "cost_usd": {
+        "openai": 0.0,
+        "anthropic": 0.0,
+        "gemini": 0.0,
+        "vertex_ai": 0.0,
+        "azure": 0.0,
+        "bedrock": 0.0,
+        "groq": 0.0,
+        "openrouter": 0.0
+      },
+      "cost_thresholds": {
+        "openai": 50.0,
+        "anthropic": 20.0,
+        "gemini": 5.0,
+        "vertex_ai": 5.0,
+        "azure": 50.0,
+        "bedrock": 20.0,
+        "groq": 50.0,
+        "openrouter": 50.0
+      },
+      "cost_tracking_enabled": false,
+      "cache_hit_rate": 0.0
+    },
+    "actual_keys_used": 5,
+    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
+    "effective_provider": "gemini",
+    "official_poll_validation": {
+      "target_series": "poll_consensus_daily",
+      "as_of_date": "2026-04-26",
+      "method_version": "weighted_v1",
+      "cutoff_ts": "2026-04-26T00:00:00+09:00",
+      "source_poll_ids": [
+        "nesdc-16158"
+      ],
+      "metrics": {
+        "mae": 0.4919,
+        "rmse": 0.5724,
+        "margin_error": 0.525,
+        "leader_match": false
+      },
+      "by_candidate": {
+        "c_daegu_dpk": {
+          "simulated_share": 0.02,
+          "official_consensus": 0.6771,
+          "error": -0.6571
+        },
+        "c_daegu_ppp_choo": {
+          "simulated_share": 0.98,
+          "official_consensus": 0.2422,
+          "error": 0.7378
+        },
+        "c_daegu_ppp_yoo": {
+          "simulated_share": 0.0,
+          "official_consensus": 0.0807,
+          "error": -0.0807
+        }
+      }
+    },
+    "finished_at": "2026-04-26T06:43:52.103835+00:00",
+    "wall_seconds": 198.36
+  }
+}

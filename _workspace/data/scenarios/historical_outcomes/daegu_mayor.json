@@ -1,0 +1,23 @@
+{
+  "_doc": "대구광역시장 직전 본 선거 final outcome. 출처: 위키백과 (제8회 전국동시지방선거 광역자치단체장 페이지, perplexity 13:50 KST).",
+  "region_id": "daegu_mayor",
+  "election": {
+    "name": "제8회 전국동시지방선거 — 대구광역시장",
+    "date": "2022-06-01",
+    "election_id": "election_2022_local_mayor_daegu",
+    "type": "local_mayor"
+  },
+  "turnout": 0.432,
+  "total_valid_votes": 869905,
+  "results": [
+    {"rank": 1, "name": "홍준표", "party": "국민의힘",       "votes": 685159, "vote_share": 0.7875, "elected": true},
+    {"rank": 2, "name": "서재헌", "party": "더불어민주당",   "votes": 156429, "vote_share": 0.1797, "elected": false},
+    {"rank": 3, "name": "김영진", "party": "정의당",         "votes":  19733, "vote_share": 0.0226, "elected": false}
+  ],
+  "lead_pp": 0.6078,
+  "winner_party_id_in_scenario": "p_ppp",
+  "sources": [
+    "https://ko.wikipedia.org/wiki/제8회_전국동시지방선거_광역자치단체장",
+    "https://www.newsis.com/2022election/"
+  ]
+}

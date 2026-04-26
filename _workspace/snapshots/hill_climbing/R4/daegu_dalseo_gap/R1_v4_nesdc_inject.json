@@ -1,0 +1,137 @@
+{
+  "variant": "v4_nesdc_inject",
+  "n_personas": 10,
+  "n_abstain": 5,
+  "votes": [
+    {
+      "persona_id": "0047c4f2950d4bda9d950f7a8e2d12ae",
+      "vote": "c_dalseo_ppp_hong",
+      "reason": "대구 지역의 정서와 당의 안정적인 기조를 고려하여 후보를 선택했습니다.",
+      "key_factors": [
+        "지역 정서",
+        "안정적 국정 운영",
+        "개인적 성향"
+      ],
+      "latency_ms": 2522.2
+    },
+    {
+      "persona_id": "0281bff9c7cf4503bbdef1c04f23e857",
+      "vote": null,
+      "reason": "대구에 거주하는 제가 서울시장 선거에 투표할 이유가 없으며, 현재 후보들에 대한 정보도 전무합니다.",
+      "key_factors": [
+        "거주지 불일치",
+        "후보 정보 부족",
+        "선거권 행사 범위"
+      ],
+      "latency_ms": 2571.4
+    },
+    {
+      "persona_id": "0431b504d6924740b71808cf535bf4dc",
+      "vote": null,
+      "reason": "제공된 정보 내에서 서울특별시장 선거와 대구 거주자인 저와의 연관성을 찾기 어렵고 후보군에 대한 정보도 불충분합니다.",
+      "key_factors": [
+        "거주지 불일치",
+        "정보 부족",
+        "후보 식별 불가"
+      ],
+      "latency_ms": 2889.2
+    },
+    {
+      "persona_id": "043bca9644544f1ba852abdd99d5f715",
+      "vote": null,
+      "reason": "서울시장 선거인데 제가 거주하는 대구 지역구 후보들만 명단에 있어 투표할 대상을 찾을 수 없습니다.",
+      "key_factors": [
+        "거주지 불일치",
+        "후보 식별 불가",
+        "기권 결정"
+      ],
+      "latency_ms": 2590.8
+    },
+    {
+      "persona_id": "032d074ffdd147e2b173d82c2078a169",
+      "vote": "c_dalseo_ppp_hong",
+      "reason": "대구 사람으로서 보수 정당에 대한 믿음이 있고, 우리 같은 서민의 삶을 더 잘 이해해 줄 것 같아서 선택했습니다.",
+      "key_factors": [
+        "지역 보수 정당 지지",
+        "서민 생활 개선 기대",
+        "안정적 변화 희망"
+      ],
+      "latency_ms": 3549.1
+    },
+    {
+      "persona_id": "3195d8d421b44e5492f6445f32dcd5cc",
+      "vote": "c_dalseo_ppp_hong",
+      "reason": "대구 지역 정서와 보수 정당 후보로서의 안정감을 고려하여 선택했습니다.",
+      "key_factors": [
+        "지역 정서",
+        "정당 지지",
+        "안정적 정책 기대"
+      ],
+      "latency_ms": 3241.0
+    },
+    {
+      "persona_id": "07cf443026ff4f7ebdd16711c5085473",
+      "vote": "c_dalseo_ppp_hong",
+      "reason": "대구 지역에서 오랫동안 신뢰를 쌓아온 보수 정당의 실무 경험 있는 후보를 지지합니다.",
+      "key_factors": [
+        "보수 정당 성향",
+        "지역 내 인지도",
+        "현장 영업 중심의 실리주의"
+      ],
+      "latency_ms": 3622.0
+    },
+    {
+      "persona_id": "03f60a4cf2ce42a3ba0584dfde28de66",
+      "vote": "c_dalseo_ppp_hong",
+      "reason": "대구 지역의 정치적 정서와 오랫동안 지역을 지켜온 당의 후보를 신뢰하기 때문입니다.",
+      "key_factors": [
+        "지역 정당 선호도",
+        "보수적 가치관",
+        "지역 연고"
+      ],
+      "latency_ms": 1812.3
+    },
+    {
+      "persona_id": "000c2fefd296477c882928a37da1a715",
+      "vote": null,
+      "reason": "서울시장 선거라 내 사는 대구 달서구와는 상관없고 마땅히 누굴 찍어야 할지 정보가 부족해서 투표 안 하겠다.",
+      "key_factors": [
+        "지역구 무관성",
+        "정보 부족",
+        "투표 실익 없음"
+      ],
+      "latency_ms": 4158.3
+    },
+    {
+      "persona_id": "0009c0a3c53f444b9509ccf2fef89856",
+      "vote": null,
+      "reason": "서울 시장 후보들이 대구에 사는 내 삶과 어떤 관련이 있는지 잘 모르겠고, 누구를 찍어야 할지 전혀 모르겠습니다.",
+      "key_factors": [
+        "연고지 불일치",
+        "후보 정보 부재",
+        "관심도 낮음"
+      ],
+      "latency_ms": 4235.4
+    }
+  ],
+  "vote_count": {
+    "c_dalseo_ppp_hong": 5
+  },
+  "renorm_share": {
+    "c_seoul_dpk": 0.0,
+    "c_seoul_ppp": 0.0
+  },
+  "official_consensus": {
+    "c_seoul_dpk": 0.5702,
+    "c_seoul_ppp": 0.4298
+  },
+  "metrics": {
+    "mae": 0.5,
+    "rmse": 0.5049,
+    "leader_match": null,
+    "kl_div": -0.0,
+    "n_rated": 0
+  },
+  "system_prompt_sample": "당신은 한국 유권자입니다. 아래 페르소나를 1인칭으로 체화하여 답하세요.\n- 거주: 대구 대구-달서구\n- 연령: 26, 성별: 남자\n- 직업: 경영 기획 사무원, 학력: 4년제 대학교\n- 가족: 미혼\n\n=== 서사 ===\n윤선주 씨는 대구 달서구에서 자가 아파트에 거주하며 소매업 경영 기획자로 일하는 26세 청년으로, 부드러운 성품과 실용적인 업무 태도를 가졌으며 식도락과 휴식을 통해 삶의 균형을 찾는 인물입니다.\n\n\n달서구 월성동 인근 아파트에서 혼자 지내며, 대구 특유의 투박함보다는 부드러운 말투로 주변 사람들과 어울리는 법을 익혔습니다. 유튜브 쇼츠로 최신 유행을 빠르게 접하면서도 주말이면 정기적으로 본가에 들러 부모님과 함께 식사하는 일상을 소중히 여깁니다.\n\n=== 규칙 ===\n1. 제공된 컨텍스트(이슈·여론조사·이벤트) 외 정보를 사용하지 마세요.\n2. 출마를 포기한 후보는 선택할 수 없습니다.\n3. 미래 결과를 안다고 가정하지 마세요. 페르소나의 가치관·관심사로만 추론하세요.\n4. 반드시 단일 JSON 객체로만 응답합니다 (코드펜스 금지). 스키마:\n   {\"vote\": \"<candidate_id|null>\", \"turnout\": true|false, \"confidence\": 0.0~1.0, \"reason\": \"<짧은 한 줄>\", \"key_factors\": [\"<핵심 요인 최대 3개>\"]}",
+  "user_prompt_sample": "=== 서울특별시장 (timestep t=0) ===\n[모드] secret_ballot\n지금은 투표소 안입니다. 비공개 투표용지에 단 한 명을 기표하세요. reason은 한 줄로 짧게.\n\n[후보]\n- c_dalseo_dpk | 서재헌 (p_dem)\n- c_dalseo_ppp_kim | 김민수 (p_ppp)\n- c_dalseo_ppp_lee | 이진숙 (p_ppp)\n- c_dalseo_ppp_hong | 홍석준 (p_ppp)\n\n[컨텍스트 (t≤0)]\n[참고 NESDC 등록 여론조사 (DuckDB poll_consensus_daily, weighted_v1)]\n- 미정·모름·기타 100%\n  (이는 컷오프 시점 등록 여론조사 합의이며 미래 결과가 아닙니다.)\n"
+}

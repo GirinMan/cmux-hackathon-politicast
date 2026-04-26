@@ -1,0 +1,102 @@
+{
+  "_doc": "Regional cohort priors — region × age × party_lean. Override national defaults where region-specific Korean polling data exists. cutoff_ts ≤ 2026-04-26. NO fake percentages.",
+  "scope": "regional",
+  "fetched_at": "2026-04-26T15:50:00+09:00",
+  "cohort_priors": [
+    {
+      "cohort_id": "seoul_ALL",
+      "age_band": "ALL",
+      "gender": "ALL",
+      "scope": "region",
+      "region_id": "seoul_mayor",
+      "party_lean": {"ppp": 0.20, "dpk": 0.40, "rebuild": 0.04, "other": 0.04, "undecided": 0.32},
+      "n_polls": 1,
+      "sample_size": 1000,
+      "source": "한국갤럽 2026-01 (서울 민주 40% / 국힘 20%)",
+      "source_url": "https://www.kyeonggi.com/article/20260123580070",
+      "publish_ts": "2026-01-23T00:00:00"
+    },
+    {
+      "cohort_id": "busan_ulsan_gyeongnam_ALL",
+      "age_band": "ALL",
+      "gender": "ALL",
+      "scope": "region",
+      "region_id": "busan_buk_gap",
+      "party_lean": {"ppp": 0.29, "dpk": 0.32, "rebuild": 0.04, "other": 0.05, "undecided": 0.30},
+      "n_polls": 2,
+      "sample_size": 2000,
+      "source": "한국갤럽 2026-01 (부산/울산/경남 민주 32%/국힘 29%) + 리얼미터 2026-02-4주 (PUK 65.5% 무당층 부산울산경남)",
+      "source_url": "https://www.kyeonggi.com/article/20260123580070",
+      "publish_ts": "2026-01-23T00:00:00",
+      "notes": "부산/울산/경남은 보수 텃밭이지만 이재명 정부 들어 양당 격차 좁혀짐. 한동훈 만덕 출마로 북구갑 무소속 변수 가산."
+    },
+    {
+      "cohort_id": "daegu_gyeongbuk_ALL",
+      "age_band": "ALL",
+      "gender": "ALL",
+      "scope": "region",
+      "region_id": "daegu_mayor",
+      "party_lean": {"ppp": 0.35, "dpk": 0.26, "rebuild": 0.03, "other": 0.05, "undecided": 0.31},
+      "n_polls": 2,
+      "sample_size": 1500,
+      "source": "한국갤럽 데일리 658호 (2026-04 1주, 대구/경북 민주 26%/국힘 35%) + 한국갤럽 2026-01 (민주 20% / 국힘 48%)",
+      "source_url": "https://www.clien.net/service/board/park/19172310",
+      "publish_ts": "2026-04-03T00:00:00",
+      "notes": "대구/경북은 PPP 텃밭. 4월 시점 양당 모두 오차범위 내 — 김부겸 효과로 좁혀짐. 한국갤럽 2026-01 → 04 사이 PPP 48% → 35% 하락 (장동혁 당대표 효과)."
+    },
+    {
+      "cohort_id": "daegu_gyeongbuk_dpk_TK_origin",
+      "age_band": "ALL",
+      "gender": "ALL",
+      "scope": "region_special",
+      "region_id": "daegu_mayor",
+      "party_lean": {"ppp": 0.35, "dpk": 0.26, "rebuild": 0.03, "other": 0.05, "undecided": 0.31},
+      "additional_context": "김부겸 효과 — TK 출신 민주당 거물. 양자 대결 추경호 대비 9.9%p 우위 (2026-03-25 연합뉴스TV).",
+      "source_url": "https://www.yonhapnewstv.co.kr/news/MYH20260325211615ZM3",
+      "publish_ts": "2026-03-25T00:00:00",
+      "n_polls": 1,
+      "sample_size": 1000,
+      "notes": "Region-level baseline 위에 김부겸 비TK 정체성 popularity driver — 이 prior 는 sim 의 '인물 vs 정당' decoupling 변수."
+    },
+    {
+      "cohort_id": "gwangju_jeonra_ALL",
+      "age_band": "ALL",
+      "gender": "ALL",
+      "scope": "region",
+      "region_id": "gwangju_mayor",
+      "party_lean": {"ppp": 0.12, "dpk": 0.63, "rebuild": 0.04, "other": 0.06, "undecided": 0.15},
+      "n_polls": 2,
+      "sample_size": 2000,
+      "source": "한국갤럽 2026-01 (광주/전라 민주 63% / 국힘 12%) + 리얼미터 2026-02 (75.7%)",
+      "source_url": "https://www.kyeonggi.com/article/20260123580070",
+      "publish_ts": "2026-01-23T00:00:00",
+      "notes": "광주/전라는 더민주 텃밭. 이재명 정부 출범 후 더 강화. 광주 통합특별시장 경선은 김영록·민형배·신정훈·강기정 5강 구도 → 신정훈/강기정 단일화 (2026-03-30)."
+    },
+    {
+      "cohort_id": "incheon_gyeonggi_ALL",
+      "age_band": "ALL",
+      "gender": "ALL",
+      "scope": "region",
+      "region_id": "_metro_kyungki",
+      "party_lean": {"ppp": 0.18, "dpk": 0.49, "rebuild": 0.04, "other": 0.05, "undecided": 0.24},
+      "n_polls": 1,
+      "sample_size": 1000,
+      "source": "한국갤럽 2026-01 (경기/인천 민주 49% / 국힘 18%)",
+      "source_url": "https://www.kyeonggi.com/article/20260123580070",
+      "publish_ts": "2026-01-23T00:00:00"
+    },
+    {
+      "cohort_id": "daejeon_chungcheong_ALL",
+      "age_band": "ALL",
+      "gender": "ALL",
+      "scope": "region",
+      "region_id": "_metro_chungcheong",
+      "party_lean": {"ppp": 0.16, "dpk": 0.44, "rebuild": 0.04, "other": 0.04, "undecided": 0.32},
+      "n_polls": 1,
+      "sample_size": 1000,
+      "source": "한국갤럽 2026-01 (대전/세종/충청 민주 44% / 국힘 16%)",
+      "source_url": "https://www.kyeonggi.com/article/20260123580070",
+      "publish_ts": "2026-01-23T00:00:00"
+    }
+  ]
+}

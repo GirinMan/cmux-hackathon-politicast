@@ -1,0 +1,134 @@
+{
+  "generated_at": "2026-04-26T15:02:07+09:00",
+  "source_file": "_workspace/data/scenarios/hill_climbing_target_busan_buk_gap_n10.json",
+  "distribution": {
+    "n": 10,
+    "by_age_bin": {
+      "20s": 2,
+      "30s": 2,
+      "40s": 2,
+      "50s": 2,
+      "60p": 2
+    },
+    "by_sex": {
+      "남자": 5,
+      "여자": 5
+    },
+    "by_education_class": {
+      "bachelor_plus": 5,
+      "sub_bachelor": 5
+    },
+    "by_education_level": {
+      "4년제 대학교": 5,
+      "2~3년제 전문대학": 2,
+      "고등학교": 3
+    },
+    "by_occupation": {
+      "마케팅 전문가": 1,
+      "무직": 3,
+      "경리 사무원": 3,
+      "산업 안전원": 1,
+      "승용차 및 승합차 운전원": 1,
+      "소규모 상점 경영자": 1
+    },
+    "by_occ_kind": {
+      "white_collar_entry": 1,
+      "unemployed_student_equiv": 1,
+      "white_collar_office": 3,
+      "white_collar_specialist": 1,
+      "blue_collar": 1,
+      "self_employed": 1,
+      "blue_collar_or_unemployed": 1,
+      "homemaker_equiv": 1
+    },
+    "by_district": {
+      "부산-북구": 10
+    },
+    "axes_coverage": {
+      "age_bins": [
+        "20s",
+        "30s",
+        "40s",
+        "50s",
+        "60p"
+      ],
+      "sex": [
+        "남자",
+        "여자"
+      ],
+      "education_classes": [
+        "bachelor_plus",
+        "sub_bachelor"
+      ],
+      "districts_unique": [
+        "부산-북구"
+      ],
+      "occ_kinds": [
+        "blue_collar",
+        "blue_collar_or_unemployed",
+        "homemaker_equiv",
+        "self_employed",
+        "unemployed_student_equiv",
+        "white_collar_entry",
+        "white_collar_office",
+        "white_collar_specialist"
+      ]
+    },
+    "balance_checks": {
+      "sex_balance_5_5": [
+        5,
+        5
+      ],
+      "edu_balance_5_5": [
+        5,
+        5
+      ],
+      "age_bin_counts": {
+        "20s": 2,
+        "30s": 2,
+        "40s": 2,
+        "50s": 2,
+        "60p": 2
+      },
+      "district_unique_count": 1,
+      "district_note": "busan_buk_gap personas table has only 1 district (부산-북구) — N/A axis, replaced by occupation diversity"
+    }
+  },
+  "ground_truth_consensus": [
+    {
+      "candidate_id": "c_busan_dpk",
+      "p_hat": 0.3100000023841858,
+      "variance": 0.0007672645151615143,
+      "n_polls": 1,
+      "source_poll_ids": "[\"nesdc-16169\"]"
+    },
+    {
+      "candidate_id": "c_busan_indep_han",
+      "p_hat": 0.25999999046325684,
+      "variance": 0.0006901434971950948,
+      "n_polls": 1,
+      "source_poll_ids": "[\"nesdc-16169\"]"
+    },
+    {
+      "candidate_id": "c_busan_ppp",
+      "p_hat": 0.20999999344348907,
+      "variance": 0.000595087360125035,
+      "n_polls": 1,
+      "source_poll_ids": "[\"nesdc-16169\"]"
+    }
+  ],
+  "ground_truth_renorm": [
+    {
+      "candidate_id": "c_busan_dpk",
+      "p_hat_renorm": 0.3974359074777715
+    },
+    {
+      "candidate_id": "c_busan_indep_han",
+      "p_hat_renorm": 0.3333333269653156
+    },
+    {
+      "candidate_id": "c_busan_ppp",
+      "p_hat_renorm": 0.26923076555691283
+    }
+  ]
+}

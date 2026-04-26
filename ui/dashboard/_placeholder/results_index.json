@@ -1,0 +1,12 @@
+{
+  "_doc": "Placeholder results index — used when _workspace/snapshots/results_index.json is missing or doesn't cover all 5 regions. Auto-loaded by dashboard so screen stays alive even if sim hasn't produced output yet.",
+  "_placeholder": true,
+  "generated_at": "2026-04-26T11:30:00+09:00",
+  "results": [
+    {"region_id": "seoul_mayor", "scenario_id": "seoul_baseline", "path": "ui/dashboard/_placeholder/seoul_mayor.json"},
+    {"region_id": "gwangju_mayor", "scenario_id": "gwangju_baseline", "path": "ui/dashboard/_placeholder/gwangju_mayor.json"},
+    {"region_id": "daegu_mayor", "scenario_id": "daegu_baseline", "path": "ui/dashboard/_placeholder/daegu_mayor.json"},
+    {"region_id": "busan_buk_gap", "scenario_id": "busan_buk_gap_baseline", "path": "ui/dashboard/_placeholder/busan_buk_gap.json"},
+    {"region_id": "daegu_dalseo_gap", "scenario_id": "daegu_dalseo_gap_baseline", "path": "ui/dashboard/_placeholder/daegu_dalseo_gap.json"}
+  ]
+}

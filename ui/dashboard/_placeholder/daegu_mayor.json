@@ -1,0 +1,56 @@
+{
+  "_placeholder": true,
+  "scenario_id": "daegu_baseline",
+  "region_id": "daegu_mayor",
+  "contest_id": "daegu_mayor_2026",
+  "timestep_count": 4,
+  "persona_n": 150,
+  "candidates": [
+    {"id": "C_D_A", "name": "후보 A", "party": "더불어민주당"},
+    {"id": "C_D_B", "name": "후보 B", "party": "국민의힘"},
+    {"id": "C_D_C", "name": "후보 C", "party": "무소속"}
+  ],
+  "poll_trajectory": [
+    {"timestep": 0, "date": "2026-03-15", "support_by_candidate": {"C_D_A": 0.18, "C_D_B": 0.68, "C_D_C": 0.06}, "turnout_intent": 0.55, "consensus_var": 0.013},
+    {"timestep": 1, "date": "2026-03-29", "support_by_candidate": {"C_D_A": 0.20, "C_D_B": 0.66, "C_D_C": 0.06}, "turnout_intent": 0.57, "consensus_var": 0.011},
+    {"timestep": 2, "date": "2026-04-12", "support_by_candidate": {"C_D_A": 0.22, "C_D_B": 0.65, "C_D_C": 0.05}, "turnout_intent": 0.59, "consensus_var": 0.010},
+    {"timestep": 3, "date": "2026-04-26", "support_by_candidate": {"C_D_A": 0.23, "C_D_B": 0.64, "C_D_C": 0.06}, "turnout_intent": 0.61, "consensus_var": 0.009}
+  ],
+  "final_outcome": {
+    "turnout": 0.61,
+    "vote_share_by_candidate": {"C_D_A": 0.24, "C_D_B": 0.65, "C_D_C": 0.06, "abstain": 0.05},
+    "winner": "C_D_B"
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "20s": {"C_D_A": 0.30, "C_D_B": 0.55, "C_D_C": 0.10, "abstain": 0.05},
+      "30s": {"C_D_A": 0.28, "C_D_B": 0.58, "C_D_C": 0.08, "abstain": 0.06},
+      "40s": {"C_D_A": 0.25, "C_D_B": 0.62, "C_D_C": 0.07, "abstain": 0.06},
+      "50s": {"C_D_A": 0.20, "C_D_B": 0.70, "C_D_C": 0.05, "abstain": 0.05},
+      "60+": {"C_D_A": 0.14, "C_D_B": 0.78, "C_D_C": 0.04, "abstain": 0.04}
+    },
+    "by_education": {
+      "고졸 이하": {"C_D_A": 0.18, "C_D_B": 0.72, "C_D_C": 0.04, "abstain": 0.06},
+      "전문대졸": {"C_D_A": 0.22, "C_D_B": 0.66, "C_D_C": 0.06, "abstain": 0.06},
+      "대졸": {"C_D_A": 0.27, "C_D_B": 0.60, "C_D_C": 0.07, "abstain": 0.06},
+      "대학원졸": {"C_D_A": 0.32, "C_D_B": 0.55, "C_D_C": 0.08, "abstain": 0.05}
+    },
+    "by_district": {
+      "중구": {"C_D_A": 0.22, "C_D_B": 0.66, "C_D_C": 0.06, "abstain": 0.06},
+      "동구": {"C_D_A": 0.21, "C_D_B": 0.67, "C_D_C": 0.06, "abstain": 0.06},
+      "수성구": {"C_D_A": 0.27, "C_D_B": 0.62, "C_D_C": 0.06, "abstain": 0.05},
+      "달서구": {"C_D_A": 0.24, "C_D_B": 0.65, "C_D_C": 0.06, "abstain": 0.05}
+    }
+  },
+  "virtual_interviews": [
+    {"persona_id": "p-201", "persona_summary": "60대 자영업, 대구 동구 거주, 보수 성향", "vote": "C_D_B", "reason": "지역 정체성과 경제 보수 정책 신뢰", "key_factors": ["지역", "경제"], "timestep": 3},
+    {"persona_id": "p-202", "persona_summary": "30대 직장인, 대구 수성구 거주", "vote": "C_D_A", "reason": "교육·주거 정책의 진보적 접근에 동의", "key_factors": ["교육", "주거"], "timestep": 3},
+    {"persona_id": "p-203", "persona_summary": "20대 대학생, 대구 달서구 거주", "vote": "C_D_C", "reason": "양당제 거부, 신선한 무소속 후보", "key_factors": ["양당제 피로"], "timestep": 3},
+    {"persona_id": "p-204", "persona_summary": "50대 회사원, 대구 중구 거주", "vote": "C_D_B", "reason": "안정적 시정 운영 기대", "key_factors": ["안정"], "timestep": 3},
+    {"persona_id": "p-205", "persona_summary": "70대 전업주부, 대구 동구 거주", "vote": "C_D_B", "reason": "전통적 정당 지지", "key_factors": ["정당", "지역"], "timestep": 3}
+  ],
+  "kg_events_used": [
+    {"event_id": "E201", "type": "endorsement", "target": "C_D_B", "timestep": 1},
+    {"event_id": "E202", "type": "discourse", "target": "지방재정", "timestep": 2}
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "_doc": "대구 달서구 갑 보궐선거 prediction-only 시나리오 시드 (sim+kg 통합 스키마). 조건부 — 유영하 의원 대구시장 후보 확정/사퇴 시. NESDC 등록 여론조사 0건이라 언론 기사 기반 후보군 evidence와 historical stronghold prior만 사용한다. 출처: Perplexity MCP + 지역/중앙 언론 (2026-04-26).",
+  "scenario_id": "daegu_dalseo_gap_2026",
+  "region_id": "daegu_dalseo_gap",
+  "contest_id": "daegu_dalseo_gap_2026",
+  "label": "대구 달서구 갑 (보궐)",
+  "gov_approval": 0.42,
+  "election": {
+    "election_id": "election_2026_local",
+    "name": "제9회 전국동시지방선거 (보궐 동시투표, 조건부)",
+    "date": "2026-06-03",
+    "type": "national_assembly_by_election"
+  },
+  "election_date": "2026-06-03",
+  "contest": {
+    "contest_id": "daegu_dalseo_gap_2026",
+    "position_type": "national_assembly_by_election"
+  },
+  "district": {
+    "province": "대구",
+    "district": "대구-달서구",
+    "population": 540000
+  },
+  "parties": [
+    {"party_id": "p_dem", "name": "더불어민주당", "ideology": -0.4},
+    {"party_id": "p_ppp", "name": "국민의힘",     "ideology": 0.5}
+  ],
+  "candidates": [
+    {
+      "id": "c_dalseo_dpk",
+      "candidate_id": "c_dalseo_dpk",
+      "name": "서재헌",
+      "party": "p_dem",
+      "party_name": "더불어민주당",
+      "withdrawn": false,
+      "background": "서재헌 김민석 의원실 선임비서관, 전 더불어민주당 대구시장 후보. 2026-04-17 대구 국회의원 보궐선거 출마를 선언했고, 대구 달성군 또는 유영하 지역구인 달서구갑 보궐 출마 가능성이 보도됨. prediction-only 시나리오의 민주당 단일 후보.",
+      "key_pledges": ["대구 균형발전", "이재명 정부 직결", "먹고사는 문제 해결", "달서구 청년 정책"]
+    },
+    {
+      "id": "c_dalseo_ppp_kim",
+      "candidate_id": "c_dalseo_ppp_kim",
+      "name": "김민수",
+      "party": "p_ppp",
+      "party_name": "국민의힘",
+      "withdrawn": true,
+      "background": "국민의힘 최고위원. 장동혁 대표 측근 전략공천설이 대구 보궐 전반에서 거론되나, 기사상 달서갑보다 달성군 가능성이 더 직접적으로 언급된다. 정당별 1명 달서갑 시나리오에서는 비활성 대안.",
+      "key_pledges": ["보수 정통", "TK 결집", "당권파 전략공천 논란"]
+    },
+    {
+      "id": "c_dalseo_ppp_hong",
+      "candidate_id": "c_dalseo_ppp_hong",
+      "name": "홍성주",
+      "party": "p_ppp",
+      "party_name": "국민의힘",
+      "withdrawn": false,
+      "background": "전 대구시 경제부시장. 2026-04-23 지역 보도에서 유영하 의원이 대구시장 후보로 확정되어 달서갑이 빌 경우, 달서구청장 출마를 준비하던 홍성주가 국민의힘 유력 대체 카드로 부상한다고 언급됨. prediction-only 시나리오의 국민의힘 단일 후보.",
+      "key_pledges": ["행정 경험", "대구시 경제부시장 경력", "성서권 지역경제", "보수 안정"]
+    }
+  ],
+  "issues": [
+    {"issue_id": "i_tk_unity",     "name": "TK 보수 결집 vs 분열",            "type": "이념"},
+    {"issue_id": "i_dpk_breakthrough","name": "민주당 침투 (서재헌 4기)",   "type": "지역개발"}
+  ],
+  "frames": [
+    {"frame_id": "f_ppp_split",     "label": "국힘 본경선 잡음"},
+    {"frame_id": "f_strong_right",  "label": "강성 보수 결집"}
+  ],
+  "events": [
+    {
+      "event_id": "ev_dalseo_conditional_vacancy",
+      "type": "MediaEvent",
+      "ts": "2026-04-23T17:30:00+09:00",
+      "source": "대구 지역 보도/다음뉴스",
+      "source_url": "https://v.daum.net/v/20260423173036753?f=p",
+      "title": "유영하·추경호 대구시장 경선 향배에 달서갑·달성 보궐 대진표 요동",
+      "sentiment": 0.05,
+      "frame_id": "f_ppp_split",
+      "about": ["c_dalseo_dpk", "c_dalseo_ppp_hong"],
+      "mentions": ["i_tk_unity", "i_dpk_breakthrough"]
+    }
+  ],
+  "seed_events": [
+    {"timestep": 0, "type": "candidacy", "target": "c_dalseo_dpk", "polarity": 0.15, "summary": "서재헌, 대구 국회의원 보궐선거 출마 선언"},
+    {"timestep": 1, "type": "media_frame", "target": "c_dalseo_ppp_hong", "polarity": 0.20, "summary": "유영하 승리 시 달서갑 보궐의 국민의힘 대체 카드로 홍성주 부상"},
+    {"timestep": 2, "type": "party_noise", "target": "c_dalseo_ppp_kim", "polarity": -0.10, "summary": "김민수 전략공천설은 대구 보궐 전반의 낙하산 공천 논란으로 남김"}
+  ],
+  "polls": [
+    {"poll_id": "prediction_prior_dalseo_20260426", "ts": "2026-04-26T00:00:00+09:00", "sample_size": 0, "leader_candidate": "c_dalseo_ppp_hong", "leader_share": 0.65}
+  ],
+  "raw_polls": [
+    {
+      "poll_id": "prediction_prior_dalseo_20260426",
+      "pollster": "NO_DIRECT_DISTRICT_POLL_MEDIA_PRIOR",
+      "mode": "historical_baseline_plus_media_candidate_prior",
+      "n": 0,
+      "date": "2026-04-26",
+      "quality": 0.2,
+      "source_type": "prediction_only_prior_not_poll",
+      "not_for_validation": true,
+      "shares": {
+        "c_dalseo_ppp_hong": 0.65,
+        "c_dalseo_dpk": 0.35
+      }
+    }
+  ],
+  "simulation": {
+    "t_start": "2026-04-01T00:00:00+09:00",
+    "t_end":   "2026-06-03T00:00:00+09:00",
+    "timesteps": 4
+  },
+  "scenario_notes": "Prediction-only 가상 시나리오. NESDC 등록 여론조사 0건이며, raw_polls는 공식 poll label이 아니라 달서갑 보수 강세 historical baseline과 언론 기사 기반 후보군 prior다. 정당별 1명 후보 가정: 민주당 서재헌, 국민의힘 홍성주. 김민수는 대구 보궐/전략공천 대안으로 KG에 남기되 withdrawn=true. 이진숙은 2026-04-25 대구시장 예비후보직 사퇴 및 불출마 선언 후 국힘 후보 지원 이벤트로만 KG에 보존하며 달서갑 후보군에서 제외.",
+  "prediction_only_assumption": {
+    "enabled": true,
+    "not_for_validation": true,
+    "reason": "대구 달서갑은 NESDC 등록 선거구 여론조사가 없고, 보궐 성립 자체가 유영하 의원의 대구시장 후보 확정/사퇴에 의존한다. 언론 기사 후보군과 historical stronghold prior는 train/validation label이 아니라 순수 prediction-only KG prior다.",
+    "one_candidate_per_party": true,
+    "active_candidate_ids": ["c_dalseo_dpk", "c_dalseo_ppp_hong"],
+    "withdrawn_candidate_ids": ["c_dalseo_ppp_kim"],
+    "source_urls": [
+      "https://www.edaily.co.kr/News/Read?newsId=05336566645417104&mediaCodeNo=257",
+      "https://v.daum.net/v/20260423173036753?f=p",
+      "https://www.kbmaeil.com/article/20260422500671",
+      "https://www.chosun.com/politics/politics_general/2026/04/25/FK53IBR3X5FNDOT2LQ445P2YDE/"
+    ]
+  }
+}

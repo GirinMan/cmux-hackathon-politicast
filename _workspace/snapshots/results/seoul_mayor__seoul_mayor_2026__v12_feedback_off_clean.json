@@ -1,0 +1,848 @@
+{
+  "scenario_id": "seoul_mayor_2026",
+  "region_id": "seoul_mayor",
+  "contest_id": "seoul_mayor_2026",
+  "timestep_count": 2,
+  "persona_n": 200,
+  "candidates": [
+    {
+      "id": "c_seoul_dpk",
+      "name": "정원오",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_seoul_ppp",
+      "name": "오세훈",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_seoul_rebuild",
+      "name": "한민수",
+      "party": "p_rebuild"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "c_seoul_dpk": 0.85,
+        "c_seoul_ppp": 0.15,
+        "c_seoul_rebuild": 0.0
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.1372222222222222
+    },
+    {
+      "timestep": 1,
+      "date": "2026-04-27",
+      "support_by_candidate": {
+        "c_seoul_dpk": 0.875,
+        "c_seoul_ppp": 0.125,
+        "c_seoul_rebuild": 0.0
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.14930555555555558
+    }
+  ],
+  "final_outcome": {
+    "turnout": 0.99,
+    "vote_share_by_candidate": {
+      "c_seoul_dpk": 0.8282828282828283,
+      "c_seoul_ppp": 0.1717171717171717,
+      "c_seoul_rebuild": 0.0
+    },
+    "winner": "c_seoul_dpk",
+    "n_responses": 200,
+    "n_abstain": 2
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "50s": {
+        "c_seoul_dpk": 0.8,
+        "c_seoul_ppp": 0.16666666666666666
+      },
+      "30s": {
+        "c_seoul_ppp": 0.06896551724137931,
+        "c_seoul_dpk": 0.9310344827586207
+      },
+      "60s+": {
+        "c_seoul_dpk": 0.6440677966101694,
+        "c_seoul_ppp": 0.3389830508474576
+      },
+      "40s": {
+        "c_seoul_dpk": 0.8648648648648649,
+        "c_seoul_ppp": 0.13513513513513514
+      },
+      "20s": {
+        "c_seoul_dpk": 0.9555555555555556,
+        "c_seoul_ppp": 0.044444444444444446
+      }
+    },
+    "by_education": {
+      "고등학교": {
+        "c_seoul_dpk": 0.8627450980392157,
+        "c_seoul_ppp": 0.13725490196078433
+      },
+      "4년제 대학교": {
+        "c_seoul_ppp": 0.19444444444444445,
+        "c_seoul_dpk": 0.7777777777777778
+      },
+      "초등학교": {
+        "c_seoul_dpk": 0.6666666666666666,
+        "c_seoul_ppp": 0.3333333333333333
+      },
+      "2~3년제 전문대학": {
+        "c_seoul_dpk": 0.9354838709677419,
+        "c_seoul_ppp": 0.06451612903225806
+      },
+      "중학교": {
+        "c_seoul_dpk": 0.6666666666666666,
+        "c_seoul_ppp": 0.3333333333333333
+      },
+      "대학원": {
+        "c_seoul_dpk": 0.8571428571428571,
+        "c_seoul_ppp": 0.14285714285714285
+      },
+      "무학": {
+        "c_seoul_dpk": 1.0
+      }
+    },
+    "by_district": {
+      "서울-종로구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-강남구": {
+        "c_seoul_ppp": 0.5384615384615384,
+        "c_seoul_dpk": 0.46153846153846156
+      },
+      "서울-노원구": {
+        "c_seoul_dpk": 0.8571428571428571,
+        "c_seoul_ppp": 0.14285714285714285
+      },
+      "서울-은평구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-구로구": {
+        "c_seoul_dpk": 0.8571428571428571
+      },
+      "서울-영등포구": {
+        "c_seoul_dpk": 0.8888888888888888,
+        "c_seoul_ppp": 0.1111111111111111
+      },
+      "서울-강북구": {
+        "c_seoul_ppp": 0.25,
+        "c_seoul_dpk": 0.75
+      },
+      "서울-관악구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-성북구": {
+        "c_seoul_ppp": 0.14285714285714285,
+        "c_seoul_dpk": 0.8571428571428571
+      },
+      "서울-송파구": {
+        "c_seoul_dpk": 0.8333333333333334,
+        "c_seoul_ppp": 0.16666666666666666
+      },
+      "서울-도봉구": {
+        "c_seoul_dpk": 0.875,
+        "c_seoul_ppp": 0.125
+      },
+      "서울-서초구": {
+        "c_seoul_ppp": 0.5714285714285714,
+        "c_seoul_dpk": 0.42857142857142855
+      },
+      "서울-마포구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-양천구": {
+        "c_seoul_ppp": 0.25,
+        "c_seoul_dpk": 0.75
+      },
+      "서울-성동구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-강서구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-중구": {
+        "c_seoul_ppp": 0.5,
+        "c_seoul_dpk": 0.5
+      },
+      "서울-동작구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-강동구": {
+        "c_seoul_dpk": 0.75,
+        "c_seoul_ppp": 0.25
+      },
+      "서울-금천구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-서대문구": {
+        "c_seoul_ppp": 0.2857142857142857,
+        "c_seoul_dpk": 0.7142857142857143
+      },
+      "서울-중랑구": {
+        "c_seoul_dpk": 0.8181818181818182,
+        "c_seoul_ppp": 0.18181818181818182
+      },
+      "서울-용산구": {
+        "c_seoul_dpk": 0.6666666666666666,
+        "c_seoul_ppp": 0.3333333333333333
+      },
+      "서울-광진구": {
+        "c_seoul_dpk": 0.75,
+        "c_seoul_ppp": 0.125
+      },
+      "서울-동대문구": {
+        "c_seoul_dpk": 0.5,
+        "c_seoul_ppp": 0.5
+      }
+    }
+  },
+  "virtual_interviews": [
+    {
+      "persona_id": "d501cbffd7004405933ffcf0a68eaba9",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "구로구에서 생업을 이어가는 가장으로서, 기존 시장의 정책보다 실무 경험을 바탕으로 생활 밀착형 변화를 약속하는 정원오 후보의 행보에 기대가 큽니다.",
+      "key_factors": [
+        "구청장 3선 실무 경험",
+        "생활 밀착형 정책에 대한 기대",
+        "현 시정에 대한 변화 요구"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "1debda9f781c473c9801f4b3fd0519ce",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랫동안 서초에서 살며 현 시장의 시정 연속성과 재개발 규제 완화가 우리 같은 서민들의 생활 안정에 더 도움이 될 것이라 믿습니다.",
+      "key_factors": [
+        "시정 연속성",
+        "재개발 및 규제 완화",
+        "현실적인 생활 안정"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d191dc6605c645aaad9f92fc6e1ceb40",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "강남 지역 거주자로서 재산권 보호와 도시 규제 완화라는 오세훈 시장의 연속성 있는 시정 방향이 나의 생활 환경 및 자산 가치 안정에 더 부합한다고 판단했습니다.",
+      "key_factors": [
+        "재개발 및 규제 완화 정책",
+        "강남 거주자의 자산 가치 안정성",
+        "현 시정 연속성에 대한 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "1e99ed31a3284372997ba5ea59e68e4b",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "성동구청장으로서 보여준 실무적 행정 능력과 기본사회 공약이 무직 상태인 청년으로서 미래를 대비하는 데 더 실질적인 도움이 될 것이라 기대합니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "기본사회 서울 공약",
+        "현 시정 변화 필요성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "c652a6fa6ee04da99ef219f791853438",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "구청장으로서 행정 경험을 쌓아온 실무형 후보가 서울의 골목 구석구석을 더 잘 살필 수 있을 것이라 기대하기 때문입니다.",
+      "key_factors": [
+        "구청장 3선 실무 행정 경험",
+        "변화와 새로운 시정에 대한 기대",
+        "현 시정 연속성보다 실생활 밀착형 공약 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7c6047b333f74457898930929cade131",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "강남 거주 30대 가장으로서 재개발 규제 완화와 같은 실질적인 주거 정책의 연속성을 가장 중요하게 고려했습니다.",
+      "key_factors": [
+        "재개발 및 규제 완화 정책",
+        "현 시정 연속성",
+        "개인 자산 및 주거 안정"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5ee7019936954e68a2bfb0ad3a76bff1",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "우리 성동구에서 구청장으로 일하며 꼼꼼하게 살림을 챙기던 실무 능력을 직접 봐왔기에, 더 믿음이 갑니다.",
+      "key_factors": [
+        "정원오 후보의 성동구청장 재임 시절 실무 경험",
+        "생활 밀착형 기본사회 공약에 대한 기대",
+        "현 시정에 대한 변화 필요성 체감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "3f97bbe365a04915ae65576210d92521",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "장기화된 구직 생활로 인한 경제적 불안감 속에서, 실무 역량을 강조하고 기본사회 정책을 제시한 후보가 현재의 삶을 개선할 대안으로 느껴집니다.",
+      "key_factors": [
+        "기본사회 서울 공약",
+        "지방행정 실무 경험",
+        "오세훈 무능 심판 프레임"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "bfc999679b0045efac533bd34efa5f88",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "오랜 구청장 경험으로 실무 능력이 검증된 정원오 후보가 현재의 행정 방향에 변화를 줄 수 있을 것이라 기대하며 투표할 것입니다.",
+      "key_factors": [
+        "구청장 3선 실무 행정 경험",
+        "생활 밀착형 공약에 대한 기대",
+        "현재 시정에 대한 변화 요구"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "4dc2797f4c4a442e8eee85b9fd48bed6",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "교육학 전공자로서 아이들을 위한 기본사회의 가치와 성동구청장 시절 증명된 실질적인 행정 능력에 신뢰가 갑니다.",
+      "key_factors": [
+        "기본사회 서울 정책에 대한 공감",
+        "지방행정 실무 경험에 기반한 신뢰",
+        "현 시정에 대한 변화의 필요성 체감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "90aaeb99ac9546ed8ae26ce930be27d1",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "유치원 교사로서 아이들을 키우며 느끼는 생활 속 물가 부담과 미래에 대한 고민에 정원오 후보의 '기본사회' 공약이 더 실질적인 변화를 줄 것으로 기대됩니다.",
+      "key_factors": [
+        "기본사회 서울 공약",
+        "지방행정 실무 경험",
+        "정권심판 프레임 공감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "fef449dfbd3343f2a892ca858d514708",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "동작구 다세대 주택에 거주하는 입장에서 지역 현안 해결과 실무 행정 능력을 검증받은 정원오 후보의 변화와 혁신에 기대를 걸고 있습니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "지역 주거 환경 개선 의지",
+        "기존 시정에 대한 심판적 기류"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5b5c912b519c4d2d93f4c077b5b3ab8d",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "살림을 도맡는 주부로서 물가와 경제가 어려워지는 상황에서 성동구청장 시절 보여준 실무 능력을 바탕으로 서울 살림을 꼼꼼히 챙겨줄 후보에게 기대가 큽니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "기본사회 서울 공약",
+        "현 시정 변화 필요성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "8c2f2aa0a4ff492c9ee919804e6c368e",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랫동안 서울을 이끌어온 경험과 재개발 추진 등 실질적인 변화를 원하기 때문입니다.",
+      "key_factors": [
+        "시정 연속성",
+        "재개발 및 규제 완화",
+        "안정적인 리더십 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b96c16c20b604191b81f59da2c9c8882",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "동작구에서 생활하며 물가와 부동산 이슈 등 민생의 변화를 체감하고 있어, 새로운 행정 실무 능력을 보여준 정원오 후보의 변화와 혁신에 기대를 걸고 투표하려 합니다.",
+      "key_factors": [
+        "실무 중심의 행정 경험",
+        "현 시정에 대한 변화 요구",
+        "기본사회 공약을 통한 민생 안정 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "de0933fa842d4ebaa589ea553de797ed",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "화물 운전일을 하며 재개발과 규제 완화가 현장에서 체감되는 변화로 이어지길 기대하며, 익숙한 행정의 연속성을 중요하게 생각합니다.",
+      "key_factors": [
+        "재개발 및 규제 완화 기대",
+        "현 시정 연속성 선호",
+        "실무 중심의 생활 밀착형 행정"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "1d151708ce4e4d38a1cce89775f20649",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "무직 상태인 청년으로서 현 시정의 실효성에 의문이 들며, 구청장으로서 검증된 실무 능력과 기본사회 공약을 내세운 정원오 후보에게서 삶의 변화를 기대합니다.",
+      "key_factors": [
+        "기본사회 서울 공약",
+        "지방행정 실무 경험",
+        "오세훈 시정 교체 심리"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "98e25cfb736f4f6ebb334b2da14e8bbc",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "청년 노동자로서 체감되는 삶의 팍팍함을 해결하기 위해 실질적인 기본사회 공약을 제시한 정원오 후보에게 마음이 기웁니다.",
+      "key_factors": [
+        "기본사회 서울 공약",
+        "성동구 행정 경험에 대한 신뢰",
+        "현 정권에 대한 심판 심리"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "dac3d03ea87742f7a822c2460889e963",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "복지관에서 어르신들을 챙기며 일하다 보니, 실무 경험을 바탕으로 생활 밀착형 복지를 펼치겠다는 정원오 후보의 약속이 마음에 와닿습니다.",
+      "key_factors": [
+        "구청장 3선 실무 경험",
+        "기본사회 서울 복지 공약",
+        "현 시정 교체 필요성 체감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d028559066e94cbb83a24db7a65e2db3",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "성북구에 살면서 야간 근무를 하며 팍팍한 삶을 버티고 있는데, 기본사회 공약이 나 같은 노동자에게 조금이라도 실질적인 도움이 될 것 같아 마음이 기웁니다.",
+      "key_factors": [
+        "기본사회 서울 공약",
+        "실무 행정 경험",
+        "정권 심판론"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "e268eee004d54d55b39e516eff7be78d",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "보육교사로서 아이들의 미래와 실질적인 복지 정책인 '기본사회 서울' 공약에 더 마음이 움직였으며, 변화가 필요한 시점이라고 생각했습니다.",
+      "key_factors": [
+        "기본사회 서울 공약",
+        "지방행정 실무 경험",
+        "정권심판 정서"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7f14a3fd34e94793ae01b13412fb62b2",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "성동구청장으로서 보여준 실무적 행정 경험과 변화에 대한 기대감이, 오래된 시정의 연속성보다 더 합리적인 선택으로 느껴집니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "정권심판론",
+        "기본사회 서울 공약"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "a3ff27561c0647bfae94da570b2e5001",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "평생 공장에서 꼼꼼하게 일하며 살았는데, 이제는 실무 경험을 바탕으로 내 삶을 챙겨줄 사람에게 기회를 주고 싶습니다.",
+      "key_factors": [
+        "성동구청장으로서 보여준 행정 실무 능력",
+        "오세훈 시정에 대한 변화의 필요성 공감",
+        "기본사회 공약을 통한 서민 생활 안정 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5269393aed274f11aa98c9f3e2cab0c7",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "지방행정 실무자로서 현장에서 구청장직을 수행하며 기본사회 공약을 내세운 정원오 후보의 실무적인 역량과 변화 의지가 저의 업무 환경과 생활 개선에 더 도움이 될 것이라 판단했습니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "기본사회 서울 공약",
+        "현 시정 교체 필요성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "070e9b0936ca424cb767850fd3e02372",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "강북구에 거주하는 청년 노동자로서, 물가와 주거 부담이 큰 상황에서 정원오 후보의 '기본사회' 공약이 생활 안정에 더 실질적인 도움을 줄 것으로 기대됩니다.",
+      "key_factors": [
+        "기본사회 공약에 대한 기대",
+        "지방행정 실무 경험",
+        "오세훈 시정에 대한 변화 필요성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b0522ece13a445c3b9a644c677ce48be",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "부동산 중개업무를 하며 체감한 변화와 생활 밀착형 행정을 펼쳐온 실무 경험을 중시하여 정원오 후보에게 마음이 기웁니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "기본사회 서울 공약",
+        "오세훈 시정 평가"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "6821d685db974d65831e52f33b0cbc3c",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "취업 준비와 미래에 대한 막연한 불안감이 큰 상황에서, 기본사회 공약을 내세운 정원오 후보의 변화와 실무 경험이 현 시정의 연속성보다 더 희망적으로 느껴집니다.",
+      "key_factors": [
+        "기본사회 공약에 대한 기대감",
+        "현 시정에 대한 피로감",
+        "미래 삶의 질 개선 욕구"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "121a5d0d6f424ce5b265498e434ba0be",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "가장으로서 내 집 마련이라는 현실적인 고민과 서울시 주거 환경 개선을 위한 재개발·규제 완화 정책의 연속성이 실질적인 이득이 된다고 판단했습니다.",
+      "key_factors": [
+        "재개발 및 규제 완화 정책",
+        "현 시정 연속성 기대",
+        "가장으로서의 자산 가치 보존 의지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5c0370791bdb419b919e290040c2b88b",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "평생 건설 현장에서 꼼꼼하게 공정을 관리해온 입장에서, 안정적인 시정 운영과 재개발을 통한 주거 환경 개선을 추진하는 후보에게 신뢰가 갑니다.",
+      "key_factors": [
+        "시정 연속성",
+        "재개발 및 규제 완화",
+        "실무 중심의 안정적 행정"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b4a27ef381f3403c947029920f91794e",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랫동안 살아온 노원구 아파트 재개발과 익숙한 서울의 변화를 위해서는 시정을 계속 이어가는 것이 안정적이라고 생각합니다.",
+      "key_factors": [
+        "현 시정의 연속성",
+        "재개발 및 규제 완화 기대",
+        "가족의 평화와 안정 우선"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "1d085164f23b4ffa802b2e9dae82129f",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "마곡나루 근처에 살면서 동네 행정을 직접 겪어보니 구청장 출신인 정원오 후보의 실무 경험과 기본사회 공약이 서민 생활에 더 실질적인 도움이 될 것 같아서 선택했습니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "기본사회 서울 공약",
+        "정권심판 프레임"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7e346c536b214a51af788bea7b750bf6",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "오랫동안 서울시정을 맡아온 사람보다는 성동구청장으로서 실무 경험을 쌓은 정원오 후보가 우리 동네 주민들과 소통하며 변화를 만들어줄 것 같아 기대됩니다.",
+      "key_factors": [
+        "성동구청장 실무 경험",
+        "오세훈 시정 교체 심리",
+        "기본사회 공약에 대한 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "3a668d47a27e4687b3b9fb1ed247096b",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "전문가로서 행정의 실무적 효율성과 변화를 중시하며, 정원오 후보의 검증된 구청장 경험이 서울시정의 정체된 흐름을 바꾸는 데 더 적합하다고 판단했습니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "오세훈 시정 교체 필요성",
+        "기본사회 정책의 실현 가능성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "1d636309928840c38fa3c2007dd295d3",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "구청장 시절 실무 경험과 서민을 위한 기본사회 정책이 홀로 자녀를 키우며 일자리를 찾는 제 현실적인 고충에 더 와닿습니다.",
+      "key_factors": [
+        "실질적인 지방행정 실무 경험",
+        "기본사회 서울 정책의 기대감",
+        "현 시정 무능 심판론 공감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5a68b19231df410f991cb166fdb558cd",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "매일 치열하게 사는 청년으로서, 화려한 개발 공약보다는 구청장 시절 실무 경험을 바탕으로 내 삶에 직접적인 도움이 될 기본사회 정책을 제시한 후보에게 더 신뢰가 갑니다.",
+      "key_factors": [
+        "구청장 실무 행정 경험",
+        "기본사회 서울 공약",
+        "생활 밀착형 정책 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "722a5967724b4db9b081184c5f3f5c16",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "오랜 구청장 경험으로 실무 능력이 검증된 정원오 후보가 현재 서울 시정의 변화를 이끌 적임자라 판단했습니다.",
+      "key_factors": [
+        "구청장 3선 실무 행정 경험",
+        "오세훈 시정 심판론 동조",
+        "기본사회 서울 정책의 실효성 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "27d356cb7cb04a10a8ed712c4db27323",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "성동구에서 증명된 구청장의 실무 능력이 청년 취업과 주거 등 당장 현실적인 어려움을 겪는 저에게 더 설득력 있게 다가왔습니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "기본사회 서울 공약",
+        "변화에 대한 갈망"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "883c21644da645da964e4072ea27260c",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랫동안 서울에서 살아오며 시정의 연속성과 재개발을 통한 주거 환경 개선이 우리 부부의 삶에 실질적으로 더 도움이 될 것이라 판단했습니다.",
+      "key_factors": [
+        "현 시정의 연속성",
+        "재개발 및 규제 완화",
+        "생활 안정 중심의 정책"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d46ca65ffbf44ebeb06d5e1b26733028",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "품질 관리자로서 세밀한 실무 경험을 갖춘 정원오 후보가 노원구와 같은 주거 밀집 지역의 생활 밀착형 행정을 더 잘 이끌어갈 적임자라 판단했습니다.",
+      "key_factors": [
+        "지방행정 실무 경험",
+        "기본사회 서울 공약",
+        "현장 중심 행정 능력"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "ac12886eb1a94a41b2bbcd3e0fc811ff",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "강남에서 가장으로서 재개발과 규제 완화라는 실질적인 자산 가치와 주거 환경 개선에 더 큰 관심이 가며, 기존 현직 시장의 시정 연속성을 지지합니다.",
+      "key_factors": [
+        "재개발 및 규제 완화 공약",
+        "강남 지역 부동산 가치 보존",
+        "현직 시장의 시정 연속성"
+      ],
+      "timestep": 2
+    }
+  ],
+  "kg_events_used": [
+    {
+      "event_id": "1",
+      "type": "PollPublication",
+      "target": "c_daegu_ppp_choo",
+      "timestep": 0
+    },
+    {
+      "event_id": "2",
+      "type": "PollPublication",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "3",
+      "type": "PollPublication",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_ppp_pick",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_dpk_pick",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 1
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-26T06:32:46.496340+00:00",
+    "policy_version": "v12_feedback_off_clean",
+    "env": "dev",
+    "llm_cache_enabled": false,
+    "final_poll_feedback_enabled": false,
+    "voter_stats": {
+      "calls": 797,
+      "parse_fail": 0,
+      "abstain": 2,
+      "latency_ms_sum": 1237655.8796159672,
+      "calls_by_model": {
+        "nano": 475,
+        "mini": 272,
+        "sonnet": 50
+      },
+      "mean_latency_ms": 1552.9,
+      "parse_fail_rate": 0.0,
+      "abstain_rate": 0.0025
+    },
+    "pool_stats": {
+      "provider": "gemini",
+      "model": "gemini/gemini-3.1-flash-lite-preview",
+      "per_key": [
+        {
+          "key_index": 0,
+          "current_rpm": 47,
+          "limit_rpm": 500,
+          "total_calls": 160,
+          "total_429": 0
+        },
+        {
+          "key_index": 1,
+          "current_rpm": 48,
+          "limit_rpm": 500,
+          "total_calls": 160,
+          "total_429": 0
+        },
+        {
+          "key_index": 2,
+          "current_rpm": 47,
+          "limit_rpm": 500,
+          "total_calls": 0,
+          "total_429": 0
+        },
+        {
+          "key_index": 3,
+          "current_rpm": 47,
+          "limit_rpm": 500,
+          "total_calls": 159,
+          "total_429": 0
+        },
+        {
+          "key_index": 4,
+          "current_rpm": 47,
+          "limit_rpm": 500,
+          "total_calls": 159,
+          "total_429": 0
+        }
+      ],
+      "cache_hits": 0,
+      "cache_misses": 797,
+      "total_calls": 797,
+      "n_keys": 5,
+      "iam_mode": false,
+      "cost_usd": {
+        "openai": 0.0,
+        "anthropic": 0.0,
+        "gemini": 0.0,
+        "vertex_ai": 0.0,
+        "azure": 0.0,
+        "bedrock": 0.0,
+        "groq": 0.0,
+        "openrouter": 0.0
+      },
+      "cost_thresholds": {
+        "openai": 50.0,
+        "anthropic": 20.0,
+        "gemini": 5.0,
+        "vertex_ai": 5.0,
+        "azure": 50.0,
+        "bedrock": 20.0,
+        "groq": 50.0,
+        "openrouter": 50.0
+      },
+      "cost_tracking_enabled": false,
+      "cache_hit_rate": 0.0
+    },
+    "actual_keys_used": 5,
+    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
+    "effective_provider": "gemini",
+    "official_poll_validation": {
+      "target_series": "poll_consensus_daily",
+      "as_of_date": "2026-04-26",
+      "method_version": "weighted_v1",
+      "cutoff_ts": "2026-04-26T00:00:00+09:00",
+      "source_poll_ids": [
+        "nesdc-16198",
+        "nesdc-16200"
+      ],
+      "metrics": {
+        "mae": 0.2581,
+        "rmse": 0.2581,
+        "margin_error": 0.5162,
+        "leader_match": true
+      },
+      "by_candidate": {
+        "c_seoul_dpk": {
+          "simulated_share": 0.8283,
+          "official_consensus": 0.5702,
+          "error": 0.2581
+        },
+        "c_seoul_ppp": {
+          "simulated_share": 0.1717,
+          "official_consensus": 0.4298,
+          "error": -0.2581
+        }
+      }
+    },
+    "finished_at": "2026-04-26T06:36:06.750871+00:00",
+    "wall_seconds": 200.25
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "cache_rows_gemini": 6977,
+  "distinct_responses": 6971,
+  "compression_ratio": 1.0,
+  "keys_per_response_distribution": {
+    "1": 6968,
+    "2-5": 3
+  },
+  "top5_collided_responses": [
+    {
+      "key_count": 3,
+      "response_preview": "{\"vote\": \"c"
+    },
+    {
+      "key_count": 3,
+      "response_preview": "{\"vote\":"
+    },
+    {
+      "key_count": 3,
+      "response_preview": "{\"vote\": \"c_seoul"
+    },
+    {
+      "key_count": 1,
+      "response_preview": "He"
+    },
+    {
+      "key_count": 1,
+      "response_preview": "{\"vote\": null,"
+    }
+  ]
+}

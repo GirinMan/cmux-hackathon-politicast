@@ -1,0 +1,117 @@
+{
+  "_doc": "부산 북구 갑 보궐선거 시나리오 시드 (sim+kg 통합 스키마). 미니총선 최대 격전지 — 한동훈(무소속) vs 하정우(무소속/대통령실, 민주당 영입 추진) 빅매치. 출처: data_paths.json team-lead 큐레이션 + perplexity.",
+  "scenario_id": "busan_buk_gap_2026",
+  "region_id": "busan_buk_gap",
+  "contest_id": "busan_buk_gap_2026",
+  "label": "부산 북구 갑 (보궐)",
+  "gov_approval": 0.42,
+  "election": {
+    "election_id": "election_2026_local",
+    "name": "제9회 전국동시지방선거 (보궐 동시투표)",
+    "date": "2026-06-03",
+    "type": "national_assembly_by_election"
+  },
+  "election_date": "2026-06-03",
+  "contest": {
+    "contest_id": "busan_buk_gap_2026",
+    "position_type": "national_assembly_by_election"
+  },
+  "district": {
+    "province": "부산",
+    "district": "부산-북구",
+    "population": 280000
+  },
+  "parties": [
+    {"party_id": "p_dem",    "name": "더불어민주당", "ideology": -0.4},
+    {"party_id": "p_ppp",    "name": "국민의힘",     "ideology": 0.5},
+    {"party_id": "p_indep",  "name": "무소속",       "ideology": 0.2}
+  ],
+  "candidates": [
+    {
+      "id": "c_busan_dpk",
+      "candidate_id": "c_busan_dpk",
+      "name": "하정우",
+      "party": "p_indep",
+      "party_name": "무소속",
+      "withdrawn": false,
+      "background": "대통령실 AI미래기획수석. 2026-04 시점 더불어민주당이 부산 북구갑 보궐선거 영입을 추진하지만, 후보 본인은 청와대 잔류 의사를 밝힌 무소속/대통령실 인사로 모델링한다.",
+      "key_pledges": ["AI 산업 부산 거점", "대통령실 AI 정책 경험", "북구 균형발전"]
+    },
+    {
+      "id": "c_busan_ppp",
+      "candidate_id": "c_busan_ppp",
+      "name": "박민식",
+      "party": "p_ppp",
+      "party_name": "국민의힘",
+      "withdrawn": false,
+      "background": "전 국가보훈부 장관. 국민의힘 본선 후보. 한동훈 무소속 출마 시 보수 표 분산 변수.",
+      "key_pledges": ["보훈/안보", "정권 견제"]
+    },
+    {
+      "id": "c_busan_indep_han",
+      "candidate_id": "c_busan_indep_han",
+      "name": "한동훈",
+      "party": "p_indep",
+      "party_name": "무소속",
+      "withdrawn": false,
+      "background": "전 국민의힘 대표. 2026-04-14 부산 만덕동 전입신고. 무소속 출마 — 보수 결집 vs 분열의 양면 변수.",
+      "key_pledges": ["보수 재건", "검찰개혁 반대", "차기 대권 발판"]
+    }
+  ],
+  "issues": [
+    {"issue_id": "i_split",        "name": "한동훈 vs 박민식 (보수 표 분열)", "type": "이념"},
+    {"issue_id": "i_lee_check",    "name": "이재명 정부 중간평가",            "type": "정치"},
+    {"issue_id": "i_busan_only",   "name": "부산 유일 민주 지역구 사수",     "type": "지역개발"},
+    {"issue_id": "i_han_presidential","name": "한동훈 차기 대권 시험대",     "type": "정치"}
+  ],
+  "frames": [
+    {"frame_id": "f_conservative_split", "label": "보수 분열"},
+    {"frame_id": "f_indep_personality",  "label": "인물 vs 정당"},
+    {"frame_id": "f_lee_alliance",       "label": "여당 직결"}
+  ],
+  "events": [
+    {
+      "event_id": "ev_busan_han_jeonip",
+      "type": "MediaEvent",
+      "ts": "2026-04-14T10:00:00+09:00",
+      "source": "team-lead 큐레이션",
+      "title": "한동훈 전 국힘 대표, 부산 만덕동 전입신고 — 무소속 출마 임박",
+      "sentiment": 0.3,
+      "frame_id": "f_indep_personality",
+      "about": ["c_busan_indep_han"],
+      "mentions": ["i_split", "i_han_presidential"]
+    },
+    {
+      "event_id": "ev_busan_jeon_resign",
+      "type": "PressConference",
+      "ts": "2026-03-15T10:00:00+09:00",
+      "source": "team-lead 큐레이션",
+      "title": "전재수 의원 부산시장 후보 확정으로 의원직 사퇴 → 보궐 발생",
+      "sentiment": 0.0,
+      "frame_id": "f_lee_alliance",
+      "about": [],
+      "mentions": ["i_busan_only"],
+      "speaker": "전재수",
+      "party_id": "p_dem"
+    }
+  ],
+  "seed_events": [
+    {"timestep": 0, "type": "endorsement", "target": "c_busan_indep_han", "polarity": 0.4, "summary": "한동훈 부산 전입 → 무소속 출마 본격화"},
+    {"timestep": 0, "type": "endorsement", "target": "c_busan_dpk",       "polarity": 0.3, "summary": "민주당, 하정우 영입 추진"},
+    {"timestep": 1, "type": "scandal",     "target": "c_busan_ppp",       "polarity": -0.2, "summary": "박민식, 한동훈 무소속 출마에 흡수되며 약세"},
+    {"timestep": 2, "type": "policy",      "target": "c_busan_dpk",       "polarity": 0.2, "summary": "AI 산업 부산 거점 메시지 확장"}
+  ],
+  "polls": [
+    {"poll_id": 1, "ts": "2026-04-15T00:00:00+09:00", "sample_size": 600, "leader_candidate": "c_busan_dpk", "leader_share": 0.35}
+  ],
+  "raw_polls": [
+    {"pollster": "PLACEHOLDER", "mode": "phone", "n": 600, "day": 0, "quality": 0.4,
+     "shares": {"c_busan_dpk": 0.35, "c_busan_ppp": 0.22, "c_busan_indep_han": 0.30}}
+  ],
+  "simulation": {
+    "t_start": "2026-04-01T00:00:00+09:00",
+    "t_end":   "2026-06-03T00:00:00+09:00",
+    "timesteps": 4
+  },
+  "scenario_notes": "Nemotron district='부산-북구' (5,421명) 사용. 갑/을 구분 동 단위, 시뮬에서는 시군구 단위로 근사. 본 region은 PolitiKAST의 핵심 hypothesis ('인물 vs 정당' decoupling) 시험대. 한동훈 무소속 변수가 핵심."
+}

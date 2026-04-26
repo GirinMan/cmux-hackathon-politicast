@@ -1,0 +1,62 @@
+{
+  "intervention_id": "yoo_nomination_counterfactual",
+  "title": "Hypothetical Daegu mayor branch: Yoo Young-ha wins PPP nomination",
+  "mode": "counterfactual_prediction",
+  "calibration_profile": "r6_full_frozen_poll_hidden",
+  "frozen_params": true,
+  "one_candidate_per_party": true,
+  "reason": "Legacy counterfactual branch used to test the earlier Dalseo-gap vacancy premise: assume Yoo Young-ha, not Choo Kyung-ho, becomes the PPP nominee. This is an explicitly hypothetical branch after actual 2026-04-26 reports selected Choo.",
+  "source_urls": [
+    "https://www.kmib.co.kr/article/view.asp?arcid=0029735129",
+    "https://biz.chosun.com/policy/politics/assembly/2026/04/26/VBPPMZGY5ZEX7NOXEBP526PAGU/",
+    "https://v.daum.net/v/20260423173036753?f=p"
+  ],
+  "candidate_patches": [
+    {
+      "op": "set",
+      "candidate_id": "c_daegu_ppp_choo",
+      "fields": {
+        "withdrawn": true,
+        "background": "전 부총리 겸 기획재정부 장관, 4선 의원(달성). 이 counterfactual branch에서는 국민의힘 대구시장 후보가 유영하로 가정되어 후보군에서 제외.",
+        "key_pledges": ["TK 균형발전", "재정/경제 전문성"]
+      }
+    },
+    {
+      "op": "set",
+      "candidate_id": "c_daegu_ppp_yoo",
+      "fields": {
+        "withdrawn": false,
+        "background": "초선 의원(달서갑). 박근혜 측근. 이 counterfactual branch에서는 국민의힘 대구시장 후보로 확정된 것으로 가정.",
+        "key_pledges": ["보수 정통성", "박근혜 사면 정신 계승", "달서갑 보궐 유발"]
+      }
+    }
+  ],
+  "event_patches": [
+    {
+      "op": "add",
+      "event": {
+        "event_id": "ev_cf_daegu_yoo_nomination_hypothetical",
+        "timestep": 2,
+        "type": "hypothetical_nomination",
+        "target": "c_daegu_ppp_yoo",
+        "polarity": 0.32,
+        "summary": "가상 사건: 국민의힘 대구시장 후보가 유영하로 확정되어 박근혜 측근·보수 정통성 프레임이 강화됨",
+        "source": "hypothetical branch contrasted with actual Choo nomination reports",
+        "source_url": "https://www.kmib.co.kr/article/view.asp?arcid=0029735129"
+      }
+    },
+    {
+      "op": "add",
+      "event": {
+        "event_id": "ev_cf_daegu_dalseo_gap_vacancy_hypothetical",
+        "timestep": 2,
+        "type": "legacy_vacancy_link",
+        "target": "c_daegu_ppp_yoo",
+        "polarity": 0.05,
+        "summary": "가상 사건: 유영하의 대구시장 후보 확정으로 달서갑 보궐 시나리오가 성립한다고 가정",
+        "source": "Daum local candidate-field report",
+        "source_url": "https://v.daum.net/v/20260423173036753?f=p"
+      }
+    }
+  ]
+}

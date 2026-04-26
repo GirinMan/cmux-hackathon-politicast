@@ -1,0 +1,174 @@
+{
+  "_doc": "Perplexity-curated facts for KG P2/P3 enrichment. All facts source_url 박제. ts ≤ 2026-04-26 (temporal firewall). Fetched via mcp__perplexity__perplexity_search at 2026-04-26 15:38 KST.",
+  "region_id": "busan_buk_gap",
+  "fetched_at": "2026-04-26T15:38:00+09:00",
+  "candidate_event_facts": [
+    {
+      "event_id": "ev_busan_han_signal",
+      "type": "MediaEvent",
+      "ts": "2026-04-10T10:00:00",
+      "source": "경향신문 (KBS 라디오 인터뷰)",
+      "source_url": "https://www.khan.co.kr/article/202604101810011",
+      "title": "한동훈, KBS 라디오 — '부산에 깊은 애정, 큰 목표' 출마 시사",
+      "sentiment": 0.2,
+      "frame_id": "f_personality",
+      "speaker": "한동훈",
+      "about": ["c_busan_indep_han"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_busan_han_house",
+      "type": "MediaEvent",
+      "ts": "2026-04-13T13:00:00",
+      "source": "서울신문",
+      "source_url": "https://amp.seoul.co.kr/seoul/20260413500120",
+      "title": "한동훈, '부산 만덕에 집 구했다' SNS — 북구갑 출마 공식화",
+      "sentiment": 0.3,
+      "frame_id": "f_personality",
+      "speaker": "한동훈",
+      "about": ["c_busan_indep_han"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_busan_han_relocate",
+      "type": "PressConference",
+      "ts": "2026-04-14T16:00:00",
+      "source": "한겨레",
+      "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1254224.html",
+      "title": "한동훈, 부산 만덕2동 행정복지센터 전입신고 — '부산 시민을 위해 살기로 결심'",
+      "sentiment": 0.3,
+      "frame_id": "f_personality",
+      "speaker": "한동훈",
+      "about": ["c_busan_indep_han"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_busan_park_announce",
+      "type": "PressConference",
+      "ts": "2026-04-09T10:00:00",
+      "source": "경향신문",
+      "source_url": "https://www.khan.co.kr/article/202604101810011",
+      "title": "박민식, '북구갑은 누군가의 거래 대상 아니다 — 주민의 마음만이 나침반' (한동훈 견제)",
+      "sentiment": -0.1,
+      "frame_id": "f_judgement",
+      "speaker": "박민식",
+      "party_id": "p_ppp",
+      "about": ["c_busan_ppp"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_busan_pp_proxy_debate",
+      "type": "MediaEvent",
+      "ts": "2026-04-15T18:00:00",
+      "source": "한겨레",
+      "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1254224.html",
+      "title": "국힘 김도읍 의원, 부산 북갑 무공천 건의 — 내부 갈등 격화",
+      "sentiment": -0.3,
+      "frame_id": "f_judgement",
+      "about": ["c_busan_ppp"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_busan_dpk_jcr_recruit",
+      "type": "PressConference",
+      "ts": "2026-04-08T10:00:00",
+      "source": "한겨레",
+      "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1253316.html",
+      "title": "정청래 대표, 하정우 수석 출마 요청 공식화 — '조만간 만날 것'",
+      "sentiment": 0.2,
+      "frame_id": "f_personality",
+      "speaker": "정청래",
+      "party_id": "p_dem",
+      "about": ["c_busan_dpk"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_busan_jeon_resign_signal",
+      "type": "MediaEvent",
+      "ts": "2026-04-02T10:00:00",
+      "source": "조선일보",
+      "source_url": "https://www.chosun.com/politics/assembly/2026/04/07/VBPRZQQSIBAVNIRA5YIAYXD5QQ/",
+      "title": "전재수, 부산시장 출마 선언 — '하정우 같은 새 세대 등장 기대'",
+      "sentiment": 0.1,
+      "speaker": "전재수",
+      "party_id": "p_dem",
+      "about": ["c_busan_dpk"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_busan_dpk_postpone_proposal",
+      "type": "MediaEvent",
+      "ts": "2026-04-16T10:00:00",
+      "source": "조선일보",
+      "source_url": "https://www.chosun.com/politics/assembly/2026/04/17/OCSKD4S2JBEUBHEIKPL62KG77A/",
+      "title": "민주당 일각 — '한동훈 차단 위해 보궐선거 내년으로 연기' 묘수론 부상",
+      "sentiment": -0.2,
+      "frame_id": "f_judgement",
+      "about": ["c_busan_dpk", "c_busan_indep_han"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_busan_park_post_chair_meet",
+      "type": "MediaEvent",
+      "ts": "2026-04-16T16:00:00",
+      "source": "뉴스1",
+      "source_url": "https://www.news1.kr/politics/assembly/6137733",
+      "title": "박형준 부산시장, 한동훈과 면담 — '당이 후보를 내면 연대' 시사",
+      "sentiment": 0.0,
+      "speaker": "박형준",
+      "party_id": "p_ppp",
+      "about": ["c_busan_indep_han", "c_busan_ppp"],
+      "mentions": []
+    }
+  ],
+  "candidate_pledge_extras": {
+    "c_busan_dpk": [
+      "AI 산업 부산 거점 (네이버 AI이노베이션 센터장 출신)",
+      "이재명 정부 직결 — '하GPT' 별명",
+      "고향 부산 북구 / 구덕고 출신"
+    ],
+    "c_busan_ppp": [
+      "18·19대 국회의원(부산 북강서갑) — 전재수와 4번 맞붙어 2승 2패",
+      "전 국가보훈부 장관",
+      "북구갑 무공천 거부 — '오로지 주민의 마음'"
+    ],
+    "c_busan_indep_han": [
+      "전 국민의힘 비대위원장 / 당 대표 (윤석열 정부 출신)",
+      "부산 만덕동 전입신고 (2026-04-14)",
+      "당원게시판 사건으로 1월 제명 — 당적 박탈 후 무소속 도전",
+      "정계 입문 후 첫 본 선거 (전당대회만 2회)",
+      "차기 대권 발판 가능성"
+    ]
+  },
+  "people": [
+    {"person_id": "p_lee_jm", "name": "이재명", "role": "대한민국 대통령 — 하정우 만류 발언", "party_id": "p_dem"},
+    {"person_id": "p_jcr", "name": "정청래", "role": "더불어민주당 대표 — 하정우 차출 주도", "party_id": "p_dem"},
+    {"person_id": "p_jeon_js", "name": "전재수", "role": "민주당 부산시장 후보 (북구갑 현직 의원, 4월 30일 전 사퇴 예정)", "party_id": "p_dem"},
+    {"person_id": "p_park_hj", "name": "박형준", "role": "현 부산시장 / 국힘 부산시장 후보", "party_id": "p_ppp"},
+    {"person_id": "p_jdh", "name": "장동혁", "role": "국민의힘 대표 — 무공천 거부", "party_id": "p_ppp"},
+    {"person_id": "p_kim_dr", "name": "김도읍", "role": "부산 4선 의원 — 북갑 무공천 건의", "party_id": "p_ppp"},
+    {"person_id": "p_cho_hkr", "name": "조국", "role": "조국혁신당 대표 — 부산 북갑 출마 가능성", "party_id": "p_rebuild"},
+    {"person_id": "p_lee_ypng", "name": "이영풍", "role": "전 기자 / 보수 유튜버 — 북갑 출마 의사", "party_id": "p_indep"},
+    {"person_id": "p_yoon_se", "name": "윤석열", "role": "전 대통령 — 한동훈 임명자", "party_id": "p_ppp"}
+  ],
+  "sources": [
+    {"source_id": "s_hani", "name": "한겨레", "url_root": "https://www.hani.co.kr/", "media_type": "newspaper", "ideology": -0.4},
+    {"source_id": "s_chosun", "name": "조선일보", "url_root": "https://www.chosun.com/", "media_type": "newspaper", "ideology": 0.5},
+    {"source_id": "s_khan", "name": "경향신문", "url_root": "https://www.khan.co.kr/", "media_type": "newspaper", "ideology": -0.4},
+    {"source_id": "s_seoul", "name": "서울신문", "url_root": "https://www.seoul.co.kr/", "media_type": "newspaper", "ideology": 0.0},
+    {"source_id": "s_imbc", "name": "MBC 뉴스", "url_root": "https://imnews.imbc.com/", "media_type": "broadcast", "ideology": -0.2},
+    {"source_id": "s_news1", "name": "뉴스1", "url_root": "https://www.news1.kr/", "media_type": "wire", "ideology": 0.0},
+    {"source_id": "s_knn", "name": "KNN", "url_root": "https://news.knn.co.kr/", "media_type": "broadcast", "ideology": 0.0}
+  ],
+  "event_source_links": [
+    {"event_id": "ev_busan_han_signal", "source_id": "s_khan"},
+    {"event_id": "ev_busan_han_house", "source_id": "s_seoul"},
+    {"event_id": "ev_busan_han_relocate", "source_id": "s_hani"},
+    {"event_id": "ev_busan_park_announce", "source_id": "s_khan"},
+    {"event_id": "ev_busan_pp_proxy_debate", "source_id": "s_hani"},
+    {"event_id": "ev_busan_dpk_jcr_recruit", "source_id": "s_hani"},
+    {"event_id": "ev_busan_jeon_resign_signal", "source_id": "s_chosun"},
+    {"event_id": "ev_busan_dpk_postpone_proposal", "source_id": "s_chosun"},
+    {"event_id": "ev_busan_park_post_chair_meet", "source_id": "s_news1"}
+  ]
+}

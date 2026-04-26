@@ -1,0 +1,194 @@
+{
+  "scenario_id": "seoul_mayor_2026",
+  "region_id": "seoul_mayor",
+  "contest_id": "seoul_mayor_2026",
+  "timestep_count": 1,
+  "persona_n": 5,
+  "candidates": [
+    {
+      "id": "c_seoul_dpk",
+      "name": "정원오",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_seoul_ppp",
+      "name": "오세훈",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_seoul_rebuild",
+      "name": "한민수",
+      "party": "p_rebuild"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "c_seoul_dpk": 0.0,
+        "c_seoul_ppp": 1.0,
+        "c_seoul_rebuild": 0.0
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.22222222222222224
+    }
+  ],
+  "final_outcome": {
+    "turnout": 1.0,
+    "vote_share_by_candidate": {
+      "c_seoul_dpk": 0.2,
+      "c_seoul_ppp": 0.8,
+      "c_seoul_rebuild": 0.0
+    },
+    "winner": "c_seoul_ppp",
+    "n_responses": 5,
+    "n_abstain": 0
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "60s+": {
+        "c_seoul_ppp": 1.0
+      },
+      "20s": {
+        "c_seoul_dpk": 1.0
+      },
+      "40s": {
+        "c_seoul_ppp": 1.0
+      },
+      "50s": {
+        "c_seoul_ppp": 1.0
+      }
+    },
+    "by_education": {
+      "4년제 대학교": {
+        "c_seoul_ppp": 1.0
+      },
+      "고등학교": {
+        "c_seoul_dpk": 0.3333333333333333,
+        "c_seoul_ppp": 0.6666666666666666
+      }
+    },
+    "by_district": {
+      "서울-양천구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-중랑구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-노원구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-성북구": {
+        "c_seoul_ppp": 1.0
+      }
+    }
+  },
+  "virtual_interviews": [
+    {
+      "persona_id": "79dcc0dba461402a95938a0776250d8b",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "서류 일은 복잡해서 딱 질색인데, 그저 지금처럼 서울시 살림을 안정적으로 잘 해줄 사람이 누군지를 보게 되네요.",
+      "key_factors": [
+        "시정 운영의 안정성",
+        "후보의 행정 경험",
+        "가족의 평범한 일상 유지"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "0226d8d65b954435b6e9cf2f22181a71",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "통계 업무를 하는 입장에서 급격한 변화보다는 검증된 행정의 연속성이 리스크 관리 차원에서 안정적이라고 판단됩니다.",
+      "key_factors": [
+        "시정 운영의 연속성",
+        "정책의 실현 가능성 및 데이터 근거",
+        "생활 환경의 안정성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "2ce9cb7a14d645ffa4993807a2f4ee2e",
+      "persona_summary": "",
+      "vote": "c_seoul_dpk",
+      "reason": "재택 알바를 하며 소품 공방 창업을 꿈꾸는 입장에서 '기본사회' 공약이 실질적인 경제적 안전망이 되어줄 것 같아 기대가 큽니다.",
+      "key_factors": [
+        "기본사회 서울 공약",
+        "청년 및 미취업자 지원",
+        "생활 안정 가능성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "0be9f016b68e45d0a264b11a07977ec1",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "평생 현장에서 타일을 붙이며 마감이 확실한 걸 가장 중요하게 여겨왔는데, 시정도 섣부른 변화보다는 하던 일을 빈틈없이 마무리하는 연속성이 더 믿음직스럽습니다.",
+      "key_factors": [
+        "시정 운영의 연속성",
+        "실무 경험과 노련함",
+        "거주 지역의 안정적 관리"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "d504cc83e8c344f0bc0deb72c1d8aa72",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "물건 하나도 제자리에 있어야 마음이 편한 제 성격상, 검증된 시정의 연속성과 목동 지역의 안정을 지켜줄 후보가 더 신뢰가 갑니다.",
+      "key_factors": [
+        "시정 연속성",
+        "생활 환경의 안정",
+        "행정의 일관성"
+      ],
+      "timestep": 1
+    }
+  ],
+  "kg_events_used": [
+    {
+      "event_id": "1",
+      "type": "PollPublication",
+      "target": "c_daegu_ppp_choo",
+      "timestep": 0
+    },
+    {
+      "event_id": "2",
+      "type": "PollPublication",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "3",
+      "type": "PollPublication",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_ppp_pick",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_dpk_pick",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 1
+    }
+  ],
+  "meta": {
+    "features": [
+      "kg_retrieval"
+    ],
+    "concurrency": 2,
+    "started_at": "2026-04-26T02:33:41.344433+00:00",
+    "voter_stats": {
+      "calls": 15,
+      "parse_fail": 0,
+      "abstain": 2
+    },
+    "finished_at": "2026-04-26T02:34:58.670303+00:00"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "intervention_id": "choo_nomination_actual",
+  "title": "Actual Daegu mayor branch: Choo Kyung-ho PPP nomination",
+  "mode": "counterfactual_prediction",
+  "calibration_profile": "r6_full_frozen_poll_hidden",
+  "frozen_params": true,
+  "one_candidate_per_party": true,
+  "reason": "After calibration, inject the 2026-04-26 PPP nomination outcome and the 2026-04-25 Lee Jin-sook withdrawal/support event as scenario-local KG events. This is prediction-only inference, not a validation target.",
+  "source_urls": [
+    "https://www.kmib.co.kr/article/view.asp?arcid=0029735129",
+    "https://biz.chosun.com/policy/politics/assembly/2026/04/26/VBPPMZGY5ZEX7NOXEBP526PAGU/",
+    "https://www.chosun.com/politics/politics_general/2026/04/25/FK53IBR3X5FNDOT2LQ445P2YDE/"
+  ],
+  "candidate_patches": [
+    {
+      "op": "set",
+      "candidate_id": "c_daegu_ppp_choo",
+      "fields": {
+        "withdrawn": false,
+        "background": "전 부총리 겸 기획재정부 장관, 4선 의원(달성). 2026-04-26 국민의힘 대구시장 후보로 확정된 actual-branch 후보.",
+        "key_pledges": ["TK 균형발전", "재정/경제 전문성", "보수 단일대오"]
+      }
+    },
+    {
+      "op": "set",
+      "candidate_id": "c_daegu_ppp_yoo",
+      "fields": {
+        "withdrawn": true,
+        "background": "초선 의원(달서갑). 박근혜 측근. actual branch에서는 국민의힘 대구시장 후보가 추경호로 확정되어 대구시장 후보군에서 제외.",
+        "key_pledges": ["보수 정통성", "박근혜 사면 정신 계승"]
+      }
+    }
+  ],
+  "event_patches": [
+    {
+      "op": "add",
+      "event": {
+        "event_id": "ev_cf_daegu_choo_nomination_20260426",
+        "timestep": 2,
+        "type": "nomination",
+        "target": "c_daegu_ppp_choo",
+        "polarity": 0.35,
+        "summary": "국민의힘 대구시장 후보가 추경호로 확정되며 보수 본선 후보가 단일화됨",
+        "source": "국민일보 / 조선비즈",
+        "source_url": "https://www.kmib.co.kr/article/view.asp?arcid=0029735129"
+      }
+    },
+    {
+      "op": "add",
+      "event": {
+        "event_id": "ev_cf_daegu_yoo_not_nominee_20260426",
+        "timestep": 2,
+        "type": "nomination_loss",
+        "target": "c_daegu_ppp_yoo",
+        "polarity": -0.25,
+        "summary": "유영하는 국민의힘 대구시장 본선 후보가 아니므로 actual branch의 선택지에서 제외됨",
+        "source": "조선비즈",
+        "source_url": "https://biz.chosun.com/policy/politics/assembly/2026/04/26/VBPPMZGY5ZEX7NOXEBP526PAGU/"
+      }
+    },
+    {
+      "op": "add",
+      "event": {
+        "event_id": "ev_cf_daegu_lee_exit_support_20260425",
+        "timestep": 2,
+        "type": "withdrawal_endorsement",
+        "target": "c_daegu_ppp_choo",
+        "polarity": 0.12,
+        "summary": "이진숙 전 방통위원장이 대구시장 예비후보직을 사퇴하고 국민의힘 후보 지원 의사를 밝힘",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/politics_general/2026/04/25/FK53IBR3X5FNDOT2LQ445P2YDE/"
+      }
+    }
+  ]
+}

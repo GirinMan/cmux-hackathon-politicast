@@ -1,0 +1,148 @@
+{
+  "scenario_id": "seoul_mayor__smoke",
+  "region_id": "seoul_mayor",
+  "contest_id": "seoul_mayor_2026",
+  "timestep_count": 2,
+  "persona_n": 20,
+  "candidates": [
+    {
+      "id": "cand_A",
+      "name": "후보 A",
+      "party": "더불어민주당"
+    },
+    {
+      "id": "cand_B",
+      "name": "후보 B",
+      "party": "국민의힘"
+    },
+    {
+      "id": "cand_C",
+      "name": "후보 C",
+      "party": "무소속"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "cand_A": 0.6842105263157895,
+        "cand_B": 0.3157894736842105,
+        "cand_C": 0.0
+      },
+      "turnout_intent": 0.95,
+      "consensus_var": 0.07817790089258235
+    },
+    {
+      "timestep": 1,
+      "date": "2026-04-27",
+      "support_by_candidate": {
+        "cand_A": 0.75,
+        "cand_B": 0.25,
+        "cand_C": 0.0
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.09722222222222222
+    }
+  ],
+  "final_outcome": {
+    "turnout": 0.95,
+    "vote_share_by_candidate": {
+      "cand_A": 0.8421052631578947,
+      "cand_B": 0.15789473684210525,
+      "cand_C": 0.0
+    },
+    "winner": "cand_A",
+    "n_responses": 20,
+    "n_abstain": 1
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "20s": {
+        "cand_A": 0.5,
+        "cand_B": 0.5
+      },
+      "30s": {
+        "cand_A": 0.75
+      },
+      "40s": {
+        "cand_A": 1.0
+      },
+      "50s": {
+        "cand_A": 1.0
+      },
+      "60s+": {
+        "cand_A": 0.6666666666666666,
+        "cand_B": 0.3333333333333333
+      }
+    },
+    "by_education": {
+      "대졸": {
+        "cand_A": 0.8,
+        "cand_B": 0.15
+      }
+    },
+    "by_district": {
+      "노원구": {
+        "cand_A": 0.8,
+        "cand_B": 0.1
+      },
+      "강남구": {
+        "cand_A": 0.8,
+        "cand_B": 0.2
+      }
+    }
+  },
+  "virtual_interviews": [
+    {
+      "persona_id": "smoke-003",
+      "persona_summary": "30대 직장인. 출퇴근 교통과 주거비에 예민.",
+      "vote": "cand_A",
+      "reason": "정책 우선순위 일치",
+      "key_factors": [
+        "경제",
+        "복지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "smoke-011",
+      "persona_summary": "30대 직장인. 출퇴근 교통과 주거비에 예민.",
+      "vote": "cand_A",
+      "reason": "정책 우선순위 일치",
+      "key_factors": [
+        "경제",
+        "복지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "smoke-000",
+      "persona_summary": "30대 직장인. 출퇴근 교통과 주거비에 예민.",
+      "vote": "cand_A",
+      "reason": "정책 우선순위 일치",
+      "key_factors": [
+        "경제",
+        "복지"
+      ],
+      "timestep": 2
+    }
+  ],
+  "kg_events_used": [],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-26T02:19:07.813032+00:00",
+    "voter_stats": {
+      "calls": 63,
+      "parse_fail": 0,
+      "abstain": 2
+    },
+    "finished_at": "2026-04-26T02:19:07.815166+00:00"
+  }
+}

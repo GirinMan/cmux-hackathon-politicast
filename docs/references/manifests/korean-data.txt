@@ -1,0 +1,50 @@
+# Korean political/election data + news
+# 카테고리: 중앙선관위·KOSTAT·갤럽 등 공식 데이터, 한국 학술지·뉴스, 정책/보고서
+
+# === 공식 선거관리위원회 / 정부 ===
+https://www.nec.go.kr/site/nec/ex/bbs/View.do?cbIdx=1132&bcIdx=196009
+https://www.nec.go.kr/common/board/Download.do?bcIdx=264815&cbIdx=1132&streFileNm=acdcbd92-3e9a-42b1-baef-f411f9c120fa.pdf
+https://nec.go.kr/common/board/Download.do?bcIdx=266339&cbIdx=1107&streFileNm=4ef84cc3-f936-4b25-a0cb-4b1cdf33b58c.pdf
+https://opinion.lawmaking.go.kr/gcom/nsmLmSts/out/2216025/detailRP
+
+# === 공식 통계청 ===
+https://shi.kostat.go.kr/window/2024a/main/2024_sum_01.html
+
+# === 갤럽 / 여론조사 ===
+http://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=888
+http://kasr.skyd.co.kr/survey_SR/17_1_5
+http://kasr.skyd.co.kr/survey_SR/23_1_5
+http://kasr.skyd.co.kr/survey_SR/25_2_1
+
+# === 한국 뉴스 (선거 / AI 정책) ===
+https://www.chosun.com/economy/tech_it/2026/04/02/WXT7KWRDGFEZVCAZKO7A2EU4FU/
+https://www.chosun.com/economy/tech_it/2026/04/02/WXT7KWRDGFEZVCAZKO7A2EU4FU/?outputType=amp
+https://www.chosun.com/english/industry-en/2026/04/02/WJ5VST6GR5DN5MRQNIEBEOHZVA/
+https://www.asiae.co.kr/en/article/2026042117324089969
+https://www.mk.co.kr/en/business/12023113
+https://www.edaily.co.kr/News/Read?newsId=05192246645418416&mediaCodeNo=257
+https://www.pressian.com/pages/articles/2024020814560006080
+https://www.inthenews.co.kr/news/article.html?no=85160
+https://www.newstong.co.kr/mobile/NewsViewShare.aspx?seq=14288282
+https://news.nate.com/view/20260421n32098
+https://v.daum.net/v/20260402153657042
+https://v.daum.net/v/20260402153657042?f=p
+https://v.daum.net/v/20260410144202657
+https://v.daum.net/v/20260421180940689
+https://v.daum.net/v/FplQvCFY5r
+https://v.daum.net/v/HHnshO4qHH
+
+# === 서울/지역 선거 분석 ===
+https://gdskorea.co.kr/최근-3년-서울선거-분석해-보니③-서울선거-소득에-따/
+
+# === 정책/보고서/법규 ===
+https://www.klri.re.kr/cmm/fms/FileDown.do?atchFileId=FILE_0000000000285708ekUR&fileSn=0&stat=&data_no=
+https://nsp.nanet.go.kr/trend/latest/detail.do?latestTrendControlNo=TREN0000001591
+https://www.nepla.ai/wiki/국가와-민주주의/국회-선거-정당/-중앙선관위-챗gpt-등-생성형-ai-활용-관련-법규운용기준-vekno0g27n7q
+https://www.fortinet.com/kr/resources/cyberglossary/election-security
+https://unesco.or.kr/wp-content/uploads/2024/06/문화다양성협약-국내-이행을-위한-논의-유튜브에서-AI까지-21세기-한국에서의-문화다양성.pdf
+
+# === 한국 데이터셋 / NLP ===
+https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=71722
+https://github.com/gyunggyung/LLM-Ko-Datasets/blob/main/README.md
+https://huffon.github.io/2020/05/23/legal-nlp/

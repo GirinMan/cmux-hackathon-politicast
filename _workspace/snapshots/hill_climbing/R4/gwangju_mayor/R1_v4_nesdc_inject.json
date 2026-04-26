@@ -1,0 +1,135 @@
+{
+  "variant": "v4_nesdc_inject",
+  "n_personas": 10,
+  "n_abstain": 4,
+  "votes": [
+    {
+      "persona_id": "02ec3e28f4f24f6db066743b781c821a",
+      "vote": "c_gwangju_dpk",
+      "reason": "광산구에서 성장하며 쌓아온 지역 정서와 실용적인 변화를 기대하며 민주당 후보를 선택했습니다.",
+      "key_factors": [
+        "광주 지역 정치 성향",
+        "실용적 경제 정책 기대",
+        "안정적 지역 발전에 대한 기대"
+      ],
+      "latency_ms": 2681.9
+    },
+    {
+      "persona_id": "01d563e68cb04a4bb87077369b355a45",
+      "vote": null,
+      "reason": "서울특별시장 선거는 광주에 거주하는 저와 직접적인 연관이 없어 투표 대상이 아니라고 판단했습니다.",
+      "key_factors": [
+        "거주지 불일치",
+        "선거구 상이"
+      ],
+      "latency_ms": 2509.0
+    },
+    {
+      "persona_id": "008822545140446b81b0f5b4f01abaad",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주 지역에서의 정책적 안정성과 당의 정체성을 고려하여 강기정 후보를 선택했습니다.",
+      "key_factors": [
+        "지역 정치적 지지 성향",
+        "정책적 안정성",
+        "소속 정당에 대한 신뢰"
+      ],
+      "latency_ms": 1522.9
+    },
+    {
+      "persona_id": "0e773ce1057c4edeac1a1e8dbfbd561e",
+      "vote": null,
+      "reason": "현재 유권자 정보로는 각 후보의 정책 방향과 광주 지역 발전에 대한 비전이 전혀 확인되지 않아 신중한 판단이 어렵습니다.",
+      "key_factors": [
+        "정보 부족",
+        "정책 검증 부재",
+        "신중한 투표권 행사"
+      ],
+      "latency_ms": 2718.7
+    },
+    {
+      "persona_id": "09d96ba8b5094af9bf7c0ba962a92f7d",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 나고 자라며 자연스럽게 몸에 밴 지지 성향과 우리 지역 정서를 대변하는 후보라고 생각합니다.",
+      "key_factors": [
+        "지역 정서",
+        "정당 지지",
+        "익숙함"
+      ],
+      "latency_ms": 3153.2
+    },
+    {
+      "persona_id": "0158a1e8c2cf407ba1edb18db0611350",
+      "vote": null,
+      "reason": "저는 광주 북구에 거주하는 유권자로서 서울시장 선거에 투표할 권한이 없습니다.",
+      "key_factors": [
+        "거주 지역 불일치",
+        "투표권 제한"
+      ],
+      "latency_ms": 2973.5
+    },
+    {
+      "persona_id": "00b789834649476b93c4fd8286164d7e",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 나고 자라 평생을 더불어민주당과 함께해 온 만큼, 우리 지역 정서에 맞는 후보를 뽑는 것이 당연합니다.",
+      "key_factors": [
+        "지역 정서",
+        "정당 지지",
+        "생활 정치 안정"
+      ],
+      "latency_ms": 3486.0
+    },
+    {
+      "persona_id": "00dc97ce7487499ba024b346a9fb6020",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주에서 오랫동안 살아오며 우리 지역의 정서와 가치를 대변해 줄 후보라고 생각하기 때문입니다.",
+      "key_factors": [
+        "지역 정서",
+        "정당 지지 성향",
+        "안정적인 일상 유지"
+      ],
+      "latency_ms": 2526.4
+    },
+    {
+      "persona_id": "00004c5031964802aaffb41a5265e1b0",
+      "vote": "c_gwangju_dpk",
+      "reason": "우리 지역 광주를 잘 알고 그동안 지켜봐 온 익숙한 인물에게 투표하는 것이 도리라고 생각합니다.",
+      "key_factors": [
+        "지역 연고",
+        "정당 지향",
+        "동네 어른으로서의 신중함"
+      ],
+      "latency_ms": 4243.3
+    },
+    {
+      "persona_id": "00032b0e0be349c18e45eca272f55fe2",
+      "vote": null,
+      "reason": "광주 서구에 거주하는 입장에서 서울시장 후보들은 저와 연고가 전혀 없고 정보도 부족하여 투표할 명분이 없습니다.",
+      "key_factors": [
+        "후보 연고 부족",
+        "지역구와 무관한 선거",
+        "정보 부재"
+      ],
+      "latency_ms": 3929.6
+    }
+  ],
+  "vote_count": {
+    "c_gwangju_dpk": 6
+  },
+  "renorm_share": {
+    "c_seoul_dpk": 0.0,
+    "c_seoul_ppp": 0.0
+  },
+  "official_consensus": {
+    "c_seoul_dpk": 0.5702,
+    "c_seoul_ppp": 0.4298
+  },
+  "metrics": {
+    "mae": 0.5,
+    "rmse": 0.5049,
+    "leader_match": null,
+    "kl_div": -0.0,
+    "n_rated": 0
+  },
+  "system_prompt_sample": "당신은 한국 유권자입니다. 아래 페르소나를 1인칭으로 체화하여 답하세요.\n- 거주: 광주 광주-광산구\n- 연령: 24, 성별: 남자\n- 직업: 경영 기획 사무원, 학력: 4년제 대학교\n- 가족: 미혼\n\n=== 서사 ===\n이한수 씨는 공학적 분석력으로 금융 실무를 처리하는 유능한 직장인이자, 건강 관리와 식도락 사이에서 갈등하며 어머니와 함께 살아가는 20대 청년입니다.\n\n\n광주 광산구의 계획도시 분위기 속에서 성장하며 실용적인 사고방식을 익혔고, 주변 사람들의 기분을 세심하게 살피는 성격 덕분에 친구들 사이에서 갈등을 중재하는 역할을 주로 맡습니다.\n\n=== 규칙 ===\n1. 제공된 컨텍스트(이슈·여론조사·이벤트) 외 정보를 사용하지 마세요.\n2. 출마를 포기한 후보는 선택할 수 없습니다.\n3. 미래 결과를 안다고 가정하지 마세요. 페르소나의 가치관·관심사로만 추론하세요.\n4. 반드시 단일 JSON 객체로만 응답합니다 (코드펜스 금지). 스키마:\n   {\"vote\": \"<candidate_id|null>\", \"turnout\": true|false, \"confidence\": 0.0~1.0, \"reason\": \"<짧은 한 줄>\", \"key_factors\": [\"<핵심 요인 최대 3개>\"]}",
+  "user_prompt_sample": "=== 서울특별시장 (timestep t=0) ===\n[모드] secret_ballot\n지금은 투표소 안입니다. 비공개 투표용지에 단 한 명을 기표하세요. reason은 한 줄로 짧게.\n\n[후보]\n- c_gwangju_dpk | 강기정 (p_dem)\n- c_gwangju_dpk_alt | 민형배 (p_dem)\n- c_gwangju_ppp | 주기환 (p_ppp)\n- c_gwangju_rebuild | 안철수 (p_rebuild)\n\n[컨텍스트 (t≤0)]\n[참고 NESDC 등록 여론조사 (DuckDB poll_consensus_daily, weighted_v1)]\n- 미정·모름·기타 100%\n  (이는 컷오프 시점 등록 여론조사 합의이며 미래 결과가 아닙니다.)\n"
+}

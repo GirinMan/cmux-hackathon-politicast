@@ -1,0 +1,133 @@
+{
+  "_doc": "Perplexity-sourced KG enrichment for daegu_dalseo_gap. Prediction-only candidate-field and media-event priors; not train/validation labels.",
+  "region_id": "daegu_dalseo_gap",
+  "fetched_at": "2026-04-26T15:58:00+09:00",
+  "prediction_only": true,
+  "validation_use": "kg_prior_only_not_validation",
+  "sources": [
+    {
+      "source_id": "src_edaily_seo_20260417",
+      "name": "이데일리",
+      "url_root": "https://www.edaily.co.kr",
+      "media_type": "newspaper",
+      "ideology": 0.0
+    },
+    {
+      "source_id": "src_daegu_byelection_20260423",
+      "name": "대구 지역 보도/다음 뉴스",
+      "url_root": "https://v.daum.net",
+      "media_type": "news_aggregation",
+      "ideology": 0.0
+    },
+    {
+      "source_id": "src_kbmaeil_kimminsoo_20260422",
+      "name": "경북매일",
+      "url_root": "https://www.kbmaeil.com",
+      "media_type": "newspaper",
+      "ideology": 0.0
+    },
+    {
+      "source_id": "src_chosun_lee_exit_20260425",
+      "name": "조선일보",
+      "url_root": "https://www.chosun.com",
+      "media_type": "newspaper",
+      "ideology": 0.0
+    }
+  ],
+  "people": [
+    {"person_id": "person_seo_jaeheon", "name": "서재헌", "role": "김민석 의원실 선임비서관 / 전 민주당 대구시장 후보", "party_id": "p_dem"},
+    {"person_id": "person_hong_seongju", "name": "홍성주", "role": "전 대구시 경제부시장 / 달서구청장 출마 준비", "party_id": "p_ppp"},
+    {"person_id": "person_kim_minsu", "name": "김민수", "role": "국민의힘 최고위원 / 대구 보궐 전략공천설", "party_id": "p_ppp"},
+    {"person_id": "person_lee_jinsook", "name": "이진숙", "role": "전 방송통신위원장 / 2026-04-25 대구시장 불출마 및 국민의힘 후보 지원 선언", "party_id": "p_ppp"},
+    {"person_id": "person_yoo_youngha", "name": "유영하", "role": "대구 달서구갑 국회의원 / 대구시장 경선 후보", "party_id": "p_ppp"},
+    {"person_id": "person_choo_kyungho", "name": "추경호", "role": "대구 달성군 국회의원 / 대구시장 경선 후보", "party_id": "p_ppp"},
+    {"person_id": "person_jang_donghyuk", "name": "장동혁", "role": "국민의힘 대표", "party_id": "p_ppp"}
+  ],
+  "candidate_pledge_extras": {
+    "c_dalseo_dpk": [
+      "2026-04-17 대구 국회의원 보궐선거 출마 선언. 달성군 또는 달서갑 보궐 가능성이 모두 보도됨.",
+      "대구시장 김부겸, 국회의원 서재헌 구도를 통해 먹고사는 문제 해결을 호소했다는 보도."
+    ],
+    "c_dalseo_ppp_hong": [
+      "유영하 의원이 대구시장 후보가 되어 달서갑이 비면 홍성주 전 대구시 경제부시장이 국민의힘 유력 대체 카드로 부상한다는 지역 보도.",
+      "행정·경제부시장 경력을 통한 지역경제 안정 프레임.",
+      "이진숙 전 방통위원장의 2026-04-25 대구시장 불출마 선언은 보수 표 분산을 줄이고 국민의힘 최종 후보 지원으로 이어지는 지역 보수 결집 이벤트로 처리한다."
+    ],
+    "c_dalseo_ppp_kim": [
+      "김민수 최고위원 전략공천설은 대구 보궐 전반의 낙하산 공천 논란으로 보도됨. 달서갑 단일 후보로 확정된 것은 아님."
+    ]
+  },
+  "candidate_event_facts": [
+    {
+      "event_id": "ev_dalseo_seo_announce_20260417",
+      "type": "PressConference",
+      "ts": "2026-04-17T17:34:00+09:00",
+      "source": "이데일리",
+      "source_url": "https://www.edaily.co.kr/News/Read?newsId=05336566645417104&mediaCodeNo=257",
+      "title": "서재헌, 대구 국회의원 보궐선거 출마 선언",
+      "sentiment": 0.25,
+      "frame_id": "f_strong_right",
+      "speaker": "서재헌",
+      "party_id": "p_dem",
+      "about": ["c_dalseo_dpk"],
+      "mentions": ["i_dpk_breakthrough"]
+    },
+    {
+      "event_id": "ev_dalseo_conditional_vacancy_20260423",
+      "type": "MediaEvent",
+      "ts": "2026-04-23T17:30:00+09:00",
+      "source": "다음뉴스",
+      "source_url": "https://v.daum.net/v/20260423173036753?f=p",
+      "title": "유영하·추경호 대구시장 경선 향배에 달서갑·달성 보궐 대진표 요동",
+      "sentiment": 0.05,
+      "frame_id": "f_ppp_split",
+      "about": ["c_dalseo_dpk", "c_dalseo_ppp_hong"],
+      "mentions": ["i_tk_unity", "i_dpk_breakthrough"]
+    },
+    {
+      "event_id": "ev_dalseo_hong_likely_card_20260423",
+      "type": "MediaEvent",
+      "ts": "2026-04-23T17:30:00+09:00",
+      "source": "다음뉴스",
+      "source_url": "https://v.daum.net/v/20260423173036753?f=p",
+      "title": "유영하 확정 시 달서갑 보궐에서 홍성주 전 경제부시장이 국민의힘 대체 카드로 부상",
+      "sentiment": 0.25,
+      "frame_id": "f_strong_right",
+      "about": ["c_dalseo_ppp_hong"],
+      "mentions": ["i_tk_unity"]
+    },
+    {
+      "event_id": "ev_dalseo_kim_parachute_rumor_20260422",
+      "type": "MediaEvent",
+      "ts": "2026-04-22T12:00:00+09:00",
+      "source": "경북매일",
+      "source_url": "https://www.kbmaeil.com/article/20260422500671",
+      "title": "김민수 최고위원 대구 보궐 전략공천설과 TK 낙하산 공천 논란",
+      "sentiment": -0.20,
+      "frame_id": "f_ppp_split",
+      "about": ["c_dalseo_ppp_kim"],
+      "mentions": ["i_tk_unity"]
+    },
+    {
+      "event_id": "ev_daegu_lee_jinsook_exit_support_20260425",
+      "type": "MediaEvent",
+      "ts": "2026-04-25T11:39:00+09:00",
+      "source": "조선일보",
+      "source_url": "https://www.chosun.com/politics/politics_general/2026/04/25/FK53IBR3X5FNDOT2LQ445P2YDE/",
+      "title": "이진숙, 대구시장 예비후보직 사퇴 및 불출마 선언 — 국민의힘 최종 후보 지원 의사",
+      "sentiment": 0.25,
+      "frame_id": "f_strong_right",
+      "speaker": "이진숙",
+      "party_id": "p_ppp",
+      "about": ["person_lee_jinsook", "p_ppp"],
+      "mentions": ["i_tk_unity"]
+    }
+  ],
+  "event_source_links": [
+    {"event_id": "ev_dalseo_seo_announce_20260417", "source_id": "src_edaily_seo_20260417"},
+    {"event_id": "ev_dalseo_conditional_vacancy_20260423", "source_id": "src_daegu_byelection_20260423"},
+    {"event_id": "ev_dalseo_hong_likely_card_20260423", "source_id": "src_daegu_byelection_20260423"},
+    {"event_id": "ev_dalseo_kim_parachute_rumor_20260422", "source_id": "src_kbmaeil_kimminsoo_20260422"},
+    {"event_id": "ev_daegu_lee_jinsook_exit_support_20260425", "source_id": "src_chosun_lee_exit_20260425"}
+  ]
+}

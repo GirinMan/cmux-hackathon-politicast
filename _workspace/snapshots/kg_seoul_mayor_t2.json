@@ -1,0 +1,1085 @@
+{
+  "region_id": "seoul_mayor",
+  "timestep": 2,
+  "cutoff_ts": "2026-05-19T00:00:00",
+  "scenario_id": "seoul_mayor_2026",
+  "nodes": [
+    {
+      "id": "Candidate:c_daegu_ppp_choo",
+      "type": "Candidate",
+      "label": "추경호",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_daegu_ppp_choo",
+        "contest_id": "daegu_mayor_2026",
+        "name": "추경호",
+        "party": "p_ppp",
+        "party_name": "국민의힘",
+        "background": "전 부총리 겸 기획재정부 장관, 4선 의원(달성). 국힘 본선 경선 2인 진출. 주호영·이진숙 컷오프 후 본경선 후보.",
+        "key_pledges": "['TK 균형발전', '재정/경제 전문성', '전 부총리 겸 기획재정부 장관, 4선 (대구 달성)', '비상계엄 해제 의결 방해 혐의로 재판 중 (2026-04 시점)', '본경선 양자대결 9.9%p 열세 (vs 김부겸)', '이진숙 2026-04-25 대구시장 불출마 및 국민의힘 후보 지원 선언으로 보수 분열 리스크 일부 완화']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "Candidate:c_seoul_dpk",
+      "type": "Candidate",
+      "label": "정원오",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_seoul_dpk",
+        "contest_id": "seoul_mayor_2026",
+        "name": "정원오",
+        "party": "p_dem",
+        "party_name": "더불어민주당",
+        "background": "전 서울 성동구청장(3선). 2026-04-19 박주민·전현희 누르고 본선 후보 확정. 슬로건 '오세훈 무능 심판'.",
+        "key_pledges": "['기본사회 서울', '지방행정 실무 경험', 'AI 시민주권 행정 (행정 속도 2배, 신청 없는 복지)', \"정비사업 매니저 제도 — 신통기획보다 빠른 '착착기획'\", '서울시민리츠 — 시세 70~80% 실속형 민간 분양 아파트 대량 공급', '30분 통근 도시 — 5분 버스 / 10분 전철', '한강버스 2,200억 백지화, 대중교통 재투자', '용산국제업무지구 매듭', 'K-아레나 등 문화 인프라']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "Candidate:c_seoul_ppp",
+      "type": "Candidate",
+      "label": "오세훈",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_seoul_ppp",
+        "contest_id": "seoul_mayor_2026",
+        "name": "오세훈",
+        "party": "p_ppp",
+        "party_name": "국민의힘",
+        "background": "현 서울시장(재선). 2026-04-18 박수민·윤희숙 누르고 국힘 후보 확정. 4선 도전.",
+        "key_pledges": "['현 시정 연속성', '재개발/규제 완화', '약자와의 동행 — 디딤돌소득 / 안심소득 (중위소득 100% 이하 차등 지원)', '재건축 초과이익 환수제 / 분양가 상한제 손질', '31만 호 공급 기반 + 강북 고밀도 개발', '신혼부부 공공주택 매년 4천 호 공급', 'AI로 학습격차 해소']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "Candidate:c_seoul_rebuild",
+      "type": "Candidate",
+      "label": "한민수",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_seoul_rebuild",
+        "contest_id": "seoul_mayor_2026",
+        "name": "한민수",
+        "party": "p_rebuild",
+        "party_name": "조국혁신당",
+        "background": "[가설 placeholder] 조국혁신당 자체 후보. 진보 표 분산 효과 측정용 더미.",
+        "key_pledges": "['검찰개혁', '정치개혁']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "CohortPrior:seoul_ALL",
+      "type": "CohortPrior",
+      "label": "seoul_ALL",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "cohort_id": "seoul_ALL",
+        "age_band": "ALL",
+        "gender": "ALL",
+        "scope": "region",
+        "party_lean": "{'ppp': 0.2, 'dpk': 0.4, 'rebuild': 0.04, 'other': 0.04, 'undecided': 0.32}",
+        "ideological_lean": "{}",
+        "n_polls": 1,
+        "sample_size": 1000,
+        "source": "한국갤럽 2026-01 (서울 민주 40% / 국힘 20%)",
+        "source_url": "https://www.kyeonggi.com/article/20260123580070",
+        "publish_ts": "2026-01-23T00:00:00",
+        "notes": "",
+        "additional_context": "",
+        "provenance": "cohort_priors"
+      }
+    },
+    {
+      "id": "Contest:busan_buk_gap_2026",
+      "type": "Contest",
+      "label": "busan_buk_gap/national_assembly_by_election",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "contest_id": "busan_buk_gap_2026",
+        "election_id": "election_2026_local",
+        "position_type": "national_assembly_by_election"
+      }
+    },
+    {
+      "id": "Contest:daegu_mayor_2026",
+      "type": "Contest",
+      "label": "daegu_mayor/metropolitan_mayor",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "contest_id": "daegu_mayor_2026",
+        "election_id": "election_2026_local",
+        "position_type": "metropolitan_mayor"
+      }
+    },
+    {
+      "id": "Contest:seoul_mayor_2026",
+      "type": "Contest",
+      "label": "seoul_mayor/metropolitan_mayor",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "contest_id": "seoul_mayor_2026",
+        "election_id": "election_2026_local",
+        "position_type": "metropolitan_mayor"
+      }
+    },
+    {
+      "id": "District:seoul_mayor",
+      "type": "District",
+      "label": "서울",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "province": "서울",
+        "district": null,
+        "population": 9700000,
+        "scenario_notes": "본 시드는 사실 기반 + 가설 placeholder. 폴 수치는 17:00 freeze 전 paper-writer fact-check 가능."
+      }
+    },
+    {
+      "id": "Election:election_2026_local",
+      "type": "Election",
+      "label": "제9회 전국동시지방선거",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "election_id": "election_2026_local",
+        "name": "제9회 전국동시지방선거",
+        "date": "2026-06-03T00:00:00",
+        "election_type": "local"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_min_park_revolt__seoul_mayor",
+      "type": "MediaEvent",
+      "label": "국힘 소장파 (김용태/김재섭/이성권) — '장동혁, 국민에 전쟁 선포 / 절연해야' 반발. 박형준 부산시장: '국민 마음에 공감 노력 필요'",
+      "ts": "2026-02-21T10:00:00",
+      "sentiment": -0.4,
+      "frame_id": "f_judgement",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_min_park_revolt__seoul_mayor",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/02/21/IE2Y62DES5CZPPAOZP4YA5BGEQ/",
+        "title": "국힘 소장파 (김용태/김재섭/이성권) — '장동혁, 국민에 전쟁 선포 / 절연해야' 반발. 박형준 부산시장: '국민 마음에 공감 노력 필요'",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_us_visit__seoul_mayor",
+      "type": "MediaEvent",
+      "label": "장동혁 빈손 방미 논란 — 차관보급이 아닌 '비서실장' 면담 / 실무상 착오 해명. NBS 정당지지도 15% 창당 후 최저",
+      "ts": "2026-04-23T10:00:00",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_us_visit__seoul_mayor",
+        "source": "한겨레",
+        "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1255715.html",
+        "title": "장동혁 빈손 방미 논란 — 차관보급이 아닌 '비서실장' 면담 / 실무상 착오 해명. NBS 정당지지도 15% 창당 후 최저",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_yt_fake__seoul_mayor",
+      "type": "MediaEvent",
+      "label": "장동혁 유튜브 '장대표 어디가?' — 시민 인터뷰 사전 섭외 의혹 (실제는 당협 관계자) → '연출된 공감' 비판",
+      "ts": "2026-04-08T10:00:00",
+      "sentiment": -0.4,
+      "frame_id": "f_judgement",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_yt_fake__seoul_mayor",
+        "source": "오마이뉴스 (국민일보 인용)",
+        "source_url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003222650",
+        "title": "장동혁 유튜브 '장대표 어디가?' — 시민 인터뷰 사전 섭외 의혹 (실제는 당협 관계자) → '연출된 공감' 비판",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "NarrativeFrame:f_continuity",
+      "type": "NarrativeFrame",
+      "label": "현 시정 연속성",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_continuity",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "NarrativeFrame:f_judgement",
+      "type": "NarrativeFrame",
+      "label": "정권심판",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_judgement",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "Party:p_dem",
+      "type": "Party",
+      "label": "더불어민주당",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_dem",
+        "name": "더불어민주당",
+        "ideology": -0.4
+      }
+    },
+    {
+      "id": "Party:p_ppp",
+      "type": "Party",
+      "label": "국민의힘",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_ppp",
+        "name": "국민의힘",
+        "ideology": 0.5
+      }
+    },
+    {
+      "id": "Party:p_rebuild",
+      "type": "Party",
+      "label": "조국혁신당",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_rebuild",
+        "name": "조국혁신당",
+        "ideology": -0.6
+      }
+    },
+    {
+      "id": "PollPublication:1",
+      "type": "PollPublication",
+      "label": "poll#1",
+      "ts": "2026-04-09T00:00:00",
+      "sentiment": 0.0,
+      "frame_id": null,
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "1",
+        "poll_id": 1,
+        "contest_id": "seoul_mayor_2026",
+        "sample_size": 1000,
+        "leader_candidate": "c_seoul_dpk",
+        "leader_share": 0.456,
+        "title": "여론조사 #1",
+        "source": ""
+      }
+    },
+    {
+      "id": "PollPublication:2",
+      "type": "PollPublication",
+      "label": "poll#2",
+      "ts": "2026-03-12T00:00:00",
+      "sentiment": 0.0,
+      "frame_id": null,
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "2",
+        "poll_id": 2,
+        "contest_id": "seoul_mayor_2026",
+        "sample_size": 801,
+        "leader_candidate": "c_seoul_dpk",
+        "leader_share": 0.44,
+        "title": "여론조사 #2",
+        "source": ""
+      }
+    },
+    {
+      "id": "PollPublication:3",
+      "type": "PollPublication",
+      "label": "poll#3",
+      "ts": "2026-03-13T00:00:00",
+      "sentiment": 0.0,
+      "frame_id": null,
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "3",
+        "poll_id": 3,
+        "contest_id": "seoul_mayor_2026",
+        "sample_size": 804,
+        "leader_candidate": "c_seoul_dpk",
+        "leader_share": 0.38,
+        "title": "여론조사 #3",
+        "source": ""
+      }
+    },
+    {
+      "id": "PollPublication:ev_ppp_lowest_15pct__seoul_mayor",
+      "type": "PollPublication",
+      "label": "NBS 4월 4주 — 국민의힘 정당지지도 15% (2020년 NBS 시작 이래 최저, 창당 후 최저)",
+      "ts": "2026-04-23T10:00:00",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_lowest_15pct__seoul_mayor",
+        "source": "엠브레인퍼블릭·케이스탯리서치·코리아리서치·한국리서치 NBS",
+        "source_url": "https://www.donga.com/news/Politics/article/all/20260424/133805044/1",
+        "title": "NBS 4월 4주 — 국민의힘 정당지지도 15% (2020년 NBS 시작 이래 최저, 창당 후 최저)",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_ppp_jdh_lower_voting_age__seoul_mayor",
+      "type": "PressConference",
+      "label": "장동혁, '선거 연령 만 16세 하향' 제안 — 응답자 77% 반대 (한국갤럽)",
+      "ts": "2026-02-13T10:00:00",
+      "sentiment": -0.3,
+      "frame_id": "f_judgement",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_lower_voting_age__seoul_mayor",
+        "source": "국제일보 (연합뉴스 인용)",
+        "source_url": "https://www.kookjeilbo.com/news/article.html?no=98823",
+        "title": "장동혁, '선거 연령 만 16세 하향' 제안 — 응답자 77% 반대 (한국갤럽)",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_ppp_jdh_yoon_again__seoul_mayor",
+      "type": "PressConference",
+      "label": "장동혁, 윤석열 1심 무기징역 후에도 '계엄이 곧 내란 아니다' 절연 거부 — 당내 갈등 격화",
+      "ts": "2026-02-20T10:00:00",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_yoon_again__seoul_mayor",
+        "source": "조선일보 / 경향신문",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/02/20/5LYCG77CSNDGDCZGYBVBFLYP5A/",
+        "title": "장동혁, 윤석열 1심 무기징역 후에도 '계엄이 곧 내란 아니다' 절연 거부 — 당내 갈등 격화",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_seoul_dpk_pick",
+      "type": "PressConference",
+      "label": "정원오, 민주당 서울시장 후보 확정 — 오세훈 무능 심판",
+      "ts": "2026-04-19T10:00:00",
+      "sentiment": -0.3,
+      "frame_id": "f_judgement",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_seoul_dpk_pick",
+        "source": "뉴스1",
+        "title": "정원오, 민주당 서울시장 후보 확정 — 오세훈 무능 심판",
+        "speaker": "정원오",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "PressConference:ev_seoul_jwo_announce",
+      "type": "PressConference",
+      "label": "정원오, 서울시장 공식 출마 선언 — '시민주권 서울'",
+      "ts": "2026-03-09T10:00:00",
+      "sentiment": -0.2,
+      "frame_id": "f_judgement",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_seoul_jwo_announce",
+        "source": "한겨레",
+        "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1248323.html",
+        "title": "정원오, 서울시장 공식 출마 선언 — '시민주권 서울'",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "정원오",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "PressConference:ev_seoul_jwo_culture_pledge",
+      "type": "PressConference",
+      "label": "정원오, 8번째 공약 발표 — 문화·관광 분야 (국립중앙박물관)",
+      "ts": "2026-04-14T10:00:00",
+      "sentiment": 0.1,
+      "frame_id": null,
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_seoul_jwo_culture_pledge",
+        "source": "뉴시스",
+        "source_url": "https://www.newsis.com/view/NISI20260414_0021245631",
+        "title": "정원오, 8번째 공약 발표 — 문화·관광 분야 (국립중앙박물관)",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "정원오",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "PressConference:ev_seoul_jwo_gangnam_pledge",
+      "type": "PressConference",
+      "label": "정원오, 강남 재건축 전면 지원 공약 — 오세훈보다 빠르고 안전하게",
+      "ts": "2026-04-11T10:00:00",
+      "sentiment": 0.2,
+      "frame_id": "f_judgement",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_seoul_jwo_gangnam_pledge",
+        "source": "정원오 후보 공약 발표",
+        "source_url": "https://www.youtube.com/watch?v=NHI8Oae0SCk",
+        "title": "정원오, 강남 재건축 전면 지원 공약 — 오세훈보다 빠르고 안전하게",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "정원오",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "PressConference:ev_seoul_oh_announce",
+      "type": "PressConference",
+      "label": "오세훈, 국민의힘 서울시장 후보 선출 후 공약 발표 (여의도 당사)",
+      "ts": "2026-04-18T10:00:00",
+      "sentiment": 0.3,
+      "frame_id": "f_stability",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_seoul_oh_announce",
+        "source": "뉴시스",
+        "source_url": "https://www.newsis.com/view/NISI20260418_0021250528",
+        "title": "오세훈, 국민의힘 서울시장 후보 선출 후 공약 발표 (여의도 당사)",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "오세훈",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_seoul_oh_minsaeng",
+      "type": "PressConference",
+      "label": "오세훈, 약 3조 규모 민생경제 활성화 대책 발표 — '약자와의 동행'",
+      "ts": "2026-02-09T10:00:00",
+      "sentiment": 0.3,
+      "frame_id": "f_stability",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_seoul_oh_minsaeng",
+        "source": "비즈니스포스트",
+        "source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=429765",
+        "title": "오세훈, 약 3조 규모 민생경제 활성화 대책 발표 — '약자와의 동행'",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "오세훈",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_seoul_oh_realestate_clash",
+      "type": "PressConference",
+      "label": "오세훈, 이재명 정부 부동산 대책 비판 — 정비사업/대출 규제 완화 요구",
+      "ts": "2026-02-02T10:00:00",
+      "sentiment": -0.3,
+      "frame_id": "f_judgement",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_seoul_oh_realestate_clash",
+        "source": "비즈니스포스트",
+        "source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=429765",
+        "title": "오세훈, 이재명 정부 부동산 대책 비판 — 정비사업/대출 규제 완화 요구",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "오세훈",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_seoul_ppp_pick",
+      "type": "PressConference",
+      "label": "오세훈, 국민의힘 서울시장 후보로 최종 선출",
+      "ts": "2026-04-18T10:00:00",
+      "sentiment": 0.3,
+      "frame_id": "f_continuity",
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "ev_seoul_ppp_pick",
+        "source": "한겨레",
+        "title": "오세훈, 국민의힘 서울시장 후보로 최종 선출",
+        "speaker": "박덕흠",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "Source:s_bp",
+      "type": "Source",
+      "label": "비즈니스포스트",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_bp",
+        "name": "비즈니스포스트",
+        "url_root": "https://www.businesspost.co.kr/",
+        "media_type": "newspaper",
+        "ideology": 0.0
+      }
+    },
+    {
+      "id": "Source:s_chosun",
+      "type": "Source",
+      "label": "조선일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_chosun",
+        "name": "조선일보",
+        "url_root": "https://www.chosun.com/",
+        "media_type": "newspaper",
+        "ideology": 0.5
+      }
+    },
+    {
+      "id": "Source:s_donga",
+      "type": "Source",
+      "label": "동아일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_donga",
+        "name": "동아일보",
+        "url_root": "https://www.donga.com/",
+        "media_type": "newspaper",
+        "ideology": 0.4
+      }
+    },
+    {
+      "id": "Source:s_hani",
+      "type": "Source",
+      "label": "한겨레",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_hani",
+        "name": "한겨레",
+        "url_root": "https://www.hani.co.kr/",
+        "media_type": "newspaper",
+        "ideology": -0.4
+      }
+    },
+    {
+      "id": "Source:s_kookje",
+      "type": "Source",
+      "label": "국제일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_kookje",
+        "name": "국제일보",
+        "url_root": "https://www.kookjeilbo.com/",
+        "media_type": "newspaper",
+        "ideology": 0.3
+      }
+    },
+    {
+      "id": "Source:s_namuwiki",
+      "type": "Source",
+      "label": "나무위키",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_namuwiki",
+        "name": "나무위키",
+        "url_root": "https://namu.wiki/",
+        "media_type": "wiki",
+        "ideology": 0.0
+      }
+    },
+    {
+      "id": "Source:s_newsis",
+      "type": "Source",
+      "label": "뉴시스",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_newsis",
+        "name": "뉴시스",
+        "url_root": "https://www.newsis.com/",
+        "media_type": "wire",
+        "ideology": 0.0
+      }
+    },
+    {
+      "id": "Source:s_ohmy",
+      "type": "Source",
+      "label": "오마이뉴스",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_ohmy",
+        "name": "오마이뉴스",
+        "url_root": "https://www.ohmynews.com/",
+        "media_type": "newspaper",
+        "ideology": -0.5
+      }
+    }
+  ],
+  "edges": [
+    {
+      "src": "Contest:busan_buk_gap_2026",
+      "dst": "Election:election_2026_local",
+      "rel": "inElection",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:1",
+      "dst": "Contest:busan_buk_gap_2026",
+      "rel": "publishesPoll",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:1",
+      "dst": "Contest:daegu_mayor_2026",
+      "rel": "publishesPoll",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:1",
+      "dst": "Candidate:c_daegu_ppp_choo",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:1",
+      "dst": "Contest:seoul_mayor_2026",
+      "rel": "publishesPoll",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:1",
+      "dst": "Candidate:c_seoul_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "Contest:daegu_mayor_2026",
+      "dst": "Election:election_2026_local",
+      "rel": "inElection",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_daegu_ppp_choo",
+      "dst": "Contest:daegu_mayor_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_daegu_ppp_choo",
+      "dst": "Party:p_ppp",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Contest:seoul_mayor_2026",
+      "dst": "Election:election_2026_local",
+      "rel": "inElection",
+      "attrs": {}
+    },
+    {
+      "src": "Contest:seoul_mayor_2026",
+      "dst": "District:seoul_mayor",
+      "rel": "heldIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_seoul_dpk",
+      "dst": "Contest:seoul_mayor_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_seoul_dpk",
+      "dst": "Party:p_dem",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_seoul_ppp",
+      "dst": "Contest:seoul_mayor_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_seoul_ppp",
+      "dst": "Party:p_ppp",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_seoul_rebuild",
+      "dst": "Contest:seoul_mayor_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_seoul_rebuild",
+      "dst": "Party:p_rebuild",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_ppp_pick",
+      "dst": "Candidate:c_seoul_ppp",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_ppp_pick",
+      "dst": "NarrativeFrame:f_continuity",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_dpk_pick",
+      "dst": "Candidate:c_seoul_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_dpk_pick",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:2",
+      "dst": "Contest:seoul_mayor_2026",
+      "rel": "publishesPoll",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:2",
+      "dst": "Candidate:c_seoul_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:3",
+      "dst": "Contest:seoul_mayor_2026",
+      "rel": "publishesPoll",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:3",
+      "dst": "Candidate:c_seoul_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__seoul_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__seoul_mayor",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__seoul_mayor",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.7
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__seoul_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__seoul_mayor",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__seoul_mayor",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.5
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__seoul_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__seoul_mayor",
+      "dst": "Source:s_ohmy",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__seoul_mayor",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.5
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_us_visit__seoul_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_us_visit__seoul_mayor",
+      "dst": "Source:s_hani",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_us_visit__seoul_mayor",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.6
+      }
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_lower_voting_age__seoul_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_lower_voting_age__seoul_mayor",
+      "dst": "Source:s_kookje",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_ppp_lowest_15pct__seoul_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_ppp_lowest_15pct__seoul_mayor",
+      "dst": "Source:s_donga",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_ppp_lowest_15pct__seoul_mayor",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.9
+      }
+    },
+    {
+      "src": "PressConference:ev_seoul_jwo_announce",
+      "dst": "Candidate:c_seoul_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_jwo_announce",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_jwo_announce",
+      "dst": "Source:s_hani",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_jwo_gangnam_pledge",
+      "dst": "Candidate:c_seoul_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_jwo_gangnam_pledge",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_jwo_gangnam_pledge",
+      "dst": "Source:s_namuwiki",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_jwo_culture_pledge",
+      "dst": "Candidate:c_seoul_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_jwo_culture_pledge",
+      "dst": "Source:s_newsis",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_oh_minsaeng",
+      "dst": "Candidate:c_seoul_ppp",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_oh_minsaeng",
+      "dst": "Source:s_bp",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_oh_realestate_clash",
+      "dst": "Candidate:c_seoul_ppp",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_oh_realestate_clash",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_oh_realestate_clash",
+      "dst": "Source:s_bp",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_oh_announce",
+      "dst": "Candidate:c_seoul_ppp",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_seoul_oh_announce",
+      "dst": "Source:s_newsis",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "CohortPrior:seoul_ALL",
+      "dst": "District:seoul_mayor",
+      "rel": "appliesToRegion",
+      "attrs": {}
+    },
+    {
+      "src": "CohortPrior:seoul_ALL",
+      "dst": "Party:p_ppp",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.2
+      }
+    },
+    {
+      "src": "CohortPrior:seoul_ALL",
+      "dst": "Party:p_dem",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.4
+      }
+    },
+    {
+      "src": "CohortPrior:seoul_ALL",
+      "dst": "Party:p_rebuild",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.04
+      }
+    }
+  ],
+  "stats": {
+    "node_count": 40,
+    "edge_count": 61
+  }
+}

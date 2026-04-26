@@ -1,0 +1,114 @@
+{
+  "generated_at": "2026-04-26T15:17:06+09:00",
+  "source_file": "_workspace/data/scenarios/hill_climbing_target_gwangju_mayor_n10.json",
+  "distribution": {
+    "n": 10,
+    "by_age_bin": {
+      "20s": 2,
+      "30s": 2,
+      "40s": 2,
+      "50s": 2,
+      "60p": 2
+    },
+    "by_sex": {
+      "남자": 5,
+      "여자": 5
+    },
+    "by_education_class": {
+      "bachelor_plus": 5,
+      "sub_bachelor": 5
+    },
+    "by_education_level": {
+      "4년제 대학교": 5,
+      "고등학교": 4,
+      "2~3년제 전문대학": 1
+    },
+    "by_occupation": {
+      "경영 기획 사무원": 2,
+      "무직": 3,
+      "마케팅 전문가": 1,
+      "지게차 운전원": 1,
+      "보육교사": 1,
+      "소규모 상점 경영자": 1,
+      "경리 사무원": 1
+    },
+    "by_occ_kind": {
+      "white_collar_entry": 1,
+      "unemployed_student_equiv": 1,
+      "white_collar_office": 3,
+      "white_collar_specialist": 1,
+      "blue_collar": 1,
+      "self_employed": 1,
+      "blue_collar_or_unemployed": 1,
+      "homemaker_equiv": 1
+    },
+    "by_district": {
+      "광주-광산구": 1,
+      "광주-남구": 1,
+      "광주-북구": 4,
+      "광주-서구": 3,
+      "광주-동구": 1
+    },
+    "axes_coverage": {
+      "age_bins": [
+        "20s",
+        "30s",
+        "40s",
+        "50s",
+        "60p"
+      ],
+      "sex": [
+        "남자",
+        "여자"
+      ],
+      "education_classes": [
+        "bachelor_plus",
+        "sub_bachelor"
+      ],
+      "districts_unique": [
+        "광주-광산구",
+        "광주-남구",
+        "광주-동구",
+        "광주-북구",
+        "광주-서구"
+      ],
+      "occ_kinds": [
+        "blue_collar",
+        "blue_collar_or_unemployed",
+        "homemaker_equiv",
+        "self_employed",
+        "unemployed_student_equiv",
+        "white_collar_entry",
+        "white_collar_office",
+        "white_collar_specialist"
+      ]
+    },
+    "balance_checks": {
+      "sex_balance_5_5": [
+        5,
+        5
+      ],
+      "edu_balance_5_5": [
+        5,
+        5
+      ],
+      "age_bin_counts": {
+        "20s": 2,
+        "30s": 2,
+        "40s": 2,
+        "50s": 2,
+        "60p": 2
+      },
+      "district_unique_count": 5,
+      "district_note": "multi-district pool (5)"
+    }
+  },
+  "ground_truth": {
+    "available": false,
+    "source": "DuckDB.poll_consensus_daily as_of=2026-04-26 region_id=gwangju_mayor",
+    "method_version": "weighted_v1",
+    "consensus_raw": [],
+    "consensus_renorm_intersection": [],
+    "missing_reason": "현장 후보 reshuffle 이후 NESDC 등록 폴(2026-04 기준 25건)의 후보 set이 scenario gwangju_mayor.json (강기정/민형배/주기환/안철수)와 일치하지 않음 (2026-01 이후 광주·전남 통합단체장 후보 김영록 등 신규 인물 등장). raw_poll_result 미박제 → poll_consensus_daily 0 rows."
+  }
+}

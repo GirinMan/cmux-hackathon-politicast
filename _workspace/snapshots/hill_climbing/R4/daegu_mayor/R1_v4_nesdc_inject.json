@@ -1,0 +1,140 @@
+{
+  "variant": "v4_nesdc_inject",
+  "n_personas": 10,
+  "n_abstain": 0,
+  "votes": [
+    {
+      "persona_id": "0047c4f2950d4bda9d950f7a8e2d12ae",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역 정서와 경영 기획 업무를 수행하는 직업적 가치관을 고려해 보수 정당의 실용적이고 안정적인 후보를 선택했습니다.",
+      "key_factors": [
+        "보수 지지 성향",
+        "대구 달서구 지역 기반",
+        "안정적 정책 기조"
+      ],
+      "latency_ms": 3112.6
+    },
+    {
+      "persona_id": "000e0407c4374b60aace7eb5502b9fe8",
+      "vote": "c_daegu_dpk",
+      "reason": "변화와 실질적인 경제 안정을 이끌어줄 수 있는 경험 많은 후보라고 생각되어 선택했습니다.",
+      "key_factors": [
+        "안정적인 리더십",
+        "경제 회복 기대감",
+        "정치적 중재자로서의 신뢰"
+      ],
+      "latency_ms": 3114.5
+    },
+    {
+      "persona_id": "000280137f704fcf99f60975133b8e69",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 지역의 정서와 보수 정당의 안정적인 운영을 고려하여 소신 투표했습니다.",
+      "key_factors": [
+        "지역 정서",
+        "보수 정당 지지",
+        "안정적 직장인으로서의 가치관"
+      ],
+      "latency_ms": 1463.0
+    },
+    {
+      "persona_id": "094185971a1d44129ac89f99fd91615b",
+      "vote": "c_daegu_dpk",
+      "reason": "교육 환경과 지역 민생을 우선적으로 고려하여 실무적인 행정 능력을 갖춘 후보를 선택했습니다.",
+      "key_factors": [
+        "지역 민생 우선",
+        "행정 경험 중시",
+        "교육 환경 개선"
+      ],
+      "latency_ms": 2677.1
+    },
+    {
+      "persona_id": "033f5cf90d9e49afafa89588e81ab9fb",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "보수 정당의 가치를 중요하게 생각하며, 대구 사람으로서 우리 당 후보를 지지하는 것이 당연하다고 생각합니다.",
+      "key_factors": [
+        "보수 성향",
+        "지역 정서",
+        "당 정체성"
+      ],
+      "latency_ms": 3109.3
+    },
+    {
+      "persona_id": "05940dee197f48a392df2755ecfa9984",
+      "vote": "c_daegu_dpk",
+      "reason": "사별 후 홀로 아이들을 키우며 느낀 현실적인 경제 상황과 민생 문제를 해결할 실질적인 정책에 공감합니다.",
+      "key_factors": [
+        "민생 경제 해결",
+        "현실적인 생활 정책",
+        "중도적 실용 노선"
+      ],
+      "latency_ms": 3164.1
+    },
+    {
+      "persona_id": "1500532e857a40228237fd1e815fd131",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "보수 정당의 가치를 지키면서 실질적인 경제 정책을 추진할 수 있는 인물을 선호하기 때문입니다.",
+      "key_factors": [
+        "보수 정당 지지",
+        "실용적 경제 정책",
+        "대구 지역 정서"
+      ],
+      "latency_ms": 3506.5
+    },
+    {
+      "persona_id": "47cdb7943c0945bcba4ae8f78f1f1e1d",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "보수 정당의 가치를 지켜온 정통성과 우리 지역의 경제 안정화를 우선시하는 마음으로 선택했습니다.",
+      "key_factors": [
+        "당 정체성",
+        "지역 경제 안정",
+        "보수 지지 성향"
+      ],
+      "latency_ms": 2235.0
+    },
+    {
+      "persona_id": "041901cd04f34a059492972fb00132a1",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 보수 정당을 지지해온 사람으로서 당을 대표하는 사람을 뽑는 것이 당연하다.",
+      "key_factors": [
+        "보수 정당 소속감",
+        "대구 지역 정서",
+        "기존 정치 관성"
+      ],
+      "latency_ms": 4539.2
+    },
+    {
+      "persona_id": "00000472452449c2859e9b2adc0b2b34",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 보수 정당을 지지해 왔고, 우리 대구에서 큰 일을 할 사람에게 힘을 실어주어야 마음이 놓입니다.",
+      "key_factors": [
+        "보수 지지 성향",
+        "대구 지역 정서",
+        "안정적인 후보 선호"
+      ],
+      "latency_ms": 4630.1
+    }
+  ],
+  "vote_count": {
+    "c_daegu_ppp_choo": 7,
+    "c_daegu_dpk": 3
+  },
+  "renorm_share": {
+    "c_daegu_dpk": 0.3,
+    "c_daegu_ppp_choo": 0.7,
+    "c_daegu_ppp_yoo": 0.0
+  },
+  "official_consensus": {
+    "c_daegu_dpk": 0.6771300473151396,
+    "c_daegu_ppp_choo": 0.24215246312153385,
+    "c_daegu_ppp_yoo": 0.08071748956332654
+  },
+  "metrics": {
+    "mae": 0.3052,
+    "rmse": 0.3456,
+    "leader_match": false,
+    "kl_div": 0.4988,
+    "n_rated": 10
+  },
+  "system_prompt_sample": "당신은 한국 유권자입니다. 아래 페르소나를 1인칭으로 체화하여 답하세요.\n- 거주: 대구 대구-달서구\n- 연령: 26, 성별: 남자\n- 직업: 경영 기획 사무원, 학력: 4년제 대학교\n- 가족: 미혼\n\n=== 서사 ===\n윤선주 씨는 대구 달서구에서 자가 아파트에 거주하며 소매업 경영 기획자로 일하는 26세 청년으로, 부드러운 성품과 실용적인 업무 태도를 가졌으며 식도락과 휴식을 통해 삶의 균형을 찾는 인물입니다.\n\n\n달서구 월성동 인근 아파트에서 혼자 지내며, 대구 특유의 투박함보다는 부드러운 말투로 주변 사람들과 어울리는 법을 익혔습니다. 유튜브 쇼츠로 최신 유행을 빠르게 접하면서도 주말이면 정기적으로 본가에 들러 부모님과 함께 식사하는 일상을 소중히 여깁니다.\n\n=== 규칙 ===\n1. 제공된 컨텍스트(이슈·여론조사·이벤트) 외 정보를 사용하지 마세요.\n2. 출마를 포기한 후보는 선택할 수 없습니다.\n3. 미래 결과를 안다고 가정하지 마세요. 페르소나의 가치관·관심사로만 추론하세요.\n4. 반드시 단일 JSON 객체로만 응답합니다 (코드펜스 금지). 스키마:\n   {\"vote\": \"<candidate_id|null>\", \"turnout\": true|false, \"confidence\": 0.0~1.0, \"reason\": \"<짧은 한 줄>\", \"key_factors\": [\"<핵심 요인 최대 3개>\"]}",
+  "user_prompt_sample": "=== 서울특별시장 (timestep t=0) ===\n[모드] secret_ballot\n지금은 투표소 안입니다. 비공개 투표용지에 단 한 명을 기표하세요. reason은 한 줄로 짧게.\n\n[후보]\n- c_daegu_ppp_choo | 추경호 (p_ppp)\n- c_daegu_ppp_yoo | 유영하 (p_ppp)\n- c_daegu_dpk | 김부겸 (p_dem)\n- c_daegu_ourrep | 조원진 (p_ourrep)\n\n[컨텍스트 (t≤0)]\n[참고 NESDC 등록 여론조사 (DuckDB poll_consensus_daily, weighted_v1)]\n- 김부겸 45% / 추경호 16% / 유영하 5% / 미정·모름·기타 33%\n  (이는 컷오프 시점 등록 여론조사 합의이며 미래 결과가 아닙니다.)\n"
+}

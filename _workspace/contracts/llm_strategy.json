@@ -1,0 +1,41 @@
+{
+  "_doc": "LLM 백엔드 전략. 모든 에이전트는 이 파일을 read-only 소스로 따른다. 2026-04-26 LiteLLM 기반으로 전면 교체.",
+  "decision": "PLAN_A_LITELLM",
+  "rationale": "LiteLLM(>=1.50)이 base layer. 모델 prefix(`gemini/`, `gpt-`, `claude`, `azure/`, `vertex_ai/`, `bedrock/`)로 자동 라우팅. 환경변수 LITELLM_MODEL 한 줄 교체로 공급자 스왑 가능 → API 키 만료/공급자 장애 시 즉시 우회.",
+  "primary_path": {
+    "package": "litellm>=1.50.0",
+    "wrapper": "src.llm.llm_pool.LLMPool",
+    "model_env": "LITELLM_MODEL",
+    "default_model": "gemini/gemini-3-flash-preview",
+    "config": {
+      "response_format": {"type": "json_object"},
+      "temperature": 0.7,
+      "max_tokens": 384
+    }
+  },
+  "supported_providers": [
+    {"id": "gemini", "key_env": "GEMINI_API_KEYS", "auth": "api_key", "model_prefix": "gemini/"},
+    {"id": "openai", "key_env": "OPENAI_API_KEYS", "auth": "api_key", "model_prefix": "openai/, gpt-, o1, o3, o4"},
+    {"id": "anthropic", "key_env": "ANTHROPIC_API_KEYS", "auth": "api_key", "model_prefix": "anthropic/, claude"},
+    {"id": "azure", "key_env": "AZURE_API_KEYS", "auth": "api_key", "model_prefix": "azure/", "extra_env": ["AZURE_API_BASE", "AZURE_API_VERSION"]},
+    {"id": "vertex_ai", "key_env": null, "auth": "iam (GOOGLE_APPLICATION_CREDENTIALS)", "model_prefix": "vertex_ai/, vertex/"},
+    {"id": "bedrock", "key_env": null, "auth": "iam (AWS_*)", "model_prefix": "bedrock/"},
+    {"id": "groq", "key_env": "GROQ_API_KEYS", "auth": "api_key", "model_prefix": "groq/"},
+    {"id": "openrouter", "key_env": "OPENROUTER_API_KEYS", "auth": "api_key", "model_prefix": "openrouter/"}
+  ],
+  "fallback_chain": [
+    {"order": 1, "label": "Plan B — CAMEL ChatAgent native", "trigger": "ChatAgent 상태/도구 호출이 필요할 때 POLITIKAST_LLM_BACKEND=camel 명시. 단일 공급자 한정.", "module": "src.sim.voter_agent.try_make_camel_backend"},
+    {"order": 2, "label": "Plan C — Mock backend", "trigger": "모든 LLM 키 부재 시 dev/smoke. POLITIKAST_LLM_BACKEND=mock", "module": "src.sim.voter_agent.try_make_mock_backend (TBD)"}
+  ],
+  "rate_limit_observations": {
+    "preview_tier_rpm_per_project": "10~50 (확인 필요)",
+    "concern": "동일 프로젝트 N개 키는 quota 합산. capacity probe로 측정.",
+    "mitigation": "policy-engineer가 capacity probe 결과 기반 sample/timestep 분배",
+    "expected_capacity_h6_60pct": {"same_project_50rpm": 10800, "separate_project_200rpm": 43200}
+  },
+  "research_artifact": "_workspace/research/camel_gemini_compat.md",
+  "_change_log": [
+    {"date": "2026-04-26T11:30+09:00", "change": "Plan A를 CAMEL native에서 LiteLLM-based LLMPool로 교체. 사용자 결정 — 공급자 락-인 방지 + 키 만료 우회."}
+  ],
+  "_status": "decided"
+}

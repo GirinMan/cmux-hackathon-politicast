@@ -1,0 +1,1056 @@
+{
+  "_doc": "PolitiKAST capacity 정책 v2.0 — validation-first rolling-origin gate. v1.4 (Gemini 3-key 풀스펙)는 cache+1-key+model determinism artifact로 INVALIDATED. paper structure pivot(13:50) 결과 zero-shot 5-region prediction 폐기, NESDC 공식 사전 여론조사 기반 rolling-origin validation gate가 P0. v1.x history 보존(Limitations evidence).",
+  "version": "2.0_validation_first",
+  "ts": "2026-04-26T14:30:00+09:00",
+  "status": "V2_1_AUTONOMOUS_LOOP_ENGAGED — 사용자 15:10 명시 자율 모드 진입. team-lead full decision authority. policy-engineer는 30~60min 주기 progress 점검 + escalation 4 trigger 모니터 + 종료 시 v2.0 vs v2.1 비교 표 박제. 사용자 escalate 최소화.",
+  "supersedes": "1.4",
+  "supersedes_reason": "사용자 paper redesign(13:50): zero-shot prediction → rolling-origin official-poll validation gate. v1.4 cache+1-key+H3 model determinism artifact는 paper Limitations evidence로만 보존. v2.0은 NESDC 등록 사전 여론조사를 ground truth로 삼고 sim 결과를 rolling-origin metric으로 검증.",
+  "fire_state_v14": {
+    "background_task": "bcqeiv6q6",
+    "fire_ts": "2026-04-26T13:13:00+09:00 (sim restart)",
+    "concurrency": 8,
+    "policy_version_env": "v1.4_gemini_3key",
+    "regions_in_progress": "seoul_mayor, busan_buk_gap, daegu_dalseo_gap (940 personas × T=4 = 3,760 voter slots remaining)"
+  },
+  "validation_v14": {
+    "ts_mark": "2026-04-26T13:35:00+09:00 (22min after fire)",
+    "regions_complete_22min": ["gwangju_mayor", "daegu_mayor"],
+    "complete_count": 2,
+    "spec_each": "n=200, T=4 (nominal)",
+    "_INVALID_13_42_sim_correction": {
+      "verdict": "INVALID — 가설 A confirmation 철회",
+      "actual_root_cause": "sqlite cache hit 97% reuse (prior runs) + LLMPool 1-key only (`load_dotenv(override=False)`가 docker compose 단일 키 env를 덮어쓰기 실패)",
+      "evidence": {
+        "actual_keys_used": 1,
+        "cache_hit_rate_gwangju": 0.978,
+        "cache_hit_rate_daegu": 0.975,
+        "pool_stats_total_calls": "118 / 132 (1640 expected의 7%)",
+        "wall_seconds_each": 23
+      },
+      "implication_1": "3-key round-robin 미달성 — capacity는 단일 키 46 RPM이 그대로",
+      "implication_2": "vote_share 100% sweep (gwangju c_gwangju_dpk 200/200, daegu c_daegu_ppp_choo 200/200) — 실 historical 60~70% 대비 deterministic 100%",
+      "implication_3": "원인 추정: persona_text 누락 uuid들이 동일 generic prompt로 fallback → 같은 cache key → 동일 응답 재사용",
+      "paper_impact": "headline 못 씀. partial archive로 Limitations 인용용",
+      "throughput_implied_rpm_REVISED": "단일 키 46 RPM, 실 LLM 호출 region당 ~120건만 (caches로 처리량 inflated)"
+    }
+  },
+
+  "llm_layer": {
+    "stack": "LiteLLM (#18) — Gemini-only 풀스펙 + 3-key round-robin (사용자 13:30 결정 Option B variant, team-lead 13:42 갱신). thinking globally OFF.",
+    "thinking_off": true,
+    "key_pool_size": 3,
+    "key_strategy": "round-robin via LLMPool._select_state — capacity v3 단일 키 46 RPM × 3 키 분리 가정 = 138 RPM 이론, GCP 프로젝트 공유 시 46 RPM 유지 (capacity boundary 미측정)",
+    "actual_voter_model": "gemini/gemini-3.1-flash-lite-preview",
+    "actual_interview_model": "gemini/gemini-3.1-flash-lite-preview",
+    "voter_normal_model": "gemini/gemini-3.1-flash-lite-preview",
+    "voter_educated_model": "gemini/gemini-3.1-flash-lite-preview",
+    "interview_model": "gemini/gemini-3.1-flash-lite-preview",
+    "dev_routing": "gemini/gemini-3.1-flash-lite-preview",
+    "educated_cutoff": "bachelor (코드는 그대로 — fire에서는 양쪽 모두 동일 모델이라 분기 결과 동일, 사실상 비활성)",
+    "rationale": "사용자 Option B variant 확정(13:30 Option B + 13:42 3-key round-robin 갱신): OpenAI Tier 0 quota incident(13:15) 후 provider mix 폐기. voter+interview 모두 gemini-3.1-flash-lite-preview 단일 모델 + 3개 Gemini 키 LLMPool round-robin. 비용 $0, capacity 단일 키 46 RPM × 3 = 이론 138 RPM (GCP 프로젝트 분리 시) 또는 46 RPM 유지 (공유 시) — capacity boundary 미측정. persona-conditional 분기는 코드 그대로 보존(양쪽 env가 같은 모델 가리킴) — paper Limitations에 '의도는 박제됐으나 capacity 제약으로 fire에서 미적용' 박제 권고.",
+    "router_location": "src/sim/voter_agent.py::_model_for_persona(persona) — 코드 그대로, 양쪽 env var이 같은 모델 가리키므로 분기 결과 동일.",
+    "model_name_audit_12_55": "v1.2 audit 결과는 history 보존. v1.3에서는 모든 모델이 gemini-3.1-flash-lite-preview로 통일됨.",
+    "current_target": {
+      "litellm_models": ["gemini/gemini-3.1-flash-lite-preview"],
+      "providers": ["gemini"],
+      "fire_env_mode": "사용자 GO — sim-engineer가 .env LITELLM_MODEL_VOTER_NORMAL/EDUCATED/INTERVIEW 일괄 swap 또는 POLITIKAST_ENV=dev override 활용"
+    },
+    "alternative_targets_for_recovery": [
+      {"litellm_model": "anthropic/claude-haiku-4-5-20251001", "swap_cost": "voter 모델 swap 1줄, $24.4 (Anthropic $20 임계 초과 — 예산 raise 필요)"},
+      {"litellm_model": "openai/gpt-4o-mini (Tier 1 일반 모델 60k RPM)", "swap_cost": "사용자 카드 등록 + .env swap, $5/30min"},
+      {"litellm_model": "mock", "swap_cost": "POLITIKAST_LLM_BACKEND=mock — 최후 수단, 발표용 dummy"}
+    ]
+  },
+
+  "capacity_evidence": {
+    "v3_synthetic_probe": {
+      "source": "data-engineer 재측정 (~12:35)",
+      "model": "gemini-3.1-flash-lite-preview",
+      "rpm_observed": 36.0,
+      "throttling": 0,
+      "duration_sec": 60,
+      "payload": "minimal (32 tokens)",
+      "file": "_workspace/checkpoints/capacity_probe_v3_synthetic.json"
+    },
+    "v3_realistic_probe": {
+      "source": "data-engineer 재측정 (~12:35) — VoterAgent 동등 prompt",
+      "model": "gemini-3.1-flash-lite-preview",
+      "rpm_observed": 46.0,
+      "throttling": 0,
+      "duration_sec": 60,
+      "concurrency": 2,
+      "max_tokens": 2048,
+      "avg_latency_ms": 2712,
+      "p50_latency_ms": 2294,
+      "payload": "full VoterAgent prompt (system 1068자 + user 321자 + JSON ballot)",
+      "file": "_workspace/checkpoints/capacity_probe_v3_realistic.json",
+      "verdict": "AUTHORITATIVE_FOR_GEMINI_FALLBACK_BUDGETING — thinking off로 v2 대비 4.6x"
+    },
+    "cross_provider_latency_spot": {
+      "openai/gpt-5.4-nano": {"avg_ms": 3333, "failures": 0, "note": "first-call cold start 5s, 2nd call 1.7s"},
+      "openai/gpt-5.4-mini": {"avg_ms": 2875, "failures": 0},
+      "anthropic/claude-sonnet-4-6": {"avg_ms": 4530, "failures": 0, "use": "interview only"},
+      "gemini/gemini-3.1-flash-lite-preview": {"avg_ms": 2712, "failures": 0, "use": "dev / fallback"}
+    },
+    "rationale": "v2(thinking on)에서 합성 48 RPM vs 실 10 RPM 5x 갭이 thinking 토큰 budget 침범 때문이었음을 v3가 입증 (실 46 RPM, 갭 소멸). 또한 prod 라우팅(OpenAI nano/mini)은 RPM 제약이 없어(500+ RPM tier) capacity는 사실상 비용/지연 제약으로 전환됨. Gemini fallback은 96~120min wall로 사용 가능."
+  },
+
+  "budget": {
+    "_formula_v13_gemini_only_3key": "capacity 단일 키 46 RPM × 3 키 round-robin = 이론 138 RPM (separated GCP) / 46 RPM (shared) — 미측정 boundary. wall 추정 53min(separated) ~ 154min(shared, single-key 가정)",
+    "voter_calls_estimate": 7115,
+    "voter_calls_breakdown": {
+      "_doc": "v1.2와 동일 — region/T 미변경. KG retrieval은 networkx local 카운트 X",
+      "seoul_mayor": 2080,
+      "busan_buk_gap": 1404,
+      "daegu_dalseo_gap": 1404,
+      "gwangju_mayor": 1040,
+      "daegu_mayor": 1040,
+      "_note_v13": "persona-conditional 분기는 fire에서 비활성(양쪽 env 동일 모델)"
+    },
+    "interview_calls_estimate": 200,
+    "interview_breakdown": "5 region × 40 = 200 calls (gemini-3.1-flash-lite-preview)",
+    "total_llm_calls_estimate": 7315,
+    "wall_time_min_estimate_range": "53~154",
+    "_wall_time_rationale": "team-lead 13:42 박제 53~154min 범위 — 3-key round-robin 효과는 GCP 프로젝트 separation 가정에 의존. 5,360 voter slots (1340×4 timesteps) + retry/interview = ~7,315 calls. separated(138 RPM): 53min, shared(46 RPM): 117~154min. 5분 시점 RateLimitError 율로 boundary 측정.",
+    "expected_cost_usd": {
+      "_doc": "Gemini Flash Lite preview tier — preview 동안 무료. 청구 발생 시 cost guard $5 임계로 abort.",
+      "openai": 0.0,
+      "anthropic": 0.0,
+      "gemini": 0.0,
+      "total": 0.0,
+      "_note": "비용 가드 무용지물 ($0 fire). monitor는 throughput 위주."
+    }
+  },
+
+  "regions": {
+    "_doc": "TOP-LEVEL = v1.3 풀스펙 (T=4, persona 1340 — v1.2와 동일). 사용자 '풀스펙' 명시로 region/T 유지. educated_ratio는 fire에서 분기 미사용(양쪽 env 동일 모델), 메타 보존 only.",
+    "seoul_mayor":      {"persona_n": 400, "timesteps": 4, "interview_n": 40, "weight": 0.30, "educated_ratio": 0.354, "role": "메인 baseline (이목효과 측정)"},
+    "busan_buk_gap":    {"persona_n": 270, "timesteps": 4, "interview_n": 40, "weight": 0.20, "educated_ratio": 0.235, "role": "보궐 A — 이슈/스캔들 + 4 timestep 효과"},
+    "daegu_dalseo_gap": {"persona_n": 270, "timesteps": 4, "interview_n": 40, "weight": 0.20, "educated_ratio": 0.263, "role": "보궐 B — 영남권 보궐 페어 비교"},
+    "gwangju_mayor":    {"persona_n": 200, "timesteps": 4, "interview_n": 40, "weight": 0.15, "educated_ratio": 0.308, "role": "호남권 진보 우세 baseline"},
+    "daegu_mayor":      {"persona_n": 200, "timesteps": 4, "interview_n": 40, "weight": 0.15, "educated_ratio": 0.262, "role": "영남권 보수 우세 baseline"}
+  },
+
+  "totals": {
+    "personas_per_timestep_sum": 1340,
+    "trajectory_total_voter_slots": 5360,
+    "estimated_total_llm_calls": 7315,
+    "estimated_wall_time_min_range": "53~154",
+    "estimated_finish_eta_range": "13:31 fire + 53min(separated) → 14:24 / + 154min(shared) → 16:05. 5분 시점 RPM 측정으로 boundary 결정.",
+    "_kg_retrieval_excluded": "KG retrieval은 networkx local — LLM 호출 없음 (sim-engineer 12:25 confirm)"
+  },
+
+  "p0_regions": ["seoul_mayor", "busan_buk_gap", "daegu_dalseo_gap", "gwangju_mayor", "daegu_mayor"],
+
+  "feature_flags_global": {
+    "bandwagon": true,
+    "underdog": true,
+    "second_order": true,
+    "kg_retrieval": true,
+    "virtual_interview": true,
+    "split_ticket": false
+  },
+
+  "concurrency_settings": {
+    "POLITIKAST_CONCURRENCY_actual_fire": 8,
+    "POLITIKAST_CONCURRENCY_v13_legacy": 4,
+    "POLITIKAST_CONCURRENCY_policy_baseline": 2,
+    "_override_13_50": "v1.3(conc=4) 10분간 박제 0건 → sim stop. v1.4 fire(conc=8, 3-key × 3 worker 분산). team-lead op decision.",
+    "concurrency_hint_v14": "3 키 × ~3 worker 분산 = 효과적 8. 가설 A (별개 GCP) 입증 시 138 RPM 합산 가능, 가설 B(공유) 시 단일 키 thrash. 22min validation으로 A confirmed.",
+    "fire_command_actual_used": "docker compose run --rm -e POLITIKAST_ENV=dev -e POLITIKAST_CONCURRENCY=8 -e POLITIKAST_POLICY_VERSION=v1.4_gemini_3key app python -m src.sim.run_scenario --region all",
+    "fire_state_v14": "RUNNING — bcqeiv6q6, 광역 2 region 박제 완료(13:35 mark). next checkpoint 14:00."
+  },
+
+  "cost_guard": {
+    "stack_ref": "_workspace/research/llmpool_cost_guard.md",
+    "exception": "LLMCostThresholdError (LLMPoolError 서브클래스, retry 안 됨)",
+    "thresholds_usd": {
+      "openai": 50,
+      "anthropic": 20,
+      "gemini": 5
+    },
+    "thresholds_rationale": {
+      "openai": "$300 예산의 17% — 첫 가드 (예상 $0.4~1.6 대비 30~125배 헤드룸)",
+      "anthropic": "$25 예산의 80% — 인터뷰 폭주 시 즉시 알림성 abort (예상 $3.3 대비 6배 헤드룸)",
+      "gemini": "preview tier 청구 발생 시 즉시 abort (dev에서는 추적 자체 skip)"
+    },
+    "dev_mode_skip": "POLITIKAST_ENV=dev → cost_tracking_enabled=False",
+    "monitoring": "pool.stats() — cost_usd, cost_thresholds, cost_tracking_enabled. dashboard provenance 카드에 노출.",
+    "alert_pipeline": {
+      "emitter": "ui/dashboard/data_loader.py::emit_cost_alerts (app.py 랜딩 5s polling)",
+      "log_path": "_workspace/checkpoints/cost_alerts.log (JSONL append-only)",
+      "state_path": "_workspace/checkpoints/cost_alerts_state.json (provider별 마지막 emitted level dedup)",
+      "levels": {"warn70": ">=0.70", "warn90": ">=0.90", "breach100": ">=1.00"},
+      "actions_per_level": {
+        "warn70": "policy-engineer 모니터 + sim/team-lead 보고 (no fire 변경)",
+        "warn90": "downscale 권고 발사 (sample 50% 컷 후 재실행 검토)",
+        "breach100": "LLMCostThresholdError 임박 — 즉시 sim freeze 권고 + 사용자 escalate"
+      },
+      "schema_example": "{\"ts\":\"2026-04-26T...\",\"level\":\"warn70\",\"provider\":\"openai\",\"spent_usd\":37.5,\"threshold_usd\":50.0,\"ratio\":0.75,\"source\":\"dashboard.landing\"}"
+    }
+  },
+
+  "downscale_ladder_v13_revised_13_42": [
+    {
+      "rec": 0,
+      "trigger": "5분 시점 (~13:36) — LiteLLM RateLimitError율 + pool_effective_rpm 첫 측정",
+      "metric": "pool_effective_rpm = 60 × pool_stats.total_calls / wall_seconds_so_far. RateLimitError per minute.",
+      "action_thresholds": {
+        "rpm_ge_60": "3-key separated 가정 holds — fire 그대로 (T=4 풀스펙). ETA 53~80min.",
+        "rpm_30_to_60": "shared GCP 가정 — fire 그대로 (T=4 가능). ETA 100~130min.",
+        "rpm_lt_30_or_429_burst": "**즉시 sim에 T=2 권고** (cache hit 보존하며 abort + restart). ETA 70~80min."
+      },
+      "owner": "policy-engineer (sim-engineer 5분 시점 보고 또는 dashboard 게이지 polling)"
+    },
+    {
+      "rec": 1,
+      "trigger": "30분 시점 (~13:58~14:01) — results_index region 박제 수 확인",
+      "metric": "박제된 region 수 (results_index.json `is_mock=false` 필터)",
+      "action_thresholds": {
+        "region_count_ge_2": "정상 — 그대로 진행, 다음 점검 14:30",
+        "region_count_eq_1": "borderline — 모니터 강화, 14:30 재점검",
+        "region_count_eq_0": "**abort + restart with T=2** (사용자 통보 후, partial 재시도). ETA 회복 가능."
+      }
+    },
+    {
+      "rec": 2,
+      "trigger": "Gemini key 401/403 (unauthenticated / suspended)",
+      "auto_abort": true,
+      "rec_action": "사용자(team-lead) 즉시 escalate. 키 재발급 또는 alternative target(gpt-4o-mini if 결제, 또는 mock) swap. 부분 결과 보존."
+    },
+    {
+      "rec": 3,
+      "trigger": "429 RateLimitError 연속 1분 이상",
+      "rec_action": "round-robin이 무력화 — 단일 키 quota burst. concurrency 4→2 즉시 다운, sustained RPM < 20 추가 시 T=4→2."
+    },
+    {
+      "rec": 4,
+      "trigger": "16:00 시점 partial 박제도 안 됨 (`is_mock=false` region 0개)",
+      "rec_action": "**T=2 강제 + 사용자 즉시 통보**. 30분 안에 partial 결과라도 확보. paper Limitations에 강제 다운스케일 박제."
+    },
+    {
+      "rec": 5,
+      "trigger": "16:30 hard freeze",
+      "rec_action": "신규 fire 금지. 빌드 동결, 발표 자료 정리만. policy-engineer 이후 결정 권한 종료."
+    }
+  ],
+
+  "v11_archive_handoff": {
+    "_doc": "v1.1 fire 결과는 12초 사망으로 결과 파일 0개 — archive 불요. v1.2 OpenAI provider mix는 fire 미실행. v1.3가 첫 실 fire.",
+    "archive_path": "N/A (no v1.1 results to archive)",
+    "v13_fire_signal": "team-lead 13:30 사용자 GO confirmed. sim-engineer 즉시 fire."
+  },
+
+  "incident_13_15_openai_tier0_block": {
+    "ts": "2026-04-26T13:15:00+09:00",
+    "reporter": "team-lead",
+    "what_happened": "v1.1 fire 시작 14분 만에 OpenAI Tier 0 quota (3 RPM / 200 RPD) 소진. abstain 폭주(quota raise → empty/invalid ballot)로 run 사실상 사망. ~200 calls만 박제됨.",
+    "root_cause": "capacity probe v3는 Gemini RPM(46)만 측정, **OpenAI tier limit은 미측정**. .env가 OpenAI primary로 박제된 상태에서 prod fire → Tier 0 daily 한도 즉시 도달.",
+    "v3_blind_spot": "v3 보고서 §2-4 'Concurrency 상향 시도'는 Gemini conc=4 시도만 권고. OpenAI tier(0/1/2/3/4/5)별 RPM/RPD/TPM ceiling은 측정 plan에 없었음. 비용 가드(`LLMCostThresholdError`)는 발동 안 함 — quota는 비용이 아닌 daily request count 제한이라 cost guard 사각.",
+    "tier1_audit_13_42": "Tier 1도 gpt-5.4-nano/mini는 신규 모델 정책으로 3 RPM. 결제 후에도 24h 사용 이력 빌드 필요. A2(gpt-4o-mini swap, tier 1=60k RPM 일반 모델)는 즉시 가능했으나 사용자가 B variant(Gemini-only 3-key round-robin) 선택 — RPM 확보 + provider 락-인 회피.",
+    "impact": {
+      "v1_1_fire": "DEAD — daily 200건 소진, 추가 호출 시 abstain. 결과 partial(~200 calls), paper headline 부적합.",
+      "v1_2_blocked": "v1.2 풀스펙 voter calls ≈ 7,115 (nano+mini 합) > Tier 0 한도 200 RPD. **OpenAI 단독으로는 절대 불가**.",
+      "v1_2_supersedes_v1_1_signal": "사용자 결정까지 보류 (v1.1 archive 신호도 보류 — partial이지만 D 옵션에서 사용 가능)."
+    },
+    "downscale_ladder_v12_options_pending_user_decision": {
+      "_doc": "team-lead가 사용자에게 escalate. policy-engineer가 4개 옵션의 quantitative comparison 박제.",
+      "option_A_openai_tier1_upgrade": {
+        "label": "OpenAI 결제 카드 등록 → Tier 1+",
+        "feasibility": "사용자 카드 등록 + tier 활성화 시간 변수",
+        "_correction_13_25": "**sim-engineer 13:23 실측: tier 1도 gpt-5.4-mini/nano = 3 RPM** (가장 새 모델은 tier 정책이 다름). 30k+ RPM은 tier 4~5 또는 일반 모델(gpt-4o-mini 등)에서만 적용. v1.2 풀스펙은 **tier 4+ 또는 모델 다운그레이드(gpt-4o-mini)** 필요. 단순 결제 등록만으론 부족.",
+        "revised_spec_options": {
+          "A1_tier4_5_request": "OpenAI에 tier raise 직접 요청 — 절차 1~24h, 해커톤 timeline 부적합",
+          "A2_model_downgrade_to_gpt4o_mini": "voter 모델을 `openai/gpt-4o-mini`로 swap (tier 1 = 60k RPM, 일반 모델). 비용 $0.15/$0.60 per M → 6968 calls × (1500+400 토큰) = $1.6 + $1.7 = $3.3. 풀스펙 30분, $5 미만. 모델 quality는 nano/mini와 비슷한 tier."
+        },
+        "wall_time_min": "30 (A2 가정)",
+        "cost_usd": "5 (A2 가정)",
+        "trajectory_quality": "FULL — T=4 5 region",
+        "risk": "A1 tier raise는 24h 변수, A2 모델 swap은 즉시 가능 — 권고는 A2",
+        "recommendation_rank": 1,
+        "rationale": "A2(gpt-4o-mini swap)가 즉시 실행 가능하고 풀스펙. 비용 미미. **사용자 결제 카드 등록만 필요**, tier raise 대기 불요. paper에 'gpt-5.4 tier 제약으로 gpt-4o-mini로 다운그레이드' 1줄 박제."
+      },
+      "option_B_gemini_only_prod": {
+        "label": "Gemini-only prod 모드 — voter+interview 모두 gemini-3.1-flash-lite-preview",
+        "feasibility": "POLITIKAST_ENV=prod_gemini 추가 또는 LITELLM_MODEL_VOTER_*/INTERVIEW 일괄 swap. 코드 변경 5~10줄",
+        "spec_full": "v1.2 풀스펙 그대로 — 7,315 calls @ 46 RPM = 159min wall ≈ 2h 39m",
+        "spec_downsized": "T=2로 감소하면 ~3,650 calls @ 46 RPM = 79min wall ≈ 1h 19m",
+        "wall_time_min": "159 (full) / 79 (T=2)",
+        "cost_usd": 0.0,
+        "trajectory_quality": "FULL T=4 (159min, 16:00 직전 끝남) OR T=2 (안전 마진 큼)",
+        "risk_1": "preview tier outage 가능성 (해커톤 4시간 동안). 발생 시 mock fallback 외 대안 없음",
+        "risk_2": "Gemini Flash Lite는 nano-tier — voter quality는 OpenAI mini 대비 약간 낮음. interview를 sonnet에서 lite로 다운그레이드하면 paper interview 인용 quality 손상",
+        "risk_3": "interview만 Claude로 유지 가능 (200 calls / Anthropic $3.3 / $20 임계 안전). 권고: voter→Gemini, interview→Claude 유지",
+        "recommendation_rank": 2,
+        "rationale": "비용 0 + capacity 검증 완료(46 RPM 실측). T=4 풀스펙도 16:00 안에 들어감. 권장 형태: voter→Gemini Lite, interview→Claude Sonnet 4.6 유지(분리)."
+      },
+      "option_C_claude_sonnet_voter": {
+        "label": "voter 모델을 Claude Sonnet 4.6으로 swap (mini/nano 대신)",
+        "feasibility": "LITELLM_MODEL_VOTER_NORMAL/EDUCATED 일괄 swap (1줄)",
+        "cost_calculation": {
+          "voter_calls": 6968,
+          "tokens_per_call": "1500 in + 400 out (system + persona + scenario + KG + JSON ballot)",
+          "input_total_M": 10.45,
+          "output_total_M": 2.79,
+          "anthropic_pricing_per_M": "$3 in / $15 out (Sonnet 4.6 표준)",
+          "total_voter_cost_usd": 73.20,
+          "interview_cost_usd": 3.30,
+          "grand_total_usd": 76.5
+        },
+        "vs_threshold": "Anthropic $20 임계의 **3.8배 초과** — LLMCostThresholdError 즉시 발동",
+        "max_under_threshold": "$20 / $73.20 × 6968 = ~1900 voter calls = ~145 personas × T=4 OR ~580 personas × T=1 (5 region 전부 합쳐서)",
+        "trajectory_quality_under_threshold": "v1.2의 27% scale, 또는 T=4 풀 + 5 region당 29 persona 미만",
+        "wall_time_min": "60~80 (full quota raise 가정)",
+        "recommendation_rank": 4,
+        "rationale": "풀스펙 비현실적 (예산 4배 초과). severe downscale(persona/region 30 미만)에서만 가능 — paper headline은 약함."
+      },
+      "option_E_anthropic_haiku_voter_swap": {
+        "label": "voter 모델을 Claude Haiku 4.5로 swap (sim-engineer 13:23 권고)",
+        "feasibility": "LITELLM_MODEL_VOTER_NORMAL/EDUCATED → `anthropic/claude-haiku-4-5-20251001` 1줄 swap",
+        "cost_calculation": {
+          "voter_calls": 6968,
+          "tokens_per_call": "1500 in + 400 out",
+          "input_total_M": 10.45,
+          "output_total_M": 2.79,
+          "anthropic_haiku_4_5_pricing_per_M": "$1 in / $5 out (Anthropic 표준)",
+          "voter_cost_usd": 24.40,
+          "interview_cost_usd": 3.30,
+          "grand_total_usd": 27.70,
+          "vs_threshold": "Anthropic $20 임계의 1.39배 — LLMCostThresholdError 발동 위험"
+        },
+        "threshold_adjustment_required": "$20 → $30 또는 $35 raise 필요. 사용자 예산 $25 직접 초과(예산 $25 vs 추정 $27.7) — 사용자 예산 raise 동의 필수.",
+        "downscaled_under_20_threshold": {
+          "max_calls": 1900,
+          "spec": "총 voter 1900 calls = 5 region × ~145 persona × T=4 OR ~285 persona × T=2",
+          "trajectory_quality": "T=4 ~22% scale 또는 T=2 ~43% scale"
+        },
+        "haiku_rpm_unknown": "Anthropic Haiku 4.5 RPM tier 미측정 — 첫 fire 직전 5 calls 스모크 권고. tier 1 가정 시 충분 (수십 RPM 이상).",
+        "wall_time_min_estimate": "30~50 (Haiku RPM 측정 후 확정)",
+        "trajectory_quality": "FULL T=4 (예산 raise) OR T=2/N=143 (예산 유지)",
+        "recommendation_rank": "tied with B (sim-engineer 권고 1순위, policy 권고 2위)",
+        "rationale": "voter quality는 nano/mini보다 우수(haiku tier). 예산 $25 raise 또는 임계 raise 필요. RPM 미측정이 risk."
+      },
+      "option_D_v11_partial_disclosure": {
+        "label": "v1.1 partial 결과(200 calls)만 박제 + paper Limitations honest disclosure",
+        "feasibility": "추가 fire 없음. 즉시 archive + paper 갱신",
+        "trajectory_quality": "거의 없음 (200 calls가 5 region에 어떻게 분포됐는지 sim-engineer 박제 결과 확인 필요 — 추정상 first region 1 timestep 일부)",
+        "wall_time_min": 0,
+        "cost_usd": 0.0,
+        "paper_impact": "headline figure 빈약. methodology + KG + framework 강조 + '인프라 검증 단계' positioning",
+        "recommendation_rank": 3,
+        "rationale": "최후의 honesty 옵션. A/B 모두 막힐 때만. 발표 강도 ↓."
+      }
+    },
+    "policy_recommendation_revised_13_25": {
+      "_doc": "sim-engineer 13:23 OpenAI tier 1 = 3 RPM 실측 + Haiku 옵션 추가 후 재산정. team-lead가 사용자에게 4 옵션 escalate 발사 (haiku 권고 1순위).",
+      "primary": "A2 (OpenAI gpt-4o-mini 모델 swap, 결제 카드 등록 후)",
+      "primary_rationale": "tier raise 절차 우회 + 결제 등록만 필요. 풀스펙 30min/$5. paper 1줄 박제로 honest. 단, **사용자 OpenAI 결제 등록 의사 필수**.",
+      "secondary": "B(split) — voter→Gemini Lite, interview→Claude Sonnet 4.6",
+      "secondary_rationale": "비용 0(voter) + $3.3(interview). 풀 T=4 154분(~16:34 종료, 타이트) / T=2 79분(15:19 안전). preview tier outage가 유일 리스크.",
+      "tertiary": "E (Haiku swap, sim-engineer 권고)",
+      "tertiary_rationale": "voter quality 가장 좋지만 $27.7 (Anthropic $20 임계 + 사용자 $25 예산 모두 초과). 임계/예산 raise 또는 downscale 필요. RPM 미측정.",
+      "fallback": "D (v1.1 partial — 단, sim-engineer 13:23 보고 결과 파일 0개 → D 사용 불가, 추가 partial fire 필요)",
+      "do_not_recommend": "C (Sonnet voter swap) — $76.5, 4배 초과",
+      "decision_deadline_for_16_00_finish": "**13:35 결정 권고** — A2 14:00 fire → 14:30 종료 안전 / B(T=4) 14:00 fire → 16:34 freeze 직전 / B(T=2) 14:00 fire → 15:19 안전 / E(downscale T=2 N=143) 14:00 fire → ~80min → 15:20 안전",
+      "v11_partial_status_correction": "sim-engineer 13:23: v1.1 fire 12초 사망, **결과 파일 0개**. D 옵션은 추가 partial fire (소수 region/persona)로 evidence 만들어야 가능."
+    },
+    "v11_archive_status": "보류 — D 옵션 사용 시 evidence 필요. sim-engineer가 mv 보류 권고."
+  },
+
+  "broadcast_to": ["data-engineer", "sim-engineer", "kg-engineer", "dashboard-engineer", "paper-writer"],
+  "broadcast_status": "V1_4_INVALIDATED_AT_13_42 — v1.5 spec 준비 중 (sqlite delete + 3-key verify + downscale)",
+  "v15_invalidated_paper_redesign_13_50": {
+    "_doc": "team-lead 13:50 박제 — 사용자가 paper 실험 구조 재설계 중 (zero-shot prediction → rolling-origin official-poll validation gate). v15 capacity spec 무효화. 신규 fire는 paper 재설계 완료 후 새 spec으로.",
+    "supersedes_reason": "사용자 paper structure pivot — capacity downscale 결정만으로는 paper headline 회복 불가. 실험 구조 자체가 zero-shot에서 validation-first로 변경.",
+    "preserved_for_new_spec": {
+      "_doc": "v15_spec_pending에서 박제했던 사전 진단 결과는 새 spec 작성 시 입력으로 보존. 특히 sim-engineer 14:05 보고 결과:",
+      "llmpool_3key_bug_confirmed": {
+        "verdict": "CONFIRMED",
+        "evidence": "LITELLM_MODEL=gpt-5.4-nano로 init → provider=openai → OPENAI_API_KEYS 1개만 로드. dev mode cross-provider override시 _call_with_retry가 override_keys[0]만 사용 (round-robin X).",
+        "fix_a_recommended": ".env LITELLM_MODEL=gemini/gemini-3.1-flash-lite-preview로 변경 (코드 0줄, init부터 provider=gemini, 3키 정상 round-robin). LITELLM_MODEL_VOTER_*/INTERVIEW는 그대로 유지.",
+        "fix_b_alternative": "_call_with_retry cross-provider 분기에 round-robin counter 추가 (5줄 패치)"
+      },
+      "persona_text_completeness": {
+        "verdict": "100% UNIQUE — fallback 가설 반박",
+        "evidence": "persona_core 1M rows + persona_text 1M rows, matched 100%. voter_agent의 system_prompt는 professional_persona/family_persona 컬럼 사용 (둘 다 100% 존재 100% unique). 200 personas 샘플 → 200/200 distinct system_prompt key.",
+        "implication": "v1.4 100% sweep은 persona collision으로 설명 불가. dashboard 14:02 분석(seoul cache 76% + sweep 99.5%)과 일치 — fallback 단독으로 설명 불가."
+      },
+      "cache_anomaly": {
+        "_doc": "7,023 cache 엔트리 모두 v1.4 fire 시점(04:23~04:38 UTC) 자체 박제. pre-existing cache 거의 없었음. 다른 4 region 동시 fire 동안 의도치 않은 hit.",
+        "mystery": "페르소나 unique + region별 candidates 다른데 어떻게 hit 가능한지 미해결. KG retriever(StubRetriever)가 빈 context 반환 → user_prompt 동일 가설, 단 system_prompt 달라야 함. 추가 5~10분 디버깅 필요.",
+        "policy_position": "cache reuse는 부수적 — 본 원인 아님."
+      },
+      "rpm_burst_spike_evidence_14_00": {
+        "_doc": "sim 14:00 박제 RPM 표 — 광역 actual_RPM 307~332 = capacity v3 46 RPM의 6.7~7.2배. burst spike evidence.",
+        "regions": {
+          "seoul":          {"wall_s": 262.1, "voter_calls": 2040, "pool_total": 1700, "inflate_RPM": 467,  "actual_RPM": 389},
+          "busan_buk":      {"wall_s": 138.0, "voter_calls": 1390, "pool_total": null, "inflate_RPM": 604,  "actual_RPM": null},
+          "daegu_dalseo":   {"wall_s": 129.6, "voter_calls": 1390, "pool_total": null, "inflate_RPM": 644,  "actual_RPM": null},
+          "gwangju":        {"wall_s":  23.1, "voter_calls": 1040, "pool_total":  118, "inflate_RPM": 2701, "actual_RPM": 307},
+          "daegu":          {"wall_s":  23.9, "voter_calls": 1040, "pool_total":  132, "inflate_RPM": 2611, "actual_RPM": 332}
+        },
+        "spike_explanation": "5 region 동시 fire concurrency=8 burst + Gemini lite preview tier RPM 판정이 짧은 burst엔 관대 (60s sliding window 평균보다 instantaneous spike 허용). 단 actual_keys=1이므로 단일 키 quota burst — sustained 시 432/RPM 한도 초과 abort 가능."
+      },
+      "vote_share_sweep_revised_hypothesis": {
+        "rejected_hypotheses": ["H1 persona text fallback (반박 14:05: persona unique 100%)", "H2 cache reuse 단독 (반박 14:10 audit: 6,977 rows 99.9% distinct)", "H2 persona prompt collision (반박 14:10 audit b: 5/5 region 100% unique pair)"],
+        "active_hypothesis": "H3 Gemini-3.1-flash-lite-preview 모델 sampling determinism — region+ideology 컨텍스트가 강하면 페르소나 변이 무시하고 deterministic 답변. temperature=1.0이지만 lite 모델 sampling 분산 작음.",
+        "h3_status": "PROVISIONAL — H1/H2 모두 직접 evidence로 반증. H3는 잔여 가설로 plausible. 직접 검증(audit c: 동일 prompt × 5회 response 분산)은 team-lead 14:01에서 보류 결정 (API call 소비 + 사용자 paper 재설계 결정 후).",
+        "audit_artifacts": {
+          "audit_a_cache_uniqueness": "_workspace/research/cache_audit_v14.md + cache_audit_v14.json (6,977 rows / 6,971 distinct = 99.9%, 충돌 3건은 v1.1 retry stub 잔재)",
+          "audit_b_persona_diversity": "_workspace/research/persona_prompt_diversity.json (5 region n=25~50 × 5 wave, collision_rate=0.0 5/5)",
+          "audit_c_model_determinism": "HELD — team-lead 14:01 결정"
+        },
+        "paper_implication_revised_14_10": "가설 3종 비교 표 — H1 REJECTED (persona unique + audit b) / H2 REJECTED (audit a 99.9% distinct) / H3 PROVISIONAL (잔여 가설, 직접 검증 미실시). dashboard wording 'v1.4 sweep artifact (model + cache)'은 H3 primary + H2 minor 잔여 amplification 가능성 인정."
+      }
+    }
+  },
+
+  "incident_13_50_validation_first_pivot": {
+    "ts": "2026-04-26T13:50:00+09:00",
+    "reporter": "team-lead",
+    "trigger": "사용자 paper 실험 구조 재설계 — zero-shot prediction → rolling-origin official-poll validation gate",
+    "what_changed": "Paper headline contribution이 'KG-augmented voter simulation accuracy'에서 'multi-region official poll re-validation under temporal firewall'로 변경. v1.4 capacity downscale 결정만으로는 paper 회복 불가.",
+    "v14_disposition": "결과 보존 — cache artifact + 1-key 한계 그대로 paper Limitations evidence로 인용",
+    "v14_archive_completed_14_10": {
+      "_doc": "team-lead 14:01 archive 정책 정정 명령 채택 (policy 14:05 철회 권고 무효화). sim 14:10 mv 완료.",
+      "archive_path": "_workspace/snapshots/_archived/v14_run_20260426T050040Z/",
+      "files": "5 region results JSON + 5 mirror JSON (총 10) + MANIFEST.md",
+      "manifest_contents": "per-region winner / wall / cache_hit_rate / known artifacts",
+      "results_index_state": "v14 5 entries 제거, live=0 mock=5만 남음, dashboard는 v2.0 fire 박제 자리 대기",
+      "archive_artifacts": ["_workspace/research/cache_audit_v14.md", "_workspace/research/cache_audit_v14.json", "_workspace/research/persona_prompt_diversity.json", "_workspace/research/llmpool_3key_bug.md"]
+    },
+    "scratchpad_ref": "scratchpad.md §2/§3 13:45 entry",
+    "time_budget_analysis": {
+      "current_kst": "13:55",
+      "freeze_kst": "16:30",
+      "submission_kst": "17:00",
+      "remaining_min_to_freeze": 155,
+      "remaining_min_to_submit": 185,
+      "paper_redesign_eta_min": "70~110 (5 subagent 리서치 25~40 + 데이터 계약 10~15 + tex 수정 30~45 + 빌드 5~10)",
+      "paper_redesign_completion_kst": "15:05~15:45",
+      "post_redesign_eta_min": "80~175 (data ingestion 30~50 + sim patch 15~25 + 새 fire 22~65 + numerics 15~30 + dashboard 10~20)",
+      "scenarios": {
+        "best_case_kst": "16:25 (5min margin)",
+        "average_case_kst": "17:35 (35min over)",
+        "worst_case_kst": "17:55 (55min over)"
+      }
+    },
+    "downscale_options_pending_user_decision": {
+      "option_alpha_paper_only": {
+        "label": "paper redesign 1차 narrative 수정만 — validation figure는 §future work",
+        "wall_min": "70~110",
+        "completion_kst": "15:05~15:45",
+        "result_quality": "paper 정직 + new framing, 실험 결과는 v1.4 cache caveat 그대로",
+        "feasibility": "✅ 16:30 마진 큼"
+      },
+      "option_beta_minimum_fire": {
+        "label": "paper redesign + 새 fire(N=25% × T=1 minimum, 1 region 시연)",
+        "fire_wall_min": "10~20",
+        "completion_kst": "15:25~16:10",
+        "result_quality": "validation gate 1 region demo + paper rework",
+        "feasibility": "✅ 마진 20~65min"
+      },
+      "option_gamma_full_revalidation": {
+        "label": "paper redesign + 5 region × T=2 (sim 14:05 보고 spec)",
+        "fire_wall_min": "22(3-key) ~ 65(1-key)",
+        "completion_kst": "15:50~17:00",
+        "result_quality": "headline figure 살림",
+        "feasibility": "⚠️ best case만 16:30, average/worst overshoot"
+      },
+      "policy_recommendation": "α (paper-only)가 가장 안전. β (minimum fire)는 시간 마진 + validation 시연 모두 chase 가능. γ는 best case 의존도 높음 — 비추."
+    },
+    "decision_rules_per_checkpoint": {
+      "14_00_KST": "paper-writer가 5 subagent 리서치 시작했으면 OK. 시작 안 했으면 사용자 paper redesign 의지 재확인 + α/β/γ 즉시 결정.",
+      "14_30_KST": "paper redesign 절반 진행됐으면 β(minimum fire) 가능. 미완이면 α 강제.",
+      "15_00_KST": "paper redesign 미완이면 α 강제 + 새 fire 포기. 완료됐으면 β/γ 결정.",
+      "15_30_KST": "어떤 옵션이든 새 fire 시작 deadline. 이후엔 α만 가능."
+    }
+  },
+
+  "v2_0_validation_first": {
+    "_doc": "validation-first rolling-origin gate에 대한 capacity / region / threshold / downscale 박제. team-lead 14:30 escalation에 따라 v2.0 신규 spec — Phase A V5 산출물.",
+    "ts_baked": "2026-04-26T14:30:00+09:00",
+    "owner": "policy-engineer",
+    "supersedes": "1.4",
+    "supersedes_reason": "paper structure pivot + sim H3 PROVISIONAL — v1.4 5-region 풀스펙 결과는 cache + 1-key + Gemini lite determinism artifact. validation-first에서는 region 다양성보다 1~2 region에서 정직한 rolling-origin metric 박제가 우선.",
+
+    "llm_layer": {
+      "stack": "LiteLLM 3-key Gemini round-robin (Fix A 적용 가정)",
+      "fix_a_required_pre_fire": ".env LITELLM_MODEL=gemini/gemini-3.1-flash-lite-preview 1줄 swap (sim V7). actual_keys=3 verify 필수. 미적용 시 v1.4 1-key thrash 재발 → V8 abort + α 폴백.",
+      "voter_model": "gemini/gemini-3.1-flash-lite-preview",
+      "interview_model": "gemini/gemini-3.1-flash-lite-preview",
+      "dev_routing": "gemini/gemini-3.1-flash-lite-preview (POLITIKAST_ENV=dev override unchanged)",
+      "thinking_off": true,
+      "key_pool_size": 3,
+      "cache_policy": "INVALIDATE pre-fire — `rm _workspace/db/llm_cache.sqlite` 또는 `mv _workspace/db/_archived/llm_cache_v14_<ts>.sqlite`. v1.4 97% cache reuse 재현 차단.",
+      "rationale": "v1.4 incident 후 사용자 'voter+interview 모두 gemini, 비용 $0' 기조 유지. validation gate는 capacity가 아닌 ground-truth alignment를 강조 — provider 다양화 불필요."
+    },
+
+    "regions": {
+      "_doc": "validation gate primary는 NESDC direct label이 가장 풍부한 seoul_mayor. busan_buk_gap은 optional pair (보궐 시연용, V1 NESDC fetch 결과 충분 시 fire). 나머지 3 region(daegu_mayor, gwangju_mayor, daegu_dalseo_gap)은 historical_outcome prior로 paper §future-work 박제 — 사전 여론조사 fetch 어려움/이슈성 부족.",
+      "primary_seoul_mayor": {
+        "persona_n": 200,
+        "timesteps": 2,
+        "interview_n": 20,
+        "validation_target": "NESDC poll_consensus_daily as_of_date grid (2026-04-22~23 publish 2026-04-24 등 V1 박제 source)",
+        "expected_voter_calls": 800,
+        "expected_interview_calls": 20,
+        "expected_total_llm_calls": 820,
+        "expected_wall_min_3key": "15~25",
+        "expected_wall_min_1key_fallback": "30~50",
+        "role": "primary direct validation label"
+      },
+      "optional_busan_buk_gap": {
+        "persona_n": 270,
+        "timesteps": 2,
+        "interview_n": 20,
+        "validation_target": "NESDC busan_buk_gap NESDC fetch 결과 (V1 박제) — 박제 안 되면 historical_outcome prior 폴백",
+        "expected_voter_calls": 1080,
+        "expected_interview_calls": 20,
+        "expected_total_llm_calls": 1100,
+        "expected_wall_min_3key": "20~35",
+        "expected_wall_min_1key_fallback": "40~70",
+        "role": "optional pair (보궐 시연 + paper headline 보강)"
+      },
+      "prior_only_three": {
+        "regions": ["daegu_mayor", "gwangju_mayor", "daegu_dalseo_gap"],
+        "_doc": "data-engineer 14:00 박제한 historical_outcomes JSON 5 region 중 3 region을 'scenario prior'로만 인용. NESDC 사전 여론조사 fetch는 Phase A 시간 부족 + 후보군 불일치 위험으로 deferred. paper §future-work에 명시.",
+        "expected_llm_calls": 0,
+        "role": "scenario prior + paper Limitations evidence"
+      }
+    },
+
+    "as_of_date_grid": {
+      "_doc": "rolling-origin grid는 data-engineer V3 (`poll_consensus_daily` 박제) 결과를 그대로 인용. as_of_date별로 sim cutoff_ts ≤ as_of_date 적용 후 `official_poll_validation` 메트릭 박제.",
+      "primary_grid_pending_v3": "PENDING — data-engineer V3 결과 도착 시 이 필드를 V3 박제 grid로 갱신 (예: ['2026-03-15','2026-04-01','2026-04-15','2026-04-23']).",
+      "minimal_demo_grid": ["2026-04-23"],
+      "minimal_demo_rationale": "V8 단일 fire에서 최소 1 as_of_date만 박제해도 protocol valid. paper headline은 multi-date 권장.",
+      "temporal_firewall_rule": "sim run의 as_of_date `tau_r^-` cutoff 이후 NESDC poll, 후보 events, KG facts 모두 차단 (kg-engineer firewall 그대로). voter agent는 cutoff 이전 데이터만 본다."
+    },
+
+    "budget_totals": {
+      "voter_calls_estimate_seoul_only": 820,
+      "voter_calls_estimate_with_busan_pair": 1920,
+      "expected_wall_min_seoul_only": "15~25",
+      "expected_wall_min_with_busan_pair": "35~60",
+      "expected_cost_usd": {
+        "openai": 0.0,
+        "anthropic": 0.0,
+        "gemini": 0.0,
+        "total": 0.0,
+        "_note": "Gemini Flash Lite preview tier — 청구 발생 시 cost guard $5 임계. validation-first scope에서는 비용 가드 무용지물 ($0 fire)."
+      },
+      "concurrency_recommended": 4,
+      "concurrency_rationale": "1~2 region scope이라 v1.4 conc=8 spike 불필요. 3-key × 효과적 ~1.3 worker 분산 → instantaneous 138 RPM ceiling 부담 적음. 429 burst 위험 ↓.",
+      "remaining_min_to_freeze": 120,
+      "wall_safety_margin_min": "60~85 (Phase B 16:05 마감 기준 seoul_only가 보수적, busan_pair는 borderline)"
+    },
+
+    "validation_thresholds": {
+      "_doc": "V8 결과 metric이 모두 pass해야 paper headline 'validation gate passed' 인용 가능. 단 1개라도 fail이면 paper는 'protocol stub' 톤 + Limitations 박제.",
+      "mae_max": 0.05,
+      "rmse_max": 0.07,
+      "leader_match_required": true,
+      "ks_pvalue_min": 0.05,
+      "coverage_pct_min": 80.0,
+      "metrics_definition": {
+        "mae": "mean absolute error of simulated_share - official_consensus across candidates (in proportion units, 0~1)",
+        "rmse": "root mean square error, same scale",
+        "margin_error": "|sim_top1_share - sim_top2_share| - |off_top1_share - off_top2_share|",
+        "leader_match": "argmax(simulated_share) == argmax(official_consensus)",
+        "ks_pvalue": "Kolmogorov–Smirnov goodness-of-fit p-value (per-candidate share distribution)",
+        "coverage_pct": "fraction of as_of_date grid points where official_consensus falls inside sim 80% credible interval"
+      },
+      "interpretation_table": {
+        "all_pass": "paper headline = 'validation gate passed' + 표 + figure",
+        "leader_match_only": "paper = 'directional validity confirmed, magnitude error noted in Limitations'",
+        "all_fail_or_only_one_metric": "paper = 'protocol stub demonstrated, full validation deferred to future work' (sim demo + paper §future-work)"
+      }
+    },
+
+    "downscale_ladder_v2": [
+      {
+        "rec": 0,
+        "trigger": "Phase A 15:25 체크포인트 — V1/V3 미완 (NESDC fetch 또는 poll_consensus_daily 박제 안 됨)",
+        "action_thresholds": {
+          "v1_v3_complete_seoul_and_busan": "두 region pair fire 그대로 (default = busan_pair 포함)",
+          "v1_v3_complete_seoul_only": "→ seoul_only fire (busan demote to prior_only_three에 합류)",
+          "v1_v3_zero": "→ 권고 #A1: α 강제 (paper-only narrative, fire 포기). team-lead/사용자 escalate."
+        }
+      },
+      {
+        "rec": 1,
+        "trigger": "Phase B 시작 시점 (~15:25) sim V7 LLMPool Fix A actual_keys=3 verify 결과",
+        "action_thresholds": {
+          "actual_keys_eq_3": "정상 — V8 fire 그대로 (3-key 138 RPM 가정)",
+          "actual_keys_eq_1": "**즉시 1-key fallback wall_min으로 ETA 재계산** (seoul 30~50min). seoul_only 강제, busan demote. ETA가 16:05 over 시 권고 #B1 escalate.",
+          "actual_keys_eq_0_or_init_fail": "→ 즉시 abort + α 폴백 (paper §future-work 박제)"
+        }
+      },
+      {
+        "rec": 2,
+        "trigger": "V8 fire 5분 시점 — 429 RateLimitError burst 또는 abstain > 30%",
+        "action": "concurrency 4→2 즉시 다운, 또는 T 2→1 다운. 둘 중 하나로 안정화 시도. 5분 추가 후에도 동일 시 abort + protocol_stub_only로 박제."
+      },
+      {
+        "rec": 3,
+        "trigger": "V8 fire 완료 후 metric 평가",
+        "action_thresholds": {
+          "all_pass_or_leader_match": "Phase C 정상 (numerics paper 인용)",
+          "all_fail": "**protocol_stub mode** — paper에 metric 표만 박제 + 'demonstration only' 1줄 + §future-work에 calibration plan"
+        }
+      },
+      {
+        "rec": 4,
+        "trigger": "16:05 Phase B 종료 — V8 결과 미박제 또는 dashboard live=false",
+        "action": "권고 #B1 = 다운스케일 (n=100 T=1, dev=Gemini, 단일 region) 또는 mock fallback. 사용자 escalate."
+      },
+      {
+        "rec": 5,
+        "trigger": "16:30 HARD FREEZE",
+        "action": "신규 fire 금지 broadcast. 기존 V8 결과로만 paper/dashboard 빌드. policy-engineer 결정권 종료."
+      }
+    ],
+
+    "broadcast_to": ["data-engineer", "sim-engineer", "kg-engineer", "dashboard-engineer", "paper-writer"],
+    "broadcast_status": "BAKED — team-lead notification only at 14:30 (다른 빌더는 V1/V6/V7/V8 task 자체 진행). 15:25 체크포인트 시 fire 직전 broadcast 발사 예정.",
+    "next_review_at": "2026-04-26T14:50:00+09:00 (T+20min: V1, V5 진행 점검)",
+
+    "execution_evidence": {
+      "_doc": "v2.0 validation gate의 actual fire evidence. team-lead 14:30 보고 — V8 seoul fire 완료, gate FIRED correctly (all_fail 분기). v1.4와 다른 origin(no-cache)에서도 재현된 lite-model determinism이 honest evidence로 박제됨.",
+      "v8_seoul_mayor": {
+        "ts_complete": "2026-04-26T14:30:00+09:00",
+        "fire_spec": {
+          "region": "seoul_mayor",
+          "persona_n": 200,
+          "timesteps": 2,
+          "interview_n": 20,
+          "as_of_date": "2026-04-23",
+          "concurrency": 4,
+          "env": "dev",
+          "voter_model": "gemini/gemini-3.1-flash-lite-preview",
+          "interview_model": "gemini/gemini-3.1-flash-lite-preview",
+          "cache_state": "INVALIDATED pre-fire (no-cache)",
+          "actual_keys_used": 3,
+          "fix_a_applied": true,
+          "wall_seconds": 146.35
+        },
+        "metric_results": {
+          "mae": 0.3821,
+          "rmse": 0.4487,
+          "leader_match": false,
+          "ks_pvalue": null,
+          "coverage_pct": null,
+          "_metrics_note": "MAE/RMSE/leader_match만 V8 1차 박제. KS/coverage는 multi-as_of_date grid 필요 — minimal_demo (2026-04-23 단일)에서는 적용 불가"
+        },
+        "threshold_breach": {
+          "mae_threshold": 0.05,
+          "mae_observed": 0.3821,
+          "mae_breach_factor": 7.642,
+          "rmse_threshold": 0.07,
+          "rmse_observed": 0.4487,
+          "rmse_breach_factor": 6.41,
+          "leader_match_required": true,
+          "leader_match_observed": false
+        },
+        "qualitative_finding": {
+          "sim_distribution": "100% PPP sweep (model-determinism artifact)",
+          "official_consensus_2026_04_23": "DPK ~52 / PPP ~37 (NESDC poll_consensus_daily)",
+          "directional_error": "PPP가 sim에선 100% 우위, official에선 15pp 열세 — 부호 자체 반대"
+        }
+      },
+      "downscale_rec3_trigger": {
+        "ladder_rec": 3,
+        "branch": "all_fail",
+        "paper_tone_decision": "validation_gate_demonstration",
+        "paper_tone_alternative": "protocol_stub_only",
+        "selected_tone": "validation_gate_demonstration",
+        "selected_tone_rationale": "gate 자체는 작동 — zero-shot 패러다임이었으면 100% sweep을 headline으로 박제했을 결과를 numerics 임계 비교로 정직하게 캐치. dev plumbing(NESDC ingest + rolling-origin metric + threshold gate) end-to-end 검증 완료. v1.4와 같은 lite-model determinism artifact가 다른 origin(no-cache)에서도 재현 — limitation의 robustness 강화."
+      },
+      "v14_consistency_check": {
+        "v14_sweep_origin": "cache hit 97% + 1-key thrash + persona_text fallback 가설",
+        "v8_sweep_origin": "no-cache + 3-key verified actual_keys=3 + lite-model determinism (H3 PROVISIONAL → 정황 evidence 한 단계 격상)",
+        "implication": "100% sweep은 cache 단독 원인 아님 — Gemini 3.1 Flash Lite preview의 sampling determinism이 region+ideology 컨텍스트가 강하면 페르소나 변이를 흡수. paper §5 가설 표 갱신: H3 PROVISIONAL → H3 SUPPORTED (간접 evidence 2건).",
+        "production_blocked_note": "OpenAI gpt-5.4-mini/nano (v1.2 spec)는 Tier 0 quota 200 RPD로 7,115 voter calls 불가 — incident_13_15 그대로. validation gate는 dev plumbing validation으로만 honest 인용."
+      },
+      "next_decision": {
+        "option": "busan_buk_gap pair fire",
+        "rationale": "경합지 lead 5.6%p — leader_match가 seoul (sim PPP 100% vs NESDC DPK 52/PPP 37, 15pp 부호 반대) 보다 까다로워 all_fail 또는 leader_match 단독 통과 모두 evidence 가치 큼. 추가 ETA ~4min, freeze 16:30까지 ~120min 여유.",
+        "escalated_to_user": true,
+        "policy_recommendation": "GO — 두 번째 region에서도 동일 lite-model determinism이 재현되면 paper §5 가설 evidence 강화. metric이 통과하면 'directional validity' 톤 가능 (best case).",
+        "_resolution_14_45": "사용자 GO confirmed. sim-engineer가 triple fire 발사 (seoul + busan_buk_gap + daegu_mayor 동시). 결과는 execution_evidence_triple에 박제."
+      }
+    },
+
+    "execution_evidence_triple": {
+      "_doc": "Triple fire capacity telemetry (sim-engineer 14:45 보고). seoul + busan_buk_gap + daegu_mayor 3 region 동시 fire — wall 164.21s 합산 (spec 10~15min × 3 region 대비 11x 빠름). metric 결과는 sim의 후속 보고에서 별도 박제 예정.",
+      "ts_complete": "2026-04-26T14:45:00+09:00",
+      "fire_spec_common": {
+        "persona_n": 200,
+        "timesteps": 2,
+        "as_of_date": "2026-04-23",
+        "voter_model": "gemini/gemini-3.1-flash-lite-preview",
+        "interview_model": "gemini/gemini-3.1-flash-lite-preview",
+        "env": "dev",
+        "concurrency": 4,
+        "cache_state": "WARM after V8 seoul (busan/daegu cold-start)"
+      },
+      "telemetry": {
+        "seoul_mayor":    {"calls": 640, "wall_s": 19.45, "mean_latency_ms": 184.8, "parse_fail": 0, "abstain": 0.0156, "actual_keys": 3, "effective_rpm": 1974, "_note": "cache hits from V8 첫 fire warm cache"},
+        "busan_buk_gap":  {"calls": 640, "wall_s": 77.42, "mean_latency_ms": 933.8, "parse_fail": 0, "abstain": 0.0172, "actual_keys": 3, "effective_rpm": 496,  "_note": "cold start, 3-key 활성"},
+        "daegu_mayor":    {"calls": 640, "wall_s": 67.34, "mean_latency_ms": 797.9, "parse_fail": 0, "abstain": 0.0016, "actual_keys": 5, "effective_rpm": 570,  "_note": "**5-key pool 활성화 (.env hot-load on docker compose run)**"}
+      },
+      "totals": {
+        "regions_fired": 3,
+        "total_calls": 1920,
+        "total_wall_s": 164.21,
+        "total_wall_min": 2.74,
+        "spec_total_wall_min_estimated": 30,
+        "speedup_vs_spec": "10.96x",
+        "average_abstain_rate": 0.0115,
+        "average_parse_fail_rate": 0.0
+      },
+      "capacity_evidence_v4_5key": {
+        "_doc": "v3 (3-key 138 RPM 이론, single-key 46 RPM 실측)에서 v4 (5-key, daegu에서 확인)로 capacity envelope 갱신.",
+        "key_pool_size_observed": 5,
+        "aggregate_rpm_theoretical": 230,
+        "aggregate_rpm_observed_peak": 1974,
+        "aggregate_rpm_observed_sustained_avg": 700,
+        "burst_vs_sustained_note": "Gemini preview tier RPM은 instantaneous burst 관대 (cache hits 시 1974 RPM peak 가능). sustained average ~500~700 RPM은 5-key × ~100~140 RPM/key.",
+        "implication": "v2.0_validation_first.budget_totals.expected_wall_min은 보수적 추정이었음. 실제 5 region × T=2 fire 가능 wall ≈ 5~10min (5-key 가정). 잔여 2 region (gwangju_mayor + daegu_dalseo_gap) 추가 fire feasibility = HIGH."
+      },
+      "stack_stability": {
+        "parse_fail_rate": 0.0,
+        "abstain_rate_avg": 0.0115,
+        "abstain_rate_max": 0.0172,
+        "verdict": "STABLE — voter agent JSON parsing + Gemini lite 응답 quality 안정. 추가 region fire 시 안정성 위험 낮음."
+      },
+      "cost_actual": {
+        "openai": 0.0,
+        "anthropic": 0.0,
+        "gemini": 0.0,
+        "total": 0.0,
+        "vs_v2_0_budget": "0.0 / 0.0 = 100% within $0 budget",
+        "_note": "dev=Gemini lite preview tier — 청구 발생 시 cost guard $5 트리거. 현재 fire는 cost-tracking-skip 모드."
+      },
+      "next_recommendation": {
+        "option_5region_full_sweep": {
+          "label": "잔여 2 region 추가 fire (gwangju_mayor + daegu_dalseo_gap)",
+          "wall_estimate_min": "1.5~3 (5-key, cache warm 일부)",
+          "freeze_margin_after": "~100min (16:30 기준)",
+          "evidence_value": "HIGH — 5 region 전체 sweep으로 H3 lite-model determinism 가설을 region 다양성 차원에서 검증. 광주(진보 우세) / 대구달서(영남권 보수 보궐)로 ideology spectrum 양극 cover.",
+          "all_fail_implication": "5/5 region 100% sweep 재현 시 H3 → STRONG (직접 evidence 5건). paper §5 핵심 figure",
+          "leader_match_partial_implication": "1~2 region에서 leader_match 통과 시 'partial directional validity'",
+          "policy_recommendation": "GO — capacity 여유 충분, evidence 가치 매우 큼. 사용자 escalate 권고."
+        },
+        "option_multi_as_of_date_grid": {
+          "label": "기존 3 region (seoul/busan/daegu)에 multi-as_of_date grid 추가 fire",
+          "wall_estimate_min": "5~10 (3 region × 4 추가 cutoff = 12 fires)",
+          "freeze_margin_after": "~90min",
+          "evidence_value": "MEDIUM — KS p-value + coverage_pct metric 활성화 가능 (현재 single as_of_date로 n/a). rolling-origin 패러다임 강조에 도움",
+          "policy_recommendation": "DEFER — 5 region full sweep을 우선. 시간 여유 시 후속."
+        }
+      },
+      "decision_pending_user": "5-region full sweep + multi-as_of_date 둘 다 가능. 우선순위: 5-region 우선, multi-as_of_date 후속."
+    },
+
+    "v8c_triple_fire_metric": {
+      "_doc": "team-lead 14:33 보고 — Triple fire 3/3 region paper-grade numerics 확보. V8 (seoul 단일 fire 14:30) 결과는 candidate normalization 차이로 V8c seoul과 다른 numerics — V8c가 DuckDB primary와 정합한 최종값. paper-writer는 V8c numerics를 인용.",
+      "ts_complete": "2026-04-26T14:33:00+09:00",
+      "metric_results_per_region": {
+        "seoul_mayor":    {"sim_sweep_candidate": "PPP", "sweep_share": 1.0, "mae": 0.5702, "rmse": 0.5702, "leader_match": false, "wall_s": 19.45, "actual_keys": 3, "_note": "V8 14:30 보고(MAE 0.3821)와 다른 numerics — V8c가 DuckDB primary 정합한 최종값"},
+        "busan_buk_gap":  {"sim_sweep_candidate": "indep_han", "sweep_share": 1.0, "mae": 0.4444, "rmse": 0.4743, "leader_match": false, "wall_s": 77.42, "actual_keys": 3},
+        "daegu_mayor":    {"sim_sweep_candidate": "ppp_choo", "sweep_share": 1.0, "mae": 0.5052, "rmse": 0.5886, "leader_match": false, "wall_s": 67.34, "actual_keys": 5}
+      },
+      "threshold_breach_summary": {
+        "mae_threshold": 0.05,
+        "mae_observed_range": [0.4444, 0.5702],
+        "mae_breach_factor_range": [8.89, 11.40],
+        "rmse_threshold": 0.07,
+        "rmse_observed_range": [0.4743, 0.5886],
+        "rmse_breach_factor_range": [6.78, 8.41],
+        "leader_match_required": true,
+        "leader_match_observed": [false, false, false],
+        "all_fail_count": 3,
+        "all_pass_count": 0
+      },
+      "coverage_status": {
+        "regions_with_nesdc_validation": 3,
+        "regions_with_nesdc_official_data": ["seoul_mayor", "busan_buk_gap", "daegu_mayor"],
+        "regions_missing_nesdc_data": ["gwangju_mayor", "daegu_dalseo_gap"],
+        "missing_handling": "stub — paper §future-work에 'NESDC 등록 부재로 정량 검증 deferred' 박제. historical_outcome prior로 인용 가능.",
+        "fraction_quantitative_validated": "3 / 5 (60%)"
+      },
+      "five_key_validation": {
+        "user_added_keys": 2,
+        "total_keys_active": 5,
+        "evidence": "daegu_mayor fire에서 actual_keys=5 confirmed (.env hot-load on docker compose run 시점)",
+        "all_keys_status": "정상 작동 (parse_fail 0%, abstain 0.16%)",
+        "implication": "v3 (3-key 138 RPM) → **v4 (5-key 230 RPM theoretical)** capacity envelope 갱신. expected_wall_min 10~15min spec 대비 **2.7min** 실측 — 5-key + cache warm 하이브리드 효과."
+      },
+      "h3_strong_promotion": {
+        "_doc": "v1.4 (cache+1-key) → V8 (no-cache+3-key) → V8c (no-cache+3-5key+DuckDB primary) 3 origin 모두 100% sweep 재현. cache/key/cutoff 변수 모두 무관. H3 (Gemini 3.1 Flash Lite preview의 sampling determinism) — PROVISIONAL → SUPPORTED → **STRONG** 3단계 격상.",
+        "h3_evidence_ledger": [
+          {"origin": "v1.4 fire (12:35~04:38 UTC)", "cache_state": "97% hit", "actual_keys": 1, "sweep_observed": "5/5 region 100% sweep (광역 DPK / 보수 영남 PPP-Choo)", "h3_status_at_time": "PROVISIONAL"},
+          {"origin": "V8 fire (14:30)",            "cache_state": "INVALIDATED", "actual_keys": 3, "sweep_observed": "seoul 100% PPP",                              "h3_status_at_time": "SUPPORTED"},
+          {"origin": "V8c triple fire (14:33)",    "cache_state": "INVALIDATED + DuckDB primary",  "actual_keys": "3 (seoul/busan) + 5 (daegu)", "sweep_observed": "3/3 region 100% sweep (PPP / indep_han / ppp_choo)", "h3_status_at_time": "STRONG"}
+        ],
+        "invariance_table": {
+          "cache_invariance": "v1.4 hit / V8+V8c miss → 동일 결과",
+          "key_pool_invariance": "1 / 3 / 5 key 모두 동일 결과",
+          "cutoff_invariance": "v1.4 (no NESDC validation) / V8c (NESDC primary) 모두 동일 sweep candidate (region별 ideology 우세 후보)"
+        },
+        "rejected_alternative_hypotheses": [
+          "H1 cache reuse → REJECTED (V8/V8c no-cache 재현)",
+          "H2 persona collision → REJECTED (audit b 100% unique)",
+          "H4 single-key thrash → REJECTED (3/5 key 재현)",
+          "H5 cache key alignment → REJECTED (DuckDB primary와 무관)"
+        ],
+        "paper_implication": "§5 가설 표 evidence column에 3 origin invariance 박제. validation_gate_demonstration 톤이 'gate FIRED, lite-model determinism limitation hard-evidenced' 강조 narrative로 격상."
+      },
+      "paper_writer_actionable_numerics": {
+        "_doc": "paper-writer (Codex)가 §5 + §Limitations + §Reproducibility appendix 작성 시 직접 인용 가능한 numerics 박제.",
+        "by_candidate_per_region": "sim_share vs official_consensus per (region, candidate_id) — sim 결과 JSON `official_poll_validation.by_candidate` 인용",
+        "three_origin_comparison_table": "본 entry h3_strong_promotion.h3_evidence_ledger 인용",
+        "result_paths_filter": "_workspace/snapshots/results/ × is_mock=false × policy_version=v2.0_validation_first → 3 region results JSON",
+        "expected_paper_sections": ["§Validation Results 표", "§5 Hypothesis Discussion (H3 STRONG)", "§Limitations (gate FIRED honest)", "§Reproducibility appendix (capacity v4 5-key 230 RPM, cache warm 4x speedup)"]
+      },
+      "next_decision_pending_user": {
+        "options": {
+          "A_paper_finalize_only": {
+            "label": "paper finalize 집중 — 추가 fire 없이 V8c numerics로 §결과 + §5 + §Limitations 컴파일",
+            "wall_min": 0,
+            "freeze_margin_after_min": "~120 (16:30 기준)",
+            "evidence_quality": "FULL — H3 STRONG 입증 + 3 region NESDC primary + cache/key invariance 표 완성",
+            "policy_recommendation_rank": 1,
+            "rationale": "이미 paper-grade evidence 충분. 추가 ablation은 evidence value MARGINAL — paper compile/dashboard 안정화/시연 동선이 freeze 직전 더 큰 risk."
+          },
+          "B_minimal_ablation": {
+            "label": "최소 ablation 1개만: multi-as_of_date grid (seoul × 3 추가 cutoff = 3 fires)",
+            "wall_min": "3~5",
+            "freeze_margin_after_min": "~115",
+            "evidence_quality": "+1 marginal — KS p-value + coverage_pct 활성화 가능 (현재 single as_of_date로 n/a). rolling-origin 패러다임 figure 강화",
+            "policy_recommendation_rank": 2,
+            "rationale": "capacity 여유 충분, evidence 가치 medium. 단 paper compile에 시간 빼앗기면 손해."
+          },
+          "C_full_ablation": {
+            "label": "추가 ablation 다수: cutoff sweep + T=4 + n 증가",
+            "wall_min": "15~25",
+            "freeze_margin_after_min": "~95",
+            "evidence_quality": "+marginal — H3 STRONG은 이미 입증됐고 추가 ablation은 'robustness check' 정도. paper에 단신 박제 가능하나 figure 증가는 marginal",
+            "policy_recommendation_rank": 3,
+            "rationale": "freeze까지 paper 작업 + dashboard 안정화 + 시연 검증 모두 해야 함. 추가 ablation은 도박 — 권고 안 함."
+          }
+        },
+        "policy_recommendation": "**A (paper finalize only)** primary, B (minimal ablation 1 region multi-cutoff) optional. C 비추천 (freeze 마진 + paper compile risk).",
+        "rationale": "H3 STRONG + 3 region NESDC primary + cache/key invariance 표 = paper headline 'validation gate FIRED, lite-model determinism hard-evidenced' 충분. 추가 fire는 marginal. freeze 16:30까지 paper-writer (Codex) compile + dashboard 시연 + manuscript proofread이 우선."
+      }
+    }
+  },
+
+  "incident_15_10_autonomous_loop_mode_engaged": {
+    "_doc": "사용자 15:10 명시 자율 모드 — 'escalate 없이 모든 timestep/region에서 validation gate PASS까지 loop'. team-lead full decision authority. policy-engineer는 모니터/박제/escalation trigger 4종만 담당.",
+    "ts": "2026-04-26T15:10:00+09:00",
+    "reporter": "team-lead",
+    "trigger": "사용자 직전 메시지 — '나한테 물어보지 말고, 모든 timestep과 지역에서 성능 달성할 때까지 loop 진행'",
+    "mode": "autonomous_team_lead",
+    "decision_authority": "team-lead (full) — option escalation 보류, hill-climbing/ablation/spec swap 모두 자율",
+    "policy_engineer_role": [
+      "매 30~60min 주기 progress 점검 (team-lead에 SendMessage)",
+      "비용 / wall / round count tracking + 박제",
+      "v2.1 spec actual usage 박제 (sim의 round_log 참조 — `_workspace/research/hill_climbing/round_log.md`)",
+      "escalation trigger 4종 모니터 — trigger 발생 시에만 사용자 escalate",
+      "최종 종료 시 v2.0 (zero-shot baseline) vs v2.1 (improvement loop) 비교 표 박제"
+    ],
+
+    "escalation_triggers_to_user": {
+      "_doc": "이 4종 trigger 발생 시에만 policy-engineer가 사용자 escalate. 그 외는 team-lead 자율 결정.",
+      "a_gemini_key_401_403": {
+        "condition": "Gemini key 인증 실패 (401/403) — round_log 또는 sim error 박제 시점",
+        "action": "사용자 즉시 escalate (키 재발급 또는 alternative target swap 결정 필요)"
+      },
+      "b_docker_stack_dead": {
+        "condition": "docker compose 서비스 죽음 (sim run 실패 + container exit) — orchestrator/sim 보고 시점",
+        "action": "사용자 즉시 escalate (docker 재기동 또는 환경 복구 결정 필요)"
+      },
+      "c_freeze_imminent_uncomplete": {
+        "condition": "16:00 시점에 v2.1 round 미완 + improvement 박제 0",
+        "action": "사용자 escalate — Option A (paper finalize w/ v2.0 baseline) 폴백 권고"
+      },
+      "d_cost_threshold_breach": {
+        "condition": "openai $50 / anthropic $20 / gemini $5 임계 — 현재 $0 fire라 발동 가능성 매우 낮음",
+        "action": "LLMCostThresholdError 발동 + 사용자 즉시 escalate"
+      }
+    },
+
+    "termination_conditions": {
+      "_doc": "loop 자동 종료 조건 3종. 발생 시 policy-engineer가 v2.0 vs v2.1 비교 표 박제 + team-lead에 종료 SendMessage.",
+      "success_full_pass": {
+        "condition": "5 region × 모든 T validation gate PASS (MAE ≤ 0.05 + RMSE ≤ 0.07 + leader_match=true 모두)",
+        "next_action": "paper headline 갱신 (pre/post enrichment MAE 비교 figure가 핵심), dashboard 시연 동선 검증"
+      },
+      "stagnation_3_round_no_improve": {
+        "condition": "3 연속 round 동안 best MAE 개선 없음 (sim의 round_log에서 판단)",
+        "next_action": "자동 종료. v2.0+v2.1 evidence ledger 박제 — 'enrichment 단독 무효, prod model swap만 해법'. paper §Limitations 갱신 권고."
+      },
+      "hard_freeze_16_30": {
+        "condition": "16:30 KST 도달 — round 진행 여부 무관 자동 종료",
+        "next_action": "신규 fire 금지 broadcast, partial 결과로 paper 컴파일 + dashboard 안정화"
+      }
+    },
+
+    "monitoring_cadence": {
+      "interval_min_min": 30,
+      "interval_min_max": 60,
+      "first_review_kst": "15:40~16:00 (T+30~50min)",
+      "second_review_kst": "16:00 (escalation trigger c 임박 점검)",
+      "third_review_kst": "16:30 (HARD FREEZE)",
+      "tracking_metrics": [
+        "round_count (현재 round 번호)",
+        "best_mae_per_region (5 region trajectory)",
+        "improvement_delta_per_round (vs v2.0 baseline)",
+        "wall_seconds_cumulative",
+        "cost_usd (provider별)",
+        "abstain_rate / parse_fail_rate",
+        "actual_keys_used"
+      ]
+    },
+
+    "v2_0_vs_v2_1_comparison_template": {
+      "_doc": "최종 종료 시 박제할 비교 표 template. policy-engineer가 종료 trigger 시 sim의 round_log + v2.0 v8c_triple_fire_metric 인용해 채움.",
+      "rows": ["seoul_mayor", "busan_buk_gap", "daegu_mayor", "gwangju_mayor", "daegu_dalseo_gap"],
+      "columns": ["v2_0_baseline_mae", "v2_0_baseline_leader_match", "v2_1_best_mae", "v2_1_best_round", "v2_1_best_leader_match", "improvement_delta_pp", "verdict"],
+      "verdict_categories": ["IMPROVED_PASS", "IMPROVED_PARTIAL", "NO_CHANGE", "REGRESSED"],
+      "summary_metrics": ["regions_passed_count_v2_1", "improvement_observed_count", "h3_supplement_evidence"]
+    },
+
+    "fire_authority": "team-lead (자율) — sim/kg 빌더에 직접 명령 가능, policy-engineer broadcast 불요",
+    "broadcast_to": ["team-lead"],
+    "broadcast_status": "AUTONOMOUS — 다른 빌더에 broadcast 미발사 (team-lead가 직접 명령). policy-engineer는 progress 보고만",
+    "next_review_at": "2026-04-26T15:40:00+09:00 (T+30min progress 점검)"
+  },
+
+  "incident_14_45_paradigm_shift_to_improvement_loop": {
+    "_doc": "사용자 14:45 재전환 박제. paper evidence(H3 STRONG)는 robust하나 시뮬 자체가 useful forecast 못함이 직접 입증됨. 우선순위 = paper-finalize가 아니라 sim improvement loop. team-lead 14:48 정책 escalate 수신.",
+    "ts": "2026-04-26T14:48:00+09:00",
+    "reporter": "team-lead",
+    "trigger": "사용자 직전 메시지 — '시뮬 5/5 sweep는 시뮬 쓸모없다는 직접 증거. KG 강화(뉴스·나무위키) + voter prompt context enrichment가 목표.'",
+    "what_changed": "v2.0 paradigm = paper validation gate evidence (gate FIRED honest). v2.1 paradigm = sim improvement loop (gate PASS 시도). Option A (paper finalize only)는 폐기. 추가 fire는 KG audit + prompt patch 후 v2.1 spec으로 발사.",
+    "v2_0_disposition": "결과 보존 — v8c_triple_fire_metric은 'pre-improvement baseline'으로 paper §결과 베이스라인 evidence. v2.1 fire 결과와 비교 가능.",
+
+    "v2_1_spec_preview": {
+      "_doc": "사용자 enrichment 우선순위 결정 후 정식 박제 예정. preview는 team-lead 14:48 박제 안에 그대로 인용.",
+      "regions_target": ["seoul_mayor", "busan_buk_gap", "daegu_mayor", "gwangju_mayor", "daegu_dalseo_gap"],
+      "regions_target_rationale": "5 region 그대로 유지. v8c는 3 NESDC primary + 2 missing (gwangju/dalseo) — v2.1에서도 동일. validation 가능 region에서 MAE 개선 측정.",
+      "primary_change_axis": [
+        "voter prompt context_block enrichment",
+        "KG에서 뉴스·나무위키 fetch → candidate-specific facts",
+        "persona 정치 필드 (party_id_history, ideology_score) 명시 inject",
+        "candidate 정책 stance 명시 inject (KG 또는 hardcoded)"
+      ],
+      "evaluation_protocol": "v2.0과 동일 — rolling-origin gate, MAE/RMSE/leader_match threshold MAE≤0.05/RMSE≤0.07. KS/coverage는 multi-as_of_date 추가 시.",
+      "success_criteria": {
+        "primary": "1+ region MAE 개선 (예: seoul MAE 0.5702 → 0.4 이하)",
+        "secondary": "leader_match 통과 region ≥ 1",
+        "stretch": "leader_match 통과 region ≥ 3 (NESDC primary 5 region 중 majority)",
+        "failure": "5/5 sweep 동일 재현 → paper §Limitations에 'lite-model fundamental limitation, prod model swap만 해법' 박제. v2.0+v2.1 공동 evidence ledger로 H3 evidence가 model-switch 차원으로 확장 (lite enrichment 무관)."
+      }
+    },
+
+    "time_budget_analysis_14_48": {
+      "current_kst": "14:48",
+      "freeze_kst": "16:30",
+      "submission_kst": "17:00",
+      "remaining_min_to_freeze": 102,
+      "remaining_min_to_submit": 132,
+      "v2_1_workflow_eta_min": {
+        "kg_audit": "15~20",
+        "enrichment_implementation": "30~60 (KG fetcher + prompt patch)",
+        "v2_1_fire_5region": "5~10",
+        "metric_박제_+_paper_narrative_갱신_codex": "15~20 (freeze 직전 paper compile risk)"
+      },
+      "scenarios": {
+        "best_case_kst": "16:08 (kg 15 + impl 30 + fire 5 + paper 10) — freeze까지 22min margin",
+        "average_case_kst": "16:18 (kg 18 + impl 45 + fire 8 + paper 15) — freeze까지 12min margin",
+        "worst_case_kst": "16:38 (kg 20 + impl 60 + fire 10 + paper 20) — **freeze over 8min**"
+      },
+      "verdict": "BORDERLINE — best/average만 freeze 마진. worst case는 over. 다운스케일 ladder 사전 박제 필수."
+    },
+
+    "downscale_ladder_v21": [
+      {
+        "rec": 0,
+        "trigger": "kg audit 종료 시점 (~15:08) — KG 데이터 가용성 평가",
+        "action_thresholds": {
+          "kg_news_and_namuwiki_both_ready": "v2.1 풀스펙 (5 region × KG enrichment + nodes·뉴스·나무위키)",
+          "kg_news_only": "v2.1 lite (뉴스만 + persona 정치 필드, 나무위키 skip)",
+          "kg_nothing_ready": "v2.1 hardcoded (KG 우회, candidate 정책 hardcoded inject만)"
+        }
+      },
+      {
+        "rec": 1,
+        "trigger": "enrichment 구현 종료 시점 (~15:45) — sim ready 여부",
+        "action_thresholds": {
+          "sim_ready_5region": "5 region fire (5~10min wall)",
+          "sim_ready_3region": "3 NESDC primary region만 fire (seoul/busan/daegu) — gwangju/dalseo는 v2.0 baseline 유지",
+          "sim_partial": "seoul 단일 region demo fire (best evidence per minute)"
+        }
+      },
+      {
+        "rec": 2,
+        "trigger": "v2.1 fire 5분 시점 — abstain/parse_fail/wall 점검",
+        "action_thresholds": {
+          "stable": "그대로 진행",
+          "instability": "concurrency 4→2 또는 enrichment 일부 단축 (KG 컨텍스트 4096→2048 토큰)"
+        }
+      },
+      {
+        "rec": 3,
+        "trigger": "v2.1 fire 완료 후 metric 평가",
+        "action_thresholds": {
+          "improvement_observed": "**paper headline 갱신** — pre/post enrichment MAE 비교 figure가 핵심 evidence",
+          "no_improvement_5_5_sweep_reproduced": "paper §Limitations에 'enrichment 단독 무효, prod model swap 해법' 박제. v2.0+v2.1 evidence ledger 통합"
+        }
+      },
+      {
+        "rec": 4,
+        "trigger": "16:08 시점 v2.1 fire 미시작",
+        "action": "**v2.1 포기 + Option A (paper finalize only)** 폴백. v2.0 evidence로 paper compile."
+      },
+      {
+        "rec": 5,
+        "trigger": "16:30 HARD FREEZE",
+        "action": "신규 fire 금지. v2.1 시작 못 했으면 v2.0 결과로 paper. 시작했지만 미완이면 partial result + Limitations 박제."
+      }
+    ],
+
+    "fire_hold_status": {
+      "ladder_paused": true,
+      "reason": "kg-engineer audit + sim-engineer prompt patch 선행 필요. v2.1 spec 정식 박제는 사용자 enrichment 결정 후.",
+      "next_unhold_trigger": "사용자 enrichment 우선순위 결정 → policy 정식 v2.1 박제 → broadcast"
+    },
+
+    "broadcast_to": ["data-engineer", "sim-engineer", "kg-engineer", "dashboard-engineer", "paper-writer"],
+    "broadcast_status": "PRE-BROADCAST — kg-engineer + sim-engineer notification 권고 (audit/patch 시작), 다른 빌더는 v2.0 결과 그대로 유지. 사용자 결정 도착 시 정식 broadcast.",
+    "next_review_at": "2026-04-26T15:08:00+09:00 (kg audit 종료 시점, downscale rec0 트리거)"
+  },
+
+  "rationale": "v1.4 fire 13:13 발사 → 22min 5/5 region 박제됐으나 13:42 sim 검증으로 cache+1-key artifact 판명. 13:50 team-lead pivot: 사용자 paper 구조 zero-shot → rolling-origin official-poll validation gate로 재설계. v2.0(14:30 박제)에서 validation-first budget 박제 — seoul primary + busan optional pair, 3 region prior_only, MAE≤0.05/RMSE≤0.07/leader_match/KS p≥0.05/coverage≥80% threshold, downscale ladder v2. **14:45 사용자 재전환**: paper evidence robust지만 시뮬 useful forecast 못함이 입증 → v2.1 = sim improvement loop (KG enrichment + voter prompt context). 추가 fire 보류, 정식 v2.1 spec은 사용자 enrichment 결정 후 박제. policy-engineer는 15:08(kg audit)/15:45(impl)/16:08(fire)/16:30(freeze) 체크포인트별 ladder rec0~rec5 트리거.",
+
+  "next_review_at": "2026-04-26T14:50:00+09:00 (T+20min: V1 NESDC fetch 진행 + V5 박제 검증 ack)",
+
+  "blocking_issues": [],
+
+  "history": [
+    {"version": 0,     "ts": "2026-04-26T10:55:00+09:00", "rationale": "보수 baseline",                   "superseded_by": "0.1"},
+    {"version": "0.1", "ts": "2026-04-26T11:10:00+09:00", "rationale": "user-decided regions",            "superseded_by": "0.2"},
+    {"version": "0.2", "ts": "2026-04-26T11:25:00+09:00", "rationale": "#18 LiteLLM 교체",                "superseded_by": "0.3"},
+    {"version": "0.3", "ts": "2026-04-26T11:40:00+09:00", "rationale": "단일 키 envelope",               "superseded_by": "1.0"},
+    {"version": "1.0", "ts": "2026-04-26T11:55:00+09:00", "rationale": "합성 probe(48 RPM) 풀스펙 — INVALIDATED", "superseded_by": "1.1", "superseded_reason": "sim-engineer 실측 10 RPM, 풀스펙 비현실적"},
+    {"version": "1.1", "ts": "2026-04-26T12:10:00+09:00", "rationale": "Option B T=2 trajectory-light (Gemini single-key 10 RPM 가정)", "superseded_by": "1.2", "superseded_reason": "사용자 GO 풀스펙 + capacity v3(46 RPM) + provider mix(OpenAI primary)."},
+    {"version": "1.2", "ts": "2026-04-26T12:30:00+09:00", "rationale": "OpenAI primary + Anthropic interview + Gemini dev override 풀스펙 (capacity v3 46 RPM, prod OpenAI 무제약 가정).", "superseded_by": "1.3", "superseded_reason": "OpenAI Tier 0 quota incident(13:15) — gpt-5.4-mini/nano tier 1=3 RPM 실측, fire 12초 사망. provider mix 폐기, Gemini-only 단일 모델로 통합."},
+    {"version": "1.3", "ts": "2026-04-26T13:30:00+09:00", "rationale": "Gemini-only 단일 모델 풀스펙 (conc=4, 처음엔 single key 가정 → 13:42 3-key round-robin으로 갱신).", "superseded_by": "1.4", "superseded_reason": "conc=4로 단일 키 thrash, 3-key round-robin 미달성. 10분간 박제 0건 → sim stop. v1.4: conc=8 + POLITIKAST_POLICY_VERSION env 박제 + meta payload 보강."},
+    {"version": "1.4", "ts": "2026-04-26T13:13:00+09:00", "rationale": "Gemini-only 3-key round-robin 풀스펙 (conc=8). 22min에 광역 2 region 박제 — 처음엔 가설 A(138 RPM separated GCP) confirmed로 박제됐으나 13:42 sim 정정으로 INVALIDATED.", "superseded_by": "2.0_validation_first", "superseded_reason": "sim 13:42 정정: 22min 박제는 sqlite cache hit 97% reuse + 1-key only(LLMPool override=False bug)였음. vote_share 100% sweep(gwangju 200/200 DPK, daegu 200/200 PPP-Choo). 13:50 team-lead pivot으로 paper structure가 rolling-origin official-poll validation gate로 재설계되어 v1.5 capacity downscale spec은 무효화, v2.0 validation-first budget 박제."},
+    {"version": "2.0_validation_first", "ts": "2026-04-26T14:30:00+09:00", "rationale": "validation-first rolling-origin gate. seoul_mayor primary (n=200, T=2) + busan_buk_gap optional pair, 3 region prior_only. NESDC poll_consensus_daily as_of_date grid 기반 rolling-origin metric. expected wall 15~25min(seoul) ~35~60min(seoul+busan), cost $0. thresholds MAE≤0.05/RMSE≤0.07/leader_match/KS p≥0.05/coverage≥80%. downscale ladder v2: 5→2→1→mock.", "superseded_by": null, "superseded_reason": null}
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "_doc": "Korean national-level voter party-lean priors by age_band × gender. All percentages source-backed (한국갤럽 / 시사IN-한국리서치 / 케이스탯리서치 / 한겨레 / 동아). cutoff_ts ≤ 2026-04-26. Fetched via mcp__perplexity__perplexity_search at 2026-04-26 15:50 KST. NO fake percentages — every cohort row carries source_url + publish_ts.",
+  "scope": "national",
+  "fetched_at": "2026-04-26T15:50:00+09:00",
+  "cohort_priors": [
+    {
+      "cohort_id": "natl_18_29_M",
+      "age_band": "18-29",
+      "gender": "M",
+      "scope": "national",
+      "party_lean": {"ppp": 0.30, "dpk": 0.18, "rebuild": 0.10, "other": 0.05, "undecided": 0.37},
+      "ideological_lean": {"conservative": 0.39, "progressive": 0.17, "moderate": 0.44},
+      "n_polls": 1,
+      "sample_size": 1000,
+      "source": "한국갤럽 11월 월간 통합 (시사IN/한국리서치 6·3 대선 이후 분석 인용)",
+      "source_url": "https://www.hankyung.com/article/2025112779467",
+      "publish_ts": "2025-11-30T00:00:00",
+      "notes": "20대 남성은 가장 보수적 cohort. 보수 우위 22%p (시사IN 정책지지 분석)."
+    },
+    {
+      "cohort_id": "natl_18_29_F",
+      "age_band": "18-29",
+      "gender": "F",
+      "scope": "national",
+      "party_lean": {"ppp": 0.17, "dpk": 0.36, "rebuild": 0.05, "other": 0.05, "undecided": 0.37},
+      "ideological_lean": {"conservative": 0.20, "progressive": 0.27, "moderate": 0.53},
+      "n_polls": 2,
+      "sample_size": 1000,
+      "source": "한국갤럽 11월 월간 통합 + 케이스탯리서치 2026-02 (서울대 국가미래전략원)",
+      "source_url": "https://www.chosun.com/politics/politics_general/2025/03/07/C5CC2HB5LRDYNOX74MEZRAXMUA/",
+      "publish_ts": "2026-02-26T00:00:00",
+      "notes": "20대 여성은 가장 진보적 cohort. 진보 우위 34%p (시사IN). 케이스탯리서치 2026-02-25~26: 민주 43.7% / 국힘 16% (3배 격차)."
+    },
+    {
+      "cohort_id": "natl_30_39_M",
+      "age_band": "30-39",
+      "gender": "M",
+      "scope": "national",
+      "party_lean": {"ppp": 0.28, "dpk": 0.30, "rebuild": 0.06, "other": 0.04, "undecided": 0.32},
+      "ideological_lean": {"conservative": 0.36, "progressive": 0.10, "moderate": 0.54},
+      "n_polls": 1,
+      "sample_size": 1000,
+      "source": "시사IN/한국리서치 6·3 대선 이후 정책 지지 분석",
+      "source_url": "https://v.daum.net/v/8GaVTlj4ST",
+      "publish_ts": "2025-07-09T00:00:00",
+      "notes": "30대 남성은 보수 우위 26%p — 20대 남성보다 더 강한 보수 우위."
+    },
+    {
+      "cohort_id": "natl_30_39_F",
+      "age_band": "30-39",
+      "gender": "F",
+      "scope": "national",
+      "party_lean": {"ppp": 0.20, "dpk": 0.35, "rebuild": 0.05, "other": 0.05, "undecided": 0.35},
+      "ideological_lean": {"conservative": 0.20, "progressive": 0.20, "moderate": 0.60},
+      "n_polls": 1,
+      "sample_size": 1000,
+      "source": "시사IN/한국리서치 6·3 대선 이후",
+      "source_url": "https://v.daum.net/v/8GaVTlj4ST",
+      "publish_ts": "2025-07-09T00:00:00",
+      "notes": "30대 여성은 진보·보수 비등 (진보 0.5%p 우위, 통계 노이즈 수준)."
+    },
+    {
+      "cohort_id": "natl_40_49_ALL",
+      "age_band": "40-49",
+      "gender": "ALL",
+      "scope": "national",
+      "party_lean": {"ppp": 0.14, "dpk": 0.55, "rebuild": 0.04, "other": 0.05, "undecided": 0.22},
+      "ideological_lean": {"conservative": 0.20, "progressive": 0.35, "moderate": 0.45},
+      "n_polls": 2,
+      "sample_size": 2000,
+      "source": "한국갤럽 데일리 626호 (2025-06 4주) + 한국갤럽 2026-01",
+      "source_url": "https://www.gallup.co.kr/dir/GallupKoreaDaily/GallupKoreaDailyOpinion_626(20250627).pdf",
+      "publish_ts": "2025-06-27T00:00:00",
+      "notes": "40대는 더민주 가장 강세 cohort (55-62%). 영포티 (40대 남성) 이재명 가장 강한 지지 (2022 대선 61% / 2025 대선 72.8%)."
+    },
+    {
+      "cohort_id": "natl_50_59_ALL",
+      "age_band": "50-59",
+      "gender": "ALL",
+      "scope": "national",
+      "party_lean": {"ppp": 0.17, "dpk": 0.53, "rebuild": 0.03, "other": 0.05, "undecided": 0.22},
+      "ideological_lean": {"conservative": 0.30, "progressive": 0.30, "moderate": 0.40},
+      "n_polls": 2,
+      "sample_size": 2000,
+      "source": "한국갤럽 데일리 626호 + 한국갤럽 2026-01",
+      "source_url": "https://www.gallup.co.kr/dir/GallupKoreaDaily/GallupKoreaDailyOpinion_626(20250627).pdf",
+      "publish_ts": "2025-06-27T00:00:00",
+      "notes": "50대 더민주 53-63% — 40대 다음으로 진보 강세."
+    },
+    {
+      "cohort_id": "natl_60_69_ALL",
+      "age_band": "60-69",
+      "gender": "ALL",
+      "scope": "national",
+      "party_lean": {"ppp": 0.30, "dpk": 0.40, "rebuild": 0.04, "other": 0.05, "undecided": 0.21},
+      "ideological_lean": {"conservative": 0.50, "progressive": 0.20, "moderate": 0.30},
+      "n_polls": 2,
+      "sample_size": 2000,
+      "source": "한국갤럽 데일리 626호 (60대 더민 17%/국힘 28%) + 리얼미터 2026-01",
+      "source_url": "http://www.realmeter.net/wp-content/uploads/2026/01/%EB%A6%AC%EC%96%BC%EB%AF%B8%ED%84%B0_%EC%A3%BC%EA%B0%84%ED%86%B5%EA%B3%84%ED%91%9C26%EB%85%841%EC%9B%941%EC%A3%BC%EB%93%B1%EB%A1%9D_260102.pdf",
+      "publish_ts": "2026-01-02T00:00:00",
+      "notes": "60대는 보수 lean 시작점. 그러나 이재명 정부 출범 후 60대 더민주 지지율 35-40% 유의미한 보수 ↘."
+    },
+    {
+      "cohort_id": "natl_70_plus_ALL",
+      "age_band": "70+",
+      "gender": "ALL",
+      "scope": "national",
+      "party_lean": {"ppp": 0.39, "dpk": 0.34, "rebuild": 0.02, "other": 0.04, "undecided": 0.21},
+      "ideological_lean": {"conservative": 0.55, "progressive": 0.15, "moderate": 0.30},
+      "n_polls": 2,
+      "sample_size": 2000,
+      "source": "한국갤럽 2026-01 (70대 이상 국힘 39%/민주 34%) + 한국갤럽 2025-06",
+      "source_url": "https://www.kyeonggi.com/article/20260123580070",
+      "publish_ts": "2026-01-23T00:00:00",
+      "notes": "70+ 는 국힘이 더민을 앞서는 유일한 연령대 (전국 평균). 그러나 윤석열 탄핵 이후 격차 좁혀짐."
+    }
+  ],
+  "summary_facts": [
+    {
+      "fact_id": "f_20m_conservative",
+      "claim": "20대 남성은 한국에서 가장 보수적인 cohort, 70대 보수층과 유사한 이념 거리 (시사IN/한국리서치)",
+      "source_url": "https://v.daum.net/v/8GaVTlj4ST",
+      "publish_ts": "2025-07-09T00:00:00"
+    },
+    {
+      "fact_id": "f_20f_progressive",
+      "claim": "20대 여성은 한국에서 가장 진보적인 cohort, 민주당 지지율이 국민의힘 대비 3배 (43.7% vs 16%)",
+      "source_url": "https://www.chosun.com/politics/politics_general/2025/03/07/C5CC2HB5LRDYNOX74MEZRAXMUA/",
+      "publish_ts": "2026-02-26T00:00:00"
+    },
+    {
+      "fact_id": "f_40_dpk_strong",
+      "claim": "40대는 더민주 가장 강세 cohort (55-62%), 영포티(40대 남성) 이재명 후보 압도 지지 (2022 대선 61%, 2025 대선 72.8%)",
+      "source_url": "https://www.hankyung.com/article/2025112779467",
+      "publish_ts": "2025-11-30T00:00:00"
+    },
+    {
+      "fact_id": "f_70p_ppp_only",
+      "claim": "70대 이상은 국민의힘이 더민주를 앞서는 유일한 연령대 (전국 평균)",
+      "source_url": "https://www.kyeonggi.com/article/20260123580070",
+      "publish_ts": "2026-01-23T00:00:00"
+    },
+    {
+      "fact_id": "f_gender_gap_youngest",
+      "claim": "20대 남녀의 이념 거리(2.4점)는 한국 보수-진보 중위 유권자 거리(1.6점)보다 크다 (가장 큰 세대 내 분열)",
+      "source_url": "https://v.daum.net/v/8GaVTlj4ST",
+      "publish_ts": "2025-07-09T00:00:00"
+    }
+  ],
+  "sources": [
+    {"source_id": "s_gallup", "name": "한국갤럽", "url_root": "https://www.gallup.co.kr/", "media_type": "polling_firm"},
+    {"source_id": "s_realmeter", "name": "리얼미터", "url_root": "http://www.realmeter.net/", "media_type": "polling_firm"},
+    {"source_id": "s_sisain", "name": "시사IN", "url_root": "https://www.sisain.co.kr/", "media_type": "newspaper"},
+    {"source_id": "s_kstat", "name": "케이스탯리서치", "url_root": "https://www.kstat.co.kr/", "media_type": "polling_firm"},
+    {"source_id": "s_korea_research", "name": "한국리서치", "url_root": "https://www.hrcopinion.co.kr/", "media_type": "polling_firm"},
+    {"source_id": "s_chosun", "name": "조선일보", "url_root": "https://www.chosun.com/", "media_type": "newspaper", "ideology": 0.5},
+    {"source_id": "s_hankyung", "name": "한국경제", "url_root": "https://www.hankyung.com/", "media_type": "newspaper", "ideology": 0.3},
+    {"source_id": "s_donga", "name": "동아일보", "url_root": "https://www.donga.com/", "media_type": "newspaper", "ideology": 0.4},
+    {"source_id": "s_kyeonggi", "name": "경기일보", "url_root": "https://www.kyeonggi.com/", "media_type": "newspaper"}
+  ]
+}

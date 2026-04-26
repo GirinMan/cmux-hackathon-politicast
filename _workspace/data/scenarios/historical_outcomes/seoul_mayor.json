@@ -1,0 +1,26 @@
+{
+  "_doc": "서울특별시장 직전 본 선거 final outcome — 2026-06 9회 지선의 baseline. 출처: 위키백과 + newsis.com 2022 결과 페이지 + namuwiki cross-check (perplexity 13:50 KST).",
+  "region_id": "seoul_mayor",
+  "election": {
+    "name": "제8회 전국동시지방선거 — 서울특별시장",
+    "date": "2022-06-01",
+    "election_id": "election_2022_local_mayor_seoul",
+    "type": "local_mayor"
+  },
+  "turnout": 0.532,
+  "total_valid_votes": 4416919,
+  "results": [
+    {"rank": 1, "name": "오세훈", "party": "국민의힘",       "votes": 2608277, "vote_share": 0.5905, "elected": true,  "note": "4선; 25개 자치구 426개 동 모두 승리"},
+    {"rank": 2, "name": "송영길", "party": "더불어민주당",   "votes": 1733183, "vote_share": 0.3923, "elected": false},
+    {"rank": 3, "name": "권수정", "party": "정의당",         "votes":   53840, "vote_share": 0.0121, "elected": false},
+    {"rank": 4, "name": "신지혜", "party": "기본소득당",     "votes":   12619, "vote_share": 0.0028, "elected": false},
+    {"rank": 5, "name": "김광종", "party": "무소속",         "votes":    9000, "vote_share": 0.0020, "elected": false}
+  ],
+  "lead_pp": 0.1982,
+  "winner_party_id_in_scenario": "p_ppp",
+  "sources": [
+    "https://ko.wikipedia.org/wiki/제8회_전국동시지방선거_광역자치단체장",
+    "https://www.newsis.com/2022election/",
+    "https://namu.wiki/w/제8회%20전국동시지방선거/광역자치단체장"
+  ]
+}

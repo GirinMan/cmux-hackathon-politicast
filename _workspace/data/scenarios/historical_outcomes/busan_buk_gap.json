@@ -1,0 +1,27 @@
+{
+  "_doc": "부산 북구 갑 보궐선거 baseline — 직전 본 선거 = 2024-04 제22대 총선 결과. 보궐 사유는 별도 메모 필요. 출처: 위키백과 + g-enews.com 2024-04-12 + 동아일보 (perplexity 13:50 KST).",
+  "region_id": "busan_buk_gap",
+  "election": {
+    "name": "대한민국 제22대 국회의원선거 — 부산 북구 갑 (구포1~3동, 덕천1~3동, 만덕2~3동)",
+    "date": "2024-04-10",
+    "election_id": "election_2024_general_buk_gap",
+    "type": "national_assembly"
+  },
+  "turnout": null,
+  "total_valid_votes": 83249,
+  "results": [
+    {"rank": 1, "name": "전재수", "party": "더불어민주당", "votes": 43548, "vote_share": 0.5231, "elected": true,  "note": "3선; 부산 18석 중 유일 민주 지역구. 낙동강벨트 최대 격전지."},
+    {"rank": 2, "name": "서병수", "party": "국민의힘",     "votes": 38850, "vote_share": 0.4667, "elected": false, "note": "5선 중진, 국민의힘 전략공천."}
+  ],
+  "lead_pp": 0.0564,
+  "winner_party_id_in_scenario": "p_dem",
+  "by_election_caveat": {
+    "note": "2026-04 보궐 사유 미박제 — 직전 본 선거 결과를 baseline으로 쓸 때, 의석 변화 사유(사퇴/사망/구속 등) 가 baseline distribution을 왜곡할 수 있음. validation gate 설계 시 sensitivity check 필요.",
+    "previous_winner_status": "전재수 (DP) 3선 — 보궐 사유 별도 확인 필요"
+  },
+  "sources": [
+    "https://ko.wikipedia.org/wiki/대한민국_제22대_국회의원_선거_부산광역시",
+    "https://www.g-enews.com/article/General-News/2024/04/202404112013155091ae0e4bdad7_1",
+    "https://www.donga.com/news/Politics/article/all/20240412/124443378/1"
+  ]
+}

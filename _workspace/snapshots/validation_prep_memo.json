@@ -1,0 +1,84 @@
+{
+  "_doc": "validation-first paper 사전 검토 메모 — team-lead 13:45 요청에 대한 data-engineer 사전 액션. 코드/contract 변경 없음. Codex(validation-first-paper) 가 데이터 계약 정의 후 ping 하면 즉시 mobilize.",
+  "_authoring": {
+    "agent": "data-engineer (claude-politikast-data-95127)",
+    "timestamp": "2026-04-26T13:55+09:00",
+    "scope_lock": "_workspace/data/scenarios/ + _workspace/snapshots/ 만 작업. _workspace/validation/ 와 docs/references/ 는 Codex zone — 손대지 않음.",
+    "blocking": "없음. paper 재설계 결과 대기."
+  },
+
+  "1_nesdc_fetch_feasibility": {
+    "summary": "NESDC (중앙선거여론조사심의위원회) 등록 여론조사 — 공식 API 없음, HTML 스크래핑 가능. 12h 안에 가능하나 region별 필터링 노력 필요.",
+    "endpoint": "https://www.nesdc.go.kr/portal/bbs/B0000005/list.do?menuNo=200467&pageIndex={N}",
+    "method": "HTML scrape via pageIndex pagination. 7컬럼 (등록번호, 조사기관명, 조사의뢰자, 여론조사 명칭, 등록일, 지역, 결정사항).",
+    "prior_art": "https://rpubs.com/statkclee/nesdc_survey_master + https://statkclee.github.io/election/election-polls.html (R rvest 예시, 2020 데이터). MBC 총선여론조사 사이트가 동일 데이터 미러.",
+    "estimated_effort_h": 1.5,
+    "risk": [
+      "스크래핑 매너/robots.txt 미확인",
+      "여론조사 명칭 free-text → region/contest 매칭은 키워드 매칭 + 수작업 검증 필요",
+      "각 조사 상세 (질문지/표본/가중치)는 PDF 첨부로 제공 — text 추출 추가 비용",
+      "2025-12-03 cutoff: 페이지네이션 시 등록일로 필터링 필요"
+    ],
+    "data_go_kr_alternative_for_past_results": {
+      "endpoint": "https://www.data.go.kr/data/15000900/openapi.do (중앙선거관리위원회_투·개표 정보)",
+      "format": "REST JSON+XML, 무료 인증키 필요, 1960~ 시간범위, sgId/sgTypecode/sdName/wiwName 파라미터",
+      "candidate_search": "https://www.data.go.kr/data/15140045/openapi.do (후보자 통합검색) — 대선 13~21대, 총선 14~22대, 지선 3~8회 제공",
+      "use_for": "validation set 구성 시 region별 과거 final outcome ground truth — wikipedia 보다 정확하고 인용 안정적"
+    }
+  },
+
+  "2_historical_outcomes_pre_archived": {
+    "location": "_workspace/data/scenarios/historical_outcomes/<region_id>.json",
+    "schema": "{ region_id, election{name,date,id,type}, turnout, total_valid_votes, results[{rank,name,party,votes,vote_share,elected,note?}], lead_pp, winner_party_id_in_scenario, sources[] }",
+    "regions_done": [
+      {"region_id": "seoul_mayor",      "election": "2022-06-01 제8회 지선 시장",        "winner": "오세훈 (PPP) 59.05%",  "lead_pp": 0.1982},
+      {"region_id": "gwangju_mayor",    "election": "2022-06-01 제8회 지선 시장",        "winner": "강기정 (DP) 74.91%",   "lead_pp": 0.5901},
+      {"region_id": "daegu_mayor",      "election": "2022-06-01 제8회 지선 시장",        "winner": "홍준표 (PPP) 78.75%",  "lead_pp": 0.6078},
+      {"region_id": "busan_buk_gap",    "election": "2024-04-10 제22대 총선 (boundary identical)", "winner": "전재수 (DP) 52.31%",  "lead_pp": 0.0564},
+      {"region_id": "daegu_dalseo_gap", "election": "2024-04-10 제22대 총선 (boundary identical)", "winner": "유영하 (PPP) 71.39%", "lead_pp": 0.4279}
+    ],
+    "by_election_caveat": "두 보궐 region(busan_buk_gap, daegu_dalseo_gap)은 2024-04 본 선거 winner가 의석을 잃어 보궐이 발생 — baseline distribution이 왜곡될 수 있음. 보궐 사유(사퇴/사망/구속/위법) 별도 확인 필요. validation gate 설계 시 sensitivity check 권장.",
+    "lead_pp_spread": "0.06 (busan_buk_gap, 경합) ~ 0.61 (daegu_mayor, 1당 우세) — validation gate가 의미를 가지려면 경합지(busan_buk_gap)가 핵심 evaluation point"
+  },
+
+  "3_pre_election_polls_pre_2025_12_03": {
+    "status": "deferred — 사전 fetch 안 함",
+    "reason": [
+      "input poll set vs validation poll set 분리 기준이 Codex 의 새 contract 에서 정의될 예정",
+      "region별 사전 여론조사 큐레이션은 ~2-4h 작업 — contract 정의 전 선제 작업 시 누수 위험 + 재작업 가능성",
+      "현재 _workspace/data/scenarios/<region>.json 의 polls[] 필드는 가설치 — 새 contract 따라 분리 또는 폐기될 가능성"
+    ],
+    "trigger_condition": "Codex 의 validation-first-paper contract 박제 시 즉시 mobilize. 작업 분량 region당 ~30min, 5 region ~2.5h."
+  },
+
+  "4_zone_lock": {
+    "data_engineer_zone": [
+      "_workspace/data/scenarios/",
+      "_workspace/data/scenarios/historical_outcomes/  (NEW, this memo)",
+      "_workspace/snapshots/",
+      "src/data/",
+      "src/llm/"
+    ],
+    "off_limits_for_this_session": [
+      "_workspace/validation/  (Codex)",
+      "docs/references/      (Codex + research-fetcher)",
+      "paper/                (paper-writer)",
+      "src/sim/              (sim-engineer fire 진행 중)"
+    ]
+  },
+
+  "5_open_questions_for_codex_or_team_lead": [
+    {
+      "q": "validation gate 의 evaluation metric 은? (winner_correct? lead_pp_MAE? full vote_share KL-div?)",
+      "why": "metric에 따라 historical_outcomes JSON 의 보강 정도(예: 후보별 득표율 정밀도, 정당 grouping)가 달라짐"
+    },
+    {
+      "q": "보궐 region(busan_buk_gap, daegu_dalseo_gap)의 baseline 을 (a) 2024-04 직전 본선거 결과 vs (b) 2026-04 보궐 직전 여론조사 평균 vs (c) 둘 다 비교 — 어느 쪽?",
+      "why": "(a)는 2년 전 + 의석 변화 사유 왜곡, (b)는 sample/응답률 한계, (c)는 가장 robust 하지만 작업량 2x"
+    },
+    {
+      "q": "rolling-origin 의 origin 후보 시점은? 2024-04, 2024-12 (계엄/탄핵 전후), 2025-06, 2025-12-03 cutoff?",
+      "why": "origin 시점에 따라 NESDC 스크래핑 페이지 범위/필요 폴 sample 수 결정"
+    }
+  ]
+}

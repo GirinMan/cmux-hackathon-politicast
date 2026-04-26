@@ -1,0 +1,1086 @@
+{
+  "region_id": "daegu_mayor",
+  "timestep": 0,
+  "cutoff_ts": "2026-04-19T00:00:00",
+  "scenario_id": "daegu_mayor_2026",
+  "nodes": [
+    {
+      "id": "Candidate:c_daegu_dpk",
+      "type": "Candidate",
+      "label": "김부겸",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_daegu_dpk",
+        "contest_id": "daegu_mayor_2026",
+        "name": "김부겸",
+        "party": "p_dem",
+        "party_name": "더불어민주당",
+        "background": "전 국무총리, 전 행정안전부 장관, 전 대구 수성갑 국회의원(4선). TK 출신 민주당 거물. '김부겸 효과' 가설 검증.",
+        "key_pledges": "['TK 균형발전', '통합/탕평', '이재명 정부 협력', 'AI 대전환 / 신공항 / 2차 공공기관 이전 (3대 핵심 정책)', '대구경북 행정통합', '민군공항 이전', '행정안전부 장관 시절 2·28 민주운동 국가기념일 지정', '지역주의 극복 / 마지막 정치적 소명', \"민주당 대구시장 만들면 '드러누워서라도' 지원 이끌어내기\"]",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "Candidate:c_daegu_ourrep",
+      "type": "Candidate",
+      "label": "조원진",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_daegu_ourrep",
+        "contest_id": "daegu_mayor_2026",
+        "name": "조원진",
+        "party": "p_ourrep",
+        "party_name": "우리공화당",
+        "background": "[placeholder] 보수 표 분산용 더미. 우리공화당 대표.",
+        "key_pledges": "['보수 정통', '박근혜 신원']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "Candidate:c_daegu_ppp_choo",
+      "type": "Candidate",
+      "label": "추경호",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_daegu_ppp_choo",
+        "contest_id": "daegu_mayor_2026",
+        "name": "추경호",
+        "party": "p_ppp",
+        "party_name": "국민의힘",
+        "background": "전 부총리 겸 기획재정부 장관, 4선 의원(달성). 국힘 본선 경선 2인 진출. 주호영·이진숙 컷오프 후 본경선 후보.",
+        "key_pledges": "['TK 균형발전', '재정/경제 전문성', '전 부총리 겸 기획재정부 장관, 4선 (대구 달성)', '비상계엄 해제 의결 방해 혐의로 재판 중 (2026-04 시점)', '본경선 양자대결 9.9%p 열세 (vs 김부겸)', '이진숙 2026-04-25 대구시장 불출마 및 국민의힘 후보 지원 선언으로 보수 분열 리스크 일부 완화']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "Candidate:c_daegu_ppp_yoo",
+      "type": "Candidate",
+      "label": "유영하",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_daegu_ppp_yoo",
+        "contest_id": "daegu_mayor_2026",
+        "name": "유영하",
+        "party": "p_ppp",
+        "party_name": "국민의힘",
+        "background": "초선 의원(달서갑). 박근혜 측근. 국힘 본경선 후보. (sim에서 추경호와 양자택일 가능)",
+        "key_pledges": "['보수 정통성', '박근혜 사면 정신 계승', '초선 의원 (대구 달서갑)', '박근혜 전 대통령 최측근 — 박근혜 사면 정신 계승', '본경선 진출 — 추경호와 4월 19일 토론, 26일 최종 후보 발표']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "CohortPrior:daegu_gyeongbuk_ALL",
+      "type": "CohortPrior",
+      "label": "daegu_gyeongbuk_ALL",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "cohort_id": "daegu_gyeongbuk_ALL",
+        "age_band": "ALL",
+        "gender": "ALL",
+        "scope": "region",
+        "party_lean": "{'ppp': 0.35, 'dpk': 0.26, 'rebuild': 0.03, 'other': 0.05, 'undecided': 0.31}",
+        "ideological_lean": "{}",
+        "n_polls": 2,
+        "sample_size": 1500,
+        "source": "한국갤럽 데일리 658호 (2026-04 1주, 대구/경북 민주 26%/국힘 35%) + 한국갤럽 2026-01 (민주 20% / 국힘 48%)",
+        "source_url": "https://www.clien.net/service/board/park/19172310",
+        "publish_ts": "2026-04-03T00:00:00",
+        "notes": "대구/경북은 PPP 텃밭. 4월 시점 양당 모두 오차범위 내 — 김부겸 효과로 좁혀짐. 한국갤럽 2026-01 → 04 사이 PPP 48% → 35% 하락 (장동혁 당대표 효과).",
+        "additional_context": "",
+        "provenance": "cohort_priors"
+      }
+    },
+    {
+      "id": "CohortPrior:daegu_gyeongbuk_dpk_TK_origin",
+      "type": "CohortPrior",
+      "label": "daegu_gyeongbuk_dpk_TK_origin",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "cohort_id": "daegu_gyeongbuk_dpk_TK_origin",
+        "age_band": "ALL",
+        "gender": "ALL",
+        "scope": "region_special",
+        "party_lean": "{'ppp': 0.35, 'dpk': 0.26, 'rebuild': 0.03, 'other': 0.05, 'undecided': 0.31}",
+        "ideological_lean": "{}",
+        "n_polls": 1,
+        "sample_size": 1000,
+        "source": "",
+        "source_url": "https://www.yonhapnewstv.co.kr/news/MYH20260325211615ZM3",
+        "publish_ts": "2026-03-25T00:00:00",
+        "notes": "Region-level baseline 위에 김부겸 비TK 정체성 popularity driver — 이 prior 는 sim 의 '인물 vs 정당' decoupling 변수.",
+        "additional_context": "김부겸 효과 — TK 출신 민주당 거물. 양자 대결 추경호 대비 9.9%p 우위 (2026-03-25 연합뉴스TV).",
+        "provenance": "cohort_priors"
+      }
+    },
+    {
+      "id": "Contest:daegu_mayor_2026",
+      "type": "Contest",
+      "label": "daegu_mayor/metropolitan_mayor",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "contest_id": "daegu_mayor_2026",
+        "election_id": "election_2026_local",
+        "position_type": "metropolitan_mayor"
+      }
+    },
+    {
+      "id": "District:daegu_mayor",
+      "type": "District",
+      "label": "대구",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "province": "대구",
+        "district": null,
+        "population": 2380000,
+        "scenario_notes": "국힘 본선 후보(추경호 vs 유영하)는 5월 초 확정 예정 — sim에서 양자 분기 가능. 김부겸 효과는 핵심 가설로 KG에서 'TK 출신 민주당' 노드 제공 필요. 이진숙은 2026-04-25 대구시장 예비후보직 사퇴·불출마 및 국민의힘 후보 지원 선언 이후 독자 후보가 아니라 보수 결집 이벤트로 처리한다."
+      }
+    },
+    {
+      "id": "Election:election_2026_local",
+      "type": "Election",
+      "label": "제9회 전국동시지방선거",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "election_id": "election_2026_local",
+        "name": "제9회 전국동시지방선거",
+        "date": "2026-06-03T00:00:00",
+        "election_type": "local"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_daegu_kbg_lead_poll",
+      "type": "MediaEvent",
+      "label": "여론조사 — 김부겸, 추경호 대비 9.9%p 우위 (양자 대결)",
+      "ts": "2026-03-25T10:00:00",
+      "sentiment": 0.3,
+      "frame_id": null,
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_daegu_kbg_lead_poll",
+        "source": "연합뉴스TV",
+        "source_url": "https://www.yonhapnewstv.co.kr/news/MYH20260325211615ZM3",
+        "title": "여론조사 — 김부겸, 추경호 대비 9.9%p 우위 (양자 대결)",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null
+      }
+    },
+    {
+      "id": "MediaEvent:ev_daegu_kbg_rally",
+      "type": "MediaEvent",
+      "label": "민주당 김부겸 후보 — 의원 35명 대규모 지원 사격 예고 (사상 초유의 대구 집결)",
+      "ts": "2026-04-15T10:00:00",
+      "sentiment": 0.4,
+      "frame_id": "f_unity_outreach",
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_daegu_kbg_rally",
+        "source": "JIBS",
+        "title": "민주당 김부겸 후보 — 의원 35명 대규모 지원 사격 예고 (사상 초유의 대구 집결)"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_daegu_pp_cutoff_dispute",
+      "type": "MediaEvent",
+      "label": "국힘 대구시장 공천 갈등 — 이진숙·주호영 컷오프 반발 / 6명 경선 토론회",
+      "ts": "2026-03-30T10:00:00",
+      "sentiment": -0.3,
+      "frame_id": "f_tk_identity",
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_daegu_pp_cutoff_dispute",
+        "source": "MBC 뉴스",
+        "source_url": "https://imnews.imbc.com/replay/2026/nwtoday/article/6811140_37012.html",
+        "title": "국힘 대구시장 공천 갈등 — 이진숙·주호영 컷오프 반발 / 6명 경선 토론회",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_min_park_revolt__daegu_mayor",
+      "type": "MediaEvent",
+      "label": "국힘 소장파 (김용태/김재섭/이성권) — '장동혁, 국민에 전쟁 선포 / 절연해야' 반발. 박형준 부산시장: '국민 마음에 공감 노력 필요'",
+      "ts": "2026-02-21T10:00:00",
+      "sentiment": -0.4,
+      "frame_id": "f_judgement",
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_min_park_revolt__daegu_mayor",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/02/21/IE2Y62DES5CZPPAOZP4YA5BGEQ/",
+        "title": "국힘 소장파 (김용태/김재섭/이성권) — '장동혁, 국민에 전쟁 선포 / 절연해야' 반발. 박형준 부산시장: '국민 마음에 공감 노력 필요'",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_yt_fake__daegu_mayor",
+      "type": "MediaEvent",
+      "label": "장동혁 유튜브 '장대표 어디가?' — 시민 인터뷰 사전 섭외 의혹 (실제는 당협 관계자) → '연출된 공감' 비판",
+      "ts": "2026-04-08T10:00:00",
+      "sentiment": -0.4,
+      "frame_id": "f_judgement",
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_yt_fake__daegu_mayor",
+        "source": "오마이뉴스 (국민일보 인용)",
+        "source_url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003222650",
+        "title": "장동혁 유튜브 '장대표 어디가?' — 시민 인터뷰 사전 섭외 의혹 (실제는 당협 관계자) → '연출된 공감' 비판",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "NarrativeFrame:f_judgement",
+      "type": "NarrativeFrame",
+      "label": "정권심판",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_judgement",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "NarrativeFrame:f_tk_pride",
+      "type": "NarrativeFrame",
+      "label": "TK 정체성",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_tk_pride",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "NarrativeFrame:f_unity_outreach",
+      "type": "NarrativeFrame",
+      "label": "통합·중도 확장",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_unity_outreach",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "Party:p_dem",
+      "type": "Party",
+      "label": "더불어민주당",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_dem",
+        "name": "더불어민주당",
+        "ideology": -0.4
+      }
+    },
+    {
+      "id": "Party:p_ourrep",
+      "type": "Party",
+      "label": "우리공화당",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_ourrep",
+        "name": "우리공화당",
+        "ideology": 0.8
+      }
+    },
+    {
+      "id": "Party:p_ppp",
+      "type": "Party",
+      "label": "국민의힘",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_ppp",
+        "name": "국민의힘",
+        "ideology": 0.5
+      }
+    },
+    {
+      "id": "Party:p_rebuild",
+      "type": "Party",
+      "label": "조국혁신당",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_rebuild",
+        "name": "조국혁신당",
+        "ideology": -0.6
+      }
+    },
+    {
+      "id": "Person:person_choo_kyungho",
+      "type": "Person",
+      "label": "추경호",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "person_id": "person_choo_kyungho",
+        "name": "추경호",
+        "role": "대구 달성군 국회의원 / 대구시장 경선 후보",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "Person:person_lee_jinsook",
+      "type": "Person",
+      "label": "이진숙",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "person_id": "person_lee_jinsook",
+        "name": "이진숙",
+        "role": "전 방송통신위원장 / 2026-04-25 대구시장 불출마 및 국민의힘 후보 지원 선언",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "Person:person_yoo_youngha",
+      "type": "Person",
+      "label": "유영하",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "person_id": "person_yoo_youngha",
+        "name": "유영하",
+        "role": "대구 달서구갑 국회의원 / 대구시장 경선 후보",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PolicyIssue:i_kbg_effect",
+      "type": "PolicyIssue",
+      "label": "김부겸 효과",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "issue_id": "i_kbg_effect",
+        "name": "김부겸 효과",
+        "issue_type": "정치"
+      }
+    },
+    {
+      "id": "PollPublication:1",
+      "type": "PollPublication",
+      "label": "poll#1",
+      "ts": "2026-04-09T00:00:00",
+      "sentiment": 0.0,
+      "frame_id": null,
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "1",
+        "poll_id": 1,
+        "contest_id": "seoul_mayor_2026",
+        "sample_size": 1000,
+        "leader_candidate": "c_seoul_dpk",
+        "leader_share": 0.456,
+        "title": "여론조사 #1",
+        "source": ""
+      }
+    },
+    {
+      "id": "PressConference:ev_daegu_chu_remarks",
+      "type": "PressConference",
+      "label": "추경호, 본경선 진출 — '우리 안의 작은 차이는 뒤로, 당의 승리를 위해 처절하게 준비'",
+      "ts": "2026-04-17T16:00:00",
+      "sentiment": 0.1,
+      "frame_id": null,
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_daegu_chu_remarks",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/04/17/3UUVEILIFBCM3H76YOURAEFWJU/",
+        "title": "추경호, 본경선 진출 — '우리 안의 작은 차이는 뒤로, 당의 승리를 위해 처절하게 준비'",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "추경호",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_daegu_cutoff",
+      "type": "PressConference",
+      "label": "국힘 공관위, 주호영·이진숙 컷오프 — 윤재옥/추경호/유영하/최은석/홍석준/이재만 6명 경선",
+      "ts": "2026-04-03T10:00:00",
+      "sentiment": -0.2,
+      "frame_id": "f_tk_pride",
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_daegu_cutoff",
+        "source": "한겨레",
+        "title": "국힘 공관위, 주호영·이진숙 컷오프 — 윤재옥/추경호/유영하/최은석/홍석준/이재만 6명 경선",
+        "speaker": "박덕흠",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_daegu_kbg_228park",
+      "type": "PressConference",
+      "label": "김부겸, 2·28 민주운동기념공원 출마 공식 발표 — TK·신공항·2차 공공기관 이전",
+      "ts": "2026-03-30T15:00:00",
+      "sentiment": 0.3,
+      "frame_id": "f_dpk_unity",
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_daegu_kbg_228park",
+        "source": "MBC 뉴스",
+        "source_url": "https://imnews.imbc.com/replay/2026/nwtoday/article/6811140_37012.html",
+        "title": "김부겸, 2·28 민주운동기념공원 출마 공식 발표 — TK·신공항·2차 공공기관 이전",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "김부겸",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "PressConference:ev_daegu_kbg_announce",
+      "type": "PressConference",
+      "label": "김부겸, 대구시장 출마 공식 선언 — '대구가 국힘 버려야 진짜 보수 살아난다'",
+      "ts": "2026-03-30T10:00:00",
+      "sentiment": 0.4,
+      "frame_id": "f_dpk_unity",
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_daegu_kbg_announce",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/03/30/JLXKKCJZWRBXDASARFJ24G462Q/",
+        "title": "김부겸, 대구시장 출마 공식 선언 — '대구가 국힘 버려야 진짜 보수 살아난다'",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "김부겸",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "PressConference:ev_daegu_lee_jinsuk_protest",
+      "type": "PressConference",
+      "label": "이진숙, 컷오프 반발 — '장동혁 대표, 공정한 경선 절차 복원하라' 무소속 가능성 언급(이후 4/25 불출마 선언)",
+      "ts": "2026-04-14T14:00:00",
+      "sentiment": -0.4,
+      "frame_id": "f_tk_identity",
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_daegu_lee_jinsuk_protest",
+        "source": "한겨레",
+        "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1254224.html",
+        "title": "이진숙, 컷오프 반발 — '장동혁 대표, 공정한 경선 절차 복원하라' 무소속 가능성 언급(이후 4/25 불출마 선언)",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "이진숙",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_daegu_pp_primary_advance",
+      "type": "PressConference",
+      "label": "국민의힘 대구시장 본경선 — 추경호·유영하 진출 (윤재옥/최은석/홍석준/이재만 탈락)",
+      "ts": "2026-04-17T15:00:00",
+      "sentiment": 0.0,
+      "frame_id": "f_tk_identity",
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_daegu_pp_primary_advance",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/04/17/3UUVEILIFBCM3H76YOURAEFWJU/",
+        "title": "국민의힘 대구시장 본경선 — 추경호·유영하 진출 (윤재옥/최은석/홍석준/이재만 탈락)",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_daegu_yyh_remarks",
+      "type": "PressConference",
+      "label": "유영하, 본경선 진출 — '떠나는 도시가 아닌 다시 돌아오고 싶은 대구로'",
+      "ts": "2026-04-17T16:00:00",
+      "sentiment": 0.2,
+      "frame_id": null,
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_daegu_yyh_remarks",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/04/17/3UUVEILIFBCM3H76YOURAEFWJU/",
+        "title": "유영하, 본경선 진출 — '떠나는 도시가 아닌 다시 돌아오고 싶은 대구로'",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "유영하",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_ppp_jdh_lower_voting_age__daegu_mayor",
+      "type": "PressConference",
+      "label": "장동혁, '선거 연령 만 16세 하향' 제안 — 응답자 77% 반대 (한국갤럽)",
+      "ts": "2026-02-13T10:00:00",
+      "sentiment": -0.3,
+      "frame_id": "f_judgement",
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_lower_voting_age__daegu_mayor",
+        "source": "국제일보 (연합뉴스 인용)",
+        "source_url": "https://www.kookjeilbo.com/news/article.html?no=98823",
+        "title": "장동혁, '선거 연령 만 16세 하향' 제안 — 응답자 77% 반대 (한국갤럽)",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_ppp_jdh_yoon_again__daegu_mayor",
+      "type": "PressConference",
+      "label": "장동혁, 윤석열 1심 무기징역 후에도 '계엄이 곧 내란 아니다' 절연 거부 — 당내 갈등 격화",
+      "ts": "2026-02-20T10:00:00",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "region_id": "daegu_mayor",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_yoon_again__daegu_mayor",
+        "source": "조선일보 / 경향신문",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/02/20/5LYCG77CSNDGDCZGYBVBFLYP5A/",
+        "title": "장동혁, 윤석열 1심 무기징역 후에도 '계엄이 곧 내란 아니다' 절연 거부 — 당내 갈등 격화",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "Source:s_chosun",
+      "type": "Source",
+      "label": "조선일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_chosun",
+        "name": "조선일보",
+        "url_root": "https://www.chosun.com/",
+        "media_type": "newspaper",
+        "ideology": 0.5
+      }
+    },
+    {
+      "id": "Source:s_hani",
+      "type": "Source",
+      "label": "한겨레",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_hani",
+        "name": "한겨레",
+        "url_root": "https://www.hani.co.kr/",
+        "media_type": "newspaper",
+        "ideology": -0.4
+      }
+    },
+    {
+      "id": "Source:s_imbc",
+      "type": "Source",
+      "label": "MBC 뉴스",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_imbc",
+        "name": "MBC 뉴스",
+        "url_root": "https://imnews.imbc.com/",
+        "media_type": "broadcast",
+        "ideology": -0.2
+      }
+    },
+    {
+      "id": "Source:s_kookje",
+      "type": "Source",
+      "label": "국제일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_kookje",
+        "name": "국제일보",
+        "url_root": "https://www.kookjeilbo.com/",
+        "media_type": "newspaper",
+        "ideology": 0.3
+      }
+    },
+    {
+      "id": "Source:s_ohmy",
+      "type": "Source",
+      "label": "오마이뉴스",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_ohmy",
+        "name": "오마이뉴스",
+        "url_root": "https://www.ohmynews.com/",
+        "media_type": "newspaper",
+        "ideology": -0.5
+      }
+    },
+    {
+      "id": "Source:s_yonhap_tv",
+      "type": "Source",
+      "label": "연합뉴스TV",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_yonhap_tv",
+        "name": "연합뉴스TV",
+        "url_root": "https://www.yonhapnewstv.co.kr/",
+        "media_type": "broadcast",
+        "ideology": 0.0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "src": "PollPublication:1",
+      "dst": "Contest:daegu_mayor_2026",
+      "rel": "publishesPoll",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:1",
+      "dst": "Candidate:c_daegu_ppp_choo",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "Contest:daegu_mayor_2026",
+      "dst": "Election:election_2026_local",
+      "rel": "inElection",
+      "attrs": {}
+    },
+    {
+      "src": "Contest:daegu_mayor_2026",
+      "dst": "District:daegu_mayor",
+      "rel": "heldIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_daegu_ppp_choo",
+      "dst": "Contest:daegu_mayor_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_daegu_ppp_choo",
+      "dst": "Party:p_ppp",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_daegu_ppp_yoo",
+      "dst": "Contest:daegu_mayor_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_daegu_ppp_yoo",
+      "dst": "Party:p_ppp",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_daegu_dpk",
+      "dst": "Contest:daegu_mayor_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_daegu_dpk",
+      "dst": "Party:p_dem",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_daegu_ourrep",
+      "dst": "Contest:daegu_mayor_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_daegu_ourrep",
+      "dst": "Party:p_ourrep",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_cutoff",
+      "dst": "Candidate:c_daegu_ppp_choo",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_cutoff",
+      "dst": "Candidate:c_daegu_ppp_yoo",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_cutoff",
+      "dst": "NarrativeFrame:f_tk_pride",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_daegu_kbg_rally",
+      "dst": "Candidate:c_daegu_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_daegu_kbg_rally",
+      "dst": "PolicyIssue:i_kbg_effect",
+      "rel": "mentions",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_daegu_kbg_rally",
+      "dst": "NarrativeFrame:f_unity_outreach",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__daegu_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__daegu_mayor",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__daegu_mayor",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.7
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__daegu_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__daegu_mayor",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__daegu_mayor",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.5
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__daegu_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__daegu_mayor",
+      "dst": "Source:s_ohmy",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__daegu_mayor",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.5
+      }
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_lower_voting_age__daegu_mayor",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_lower_voting_age__daegu_mayor",
+      "dst": "Source:s_kookje",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "Person:person_lee_jinsook",
+      "dst": "Party:p_ppp",
+      "rel": "affiliatedTo",
+      "attrs": {}
+    },
+    {
+      "src": "Person:person_yoo_youngha",
+      "dst": "Party:p_ppp",
+      "rel": "affiliatedTo",
+      "attrs": {}
+    },
+    {
+      "src": "Person:person_choo_kyungho",
+      "dst": "Party:p_ppp",
+      "rel": "affiliatedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_kbg_announce",
+      "dst": "Candidate:c_daegu_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_kbg_announce",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_kbg_228park",
+      "dst": "Candidate:c_daegu_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_kbg_228park",
+      "dst": "Source:s_imbc",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_daegu_kbg_lead_poll",
+      "dst": "Candidate:c_daegu_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_daegu_kbg_lead_poll",
+      "dst": "Source:s_yonhap_tv",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_pp_primary_advance",
+      "dst": "Candidate:c_daegu_ppp_choo",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_pp_primary_advance",
+      "dst": "Candidate:c_daegu_ppp_yoo",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_pp_primary_advance",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_chu_remarks",
+      "dst": "Candidate:c_daegu_ppp_choo",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_chu_remarks",
+      "dst": "Person:person_choo_kyungho",
+      "rel": "speakerIs",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_chu_remarks",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_yyh_remarks",
+      "dst": "Candidate:c_daegu_ppp_yoo",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_yyh_remarks",
+      "dst": "Person:person_yoo_youngha",
+      "rel": "speakerIs",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_yyh_remarks",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_lee_jinsuk_protest",
+      "dst": "Party:p_ppp",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_lee_jinsuk_protest",
+      "dst": "Person:person_lee_jinsook",
+      "rel": "speakerIs",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_daegu_lee_jinsuk_protest",
+      "dst": "Source:s_hani",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_daegu_pp_cutoff_dispute",
+      "dst": "Party:p_ppp",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_daegu_pp_cutoff_dispute",
+      "dst": "Source:s_imbc",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "CohortPrior:daegu_gyeongbuk_ALL",
+      "dst": "District:daegu_mayor",
+      "rel": "appliesToRegion",
+      "attrs": {}
+    },
+    {
+      "src": "CohortPrior:daegu_gyeongbuk_ALL",
+      "dst": "Party:p_ppp",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.35
+      }
+    },
+    {
+      "src": "CohortPrior:daegu_gyeongbuk_ALL",
+      "dst": "Party:p_dem",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.26
+      }
+    },
+    {
+      "src": "CohortPrior:daegu_gyeongbuk_ALL",
+      "dst": "Party:p_rebuild",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.03
+      }
+    },
+    {
+      "src": "CohortPrior:daegu_gyeongbuk_dpk_TK_origin",
+      "dst": "District:daegu_mayor",
+      "rel": "appliesToRegion",
+      "attrs": {}
+    },
+    {
+      "src": "CohortPrior:daegu_gyeongbuk_dpk_TK_origin",
+      "dst": "Party:p_ppp",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.35
+      }
+    },
+    {
+      "src": "CohortPrior:daegu_gyeongbuk_dpk_TK_origin",
+      "dst": "Party:p_dem",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.26
+      }
+    },
+    {
+      "src": "CohortPrior:daegu_gyeongbuk_dpk_TK_origin",
+      "dst": "Party:p_rebuild",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.03
+      }
+    }
+  ],
+  "stats": {
+    "node_count": 41,
+    "edge_count": 60
+  }
+}

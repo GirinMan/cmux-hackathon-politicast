@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-04-26T03:34:41.058382+00:00",
+  "provider": "gemini",
+  "model": "gemini/gemini-3.1-flash-lite-preview",
+  "duration_sec": 60,
+  "concurrency": 2,
+  "max_completion_tokens": 2048,
+  "payload": "realistic_voter_prompt",
+  "rpm": 46.0,
+  "avg_latency_ms": 2712.421735782656,
+  "p50_latency_ms": 2294.290230500337,
+  "raw_counts": {
+    "success": 46,
+    "rate_limited": 0,
+    "other_errors": 0
+  },
+  "system_prompt_chars": 1068,
+  "user_prompt_chars": 321
+}

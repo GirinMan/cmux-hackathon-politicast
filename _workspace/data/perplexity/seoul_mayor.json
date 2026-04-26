@@ -1,0 +1,130 @@
+{
+  "_doc": "Perplexity-curated facts for KG P2/P3 enrichment. All facts source_url 박제. ts ≤ 2026-04-26 (temporal firewall). Fetched via mcp__perplexity__perplexity_search at 2026-04-26 15:38 KST.",
+  "region_id": "seoul_mayor",
+  "fetched_at": "2026-04-26T15:38:00+09:00",
+  "candidate_event_facts": [
+    {
+      "event_id": "ev_seoul_jwo_announce",
+      "type": "PressConference",
+      "ts": "2026-03-09T10:00:00",
+      "source": "한겨레",
+      "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1248323.html",
+      "title": "정원오, 서울시장 공식 출마 선언 — '시민주권 서울'",
+      "sentiment": -0.2,
+      "frame_id": "f_judgement",
+      "speaker": "정원오",
+      "party_id": "p_dem",
+      "about": ["c_seoul_dpk"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_seoul_jwo_gangnam_pledge",
+      "type": "PressConference",
+      "ts": "2026-04-11T10:00:00",
+      "source": "정원오 후보 공약 발표",
+      "source_url": "https://www.youtube.com/watch?v=NHI8Oae0SCk",
+      "title": "정원오, 강남 재건축 전면 지원 공약 — 오세훈보다 빠르고 안전하게",
+      "sentiment": 0.2,
+      "frame_id": "f_judgement",
+      "speaker": "정원오",
+      "party_id": "p_dem",
+      "about": ["c_seoul_dpk"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_seoul_jwo_culture_pledge",
+      "type": "PressConference",
+      "ts": "2026-04-14T10:00:00",
+      "source": "뉴시스",
+      "source_url": "https://www.newsis.com/view/NISI20260414_0021245631",
+      "title": "정원오, 8번째 공약 발표 — 문화·관광 분야 (국립중앙박물관)",
+      "sentiment": 0.1,
+      "speaker": "정원오",
+      "party_id": "p_dem",
+      "about": ["c_seoul_dpk"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_seoul_oh_minsaeng",
+      "type": "PressConference",
+      "ts": "2026-02-09T10:00:00",
+      "source": "비즈니스포스트",
+      "source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=429765",
+      "title": "오세훈, 약 3조 규모 민생경제 활성화 대책 발표 — '약자와의 동행'",
+      "sentiment": 0.3,
+      "frame_id": "f_stability",
+      "speaker": "오세훈",
+      "party_id": "p_ppp",
+      "about": ["c_seoul_ppp"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_seoul_oh_realestate_clash",
+      "type": "PressConference",
+      "ts": "2026-02-02T10:00:00",
+      "source": "비즈니스포스트",
+      "source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=429765",
+      "title": "오세훈, 이재명 정부 부동산 대책 비판 — 정비사업/대출 규제 완화 요구",
+      "sentiment": -0.3,
+      "frame_id": "f_judgement",
+      "speaker": "오세훈",
+      "party_id": "p_ppp",
+      "about": ["c_seoul_ppp"],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_seoul_oh_announce",
+      "type": "PressConference",
+      "ts": "2026-04-18T10:00:00",
+      "source": "뉴시스",
+      "source_url": "https://www.newsis.com/view/NISI20260418_0021250528",
+      "title": "오세훈, 국민의힘 서울시장 후보 선출 후 공약 발표 (여의도 당사)",
+      "sentiment": 0.3,
+      "frame_id": "f_stability",
+      "speaker": "오세훈",
+      "party_id": "p_ppp",
+      "about": ["c_seoul_ppp"],
+      "mentions": []
+    }
+  ],
+  "candidate_pledge_extras": {
+    "c_seoul_dpk": [
+      "AI 시민주권 행정 (행정 속도 2배, 신청 없는 복지)",
+      "정비사업 매니저 제도 — 신통기획보다 빠른 '착착기획'",
+      "서울시민리츠 — 시세 70~80% 실속형 민간 분양 아파트 대량 공급",
+      "30분 통근 도시 — 5분 버스 / 10분 전철",
+      "한강버스 2,200억 백지화, 대중교통 재투자",
+      "용산국제업무지구 매듭",
+      "K-아레나 등 문화 인프라"
+    ],
+    "c_seoul_ppp": [
+      "약자와의 동행 — 디딤돌소득 / 안심소득 (중위소득 100% 이하 차등 지원)",
+      "재건축 초과이익 환수제 / 분양가 상한제 손질",
+      "31만 호 공급 기반 + 강북 고밀도 개발",
+      "신혼부부 공공주택 매년 4천 호 공급",
+      "AI로 학습격차 해소"
+    ]
+  },
+  "people": [
+    {"person_id": "p_lee_jm", "name": "이재명", "role": "대한민국 대통령", "party_id": "p_dem"},
+    {"person_id": "p_jcr", "name": "정청래", "role": "더불어민주당 대표", "party_id": "p_dem"},
+    {"person_id": "p_jdh", "name": "장동혁", "role": "국민의힘 대표", "party_id": "p_ppp"},
+    {"person_id": "p_park_jm", "name": "박주민", "role": "더불어민주당 의원 (서울시장 경선 패배)", "party_id": "p_dem"}
+  ],
+  "sources": [
+    {"source_id": "s_hani", "name": "한겨레", "url_root": "https://www.hani.co.kr/", "media_type": "newspaper", "ideology": -0.4},
+    {"source_id": "s_chosun_biz", "name": "조선비즈", "url_root": "https://biz.chosun.com/", "media_type": "newspaper", "ideology": 0.4},
+    {"source_id": "s_newsis", "name": "뉴시스", "url_root": "https://www.newsis.com/", "media_type": "wire", "ideology": 0.0},
+    {"source_id": "s_jtbc", "name": "JTBC", "url_root": "https://news.jtbc.co.kr/", "media_type": "broadcast", "ideology": -0.1},
+    {"source_id": "s_bp", "name": "비즈니스포스트", "url_root": "https://www.businesspost.co.kr/", "media_type": "newspaper", "ideology": 0.0},
+    {"source_id": "s_namuwiki", "name": "나무위키", "url_root": "https://namu.wiki/", "media_type": "wiki", "ideology": 0.0}
+  ],
+  "event_source_links": [
+    {"event_id": "ev_seoul_jwo_announce", "source_id": "s_hani"},
+    {"event_id": "ev_seoul_jwo_gangnam_pledge", "source_id": "s_namuwiki"},
+    {"event_id": "ev_seoul_jwo_culture_pledge", "source_id": "s_newsis"},
+    {"event_id": "ev_seoul_oh_minsaeng", "source_id": "s_bp"},
+    {"event_id": "ev_seoul_oh_realestate_clash", "source_id": "s_bp"},
+    {"event_id": "ev_seoul_oh_announce", "source_id": "s_newsis"}
+  ]
+}

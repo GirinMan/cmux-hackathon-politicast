@@ -1,0 +1,125 @@
+{
+  "variant": "R0",
+  "n_personas": 10,
+  "n_abstain": 0,
+  "votes": [
+    {
+      "persona_id": "02ec3e28f4f24f6db066743b781c821a",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리와 AI 거점 도시 공약이 제가 일하는 경영 기획 직무와 연관된 지역 경제 발전 가능성을 제시한다고 판단했습니다.",
+      "key_factors": [
+        "실용적 경제 정책",
+        "지역 산업 연계성",
+        "민주당 지지 기반"
+      ]
+    },
+    {
+      "persona_id": "01d563e68cb04a4bb87077369b355a45",
+      "vote": "c_gwangju_dpk",
+      "reason": "아이를 홀로 키우며 지역 내 안정적인 지원과 민주당 중심의 정책 기조를 신뢰하기 때문입니다.",
+      "key_factors": [
+        "민주당 지지 성향",
+        "경제적 자립 지원 정책",
+        "지역 행정의 안정성"
+      ]
+    },
+    {
+      "persona_id": "008822545140446b81b0f5b4f01abaad",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주 지역의 연속적인 행정 안정성과 기존에 추진 중인 AI 거점 도시 정책의 일관성을 중요하게 생각합니다.",
+      "key_factors": [
+        "행정의 연속성",
+        "AI 거점 도시 정책",
+        "민주당 지지 성향"
+      ]
+    },
+    {
+      "persona_id": "0e773ce1057c4edeac1a1e8dbfbd561e",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주형 일자리를 포함한 AI 거점 도시 육성 정책이 지역 경제 발전과 청년 마케터로서의 직업적 환경에 실질적으로 도움이 될 것이라 기대합니다.",
+      "key_factors": [
+        "광주형 일자리",
+        "AI 거점 도시",
+        "지역 균형 발전"
+      ]
+    },
+    {
+      "persona_id": "09d96ba8b5094af9bf7c0ba962a92f7d",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주의 발전과 우리 동구의 지역 분위기를 고려할 때 기존 민주당 행보를 이어가는 것이 안정적이라 판단했습니다.",
+      "key_factors": [
+        "민주당 지지 성향",
+        "광주형 일자리 정책",
+        "지역 정서"
+      ]
+    },
+    {
+      "persona_id": "0158a1e8c2cf407ba1edb18db0611350",
+      "vote": "c_gwangju_dpk",
+      "reason": "보육교사로서 지역의 안정적인 정책 지속성과 우리 지역의 정서를 가장 잘 이해하는 후보라고 생각합니다.",
+      "key_factors": [
+        "지역 정책 연속성",
+        "민주당 지지 성향",
+        "보육 환경 안정화"
+      ]
+    },
+    {
+      "persona_id": "00b789834649476b93c4fd8286164d7e",
+      "vote": "c_gwangju_dpk",
+      "reason": "오랫동안 우리 지역을 위해 뛰어왔고 익숙한 민주당 후보가 광주의 현안을 제일 잘 알 것이라 생각합니다.",
+      "key_factors": [
+        "지역 연고",
+        "소속 정당 지지",
+        "현직 행정 경험"
+      ]
+    },
+    {
+      "persona_id": "00dc97ce7487499ba024b346a9fb6020",
+      "vote": "c_gwangju_dpk",
+      "reason": "오랫동안 살아온 광주에서 우리 지역의 일자리와 경제를 고민해 온 민주당 후보에게 마음이 기웁니다.",
+      "key_factors": [
+        "지역 정서",
+        "안정적인 시정 운영",
+        "경제 활성화"
+      ]
+    },
+    {
+      "persona_id": "00004c5031964802aaffb41a5265e1b0",
+      "vote": "c_gwangju_dpk",
+      "reason": "광주 토박이로서 우리 지역의 일자리 문제와 AI 산업 육성을 위해 힘쓰는 민주당 후보를 지지하는 것이 당연하다고 생각합니다.",
+      "key_factors": [
+        "지역 정서",
+        "광주형 일자리",
+        "민주당 지지"
+      ]
+    },
+    {
+      "persona_id": "00032b0e0be349c18e45eca272f55fe2",
+      "vote": "c_gwangju_dpk",
+      "reason": "우리 지역에서 오래 일해온 민주당 후보가 광주를 가장 잘 이해하고 챙겨줄 것이라 믿기 때문입니다.",
+      "key_factors": [
+        "지역 정서",
+        "민주당 지지 성향",
+        "현직 안정감"
+      ]
+    }
+  ],
+  "vote_count": {
+    "c_gwangju_dpk": 10
+  },
+  "renorm_share": {},
+  "official_consensus": {},
+  "metrics": {
+    "available": false,
+    "reason": "no NESDC poll_consensus_daily for region",
+    "mae": null,
+    "rmse": null,
+    "margin_error": null,
+    "leader_match": null,
+    "kl_div": null,
+    "n_rated": 0,
+    "n_distinct_votes": 1
+  },
+  "system_prompt_sample": "당신은 한국 유권자입니다. 아래 페르소나를 1인칭으로 체화하여 답하세요.\n- 거주: 광주 광주-광산구\n- 연령: 24, 성별: 남자\n- 직업: 경영 기획 사무원, 학력: 4년제 대학교\n- 가족: 미혼\n\n=== 서사 ===\n이한수 씨는 공학적 분석력으로 금융 실무를 처리하는 유능한 직장인이자, 건강 관리와 식도락 사이에서 갈등하며 어머니와 함께 살아가는 20대 청년입니다.\n\n\n광주 광산구의 계획도시 분위기 속에서 성장하며 실용적인 사고방식을 익혔고, 주변 사람들의 기분을 세심하게 살피는 성격 덕분에 친구들 사이에서 갈등을 중재하는 역할을 주로 맡습니다.\n\n=== 규칙 ===\n1. 제공된 컨텍스트(이슈·여론조사·이벤트) 외 정보를 사용하지 마세요.\n2. 출마를 포기한 후보는 선택할 수 없습니다.\n3. 미래 결과를 안다고 가정하지 마세요. 페르소나의 가치관·관심사로만 추론하세요.\n4. 반드시 단일 JSON 객체로만 응답합니다 (코드펜스 금지). 스키마:\n   {\"vote\": \"<candidate_id|null>\", \"turnout\": true|false, \"confidence\": 0.0~1.0, \"reason\": \"<짧은 한 줄>\", \"key_factors\": [\"<핵심 요인 최대 3개>\"]}",
+  "user_prompt_sample": "=== (region) (timestep t=0) ===\n[모드] secret_ballot\n지금은 투표소 안입니다. 비공개 투표용지에 단 한 명을 기표하세요. reason은 한 줄로 짧게.\n\n[후보]\n- c_gwangju_dpk | 강기정 (더불어민주당)\n    배경: 현 광주시장. 2022 경선에서 이용섭 시장을 꺾고 당선. 재선 도전 유력. 2026-04 시점 민주당 경선 진행 중. (placeholder — 본선 후보 미확정)\n    핵심공약: 광주형 일자리 2.0 · AI 거점 도시\n- c_gwangju_dpk_alt | 민형배 (더불어민주당)\n    배경: 현 국회의원(광산을). 강기정 시장의 주요 경쟁자. (sim 옵션: 단일화 시 강기정으로 통합)\n    핵심공약: 검찰개혁 연계 · 광주형 기본소득\n- c_gwangju_ppp | 주기환 (국민의힘)\n    배경: [가설 placeholder] 국민의힘 광주시장 후보 더미. 광주는 보수 후보 인지도 낮음 — baseline 10~15% 가정.\n    핵심공약: 호남 균형발전 · 정권 안정\n- c_gwangju_rebuild | 안철수 (조국혁신당)\n    배경: [가설 placeholder] 진보 표 분산 효과 측정용 더미.\n    핵심공약: 정치개혁 · 검찰개혁\n\n[컨텍스트 (t≤0)]\n(추가 정보 없음)\n"
+}

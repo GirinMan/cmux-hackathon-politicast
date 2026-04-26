@@ -1,0 +1,54 @@
+{
+  "_doc": "PolitiKAST 해커톤 데이터 경로 계약. data-engineer가 채우고 다른 에이전트는 read-only.",
+  "nemotron_parquet_dir": "/Users/girinman/datasets/Nemotron-Personas-Korea/data",
+  "duckdb_path": "_workspace/db/politikast.duckdb",
+  "persona_table": "persona_core",
+  "persona_text_table": "persona_text",
+  "election_table": "election",
+  "candidate_table": "candidate",
+  "raw_poll_table": "raw_poll",
+  "raw_poll_result_table": "raw_poll_result",
+  "poll_consensus_table": "poll_consensus_daily",
+  "event_table": "political_event",
+  "scenario_dir": "_workspace/data/scenarios",
+  "cache_db_path": "_workspace/db/llm_cache.sqlite",
+  "regions": [
+    {"id": "seoul_mayor", "type": "metropolitan_mayor", "province": "서울", "district": null, "label": "서울시장", "rationale": "전국적 이목, baseline"},
+    {"id": "gwangju_mayor", "type": "metropolitan_mayor", "province": "광주", "district": null, "label": "광주시장", "rationale": "진보 우세 — 이념 효과 비교"},
+    {"id": "daegu_mayor", "type": "metropolitan_mayor", "province": "대구", "district": null, "label": "대구시장", "rationale": "보수 우세 — 이념 효과 비교"},
+    {"id": "busan_buk_gap", "type": "national_assembly_by_election", "province": "부산", "district": "부산-북구", "label": "부산 북구 갑 (보궐)", "rationale": "한동훈(무소속, 4.14 만덕 전입신고) vs 하정우(무소속/대통령실, 민주당 영입 추진) 빅매치 — 미니총선 최대 격전지. 부산 18석 중 유일한 민주당 지역구가 비게 되며 인물·당적 변수 효과 측정", "candidates_summary": {"Independent_Ha": "하정우 (대통령실 AI미래기획수석, 민주당 영입 추진)", "PPP": "박민식 (전 국가보훈부 장관)", "Independent_Han": "한동훈 (전 국힘 대표, 무소속)"}, "trigger": "전재수 의원 부산시장 후보 확정으로 의원직 사퇴 → 보궐", "district_note": "Nemotron district='부산-북구' 사용. 선거구 갑/을 구분은 동 단위라 시뮬에서는 시군구 단위로 근사."},
+    {"id": "daegu_dalseo_gap", "type": "national_assembly_by_election", "province": "대구", "district": "대구-달서구", "label": "대구 달서구 갑 (보궐)", "rationale": "유영하 의원 대구시장 본경선 진출 → 사퇴 시 보궐 유력 (추경호 4.25 대구시장 불출마로 달성군 확률↓, 달서갑 확률↑). 보수 강세 region 내 국힘 분열 + 민주 도전(서재헌) 측정", "candidates_summary": {"DPK": "서재헌 (3전4기, 김민석 의원 선임비서관)", "PPP": "김민수 (최고위원) / 이진숙 (전 방통위원장) / 홍석준 / 홍성주 후보군"}, "trigger": "유영하 의원 대구시장 후보 확정 시 의원직 사퇴 (4.30 마감) → 보궐", "district_note": "Nemotron district='대구-달서구' 사용. 갑/을 구분 동 단위, 시뮬에서는 달서구 전체로 근사. 사퇴 미확정 시(달성군 시나리오)에는 placeholder로 유지."}
+  ],
+  "_province_format_note": "Nemotron parquet의 province는 짧은 이름(서울, 경기, 대구, 광주, 인천, 부산 등). district는 '{province}-{시군구}' 형식 (예: '경기-의왕시', '인천-계양구', '부산-북구', '대구-달서구').",
+  "_region_change_log": [
+    {"date": "2026-04-26T11:08+09:00", "change": "uiwang_mayor + by_election_TBD 제거, busan_buk_gap + daegu_dalseo_gap 추가 (사용자 결정 — C 옵션, 3 광역 + 2 보궐)"}
+  ],
+  "region_population": {
+    "seoul_mayor": 185228,
+    "gwangju_mayor": 27594,
+    "daegu_mayor": 46934,
+    "busan_buk_gap": 5421,
+    "daegu_dalseo_gap": 10617
+  },
+  "region_avg_age": {
+    "seoul_mayor": 49.13,
+    "gwangju_mayor": 49.58,
+    "daegu_mayor": 51.25,
+    "busan_buk_gap": 52.48,
+    "daegu_dalseo_gap": 50.61
+  },
+  "persona_sample_n": null,
+  "persona_sample_per_region": {
+    "_doc": "policy-engineer가 capacity probe 결과 기반으로 결정. 본 placeholder는 LLM 키 갱신 전 잠정값.",
+    "default_planned": 200,
+    "default_downscale_low": 50,
+    "seoul_mayor": null,
+    "gwangju_mayor": null,
+    "daegu_mayor": null,
+    "busan_buk_gap": null,
+    "daegu_dalseo_gap": null
+  },
+  "sample_query_api": "src.data.queries:sample_personas(region_id, n, seed=42)",
+  "_filled_by": "data-engineer",
+  "_status": "regions_finalized_pending_keys"
+}

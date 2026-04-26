@@ -1,0 +1,119 @@
+{
+  "_doc": "Track A — PPP leadership narrative facts (장동혁 등). 모든 region에 적용 가능한 cross-region political narrative. region_id를 multiple로 두어 모든 region에 영향 (특히 daegu_mayor 핵심).",
+  "region_id": "_global_ppp_leadership",
+  "fetched_at": "2026-04-26T15:50:00+09:00",
+  "applies_to_regions": ["seoul_mayor", "busan_buk_gap", "daegu_mayor", "daegu_dalseo_gap", "gwangju_mayor"],
+  "candidate_event_facts": [
+    {
+      "event_id": "ev_ppp_jdh_yoon_again",
+      "type": "PressConference",
+      "ts": "2026-02-20T10:00:00",
+      "source": "조선일보 / 경향신문",
+      "source_url": "https://www.chosun.com/politics/assembly/2026/02/20/5LYCG77CSNDGDCZGYBVBFLYP5A/",
+      "title": "장동혁, 윤석열 1심 무기징역 후에도 '계엄이 곧 내란 아니다' 절연 거부 — 당내 갈등 격화",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "speaker": "장동혁",
+      "party_id": "p_ppp",
+      "about": [],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_ppp_jdh_min_park_revolt",
+      "type": "MediaEvent",
+      "ts": "2026-02-21T10:00:00",
+      "source": "조선일보",
+      "source_url": "https://www.chosun.com/politics/assembly/2026/02/21/IE2Y62DES5CZPPAOZP4YA5BGEQ/",
+      "title": "국힘 소장파 (김용태/김재섭/이성권) — '장동혁, 국민에 전쟁 선포 / 절연해야' 반발. 박형준 부산시장: '국민 마음에 공감 노력 필요'",
+      "sentiment": -0.4,
+      "frame_id": "f_judgement",
+      "party_id": "p_ppp",
+      "about": [],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_ppp_jdh_yt_fake",
+      "type": "MediaEvent",
+      "ts": "2026-04-08T10:00:00",
+      "source": "오마이뉴스 (국민일보 인용)",
+      "source_url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003222650",
+      "title": "장동혁 유튜브 '장대표 어디가?' — 시민 인터뷰 사전 섭외 의혹 (실제는 당협 관계자) → '연출된 공감' 비판",
+      "sentiment": -0.4,
+      "frame_id": "f_judgement",
+      "party_id": "p_ppp",
+      "about": [],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_ppp_jdh_us_visit",
+      "type": "MediaEvent",
+      "ts": "2026-04-23T10:00:00",
+      "source": "한겨레",
+      "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1255715.html",
+      "title": "장동혁 빈손 방미 논란 — 차관보급이 아닌 '비서실장' 면담 / 실무상 착오 해명. NBS 정당지지도 15% 창당 후 최저",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "speaker": "장동혁",
+      "party_id": "p_ppp",
+      "about": [],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_ppp_jdh_lower_voting_age",
+      "type": "PressConference",
+      "ts": "2026-02-13T10:00:00",
+      "source": "국제일보 (연합뉴스 인용)",
+      "source_url": "https://www.kookjeilbo.com/news/article.html?no=98823",
+      "title": "장동혁, '선거 연령 만 16세 하향' 제안 — 응답자 77% 반대 (한국갤럽)",
+      "sentiment": -0.3,
+      "frame_id": "f_judgement",
+      "speaker": "장동혁",
+      "party_id": "p_ppp",
+      "about": [],
+      "mentions": []
+    },
+    {
+      "event_id": "ev_ppp_lowest_15pct",
+      "type": "PollPublication",
+      "ts": "2026-04-23T10:00:00",
+      "source": "엠브레인퍼블릭·케이스탯리서치·코리아리서치·한국리서치 NBS",
+      "source_url": "https://www.donga.com/news/Politics/article/all/20260424/133805044/1",
+      "title": "NBS 4월 4주 — 국민의힘 정당지지도 15% (2020년 NBS 시작 이래 최저, 창당 후 최저)",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "party_id": "p_ppp",
+      "about": [],
+      "mentions": []
+    }
+  ],
+  "people": [
+    {"person_id": "p_kyt", "name": "김용태", "role": "국민의힘 의원 (경기 포천·가평) — 장동혁 절윤 거부 비판", "party_id": "p_ppp"},
+    {"person_id": "p_kjs", "name": "김재섭", "role": "국민의힘 의원 (서울 도봉갑) — 절연 대상은 윤·장 비판", "party_id": "p_ppp"},
+    {"person_id": "p_lsk", "name": "이성권", "role": "국민의힘 의원 (부산 사하갑) — '국민 전쟁 선포' 비판", "party_id": "p_ppp"},
+    {"person_id": "p_song_yes", "name": "송언석", "role": "국민의힘 원내대표 — 윤 유죄 책임 통감", "party_id": "p_ppp"},
+    {"person_id": "p_lee_js_party", "name": "이준석", "role": "개혁신당 대표 — 국힘 절연 거부 비판", "party_id": "p_rebuild"}
+  ],
+  "sources": [
+    {"source_id": "s_chosun", "name": "조선일보", "url_root": "https://www.chosun.com/", "media_type": "newspaper", "ideology": 0.5},
+    {"source_id": "s_khan", "name": "경향신문", "url_root": "https://www.khan.co.kr/", "media_type": "newspaper", "ideology": -0.4},
+    {"source_id": "s_ohmy", "name": "오마이뉴스", "url_root": "https://www.ohmynews.com/", "media_type": "newspaper", "ideology": -0.5},
+    {"source_id": "s_hani", "name": "한겨레", "url_root": "https://www.hani.co.kr/", "media_type": "newspaper", "ideology": -0.4},
+    {"source_id": "s_donga", "name": "동아일보", "url_root": "https://www.donga.com/", "media_type": "newspaper", "ideology": 0.4},
+    {"source_id": "s_kookje", "name": "국제일보", "url_root": "https://www.kookjeilbo.com/", "media_type": "newspaper", "ideology": 0.3}
+  ],
+  "event_source_links": [
+    {"event_id": "ev_ppp_jdh_yoon_again", "source_id": "s_chosun"},
+    {"event_id": "ev_ppp_jdh_min_park_revolt", "source_id": "s_chosun"},
+    {"event_id": "ev_ppp_jdh_yt_fake", "source_id": "s_ohmy"},
+    {"event_id": "ev_ppp_jdh_us_visit", "source_id": "s_hani"},
+    {"event_id": "ev_ppp_jdh_lower_voting_age", "source_id": "s_kookje"},
+    {"event_id": "ev_ppp_lowest_15pct", "source_id": "s_donga"}
+  ],
+  "damages_party_links": [
+    {"event_id": "ev_ppp_jdh_yoon_again", "party_id": "p_ppp", "severity": 0.7},
+    {"event_id": "ev_ppp_jdh_min_park_revolt", "party_id": "p_ppp", "severity": 0.5},
+    {"event_id": "ev_ppp_jdh_yt_fake", "party_id": "p_ppp", "severity": 0.5},
+    {"event_id": "ev_ppp_jdh_us_visit", "party_id": "p_ppp", "severity": 0.6},
+    {"event_id": "ev_ppp_lowest_15pct", "party_id": "p_ppp", "severity": 0.9}
+  ]
+}

@@ -1,0 +1,1126 @@
+{
+  "region_id": "busan_buk_gap",
+  "timestep": 3,
+  "cutoff_ts": "2026-06-03T00:00:00",
+  "scenario_id": "busan_buk_gap_2026",
+  "nodes": [
+    {
+      "id": "Candidate:c_busan_dpk",
+      "type": "Candidate",
+      "label": "하정우",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_busan_dpk",
+        "contest_id": "busan_buk_gap_2026",
+        "name": "하정우",
+        "party": "p_indep",
+        "party_name": "무소속",
+        "background": "대통령실 AI미래기획수석. 2026-04 시점 더불어민주당이 부산 북구갑 보궐선거 영입을 추진하지만, 후보 본인은 청와대 잔류 의사를 밝힌 무소속/대통령실 인사로 모델링한다.",
+        "key_pledges": "['AI 산업 부산 거점', '대통령실 AI 정책 경험', '북구 균형발전', 'AI 산업 부산 거점 (네이버 AI이노베이션 센터장 출신)', \"이재명 정부 직결 — '하GPT' 별명\", '고향 부산 북구 / 구덕고 출신']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "Candidate:c_busan_indep_han",
+      "type": "Candidate",
+      "label": "한동훈",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_busan_indep_han",
+        "contest_id": "busan_buk_gap_2026",
+        "name": "한동훈",
+        "party": "p_indep",
+        "party_name": "무소속",
+        "background": "전 국민의힘 대표. 2026-04-14 부산 만덕동 전입신고. 무소속 출마 — 보수 결집 vs 분열의 양면 변수.",
+        "key_pledges": "['보수 재건', '검찰개혁 반대', '차기 대권 발판', '전 국민의힘 비대위원장 / 당 대표 (윤석열 정부 출신)', '부산 만덕동 전입신고 (2026-04-14)', '당원게시판 사건으로 1월 제명 — 당적 박탈 후 무소속 도전', '정계 입문 후 첫 본 선거 (전당대회만 2회)', '차기 대권 발판 가능성']",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "Candidate:c_busan_ppp",
+      "type": "Candidate",
+      "label": "박민식",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "candidate_id": "c_busan_ppp",
+        "contest_id": "busan_buk_gap_2026",
+        "name": "박민식",
+        "party": "p_ppp",
+        "party_name": "국민의힘",
+        "background": "전 국가보훈부 장관. 국민의힘 본선 후보. 한동훈 무소속 출마 시 보수 표 분산 변수.",
+        "key_pledges": "['보훈/안보', '정권 견제', '18·19대 국회의원(부산 북강서갑) — 전재수와 4번 맞붙어 2승 2패', '전 국가보훈부 장관', \"북구갑 무공천 거부 — '오로지 주민의 마음'\"]",
+        "withdrawn": false
+      }
+    },
+    {
+      "id": "CohortPrior:busan_ulsan_gyeongnam_ALL",
+      "type": "CohortPrior",
+      "label": "busan_ulsan_gyeongnam_ALL",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "cohort_id": "busan_ulsan_gyeongnam_ALL",
+        "age_band": "ALL",
+        "gender": "ALL",
+        "scope": "region",
+        "party_lean": "{'ppp': 0.29, 'dpk': 0.32, 'rebuild': 0.04, 'other': 0.05, 'undecided': 0.3}",
+        "ideological_lean": "{}",
+        "n_polls": 2,
+        "sample_size": 2000,
+        "source": "한국갤럽 2026-01 (부산/울산/경남 민주 32%/국힘 29%) + 리얼미터 2026-02-4주 (PUK 65.5% 무당층 부산울산경남)",
+        "source_url": "https://www.kyeonggi.com/article/20260123580070",
+        "publish_ts": "2026-01-23T00:00:00",
+        "notes": "부산/울산/경남은 보수 텃밭이지만 이재명 정부 들어 양당 격차 좁혀짐. 한동훈 만덕 출마로 북구갑 무소속 변수 가산.",
+        "additional_context": "",
+        "provenance": "cohort_priors"
+      }
+    },
+    {
+      "id": "Contest:busan_buk_gap_2026",
+      "type": "Contest",
+      "label": "busan_buk_gap/national_assembly_by_election",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "contest_id": "busan_buk_gap_2026",
+        "election_id": "election_2026_local",
+        "position_type": "national_assembly_by_election"
+      }
+    },
+    {
+      "id": "District:busan_buk_gap",
+      "type": "District",
+      "label": "부산",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "province": "부산",
+        "district": "부산-북구",
+        "population": 280000,
+        "scenario_notes": "Nemotron district='부산-북구' (5,421명) 사용. 갑/을 구분 동 단위, 시뮬에서는 시군구 단위로 근사. 본 region은 PolitiKAST의 핵심 hypothesis ('인물 vs 정당' decoupling) 시험대. 한동훈 무소속 변수가 핵심."
+      }
+    },
+    {
+      "id": "Election:election_2026_local",
+      "type": "Election",
+      "label": "제9회 전국동시지방선거",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "election_id": "election_2026_local",
+        "name": "제9회 전국동시지방선거",
+        "date": "2026-06-03T00:00:00",
+        "election_type": "local"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_busan_dpk_postpone_proposal",
+      "type": "MediaEvent",
+      "label": "민주당 일각 — '한동훈 차단 위해 보궐선거 내년으로 연기' 묘수론 부상",
+      "ts": "2026-04-16T10:00:00",
+      "sentiment": -0.2,
+      "frame_id": "f_judgement",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_busan_dpk_postpone_proposal",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/04/17/OCSKD4S2JBEUBHEIKPL62KG77A/",
+        "title": "민주당 일각 — '한동훈 차단 위해 보궐선거 내년으로 연기' 묘수론 부상",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null
+      }
+    },
+    {
+      "id": "MediaEvent:ev_busan_han_house",
+      "type": "MediaEvent",
+      "label": "한동훈, '부산 만덕에 집 구했다' SNS — 북구갑 출마 공식화",
+      "ts": "2026-04-13T13:00:00",
+      "sentiment": 0.3,
+      "frame_id": "f_personality",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_busan_han_house",
+        "source": "서울신문",
+        "source_url": "https://amp.seoul.co.kr/seoul/20260413500120",
+        "title": "한동훈, '부산 만덕에 집 구했다' SNS — 북구갑 출마 공식화",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "한동훈"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_busan_han_jeonip",
+      "type": "MediaEvent",
+      "label": "한동훈 전 국힘 대표, 부산 만덕동 전입신고 — 무소속 출마 임박",
+      "ts": "2026-04-14T10:00:00",
+      "sentiment": 0.3,
+      "frame_id": "f_indep_personality",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_busan_han_jeonip",
+        "source": "team-lead 큐레이션",
+        "title": "한동훈 전 국힘 대표, 부산 만덕동 전입신고 — 무소속 출마 임박"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_busan_han_signal",
+      "type": "MediaEvent",
+      "label": "한동훈, KBS 라디오 — '부산에 깊은 애정, 큰 목표' 출마 시사",
+      "ts": "2026-04-10T10:00:00",
+      "sentiment": 0.2,
+      "frame_id": "f_personality",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_busan_han_signal",
+        "source": "경향신문 (KBS 라디오 인터뷰)",
+        "source_url": "https://www.khan.co.kr/article/202604101810011",
+        "title": "한동훈, KBS 라디오 — '부산에 깊은 애정, 큰 목표' 출마 시사",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "한동훈"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_busan_jeon_resign",
+      "type": "MediaEvent",
+      "label": "전재수 의원 부산시장 후보 확정으로 의원직 사퇴 → 보궐 발생",
+      "ts": "2026-03-15T10:00:00",
+      "sentiment": 0.0,
+      "frame_id": "f_lee_alliance",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_busan_jeon_resign",
+        "source": "team-lead 큐레이션",
+        "title": "전재수 의원 부산시장 후보 확정으로 의원직 사퇴 → 보궐 발생",
+        "speaker": "전재수",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_busan_jeon_resign_signal",
+      "type": "MediaEvent",
+      "label": "전재수, 부산시장 출마 선언 — '하정우 같은 새 세대 등장 기대'",
+      "ts": "2026-04-02T10:00:00",
+      "sentiment": 0.1,
+      "frame_id": null,
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_busan_jeon_resign_signal",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/04/07/VBPRZQQSIBAVNIRA5YIAYXD5QQ/",
+        "title": "전재수, 부산시장 출마 선언 — '하정우 같은 새 세대 등장 기대'",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "전재수",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_busan_park_post_chair_meet",
+      "type": "MediaEvent",
+      "label": "박형준 부산시장, 한동훈과 면담 — '당이 후보를 내면 연대' 시사",
+      "ts": "2026-04-16T16:00:00",
+      "sentiment": 0.0,
+      "frame_id": null,
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_busan_park_post_chair_meet",
+        "source": "뉴스1",
+        "source_url": "https://www.news1.kr/politics/assembly/6137733",
+        "title": "박형준 부산시장, 한동훈과 면담 — '당이 후보를 내면 연대' 시사",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "박형준",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_busan_pp_proxy_debate",
+      "type": "MediaEvent",
+      "label": "국힘 김도읍 의원, 부산 북갑 무공천 건의 — 내부 갈등 격화",
+      "ts": "2026-04-15T18:00:00",
+      "sentiment": -0.3,
+      "frame_id": "f_judgement",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_busan_pp_proxy_debate",
+        "source": "한겨레",
+        "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1254224.html",
+        "title": "국힘 김도읍 의원, 부산 북갑 무공천 건의 — 내부 갈등 격화",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_min_park_revolt__busan_buk_gap",
+      "type": "MediaEvent",
+      "label": "국힘 소장파 (김용태/김재섭/이성권) — '장동혁, 국민에 전쟁 선포 / 절연해야' 반발. 박형준 부산시장: '국민 마음에 공감 노력 필요'",
+      "ts": "2026-02-21T10:00:00",
+      "sentiment": -0.4,
+      "frame_id": "f_judgement",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_min_park_revolt__busan_buk_gap",
+        "source": "조선일보",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/02/21/IE2Y62DES5CZPPAOZP4YA5BGEQ/",
+        "title": "국힘 소장파 (김용태/김재섭/이성권) — '장동혁, 국민에 전쟁 선포 / 절연해야' 반발. 박형준 부산시장: '국민 마음에 공감 노력 필요'",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_us_visit__busan_buk_gap",
+      "type": "MediaEvent",
+      "label": "장동혁 빈손 방미 논란 — 차관보급이 아닌 '비서실장' 면담 / 실무상 착오 해명. NBS 정당지지도 15% 창당 후 최저",
+      "ts": "2026-04-23T10:00:00",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_us_visit__busan_buk_gap",
+        "source": "한겨레",
+        "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1255715.html",
+        "title": "장동혁 빈손 방미 논란 — 차관보급이 아닌 '비서실장' 면담 / 실무상 착오 해명. NBS 정당지지도 15% 창당 후 최저",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "MediaEvent:ev_ppp_jdh_yt_fake__busan_buk_gap",
+      "type": "MediaEvent",
+      "label": "장동혁 유튜브 '장대표 어디가?' — 시민 인터뷰 사전 섭외 의혹 (실제는 당협 관계자) → '연출된 공감' 비판",
+      "ts": "2026-04-08T10:00:00",
+      "sentiment": -0.4,
+      "frame_id": "f_judgement",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_yt_fake__busan_buk_gap",
+        "source": "오마이뉴스 (국민일보 인용)",
+        "source_url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003222650",
+        "title": "장동혁 유튜브 '장대표 어디가?' — 시민 인터뷰 사전 섭외 의혹 (실제는 당협 관계자) → '연출된 공감' 비판",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "NarrativeFrame:f_indep_personality",
+      "type": "NarrativeFrame",
+      "label": "인물 vs 정당",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_indep_personality",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "NarrativeFrame:f_judgement",
+      "type": "NarrativeFrame",
+      "label": "정권심판",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_judgement",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "NarrativeFrame:f_lee_alliance",
+      "type": "NarrativeFrame",
+      "label": "여당 직결",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": "f_lee_alliance",
+      "region_id": null,
+      "attrs": {}
+    },
+    {
+      "id": "Party:p_dem",
+      "type": "Party",
+      "label": "더불어민주당",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_dem",
+        "name": "더불어민주당",
+        "ideology": -0.4
+      }
+    },
+    {
+      "id": "Party:p_indep",
+      "type": "Party",
+      "label": "무소속",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_indep",
+        "name": "무소속",
+        "ideology": 0.0
+      }
+    },
+    {
+      "id": "Party:p_ppp",
+      "type": "Party",
+      "label": "국민의힘",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_ppp",
+        "name": "국민의힘",
+        "ideology": 0.5
+      }
+    },
+    {
+      "id": "Party:p_rebuild",
+      "type": "Party",
+      "label": "조국혁신당",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "party_id": "p_rebuild",
+        "name": "조국혁신당",
+        "ideology": -0.6
+      }
+    },
+    {
+      "id": "Person:p_jcr",
+      "type": "Person",
+      "label": "정청래",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "person_id": "p_jcr",
+        "name": "정청래",
+        "role": "더불어민주당 대표",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "Person:p_jeon_js",
+      "type": "Person",
+      "label": "전재수",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "person_id": "p_jeon_js",
+        "name": "전재수",
+        "role": "민주당 부산시장 후보 (북구갑 현직 의원, 4월 30일 전 사퇴 예정)",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "Person:p_park_hj",
+      "type": "Person",
+      "label": "박형준",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "person_id": "p_park_hj",
+        "name": "박형준",
+        "role": "현 부산시장 / 국힘 부산시장 후보",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PollPublication:1",
+      "type": "PollPublication",
+      "label": "poll#1",
+      "ts": "2026-04-09T00:00:00",
+      "sentiment": 0.0,
+      "frame_id": null,
+      "region_id": "seoul_mayor",
+      "attrs": {
+        "event_id": "1",
+        "poll_id": 1,
+        "contest_id": "seoul_mayor_2026",
+        "sample_size": 1000,
+        "leader_candidate": "c_seoul_dpk",
+        "leader_share": 0.456,
+        "title": "여론조사 #1",
+        "source": ""
+      }
+    },
+    {
+      "id": "PollPublication:ev_ppp_lowest_15pct__busan_buk_gap",
+      "type": "PollPublication",
+      "label": "NBS 4월 4주 — 국민의힘 정당지지도 15% (2020년 NBS 시작 이래 최저, 창당 후 최저)",
+      "ts": "2026-04-23T10:00:00",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_ppp_lowest_15pct__busan_buk_gap",
+        "source": "엠브레인퍼블릭·케이스탯리서치·코리아리서치·한국리서치 NBS",
+        "source_url": "https://www.donga.com/news/Politics/article/all/20260424/133805044/1",
+        "title": "NBS 4월 4주 — 국민의힘 정당지지도 15% (2020년 NBS 시작 이래 최저, 창당 후 최저)",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_busan_dpk_jcr_recruit",
+      "type": "PressConference",
+      "label": "정청래 대표, 하정우 수석 출마 요청 공식화 — '조만간 만날 것'",
+      "ts": "2026-04-08T10:00:00",
+      "sentiment": 0.2,
+      "frame_id": "f_personality",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_busan_dpk_jcr_recruit",
+        "source": "한겨레",
+        "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1253316.html",
+        "title": "정청래 대표, 하정우 수석 출마 요청 공식화 — '조만간 만날 것'",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "정청래",
+        "party_id": "p_dem"
+      }
+    },
+    {
+      "id": "PressConference:ev_busan_han_relocate",
+      "type": "PressConference",
+      "label": "한동훈, 부산 만덕2동 행정복지센터 전입신고 — '부산 시민을 위해 살기로 결심'",
+      "ts": "2026-04-14T16:00:00",
+      "sentiment": 0.3,
+      "frame_id": "f_personality",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_busan_han_relocate",
+        "source": "한겨레",
+        "source_url": "https://www.hani.co.kr/arti/politics/politics_general/1254224.html",
+        "title": "한동훈, 부산 만덕2동 행정복지센터 전입신고 — '부산 시민을 위해 살기로 결심'",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "한동훈"
+      }
+    },
+    {
+      "id": "PressConference:ev_busan_park_announce",
+      "type": "PressConference",
+      "label": "박민식, '북구갑은 누군가의 거래 대상 아니다 — 주민의 마음만이 나침반' (한동훈 견제)",
+      "ts": "2026-04-09T10:00:00",
+      "sentiment": -0.1,
+      "frame_id": "f_judgement",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_busan_park_announce",
+        "source": "경향신문",
+        "source_url": "https://www.khan.co.kr/article/202604101810011",
+        "title": "박민식, '북구갑은 누군가의 거래 대상 아니다 — 주민의 마음만이 나침반' (한동훈 견제)",
+        "provenance": "perplexity",
+        "applies_to": "single_region",
+        "narrative_kind": null,
+        "speaker": "박민식",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_ppp_jdh_lower_voting_age__busan_buk_gap",
+      "type": "PressConference",
+      "label": "장동혁, '선거 연령 만 16세 하향' 제안 — 응답자 77% 반대 (한국갤럽)",
+      "ts": "2026-02-13T10:00:00",
+      "sentiment": -0.3,
+      "frame_id": "f_judgement",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_lower_voting_age__busan_buk_gap",
+        "source": "국제일보 (연합뉴스 인용)",
+        "source_url": "https://www.kookjeilbo.com/news/article.html?no=98823",
+        "title": "장동혁, '선거 연령 만 16세 하향' 제안 — 응답자 77% 반대 (한국갤럽)",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "PressConference:ev_ppp_jdh_yoon_again__busan_buk_gap",
+      "type": "PressConference",
+      "label": "장동혁, 윤석열 1심 무기징역 후에도 '계엄이 곧 내란 아니다' 절연 거부 — 당내 갈등 격화",
+      "ts": "2026-02-20T10:00:00",
+      "sentiment": -0.5,
+      "frame_id": "f_judgement",
+      "region_id": "busan_buk_gap",
+      "attrs": {
+        "event_id": "ev_ppp_jdh_yoon_again__busan_buk_gap",
+        "source": "조선일보 / 경향신문",
+        "source_url": "https://www.chosun.com/politics/assembly/2026/02/20/5LYCG77CSNDGDCZGYBVBFLYP5A/",
+        "title": "장동혁, 윤석열 1심 무기징역 후에도 '계엄이 곧 내란 아니다' 절연 거부 — 당내 갈등 격화",
+        "provenance": "perplexity",
+        "applies_to": "multi_region",
+        "narrative_kind": "ppp_leadership",
+        "speaker": "장동혁",
+        "party_id": "p_ppp"
+      }
+    },
+    {
+      "id": "Source:s_chosun",
+      "type": "Source",
+      "label": "조선일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_chosun",
+        "name": "조선일보",
+        "url_root": "https://www.chosun.com/",
+        "media_type": "newspaper",
+        "ideology": 0.5
+      }
+    },
+    {
+      "id": "Source:s_donga",
+      "type": "Source",
+      "label": "동아일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_donga",
+        "name": "동아일보",
+        "url_root": "https://www.donga.com/",
+        "media_type": "newspaper",
+        "ideology": 0.4
+      }
+    },
+    {
+      "id": "Source:s_hani",
+      "type": "Source",
+      "label": "한겨레",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_hani",
+        "name": "한겨레",
+        "url_root": "https://www.hani.co.kr/",
+        "media_type": "newspaper",
+        "ideology": -0.4
+      }
+    },
+    {
+      "id": "Source:s_khan",
+      "type": "Source",
+      "label": "경향신문",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_khan",
+        "name": "경향신문",
+        "url_root": "https://www.khan.co.kr/",
+        "media_type": "newspaper",
+        "ideology": -0.4
+      }
+    },
+    {
+      "id": "Source:s_kookje",
+      "type": "Source",
+      "label": "국제일보",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_kookje",
+        "name": "국제일보",
+        "url_root": "https://www.kookjeilbo.com/",
+        "media_type": "newspaper",
+        "ideology": 0.3
+      }
+    },
+    {
+      "id": "Source:s_news1",
+      "type": "Source",
+      "label": "뉴스1",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_news1",
+        "name": "뉴스1",
+        "url_root": "https://www.news1.kr/",
+        "media_type": "wire",
+        "ideology": 0.0
+      }
+    },
+    {
+      "id": "Source:s_ohmy",
+      "type": "Source",
+      "label": "오마이뉴스",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_ohmy",
+        "name": "오마이뉴스",
+        "url_root": "https://www.ohmynews.com/",
+        "media_type": "newspaper",
+        "ideology": -0.5
+      }
+    },
+    {
+      "id": "Source:s_seoul",
+      "type": "Source",
+      "label": "서울신문",
+      "ts": null,
+      "sentiment": null,
+      "frame_id": null,
+      "region_id": null,
+      "attrs": {
+        "source_id": "s_seoul",
+        "name": "서울신문",
+        "url_root": "https://www.seoul.co.kr/",
+        "media_type": "newspaper",
+        "ideology": 0.0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "src": "Contest:busan_buk_gap_2026",
+      "dst": "Election:election_2026_local",
+      "rel": "inElection",
+      "attrs": {}
+    },
+    {
+      "src": "Contest:busan_buk_gap_2026",
+      "dst": "District:busan_buk_gap",
+      "rel": "heldIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_busan_dpk",
+      "dst": "Contest:busan_buk_gap_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_busan_dpk",
+      "dst": "Party:p_indep",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_busan_ppp",
+      "dst": "Contest:busan_buk_gap_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_busan_ppp",
+      "dst": "Party:p_ppp",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_busan_indep_han",
+      "dst": "Contest:busan_buk_gap_2026",
+      "rel": "candidateIn",
+      "attrs": {}
+    },
+    {
+      "src": "Candidate:c_busan_indep_han",
+      "dst": "Party:p_indep",
+      "rel": "belongsTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_han_jeonip",
+      "dst": "Candidate:c_busan_indep_han",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_han_jeonip",
+      "dst": "NarrativeFrame:f_indep_personality",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_jeon_resign",
+      "dst": "NarrativeFrame:f_lee_alliance",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:1",
+      "dst": "Contest:busan_buk_gap_2026",
+      "rel": "publishesPoll",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__busan_buk_gap",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__busan_buk_gap",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_yoon_again__busan_buk_gap",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.7
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__busan_buk_gap",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__busan_buk_gap",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_min_park_revolt__busan_buk_gap",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.5
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__busan_buk_gap",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__busan_buk_gap",
+      "dst": "Source:s_ohmy",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_yt_fake__busan_buk_gap",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.5
+      }
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_us_visit__busan_buk_gap",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_us_visit__busan_buk_gap",
+      "dst": "Source:s_hani",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_ppp_jdh_us_visit__busan_buk_gap",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.6
+      }
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_lower_voting_age__busan_buk_gap",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_ppp_jdh_lower_voting_age__busan_buk_gap",
+      "dst": "Source:s_kookje",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_ppp_lowest_15pct__busan_buk_gap",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_ppp_lowest_15pct__busan_buk_gap",
+      "dst": "Source:s_donga",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PollPublication:ev_ppp_lowest_15pct__busan_buk_gap",
+      "dst": "Party:p_ppp",
+      "rel": "damagesParty",
+      "attrs": {
+        "severity": 0.9
+      }
+    },
+    {
+      "src": "Person:p_jcr",
+      "dst": "Party:p_dem",
+      "rel": "affiliatedTo",
+      "attrs": {}
+    },
+    {
+      "src": "Person:p_jeon_js",
+      "dst": "Party:p_dem",
+      "rel": "affiliatedTo",
+      "attrs": {}
+    },
+    {
+      "src": "Person:p_park_hj",
+      "dst": "Party:p_ppp",
+      "rel": "affiliatedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_han_signal",
+      "dst": "Candidate:c_busan_indep_han",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_han_signal",
+      "dst": "Source:s_khan",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_han_house",
+      "dst": "Candidate:c_busan_indep_han",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_han_house",
+      "dst": "Source:s_seoul",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_busan_han_relocate",
+      "dst": "Candidate:c_busan_indep_han",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_busan_han_relocate",
+      "dst": "Source:s_hani",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_busan_park_announce",
+      "dst": "Candidate:c_busan_ppp",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_busan_park_announce",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_busan_park_announce",
+      "dst": "Source:s_khan",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_pp_proxy_debate",
+      "dst": "Candidate:c_busan_ppp",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_pp_proxy_debate",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_pp_proxy_debate",
+      "dst": "Source:s_hani",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_busan_dpk_jcr_recruit",
+      "dst": "Candidate:c_busan_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_busan_dpk_jcr_recruit",
+      "dst": "Person:p_jcr",
+      "rel": "speakerIs",
+      "attrs": {}
+    },
+    {
+      "src": "PressConference:ev_busan_dpk_jcr_recruit",
+      "dst": "Source:s_hani",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_jeon_resign_signal",
+      "dst": "Candidate:c_busan_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_jeon_resign_signal",
+      "dst": "Person:p_jeon_js",
+      "rel": "speakerIs",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_jeon_resign_signal",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_dpk_postpone_proposal",
+      "dst": "Candidate:c_busan_dpk",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_dpk_postpone_proposal",
+      "dst": "Candidate:c_busan_indep_han",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_dpk_postpone_proposal",
+      "dst": "NarrativeFrame:f_judgement",
+      "rel": "framedBy",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_dpk_postpone_proposal",
+      "dst": "Source:s_chosun",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_park_post_chair_meet",
+      "dst": "Candidate:c_busan_indep_han",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_park_post_chair_meet",
+      "dst": "Candidate:c_busan_ppp",
+      "rel": "about",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_park_post_chair_meet",
+      "dst": "Person:p_park_hj",
+      "rel": "speakerIs",
+      "attrs": {}
+    },
+    {
+      "src": "MediaEvent:ev_busan_park_post_chair_meet",
+      "dst": "Source:s_news1",
+      "rel": "attributedTo",
+      "attrs": {}
+    },
+    {
+      "src": "CohortPrior:busan_ulsan_gyeongnam_ALL",
+      "dst": "District:busan_buk_gap",
+      "rel": "appliesToRegion",
+      "attrs": {}
+    },
+    {
+      "src": "CohortPrior:busan_ulsan_gyeongnam_ALL",
+      "dst": "Party:p_ppp",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.29
+      }
+    },
+    {
+      "src": "CohortPrior:busan_ulsan_gyeongnam_ALL",
+      "dst": "Party:p_dem",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.32
+      }
+    },
+    {
+      "src": "CohortPrior:busan_ulsan_gyeongnam_ALL",
+      "dst": "Party:p_rebuild",
+      "rel": "leansToward",
+      "attrs": {
+        "weight": 0.04
+      }
+    }
+  ],
+  "stats": {
+    "node_count": 43,
+    "edge_count": 62
+  }
+}

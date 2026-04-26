@@ -1,0 +1,23 @@
+{
+  "_meta": {
+    "measured_at": "2026-04-26T12:30+09:00",
+    "cutoff_rule": "education_level contains any of [학사, 대학교, 대졸, 학부, bachelor, 석사, 박사, master, doctor, phd] (case-insensitive) -> educated -> routed to gpt-5.4-mini (LITELLM_MODEL_VOTER_EDUCATED); otherwise -> normal -> routed to gpt-5.4-nano (LITELLM_MODEL_VOTER_NORMAL). Confirmed against policy.json v1.2 + .env at 12:55 KST.",
+    "source_table": "personas_{region_id} (DuckDB politikast.duckdb)"
+  },
+  "seoul_mayor":      {"total": 185228, "educated": 65647, "normal": 119581, "educated_pct": 35.4},
+  "gwangju_mayor":    {"total":  27594, "educated":  8503, "normal":  19091, "educated_pct": 30.8},
+  "daegu_mayor":      {"total":  46934, "educated": 12287, "normal":  34647, "educated_pct": 26.2},
+  "busan_buk_gap":    {"total":   5421, "educated":  1275, "normal":   4146, "educated_pct": 23.5},
+  "daegu_dalseo_gap": {"total":  10617, "educated":  2791, "normal":   7826, "educated_pct": 26.3},
+  "_aggregate_5_region": {
+    "total": 275794,
+    "educated": 90503,
+    "normal": 185291,
+    "educated_pct": 32.8
+  },
+  "_cost_recalc": {
+    "previous_assumption": "50:50 educated:normal",
+    "actual_split_5_region": "32.8 : 67.2 (educated : normal)",
+    "interpretation": "normal(nano)이 우세 -> OpenAI 호출 비용은 50:50 가정 대비 *낮아짐*. mini가 nano보다 token당 비싸므로 educated 비율이 적을수록 총 비용 감소. 50:50 가정 ~$3 -> 약 ~$2.4-2.6 수준 추정 (region별 sample 균등 가정)."
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "generated_at": "2026-04-26T14:57:03+09:00",
+  "source_file": "_workspace/data/scenarios/hill_climbing_target_seoul_n10.json",
+  "distribution": {
+    "n": 10,
+    "by_age_bin": {
+      "20s": 2,
+      "30s": 2,
+      "40s": 2,
+      "50s": 2,
+      "60p": 2
+    },
+    "by_sex": {
+      "남자": 5,
+      "여자": 5
+    },
+    "by_education_class": {
+      "bachelor_plus": 5,
+      "sub_bachelor": 5
+    },
+    "by_education_level": {
+      "4년제 대학교": 4,
+      "2~3년제 전문대학": 1,
+      "대학원": 1,
+      "고등학교": 2,
+      "초등학교": 2
+    },
+    "by_occupation": {
+      "마케팅 전문가": 3,
+      "무직": 3,
+      "교육 및 훈련 사무원": 1,
+      "한식 조리사": 1,
+      "소규모 상점 경영자": 1,
+      "기업 고위 임원": 1
+    },
+    "by_occ_kind": {
+      "white_collar_entry": 1,
+      "unemployed_student_equiv": 1,
+      "white_collar_office": 3,
+      "white_collar_specialist": 1,
+      "blue_collar": 1,
+      "self_employed": 1,
+      "blue_collar_or_unemployed": 1,
+      "homemaker_equiv": 1
+    },
+    "by_district": {
+      "서울-관악구": 1,
+      "서울-중랑구": 1,
+      "서울-성동구": 1,
+      "서울-송파구": 1,
+      "서울-영등포구": 1,
+      "서울-강서구": 1,
+      "서울-강북구": 1,
+      "서울-서초구": 1,
+      "서울-종로구": 1,
+      "서울-은평구": 1
+    },
+    "axes_coverage": {
+      "age_bins": [
+        "20s",
+        "30s",
+        "40s",
+        "50s",
+        "60p"
+      ],
+      "sex": [
+        "남자",
+        "여자"
+      ],
+      "education_classes": [
+        "bachelor_plus",
+        "sub_bachelor"
+      ],
+      "districts_unique": [
+        "서울-강북구",
+        "서울-강서구",
+        "서울-관악구",
+        "서울-서초구",
+        "서울-성동구",
+        "서울-송파구",
+        "서울-영등포구",
+        "서울-은평구",
+        "서울-종로구",
+        "서울-중랑구"
+      ],
+      "occ_kinds": [
+        "blue_collar",
+        "blue_collar_or_unemployed",
+        "homemaker_equiv",
+        "self_employed",
+        "unemployed_student_equiv",
+        "white_collar_entry",
+        "white_collar_office",
+        "white_collar_specialist"
+      ]
+    },
+    "balance_checks": {
+      "sex_balance_5_5": [
+        5,
+        5
+      ],
+      "edu_balance_5_5": [
+        5,
+        5
+      ],
+      "age_bin_counts": {
+        "20s": 2,
+        "30s": 2,
+        "40s": 2,
+        "50s": 2,
+        "60p": 2
+      },
+      "district_unique_count": 10
+    }
+  },
+  "ground_truth_consensus": [
+    {
+      "candidate_id": "c_seoul_dpk",
+      "p_hat": 0.4722602367401123,
+      "variance": 0.000402274657972157,
+      "n_polls": 2,
+      "source_poll_ids": "[\"nesdc-16198\", \"nesdc-16200\"]"
+    },
+    {
+      "candidate_id": "c_seoul_ppp",
+      "p_hat": 0.3559829592704773,
+      "variance": 5.982654784020269e-06,
+      "n_polls": 2,
+      "source_poll_ids": "[\"nesdc-16198\", \"nesdc-16200\"]"
+    }
+  ],
+  "ground_truth_renorm": [
+    {
+      "candidate_id": "c_seoul_dpk",
+      "p_hat_renorm": 0.5701951299024908
+    },
+    {
+      "candidate_id": "c_seoul_ppp",
+      "p_hat_renorm": 0.4298048700975092
+    }
+  ]
+}

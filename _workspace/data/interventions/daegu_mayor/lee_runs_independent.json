@@ -1,0 +1,55 @@
+{
+  "intervention_id": "lee_runs_independent",
+  "title": "Hypothetical Daegu mayor branch: Lee Jin-sook runs as conservative independent",
+  "mode": "counterfactual_prediction",
+  "calibration_profile": "r6_full_frozen_poll_hidden",
+  "frozen_params": true,
+  "one_candidate_per_party": false,
+  "reason": "Pure hypothetical event branch: invert the factual 2026-04-25 withdrawal/support event and model a conservative split. It is not train, validation, or NESDC target data.",
+  "source_urls": [
+    "https://www.chosun.com/politics/politics_general/2026/04/25/FK53IBR3X5FNDOT2LQ445P2YDE/"
+  ],
+  "candidate_patches": [
+    {
+      "op": "upsert",
+      "candidate": {
+        "id": "c_daegu_ind_lee",
+        "candidate_id": "c_daegu_ind_lee",
+        "name": "이진숙",
+        "party": "p_indep",
+        "party_name": "무소속 보수",
+        "withdrawn": false,
+        "background": "전 방송통신위원장. factual branch에서는 2026-04-25 불출마를 선언했지만, 본 intervention에서는 보수 무소속 출마로 가정한다.",
+        "key_pledges": ["보수 정체성", "언론·방송 정책", "좌파 견제"]
+      }
+    }
+  ],
+  "event_patches": [
+    {
+      "op": "add",
+      "event": {
+        "event_id": "ev_cf_daegu_lee_independent_run_hypothetical",
+        "timestep": 2,
+        "type": "hypothetical_candidacy",
+        "target": "c_daegu_ind_lee",
+        "polarity": 0.28,
+        "summary": "가상 사건: 이진숙이 불출마 선언을 뒤집고 보수 무소속 출마를 강행해 국민의힘 표 일부가 분산됨",
+        "source": "hypothetical intervention based on factual withdrawal article",
+        "source_url": "https://www.chosun.com/politics/politics_general/2026/04/25/FK53IBR3X5FNDOT2LQ445P2YDE/"
+      }
+    },
+    {
+      "op": "add",
+      "event": {
+        "event_id": "ev_cf_daegu_conservative_split_hypothetical",
+        "timestep": 3,
+        "type": "vote_split_frame",
+        "target": "c_daegu_ppp_choo",
+        "polarity": -0.18,
+        "summary": "가상 사건: 보수 분열 프레임이 국민의힘 후보의 결집력을 약화시키는 이슈로 부상",
+        "source": "hypothetical intervention",
+        "source_url": null
+      }
+    }
+  ]
+}

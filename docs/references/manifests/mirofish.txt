@@ -1,0 +1,35 @@
+# MiroFish ecosystem (open-source AI swarm prediction engine)
+# 카테고리: MiroFish 자체 + 관련 리뷰/블로그/뉴스
+
+# === Core repos ===
+https://github.com/666ghj/MiroFish
+https://github.com/666ghj/MiroFish/discussions/categories/polls
+https://github.com/666ghj/MiroFish/issues/421
+https://github.com/666ghj/MiroFish/releases
+https://github.com/amadad/mirofish
+https://deepwiki.com/666ghj/MiroFish
+https://mirofish.my
+
+# === Reviews / explanations ===
+https://judyailab.com/ko/posts/mirofish-multi-agent-prediction/
+https://velog.io/@okorion/MiroFish-정리-멀티-에이전트로-현실을-시뮬레이션하는-AI-예측-엔진-6gbmig5n
+https://velog.io/@takuya/mirofish-setup-guide-troubleshooting
+https://dev.to/arshtechpro/mirofish-the-open-source-ai-engine-that-builds-digital-worlds-to-predict-the-future-ki8
+https://www.beitroot.co/blog/mirofish-open-source-swarm-intelligence-engine
+https://topaiproduct.com/2026/03/07/mirofish-just-hit-github-trending-and-its-unlike-any-ai-tool-ive-seen/
+https://managerkim.com/news/2026-03-16-mirofish-ai-swarm-prediction-engine
+https://openclawapi.org/ko/blog/2026-03-17-mirofish-guide
+https://www.myweirdprompts.com/episode/mirofish-agent-simulation-limits/
+
+# === Korean coverage / news ===
+https://kivoloid.notion.site/194512210ea78000bdfed50cc0e95f76
+https://news.hada.io/topic?id=28044
+https://contents.premium.naver.com/aidx/aix/contents/260323171039480wb
+https://s11.hubnews.co.kr/index.php/news/2026031907194246214.32
+https://www.facebook.com/leebisu/posts/-오픈소스-ai-예측-엔진인-mirofish가-핫합니다️-현재-github글로벌-트렌딩-1위-단기간에-star-18000개-포크-1900개-기록/26523443990624409/
+
+# === Social / community ===
+https://www.linkedin.com/posts/anmol-gupta-21875a89_mirofish-simulates-1-million-ai-agents-to-activity-7451591386610540544-a3Uh
+https://www.linkedin.com/posts/zhuohan-yu-a689488b_github-666ghjmirofish-a-simple-and-universal-activity-7437527515876933632-gh5o
+https://www.reddit.com/r/OpenClawInstall/comments/1rwv2kq/mirofish_just_hit_1_on_github_trending_it_spawns/
+https://finance.biggo.com/news/-Z2otJ0BvbjfYyetzrrz

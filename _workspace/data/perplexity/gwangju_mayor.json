@@ -1,0 +1,97 @@
+{
+  "_doc": "Perplexity-sourced KG enrichment for gwangju_mayor. Prediction-only media/poll priors; not train/validation labels.",
+  "region_id": "gwangju_mayor",
+  "fetched_at": "2026-04-26T15:58:00+09:00",
+  "prediction_only": true,
+  "validation_use": "kg_prior_only_not_validation",
+  "sources": [
+    {
+      "source_id": "src_kjmbc_gwangju_20260101",
+      "name": "광주MBC",
+      "url_root": "https://kjmbc.co.kr",
+      "media_type": "broadcaster",
+      "ideology": 0.0
+    },
+    {
+      "source_id": "src_newsis_gwangju_20260101",
+      "name": "뉴시스",
+      "url_root": "https://www.newsis.com",
+      "media_type": "wire",
+      "ideology": 0.0
+    },
+    {
+      "source_id": "src_newstomato_gwangju_20260319",
+      "name": "뉴스토마토",
+      "url_root": "https://www.newstomato.com",
+      "media_type": "newspaper",
+      "ideology": 0.0
+    }
+  ],
+  "people": [
+    {"person_id": "person_min_hyungbae", "name": "민형배", "role": "광산을 국회의원 / 광주시장 후보군", "party_id": "p_dem"},
+    {"person_id": "person_kang_kijung", "name": "강기정", "role": "광주광역시장 / 광주시장 후보군", "party_id": "p_dem"},
+    {"person_id": "person_jung_junho", "name": "정준호", "role": "국회의원 / 광주시장 후보군", "party_id": "p_dem"},
+    {"person_id": "person_moon_in", "name": "문인", "role": "광주 북구청장 / 광주시장 후보군", "party_id": "p_dem"},
+    {"person_id": "person_ahn_taewook", "name": "안태욱", "role": "국민의힘 광주시당위원장 / 광주시장 후보군", "party_id": "p_ppp"},
+    {"person_id": "person_seo_wangjin", "name": "서왕진", "role": "조국혁신당 국회의원 / 광주시장 후보군", "party_id": "p_rebuild"}
+  ],
+  "candidate_pledge_extras": {
+    "c_gwangju_dpk_alt": [
+      "광주MBC/뉴시스/무등일보-코리아리서치 2026-01-01 공표 조사에서 광주시장 후보 선호도 33%로 1위.",
+      "같은 조사에서 민주당 지지층과 조국혁신당 지지층 모두 평균 이상의 선호를 얻었다는 보도."
+    ],
+    "c_gwangju_dpk": [
+      "현직 시장이지만 같은 2026-01-01 공표 조사에서 14%로 보도되어 prediction-only 단일 후보 가정에서는 비활성 대안."
+    ],
+    "c_gwangju_ppp": [
+      "안태욱 국민의힘 광주시당위원장은 같은 조사에서 2%로 보도된 국민의힘 후보군."
+    ],
+    "c_gwangju_rebuild": [
+      "서왕진 조국혁신당 국회의원은 같은 조사에서 1%로 보도된 혁신당 후보군."
+    ]
+  },
+  "candidate_event_facts": [
+    {
+      "event_id": "ev_gwangju_kjmbc_poll_min_leads_20260101",
+      "type": "PollPublication",
+      "ts": "2026-01-01T20:40:00+09:00",
+      "source": "광주MBC",
+      "source_url": "https://kjmbc.co.kr/NewsArticle/1498852",
+      "title": "광주시장 후보 선호도: 민형배 33%, 강기정 14%, 정준호 6%, 문인 5%, 없음·모름 32%",
+      "sentiment": 0.35,
+      "frame_id": "f_progressive_unity",
+      "speaker": "광주MBC",
+      "about": ["c_gwangju_dpk_alt", "c_gwangju_dpk", "c_gwangju_ppp", "c_gwangju_rebuild"],
+      "mentions": ["i_gov_alliance"]
+    },
+    {
+      "event_id": "ev_gwangju_newsis_undecided_20260101",
+      "type": "MediaEvent",
+      "ts": "2026-01-01T18:00:00+09:00",
+      "source": "뉴시스",
+      "source_url": "https://www.newsis.com/view/NISX20260101_0003462213",
+      "title": "부동층 32%와 전략공천 긍정 응답으로 광주시장 경선 불확실성 보도",
+      "sentiment": 0.05,
+      "frame_id": "f_progressive_unity",
+      "about": ["c_gwangju_dpk_alt", "c_gwangju_dpk"],
+      "mentions": ["i_gov_alliance"]
+    },
+    {
+      "event_id": "ev_gwangju_newstomato_integrated_poll_20260319",
+      "type": "PollPublication",
+      "ts": "2026-03-19T06:00:00+09:00",
+      "source": "뉴스토마토",
+      "source_url": "https://www.newstomato.com/ReadNews.aspx?no=1294667",
+      "title": "전남·광주 통합시장 민주당 후보 적합도에서 민형배 28.0%, 강기정 10.0%",
+      "sentiment": 0.25,
+      "frame_id": "f_progressive_unity",
+      "about": ["c_gwangju_dpk_alt", "c_gwangju_dpk"],
+      "mentions": ["i_gov_alliance"]
+    }
+  ],
+  "event_source_links": [
+    {"event_id": "ev_gwangju_kjmbc_poll_min_leads_20260101", "source_id": "src_kjmbc_gwangju_20260101"},
+    {"event_id": "ev_gwangju_newsis_undecided_20260101", "source_id": "src_newsis_gwangju_20260101"},
+    {"event_id": "ev_gwangju_newstomato_integrated_poll_20260319", "source_id": "src_newstomato_gwangju_20260319"}
+  ]
+}

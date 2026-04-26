@@ -1,0 +1,726 @@
+{
+  "scenario_id": "rolling_v2_20260426T054111Z",
+  "region_id": "daegu_dalseo_gap",
+  "contest_id": "daegu_dalseo_gap_2026",
+  "timestep_count": 2,
+  "persona_n": 200,
+  "candidates": [
+    {
+      "id": "c_dalseo_dpk",
+      "name": "서재헌",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_dalseo_ppp_kim",
+      "name": "김민수",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_dalseo_ppp_lee",
+      "name": "이진숙",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_dalseo_ppp_hong",
+      "name": "홍석준",
+      "party": "p_ppp"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "c_dalseo_dpk": 0.0,
+        "c_dalseo_ppp_kim": 1.0,
+        "c_dalseo_ppp_lee": 0.0,
+        "c_dalseo_ppp_hong": 0.0
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.1875
+    },
+    {
+      "timestep": 1,
+      "date": "2026-04-27",
+      "support_by_candidate": {
+        "c_dalseo_dpk": 0.0,
+        "c_dalseo_ppp_kim": 1.0,
+        "c_dalseo_ppp_lee": 0.0,
+        "c_dalseo_ppp_hong": 0.0
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.1875
+    }
+  ],
+  "final_outcome": {
+    "turnout": 1.0,
+    "vote_share_by_candidate": {
+      "c_dalseo_dpk": 0.0,
+      "c_dalseo_ppp_kim": 1.0,
+      "c_dalseo_ppp_lee": 0.0,
+      "c_dalseo_ppp_hong": 0.0
+    },
+    "winner": "c_dalseo_ppp_kim",
+    "n_responses": 200,
+    "n_abstain": 0
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "50s": {
+        "c_dalseo_ppp_kim": 1.0
+      },
+      "40s": {
+        "c_dalseo_ppp_kim": 1.0
+      },
+      "60s+": {
+        "c_dalseo_ppp_kim": 1.0
+      },
+      "20s": {
+        "c_dalseo_ppp_kim": 1.0
+      },
+      "30s": {
+        "c_dalseo_ppp_kim": 1.0
+      }
+    },
+    "by_education": {
+      "고등학교": {
+        "c_dalseo_ppp_kim": 1.0
+      },
+      "2~3년제 전문대학": {
+        "c_dalseo_ppp_kim": 1.0
+      },
+      "4년제 대학교": {
+        "c_dalseo_ppp_kim": 1.0
+      },
+      "중학교": {
+        "c_dalseo_ppp_kim": 1.0
+      },
+      "초등학교": {
+        "c_dalseo_ppp_kim": 1.0
+      },
+      "대학원": {
+        "c_dalseo_ppp_kim": 1.0
+      },
+      "무학": {
+        "c_dalseo_ppp_kim": 1.0
+      }
+    },
+    "by_district": {
+      "대구-달서구": {
+        "c_dalseo_ppp_kim": 1.0
+      }
+    }
+  },
+  "virtual_interviews": [
+    {
+      "persona_id": "95fa02296f274d9c83663a19c3ff4fa6",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구는 우리 당이 중심을 지켜야 하는 곳이고, 김민수 후보가 본경선에서 우위를 점하고 있으니 믿고 찍어주는 게 도리라 생각합니다.",
+      "key_factors": [
+        "지역 내 전통적인 보수 지지 성향",
+        "김민수 후보 본경선 우위",
+        "안정적인 지역 정치권 유지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b371ec69591f47a0ae378c74c17b21d6",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구는 늘 해오던 대로 보수 정당을 지지하는 것이 마음 편하고, 이번에 경선에서 우위를 점한 후보가 가장 믿음직스럽습니다.",
+      "key_factors": [
+        "지역 정서",
+        "보수 지지 기반",
+        "경선 결과 존중"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "31e88fb30e924b54ad33ea8dc613d34d",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구는 늘 우리 당을 지지해왔고, 김민수 후보가 경선에서 우위를 점하고 있으니 믿고 찍어야지요.",
+      "key_factors": [
+        "지역 정서와 보수 지지 성향",
+        "국민의힘 본경선 우위",
+        "안정적인 지역 정치권 유지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "6baff1b6a4054390a6105ca1625c0d16",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 사람으로서 오랫동안 보수 정당을 지지해 왔고, 이번에도 우리 동네를 위해 일할 국민의힘 후보를 선택하는 것이 당연하다고 생각합니다.",
+      "key_factors": [
+        "지역 보수 정서",
+        "국민의힘 지지 성향",
+        "후보의 당내 경선 우위"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "a59b1676d96a4bf9924b4abb278b4123",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 사람으로서 우리 당 후보가 경선에서 확실히 앞서고 있으니 고민할 필요 없이 찍어야지.",
+      "key_factors": [
+        "보수 성향",
+        "당 지지세",
+        "압도적 여론조사 우위"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5d1d70a3fafb4e3babac97ca8b9c123b",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역 정서와 보수적 가치를 고려할 때, 당내 본경선에서 압도적 우위를 점한 김민수 후보가 실리적이고 합리적인 선택이라 판단했습니다.",
+      "key_factors": [
+        "보수 정당 후보에 대한 지역적 선호",
+        "본경선 압도적 지지율 및 안정성",
+        "장남으로서의 전통적 가치관 중시"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "0ad53acd585a4063a7a3a00cafab7724",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "우리 지역 정서상 보수 정당 후보가 안정적이고, 김민수 후보가 본경선에서 우위를 점하고 있어 실질적인 선택지라고 생각합니다.",
+      "key_factors": [
+        "지역구 정치 성향",
+        "경선 우위",
+        "안정적인 지역 발전 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "9e412c56e19a4492be3f82b5875187b1",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 사람이라면 정당 보고 뽑는 것이 평생의 습관이고, 여론조사에서도 김민수 후보가 앞서가니 고민할 것 없이 국민의힘 후보에게 투표합니다.",
+      "key_factors": [
+        "보수 정당에 대한 강한 신뢰",
+        "김민수 후보의 경선 우위",
+        "지역 정서와 관습적 투표"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "efe74f758ec244eaae7d2d747a479d8d",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "오랫동안 살아온 대구 정서상 우리 당의 후보가 확실히 경선을 통과했으니 힘을 실어주는 것이 도리라고 생각합니다.",
+      "key_factors": [
+        "보수 정당 지지세",
+        "경선 결과 존중",
+        "지역 안정성 우선"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "3033745594ba4016a301f7a60a15ff5c",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역 정서상 보수 후보를 지지하는 것이 당연하고, 여론조사에서도 압도적인 우위를 보이는 김민수 후보가 가장 신뢰가 갑니다.",
+      "key_factors": [
+        "지역 보수 성향",
+        "압도적 여론조사 지지율",
+        "안정적인 정치 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "cab7fad0e6ed4e46b5e3a386142815ad",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "평생을 대구에서 살아온 사람으로서 우리 동네는 당연히 보수 정당 후보가 맡아서 안정적으로 이끌어야 한다고 생각합니다.",
+      "key_factors": [
+        "보수 정당에 대한 높은 신뢰",
+        "여론조사상 압도적인 지지율",
+        "안정적인 지역 운영 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d0ee6d5602a149e9b8b43331d14ef8df",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "우리 동네는 예전부터 보수 성향이 강하고, 김민수 후보가 본경선에서 우위를 점하고 있어 믿고 뽑으려 합니다.",
+      "key_factors": [
+        "보수 성향 결집",
+        "경선 우위",
+        "지역 정서 부합"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "60febe9a3f5641ebb788d5980be23887",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구는 늘 해오던 당을 밀어줘야지, 김민수 후보가 여론도 좋고 우리 같은 보수 성향 사람 마음에는 딱 맞지 않겠나.",
+      "key_factors": [
+        "보수 지지 성향",
+        "여론조사 우위",
+        "당 중심의 선택"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "8f83af386ac146e5976b2d9266eee48c",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "평생 철길을 지켜온 사람으로서 우리 지역에서 확실히 보수 가치를 지키고 당의 본경선에서 우위를 점한 김민수 후보를 지지하는 것이 당연한 선택입니다.",
+      "key_factors": [
+        "보수 지지 성향",
+        "당내 본경선 우위",
+        "안정적인 지역 정책 지향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "ddb78416b6b049149de059d1d317b7f3",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "산업 현장의 원칙을 중시하는 보수적 가치관과 압도적인 여론조사 지지세를 고려하여 당선 가능성이 확실한 후보를 선택했습니다.",
+      "key_factors": [
+        "보수 정당에 대한 지역적 신뢰",
+        "압도적인 여론조사 지지율",
+        "안정적인 지역 정치권 유지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "51701e6d5d224139a2c122e1d0263afc",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구는 보수 지지세가 강하고, 공천 경쟁에서 확실하게 우위를 점한 후보를 찍는 것이 지역 정서에 맞는 선택이라 생각합니다.",
+      "key_factors": [
+        "지역 내 압도적인 국민의힘 지지 성향",
+        "김민수 후보의 경선 우위 확보",
+        "실질적인 정권 안정론 지지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "26bb2c0101b94364a8925976291b9b7d",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역의 정서와 현 상황을 고려할 때, 본경선에서 압도적 지지를 받는 김민수 후보가 우리 지역을 안정적으로 대변할 적임자라고 생각합니다.",
+      "key_factors": [
+        "여론조사 압도적 우위",
+        "대구 지역 보수 정서",
+        "당내 본경선 지지세"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "19ea2c3dd5004980b034ed546735977e",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 사람으로서 우리 지역에서 힘 있는 여당 후보가 되어야 동네 발전도 되고 마음이 편안할 것 같아서 선택했습니다.",
+      "key_factors": [
+        "여당 후보 지지",
+        "지역 발전 기대",
+        "변함없는 보수 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "8c7ba1ee6c1c4bf88d570cdfce5eb3c0",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역 정서상 보수 후보를 지지하는 경향이 강하고, 여론조사에서 압도적인 지지를 받고 있는 김민수 후보가 가장 신뢰가 갑니다.",
+      "key_factors": [
+        "지역 내 강한 보수 지지 성향",
+        "여론조사 압도적 우위",
+        "지역 안정감 중시"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "de49abcf3bf14770ae0bb8ef2531bf8e",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역의 정서와 본경선에서 압도적인 지지를 받고 있는 김민수 후보가 실질적인 지역 발전을 이끌 적임자라고 생각합니다.",
+      "key_factors": [
+        "보수 지지 기반의 안정성",
+        "여론조사상의 압도적 우위",
+        "지역 정서와의 부합"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "f4c12574e19047159ea24b0eccebf564",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 사람이라면 당연히 우리 당 후보를 밀어줘야지, 살림 사는 마음으로 믿음직한 사람을 뽑아야겠다 싶어 선택했어.",
+      "key_factors": [
+        "보수 지지 성향",
+        "지역 정서",
+        "후보 적합도"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "381b5d44eac94c099d156b73d02abcb5",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역 정서와 보수적 가치를 중시하는 분위기 속에서 당내 경선에서 압도적인 우위를 점한 김민수 후보가 가장 신뢰가 갑니다.",
+      "key_factors": [
+        "당내 경선 압도적 지지",
+        "지역 정서 부합",
+        "안정적인 정치적 선택"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "9a80679096d24095b0834f4bb082de1e",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역의 정서와 보수적 가치를 대변하며, 당내 경선에서 압도적 지지를 받는 후보를 선택하는 것이 가장 안정적이라 판단했습니다.",
+      "key_factors": [
+        "보수 정당 지지",
+        "당내 경선 압도적 우위",
+        "지역적 안정을 중시하는 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "dc09d1644a844f4993795b8ddcc8bcf8",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역 정서상 보수 후보에 대한 신뢰가 압도적이며, 여론조사에서 사실상 단독 우위를 보이는 김민수 후보가 성서산업단지 지역 경제 활성화에 가장 적합하다고 판단함.",
+      "key_factors": [
+        "보수 지지 성향",
+        "여론조사 지지율",
+        "지역 경제 발전 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "209b0298be4143848e26084cebab5715",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "평생 보수를 지지해온 지역 정서와 더불어, 경선에서 압도적인 우위를 보인 김민수 후보가 우리 동네를 가장 안정적으로 대변할 인물이라 판단됩니다.",
+      "key_factors": [
+        "지역 보수 정당 지지 성향",
+        "경선 결과 및 후보 지지도",
+        "안정적인 지역 발전 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d05fb09b381f4f28ae0aa6dd01494007",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "오랫동안 지켜온 보수의 가치를 믿으며, 경선에서 입증된 후보를 선택하는 것이 가장 안정적인 길이라 생각합니다.",
+      "key_factors": [
+        "보수 지지 성향",
+        "경선 결과 신뢰",
+        "안정적인 지역 행정"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d4f69be0fcdc40f0983ba428b0e42d1d",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역의 정서와 당 지지세를 고려할 때, 당 경선에서 확실한 우위를 점한 후보를 찍는 것이 당연합니다.",
+      "key_factors": [
+        "당내 경선 우위",
+        "지역 보수 결집",
+        "안정적인 정치 지향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "6c254fc069e648d68c7e55f6e264d810",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "평생 대구에서 살아오며 우리 지역과 당을 지키는 것이 가장 중요하다고 생각하기 때문입니다.",
+      "key_factors": [
+        "지역 기반 보수 정당 지지",
+        "김민수 후보의 본경선 우위",
+        "안정적인 가정을 지키고자 하는 가치관"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "6e62e65228944be68582b7c59aa3ad49",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역 정서상 보수 후보를 지지하는 것이 당연하며, 경선에서 우위를 보인 김민수 후보가 가장 신뢰할 만합니다.",
+      "key_factors": [
+        "지역 정당 선호도",
+        "경선 결과 반영",
+        "안정적인 보수 후보 지지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "2bb976956af041868219a3941920f19d",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구에서 평생 살아온 입장에서 우리 지역은 보수 정당의 가치를 지키는 것이 무엇보다 중요하며, 김민수 후보가 본경선에서 확실한 지지를 받고 있어 신뢰가 갑니다.",
+      "key_factors": [
+        "보수 정당 후보에 대한 지지",
+        "본경선 결과 및 후보 인지도",
+        "지역 정서 반영"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "f41d7a317a1247f7b9d64618e713acc6",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "평소 원칙과 질서를 중요시하는 제 가치관에 비추어 볼 때, 보수 정당의 후보로서 본경선에서 우위를 점한 김민수 후보가 지역 발전을 이끌 적임자라고 생각합니다.",
+      "key_factors": [
+        "지역 정서와 일치하는 당적",
+        "본경선에서의 압도적 우위",
+        "원칙과 절차를 중시하는 성향"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "478a18eea4b548cca1bd1caa0f905e60",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역 정서상 보수 후보를 지지하는 것이 익숙하고, 여론조사에서 압도적인 지지를 받고 있는 김민수 후보가 가장 신뢰가 갑니다.",
+      "key_factors": [
+        "지역 내 강한 보수 지지 성향",
+        "여론조사상의 압도적 우위",
+        "안정적인 지역 대표성에 대한 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "3295f3bbb7c7445f81f502140a493eba",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역의 정서와 현직 기술자로서의 가치관을 고려할 때, 당내 경선에서 압도적 지지를 받는 후보를 선택하는 것이 가장 안정적인 선택이라고 판단됩니다.",
+      "key_factors": [
+        "여론조사 압도적 우위",
+        "대구 지역 보수 정서",
+        "안정적인 지역 정치권 유지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "f2952463800048eebd947348734b95e7",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 달서구의 보수적인 지역 정서와 국민의힘 후보에 대한 압도적인 신뢰를 바탕으로 당선 가능성이 확실한 후보를 선택했습니다.",
+      "key_factors": [
+        "보수 성향의 지역 정서",
+        "국민의힘 본경선 우위",
+        "지역 내 압도적인 여론조사 지지율"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "de7287397278451bb1ddf1016ddb3c50",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "우리 대구 사람은 평생 변함없이 국민의힘을 지지해왔고, 김민수 후보가 경선에서 힘을 얻었으니 당연히 밀어줘야지.",
+      "key_factors": [
+        "경상도 지역 보수 정당 지지 성향",
+        "경선 승리 후보에 대한 신뢰",
+        "동네 민심 및 관례 중시"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7382b2bba88c4ffeb1e8550df2a20637",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역의 정서와 국민의힘 경선 결과를 고려했을 때 당 안정성에 기여할 김민수 후보가 가장 적합하다고 판단했습니다.",
+      "key_factors": [
+        "국민의힘 경선 우위",
+        "지역 정서 및 당 지지 기반",
+        "안정적인 행정 지원 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "ed0daac15f3f45e3924ff34dd279380b",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 사람으로서 우리 동네는 무조건 국민의힘 후보를 찍어야 마음이 편하지, 다른 당은 쳐다보지도 않아.",
+      "key_factors": [
+        "지역 정서상 보수 후보 선호",
+        "김민수 후보의 경선 우위",
+        "안정적인 동네 분위기 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "20ee909f718d46c4bed69879884f22bf",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역의 정치적 성향과 보수 정당 후보에 대한 지지 흐름을 고려하여 김민수 후보를 선택했습니다.",
+      "key_factors": [
+        "보수 우세 지역 정서",
+        "여론조사 압도적 지지율",
+        "정치적 안정감 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "1bbf93270ec345c69a28e3adef85f08e",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "평생 살아온 이곳 대구에서 보수 정당의 후보가 가장 믿음직하고, 여론조사에서도 압도적인 지지를 받고 있어 선택했습니다.",
+      "key_factors": [
+        "보수 정당 지지",
+        "여론조사 우위",
+        "지역 정서 부합"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "c9454905483240c1bbe463f56cc03819",
+      "persona_summary": "",
+      "vote": "c_dalseo_ppp_kim",
+      "reason": "대구 지역의 정서와 부모님의 가르침을 고려했을 때, 본경선에서 압도적 우위를 점한 국민의힘 김민수 후보를 선택하는 것이 당연한 선택입니다.",
+      "key_factors": [
+        "보수적인 가풍과 지역 정서",
+        "국민의힘 후보 본경선 우위",
+        "개인의 정치적 안정 지향"
+      ],
+      "timestep": 2
+    }
+  ],
+  "kg_events_used": [
+    {
+      "event_id": "ev_dalseo_choo_out",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 2
+    },
+    {
+      "event_id": "ev_dalseo_lee_jinsuk_out",
+      "type": "MediaEvent",
+      "target": "c_dalseo_ppp_lee",
+      "timestep": 2
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-26T05:41:15.420011+00:00",
+    "policy_version": "v2.0_validation_first",
+    "env": "dev",
+    "llm_cache_enabled": true,
+    "voter_stats": {
+      "calls": 640,
+      "parse_fail": 0,
+      "abstain": 0,
+      "latency_ms_sum": 1272077.9422480133,
+      "calls_by_model": {
+        "nano": 471,
+        "sonnet": 40,
+        "mini": 129
+      },
+      "mean_latency_ms": 1987.6,
+      "parse_fail_rate": 0.0,
+      "abstain_rate": 0.0
+    },
+    "pool_stats": {
+      "provider": "gemini",
+      "model": "gemini/gemini-3.1-flash-lite-preview",
+      "per_key": [
+        {
+          "key_index": 0,
+          "current_rpm": 96,
+          "limit_rpm": 500,
+          "total_calls": 255,
+          "total_429": 0
+        },
+        {
+          "key_index": 1,
+          "current_rpm": 96,
+          "limit_rpm": 500,
+          "total_calls": 254,
+          "total_429": 0
+        },
+        {
+          "key_index": 2,
+          "current_rpm": 97,
+          "limit_rpm": 500,
+          "total_calls": 254,
+          "total_429": 0
+        },
+        {
+          "key_index": 3,
+          "current_rpm": 96,
+          "limit_rpm": 500,
+          "total_calls": 254,
+          "total_429": 0
+        },
+        {
+          "key_index": 4,
+          "current_rpm": 96,
+          "limit_rpm": 500,
+          "total_calls": 253,
+          "total_429": 0
+        }
+      ],
+      "cache_hits": 2,
+      "cache_misses": 1278,
+      "total_calls": 1278,
+      "n_keys": 5,
+      "iam_mode": false,
+      "cost_usd": {
+        "openai": 0.0,
+        "anthropic": 0.0,
+        "gemini": 0.0,
+        "vertex_ai": 0.0,
+        "azure": 0.0,
+        "bedrock": 0.0,
+        "groq": 0.0,
+        "openrouter": 0.0
+      },
+      "cost_thresholds": {
+        "openai": 50.0,
+        "anthropic": 20.0,
+        "gemini": 5.0,
+        "vertex_ai": 5.0,
+        "azure": 50.0,
+        "bedrock": 20.0,
+        "groq": 50.0,
+        "openrouter": 50.0
+      },
+      "cost_tracking_enabled": false,
+      "cache_hit_rate": 0.0016
+    },
+    "actual_keys_used": 5,
+    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
+    "effective_provider": "gemini",
+    "official_poll_validation": {
+      "target_series": "missing",
+      "as_of_date": null,
+      "method_version": "none",
+      "cutoff_ts": "2026-04-26T00:00:00+09:00",
+      "source_poll_ids": [],
+      "metrics": {
+        "mae": null,
+        "rmse": null,
+        "margin_error": null,
+        "leader_match": null
+      },
+      "by_candidate": {}
+    },
+    "finished_at": "2026-04-26T05:43:58.724846+00:00",
+    "wall_seconds": 163.3,
+    "original_scenario_id": "daegu_dalseo_gap_2026",
+    "finalized_at": "2026-04-26T05:44:17.154137+00:00"
+  }
+}

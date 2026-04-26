@@ -1,0 +1,126 @@
+{
+  "scenario_id": "daegu_dalseo_gap_2026__mock",
+  "region_id": "daegu_dalseo_gap",
+  "contest_id": "daegu_dalseo_gap_2026",
+  "timestep_count": 1,
+  "persona_n": 20,
+  "candidates": [
+    {
+      "id": "c_dalseo_dpk",
+      "name": "서재헌",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_dalseo_ppp_kim",
+      "name": "김민수",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_dalseo_ppp_lee",
+      "name": "이진숙",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_dalseo_ppp_hong",
+      "name": "홍석준",
+      "party": "p_ppp"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "c_dalseo_dpk": 0.65,
+        "c_dalseo_ppp_kim": 0.1,
+        "c_dalseo_ppp_lee": 0.2,
+        "c_dalseo_ppp_hong": 0.05
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.05625000000000001
+    }
+  ],
+  "final_outcome": {
+    "turnout": 0.95,
+    "vote_share_by_candidate": {
+      "c_dalseo_dpk": 0.3157894736842105,
+      "c_dalseo_ppp_kim": 0.15789473684210525,
+      "c_dalseo_ppp_lee": 0.3157894736842105,
+      "c_dalseo_ppp_hong": 0.21052631578947367
+    },
+    "winner": "c_dalseo_dpk",
+    "n_responses": 20,
+    "n_abstain": 1
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "20s": {
+        "c_dalseo_ppp_hong": 0.75,
+        "c_dalseo_ppp_lee": 0.25
+      },
+      "60s+": {
+        "c_dalseo_dpk": 0.75,
+        "c_dalseo_ppp_lee": 0.25
+      },
+      "40s": {
+        "c_dalseo_dpk": 0.6666666666666666,
+        "c_dalseo_ppp_kim": 0.3333333333333333
+      },
+      "50s": {
+        "c_dalseo_ppp_lee": 0.6,
+        "c_dalseo_ppp_hong": 0.2
+      },
+      "30s": {
+        "c_dalseo_ppp_lee": 0.25,
+        "c_dalseo_dpk": 0.25,
+        "c_dalseo_ppp_kim": 0.5
+      }
+    },
+    "by_education": {
+      "2~3년제 전문대학": {
+        "c_dalseo_ppp_hong": 0.3333333333333333,
+        "c_dalseo_ppp_lee": 0.3333333333333333,
+        "c_dalseo_dpk": 0.16666666666666666,
+        "c_dalseo_ppp_kim": 0.16666666666666666
+      },
+      "중학교": {
+        "c_dalseo_dpk": 0.3333333333333333,
+        "c_dalseo_ppp_lee": 0.6666666666666666
+      },
+      "고등학교": {
+        "c_dalseo_dpk": 0.6,
+        "c_dalseo_ppp_lee": 0.4
+      },
+      "대학원": {
+        "c_dalseo_dpk": 1.0
+      },
+      "4년제 대학교": {
+        "c_dalseo_ppp_hong": 0.4,
+        "c_dalseo_ppp_kim": 0.4
+      }
+    },
+    "by_district": {
+      "대구-달서구": {
+        "c_dalseo_ppp_hong": 0.2,
+        "c_dalseo_dpk": 0.3,
+        "c_dalseo_ppp_lee": 0.3,
+        "c_dalseo_ppp_kim": 0.15
+      }
+    }
+  },
+  "virtual_interviews": [],
+  "kg_events_used": [],
+  "meta": {
+    "features": [
+      "kg_retrieval"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-26T02:27:53.439575+00:00",
+    "voter_stats": {
+      "calls": 40,
+      "parse_fail": 0,
+      "abstain": 1
+    },
+    "finished_at": "2026-04-26T02:27:53.456090+00:00"
+  }
+}

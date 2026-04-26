@@ -1,0 +1,866 @@
+{
+  "scenario_id": "daegu_mayor_2026",
+  "region_id": "daegu_mayor",
+  "contest_id": "daegu_mayor_2026",
+  "timestep_count": 1,
+  "persona_n": 200,
+  "candidates": [
+    {
+      "id": "c_daegu_ppp_choo",
+      "name": "추경호",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_daegu_ppp_yoo",
+      "name": "유영하",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_daegu_dpk",
+      "name": "김부겸",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_daegu_ourrep",
+      "name": "조원진",
+      "party": "p_ourrep"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "c_daegu_ppp_choo": 0.47058823529411764,
+        "c_daegu_ppp_yoo": 0.0,
+        "c_daegu_dpk": 0.5294117647058824,
+        "c_daegu_ourrep": 0.0
+      },
+      "turnout_intent": 0.99,
+      "consensus_var": 0.0629325259515571
+    }
+  ],
+  "final_outcome": {
+    "turnout": 0.99,
+    "vote_share_by_candidate": {
+      "c_daegu_ppp_choo": 0.25757575757575757,
+      "c_daegu_ppp_yoo": 0.0,
+      "c_daegu_dpk": 0.7424242424242424,
+      "c_daegu_ourrep": 0.0
+    },
+    "winner": "c_daegu_dpk",
+    "n_responses": 200,
+    "n_abstain": 2
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "40s": {
+        "c_daegu_dpk": 1.0
+      },
+      "20s": {
+        "c_daegu_ppp_choo": 0.2692307692307692,
+        "c_daegu_dpk": 0.7307692307692307
+      },
+      "30s": {
+        "c_daegu_dpk": 0.4594594594594595,
+        "c_daegu_ppp_choo": 0.5135135135135135
+      },
+      "50s": {
+        "c_daegu_dpk": 0.9705882352941176
+      },
+      "60s+": {
+        "c_daegu_ppp_choo": 0.4098360655737705,
+        "c_daegu_dpk": 0.5901639344262295
+      }
+    },
+    "by_education": {
+      "고등학교": {
+        "c_daegu_dpk": 0.8113207547169812,
+        "c_daegu_ppp_choo": 0.18867924528301888
+      },
+      "4년제 대학교": {
+        "c_daegu_ppp_choo": 0.22413793103448276,
+        "c_daegu_dpk": 0.7758620689655172
+      },
+      "2~3년제 전문대학": {
+        "c_daegu_dpk": 0.6976744186046512,
+        "c_daegu_ppp_choo": 0.2558139534883721
+      },
+      "초등학교": {
+        "c_daegu_ppp_choo": 0.6666666666666666,
+        "c_daegu_dpk": 0.3333333333333333
+      },
+      "무학": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "중학교": {
+        "c_daegu_dpk": 0.8571428571428571,
+        "c_daegu_ppp_choo": 0.14285714285714285
+      },
+      "대학원": {
+        "c_daegu_dpk": 0.8571428571428571,
+        "c_daegu_ppp_choo": 0.14285714285714285
+      }
+    },
+    "by_district": {
+      "대구-남구": {
+        "c_daegu_dpk": 0.6842105263157895,
+        "c_daegu_ppp_choo": 0.2631578947368421
+      },
+      "대구-북구": {
+        "c_daegu_ppp_choo": 0.27586206896551724,
+        "c_daegu_dpk": 0.7241379310344828
+      },
+      "대구-달성군": {
+        "c_daegu_ppp_choo": 0.34782608695652173,
+        "c_daegu_dpk": 0.6521739130434783
+      },
+      "대구-서구": {
+        "c_daegu_ppp_choo": 0.3076923076923077,
+        "c_daegu_dpk": 0.6923076923076923
+      },
+      "대구-동구": {
+        "c_daegu_ppp_choo": 0.18518518518518517,
+        "c_daegu_dpk": 0.8148148148148148
+      },
+      "대구-달서구": {
+        "c_daegu_ppp_choo": 0.2608695652173913,
+        "c_daegu_dpk": 0.7391304347826086
+      },
+      "대구-수성구": {
+        "c_daegu_dpk": 0.7777777777777778,
+        "c_daegu_ppp_choo": 0.19444444444444445
+      },
+      "대구-군위군": {
+        "c_daegu_ppp_choo": 1.0
+      },
+      "대구-중구": {
+        "c_daegu_dpk": 1.0
+      }
+    }
+  },
+  "virtual_interviews": [
+    {
+      "persona_id": "e926503f5cef4001bdd463588689cfcc",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "대구 사람으로서 보수 정당에 섭섭한 마음이 크고, 김부겸 후보가 우리 지역을 위해 진심으로 일할 것 같아 이번엔 마음을 바꿨습니다.",
+      "key_factors": [
+        "국민의힘 정당 지지율 하락",
+        "김부겸 후보의 통합과 탕평 메시지",
+        "생활고와 민생 해결을 향한 변화 열망"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "93d0b234a7914f2f80c8bfb6b58b2bf4",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "평생 대구에서 보수만 찍었지만, 요즘 국민의힘 돌아가는 꼴을 보니 답답하고 살림살이도 팍팍해서 이번엔 일 잘하고 통합을 외치는 김부겸 후보에게 마음이 기웁니다.",
+      "key_factors": [
+        "국민의힘 지지율 하락 및 실망감",
+        "김부겸의 통합 및 탕평 이미지",
+        "민주당 의원들의 대구 집중 지원 효과"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "edbb55037525474abf752d2362fcc92b",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "화물차 운전하며 하루하루 버티는 입장에서, 정권 심판론과 먹고사는 문제 해결을 위해 이번엔 당을 떠나 인물을 보고 투표하려 합니다.",
+      "key_factors": [
+        "장동혁 당대표 및 국민의힘 지지율 급락",
+        "김부겸의 통합·탕평 및 대구 집중 공략",
+        "실질적인 민생 경제 개선에 대한 갈증"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "bd70c6d551214f04a3456c35d5060f50",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "대구 지역의 변화를 갈망하는 중도적 시각과 김부겸 후보의 통합적 리더십에 신뢰가 갑니다.",
+      "key_factors": [
+        "김부겸 후보의 통합 및 탕평 정치 공약",
+        "국민의힘 정당 지지율 하락과 정권 심판론",
+        "지역 경제 발전을 위한 새로운 변화의 필요성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "5e36cfe6ec87430389caaf9aa5ba15e1",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "정권심판론과 함께 대구의 발전을 위해 당적을 떠나 실질적인 변화와 통합의 리더십을 보여주는 김부겸 후보에게 마음이 기웁니다.",
+      "key_factors": [
+        "정권심판 여론",
+        "김부겸의 통합/탕평 메시지",
+        "지역 경제 발전에 대한 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "8a873488056346899bfe476a84304166",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "대구 사람으로서 평생 보수 정당을 지지해왔고, 경제 살림을 잘 안다는 추경호 후보를 믿고 뽑을 생각입니다.",
+      "key_factors": [
+        "보수 정당에 대한 오랜 신뢰",
+        "경제 관료 출신의 전문성",
+        "지역 정서와 보수적 가치관"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "6189363d8c7a414f94a6091cceca142a",
+      "persona_summary": "",
+      "vote": null,
+      "reason": "LLM 응답 파싱 실패 — 기권 처리",
+      "key_factors": [
+        "llm_error"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "83b40d15ae0f4dba96e49a2b3cd78aad",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "달성군에서 오래 살며 지켜보니 우리 동네 발전도 중요하고, 이번에는 중앙에서 힘 좀 써본 사람이 대구 살림도 제대로 챙길 것 같아서 김부겸 후보에게 마음이 기우네요.",
+      "key_factors": [
+        "김부겸의 지역 내 인지도 및 무게감",
+        "국민의힘 지지율 하락과 정권 심판론",
+        "실질적인 대구 지역 경제 발전 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "9962b187b2964c0587d329fd056cf612",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "살림을 사는 사람으로서 나라와 지역이 시끄러운 것보다 김부겸 후보처럼 사람 좋고 일 잘하는 사람이 나서서 화합을 이끌어주길 바라는 마음입니다.",
+      "key_factors": [
+        "김부겸 후보의 통합과 탕평 메시지",
+        "국민의힘의 지속적인 실망스러운 행보",
+        "지역 발전을 위한 실질적 변화 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "8a86a1cc8da54f02a2a3df4d21664736",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "평생 대구에 살았지만, 요즘 정치를 보면 나라가 너무 어려운데 김부겸 후보가 통합하고 화합해서 우리네 살림살이 좀 편하게 해줄 것 같아 기대를 걸어봅니다.",
+      "key_factors": [
+        "김부겸 후보의 통합과 탕평 메시지",
+        "국민의힘에 대한 실망감",
+        "대구 지역 경제 발전을 위한 새로운 변화 갈망"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "1c836863b4584cab9774e805fe7ba878",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "국민의힘에 대한 실망감이 커진 상황에서, 대구를 잘 알고 진정성 있게 통합을 외치는 김부겸 후보가 살림살이를 더 잘 챙겨줄 것이라는 기대가 생겼습니다.",
+      "key_factors": [
+        "국민의힘 지지율 하락 및 실망",
+        "김부겸 후보의 통합과 탕평 행보",
+        "대구 지역 경제 및 생활 개선 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "0e892547f39649f68e7a238f4953d5c5",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "경제적 어려움과 현 정권의 실망스러운 행보 속에서, 대구 출신으로 통합을 강조하는 김부겸 후보가 침체된 지역 분위기를 바꿀 적임자라고 판단했습니다.",
+      "key_factors": [
+        "장동혁 대표 방미 논란 등 정권 심판 정서",
+        "김부겸 후보의 통합과 탕평 행보에 대한 신뢰",
+        "생활고 해결 및 지역 경제 활성화를 위한 변화 필요성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "7480e8b57a7c44689057bfd5f99eeb33",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "현장에서 불량률 0.1%를 잡기 위해 타협하지 않는 성격상, 정체된 지역 정치에 실무적 능력을 갖춘 변화가 필요하다고 판단했습니다.",
+      "key_factors": [
+        "김부겸의 통합 및 탕평 메시지",
+        "국민의힘 정당 지지율 하락",
+        "실무 중심의 정당 운영 및 균형 발전 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "9f497d01a5064e439f66a49aa7d58555",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "오랫동안 보수 정당을 지지해왔지만, 최근의 어수선한 정국과 국민의힘의 리더십 부재를 보며 대구와 나라의 발전을 위해 일할 수 있는 검증된 인물이 필요하다고 생각하게 되었습니다.",
+      "key_factors": [
+        "김부겸 후보의 국정 경험과 통합 능력",
+        "국민의힘에 대한 실망감과 정권 심판론",
+        "독립적인 시각으로 변화를 추구하는 성향"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "8994229206b746a78e7366b55d0529f1",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "국민의힘의 연이은 실책과 낮은 지지율에 실망했고, 우리 지역인 달성군을 포함한 대구 발전을 위해 통합과 탕평을 강조하는 김부겸 후보의 실질적인 행보가 더 설득력 있게 다가왔습니다.",
+      "key_factors": [
+        "국민의힘 정당 지지율 하락 및 장동혁 리스크",
+        "김부겸 후보의 통합/탕평 정치 행보",
+        "지역 경제 발전을 위한 실무 중심의 리더십 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "c1f3ae75afa347f4a637a539491aecf3",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "대구 지역의 정체된 분위기를 바꾸고, 실질적인 지역 발전을 이끌어낼 수 있는 검증된 행정 전문가인 김부겸 후보의 통합 행보에 신뢰가 갑니다.",
+      "key_factors": [
+        "김부겸 후보의 통합 및 탕평 메시지",
+        "국민의힘 정당 지지도 하락 및 정권 심판론",
+        "경제 전문성 및 실질적인 대구 균형발전 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "7aa74f64fe6e470280ac0e6722fd3362",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "국민의힘의 실망스러운 행보와 달리 김부겸 후보가 보여주는 통합과 탕평의 메시지가 지역 발전의 새로운 대안이 될 것이라는 기대감이 큽니다.",
+      "key_factors": [
+        "국민의힘 정당 지지도 급락 및 실정",
+        "김부겸 후보의 통합과 탕평 메시지",
+        "지역 경제 발전을 위한 새로운 변화 갈망"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "a2515106f1d444f7920bedd258bb335b",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "경제적 어려움 속에 정권 심판론에 공감하며, 지역주의를 넘어 실질적인 변화와 통합을 내세운 김부겸 후보의 행보에 기대를 걸기로 했습니다.",
+      "key_factors": [
+        "국민의힘 지지율 하락 및 정권 심판론",
+        "김부겸 후보의 통합·탕평 메시지",
+        "40대 연령층의 정치적 성향과 경제적 안정 요구"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "ca9810918e184592af06aa0b60932e83",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "수성구에 연고가 있는 김부겸 후보가 보여준 통합 메시지와 대규모 지원 유세가 가정의 화목과 지역의 소소한 발전을 바라는 제 마음을 움직였습니다.",
+      "key_factors": [
+        "김부겸 후보의 통합 및 탕평 메시지",
+        "국민의힘 지지율 하락 및 정권심판 정서",
+        "수성구 지역구와의 친밀감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "720d3c950a8f4cf49d44fadde051afcc",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "기업 경영자로서 중앙당의 무능보다는 경제 실무 능력을 증명해 온 김부겸의 통합 리더십과 대구 발전을 위한 실질적 변화를 기대합니다.",
+      "key_factors": [
+        "장동혁 체제 국민의힘에 대한 실망감",
+        "김부겸의 TK 맞춤형 통합·탕평 메시지",
+        "경제 전문성 및 실무 리더십 선호"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "094f64432daf4c639abf72a2e64fb1b0",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "현 정권의 실망스러운 행보와 경제적 어려움 속에서, 통합과 탕평을 내세우는 김부겸의 행보가 실질적인 변화를 가져올 수 있을 것이라는 기대감이 듭니다.",
+      "key_factors": [
+        "장동혁 대표 체제의 국민의힘 지지율 하락 및 실정",
+        "김부겸 후보의 통합과 탕평 메시지",
+        "대구 경제와 현장 민심을 반영한 변화 필요성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "dbb1f977c89e4b17bd635b4dd394d919",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "생활 물가와 고된 노동으로 지친 일상 속에서 변화를 갈망하게 되었고, 통합과 탕평을 내세우며 대구에 집중하는 김부겸 후보의 행보가 실질적인 지역 발전에 도움이 될 것이라 판단했습니다.",
+      "key_factors": [
+        "국민의힘 지지율 하락 및 정권 심판론",
+        "김부겸 후보의 통합 및 탕평 메시지",
+        "40대 유권자로서의 변화에 대한 열망"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "9c6bc76dcbfc4067be48ea6552614602",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "정권 심판론이 고조되는 상황에서, 경제 전문가로서의 실무적 안정감과 통합의 메시지를 보여주는 김부겸 후보가 가족의 삶을 위한 실질적인 변화를 이끌 적임자로 판단됩니다.",
+      "key_factors": [
+        "국민의힘 지지율 하락 및 정권심판론",
+        "김부겸의 통합 및 탕평 정치 메시지",
+        "실무적 역량을 중시하는 프로그래머적 가치관"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "d70e9aa25d034900be0189f4ff7bff34",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "공무원 시험을 준비하는 입장에서 행정의 안정성과 시스템을 중시하며, 보수 정당의 경제 전문가라는 추경호 후보의 이력이 예측 가능한 행정을 지향하는 내 성향에 더 부합한다고 판단함.",
+      "key_factors": [
+        "경제 전문성 및 행정 안정성",
+        "예측 가능한 시스템 지향",
+        "보수 성향 및 안정적 행정 선호"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "18e7b1ff929c45108a40cfae1bf36eea",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "대구에 필요한 통합과 실질적인 지역 발전을 위해, 정당보다는 대구를 잘 알고 화합을 이끌어낼 김부겸 후보의 행보에 신뢰가 갑니다.",
+      "key_factors": [
+        "김부겸 후보의 통합 및 탕평 정치 메시지",
+        "국민의힘 지지율 하락 및 정권 심판 정서",
+        "대구 지역 발전에 대한 갈증"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "0269419064c44dfa9f937de325578cba",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "경제와 살림을 챙기는 실무적 태도와 현재의 정권 심판 정서에 공감하여, 지역 발전과 통합을 강조하는 인물에게 표를 주기로 결정했습니다.",
+      "key_factors": [
+        "정권심판 및 여당 지지도 하락",
+        "김부겸의 통합·탕평 행보에 대한 신뢰",
+        "생활 밀착형 경제 발전 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "6e746c46bdea41b2b046d68c7dba01c4",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "행정 사무원으로서 실무적 역량과 통합의 리더십을 보여준 김부겸 후보가 대구의 정체된 발전을 위해 변화를 이끌 적임자라고 생각합니다.",
+      "key_factors": [
+        "김부겸 후보의 통합 및 탕평 메시지",
+        "국민의힘 정당 지지도 하락 및 정권 심판론",
+        "대구 지역 균형 발전에 대한 현실적 대안 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "d4c3496e69864e36995d5813682215cc",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "장기 구직으로 인한 생활고와 정권 심판론이 맞물려, 현 상황을 바꿀 수 있는 실질적인 경제 대안과 통합을 말하는 인물이 필요하다고 판단했습니다.",
+      "key_factors": [
+        "장기 구직자로서의 체감 경기 악화",
+        "국민의힘 정당 지지도 급락 및 실망감",
+        "김부겸의 통합 및 중도 확장 정책 메시지"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "9c8117b69da843bb9da4a889da9ae3d1",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "경제적 현실과 정권 심판론이 맞물린 40대 남성으로서, 익숙한 보수보다는 변화와 실용적 통합을 강조하는 김부겸 후보의 행보에 더 기대가 큽니다.",
+      "key_factors": [
+        "40대 남성층의 민주당 지지 성향",
+        "국민의힘 정당 지지율 하락세",
+        "김부겸 후보의 통합/탕평 메시지"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "a0da68b9a76c4623a9643a3d33731abf",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "국민의힘의 지지율 하락과 정책적 불확실성에 실망하였고, 경제적 안정과 통합을 강조하는 김부겸 후보가 안정적인 시정 운영을 할 수 있을 것 같아 선택했습니다.",
+      "key_factors": [
+        "국민의힘 정당 지지율 최저치 기록",
+        "김부겸 후보의 통합·탕평 메시지",
+        "IT 운영직 취업을 위한 경제적 안정 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "a4d20cd00aa84b84adf18cea2bd23d46",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "경제적 불확실성이 큰 시기에 전문성과 실질적인 변화를 보여주는 김부겸 후보의 통합 행보가 정체된 지역 분위기를 쇄신할 수 있다고 판단했습니다.",
+      "key_factors": [
+        "장동혁 당대표 체제 하의 국민의힘 지지율 하락",
+        "김부겸 후보의 중도 확장 및 통합 메시지",
+        "실질적인 지역 경제 활성화를 위한 변화 필요성"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "3bf35fd7f9ca4893b5f3fc69172ce097",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "경제 실무를 중시하는 금융인으로서, 현재 정권의 리더십 부재와 경제적 무능에 실망하여 지역 발전을 위해 실질적인 통합과 탕평을 내세우는 김부겸 후보를 선택했습니다.",
+      "key_factors": [
+        "김부겸의 통합 및 탕평 정치 행보",
+        "국민의힘의 지속되는 국정 운영 무능 및 정권심판론",
+        "금융 종사자로서 체감하는 경제적 안정과 지역 경제 전문성 중시"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "649253969eba48239a486b31152e616e",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "경제 논리적 정밀함과 실용주의적 관점에서 현재 국민의힘의 실책과 행정 공백을 극복할 수 있는 실무 경험이 풍부한 후보를 선택함.",
+      "key_factors": [
+        "국민의힘의 정당 지지율 하락과 무능에 대한 실망",
+        "김부겸의 행정 전문성과 통합 리더십에 대한 신뢰",
+        "정파를 떠난 지역 발전의 실질적 효용성 판단"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "6f930a5ded5743a3adf63833c5360a07",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "평생 보수만 찍었지만, 우리 동네 살림이 너무 어려워져서 이번엔 일을 잘할 것 같은 김부겸에게 마음이 기울었습니다.",
+      "key_factors": [
+        "김부겸의 지역 통합 메시지",
+        "국민의힘에 대한 실망감",
+        "실질적인 지역 경제 발전 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "6d48e66a88ec4acbbd09e78c36a6406a",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "달성군에서 오래 살아 지역 정서를 잘 알지만, 최근 여당의 실망스러운 행보와 김부겸 후보가 보여주는 통합과 탕평의 메시지가 우리 대구의 변화와 발전을 위해 더 필요하다고 판단했습니다.",
+      "key_factors": [
+        "김부겸 후보의 통합/탕평 행보",
+        "국민의힘 정당 지지도 하락 및 실망",
+        "지역 균형발전에 대한 실질적 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "09b48fa8ab4d4d65a0bc0f49003c7824",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "우리 달성에 힘이 될 경제 전문가를 기대했지만, 현재 집권당의 모습이 너무 실망스러워 통합과 안정을 말하는 김부겸 후보에게 마음이 기웁니다.",
+      "key_factors": [
+        "국민의힘 정당 지지도 급락 및 실망감",
+        "김부겸 후보의 통합과 탕평 메시지",
+        "지역 경제 발전에 대한 현실적 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "a50057e8e2bb4987a2fb184efa3b83d9",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "학자로서의 균형 잡힌 시각과 현재 정권에 대한 회의감을 고려할 때, 지역 통합과 실질적 변화를 약속하는 김부겸 후보의 정책적 유연함이 더 매력적으로 다가왔습니다.",
+      "key_factors": [
+        "김부겸 후보의 통합 및 탕평 메시지",
+        "현 정부·여당의 국정 운영 실망감",
+        "지성인으로서의 실용적 정치적 선택"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "c05e8fa61f9943c1a001a325dbc1e381",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "실무자로서 현실적인 대구의 경제 정체와 변화의 필요성을 체감하며, 통합과 탕평을 강조하는 김부겸 후보의 실용적인 리더십에 신뢰가 갑니다.",
+      "key_factors": [
+        "김부겸 후보의 통합/탕평 행보",
+        "국민의힘 정당 지지율 하락세",
+        "지역 경제 활성화에 대한 기대"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "0d252f58442c4a509b198916b5df5d22",
+      "persona_summary": "",
+      "vote": "c_daegu_ppp_choo",
+      "reason": "평생을 보수 정당만 지지해왔는데, 나라 경제를 잘 아는 추경호가 그래도 우리 동네 살림을 맡기는 게 마음 편하기 때문입니다.",
+      "key_factors": [
+        "보수 정당에 대한 오랜 신뢰",
+        "경제 관료 출신의 전문성",
+        "김부겸에 대한 거부감"
+      ],
+      "timestep": 1
+    },
+    {
+      "persona_id": "43fe0b78f07d40698c0581964982f80a",
+      "persona_summary": "",
+      "vote": "c_daegu_dpk",
+      "reason": "경제적 안정과 실질적인 지역 발전을 위해 정권 심판론과 김부겸의 통합 행보에 공감하게 되었습니다.",
+      "key_factors": [
+        "장동혁 대표 체제하의 국정 무능 및 실망감",
+        "김부겸의 TK 출신 거물급 통합/탕평 메시지",
+        "산업 현장에서 느끼는 실물 경제 위기 극복 기대"
+      ],
+      "timestep": 1
+    }
+  ],
+  "kg_events_used": [
+    {
+      "event_id": "1",
+      "type": "PollPublication",
+      "target": "c_daegu_ppp_choo",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_chu_remarks",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_cutoff",
+      "type": "PressConference",
+      "target": "c_daegu_ppp_choo",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_kbg_228park",
+      "type": "PressConference",
+      "target": "c_daegu_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_kbg_announce",
+      "type": "PressConference",
+      "target": "c_daegu_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_kbg_lead_poll",
+      "type": "MediaEvent",
+      "target": "c_daegu_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_kbg_rally",
+      "type": "MediaEvent",
+      "target": "c_daegu_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_lee_jinsuk_protest",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_pp_cutoff_dispute",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_pp_primary_advance",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_yyh_remarks",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_lower_voting_age__daegu_mayor",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_min_park_revolt__daegu_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_yoon_again__daegu_mayor",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_yt_fake__daegu_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_daegu_lee_jinsuk_out",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_ppp_jdh_us_visit__daegu_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_ppp_lowest_15pct__daegu_mayor",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 1
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "cohort_prior",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-26T07:04:19.260369+00:00",
+    "policy_version": "v2.2_kg_ab",
+    "env": "dev",
+    "llm_cache_enabled": false,
+    "final_poll_feedback_enabled": false,
+    "voter_stats": {
+      "calls": 558,
+      "parse_fail": 0,
+      "abstain": 16,
+      "latency_ms_sum": 1343681.6010459545,
+      "calls_by_model": {
+        "nano": 369,
+        "mini": 140,
+        "sonnet": 49
+      },
+      "mean_latency_ms": 2408.0,
+      "parse_fail_rate": 0.0,
+      "abstain_rate": 0.0287
+    },
+    "pool_stats": {
+      "provider": "gemini",
+      "model": "gemini/gemini-3.1-flash-lite-preview",
+      "per_key": [
+        {
+          "key_index": 0,
+          "current_rpm": 64,
+          "limit_rpm": 500,
+          "total_calls": 329,
+          "total_429": 0
+        },
+        {
+          "key_index": 1,
+          "current_rpm": 63,
+          "limit_rpm": 500,
+          "total_calls": 328,
+          "total_429": 0
+        },
+        {
+          "key_index": 2,
+          "current_rpm": 64,
+          "limit_rpm": 500,
+          "total_calls": 0,
+          "total_429": 0
+        },
+        {
+          "key_index": 3,
+          "current_rpm": 64,
+          "limit_rpm": 500,
+          "total_calls": 328,
+          "total_429": 0
+        },
+        {
+          "key_index": 4,
+          "current_rpm": 64,
+          "limit_rpm": 500,
+          "total_calls": 328,
+          "total_429": 0
+        }
+      ],
+      "cache_hits": 0,
+      "cache_misses": 1641,
+      "total_calls": 1641,
+      "n_keys": 5,
+      "iam_mode": false,
+      "cost_usd": {
+        "openai": 0.0,
+        "anthropic": 0.0,
+        "gemini": 0.0,
+        "vertex_ai": 0.0,
+        "azure": 0.0,
+        "bedrock": 0.0,
+        "groq": 0.0,
+        "openrouter": 0.0
+      },
+      "cost_thresholds": {
+        "openai": 50.0,
+        "anthropic": 20.0,
+        "gemini": 5.0,
+        "vertex_ai": 5.0,
+        "azure": 50.0,
+        "bedrock": 20.0,
+        "groq": 50.0,
+        "openrouter": 50.0
+      },
+      "cost_tracking_enabled": false,
+      "cache_hit_rate": 0.0
+    },
+    "actual_keys_used": 5,
+    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
+    "effective_provider": "gemini",
+    "official_poll_validation": {
+      "target_series": "poll_consensus_daily",
+      "as_of_date": "2026-04-26",
+      "method_version": "weighted_v1",
+      "cutoff_ts": "2026-04-26T00:00:00+09:00",
+      "source_poll_ids": [
+        "nesdc-16158"
+      ],
+      "metrics": {
+        "mae": 0.0538,
+        "rmse": 0.0606,
+        "margin_error": 0.0499,
+        "leader_match": true
+      },
+      "by_candidate": {
+        "c_daegu_dpk": {
+          "simulated_share": 0.7424,
+          "official_consensus": 0.6771,
+          "error": 0.0653
+        },
+        "c_daegu_ppp_choo": {
+          "simulated_share": 0.2576,
+          "official_consensus": 0.2422,
+          "error": 0.0154
+        },
+        "c_daegu_ppp_yoo": {
+          "simulated_share": 0.0,
+          "official_consensus": 0.0807,
+          "error": -0.0807
+        }
+      }
+    },
+    "finished_at": "2026-04-26T07:08:04.073232+00:00",
+    "wall_seconds": 224.81
+  }
+}

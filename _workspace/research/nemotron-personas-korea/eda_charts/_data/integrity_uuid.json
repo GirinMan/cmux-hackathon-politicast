@@ -1,0 +1,7 @@
+{
+  "id_col": "uuid",
+  "rows": 1000000,
+  "distinct": 1000000,
+  "null": 0,
+  "unique": true
+}

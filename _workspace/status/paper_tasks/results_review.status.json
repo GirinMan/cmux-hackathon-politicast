@@ -1,0 +1,15 @@
+{
+  "task": "results_review",
+  "state": "sleeping",
+  "phase": "waiting_next_interval",
+  "last_exit_code": 0,
+  "run_id": "20260426T024936Z",
+  "child_pid": "",
+  "started_at": "2026-04-26T02:49:36Z",
+  "finished_at": "2026-04-26T02:51:53Z",
+  "next_due_at": "2026-04-26T03:01:53Z",
+  "interval_seconds": 600,
+  "timeout_seconds": 600,
+  "last_run_log": "/Users/girinman/repos/cmux-hackathon-politicast/_workspace/logs/paper_task_runs/20260426T024936Z_results_review.log",
+  "last_summary": "/Users/girinman/repos/cmux-hackathon-politicast/_workspace/status/paper_tasks/results_review.last_summary.md"
+}

@@ -1,0 +1,1185 @@
+{
+  "schema": [
+    {
+      "column_name": "uuid",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "professional_persona",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "sports_persona",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "arts_persona",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "travel_persona",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "culinary_persona",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "family_persona",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "persona",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "cultural_background",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "skills_and_expertise",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "skills_and_expertise_list",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "hobbies_and_interests",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "hobbies_and_interests_list",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "career_goals_and_ambitions",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "sex",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "age",
+      "column_type": "BIGINT",
+      "null": "YES"
+    },
+    {
+      "column_name": "marital_status",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "military_status",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "family_type",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "housing_type",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "education_level",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "bachelors_field",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "occupation",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "district",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "province",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    },
+    {
+      "column_name": "country",
+      "column_type": "VARCHAR",
+      "null": "YES"
+    }
+  ],
+  "row_count_shard0": 111112,
+  "col_stats": [
+    {
+      "column": "uuid",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 32,
+      "avg_len": 32.0,
+      "max_len": 32
+    },
+    {
+      "column": "professional_persona",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 60,
+      "avg_len": 159.51,
+      "max_len": 276
+    },
+    {
+      "column": "sports_persona",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 56,
+      "avg_len": 133.73,
+      "max_len": 248
+    },
+    {
+      "column": "arts_persona",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 57,
+      "avg_len": 138.19,
+      "max_len": 238
+    },
+    {
+      "column": "travel_persona",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 55,
+      "avg_len": 135.09,
+      "max_len": 232
+    },
+    {
+      "column": "culinary_persona",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 64,
+      "avg_len": 142.0,
+      "max_len": 252
+    },
+    {
+      "column": "family_persona",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 60,
+      "avg_len": 143.94,
+      "max_len": 240
+    },
+    {
+      "column": "persona",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 44,
+      "avg_len": 81.47,
+      "max_len": 164
+    },
+    {
+      "column": "cultural_background",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 59,
+      "avg_len": 135.29,
+      "max_len": 283
+    },
+    {
+      "column": "skills_and_expertise",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 54,
+      "avg_len": 121.01,
+      "max_len": 236
+    },
+    {
+      "column": "skills_and_expertise_list",
+      "n_null": 0,
+      "n_distinct": 111107,
+      "null_pct": 0.0,
+      "min_len": 37,
+      "avg_len": 78.41,
+      "max_len": 169
+    },
+    {
+      "column": "hobbies_and_interests",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 57,
+      "avg_len": 128.94,
+      "max_len": 305
+    },
+    {
+      "column": "hobbies_and_interests_list",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 39,
+      "avg_len": 79.23,
+      "max_len": 171
+    },
+    {
+      "column": "career_goals_and_ambitions",
+      "n_null": 0,
+      "n_distinct": 111112,
+      "null_pct": 0.0,
+      "min_len": 51,
+      "avg_len": 118.31,
+      "max_len": 213
+    },
+    {
+      "column": "sex",
+      "n_null": 0,
+      "n_distinct": 2,
+      "null_pct": 0.0,
+      "min_len": 2,
+      "avg_len": 2.0,
+      "max_len": 2
+    },
+    {
+      "column": "age",
+      "n_null": 0,
+      "n_distinct": 81,
+      "null_pct": 0.0,
+      "min_len": 2,
+      "avg_len": 2.0,
+      "max_len": 2
+    },
+    {
+      "column": "marital_status",
+      "n_null": 0,
+      "n_distinct": 4,
+      "null_pct": 0.0,
+      "min_len": 2,
+      "avg_len": 3.77,
+      "max_len": 5
+    },
+    {
+      "column": "military_status",
+      "n_null": 0,
+      "n_distinct": 2,
+      "null_pct": 0.0,
+      "min_len": 2,
+      "avg_len": 2.99,
+      "max_len": 3
+    },
+    {
+      "column": "family_type",
+      "n_null": 0,
+      "n_distinct": 39,
+      "null_pct": 0.0,
+      "min_len": 5,
+      "avg_len": 8.06,
+      "max_len": 15
+    },
+    {
+      "column": "housing_type",
+      "n_null": 0,
+      "n_distinct": 6,
+      "null_pct": 0.0,
+      "min_len": 3,
+      "avg_len": 3.87,
+      "max_len": 12
+    },
+    {
+      "column": "education_level",
+      "n_null": 0,
+      "n_distinct": 7,
+      "null_pct": 0.0,
+      "min_len": 2,
+      "avg_len": 5.52,
+      "max_len": 10
+    },
+    {
+      "column": "bachelors_field",
+      "n_null": 0,
+      "n_distinct": 11,
+      "null_pct": 0.0,
+      "min_len": 2,
+      "avg_len": 4.63,
+      "max_len": 8
+    },
+    {
+      "column": "occupation",
+      "n_null": 0,
+      "n_distinct": 1632,
+      "null_pct": 0.0,
+      "min_len": 2,
+      "avg_len": 6.72,
+      "max_len": 34
+    },
+    {
+      "column": "district",
+      "n_null": 0,
+      "n_distinct": 252,
+      "null_pct": 0.0,
+      "min_len": 5,
+      "avg_len": 6.96,
+      "max_len": 13
+    },
+    {
+      "column": "province",
+      "n_null": 0,
+      "n_distinct": 17,
+      "null_pct": 0.0,
+      "min_len": 2,
+      "avg_len": 2.22,
+      "max_len": 3
+    },
+    {
+      "column": "country",
+      "n_null": 0,
+      "n_distinct": 1,
+      "null_pct": 0.0,
+      "min_len": 4,
+      "avg_len": 4.0,
+      "max_len": 4
+    }
+  ],
+  "enum_categorical": {
+    "sex": [
+      {
+        "value": "여자",
+        "count": 55940
+      },
+      {
+        "value": "남자",
+        "count": 55172
+      }
+    ],
+    "marital_status": [
+      {
+        "value": "배우자있음",
+        "count": 65702
+      },
+      {
+        "value": "미혼",
+        "count": 28770
+      },
+      {
+        "value": "사별",
+        "count": 9686
+      },
+      {
+        "value": "이혼",
+        "count": 6954
+      }
+    ],
+    "military_status": [
+      {
+        "value": "비현역",
+        "count": 110528
+      },
+      {
+        "value": "현역",
+        "count": 584
+      }
+    ],
+    "family_type": [
+      {
+        "value": "배우자·자녀와 거주",
+        "count": 29993
+      },
+      {
+        "value": "배우자와 거주",
+        "count": 22942
+      },
+      {
+        "value": "혼자 거주",
+        "count": 15568
+      },
+      {
+        "value": "부모와 동거",
+        "count": 10339
+      },
+      {
+        "value": "기타2세대",
+        "count": 4344
+      },
+      {
+        "value": "어머니와 동거",
+        "count": 4158
+      },
+      {
+        "value": "자녀와 거주 (한부모)",
+        "count": 3629
+      },
+      {
+        "value": "기타3세대",
+        "count": 3270
+      },
+      {
+        "value": "혼자 거주 (배우자 별거)",
+        "count": 2617
+      },
+      {
+        "value": "자녀와 거주 (배우자 별거)",
+        "count": 1658
+      },
+      {
+        "value": "배우자·자녀·어머니와 거주",
+        "count": 1486
+      },
+      {
+        "value": "친인척과 거주",
+        "count": 1485
+      },
+      {
+        "value": "비친족 동거",
+        "count": 1412
+      },
+      {
+        "value": "아버지와 동거",
+        "count": 1059
+      },
+      {
+        "value": "형제자매와 동거 (가구주)",
+        "count": 1019
+      },
+      {
+        "value": "배우자·자녀·부모와 거주",
+        "count": 853
+      },
+      {
+        "value": "배우자·편부모와 거주",
+        "count": 751
+      },
+      {
+        "value": "기타1세대",
+        "count": 662
+      },
+      {
+        "value": "가구주+기타친인척",
+        "count": 487
+      },
+      {
+        "value": "부모·조모와 동거",
+        "count": 465
+      },
+      {
+        "value": "자녀·어머니와 거주",
+        "count": 453
+      },
+      {
+        "value": "배우자·자녀·아버지와 거주",
+        "count": 315
+      },
+      {
+        "value": "손자녀와 거주",
+        "count": 255
+      },
+      {
+        "value": "배우자·손자녀와 거주",
+        "count": 248
+      },
+      {
+        "value": "배우자·부모와 거주",
+        "count": 194
+      },
+      {
+        "value": "배우자·자녀·형제자매와 거주",
+        "count": 158
+      },
+      {
+        "value": "부모·형제자매와 동거",
+        "count": 152
+      },
+      {
+        "value": "4세대이상",
+        "count": 149
+      },
+      {
+        "value": "배우자·친인척과 거주",
+        "count": 144
+      },
+      {
+        "value": "조부 또는 조모와 동거",
+        "count": 138
+      },
+      {
+        "value": "부 또는 모와 거주",
+        "count": 136
+      },
+      {
+        "value": "자녀·아버지와 거주",
+        "count": 97
+      },
+      {
+        "value": "부모·조부모와 동거",
+        "count": 88
+      },
+      {
+        "value": "배우자·미혼 형제자매와 거주",
+        "count": 84
+      },
+      {
+        "value": "부모·친인척과 동거",
+        "count": 78
+      },
+      {
+        "value": "부모·조부와 동거",
+        "count": 72
+      },
+      {
+        "value": "조부모와 동거",
+        "count": 65
+      },
+      {
+        "value": "형제 부부 가구에 동거",
+        "count": 60
+      },
+      {
+        "value": "배우자·형제자매와 거주",
+        "count": 29
+      }
+    ],
+    "housing_type": [
+      {
+        "value": "아파트",
+        "count": 69040
+      },
+      {
+        "value": "단독주택",
+        "count": 18872
+      },
+      {
+        "value": "다세대주택",
+        "count": 12770
+      },
+      {
+        "value": "주택 이외의 거처",
+        "count": 6574
+      },
+      {
+        "value": "연립주택",
+        "count": 2760
+      },
+      {
+        "value": "비주거용 건물 내 주택",
+        "count": 1096
+      }
+    ],
+    "education_level": [
+      {
+        "value": "고등학교",
+        "count": 37049
+      },
+      {
+        "value": "4년제 대학교",
+        "count": 30153
+      },
+      {
+        "value": "2~3년제 전문대학",
+        "count": 16598
+      },
+      {
+        "value": "중학교",
+        "count": 9242
+      },
+      {
+        "value": "초등학교",
+        "count": 9036
+      },
+      {
+        "value": "대학원",
+        "count": 6132
+      },
+      {
+        "value": "무학",
+        "count": 2902
+      }
+    ],
+    "bachelors_field": [
+      {
+        "value": "해당없음",
+        "count": 74827
+      },
+      {
+        "value": "공학·제조·건설",
+        "count": 7608
+      },
+      {
+        "value": "경영·행정·법",
+        "count": 6138
+      },
+      {
+        "value": "예술·인문",
+        "count": 5385
+      },
+      {
+        "value": "보건·복지",
+        "count": 3952
+      },
+      {
+        "value": "교육",
+        "count": 3481
+      },
+      {
+        "value": "정보통신기술",
+        "count": 3249
+      },
+      {
+        "value": "서비스",
+        "count": 2058
+      },
+      {
+        "value": "사회과학·언론",
+        "count": 1947
+      },
+      {
+        "value": "자연과학·수학",
+        "count": 1822
+      },
+      {
+        "value": "농림어업·수의학",
+        "count": 645
+      }
+    ],
+    "country": [
+      {
+        "value": "대한민국",
+        "count": 111112
+      }
+    ],
+    "province": [
+      {
+        "value": "경기",
+        "count": 29143
+      },
+      {
+        "value": "서울",
+        "count": 20638
+      },
+      {
+        "value": "부산",
+        "count": 7244
+      },
+      {
+        "value": "경상남",
+        "count": 6909
+      },
+      {
+        "value": "인천",
+        "count": 6543
+      },
+      {
+        "value": "경상북",
+        "count": 5544
+      },
+      {
+        "value": "대구",
+        "count": 5220
+      },
+      {
+        "value": "충청남",
+        "count": 4667
+      },
+      {
+        "value": "전라남",
+        "count": 3852
+      },
+      {
+        "value": "전북",
+        "count": 3771
+      },
+      {
+        "value": "충청북",
+        "count": 3424
+      },
+      {
+        "value": "강원",
+        "count": 3332
+      },
+      {
+        "value": "대전",
+        "count": 3225
+      },
+      {
+        "value": "광주",
+        "count": 3031
+      },
+      {
+        "value": "울산",
+        "count": 2337
+      },
+      {
+        "value": "제주",
+        "count": 1454
+      },
+      {
+        "value": "세종",
+        "count": 778
+      }
+    ]
+  },
+  "top30": {
+    "district": {
+      "n_distinct": 252,
+      "top30": [
+        {
+          "value": "경기-화성시",
+          "count": 1955
+        },
+        {
+          "value": "경기-남양주시",
+          "count": 1551
+        },
+        {
+          "value": "서울-송파구",
+          "count": 1378
+        },
+        {
+          "value": "서울-강서구",
+          "count": 1283
+        },
+        {
+          "value": "인천-서구",
+          "count": 1261
+        },
+        {
+          "value": "경기-평택시",
+          "count": 1229
+        },
+        {
+          "value": "대구-달서구",
+          "count": 1175
+        },
+        {
+          "value": "서울-관악구",
+          "count": 1143
+        },
+        {
+          "value": "서울-강남구",
+          "count": 1140
+        },
+        {
+          "value": "경기-시흥시",
+          "count": 1133
+        },
+        {
+          "value": "경상남-김해시",
+          "count": 1122
+        },
+        {
+          "value": "인천-부평구",
+          "count": 1118
+        },
+        {
+          "value": "제주-제주시",
+          "count": 1083
+        },
+        {
+          "value": "경기-파주시",
+          "count": 1082
+        },
+        {
+          "value": "서울-노원구",
+          "count": 1075
+        },
+        {
+          "value": "인천-남동구",
+          "count": 1066
+        },
+        {
+          "value": "경기-고양시 덕양구",
+          "count": 1063
+        },
+        {
+          "value": "서울-은평구",
+          "count": 1058
+        },
+        {
+          "value": "대전-서구",
+          "count": 1034
+        },
+        {
+          "value": "서울-강동구",
+          "count": 1014
+        },
+        {
+          "value": "광주-북구",
+          "count": 958
+        },
+        {
+          "value": "대구-북구",
+          "count": 953
+        },
+        {
+          "value": "경기-성남시 분당구",
+          "count": 950
+        },
+        {
+          "value": "경기-김포시",
+          "count": 943
+        },
+        {
+          "value": "인천-미추홀구",
+          "count": 942
+        },
+        {
+          "value": "경기-의정부시",
+          "count": 930
+        },
+        {
+          "value": "서울-양천구",
+          "count": 901
+        },
+        {
+          "value": "경기-용인시 기흥구",
+          "count": 897
+        },
+        {
+          "value": "서울-중랑구",
+          "count": 894
+        },
+        {
+          "value": "충청남-천안시 서북구",
+          "count": 885
+        }
+      ]
+    },
+    "occupation": {
+      "n_distinct": 1632,
+      "top30": [
+        {
+          "value": "무직",
+          "count": 40850
+        },
+        {
+          "value": "건물 청소원",
+          "count": 2035
+        },
+        {
+          "value": "건물 경비원",
+          "count": 1910
+        },
+        {
+          "value": "경리 사무원",
+          "count": 1743
+        },
+        {
+          "value": "사무 보조원",
+          "count": 1604
+        },
+        {
+          "value": "일반 비서",
+          "count": 1251
+        },
+        {
+          "value": "시설 경비원",
+          "count": 1211
+        },
+        {
+          "value": "전화 상담원",
+          "count": 1201
+        },
+        {
+          "value": "하역 및 적재 관련 단순 종사원",
+          "count": 1019
+        },
+        {
+          "value": "그 외 일반 영업원",
+          "count": 980
+        },
+        {
+          "value": "한식 조리사",
+          "count": 979
+        },
+        {
+          "value": "주방 보조원",
+          "count": 839
+        },
+        {
+          "value": "지게차 운전원",
+          "count": 819
+        },
+        {
+          "value": "마케팅 전문가",
+          "count": 817
+        },
+        {
+          "value": "회계 사무원",
+          "count": 793
+        },
+        {
+          "value": "산업 안전원",
+          "count": 737
+        },
+        {
+          "value": "교육 및 훈련 사무원",
+          "count": 702
+        },
+        {
+          "value": "그 외 서비스 관련 단순 종사원",
+          "count": 691
+        },
+        {
+          "value": "그 외 상점 판매원",
+          "count": 667
+        },
+        {
+          "value": "경영 기획 사무원",
+          "count": 616
+        },
+        {
+          "value": "보육교사",
+          "count": 596
+        },
+        {
+          "value": "철도운송 관련 종사원",
+          "count": 569
+        },
+        {
+          "value": "온라인 쇼핑 판매원",
+          "count": 565
+        },
+        {
+          "value": "소규모 상점 경영자",
+          "count": 548
+        },
+        {
+          "value": "음식 서비스 종사원",
+          "count": 547
+        },
+        {
+          "value": "그 외 법률 관련 사무원",
+          "count": 523
+        },
+        {
+          "value": "그 외 기능 관련 종사원",
+          "count": 519
+        },
+        {
+          "value": "노점 및 이동 판매원",
+          "count": 496
+        },
+        {
+          "value": "경·소형 화물차 운전원",
+          "count": 488
+        },
+        {
+          "value": "유치원 교사",
+          "count": 466
+        }
+      ]
+    }
+  },
+  "age_stats": {
+    "min": 19,
+    "max": 99,
+    "avg": 50.6,
+    "median": 51.0
+  },
+  "age_buckets": [
+    {
+      "bucket": "19-29",
+      "count": 16261
+    },
+    {
+      "bucket": "30-39",
+      "count": 16646
+    },
+    {
+      "bucket": "40-49",
+      "count": 19506
+    },
+    {
+      "bucket": "50-59",
+      "count": 22064
+    },
+    {
+      "bucket": "60-69",
+      "count": 19855
+    },
+    {
+      "bucket": "70-79",
+      "count": 10726
+    },
+    {
+      "bucket": "80-89",
+      "count": 5234
+    },
+    {
+      "bucket": "90+",
+      "count": 820
+    }
+  ],
+  "text_stats": [
+    {
+      "column": "professional_persona",
+      "avg_chars": 159.5,
+      "min_chars": 60,
+      "p50_chars": 163,
+      "p90_chars": 196,
+      "max_chars": 276
+    },
+    {
+      "column": "sports_persona",
+      "avg_chars": 133.7,
+      "min_chars": 56,
+      "p50_chars": 138,
+      "p90_chars": 165,
+      "max_chars": 248
+    },
+    {
+      "column": "arts_persona",
+      "avg_chars": 138.2,
+      "min_chars": 57,
+      "p50_chars": 142,
+      "p90_chars": 169,
+      "max_chars": 238
+    },
+    {
+      "column": "travel_persona",
+      "avg_chars": 135.1,
+      "min_chars": 55,
+      "p50_chars": 139,
+      "p90_chars": 166,
+      "max_chars": 232
+    },
+    {
+      "column": "culinary_persona",
+      "avg_chars": 142.0,
+      "min_chars": 64,
+      "p50_chars": 146,
+      "p90_chars": 175,
+      "max_chars": 252
+    },
+    {
+      "column": "family_persona",
+      "avg_chars": 143.9,
+      "min_chars": 60,
+      "p50_chars": 149,
+      "p90_chars": 176,
+      "max_chars": 240
+    },
+    {
+      "column": "persona",
+      "avg_chars": 81.5,
+      "min_chars": 44,
+      "p50_chars": 81,
+      "p90_chars": 95,
+      "max_chars": 164
+    },
+    {
+      "column": "cultural_background",
+      "avg_chars": 135.3,
+      "min_chars": 59,
+      "p50_chars": 139,
+      "p90_chars": 170,
+      "max_chars": 283
+    },
+    {
+      "column": "skills_and_expertise",
+      "avg_chars": 121.0,
+      "min_chars": 54,
+      "p50_chars": 124,
+      "p90_chars": 152,
+      "max_chars": 236
+    },
+    {
+      "column": "skills_and_expertise_list",
+      "avg_chars": 78.4,
+      "min_chars": 37,
+      "p50_chars": 78,
+      "p90_chars": 96,
+      "max_chars": 169
+    },
+    {
+      "column": "hobbies_and_interests",
+      "avg_chars": 128.9,
+      "min_chars": 57,
+      "p50_chars": 133,
+      "p90_chars": 164,
+      "max_chars": 305
+    },
+    {
+      "column": "hobbies_and_interests_list",
+      "avg_chars": 79.2,
+      "min_chars": 39,
+      "p50_chars": 78,
+      "p90_chars": 98,
+      "max_chars": 171
+    },
+    {
+      "column": "career_goals_and_ambitions",
+      "avg_chars": 118.3,
+      "min_chars": 51,
+      "p50_chars": 121,
+      "p90_chars": 151,
+      "max_chars": 213
+    }
+  ],
+  "sample_records": [
+    {
+      "uuid": "03b4f36a18e6469386d0286dddd513c8",
+      "age": 74,
+      "sex": "남자",
+      "province": "광주",
+      "district": "광주-서구",
+      "occupation": "하역 및 적재 관련 단순 종사원",
+      "professional_persona": "전기태 씨는 광주 서구의 하역 현장에서 수십 년간 짐을 쌓아 올리며, 지렛대 원리를 이용해 무거운 자재를 효율적으로 옮기는 베테랑의 면모를 보입니다. 동료들 사이에서 가장 빠르고 정확하게 무게 중심을 잡는다는 평을 듣지만, 가끔은 고집스럽게 본인의 옛 방식만을 고수하며 젊은 일꾼들과 투닥거리기도 합니다.",
+      "sports_persona": "전기태 씨는 주말마다 무등산 자락을 느릿느릿 걸으며 땀을 흘리고, 내려오는 길에 단골 목욕탕에서 친구들과 엉켜 앉아 정치 이야기를 나누는 것으로 일주일을 마무리합니다. 무릎 관절이 예전 같지 않아 가끔 절뚝거리면서도 산행만큼은 빼놓지 않는 고집이 있습니다.",
+      "arts_persona": "전기태 씨는 거실 소파에 깊숙이 파묻혀 텔레비전에서 나오는 옛날 가요 프로그램을 보며 젊은 시절의 추억에 젖어드는 시간을 가장 좋아합니다. 가사가 마음에 들면 흥얼거리며 박자를 맞추다가도, 가끔은 세상 돌아가는 이야기에 화가 나 텔레비전 소리를 높이며 투덜거립니다.",
+      "travel_persona": "전기태 씨는 아내와 함께 전국의 역사 유적지를 찾아다니며 옛 조상들의 발취를 느끼는 여행을 즐깁니다. 화려한 관광지보다는 경주나 부여처럼 조용하고 고즈넉한 곳을 걸으며, 아내의 손을 꼭 잡고 천천히 시간을 보내는 것을 소중히 여깁니다.",
+      "culinary_persona": "전기태 씨는 일주일에 한 번 배달 짜장면과 탕수육을 시켜 먹는 날을 손꼽아 기다리며, 2주에 한 번은 아내와 함께 동네 고깃집에서 지글지글 구운 삼겹살에 소주 한 잔을 곁들입니다. 자극적인 중식 맛에 길들여져 가끔은 당 수치가 걱정되지만, 입에 맞는 음식 앞에서는 건강 걱정을 잠시 잊어버립니다.",
+      "family_persona": "전기태 씨는 전·월세 아파트에서 평생의 동반자인 아내와 단출하게 살아가며, 투박한 전라도 사투리로 서로를 챙기는 소박한 애정을 나눕니다. 무뚝뚝한 성격 탓에 다정한 말 한마디는 서툴지만, 아내가 좋아하는 간식을 슬그머니 식탁에 올려두는 방식으로 마음을 표현합니다.",
+      "persona": "전기태 씨는 광주 서구에서 평생 하역 일을 하며 살아온 70대 가장으로, 투박한 손마디에 삶의 흔적이 배어 있는 성실하고 사교적인 인물입니다.",
+      "cultural_background": "광주 서구에서 평생을 보내며 투박하지만 정겨운 전라도 사투리가 몸에 배어 있고, 시장통 사람들과 어울려 왁자지껄하게 이야기 나누는 것을 즐깁니다. 초등학교 졸업 후 곧바로 현장 일에 뛰어들어 몸으로 부딪치며 살아온 세월이 있어, 격식보다는 사람 사이의 의리와 눈치 빠른 태도를 더 중요하게 생각합니다.",
+      "skills_and_expertise": "수십 년간 하역 현장에서 다져진 감각으로 짐의 무게 중심을 한눈에 파악해 가장 효율적으로 쌓아 올리는 요령이 탁월합니다. 무거운 자재를 옮길 때 허리에 무리가 가지 않게 지렛대 원리를 이용하는 자신만의 노하우가 있으며, 현장 동료들 사이에서 짐 쌓기만큼은 가장 빠르고 정확하다는 평가를 받습니다.",
+      "hobbies_and_interests": "주말이면 무등산 자락을 천천히 걸으며 땀을 빼고, 내려오는 길에 단골 목욕탕에서 뜨거운 물에 몸을 담그며 동네 친구들과 정치 이야기를 나누는 시간을 가장 아낍니다. 일주일에 한 번쯤은 집으로 짜장면과 탕수육을 시켜 먹으며 텔레비전의 옛날 가요 프로그램을 시청하는 것으로 일주일의 피로를 풉니다.",
+      "career_goals_and_ambitions": "큰 욕심 없이 지금처럼 매일 아침 정해진 시간에 출근해 땀 흘려 일하며 건강을 유지하는 것에 만족합니다. 무리하지 않는 선에서 하역 일을 계속하며 아내와 함께 소박하게 생활할 수 있는 생활비를 꾸준히 마련하는 것이 현재의 가장 큰 목표입니다."
+    },
+    {
+      "uuid": "73f75d42a3934626b0d9a4bff062715a",
+      "age": 71,
+      "sex": "여자",
+      "province": "서울",
+      "district": "서울-서초구",
+      "occupation": "회계 사무원",
+      "professional_persona": "최은지 씨는 서초동 부동산 사무실에서 장부를 잡으며 복잡한 취득세나 양도세 계산을 암산 수준으로 빠르게 처리하는 베테랑 회계 사무원입니다. 다만 서류를 가나다순으로 분류하거나 분기별 계획표를 짜는 지루한 행정 작업이 시작되면 금세 한숨을 쉬며 펜을 놓아버리는 성미를 가졌습니다.",
+      "sports_persona": "최은지 씨는 서초동 예술의전당 근처 산책로를 느릿하게 거닐며 동네 이웃들과 수다를 떠는 것으로 하루의 운동량을 채웁니다. 조금만 걷다 보면 금세 숨이 차오르기에 벤치에 앉아 한참을 쉬거나 집으로 돌아와 깊은 낮잠을 자며 에너지를 보충합니다.",
+      "arts_persona": "최은지 씨는 지역 문화센터의 서예 교실에서 붓을 잡으며 마음을 다스리지만, 쉬는 시간이 되면 누구보다 큰 목소리로 주변 사람들을 이끄는 분위기 메이커가 됩니다. 정적인 예술 활동 속에서도 특유의 외향적인 성격이 튀어나와 주변 사람들과 끊임없이 이야기를 나눕니다.",
+      "travel_persona": "최은지 씨는 가족들과 함께 경주 불국사의 다보탑이나 부여 낙화암의 절벽을 방문해 옛이야기를 듣는 역사 여행을 즐깁니다. 빡빡한 일정표를 따르기보다는 발길 닿는 대로 천천히 걷다가 마음에 드는 전통 찻집이 나오면 예정에도 없던 휴식을 취합니다.",
+      "culinary_persona": "최은지 씨는 일주일에 대여섯 번은 집 밖에서 식사를 해결하며, 나물 비빔밥이나 청국장 같은 담백한 한식을 주로 찾습니다. 가끔 자녀들이 사주는 도미노 피자의 페퍼로니 피자를 한 조각 크게 베어 물며 젊은 세대의 입맛을 함께 공유하는 시간을 가집니다.",
+      "family_persona": "최은지 씨는 남편과 자녀들이 함께 사는 복작복작한 집안 분위기 속에서 가장 영향력 있는 목소리를 내는 집안의 중심축입니다. 가족들을 끔찍이 아끼지만, 때로는 자신의 주장이 너무 강해 자녀들과 사소한 말다툼을 벌이기도 하며도 금세 쿨하게 화해하는 성격입니다.",
+      "persona": "최은지 씨는 서초구에서 부동산 회계 사무원으로 일하며 경제적 자립과 사교적인 삶을 동시에 누리는 당찬 70대 여성입니다.",
+      "cultural_background": "최은지는 서초구의 오래된 다세대 주택가에서 나고 자라며 체면과 질서를 중시하는 분위기에 익숙합니다. 수학을 전공한 이성적인 사고방식을 가졌지만, 동네 문화센터나 모임에서는 누구보다 목소리가 크고 활기차게 분위기를 주도하는 외향적인 면모를 보입니다.",
+      "skills_and_expertise": "복잡한 부동산 세금 계산이나 장부 정리를 빠르게 처리하며, 오랜 실무 경험을 바탕으로 수치상의 오류를 단번에 잡아냅니다. 다만, 세밀한 서류 분류나 장기적인 스케줄링 같은 꼼꼼한 행정 업무에는 금방 싫증을 느끼고 지치는 모습을 보입니다.",
+      "hobbies_and_interests": "가족들과 함께 경주 불국사나 부여 낙화암 같은 역사 유적지를 천천히 거닐며 옛이야기를 나누는 시간을 보냅니다. 평소에는 서초동 인근 산책로를 걷다 지치면 집에서 낮잠을 청하거나, 가끔 자녀들이 추천한 가게의 페퍼로니 피자를 먹으며 소소한 즐거움을 찾습니다.",
+      "career_goals_and_ambitions": "지금처럼 규칙적으로 출근하며 동료들과 어울리는 일상을 유지하는 것에 만족하며, 본인이 가진 실무 노하우를 후배들에게 전수하며 인정받기를 원합니다. 거창한 승진보다는 손에 익은 회계 업무를 통해 경제적 자립을 유지하며 건강하게 직장 생활을 마무리하는 것이 목표입니다."
+    }
+  ]
+}

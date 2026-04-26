@@ -1,0 +1,807 @@
+{
+  "scenario_id": "rolling_v2_20260426T052953Z",
+  "region_id": "seoul_mayor",
+  "contest_id": "seoul_mayor_2026",
+  "timestep_count": 2,
+  "persona_n": 200,
+  "candidates": [
+    {
+      "id": "c_seoul_dpk",
+      "name": "정원오",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_seoul_ppp",
+      "name": "오세훈",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_seoul_rebuild",
+      "name": "한민수",
+      "party": "p_rebuild"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-26",
+      "support_by_candidate": {
+        "c_seoul_dpk": 0.06315789473684211,
+        "c_seoul_ppp": 0.9368421052631579,
+        "c_seoul_rebuild": 0.0
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.18277623884272085
+    },
+    {
+      "timestep": 1,
+      "date": "2026-04-27",
+      "support_by_candidate": {
+        "c_seoul_dpk": 0.03,
+        "c_seoul_ppp": 0.97,
+        "c_seoul_rebuild": 0.0
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.20282222222222224
+    }
+  ],
+  "final_outcome": {
+    "turnout": 1.0,
+    "vote_share_by_candidate": {
+      "c_seoul_dpk": 0.0,
+      "c_seoul_ppp": 1.0,
+      "c_seoul_rebuild": 0.0
+    },
+    "winner": "c_seoul_ppp",
+    "n_responses": 200,
+    "n_abstain": 0
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "50s": {
+        "c_seoul_ppp": 1.0
+      },
+      "30s": {
+        "c_seoul_ppp": 1.0
+      },
+      "60s+": {
+        "c_seoul_ppp": 1.0
+      },
+      "40s": {
+        "c_seoul_ppp": 1.0
+      },
+      "20s": {
+        "c_seoul_ppp": 1.0
+      }
+    },
+    "by_education": {
+      "고등학교": {
+        "c_seoul_ppp": 1.0
+      },
+      "4년제 대학교": {
+        "c_seoul_ppp": 1.0
+      },
+      "초등학교": {
+        "c_seoul_ppp": 1.0
+      },
+      "2~3년제 전문대학": {
+        "c_seoul_ppp": 1.0
+      },
+      "중학교": {
+        "c_seoul_ppp": 1.0
+      },
+      "대학원": {
+        "c_seoul_ppp": 1.0
+      },
+      "무학": {
+        "c_seoul_ppp": 1.0
+      }
+    },
+    "by_district": {
+      "서울-종로구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-강남구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-노원구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-은평구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-구로구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-영등포구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-강북구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-관악구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-성북구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-송파구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-도봉구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-서초구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-마포구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-양천구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-성동구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-강서구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-중구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-동작구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-강동구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-금천구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-서대문구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-중랑구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-용산구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-광진구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-동대문구": {
+        "c_seoul_ppp": 1.0
+      }
+    }
+  },
+  "virtual_interviews": [
+    {
+      "persona_id": "044ef39e919949c2b15f96743e71725e",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "서울시정의 연속성과 그간의 안정적인 성과를 경험했기에 오세훈 후보를 신뢰합니다.",
+      "key_factors": [
+        "시정 연속성",
+        "여론조사 압도적 지지",
+        "안정적인 시정 운영 경험"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "c7c9865ddc5b463abce7392d6fc3f168",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "경영 컨설턴트로서 행정의 안정성과 서울시정의 연속성을 중시하며, 실질적인 전문성을 보여온 오세훈 후보의 시정 경험을 신뢰하기 때문입니다.",
+      "key_factors": [
+        "시정 연속성",
+        "경영적 합리성",
+        "압도적인 후보 지지율"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "ceb0bdf1c82242b8a3343971f6c2340a",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "강남 거주자로서 안정적인 시정 운영의 연속성과 익숙한 도시 환경의 변화를 선호하는 마음이 큽니다.",
+      "key_factors": [
+        "시정 연속성 중시",
+        "강남 지역 여론",
+        "후보 인지도 및 격차"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "ecc5906d7fd445f39116e22f71bdf56a",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "할머니 모시고 사는 입장에서 익숙한 시정의 연속성이 안정적이라 생각되고, 다들 오세훈 시장님을 지지하는 분위기라 대세를 따르게 되네요.",
+      "key_factors": [
+        "시정의 연속성",
+        "압도적 여론 지지율",
+        "동네 어르신들의 여론"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d191dc6605c645aaad9f92fc6e1ceb40",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "강남 지역 거주자로서 시정의 연속성과 안정적인 도시 운영 역량을 최우선으로 고려하였습니다.",
+      "key_factors": [
+        "시정 연속성",
+        "강남 지역의 정치적 성향",
+        "도시 경쟁력 유지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "7f14a3fd34e94793ae01b13412fb62b2",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "업무 효율과 안정성을 중시하는 생활인으로서, 검증된 현 시정의 연속성과 업무 추진력이 가장 믿음직하게 느껴집니다.",
+      "key_factors": [
+        "시정 연속성",
+        "높은 지지율의 안정감",
+        "개인의 업무 성향과 부합"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "2cb0ccf962d54450974396b7252bad73",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "현장 일을 하며 꾸준히 살아왔기에 급격한 변화보다는 현재의 시정이 안정적으로 유지되길 바랍니다.",
+      "key_factors": [
+        "시정 연속성",
+        "현장의 안정성",
+        "오세훈 후보 지지율"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "0fd06701d64d4fefbc69694fb2cebb2f",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "마케팅 전문가로서 성과 중심의 업무 방식을 선호하며, 현재 서울 시정의 연속성과 안정감을 유지하는 후보를 지지합니다.",
+      "key_factors": [
+        "시정 연속성 유지",
+        "높은 여론조사 지지율",
+        "실무 중심의 안정적 정책 기조"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "24cefb1217d945f4977de8a6335cd7bc",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랫동안 서울 시정을 이끌어온 경험과 안정적인 리더십이 저 같은 혼자 사는 노인에게는 더 믿음직스럽게 느껴집니다.",
+      "key_factors": [
+        "시정 연속성",
+        "안정적 리더십",
+        "개인적 신뢰감"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5d88d36c6e834cffb935fe76f413d29a",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "서울의 현 시정 운영에 대한 안정성과 연속성을 고려할 때 오세훈 후보가 실질적인 대안이라고 생각합니다.",
+      "key_factors": [
+        "시정 연속성",
+        "행정 경험",
+        "여론조사 압도적 우세"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5a68b19231df410f991cb166fdb558cd",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "마포에서 가족과 함께 안정적으로 살아가는 입장에서, 기존 시정의 연속성과 실질적인 행정 경험을 더 신뢰하기 때문입니다.",
+      "key_factors": [
+        "현 시정 연속성",
+        "안정적인 삶",
+        "행정 경험 중시"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "5c182e83ffce401795621bd842c80d50",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "취업 준비와 미래에 대한 불안감이 큰 상황에서, 시정의 안정성과 연속성을 강조하는 현직 시장 후보의 행보가 더 현실적인 대안으로 느껴집니다.",
+      "key_factors": [
+        "시정 연속성 중시",
+        "현직 후보의 인지도 및 안정감",
+        "개인적 불안 해소 욕구"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "12b6a5e7258345c49d39187063da3b1a",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "현재 서울 시정의 연속성과 안정감이 제 상황에서 가장 중요한 기준이기에 경험이 많은 후보를 선택했습니다.",
+      "key_factors": [
+        "시정 연속성",
+        "후보의 행정 경험",
+        "현실적인 생활 안정 추구"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "32216e7dd00848a3b16ac2dc6d1ae124",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랫동안 서울시정을 이끌어온 안정감과 익숙함이 가족을 돌보는 제 입장에서는 가장 믿음직스럽게 느껴집니다.",
+      "key_factors": [
+        "시정 운영의 연속성",
+        "안정적인 서울 행정",
+        "가족의 평온한 일상 유지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "1d151708ce4e4d38a1cce89775f20649",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "시정의 연속성과 안정적인 정책 운영이 개인적인 심리적 안정감과 서울시 행정 효율성에 더 부합한다고 판단했습니다.",
+      "key_factors": [
+        "시정 연속성",
+        "여론조사상의 압도적 지지",
+        "심리적 안정 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "6bd1682f80984f08926c5d2f18fc2b8e",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "군에서 매뉴얼을 중시하는 직업 특성상, 검증된 행정 경험과 시정의 연속성을 보여준 오세훈 후보가 실무적으로 가장 신뢰가 갑니다.",
+      "key_factors": [
+        "시정 연속성",
+        "행정 경험",
+        "실무적 신뢰"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "97f26b1c0f074c79a55dadeca9cb415c",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "평생을 성실하게 살아온 가장으로서, 급진적인 변화보다는 익숙한 시정의 연속성과 안정감을 더 선호합니다.",
+      "key_factors": [
+        "시정 연속성",
+        "가정의 경제적 안정",
+        "현직 후보의 인지도 및 지지율"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "2f728c9e4ca340888a3ec0eb1794398f",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "중견 건설사 취업을 꿈꾸는 입장에서 현 시정의 연속성과 실무적 안정감이 중요하다고 판단했습니다.",
+      "key_factors": [
+        "시정 연속성 중시",
+        "건설업 관련 커리어 고려",
+        "기존 행정에 대한 신뢰"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d9f2cdd37fae4214a9d356dab747b84c",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랫동안 서울시정을 이끌어온 안정감이 있고, 무직인 나에게는 갑작스러운 변화보다는 익숙한 행정이 훨씬 믿음직스럽기 때문입니다.",
+      "key_factors": [
+        "시정 연속성",
+        "현직 프리미엄",
+        "안정적 정책"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "09afc77e287944689d895116ce443ffe",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랫동안 서울 시정을 이끌어온 사람이 익숙하고, 나라 살림이나 시 살림이나 안정적인 게 최고라고 생각해요.",
+      "key_factors": [
+        "시정 연속성",
+        "인지도",
+        "안정적 리더십"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "883c21644da645da964e4072ea27260c",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랫동안 서울 시정을 이끌어온 안정감을 신뢰하며, 평소 묵묵히 제 자리를 지키는 것을 선호하는 성격상 현 체제의 연속성을 선택하게 되었습니다.",
+      "key_factors": [
+        "시정 연속성",
+        "안정적 행정 운영",
+        "정치적 중립성 유지"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "be2fa946212c400a942ddcd59eed0f13",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "건설 현장 소장 출신으로서 도시 행정의 연속성과 전문성을 중요하게 생각하며, 정교하고 깐깐한 시정을 펼쳐온 오세훈 후보를 신뢰합니다.",
+      "key_factors": [
+        "시정 연속성",
+        "전문성 중시",
+        "현장 경험 우선"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "1d636309928840c38fa3c2007dd295d3",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랜 기간 시정을 이끌어온 오세훈 후보가 정책의 연속성과 안정감 면에서 현재 삶을 지탱하는 데 가장 믿음직스럽기 때문입니다.",
+      "key_factors": [
+        "시정 연속성",
+        "정책 안정감",
+        "경험과 실무 능력"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "afbdd5d194b84b02aeb18a0ae5ce3e2a",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "실험실에서 매뉴얼을 중시하는 제 성격상, 검증된 행정 경험과 시정의 연속성을 보여주는 오세훈 후보가 서울의 안정적인 운영에 더 적합하다고 판단했습니다.",
+      "key_factors": [
+        "시정 연속성 및 안정성",
+        "기존 행정 능력에 대한 신뢰",
+        "실무 중심의 안정적 정책 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "1d047d19b07f48bfbc05be411d2e2e51",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "기술자로서 실무 경험과 현장 안정성을 중시하기에, 시정의 연속성과 실무적 유능함을 보여준 오세훈 후보를 선택합니다.",
+      "key_factors": [
+        "시정 연속성 유지",
+        "실무적 경험 중시",
+        "높은 지지율과 후보 적합성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "9d5659ce557b4a90a2ffbe2af5468676",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랫동안 서울 시정을 이끌어온 안정적인 경험과 현재의 높은 지지율이 식당 창업을 앞둔 저에게 더 현실적인 선택지로 느껴집니다.",
+      "key_factors": [
+        "시정 연속성",
+        "높은 지지율",
+        "현장 안정성"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "3a15f19026b448cf993ef234a2a8e912",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "십수 년간 현장에서 일하며 실무와 연속성을 중요하게 생각하는데, 현재 시정의 안정감과 경험을 무시할 수 없다고 판단했습니다.",
+      "key_factors": [
+        "시정 연속성",
+        "실무적 안정감",
+        "후보 인지도"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "6f2ed0942a274610aca0c0faa27238c9",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "청년으로서 불안정한 현실 속에서 검증된 시정 운영 능력을 바탕으로 서울의 안정적인 연속성을 기대하게 됩니다.",
+      "key_factors": [
+        "시정 연속성",
+        "정책 안정성",
+        "오세훈 후보 지지율"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d028559066e94cbb83a24db7a65e2db3",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "야간 경비원으로 일하며 안정적인 시정 운영의 연속성이 실질적인 삶의 질에 도움이 된다고 생각하기 때문입니다.",
+      "key_factors": [
+        "시정 연속성 유지",
+        "안정적인 서울 행정",
+        "개인의 삶 안정 추구"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "4dc2797f4c4a442e8eee85b9fd48bed6",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "마포구에서 아이를 키우는 엄마로서 시정의 연속성과 안정감을 중요하게 생각하며 오세훈 후보가 그간 보여준 실무적 행보를 신뢰합니다.",
+      "key_factors": [
+        "시정 연속성",
+        "검증된 행정 경험",
+        "안정적인 주거 및 교육 환경 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "f815b07c64634ee092878894434f6764",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "취업난 속에서 안정적인 시정 연속성과 검증된 행정 경험이 실질적인 도움을 줄 것이라 기대합니다.",
+      "key_factors": [
+        "시정 연속성",
+        "행정 경험",
+        "취업 및 주거 안정 기대"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "ea6f599834f24d96a02a4012236df6fa",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "서울 서초구에 거주하며 안정적인 시정의 연속성을 중시하는 입장에서, 오세훈 시장의 실무 능력과 인지도를 신뢰합니다.",
+      "key_factors": [
+        "시정 연속성 보장",
+        "서초구 지역적 성향",
+        "오세훈 후보에 대한 높은 신뢰"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "c1ecef4fc3fd4fff8d52fb6c5f35cd68",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "현재의 안정적인 시정 운영 경험이 사업을 준비하는 입장에서 더 예측 가능하고 신뢰가 갑니다.",
+      "key_factors": [
+        "시정 연속성",
+        "안정적 경제 기조",
+        "현직 시장에 대한 높은 인지도"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "fa24a526f167419c8f48662a08e76bb2",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "우리 동네 구로에서 오래 본 사람이 익숙하고, 시정을 계속 잘 챙겨줄 것 같아 마음이 편합니다.",
+      "key_factors": [
+        "시정 연속성",
+        "인지도와 친숙함",
+        "안정적인 리더십 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "b40a4d37d0a34296ada73fa02bd506fa",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "승진이나 큰 변화보다는 현재의 안정적인 삶이 유지되는 것을 선호하여 시정의 연속성을 강조하는 후보에게 마음이 갑니다.",
+      "key_factors": [
+        "시정 연속성",
+        "안정적 현상 유지",
+        "개인의 일상 보존"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "1be962f9ac284716a8874be6180b4a9f",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "안정적인 중계동 환경에서 자란 입장에서, 이미 검증된 시정의 연속성과 현재 서울의 인프라를 잘 이끌어온 오세훈 후보를 선택하는 것이 가장 완벽한 설계라고 생각합니다.",
+      "key_factors": [
+        "시정 연속성 보장",
+        "높은 지지율의 안정감",
+        "개인적 성향에 따른 리스크 회피"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "fd509b7a5f074d4f80fb0c9e1b997269",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "강남에서 오래 거주하며 쌓인 신뢰와 오세훈 후보가 가진 시정 연속성에 대한 안정감이 전문직 종사자로서 실질적인 시정 운영을 기대하게 만듭니다.",
+      "key_factors": [
+        "시정 연속성",
+        "지역적 기반",
+        "전문적 업무 역량 평가"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "3a668d47a27e4687b3b9fb1ed247096b",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "전문가로서 행정의 안정성과 체계적인 시정 운영의 연속성을 신뢰하며, 익숙한 현 시장의 경험이 실질적인 서울시 운영에 더 적합하다고 판단합니다.",
+      "key_factors": [
+        "시정 연속성 유지",
+        "행정의 안정감",
+        "높은 후보 지지율"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "d46ca65ffbf44ebeb06d5e1b26733028",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "업무와 삶에서 질서와 연속성을 중시하는 성격상, 현 시정의 안정적인 마무리를 추구하는 오세훈 후보의 방향성이 신뢰가 갑니다.",
+      "key_factors": [
+        "시정 연속성 중시",
+        "높은 지지율로 나타난 안정적 리더십",
+        "현업 유지와 질서 선호"
+      ],
+      "timestep": 2
+    },
+    {
+      "persona_id": "3d96e9bca0d0404fa0152d22c7c0502d",
+      "persona_summary": "",
+      "vote": "c_seoul_ppp",
+      "reason": "오랜 기간 서울 시정을 이끌어온 안정감과 정책의 연속성이 실생활을 책임지는 주부로서 신뢰가 갑니다.",
+      "key_factors": [
+        "시정 연속성",
+        "현직 프리미엄",
+        "안정적 시정 운영"
+      ],
+      "timestep": 2
+    }
+  ],
+  "kg_events_used": [
+    {
+      "event_id": "1",
+      "type": "PollPublication",
+      "target": "c_daegu_ppp_choo",
+      "timestep": 0
+    },
+    {
+      "event_id": "2",
+      "type": "PollPublication",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "3",
+      "type": "PollPublication",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_ppp_pick",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_dpk_pick",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 1
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-26T05:29:57.687394+00:00",
+    "policy_version": "v2.0_validation_first",
+    "env": "dev",
+    "voter_stats": {
+      "calls": 640,
+      "parse_fail": 0,
+      "abstain": 10,
+      "latency_ms_sum": 118292.71092698582,
+      "calls_by_model": {
+        "nano": 384,
+        "mini": 216,
+        "sonnet": 40
+      },
+      "mean_latency_ms": 184.8,
+      "parse_fail_rate": 0.0,
+      "abstain_rate": 0.0156
+    },
+    "pool_stats": {
+      "provider": "gemini",
+      "model": "gemini/gemini-3.1-flash-lite-preview",
+      "per_key": [
+        {
+          "key_index": 0,
+          "current_rpm": 41,
+          "limit_rpm": 500,
+          "total_calls": 36,
+          "total_429": 0
+        },
+        {
+          "key_index": 1,
+          "current_rpm": 40,
+          "limit_rpm": 500,
+          "total_calls": 36,
+          "total_429": 0
+        },
+        {
+          "key_index": 2,
+          "current_rpm": 40,
+          "limit_rpm": 500,
+          "total_calls": 36,
+          "total_429": 0
+        }
+      ],
+      "cache_hits": 1002,
+      "cache_misses": 121,
+      "total_calls": 121,
+      "n_keys": 3,
+      "iam_mode": false,
+      "cost_usd": {
+        "openai": 0.0,
+        "anthropic": 0.0,
+        "gemini": 0.0,
+        "vertex_ai": 0.0,
+        "azure": 0.0,
+        "bedrock": 0.0,
+        "groq": 0.0,
+        "openrouter": 0.0
+      },
+      "cost_thresholds": {
+        "openai": 50.0,
+        "anthropic": 20.0,
+        "gemini": 5.0,
+        "vertex_ai": 5.0,
+        "azure": 50.0,
+        "bedrock": 20.0,
+        "groq": 50.0,
+        "openrouter": 50.0
+      },
+      "cost_tracking_enabled": false,
+      "cache_hit_rate": 0.8923
+    },
+    "actual_keys_used": 3,
+    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
+    "effective_provider": "gemini",
+    "official_poll_validation": {
+      "target_series": "poll_consensus_daily",
+      "as_of_date": "2026-04-26",
+      "method_version": "weighted_v1",
+      "cutoff_ts": "2026-04-26T00:00:00+09:00",
+      "source_poll_ids": [
+        "\"nesdc-16200\"]",
+        "[\"nesdc-16198\""
+      ],
+      "metrics": {
+        "mae": 0.5702,
+        "rmse": 0.5702,
+        "margin_error": 0.8596,
+        "leader_match": false
+      },
+      "by_candidate": {
+        "c_seoul_dpk": {
+          "simulated_share": 0.0,
+          "official_consensus": 0.5702,
+          "error": -0.5702
+        },
+        "c_seoul_ppp": {
+          "simulated_share": 1.0,
+          "official_consensus": 0.4298,
+          "error": 0.5702
+        }
+      }
+    },
+    "finished_at": "2026-04-26T05:30:17.139044+00:00",
+    "wall_seconds": 19.45,
+    "original_scenario_id": "seoul_mayor_2026",
+    "finalized_at": "2026-04-26T05:31:39.432223+00:00"
+  }
+}

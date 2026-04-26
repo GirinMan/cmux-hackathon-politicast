@@ -1,0 +1,33 @@
+{
+  "_doc": "Voter agent ↔ orchestrator I/O contract. sim-engineer가 enforce.",
+  "model": "gemini-3-flash-preview",
+  "framework": "camel-ai >=0.2.90 (ModelType.GEMINI_3_FLASH)",
+  "json_mode": true,
+  "voter_request_schema": {
+    "persona_id": "uuid",
+    "persona_block": "string (concise + professional + family + cultural_background)",
+    "region_id": "string (matches data_paths.regions[].id)",
+    "contest_id": "string",
+    "candidates": [{"id": "string", "name": "string", "party": "string", "withdrawn": "bool"}],
+    "context_block": "string (KG-derived events/polls/frames up to time t)",
+    "timestep": "int (0..T)",
+    "instruction_mode": "secret_ballot | poll_response | virtual_interview"
+  },
+  "voter_response_schema": {
+    "vote": "candidate_id | null (abstain)",
+    "turnout": "bool",
+    "confidence": "float in [0,1]",
+    "reason": "string (<=200 chars, omitted in secret_ballot mode unless interview)",
+    "key_factors": ["string array, <=3"]
+  },
+  "gemini_pool": {
+    "keys_env_var": "GEMINI_API_KEYS (comma-separated)",
+    "round_robin": true,
+    "rate_limit_strategy": "429_backoff_then_next_key",
+    "max_concurrency": 16,
+    "json_response_format": {"type": "json_object"},
+    "cache": {"backend": "sqlite", "key": "(persona_id, scenario_hash, timestep)"}
+  },
+  "_filled_by": "sim-engineer",
+  "_status": "skeleton"
+}
