@@ -115,45 +115,6 @@ services:
               else echo 'frontend/package.json missing — fe stream 가 채울 때까지 idle';
                    tail -f /dev/null; fi"
 
-  # ---- legacy DuckDB / Streamlit dev container (optional, profile=legacy) ----
-  app:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile
-    image: politikast:dev
-    container_name: politikast-app
-    profiles: ["legacy"]
-    env_file:
-      - .env
-    working_dir: /app
-    volumes:
-      - .:/app
-      - ${NEMOTRON_PARQUET_DIR:-/Users/girinman/datasets/Nemotron-Personas-Korea/data}:/data/nemotron:ro
-    ports:
-      - "8501:8501"
-      - "8888:8888"
-    stdin_open: true
-    tty: true
-    command: bash
-
-  dashboard:
-    image: politikast:dev
-    container_name: politikast-dashboard
-    depends_on:
-      - app
-    profiles: ["legacy"]
-    env_file:
-      - .env
-    working_dir: /app
-    volumes:
-      - .:/app
-      - ${NEMOTRON_PARQUET_DIR:-/Users/girinman/datasets/Nemotron-Personas-Korea/data}:/data/nemotron:ro
-    ports:
-      - "8502:8501"
-    command: >
-      bash -lc "streamlit run ui/dashboard/app.py
-        --server.port=8501 --server.address=0.0.0.0"
-
 volumes:
   politikast-pg:
   politikast-neo4j-data:
