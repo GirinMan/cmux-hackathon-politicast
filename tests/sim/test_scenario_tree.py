@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import asyncio
 import datetime as dt
+import hashlib
 from typing import Any
 
 import pytest
@@ -40,12 +41,18 @@ BASE_SCENARIO: dict[str, Any] = {
 
 
 def _shim_runner_factory():
+    # Deterministic across interpreter restarts. ``hash()`` was randomized by
+    # PYTHONHASHSEED so the leader flipped run-to-run and the on-disk node
+    # fixtures churned in git status. SHA-1 over the event id is stable.
+    def _stable_bit(s: str) -> int:
+        return hashlib.sha1(s.encode("utf-8")).digest()[0] & 1
+
     async def _runner(scenario, ctx):
         seed_events = scenario.get("seed_events") or []
         leader = "c_a"
         if seed_events:
             last = seed_events[-1].get("event_id", "")
-            leader = "c_b" if hash(last) % 2 == 0 else "c_a"
+            leader = "c_b" if _stable_bit(last) == 0 else "c_a"
         shares = (
             {"c_a": 0.55, "c_b": 0.45}
             if leader == "c_a"
