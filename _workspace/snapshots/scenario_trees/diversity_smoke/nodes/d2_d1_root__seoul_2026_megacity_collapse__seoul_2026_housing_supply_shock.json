@@ -1,0 +1,341 @@
+{
+  "scenario_id": "seoul_mayor_2026__beam_seoul_2026_megacity_collapse__beam_seoul_2026_housing_supply_shock",
+  "region_id": "seoul_mayor",
+  "contest_id": "seoul_mayor_2026",
+  "timestep_count": 1,
+  "persona_n": 24,
+  "candidates": [
+    {
+      "id": "c_seoul_dpk",
+      "name": "정원오",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_seoul_ppp",
+      "name": "오세훈",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_seoul_rebuild",
+      "name": "한민수",
+      "party": "p_rebuild"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-19",
+      "support_by_candidate": {
+        "c_seoul_dpk": 0.0,
+        "c_seoul_ppp": 1.0,
+        "c_seoul_rebuild": 0.0
+      },
+      "turnout_intent": 0.6666666666666666,
+      "consensus_var": 0.22222222222222224
+    }
+  ],
+  "final_outcome": {
+    "turnout": 1.0,
+    "vote_share_by_candidate": {
+      "c_seoul_dpk": 0.0,
+      "c_seoul_ppp": 1.0,
+      "c_seoul_rebuild": 0.0
+    },
+    "winner": "c_seoul_ppp",
+    "n_responses": 24,
+    "n_abstain": 2
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "30s": {
+        "c_seoul_ppp": 1.0
+      },
+      "50s": {
+        "c_seoul_ppp": 1.0
+      },
+      "20s": {
+        "c_seoul_ppp": 1.0
+      },
+      "60s+": {
+        "c_seoul_ppp": 1.0
+      },
+      "40s": {
+        "c_seoul_ppp": 0.6
+      }
+    },
+    "by_education": {
+      "고등학교": {
+        "c_seoul_ppp": 1.0
+      },
+      "4년제 대학교": {
+        "c_seoul_ppp": 0.8
+      },
+      "2~3년제 전문대학": {
+        "c_seoul_ppp": 1.0
+      },
+      "중학교": {
+        "c_seoul_ppp": 1.0
+      },
+      "대학원": {
+        "c_seoul_ppp": 1.0
+      },
+      "무학": {
+        "c_seoul_ppp": 1.0
+      }
+    },
+    "by_district": {
+      "서울-영등포구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-성북구": {
+        "c_seoul_ppp": 0.5
+      },
+      "서울-노원구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-성동구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-서초구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-강북구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-강남구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-구로구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-서대문구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-은평구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-송파구": {
+        "c_seoul_ppp": 0.6666666666666666
+      },
+      "서울-양천구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-중구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-강서구": {
+        "c_seoul_ppp": 1.0
+      }
+    }
+  },
+  "virtual_interviews": [],
+  "kg_events_used": [
+    {
+      "event_id": "1",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "2",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "3",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_lower_voting_age__seoul_mayor",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_min_park_revolt__seoul_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_yoon_again__seoul_mayor",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_yt_fake__seoul_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_jwo_announce",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_jwo_culture_pledge",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_jwo_gangnam_pledge",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_oh_announce",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_oh_minsaeng",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_oh_realestate_clash",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_ppp_pick",
+      "type": "MediaEvent",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_us_visit__seoul_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_ppp_lowest_15pct__seoul_mayor",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_seoul_dpk_pick",
+      "type": "MediaEvent",
+      "target": "c_seoul_dpk",
+      "timestep": 1
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "cohort_prior",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-28T09:13:11.683215+00:00",
+    "policy_version": "unknown",
+    "env": "dev",
+    "llm_cache_enabled": true,
+    "final_poll_feedback_enabled": false,
+    "poll_targets_visible_to_agents": false,
+    "counterfactual": {
+      "enabled": true,
+      "mode": "scenario_tree_branch",
+      "intervention_id": "seoul_2026_housing_supply_shock",
+      "base_region_id": "seoul_mayor",
+      "calibration_profile": "frozen_current",
+      "frozen_params": true,
+      "reason": "Scenario-tree beam branch: hypothetical/confirmed event spliced in for forward simulation.",
+      "source_urls": [],
+      "poll_targets_visible_to_agents": false
+    },
+    "voter_stats": {
+      "calls": 48,
+      "parse_fail": 0,
+      "abstain": 23,
+      "latency_ms_sum": 35856.96008108789,
+      "calls_by_model": {
+        "openai/exaone-4.0-1.2b": 48
+      },
+      "mean_latency_ms": 747.0,
+      "parse_fail_rate": 0.0,
+      "abstain_rate": 0.4792
+    },
+    "pool_stats": {
+      "provider": "openai",
+      "model": "openai/EXAONE-4.0-1.2B",
+      "per_key": [
+        {
+          "key_index": 0,
+          "current_rpm": 200,
+          "limit_rpm": 500,
+          "total_calls": 288,
+          "total_429": 0
+        }
+      ],
+      "cache_hits": 14,
+      "cache_misses": 288,
+      "total_calls": 288,
+      "n_keys": 1,
+      "iam_mode": false,
+      "cost_usd": {
+        "openai": 0.0,
+        "anthropic": 0.0,
+        "gemini": 0.0,
+        "vertex_ai": 0.0,
+        "azure": 0.0,
+        "bedrock": 0.0,
+        "groq": 0.0,
+        "openrouter": 0.0
+      },
+      "cost_thresholds": {
+        "openai": 50.0,
+        "anthropic": Infinity,
+        "gemini": Infinity,
+        "vertex_ai": Infinity,
+        "azure": 50.0,
+        "bedrock": Infinity,
+        "groq": 50.0,
+        "openrouter": 50.0
+      },
+      "cost_tracking_enabled": false,
+      "cache_hit_rate": 0.0464
+    },
+    "actual_keys_used": 1,
+    "effective_model": "openai/EXAONE-4.0-1.2B",
+    "effective_provider": "gemini",
+    "official_poll_validation": {
+      "target_series": "counterfactual_prediction",
+      "as_of_date": null,
+      "method_version": "not_applicable",
+      "cutoff_ts": "2026-04-19T00:00:00+09:00",
+      "source_poll_ids": [],
+      "metrics": {
+        "mae": null,
+        "rmse": null,
+        "margin_error": null,
+        "leader_match": null
+      },
+      "by_candidate": {},
+      "counterfactual_prediction": true,
+      "reason": "Scenario-tree beam branch: hypothetical/confirmed event spliced in for forward simulation.",
+      "intervention_id": "seoul_2026_housing_supply_shock",
+      "base_region_id": "seoul_mayor",
+      "calibration_profile": "frozen_current",
+      "frozen_params": true,
+      "poll_targets_visible_to_agents": false
+    },
+    "finished_at": "2026-04-28T09:13:16.838541+00:00",
+    "wall_seconds": 5.16
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "tree_id": "err_diag2",
+  "region_id": "seoul_mayor",
+  "contest_id": "seoul_mayor_2026",
+  "as_of": "2026-04-26",
+  "election_date": "2026-06-03",
+  "config": {
+    "beam_width": 1,
+    "beam_depth": 1,
+    "k_propose": 3,
+    "proposer": "composite",
+    "seed": 11,
+    "sample_n": 4,
+    "timesteps": 1,
+    "strict_temporal": true
+  },
+  "root_id": "root",
+  "nodes": {
+    "root": {
+      "node_id": "root",
+      "parent_id": null,
+      "depth": 0,
+      "event": null,
+      "cumulative_p": 1.0,
+      "sim_result_ref": "_workspace/snapshots/scenario_trees/err_diag2/nodes/root.json",
+      "leader_candidate_id": "c_seoul_dpk",
+      "predicted_shares": {
+        "c_seoul_dpk": 0.0,
+        "c_seoul_ppp": 0.0,
+        "c_seoul_rebuild": 0.0
+      },
+      "children": [
+        "d1_root__seoul_2026_megacity_collapse"
+      ]
+    },
+    "d1_root__seoul_2026_megacity_collapse": {
+      "node_id": "d1_root__seoul_2026_megacity_collapse",
+      "parent_id": "root",
+      "depth": 1,
+      "event": {
+        "event_id": "seoul_2026_megacity_collapse",
+        "source": "custom",
+        "occurs_at": "2026-05-08T11:00:00+09:00",
+        "description": "수도권 메가시티 통합안 무산 — 서울/경기 갈등 부각",
+        "candidate_patches": [
+          {
+            "candidate_id": "c_seoul_ppp",
+            "boost": -0.03,
+            "reason": "여당 추진 정책 좌초"
+          }
+        ],
+        "event_patches": [
+          {
+            "issue": "수도권_재편",
+            "salience": 0.22
+          }
+        ],
+        "prior_p": 0.4,
+        "metadata": {
+          "intuition_label": "메가시티 무산"
+        }
+      },
+      "cumulative_p": 0.4,
+      "sim_result_ref": "_workspace/snapshots/scenario_trees/err_diag2/nodes/d1_root__seoul_2026_megacity_collapse.json",
+      "leader_candidate_id": "c_seoul_dpk",
+      "predicted_shares": {
+        "c_seoul_dpk": 0.0,
+        "c_seoul_ppp": 0.0,
+        "c_seoul_rebuild": 0.0
+      },
+      "children": []
+    }
+  },
+  "mlflow_run_id": null,
+  "built_at": "2026-04-28T09:02:13.983523Z",
+  "metadata": {
+    "proposer": "composite",
+    "n_active_leaves_final": 1
+  }
+}

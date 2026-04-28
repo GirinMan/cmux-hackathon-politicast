@@ -258,3 +258,7 @@ _workspace/db/*.duckdb
 _workspace/db/*.sqlite
 _workspace/snapshots/figures/
 _workspace_prev/
+
+# 발표 산출물 — 형식 상관 없이 모두 git 추적 X (PDF / PPTX / MP4 / 빌드 산출물 포함)
+demo.mp4
+output/

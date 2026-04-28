@@ -1,0 +1,269 @@
+{
+  "scenario_id": "seoul_mayor_2026",
+  "region_id": "seoul_mayor",
+  "contest_id": "seoul_mayor_2026",
+  "timestep_count": 1,
+  "persona_n": 4,
+  "candidates": [
+    {
+      "id": "c_seoul_dpk",
+      "name": "정원오",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_seoul_ppp",
+      "name": "오세훈",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_seoul_rebuild",
+      "name": "한민수",
+      "party": "p_rebuild"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-19",
+      "support_by_candidate": {
+        "c_seoul_dpk": 0.0,
+        "c_seoul_ppp": 0.0,
+        "c_seoul_rebuild": 0.0
+      },
+      "turnout_intent": 0.0,
+      "consensus_var": 0.0
+    }
+  ],
+  "final_outcome": {
+    "turnout": 0.0,
+    "vote_share_by_candidate": {
+      "c_seoul_dpk": 0.0,
+      "c_seoul_ppp": 0.0,
+      "c_seoul_rebuild": 0.0
+    },
+    "winner": "c_seoul_dpk",
+    "n_responses": 4,
+    "n_abstain": 4
+  },
+  "demographics_breakdown": {
+    "by_age_group": {},
+    "by_education": {},
+    "by_district": {}
+  },
+  "virtual_interviews": [],
+  "kg_events_used": [
+    {
+      "event_id": "1",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "2",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "3",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_lower_voting_age__seoul_mayor",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_min_park_revolt__seoul_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_yoon_again__seoul_mayor",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_yt_fake__seoul_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_jwo_announce",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_jwo_culture_pledge",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_jwo_gangnam_pledge",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_oh_announce",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_oh_minsaeng",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_oh_realestate_clash",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_ppp_pick",
+      "type": "MediaEvent",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_us_visit__seoul_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_ppp_lowest_15pct__seoul_mayor",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_seoul_dpk_pick",
+      "type": "MediaEvent",
+      "target": "c_seoul_dpk",
+      "timestep": 1
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "cohort_prior",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-28T09:00:29.918714+00:00",
+    "policy_version": "unknown",
+    "env": "dev",
+    "llm_cache_enabled": true,
+    "final_poll_feedback_enabled": false,
+    "poll_targets_visible_to_agents": false,
+    "counterfactual": null,
+    "voter_stats": {
+      "calls": 24,
+      "parse_fail": 0,
+      "abstain": 8,
+      "latency_ms_sum": 0.0,
+      "calls_by_model": {
+        "openai/exaone-4.0-1.2b": 24
+      },
+      "mean_latency_ms": 0.0,
+      "parse_fail_rate": 0.0,
+      "abstain_rate": 0.3333
+    },
+    "pool_stats": {
+      "provider": "gemini",
+      "model": "gemini/gemini-3.1-flash-lite-preview",
+      "per_key": [
+        {
+          "key_index": 0,
+          "current_rpm": 24,
+          "limit_rpm": 500,
+          "total_calls": 0,
+          "total_429": 0
+        }
+      ],
+      "cache_hits": 0,
+      "cache_misses": 24,
+      "total_calls": 24,
+      "n_keys": 1,
+      "iam_mode": false,
+      "cost_usd": {
+        "openai": 0.0,
+        "anthropic": 0.0,
+        "gemini": 0.0,
+        "vertex_ai": 0.0,
+        "azure": 0.0,
+        "bedrock": 0.0,
+        "groq": 0.0,
+        "openrouter": 0.0
+      },
+      "cost_thresholds": {
+        "openai": 50.0,
+        "anthropic": Infinity,
+        "gemini": Infinity,
+        "vertex_ai": Infinity,
+        "azure": 50.0,
+        "bedrock": Infinity,
+        "groq": 50.0,
+        "openrouter": 50.0
+      },
+      "cost_tracking_enabled": false,
+      "cache_hit_rate": 0.0
+    },
+    "actual_keys_used": 1,
+    "effective_model": "openai/EXAONE-4.0-1.2B",
+    "effective_provider": "gemini",
+    "official_poll_validation": {
+      "target_series": "scenario_fallback_v1",
+      "as_of_date": "2026-04-07",
+      "method_version": "scenario_fallback_v1",
+      "cutoff_ts": "2026-04-19T00:00:00+09:00",
+      "source_poll_ids": [
+        "KBS·케이스탯",
+        "SBS·입소스"
+      ],
+      "metrics": {
+        "mae": 0.3333,
+        "rmse": 0.3905,
+        "margin_error": 0.0955,
+        "leader_match": true,
+        "brier": null,
+        "ece": null,
+        "js_divergence": null,
+        "collapse_flag": null
+      },
+      "by_candidate": {
+        "c_seoul_dpk": {
+          "simulated_share": 0.0,
+          "official_consensus": 0.5223,
+          "error": -0.5223
+        },
+        "c_seoul_ppp": {
+          "simulated_share": 0.0,
+          "official_consensus": 0.4268,
+          "error": -0.4268
+        },
+        "c_seoul_rebuild": {
+          "simulated_share": 0.0,
+          "official_consensus": 0.051,
+          "error": -0.051
+        }
+      }
+    },
+    "finished_at": "2026-04-28T09:00:57.464744+00:00",
+    "wall_seconds": 27.55
+  }
+}

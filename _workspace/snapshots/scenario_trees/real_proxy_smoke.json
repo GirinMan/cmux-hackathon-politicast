@@ -1,0 +1,208 @@
+{
+  "tree_id": "real_proxy_smoke",
+  "region_id": "seoul_mayor",
+  "contest_id": "seoul_mayor_2026",
+  "as_of": "2026-04-26",
+  "election_date": "2026-06-03",
+  "config": {
+    "beam_width": 2,
+    "beam_depth": 2,
+    "k_propose": 3,
+    "proposer": "composite",
+    "seed": 11,
+    "sample_n": 12,
+    "timesteps": 1,
+    "strict_temporal": true
+  },
+  "root_id": "root",
+  "nodes": {
+    "root": {
+      "node_id": "root",
+      "parent_id": null,
+      "depth": 0,
+      "event": null,
+      "cumulative_p": 1.0,
+      "sim_result_ref": "_workspace/snapshots/scenario_trees/real_proxy_smoke/nodes/root.json",
+      "leader_candidate_id": "c_seoul_ppp",
+      "predicted_shares": {
+        "c_seoul_dpk": 0.0,
+        "c_seoul_ppp": 1.0,
+        "c_seoul_rebuild": 0.0
+      },
+      "children": [
+        "d1_root__seoul_2026_megacity_collapse",
+        "d1_root__seoul_2026_cho_emergency_committee"
+      ]
+    },
+    "d1_root__seoul_2026_megacity_collapse": {
+      "node_id": "d1_root__seoul_2026_megacity_collapse",
+      "parent_id": "root",
+      "depth": 1,
+      "event": {
+        "event_id": "seoul_2026_megacity_collapse",
+        "source": "custom",
+        "occurs_at": "2026-05-08T11:00:00+09:00",
+        "description": "수도권 메가시티 통합안 무산 — 서울/경기 갈등 부각",
+        "candidate_patches": [
+          {
+            "candidate_id": "c_seoul_ppp",
+            "boost": -0.03,
+            "reason": "여당 추진 정책 좌초"
+          }
+        ],
+        "event_patches": [
+          {
+            "issue": "수도권_재편",
+            "salience": 0.22
+          }
+        ],
+        "prior_p": 0.4,
+        "metadata": {
+          "intuition_label": "메가시티 무산"
+        }
+      },
+      "cumulative_p": 0.4,
+      "sim_result_ref": "_workspace/snapshots/scenario_trees/real_proxy_smoke/nodes/d1_root__seoul_2026_megacity_collapse.json",
+      "leader_candidate_id": "c_seoul_ppp",
+      "predicted_shares": {
+        "c_seoul_dpk": 0.0,
+        "c_seoul_ppp": 1.0,
+        "c_seoul_rebuild": 0.0
+      },
+      "children": [
+        "d2_d1_root__seoul_2026_megacity_collapse__seoul_2026_housing_supply_shock"
+      ]
+    },
+    "d1_root__seoul_2026_cho_emergency_committee": {
+      "node_id": "d1_root__seoul_2026_cho_emergency_committee",
+      "parent_id": "root",
+      "depth": 1,
+      "event": {
+        "event_id": "seoul_2026_cho_emergency_committee",
+        "source": "custom",
+        "occurs_at": "2026-05-02T09:00:00+09:00",
+        "description": "조국혁신당 비대위 출범 — 서울 후보 단일화 압력",
+        "candidate_patches": [
+          {
+            "candidate_id": "c_seoul_rebuild",
+            "boost": 0.04,
+            "reason": "비대위 모멘텀"
+          }
+        ],
+        "event_patches": [
+          {
+            "issue": "야권_단일화",
+            "salience": 0.18
+          }
+        ],
+        "prior_p": 0.35,
+        "metadata": {
+          "intuition_label": "조국 비대위 출범",
+          "tags": [
+            "야권",
+            "단일화"
+          ]
+        }
+      },
+      "cumulative_p": 0.35,
+      "sim_result_ref": "_workspace/snapshots/scenario_trees/real_proxy_smoke/nodes/d1_root__seoul_2026_cho_emergency_committee.json",
+      "leader_candidate_id": "c_seoul_ppp",
+      "predicted_shares": {
+        "c_seoul_dpk": 0.0,
+        "c_seoul_ppp": 1.0,
+        "c_seoul_rebuild": 0.0
+      },
+      "children": [
+        "d2_d1_root__seoul_2026_cho_emergency_committee__seoul_2026_housing_supply_shock"
+      ]
+    },
+    "d2_d1_root__seoul_2026_megacity_collapse__seoul_2026_housing_supply_shock": {
+      "node_id": "d2_d1_root__seoul_2026_megacity_collapse__seoul_2026_housing_supply_shock",
+      "parent_id": "d1_root__seoul_2026_megacity_collapse",
+      "depth": 2,
+      "event": {
+        "event_id": "seoul_2026_housing_supply_shock",
+        "source": "custom",
+        "occurs_at": "2026-05-20T08:30:00+09:00",
+        "description": "강남권 재건축 분양가 상한 폐지 발표",
+        "candidate_patches": [
+          {
+            "candidate_id": "c_seoul_ppp",
+            "boost": 0.025,
+            "reason": "공급 정책 어필"
+          },
+          {
+            "candidate_id": "c_seoul_dpk",
+            "boost": -0.015
+          }
+        ],
+        "event_patches": [
+          {
+            "issue": "주택_공급",
+            "salience": 0.28
+          }
+        ],
+        "prior_p": 0.45,
+        "metadata": {
+          "intuition_label": "분양가 상한 폐지"
+        }
+      },
+      "cumulative_p": 0.18000000000000002,
+      "sim_result_ref": "_workspace/snapshots/scenario_trees/real_proxy_smoke/nodes/d2_d1_root__seoul_2026_megacity_collapse__seoul_2026_housing_supply_shock.json",
+      "leader_candidate_id": "c_seoul_ppp",
+      "predicted_shares": {
+        "c_seoul_dpk": 0.0,
+        "c_seoul_ppp": 1.0,
+        "c_seoul_rebuild": 0.0
+      },
+      "children": []
+    },
+    "d2_d1_root__seoul_2026_cho_emergency_committee__seoul_2026_housing_supply_shock": {
+      "node_id": "d2_d1_root__seoul_2026_cho_emergency_committee__seoul_2026_housing_supply_shock",
+      "parent_id": "d1_root__seoul_2026_cho_emergency_committee",
+      "depth": 2,
+      "event": {
+        "event_id": "seoul_2026_housing_supply_shock",
+        "source": "custom",
+        "occurs_at": "2026-05-20T08:30:00+09:00",
+        "description": "강남권 재건축 분양가 상한 폐지 발표",
+        "candidate_patches": [
+          {
+            "candidate_id": "c_seoul_ppp",
+            "boost": 0.025,
+            "reason": "공급 정책 어필"
+          },
+          {
+            "candidate_id": "c_seoul_dpk",
+            "boost": -0.015
+          }
+        ],
+        "event_patches": [
+          {
+            "issue": "주택_공급",
+            "salience": 0.28
+          }
+        ],
+        "prior_p": 0.45,
+        "metadata": {
+          "intuition_label": "분양가 상한 폐지"
+        }
+      },
+      "cumulative_p": 0.1575,
+      "sim_result_ref": "_workspace/snapshots/scenario_trees/real_proxy_smoke/nodes/d2_d1_root__seoul_2026_cho_emergency_committee__seoul_2026_housing_supply_shock.json",
+      "leader_candidate_id": "c_seoul_ppp",
+      "predicted_shares": {
+        "c_seoul_dpk": 0.0,
+        "c_seoul_ppp": 1.0,
+        "c_seoul_rebuild": 0.0
+      },
+      "children": []
+    }
+  },
+  "mlflow_run_id": null,
+  "built_at": "2026-04-28T09:06:40.873827Z",
+  "metadata": {
+    "proposer": "composite",
+    "n_active_leaves_final": 2
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "scenario_id": "seoul_mayor_2026__beam_seoul_2026_cho_emergency_committee__beam_seoul_2026_megacity_collapse",
+  "region_id": "seoul_mayor",
+  "contest_id": "seoul_mayor_2026",
+  "timestep_count": 1,
+  "persona_n": 24,
+  "candidates": [
+    {
+      "id": "c_seoul_dpk",
+      "name": "정원오",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_seoul_ppp",
+      "name": "오세훈",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_seoul_rebuild",
+      "name": "한민수",
+      "party": "p_rebuild"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-19",
+      "support_by_candidate": {
+        "c_seoul_dpk": 0.9166666666666666,
+        "c_seoul_ppp": 0.0,
+        "c_seoul_rebuild": 0.08333333333333333
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.17129629629629628
+    }
+  ],
+  "final_outcome": {
+    "turnout": 1.0,
+    "vote_share_by_candidate": {
+      "c_seoul_dpk": 0.0,
+      "c_seoul_ppp": 0.4166666666666667,
+      "c_seoul_rebuild": 0.5833333333333334
+    },
+    "winner": "c_seoul_rebuild",
+    "n_responses": 24,
+    "n_abstain": 0
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "30s": {
+        "c_seoul_rebuild": 1.0
+      },
+      "50s": {
+        "c_seoul_ppp": 1.0
+      },
+      "20s": {
+        "c_seoul_rebuild": 1.0
+      },
+      "60s+": {
+        "c_seoul_rebuild": 1.0
+      },
+      "40s": {
+        "c_seoul_ppp": 1.0
+      }
+    },
+    "by_education": {
+      "고등학교": {
+        "c_seoul_rebuild": 0.5714285714285714,
+        "c_seoul_ppp": 0.42857142857142855
+      },
+      "4년제 대학교": {
+        "c_seoul_ppp": 0.4,
+        "c_seoul_rebuild": 0.6
+      },
+      "2~3년제 전문대학": {
+        "c_seoul_rebuild": 1.0
+      },
+      "중학교": {
+        "c_seoul_rebuild": 0.5,
+        "c_seoul_ppp": 0.5
+      },
+      "대학원": {
+        "c_seoul_ppp": 0.6666666666666666,
+        "c_seoul_rebuild": 0.3333333333333333
+      },
+      "무학": {
+        "c_seoul_rebuild": 1.0
+      }
+    },
+    "by_district": {
+      "서울-영등포구": {
+        "c_seoul_rebuild": 1.0
+      },
+      "서울-성북구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-노원구": {
+        "c_seoul_rebuild": 0.5,
+        "c_seoul_ppp": 0.5
+      },
+      "서울-성동구": {
+        "c_seoul_rebuild": 0.5,
+        "c_seoul_ppp": 0.5
+      },
+      "서울-서초구": {
+        "c_seoul_rebuild": 1.0
+      },
+      "서울-강북구": {
+        "c_seoul_rebuild": 1.0
+      },
+      "서울-강남구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-구로구": {
+        "c_seoul_rebuild": 1.0
+      },
+      "서울-서대문구": {
+        "c_seoul_ppp": 1.0
+      },
+      "서울-은평구": {
+        "c_seoul_rebuild": 0.5,
+        "c_seoul_ppp": 0.5
+      },
+      "서울-송파구": {
+        "c_seoul_ppp": 0.3333333333333333,
+        "c_seoul_rebuild": 0.6666666666666666
+      },
+      "서울-양천구": {
+        "c_seoul_rebuild": 1.0
+      },
+      "서울-중구": {
+        "c_seoul_ppp": 0.5,
+        "c_seoul_rebuild": 0.5
+      },
+      "서울-강서구": {
+        "c_seoul_ppp": 1.0
+      }
+    }
+  },
+  "virtual_interviews": [],
+  "kg_events_used": [
+    {
+      "event_id": "1",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "2",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "3",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_lower_voting_age__seoul_mayor",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_min_park_revolt__seoul_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_yoon_again__seoul_mayor",
+      "type": "PressConference",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_yt_fake__seoul_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_jwo_announce",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_jwo_culture_pledge",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_jwo_gangnam_pledge",
+      "type": "PressConference",
+      "target": "c_seoul_dpk",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_oh_announce",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_oh_minsaeng",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_oh_realestate_clash",
+      "type": "PressConference",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_seoul_ppp_pick",
+      "type": "MediaEvent",
+      "target": "c_seoul_ppp",
+      "timestep": 0
+    },
+    {
+      "event_id": "ev_ppp_jdh_us_visit__seoul_mayor",
+      "type": "MediaEvent",
+      "target": "",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_ppp_lowest_15pct__seoul_mayor",
+      "type": "PollPublication",
+      "target": "",
+      "timestep": 1
+    },
+    {
+      "event_id": "ev_seoul_dpk_pick",
+      "type": "MediaEvent",
+      "target": "c_seoul_dpk",
+      "timestep": 1
+    }
+  ],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "cohort_prior",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-28T06:50:33.623695+00:00",
+    "policy_version": "unknown",
+    "env": "prod",
+    "llm_cache_enabled": true,
+    "final_poll_feedback_enabled": false,
+    "poll_targets_visible_to_agents": false,
+    "counterfactual": {
+      "enabled": true,
+      "mode": "scenario_tree_branch",
+      "intervention_id": "seoul_2026_megacity_collapse",
+      "base_region_id": "seoul_mayor",
+      "calibration_profile": "frozen_current",
+      "frozen_params": true,
+      "reason": "Scenario-tree beam branch: hypothetical/confirmed event spliced in for forward simulation.",
+      "source_urls": [],
+      "poll_targets_visible_to_agents": false
+    },
+    "voter_stats": {
+      "calls": 48,
+      "parse_fail": 0,
+      "abstain": 0,
+      "latency_ms_sum": 2.148289844626561,
+      "calls_by_model": {
+        "nano": 28,
+        "mini": 20
+      },
+      "mean_latency_ms": 0.0,
+      "parse_fail_rate": 0.0,
+      "abstain_rate": 0.0
+    },
+    "official_poll_validation": {
+      "target_series": "counterfactual_prediction",
+      "as_of_date": null,
+      "method_version": "not_applicable",
+      "cutoff_ts": "2026-04-19T00:00:00+09:00",
+      "source_poll_ids": [],
+      "metrics": {
+        "mae": null,
+        "rmse": null,
+        "margin_error": null,
+        "leader_match": null
+      },
+      "by_candidate": {},
+      "counterfactual_prediction": true,
+      "reason": "Scenario-tree beam branch: hypothetical/confirmed event spliced in for forward simulation.",
+      "intervention_id": "seoul_2026_megacity_collapse",
+      "base_region_id": "seoul_mayor",
+      "calibration_profile": "frozen_current",
+      "frozen_params": true,
+      "poll_targets_visible_to_agents": false
+    },
+    "finished_at": "2026-04-28T06:50:34.432114+00:00",
+    "wall_seconds": 0.81
+  }
+}
