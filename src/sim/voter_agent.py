@@ -293,6 +293,19 @@ class VoterAgent:
             f"{t.get('professional_persona', '')}\n"
             f"{t.get('family_persona', '')}\n"
             f"{t.get('cultural_background', '')}\n"
+            "\n=== 정치 성향 추론 가이드 ===\n"
+            "- 거주지·연령·직업·학력·가족 상황은 한국 사회에서 정치 성향과 강하게 "
+            "상관됩니다. 페르소나 디테일을 무시하고 '평균적 한국인' 답을 내지 마세요. "
+            "다른 페르소나가 같은 질문에 다른 답을 내는 것이 옳은 결과입니다.\n"
+            "- 영남/호남 같은 지역색, 청년/고령, 자영업/공무원/임금근로자, "
+            "고학력/저학력, 자가/임차 — 각 축은 후보 선택에 비대칭적으로 작용합니다. "
+            "위의 페르소나 서사에서 명시 또는 암시된 가치관·관심사·생활 조건을 "
+            "최우선으로 검토한 뒤 후보별 정당·공약·배경과 매칭하세요.\n"
+            "- 모든 페르소나가 강한 지지자일 필요는 없습니다. 미정·기권(vote=null) "
+            "도 페르소나가 정치 무관심·양당 모두 비호감일 때의 정당한 답입니다. "
+            "confidence 도 페르소나의 결정 강도에 맞게 0.3~0.95 범위에서 다양하게.\n"
+            "- 모델 prior(가장 흔한 답)에 의존하지 마세요. 페르소나의 구체적 디테일 "
+            "(직업·서사·문화 배경)이 후보 선택을 흔드는 결정적 요인이 되어야 합니다.\n"
             "\n=== 규칙 ===\n"
             "1. 제공된 컨텍스트(이슈·이벤트·공개 정보) 외 정보를 사용하지 마세요. "
             "공식 여론조사 target은 보정/검증 label이며 기본적으로 당신에게 제공되지 않습니다.\n"
@@ -373,10 +386,18 @@ class VoterAgent:
         # default if absent.
         if not ex.get("model") and mode in ("poll_response", "secret_ballot"):
             ex["model"] = _model_for_persona(self.persona)
+        # 다양성 부스트 — POLITIKAST_VOTER_TEMPERATURE 로 .env override.
+        # 1.2B 같은 작은 모델은 prior 가 강해 collapse 하기 쉬우므로 1.2 정도가
+        # 페르소나 디테일을 prompt 로부터 뽑아내는 데 도움.
+        try:
+            _voter_temp = float(os.environ.get("POLITIKAST_VOTER_TEMPERATURE", "1.0"))
+        except ValueError:
+            _voter_temp = 1.0
+        ex.setdefault("temperature", _voter_temp)
         # virtual_interview wants longer reason → bump tokens further
         if mode == "virtual_interview":
             ex.setdefault("max_output_tokens", 3072)
-            ex.setdefault("temperature", 1.0)  # Gemini 3 requires ≥1.0
+            ex["temperature"] = max(_voter_temp, 1.0)  # Gemini 3 requires ≥1.0
         # Bucket short label for the per-model counter (nano / mini / sonnet
         # / haiku / gemini / other). Keeps the voter_model_split report human-
         # readable without bloating with full model identifiers.
