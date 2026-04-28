@@ -148,6 +148,53 @@ def make_pool_backend(pool: Any) -> LLMBackend:
 make_gemini_pool_backend = make_pool_backend
 
 
+_MOCK_CANDIDATE_PATTERN = re.compile(
+    r"^- (?:\[출마 포기\] )?([a-z][a-z0-9_]+) \|", re.MULTILINE
+)
+
+
+def _build_mock_backend() -> LLMBackend:
+    """Deterministic offline backend — used when no LLM provider is reachable.
+
+    Why: Phase 6 build-tree smoke and reproducible tests need a backend that
+    works without API keys (CI, offline dev, expired keys). Picks a candidate
+    via SHA-1(user_prompt) so the same persona+context always returns the same
+    vote, while different prompts spread votes across the roster.
+    """
+    import hashlib
+
+    async def _backend(
+        system_prompt: str, user_prompt: str, extras: dict[str, Any]
+    ) -> str:
+        ids = _MOCK_CANDIDATE_PATTERN.findall(user_prompt)
+        if not ids:
+            return json.dumps(
+                {
+                    "vote": None,
+                    "turnout": False,
+                    "confidence": 0.5,
+                    "reason": "mock backend: no candidates parsed from prompt",
+                    "key_factors": ["mock_backend", "no_candidates"],
+                },
+                ensure_ascii=False,
+            )
+        h = int(hashlib.sha1(user_prompt.encode("utf-8")).hexdigest(), 16)
+        choice = ids[h % len(ids)]
+        confidence = 0.50 + ((h >> 8) % 50) / 100.0
+        return json.dumps(
+            {
+                "vote": choice,
+                "turnout": True,
+                "confidence": round(confidence, 2),
+                "reason": "mock backend: deterministic SHA-1(prompt) routing",
+                "key_factors": ["mock_backend", "deterministic"],
+            },
+            ensure_ascii=False,
+        )
+
+    return _backend
+
+
 def try_make_camel_backend() -> LLMBackend | None:
     """Plan A — CAMEL native. Returns None if camel-ai not importable."""
     try:
@@ -400,6 +447,10 @@ def build_default_backend(pool: Any | None = None) -> LLMBackend:
     ``camel``/``plan_b``: CAMEL 강제.
     """
     pref = os.environ.get("POLITIKAST_LLM_BACKEND", "auto").lower()
+
+    if pref == "mock":
+        logger.info("VoterAgent backend: mock (deterministic, offline).")
+        return _build_mock_backend()
 
     def _build_litellm() -> LLMBackend | None:
         try:
