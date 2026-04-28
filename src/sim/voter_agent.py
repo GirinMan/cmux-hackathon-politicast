@@ -111,7 +111,7 @@ def make_pool_backend(pool: Any) -> LLMBackend:
     """Wrap the synchronous ``LLMPool.chat`` (or compatible) in an async callable.
 
     ``pool`` is duck-typed — anything exposing ``.chat(messages, ...) -> str`` works
-    (``LLMPool``, legacy ``GeminiPool`` alias, custom mock).
+    (``LLMPool``, custom mock).
     """
 
     async def _backend(system_prompt: str, user_prompt: str, extras: dict[str, Any]) -> str:
@@ -142,10 +142,6 @@ def make_pool_backend(pool: Any) -> LLMBackend:
         return await asyncio.to_thread(_call)
 
     return _backend
-
-
-# Backward-compat alias (older code/tests may still import this name)
-make_gemini_pool_backend = make_pool_backend
 
 
 _MOCK_CANDIDATE_PATTERN = re.compile(
