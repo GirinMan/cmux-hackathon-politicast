@@ -1,13 +1,13 @@
 """PolitiKAST 평가 지표 단일 진실의 소스 (SoT).
 
-기존 src/sim/election_env.py:840-915 와 dashboard 레이어에 분산되어 있던
 시뮬 vs 공식 여론조사 비교 4종 지표(MAE / RMSE / margin_error / leader_match)
-를 한 곳에서 계산한다.
++ Phase 6 calibration 4종 (Brier / ECE / JS divergence / collapse_flag) 를
+한 곳에서 계산한다.
 
 호출 지점:
 - src/sim/election_env.ElectionEnv._inject_validation_metrics
-- ui/dashboard/components/data_loader.evaluate_validation_metrics (임계값 평가;
-  값은 본 모듈이 사전 산출한 결과를 읽기만 함)
+- src/eval/validation_harness.run_validation
+- src/train/calibrate.score_metrics
 """
 from __future__ import annotations
 

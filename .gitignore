@@ -16,8 +16,6 @@ eggs/
 .eggs/
 lib/
 lib64/
-!ui/eda-explorer/frontend/src/lib/
-!ui/eda-explorer/frontend/src/lib/**
 parts/
 sdist/
 var/
@@ -224,8 +222,6 @@ __marimo__/
 
 # JavaScript dependencies/build outputs
 node_modules/
-ui/eda-explorer/frontend/node_modules/
-ui/eda-explorer/frontend/dist/
 
 # PolitiKAST local runtime state and generated caches
 _workspace/paper_harness_watch.pid
