@@ -1,0 +1,23 @@
+{
+  "version": "v1",
+  "consensus": {
+    "alpha": 0.5,
+    "lam": 0.05,
+    "ref_day": 0,
+    "smoothing": 0.0,
+    "fieldwork_window_days": 30
+  },
+  "bandwagon": {
+    "bandwagon_w": 0.3,
+    "underdog_w": 0.1,
+    "trigger_threshold": 0.1,
+    "enable_bandwagon": true,
+    "enable_underdog": true
+  },
+  "env": {
+    "timesteps": 4,
+    "n_interviews": 30,
+    "concurrency": 8,
+    "base_date_strategy": "scenario_t_start"
+  }
+}

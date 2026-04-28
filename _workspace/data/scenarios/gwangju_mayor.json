@@ -21,9 +21,21 @@
     "population": 1430000
   },
   "parties": [
-    {"party_id": "p_dem",     "name": "더불어민주당", "ideology": -0.4},
-    {"party_id": "p_ppp",     "name": "국민의힘",     "ideology": 0.5},
-    {"party_id": "p_rebuild", "name": "조국혁신당",   "ideology": -0.6}
+    {
+      "party_id": "p_dem",
+      "name": "더불어민주당",
+      "ideology": -0.4
+    },
+    {
+      "party_id": "p_ppp",
+      "name": "국민의힘",
+      "ideology": 0.5
+    },
+    {
+      "party_id": "p_rebuild",
+      "name": "조국혁신당",
+      "ideology": -0.6
+    }
   ],
   "candidates": [
     {
@@ -34,7 +46,11 @@
       "party_name": "더불어민주당",
       "withdrawn": true,
       "background": "현 광주시장. 광주MBC/뉴시스/무등일보 2026-01-01 공표 조사에서 14%로 민형배(33%)에 뒤진 민주당 경선 대안. prediction-only 단일 후보 가정에서는 민주당 후보를 민형배로 고정하므로 비활성 처리.",
-      "key_pledges": ["광주형 일자리 2.0", "AI 거점 도시", "민주당 경선 대안 후보"]
+      "key_pledges": [
+        "광주형 일자리 2.0",
+        "AI 거점 도시",
+        "민주당 경선 대안 후보"
+      ]
     },
     {
       "id": "c_gwangju_dpk_alt",
@@ -44,7 +60,11 @@
       "party_name": "더불어민주당",
       "withdrawn": false,
       "background": "현 국회의원(광산을). 광주MBC/뉴시스/무등일보 2026-01-01 공표 조사에서 광주시장 후보 선호도 33%로 강기정(14%)을 오차범위 밖에서 앞선 것으로 보도됨. prediction-only 시나리오의 민주당 단일 후보.",
-      "key_pledges": ["검찰개혁 연계", "광주형 기본소득", "광주MBC 신년조사 민주당 후보군 선두"]
+      "key_pledges": [
+        "검찰개혁 연계",
+        "광주형 기본소득",
+        "광주MBC 신년조사 민주당 후보군 선두"
+      ]
     },
     {
       "id": "c_gwangju_ppp",
@@ -54,7 +74,11 @@
       "party_name": "국민의힘",
       "withdrawn": false,
       "background": "국민의힘 광주시당위원장. 광주MBC/뉴시스/무등일보 2026-01-01 공표 조사에서 국민의힘 후보군 중 안태욱 2%, 강현구 1%로 보도되어, 정당별 1명 가정에서 국민의힘 대표 후보로 고정.",
-      "key_pledges": ["호남 균형발전", "정권 안정", "국민의힘 광주 지역조직 대표성"]
+      "key_pledges": [
+        "호남 균형발전",
+        "정권 안정",
+        "국민의힘 광주 지역조직 대표성"
+      ]
     },
     {
       "id": "c_gwangju_rebuild",
@@ -64,17 +88,39 @@
       "party_name": "조국혁신당",
       "withdrawn": false,
       "background": "조국혁신당 국회의원. 광주MBC/뉴시스/무등일보 2026-01-01 공표 조사에서 1%로 보도된 혁신당 후보군. prediction-only 시나리오의 조국혁신당 단일 후보.",
-      "key_pledges": ["정치개혁", "검찰개혁", "진보 표 분산 효과"]
+      "key_pledges": [
+        "정치개혁",
+        "검찰개혁",
+        "진보 표 분산 효과"
+      ]
     }
   ],
   "issues": [
-    {"issue_id": "i_jobs",        "name": "광주형 일자리/AI 거점", "type": "지역개발"},
-    {"issue_id": "i_518",         "name": "5·18 진상규명",         "type": "역사"},
-    {"issue_id": "i_gov_alliance","name": "이재명 정부 협력",      "type": "정치"}
+    {
+      "issue_id": "i_jobs",
+      "name": "광주형 일자리/AI 거점",
+      "type": "지역개발"
+    },
+    {
+      "issue_id": "i_518",
+      "name": "5·18 진상규명",
+      "type": "역사"
+    },
+    {
+      "issue_id": "i_gov_alliance",
+      "name": "이재명 정부 협력",
+      "type": "정치"
+    }
   ],
   "frames": [
-    {"frame_id": "f_progressive_unity", "label": "진보 단결"},
-    {"frame_id": "f_local_industry",    "label": "지역 산업"}
+    {
+      "frame_id": "f_progressive_unity",
+      "label": "진보 단결"
+    },
+    {
+      "frame_id": "f_local_industry",
+      "label": "지역 산업"
+    }
   ],
   "events": [
     {
@@ -86,16 +132,41 @@
       "title": "광주시장 후보 선호도 민형배 33%, 강기정 14%, 안태욱 2%, 서왕진 1%",
       "sentiment": 0.25,
       "frame_id": "f_progressive_unity",
-      "about": ["c_gwangju_dpk_alt", "c_gwangju_dpk", "c_gwangju_ppp", "c_gwangju_rebuild"],
-      "mentions": ["i_gov_alliance"]
+      "about": [
+        "c_gwangju_dpk_alt",
+        "c_gwangju_dpk",
+        "c_gwangju_ppp",
+        "c_gwangju_rebuild"
+      ],
+      "mentions": [
+        "i_gov_alliance"
+      ]
     }
   ],
   "seed_events": [
-    {"timestep": 0, "type": "poll_publication", "target": "c_gwangju_dpk_alt", "polarity": 0.25, "summary": "광주MBC/뉴시스/무등일보 신년조사에서 민형배 33%, 강기정 14%"},
-    {"timestep": 1, "type": "policy",      "target": "c_gwangju_dpk_alt", "polarity": 0.10, "summary": "민형배 단일 후보 가정: 검찰개혁·광주형 기본소득 narrative를 KG prior로 사용"}
+    {
+      "timestep": 0,
+      "type": "poll_publication",
+      "target": "c_gwangju_dpk_alt",
+      "polarity": 0.25,
+      "summary": "광주MBC/뉴시스/무등일보 신년조사에서 민형배 33%, 강기정 14%"
+    },
+    {
+      "timestep": 1,
+      "type": "policy",
+      "target": "c_gwangju_dpk_alt",
+      "polarity": 0.1,
+      "summary": "민형배 단일 후보 가정: 검찰개혁·광주형 기본소득 narrative를 KG prior로 사용"
+    }
   ],
   "polls": [
-    {"poll_id": "media_prior_gwangju_kjmbc_20260101", "ts": "2026-01-01T20:40:00+09:00", "sample_size": 800, "leader_candidate": "c_gwangju_dpk_alt", "leader_share": 0.33}
+    {
+      "poll_id": "media_prior_gwangju_kjmbc_20260101",
+      "ts": "2026-01-01T20:40:00+09:00",
+      "sample_size": 800,
+      "leader_candidate": "c_gwangju_dpk_alt",
+      "leader_share": 0.33
+    }
   ],
   "raw_polls": [
     {
@@ -119,7 +190,7 @@
   ],
   "simulation": {
     "t_start": "2026-04-19T00:00:00+09:00",
-    "t_end":   "2026-06-03T00:00:00+09:00",
+    "t_end": "2026-06-03T00:00:00+09:00",
     "timesteps": 4
   },
   "scenario_notes": "Prediction-only 가상 시나리오. NESDC 직접 validation target으로 쓰지 않는다. 정당별 1명 후보 가정: 민주당 민형배, 국민의힘 안태욱, 조국혁신당 서왕진. 강기정은 같은 당 경선 대안으로 KG에 남기되 withdrawn=true.",
@@ -128,12 +199,20 @@
     "not_for_validation": true,
     "reason": "광주MBC/뉴시스/무등일보-코리아리서치 조사는 후보 선호도 prior와 KG event로만 사용한다. 후보군 미확정 및 scenario candidate-set 재구성 때문에 train/validation label이 아니다.",
     "one_candidate_per_party": true,
-    "active_candidate_ids": ["c_gwangju_dpk_alt", "c_gwangju_ppp", "c_gwangju_rebuild"],
-    "withdrawn_candidate_ids": ["c_gwangju_dpk"],
+    "active_candidate_ids": [
+      "c_gwangju_dpk_alt",
+      "c_gwangju_ppp",
+      "c_gwangju_rebuild"
+    ],
+    "withdrawn_candidate_ids": [
+      "c_gwangju_dpk"
+    ],
     "source_urls": [
       "https://kjmbc.co.kr/NewsArticle/1498852",
       "https://www.newsis.com/view/NISX20260101_0003462213",
       "https://www.newstomato.com/ReadNews.aspx?no=1294667"
     ]
-  }
+  },
+  "election_date": "2026-06-03",
+  "timezone": "Asia/Seoul"
 }

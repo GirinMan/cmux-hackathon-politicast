@@ -1,4 +1,5 @@
 {
+  "schema_version": "v1",
   "scenario_id": "rolling_v2_20260426T053155Z",
   "region_id": "busan_buk_gap",
   "contest_id": "busan_buk_gap_2026",
@@ -30,27 +31,27 @@
         "c_busan_ppp": 0.656084656084656,
         "c_busan_indep_han": 0.3386243386243386
       },
-      "turnout_intent": 1,
+      "turnout_intent": 1.0,
       "consensus_var": 0.07060272668738277
     },
     {
       "timestep": 1,
       "date": "2026-04-27",
       "support_by_candidate": {
-        "c_busan_dpk": 0,
+        "c_busan_dpk": 0.0,
         "c_busan_ppp": 0.2,
         "c_busan_indep_han": 0.8
       },
-      "turnout_intent": 1,
+      "turnout_intent": 1.0,
       "consensus_var": 0.11555555555555558
     }
   ],
   "final_outcome": {
-    "turnout": 1,
+    "turnout": 1.0,
     "vote_share_by_candidate": {
-      "c_busan_dpk": 0,
-      "c_busan_ppp": 0,
-      "c_busan_indep_han": 1
+      "c_busan_dpk": 0.0,
+      "c_busan_ppp": 0.0,
+      "c_busan_indep_han": 1.0
     },
     "winner": "c_busan_indep_han",
     "n_responses": 200,
@@ -59,47 +60,47 @@
   "demographics_breakdown": {
     "by_age_group": {
       "20s": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       },
       "30s": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       },
       "60s+": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       },
       "40s": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       },
       "50s": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       }
     },
     "by_education": {
       "2~3년제 전문대학": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       },
       "4년제 대학교": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       },
       "고등학교": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       },
       "중학교": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       },
       "무학": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       },
       "초등학교": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       },
       "대학원": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       }
     },
     "by_district": {
       "부산-북구": {
-        "c_busan_indep_han": 1
+        "c_busan_indep_han": 1.0
       }
     }
   },
@@ -600,30 +601,25 @@
     }
   ],
   "meta": {
+    "env": "dev",
+    "started_at": "2026-04-26T05:30:00.936920+00:00",
+    "finished_at": "2026-04-26T05:31:18.360171+00:00",
+    "wall_seconds": 77.42,
+    "policy_version": "v2.0_validation_first",
+    "concurrency": 8,
     "features": [
       "bandwagon",
       "kg_retrieval",
       "second_order",
       "underdog"
     ],
-    "concurrency": 8,
-    "started_at": "2026-04-26T05:30:00.936920+00:00",
-    "policy_version": "v2.0_validation_first",
-    "env": "dev",
-    "voter_stats": {
-      "calls": 640,
-      "parse_fail": 0,
-      "abstain": 11,
-      "latency_ms_sum": 597610.3807609888,
-      "calls_by_model": {
-        "nano": 483,
-        "mini": 117,
-        "sonnet": 40
-      },
-      "mean_latency_ms": 933.8,
-      "parse_fail_rate": 0,
-      "abstain_rate": 0.0172
-    },
+    "effective_provider": "gemini",
+    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
+    "actual_keys_used": 3,
+    "llm_cache_enabled": null,
+    "final_poll_feedback_enabled": null,
+    "poll_targets_visible_to_agents": null,
+    "counterfactual": null,
     "pool_stats": {
       "provider": "gemini",
       "model": "gemini/gemini-3.1-flash-lite-preview",
@@ -678,14 +674,25 @@
       "cost_tracking_enabled": false,
       "cache_hit_rate": 0.6469
     },
-    "actual_keys_used": 3,
-    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
-    "effective_provider": "gemini",
+    "voter_stats": {
+      "calls": 640,
+      "parse_fail": 0,
+      "abstain": 11,
+      "latency_ms_sum": 597610.3807609888,
+      "calls_by_model": {
+        "nano": 483,
+        "mini": 117,
+        "sonnet": 40
+      },
+      "mean_latency_ms": 933.8,
+      "parse_fail_rate": 0,
+      "abstain_rate": 0.0172
+    },
     "official_poll_validation": {
       "target_series": "poll_consensus_daily",
-      "as_of_date": "2026-04-26",
       "method_version": "weighted_v1",
       "cutoff_ts": "2026-04-26T00:00:00+09:00",
+      "as_of_date": "2026-04-26",
       "source_poll_ids": [
         "[\"nesdc-16169\"]"
       ],
@@ -697,24 +704,31 @@
       },
       "by_candidate": {
         "c_busan_dpk": {
-          "simulated_share": 0,
+          "simulated_share": 0.0,
           "official_consensus": 0.3974,
           "error": -0.3974
         },
         "c_busan_indep_han": {
-          "simulated_share": 1,
+          "simulated_share": 1.0,
           "official_consensus": 0.3333,
           "error": 0.6667
         },
         "c_busan_ppp": {
-          "simulated_share": 0,
+          "simulated_share": 0.0,
           "official_consensus": 0.2692,
           "error": -0.2692
         }
-      }
+      },
+      "poll_targets_visible_to_agents": null,
+      "prediction_only": null,
+      "counterfactual_prediction": null,
+      "reason": null,
+      "intervention_id": null,
+      "base_region_id": null,
+      "calibration_profile": null,
+      "frozen_params": null,
+      "error": null
     },
-    "finished_at": "2026-04-26T05:31:18.360171+00:00",
-    "wall_seconds": 77.42,
     "original_scenario_id": "busan_buk_gap_2026",
     "finalized_at": "2026-04-26T05:31:55.788460+00:00"
   }

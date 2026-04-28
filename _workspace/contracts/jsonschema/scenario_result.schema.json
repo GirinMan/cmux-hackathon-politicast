@@ -1,0 +1,895 @@
+{
+  "$defs": {
+    "CandidateRef": {
+      "additionalProperties": true,
+      "description": "ScenarioResult.candidates[] — 시나리오 Candidate 의 축약형.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "default": "",
+          "title": "Name",
+          "type": "string"
+        },
+        "party": {
+          "default": "",
+          "title": "Party",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "CandidateRef",
+      "type": "object"
+    },
+    "DemographicsBreakdown": {
+      "additionalProperties": true,
+      "description": "집계 키 셋(by_age_group/by_education/by_district)은 고정이지만\n값(셀) 셋은 데이터에 따라 가변이라 자유로운 dict 로 둔다.",
+      "properties": {
+        "by_age_group": {
+          "additionalProperties": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object"
+          },
+          "title": "By Age Group",
+          "type": "object"
+        },
+        "by_education": {
+          "additionalProperties": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object"
+          },
+          "title": "By Education",
+          "type": "object"
+        },
+        "by_district": {
+          "additionalProperties": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object"
+          },
+          "title": "By District",
+          "type": "object"
+        }
+      },
+      "title": "DemographicsBreakdown",
+      "type": "object"
+    },
+    "FinalOutcome": {
+      "additionalProperties": true,
+      "properties": {
+        "turnout": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Turnout"
+        },
+        "vote_share_by_candidate": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Vote Share By Candidate",
+          "type": "object"
+        },
+        "winner": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Winner"
+        },
+        "n_responses": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "N Responses"
+        },
+        "n_abstain": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "N Abstain"
+        }
+      },
+      "title": "FinalOutcome",
+      "type": "object"
+    },
+    "KgEventUsed": {
+      "additionalProperties": true,
+      "properties": {
+        "event_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Event Id"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Type"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target"
+        },
+        "timestep": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timestep"
+        }
+      },
+      "title": "KgEventUsed",
+      "type": "object"
+    },
+    "Meta": {
+      "additionalProperties": true,
+      "properties": {
+        "env": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Env"
+        },
+        "started_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Started At"
+        },
+        "finished_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Finished At"
+        },
+        "wall_seconds": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wall Seconds"
+        },
+        "policy_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Policy Version"
+        },
+        "concurrency": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Concurrency"
+        },
+        "features": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Features",
+          "type": "array"
+        },
+        "effective_provider": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Effective Provider"
+        },
+        "effective_model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Effective Model"
+        },
+        "actual_keys_used": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Actual Keys Used"
+        },
+        "llm_cache_enabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Llm Cache Enabled"
+        },
+        "final_poll_feedback_enabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Final Poll Feedback Enabled"
+        },
+        "poll_targets_visible_to_agents": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Poll Targets Visible To Agents"
+        },
+        "counterfactual": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Counterfactual"
+        },
+        "pool_stats": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pool Stats"
+        },
+        "voter_stats": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Voter Stats"
+        },
+        "official_poll_validation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/OfficialPollValidation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "Meta",
+      "type": "object"
+    },
+    "OfficialPollValidation": {
+      "additionalProperties": true,
+      "properties": {
+        "target_series": {
+          "title": "Target Series",
+          "type": "string"
+        },
+        "method_version": {
+          "default": "weighted_v1",
+          "title": "Method Version",
+          "type": "string"
+        },
+        "cutoff_ts": {
+          "title": "Cutoff Ts",
+          "type": "string"
+        },
+        "as_of_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "As Of Date"
+        },
+        "source_poll_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Poll Ids",
+          "type": "array"
+        },
+        "metrics": {
+          "$ref": "#/$defs/ValidationMetrics"
+        },
+        "by_candidate": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ValidationByCandidate"
+          },
+          "title": "By Candidate",
+          "type": "object"
+        },
+        "poll_targets_visible_to_agents": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Poll Targets Visible To Agents"
+        },
+        "prediction_only": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prediction Only"
+        },
+        "counterfactual_prediction": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Counterfactual Prediction"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "intervention_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Intervention Id"
+        },
+        "base_region_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Base Region Id"
+        },
+        "calibration_profile": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Calibration Profile"
+        },
+        "frozen_params": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frozen Params"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error"
+        }
+      },
+      "required": [
+        "target_series",
+        "cutoff_ts"
+      ],
+      "title": "OfficialPollValidation",
+      "type": "object"
+    },
+    "PollTrajectoryPoint": {
+      "additionalProperties": true,
+      "properties": {
+        "timestep": {
+          "title": "Timestep",
+          "type": "integer"
+        },
+        "date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Date"
+        },
+        "support_by_candidate": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Support By Candidate",
+          "type": "object"
+        },
+        "turnout_intent": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Turnout Intent"
+        },
+        "consensus_var": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Consensus Var"
+        }
+      },
+      "required": [
+        "timestep"
+      ],
+      "title": "PollTrajectoryPoint",
+      "type": "object"
+    },
+    "ValidationByCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "simulated_share": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Simulated Share"
+        },
+        "official_consensus": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Official Consensus"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error"
+        }
+      },
+      "title": "ValidationByCandidate",
+      "type": "object"
+    },
+    "ValidationMetrics": {
+      "additionalProperties": false,
+      "description": "공식 여론조사 vs 시뮬 비교 4종 지표.",
+      "properties": {
+        "mae": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mae"
+        },
+        "rmse": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rmse"
+        },
+        "margin_error": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Margin Error"
+        },
+        "leader_match": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Leader Match"
+        },
+        "brier": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Brier"
+        },
+        "ece": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ece"
+        },
+        "js_divergence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Js Divergence"
+        },
+        "collapse_flag": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Collapse Flag"
+        }
+      },
+      "title": "ValidationMetrics",
+      "type": "object"
+    },
+    "VirtualInterview": {
+      "additionalProperties": true,
+      "properties": {
+        "persona_id": {
+          "title": "Persona Id",
+          "type": "string"
+        },
+        "persona_summary": {
+          "default": "",
+          "title": "Persona Summary",
+          "type": "string"
+        },
+        "vote": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Vote"
+        },
+        "reason": {
+          "default": "",
+          "title": "Reason",
+          "type": "string"
+        },
+        "key_factors": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Key Factors",
+          "type": "array"
+        },
+        "timestep": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timestep"
+        }
+      },
+      "required": [
+        "persona_id"
+      ],
+      "title": "VirtualInterview",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "description": "단일 시나리오 시뮬 출력. _workspace/snapshots/results/*.json 의 root.",
+  "properties": {
+    "schema_version": {
+      "default": "v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "scenario_id": {
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "region_id": {
+      "title": "Region Id",
+      "type": "string"
+    },
+    "contest_id": {
+      "title": "Contest Id",
+      "type": "string"
+    },
+    "timestep_count": {
+      "default": 0,
+      "title": "Timestep Count",
+      "type": "integer"
+    },
+    "persona_n": {
+      "default": 0,
+      "title": "Persona N",
+      "type": "integer"
+    },
+    "candidates": {
+      "items": {
+        "$ref": "#/$defs/CandidateRef"
+      },
+      "title": "Candidates",
+      "type": "array"
+    },
+    "poll_trajectory": {
+      "items": {
+        "$ref": "#/$defs/PollTrajectoryPoint"
+      },
+      "title": "Poll Trajectory",
+      "type": "array"
+    },
+    "final_outcome": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/FinalOutcome"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "demographics_breakdown": {
+      "$ref": "#/$defs/DemographicsBreakdown"
+    },
+    "virtual_interviews": {
+      "items": {
+        "$ref": "#/$defs/VirtualInterview"
+      },
+      "title": "Virtual Interviews",
+      "type": "array"
+    },
+    "kg_events_used": {
+      "items": {
+        "$ref": "#/$defs/KgEventUsed"
+      },
+      "title": "Kg Events Used",
+      "type": "array"
+    },
+    "meta": {
+      "$ref": "#/$defs/Meta"
+    }
+  },
+  "required": [
+    "scenario_id",
+    "region_id",
+    "contest_id"
+  ],
+  "title": "ScenarioResult",
+  "type": "object"
+}

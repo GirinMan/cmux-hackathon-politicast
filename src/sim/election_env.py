@@ -31,6 +31,11 @@ from typing import Any, Iterable
 
 from .poll_consensus import aggregate_poll_response, bandwagon_underdog
 from .voter_agent import VoterAgent
+from src.eval import compute_validation_metrics, summarize_by_candidate
+from src.schemas.cohort import DEFAULT_AGE_BUCKETS, AgeBuckets
+from src.schemas.party import PartyRegistry, load_party_registry
+from src.schemas.sim_constants import load_sim_constants
+from src.utils.tz import KST, now_kst
 
 logger = logging.getLogger(__name__)
 
@@ -156,28 +161,24 @@ class ElectionEnv:
     # ------------------------------------------------------------------
     # Helpers
     # ------------------------------------------------------------------
-    # Korean labels for party_id → display name (cohort_prior_block default).
-    # Used when KG payload keys match scenario.parties[].party_id.
-    _PARTY_LABEL_OVERRIDES: dict[str, str] = {
-        "p_ppp": "국민의힘",
-        "p_dem": "더불어민주당",
-        "p_rebuild": "조국혁신당",
-        "p_jp": "정의당",
-        "p_indep": "무소속",
-        "ppp": "국민의힘",
-        "dem": "더불어민주당",
-        "dpk": "더불어민주당",
-        "etc": "기타",
-        "other": "기타",
-        "undecided": "미정",
-        "none": "미정",
-        "no_response": "무응답",
-    }
+    # Party 라벨 SoT — `_workspace/data/registries/parties.json`. 시나리오에
+    # 정의되지 않은 KG 표준 키(p_ppp / dpk / undecided / etc / no_response …)도
+    # 단일 registry 에서 일관 매핑. 컨트랙트 부재/손상 시 빈 registry 로 빌드를
+    # 살리고, 시나리오 parties 와 raw key fallback 으로 동작은 유지된다.
+    _PARTY_REGISTRY: PartyRegistry = (
+        load_party_registry()
+        if (
+            (Path(__file__).resolve().parents[2]
+             / "_workspace" / "data" / "registries" / "parties.json").exists()
+        )
+        else PartyRegistry(parties=[])
+    )
 
     def _party_label(self, key: str) -> str | None:
         """Map a party_id (scenario or KG canonical) to a human label."""
-        if key in self._PARTY_LABEL_OVERRIDES:
-            return self._PARTY_LABEL_OVERRIDES[key]
+        label = self._PARTY_REGISTRY.label_for(key)
+        if label:
+            return label
         for p in self.scenario_meta.get("parties", []) or []:
             if p.get("party_id") == key or p.get("id") == key:
                 return p.get("name") or p.get("party_id") or key
@@ -505,23 +506,12 @@ class ElectionEnv:
         voters: list[VoterAgent],
         responses: list[dict[str, Any]],
     ) -> dict[str, Any]:
-        def _age_group(age: Any) -> str:
-            try:
-                a = int(age)
-            except (TypeError, ValueError):
-                return "unknown"
-            if a < 30:
-                return "20s"
-            if a < 40:
-                return "30s"
-            if a < 50:
-                return "40s"
-            if a < 60:
-                return "50s"
-            return "60s+"
+        # AgeBuckets SoT: `_workspace/data/registries/age_buckets.json`.
+        # 보수적으로 process-wide singleton 을 캡처해 매 호출 IO 를 피한다.
+        age_buckets: AgeBuckets = DEFAULT_AGE_BUCKETS
 
         groupers = {
-            "by_age_group": lambda v: _age_group(v.persona.get("age")),
+            "by_age_group": lambda v: age_buckets.bucket_for(v.persona.get("age")),
             "by_education": lambda v: str(v.persona.get("education_level") or "unknown"),
             "by_district": lambda v: str(
                 v.persona.get("district") or v.persona.get("city") or "unknown"
@@ -548,6 +538,25 @@ class ElectionEnv:
     # ------------------------------------------------------------------
     # Validation injection (V6 — validation-first redesign)
     # ------------------------------------------------------------------
+    def _resolve_base_date(self) -> dt.date:
+        """poll_trajectory 의 entry.date 기준 시점.
+
+        Order of precedence:
+          1. scenario.simulation.t_start (ISO 8601 — date 부분만 사용)
+          2. ElectionCalendar.cutoff_for(region_id)
+          3. 명시적 ValueError — silent today() fallback 금지
+        """
+        sim = self.scenario_meta.get("simulation") or {}
+        t_start = sim.get("t_start")
+        if t_start:
+            try:
+                return dt.date.fromisoformat(str(t_start).split("T")[0])
+            except Exception:
+                pass
+        from src.schemas.calendar import load_election_calendar
+        cal = load_election_calendar()
+        return cal.cutoff_for(self.region_id)
+
     def _resolve_cutoff_ts(self) -> str:
         """Pick cutoff_ts (ISO 8601, KST) used for rolling-origin gate.
 
@@ -563,8 +572,7 @@ class ElectionEnv:
         t_start = sim.get("t_start")
         if t_start:
             return str(t_start)
-        kst = dt.timezone(dt.timedelta(hours=9))
-        return dt.datetime.now(kst).isoformat()
+        return now_kst().isoformat()
 
     def _consensus_from_duckdb(
         self, cutoff_date: dt.date
@@ -659,12 +667,14 @@ class ElectionEnv:
         if not polls:
             return None
         e_date_raw = (self.scenario_meta.get("election_date")
-                      or self.scenario_meta.get("election", {}).get("date")
-                      or "2026-06-03")
-        try:
+                      or self.scenario_meta.get("election", {}).get("date"))
+        if not e_date_raw:
+            # ElectionCalendar SoT — region 미등록이면 명시적 ValueError
+            from src.schemas.calendar import load_election_calendar
+            cal = load_election_calendar()
+            e_date = cal.election_date_for(self.region_id)
+        else:
             e_date = dt.date.fromisoformat(str(e_date_raw))
-        except Exception:
-            e_date = dt.date(2026, 6, 3)
 
         weighted: dict[str, float] = defaultdict(float)
         weight_total: dict[str, float] = defaultdict(float)
@@ -687,8 +697,9 @@ class ElectionEnv:
                 except Exception:
                     poll_date = None
             elif isinstance(day, (int, float)):
-                # day is offset relative to (election - 30d)
-                poll_date = (e_date - dt.timedelta(days=30)) + dt.timedelta(
+                # day is offset relative to (election - fieldwork_window_days)
+                _fw = load_sim_constants().consensus.fieldwork_window_days
+                poll_date = (e_date - dt.timedelta(days=_fw)) + dt.timedelta(
                     days=int(day)
                 )
             if poll_date is not None:
@@ -858,58 +869,23 @@ class ElectionEnv:
             )
             return
 
-        def _renorm(d: dict[str, float], keys: list[str]) -> dict[str, float]:
-            sub = {k: float(d.get(k, 0.0) or 0.0) for k in keys}
-            tot = sum(sub.values())
-            if tot <= 0:
-                return {k: 0.0 for k in keys}
-            return {k: v / tot for k, v in sub.items()}
+        # Single source of truth for the 4 metrics + per-candidate breakdown.
+        metrics = compute_validation_metrics(sim_shares, official, keys=union_cids)
+        by_cand = summarize_by_candidate(sim_shares, official, keys=union_cids)
 
-        sim_n = _renorm(sim_shares, union_cids)
-        off_n = _renorm(official, union_cids)
-
-        errors: dict[str, float] = {}
-        for cid in union_cids:
-            errors[cid] = sim_n[cid] - off_n[cid]
-        abs_errors = [abs(e) for e in errors.values()]
-        sq_errors = [e * e for e in errors.values()]
-        mae = sum(abs_errors) / len(abs_errors) if abs_errors else 0.0
-        rmse = math.sqrt(sum(sq_errors) / len(sq_errors)) if sq_errors else 0.0
-
-        sim_leader = max(sim_n.items(), key=lambda kv: kv[1])
-        off_leader = max(off_n.items(), key=lambda kv: kv[1])
-        leader_match = sim_leader[0] == off_leader[0]
-
-        # Margin error: |(sim_top - sim_2nd) - (off_top - off_2nd)|
-        sim_sorted = sorted(sim_n.values(), reverse=True)
-        off_sorted = sorted(off_n.values(), reverse=True)
-        sim_margin = sim_sorted[0] - (sim_sorted[1] if len(sim_sorted) > 1 else 0.0)
-        off_margin = off_sorted[0] - (off_sorted[1] if len(off_sorted) > 1 else 0.0)
-        margin_error = abs(sim_margin - off_margin)
-
-        block["metrics"] = {
-            "mae": round(mae, 4),
-            "rmse": round(rmse, 4),
-            "margin_error": round(margin_error, 4),
-            "leader_match": bool(leader_match),
-        }
+        block["metrics"] = metrics.model_dump()
         block["by_candidate"] = {
-            cid: {
-                "simulated_share": round(sim_n[cid], 4),
-                "official_consensus": round(off_n[cid], 4),
-                "error": round(errors[cid], 4),
-            }
-            for cid in union_cids
+            cid: row.model_dump() for cid, row in by_cand.items()
         }
         result["meta"]["official_poll_validation"] = block
         logger.info(
-            "[%s] validation: target=%s method=%s mae=%.4f leader_match=%s "
+            "[%s] validation: target=%s method=%s mae=%s leader_match=%s "
             "as_of=%s n_cands=%d",
             self.region_id,
             target_series,
             method,
-            mae,
-            leader_match,
+            metrics.mae,
+            metrics.leader_match,
             block["as_of_date"],
             len(union_cids),
         )
@@ -965,7 +941,7 @@ class ElectionEnv:
         # ----- Poll waves -------------------------------------------------
         llm_extras = {"cache": llm_cache_enabled}
         last_consensus: dict[str, dict[str, float]] | None = None
-        base_date = dt.date.today()
+        base_date = self._resolve_base_date()
         events_collector: list[dict[str, Any]] = []
         for t in range(self.timesteps):
             logger.info(

@@ -1,0 +1,34 @@
+{
+  "_doc": "후보 등록부 SoT — 5 region × 후보 alias 시드. _workspace/data/scenarios/*.json 의 candidates 와 일치 + 한자/공백 변형 alias. EntityResolver(rule 단계)와 KG builder 가 본 registry 를 import 한다.",
+  "_status": "decided",
+  "version": "v1",
+  "regions": {
+    "seoul_mayor": [
+      {"id": "c_seoul_dpk",     "name": "정원오", "party_id": "p_dem",     "aliases": ["정 원오", "Won-O Jung", "Jung Won-O"]},
+      {"id": "c_seoul_ppp",     "name": "오세훈", "party_id": "p_ppp",     "aliases": ["吳世勳", "Oh Se-hoon", "오 세훈"]},
+      {"id": "c_seoul_rebuild", "name": "한민수", "party_id": "p_rebuild", "aliases": ["Han Min-soo", "韓敏洙"]}
+    ],
+    "gwangju_mayor": [
+      {"id": "c_gwangju_dpk",     "name": "강기정",  "party_id": "p_dem",     "aliases": ["姜琪正", "Kang Gi-jung", "강 기정"]},
+      {"id": "c_gwangju_dpk_alt", "name": "민형배",  "party_id": "p_dem",     "aliases": ["閔亨培", "Min Hyung-bae"]},
+      {"id": "c_gwangju_ppp",     "name": "안태욱",  "party_id": "p_ppp",     "aliases": ["An Tae-uk"]},
+      {"id": "c_gwangju_rebuild", "name": "서왕진",  "party_id": "p_rebuild", "aliases": ["Seo Wang-jin"]}
+    ],
+    "daegu_mayor": [
+      {"id": "c_daegu_ppp_choo", "name": "추경호", "party_id": "p_ppp",    "aliases": ["秋慶鎬", "Choo Kyung-ho"]},
+      {"id": "c_daegu_ppp_yoo",  "name": "유영하", "party_id": "p_ppp",    "aliases": ["Yoo Young-ha"]},
+      {"id": "c_daegu_dpk",      "name": "김부겸", "party_id": "p_dem",    "aliases": ["金富謙", "Kim Boo-kyum"]},
+      {"id": "c_daegu_ourrep",   "name": "조원진", "party_id": "p_ourrep", "aliases": ["Jo Won-jin"]}
+    ],
+    "busan_buk_gap": [
+      {"id": "c_busan_dpk",       "name": "하정우", "party_id": "p_indep", "aliases": ["河丁宇", "Ha Jung-woo"]},
+      {"id": "c_busan_ppp",       "name": "박민식", "party_id": "p_ppp",   "aliases": ["朴敏植", "Park Min-sik"]},
+      {"id": "c_busan_indep_han", "name": "한동훈", "party_id": "p_indep", "aliases": ["韓東勳", "Han Dong-hoon"]}
+    ],
+    "daegu_dalseo_gap": [
+      {"id": "c_dalseo_dpk",      "name": "서재헌", "party_id": "p_dem", "aliases": ["Seo Jae-heon"]},
+      {"id": "c_dalseo_ppp_kim",  "name": "김민수", "party_id": "p_ppp", "aliases": ["Kim Min-soo"]},
+      {"id": "c_dalseo_ppp_hong", "name": "홍성주", "party_id": "p_ppp", "aliases": ["Hong Sung-joo"]}
+    ]
+  }
+}

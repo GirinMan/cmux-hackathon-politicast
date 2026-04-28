@@ -1,0 +1,3 @@
+# Convenience pointer — `pip install -r requirements.txt` resolves to docker/.
+# Streamlit 의존성은 _archive/streamlit-2026-04-26/ 로 이전됨 (Phase 4 cutover).
+-r docker/requirements.txt

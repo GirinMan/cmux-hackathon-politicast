@@ -1,0 +1,52 @@
+{
+  "_meta": {
+    "purpose": "House- and mode-effect priors for src/sim/poll_consensus.py:consensus().",
+    "convention": "Subtractive bias on raw vote share (p_tilde = y - house - mode). Positive value = pollster/mode is biased UP for the leader; negative = biased DOWN.",
+    "scale_caveat": "Values bounded conservatively to ±0.02 (≈±2pp). These are seeded priors for the hackathon, not fitted estimates.",
+    "sources": [
+      "https://newtamsa.org/news/o7XnaH (보수과표집 — 갤럽·리얼미터 평균 약 5pp 보수 편향, 여기서는 보수적으로 ±0.01~0.02 클램프)",
+      "https://wwolf.github.io/2024KRelection_commentary/20240409slownews.html (여론조사꽃 vs 갤럽 비교)",
+      "https://www.ytn.co.kr/_ln/0101_202505231650459228 (NBS / 갤럽 / 리얼미터 비교)",
+      "https://www.mindlenews.com/news/articleView.html?idxno=7352 (리얼미터 ARS 모드 편향)",
+      "https://poll-mbc.co.kr/ (MBC 여론M — 기관·모드별 편향 메타분석)"
+    ],
+    "last_updated": "2026-04-26"
+  },
+  "house_effect": {
+    "한국갤럽": 0.0,
+    "갤럽": 0.0,
+    "Gallup Korea": 0.0,
+    "리얼미터": 0.015,
+    "Realmeter": 0.015,
+    "케이에스오아이": -0.01,
+    "KSOI": -0.01,
+    "조원씨앤아이": 0.01,
+    "한국리서치": -0.005,
+    "Hankook Research": -0.005,
+    "엠브레인퍼블릭": 0.0,
+    "Embrain Public": 0.0,
+    "코리아리서치": -0.005,
+    "Korea Research": -0.005,
+    "NBS": -0.005,
+    "전국지표조사": -0.005,
+    "여론조사꽃": -0.02,
+    "PNR": 0.005,
+    "피플네트웍스리서치": 0.005,
+    "리서치뷰": 0.0,
+    "ResearchView": 0.0
+  },
+  "mode_effect": {
+    "phone": 0.0,
+    "interview": 0.0,
+    "무선전화면접": 0.0,
+    "유무선전화면접": 0.0,
+    "online": 0.005,
+    "web": 0.005,
+    "ARS": 0.01,
+    "ars": 0.01,
+    "무선ARS": 0.01,
+    "유무선ARS": 0.01,
+    "mixed": 0.005,
+    "유무선": 0.0
+  }
+}

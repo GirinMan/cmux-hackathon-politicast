@@ -1,0 +1,63 @@
+[
+  {
+    "event_id": "gwangju_mayor_2026_dpk_primary_split",
+    "source": "custom",
+    "occurs_at": "2026-04-28T18:00:00+09:00",
+    "description": "민주당 광주시장 경선 불복 — 경선 후보 무소속 출마 시사",
+    "candidate_patches": [
+      {"candidate_id": "c_gwangju_dpk", "boost": -0.04, "reason": "민주 분열"},
+      {"candidate_id": "c_gwangju_dpk_alt", "boost": 0.03},
+      {"candidate_id": "c_gwangju_rebuild", "boost": 0.015}
+    ],
+    "event_patches": [
+      {"issue": "민주_경선_분열", "salience": 0.26}
+    ],
+    "prior_p": 0.35,
+    "metadata": {"intuition_label": "민주 경선 불복"}
+  },
+  {
+    "event_id": "gwangju_mayor_2026_ai_data_center",
+    "source": "custom",
+    "occurs_at": "2026-05-09T10:00:00+09:00",
+    "description": "광주 AI 데이터센터 클러스터 국가지정 확정",
+    "candidate_patches": [
+      {"candidate_id": "c_gwangju_dpk", "boost": 0.025, "reason": "지역 산업 호재"},
+      {"candidate_id": "c_gwangju_ppp", "boost": 0.01}
+    ],
+    "event_patches": [
+      {"issue": "지역_산업_AI", "salience": 0.22}
+    ],
+    "prior_p": 0.50,
+    "metadata": {"intuition_label": "광주 AI 클러스터 지정"}
+  },
+  {
+    "event_id": "gwangju_mayor_2026_518_anniv_controversy",
+    "source": "custom",
+    "occurs_at": "2026-05-18T09:00:00+09:00",
+    "description": "5·18 기념식 발언 논란 — 여권 후보 사과",
+    "candidate_patches": [
+      {"candidate_id": "c_gwangju_ppp", "boost": -0.04, "reason": "여당 후보 실언"},
+      {"candidate_id": "c_gwangju_dpk", "boost": 0.025}
+    ],
+    "event_patches": [
+      {"issue": "5_18_역사", "salience": 0.32}
+    ],
+    "prior_p": 0.45,
+    "metadata": {"intuition_label": "5·18 발언 논란"}
+  },
+  {
+    "event_id": "gwangju_mayor_2026_progressive_unity",
+    "source": "custom",
+    "occurs_at": "2026-05-25T17:00:00+09:00",
+    "description": "조국혁신당-민주 광주시장 후보 단일화",
+    "candidate_patches": [
+      {"candidate_id": "c_gwangju_rebuild", "drop_out": true},
+      {"candidate_id": "c_gwangju_dpk", "boost": 0.03}
+    ],
+    "event_patches": [
+      {"issue": "야권_단일화", "salience": 0.20}
+    ],
+    "prior_p": 0.25,
+    "metadata": {"intuition_label": "광주 야권 단일화"}
+  }
+]

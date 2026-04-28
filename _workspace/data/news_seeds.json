@@ -1,0 +1,24 @@
+{
+  "_doc": "수동 큐레이션 뉴스 시드 — news_article 어댑터의 fetch() 입력. 자동 크롤링은 out of scope (해커톤). 기사 본문은 inline content_text 로 저장하거나 추후 별도 본문 캐시 디렉토리(_workspace/data/news_cache/)에서 로드.",
+  "version": "v1",
+  "articles": [
+    {
+      "article_id": "art_seoul_jwo_culture_pledge",
+      "region_id": "seoul_mayor",
+      "url": "https://www.newsis.com/view/NISI20260414_0021245631",
+      "publisher": "뉴시스",
+      "published_at": "2026-04-14T10:00:00+09:00",
+      "title": "정원오, 8번째 공약 발표 — 문화·관광 분야 (국립중앙박물관)",
+      "content_text": "더불어민주당 정원오 서울시장 후보가 14일 8번째 공약을 발표했다. 문화·관광 분야로 국립중앙박물관 인근 광역 문화벨트 조성을 약속했다."
+    },
+    {
+      "article_id": "art_busan_park_announce",
+      "region_id": "busan_buk_gap",
+      "url": "https://www.example.kr/busan/park-min-sik-announce",
+      "publisher": "예시일보",
+      "published_at": "2026-04-12T09:00:00+09:00",
+      "title": "박민식, 부산 북구갑 출마 공식화",
+      "content_text": "국민의힘 박민식 전 보훈부 장관이 12일 부산 북구갑 보궐 출마를 공식 선언했다. 한동훈 대표는 같은 날 지지를 표했다."
+    }
+  ]
+}

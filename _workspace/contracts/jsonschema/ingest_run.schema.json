@@ -1,0 +1,86 @@
+{
+  "additionalProperties": false,
+  "description": "단일 ingest 실행의 stdout — `ingest_run` 테이블 row 와 1:1 매핑.",
+  "properties": {
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "source_id": {
+      "title": "Source Id",
+      "type": "string"
+    },
+    "started_at": {
+      "title": "Started At",
+      "type": "string"
+    },
+    "finished_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Finished At"
+    },
+    "n_fetched": {
+      "default": 0,
+      "title": "N Fetched",
+      "type": "integer"
+    },
+    "n_loaded": {
+      "default": 0,
+      "title": "N Loaded",
+      "type": "integer"
+    },
+    "n_unresolved": {
+      "default": 0,
+      "title": "N Unresolved",
+      "type": "integer"
+    },
+    "status": {
+      "default": "pending",
+      "enum": [
+        "pending",
+        "running",
+        "succeeded",
+        "failed",
+        "partial"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "error": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Error"
+    },
+    "config_hash": {
+      "default": "",
+      "title": "Config Hash",
+      "type": "string"
+    },
+    "dry_run": {
+      "default": false,
+      "title": "Dry Run",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "run_id",
+    "source_id",
+    "started_at"
+  ],
+  "title": "IngestRun",
+  "type": "object"
+}

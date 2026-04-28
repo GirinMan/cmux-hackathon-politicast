@@ -1,0 +1,121 @@
+{
+  "$defs": {
+    "HouseEffect": {
+      "additionalProperties": false,
+      "description": "단일 여론조사 기관의 subtractive bias prior.",
+      "properties": {
+        "pollster": {
+          "title": "Pollster",
+          "type": "string"
+        },
+        "effect": {
+          "description": "p_tilde = y - effect (subtractive)",
+          "title": "Effect",
+          "type": "number"
+        },
+        "aliases": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Aliases",
+          "type": "array"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "pollster",
+        "effect"
+      ],
+      "title": "HouseEffect",
+      "type": "object"
+    },
+    "ModeEffect": {
+      "additionalProperties": false,
+      "description": "단일 조사 모드(phone/online/ARS/...)의 subtractive bias prior.",
+      "properties": {
+        "mode": {
+          "title": "Mode",
+          "type": "string"
+        },
+        "effect": {
+          "description": "p_tilde = y - effect (subtractive)",
+          "title": "Effect",
+          "type": "number"
+        },
+        "aliases": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Aliases",
+          "type": "array"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "mode",
+        "effect"
+      ],
+      "title": "ModeEffect",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "house/mode effect 의 SoT registry.",
+  "properties": {
+    "version": {
+      "default": "v1",
+      "title": "Version",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "title": "Description",
+      "type": "string"
+    },
+    "sources": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Sources",
+      "type": "array"
+    },
+    "houses": {
+      "items": {
+        "$ref": "#/$defs/HouseEffect"
+      },
+      "title": "Houses",
+      "type": "array"
+    },
+    "modes": {
+      "items": {
+        "$ref": "#/$defs/ModeEffect"
+      },
+      "title": "Modes",
+      "type": "array"
+    }
+  },
+  "title": "PollsterRegistry",
+  "type": "object"
+}

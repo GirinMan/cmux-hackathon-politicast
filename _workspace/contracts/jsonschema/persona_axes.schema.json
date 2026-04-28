@@ -1,0 +1,80 @@
+{
+  "$defs": {
+    "PersonaAxis": {
+      "additionalProperties": true,
+      "description": "단일 axis 정의.",
+      "properties": {
+        "axis_id": {
+          "title": "Axis Id",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "persona_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Persona Fields",
+          "type": "array"
+        },
+        "buckets": {
+          "items": {},
+          "title": "Buckets",
+          "type": "array"
+        },
+        "buckets_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Buckets Ref"
+        },
+        "default_routing": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Default Routing"
+        }
+      },
+      "required": [
+        "axis_id",
+        "kind",
+        "label"
+      ],
+      "title": "PersonaAxis",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "properties": {
+    "axes": {
+      "items": {
+        "$ref": "#/$defs/PersonaAxis"
+      },
+      "title": "Axes",
+      "type": "array"
+    }
+  },
+  "required": [
+    "axes"
+  ],
+  "title": "PersonaAxisRegistry",
+  "type": "object"
+}

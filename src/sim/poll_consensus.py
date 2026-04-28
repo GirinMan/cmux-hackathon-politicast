@@ -11,6 +11,23 @@ import math
 from collections import defaultdict
 from typing import Any
 
+# ---------------------------------------------------------------------------
+# House/mode effect priors — SoT: src/schemas/pollster.PollsterRegistry
+# (registry JSON: _workspace/data/registries/pollsters.json; legacy fallback:
+# _workspace/data/poll_priors.json)
+# ---------------------------------------------------------------------------
+from src.schemas.pollster import load_pollster_registry  # noqa: E402
+
+
+def default_house_effect() -> dict[str, float]:
+    """Return seeded Korean-pollster house-effect priors (subtractive)."""
+    return load_pollster_registry().as_house_effect_dict()
+
+
+def default_mode_effect() -> dict[str, float]:
+    """Return seeded Korean polling-mode effect priors (subtractive)."""
+    return load_pollster_registry().as_mode_effect_dict()
+
 
 def _safe_get(d: dict[str, Any], key: str, default: float = 0.0) -> float:
     v = d.get(key, default)
@@ -41,8 +58,12 @@ def consensus(
           "quality": float (0..1, optional, default 1.0),
         }
     """
-    house_effect = house_effect or {}
-    mode_effect = mode_effect or {}
+    # Auto-load Korean pollster priors when caller doesn't pass explicit dicts.
+    # Pass house_effect={} / mode_effect={} explicitly to disable prior bias correction.
+    if house_effect is None:
+        house_effect = default_house_effect()
+    if mode_effect is None:
+        mode_effect = default_mode_effect()
 
     # Per-candidate weighted accumulator
     num: dict[str, float] = defaultdict(float)

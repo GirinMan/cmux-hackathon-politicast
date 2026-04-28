@@ -1,0 +1,14 @@
+{
+  "_doc": "정당 라벨 화이트리스트 (SoT). election_env.py의 _PARTY_LABEL_OVERRIDES를 외화. id는 canonical(p_ppp / p_dem / ...) 또는 의미 키(undecided/none/no_response/etc) 둘 다 허용. aliases는 KG 또는 시나리오에서 등장하는 동등 키.",
+  "_status": "decided",
+  "parties": [
+    {"id": "p_ppp",     "display_name": "국민의힘",       "aliases": ["ppp"],         "kind": "party"},
+    {"id": "p_dem",     "display_name": "더불어민주당",   "aliases": ["dem", "dpk"],  "kind": "party"},
+    {"id": "p_rebuild", "display_name": "조국혁신당",     "aliases": [],              "kind": "party"},
+    {"id": "p_jp",      "display_name": "정의당",         "aliases": [],              "kind": "party"},
+    {"id": "p_indep",   "display_name": "무소속",         "aliases": [],              "kind": "party"},
+    {"id": "etc",       "display_name": "기타",           "aliases": ["other"],       "kind": "bucket"},
+    {"id": "undecided", "display_name": "미정",           "aliases": ["none"],        "kind": "bucket"},
+    {"id": "no_response","display_name": "무응답",        "aliases": [],              "kind": "bucket"}
+  ]
+}

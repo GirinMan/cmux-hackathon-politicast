@@ -1,0 +1,19 @@
+{
+  "_doc": "Person registry — 비후보 정치인/공인 (현직 대통령, 야권 인사, 도지사 등). 시나리오 events[].mentions / KG Person 노드와 일치. 후보 본인은 candidates.json 사용.",
+  "_status": "decided",
+  "version": "v1",
+  "persons": [
+    {"id": "p_lee_jaemyung",  "name": "이재명",     "role": "president",            "party_id": "p_dem",     "aliases": ["李在明", "Lee Jae-myung", "이재명 대통령"]},
+    {"id": "p_han_donghoon",  "name": "한동훈",     "role": "ppp_leader",           "party_id": "p_ppp",     "aliases": ["韓東勳", "Han Dong-hoon"]},
+    {"id": "p_kim_boo_kyum",  "name": "김부겸",     "role": "former_pm",            "party_id": "p_dem",     "aliases": ["金富謙", "Kim Boo-kyum"]},
+    {"id": "p_park_min_sik",  "name": "박민식",     "role": "former_minister",      "party_id": "p_ppp",     "aliases": ["朴敏植", "Park Min-sik"]},
+    {"id": "p_oh_se_hoon",    "name": "오세훈",     "role": "incumbent_seoul_mayor","party_id": "p_ppp",     "aliases": ["吳世勳", "Oh Se-hoon"]},
+    {"id": "p_choo_kyung_ho", "name": "추경호",     "role": "former_finance_minister","party_id": "p_ppp",   "aliases": ["秋慶鎬", "Choo Kyung-ho"]},
+    {"id": "p_jo_kuk",        "name": "조국",       "role": "rebuild_leader",       "party_id": "p_rebuild", "aliases": ["曺國", "Cho Kuk", "조국 대표"]},
+    {"id": "p_lee_jun_seok",  "name": "이준석",     "role": "reform_leader",        "party_id": "p_reform",  "aliases": ["李俊錫", "Lee Jun-seok"]},
+    {"id": "p_park_ju_min",   "name": "박주민",     "role": "dpk_lawmaker",         "party_id": "p_dem",     "aliases": ["朴柱民", "Park Ju-min"]},
+    {"id": "p_jeon_hyeon_hee","name": "전현희",     "role": "dpk_lawmaker",         "party_id": "p_dem",     "aliases": ["全炫姬", "Jeon Hyeon-hee"]},
+    {"id": "p_kang_gi_jung",  "name": "강기정",     "role": "incumbent_gwangju_mayor","party_id": "p_dem",   "aliases": ["姜琪正", "Kang Gi-jung"]},
+    {"id": "p_seo_jae_heon",  "name": "서재헌",     "role": "dpk_dalseo_chair",     "party_id": "p_dem",     "aliases": ["徐宰憲", "Seo Jae-heon"]}
+  ]
+}

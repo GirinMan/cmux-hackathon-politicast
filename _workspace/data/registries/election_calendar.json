@@ -1,0 +1,61 @@
+{
+  "version": "v1",
+  "description": "PolitiKAST ElectionCalendar — 5 region 시드. 2026-06-03 제8회 전국동시지방선거 + 보궐. 공직선거법 §108 (블랙아웃 6일 전 ~ 선거일).",
+  "windows": {
+    "seoul_mayor": {
+      "region_id": "seoul_mayor",
+      "election_id": "seoul_mayor_2026",
+      "election_date": "2026-06-03",
+      "position_type": "mayor",
+      "timezone": "Asia/Seoul",
+      "fieldwork_start": "2026-04-19",
+      "fieldwork_end": "2026-05-27",
+      "blackout_start": "2026-05-28",
+      "blackout_end": "2026-06-03"
+    },
+    "busan_buk_gap": {
+      "region_id": "busan_buk_gap",
+      "election_id": "busan_buk_gap_2026",
+      "election_date": "2026-06-03",
+      "position_type": "gap_assembly",
+      "timezone": "Asia/Seoul",
+      "fieldwork_start": "2026-04-01",
+      "fieldwork_end": "2026-05-27",
+      "blackout_start": "2026-05-28",
+      "blackout_end": "2026-06-03"
+    },
+    "daegu_mayor": {
+      "region_id": "daegu_mayor",
+      "election_id": "daegu_mayor_2026",
+      "election_date": "2026-06-03",
+      "position_type": "mayor",
+      "timezone": "Asia/Seoul",
+      "fieldwork_start": "2026-04-19",
+      "fieldwork_end": "2026-05-27",
+      "blackout_start": "2026-05-28",
+      "blackout_end": "2026-06-03"
+    },
+    "gwangju_mayor": {
+      "region_id": "gwangju_mayor",
+      "election_id": "gwangju_mayor_2026",
+      "election_date": "2026-06-03",
+      "position_type": "mayor",
+      "timezone": "Asia/Seoul",
+      "fieldwork_start": "2026-04-19",
+      "fieldwork_end": "2026-05-27",
+      "blackout_start": "2026-05-28",
+      "blackout_end": "2026-06-03"
+    },
+    "daegu_dalseo_gap": {
+      "region_id": "daegu_dalseo_gap",
+      "election_id": "daegu_dalseo_gap_2026",
+      "election_date": "2026-06-03",
+      "position_type": "gap_assembly",
+      "timezone": "Asia/Seoul",
+      "fieldwork_start": "2026-04-01",
+      "fieldwork_end": "2026-05-27",
+      "blackout_start": "2026-05-28",
+      "blackout_end": "2026-06-03"
+    }
+  }
+}

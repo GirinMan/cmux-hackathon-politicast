@@ -1,4 +1,14 @@
-"""Nemotron-Personas-Korea parquet → DuckDB 인제션 + 5 region view 생성."""
+"""Nemotron-Personas-Korea parquet → DB 인제션 + 5 region view.
+
+Phase 4 cutover
+---------------
+- Default (Postgres): parquet → DuckDB intermediate (in-memory) → PG COPY/INSERT
+  via ``tools/migrate_duckdb_to_postgres.py``. 직접 호출은
+  ``ingest_to_postgres()`` (신규).
+- Legacy (DuckDB file): 기존 ``ingest()`` + ``build_region_views()`` 시그니처 보존.
+- Backend 선택은 ``backend.app.db.session.is_postgres_enabled()`` 또는
+  ``--backend pg|duckdb`` CLI 플래그.
+"""
 from __future__ import annotations
 
 import argparse
@@ -10,37 +20,24 @@ from typing import Any, Iterable
 
 import duckdb
 
+from src.schemas.persona import (
+    PERSONA_CORE_COLUMNS,
+    PERSONA_DISTRICT_CANDIDATES,
+    PERSONA_PROVINCE_CANDIDATES,
+    PERSONA_TEXT_SUFFIX,
+)
+
 # ---------------------------------------------------------------------------
 # 경로/상수
 # ---------------------------------------------------------------------------
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CONTRACTS_PATH = REPO_ROOT / "_workspace" / "contracts" / "data_paths.json"
 
-# Nemotron-Personas-Korea 추정 스키마 (parquet metadata로 동적 매칭).
-# 일반적으로 datasets 카드에 보이는 데모그래픽 코어 컬럼들.
-DEMOGRAPHIC_CORE_CANDIDATES: list[str] = [
-    "uuid",
-    "sex",
-    "age",
-    "marital_status",
-    "education_level",
-    "occupation",
-    "department",
-    "job_title",
-    "city",
-    "country",
-    # province/region/state 후보는 아래 _PROVINCE_CANDIDATES 로 별도 처리
-    "household_income",
-    "skills_and_expertise",
-    "hobbies_and_interests",
-    "religion",
-]
-
-_PROVINCE_CANDIDATES: list[str] = ["province", "region", "state", "do", "sido"]
-_DISTRICT_CANDIDATES: list[str] = ["district", "city", "sigungu", "county"]
-
-# *_persona text 컬럼 (Nemotron-Personas-Korea 특유)
-_TEXT_PERSONA_SUFFIX = "_persona"
+# 컬럼 화이트리스트는 src/schemas/persona.py 가 SoT — 본 모듈은 alias 만 유지.
+DEMOGRAPHIC_CORE_CANDIDATES: list[str] = list(PERSONA_CORE_COLUMNS)
+_PROVINCE_CANDIDATES: list[str] = list(PERSONA_PROVINCE_CANDIDATES)
+_DISTRICT_CANDIDATES: list[str] = list(PERSONA_DISTRICT_CANDIDATES)
+_TEXT_PERSONA_SUFFIX = PERSONA_TEXT_SUFFIX
 
 
 # ---------------------------------------------------------------------------
@@ -238,6 +235,99 @@ def build_region_views(
 
 
 # ---------------------------------------------------------------------------
+# Postgres path — DuckDB intermediate 후 SQLAlchemy bulk insert
+# ---------------------------------------------------------------------------
+def ingest_to_postgres(
+    parquet_dir: Path,
+    *,
+    persona_table: str = "persona_core",
+    persona_text_table: str = "persona_text",
+    chunk_size: int = 5000,
+) -> dict[str, Any]:
+    """parquet → 메모리 DuckDB → PG bulk INSERT.
+
+    DuckDB 의 parquet reader 가 워낙 빨라서 staging engine 으로 활용한 뒤
+    PG 로 옮긴다. ``tools/migrate_duckdb_to_postgres.py`` 가 동일 path 의
+    별도 진입점 (DuckDB 파일 → PG).
+    """
+    from sqlalchemy import create_engine, text
+
+    from backend.app.db.session import resolve_dsn
+
+    files = list_parquet_files(parquet_dir)
+    parquet_glob = str(parquet_dir / "*.parquet")
+    mem_con = duckdb.connect(":memory:")
+
+    all_cols = discover_columns(mem_con, parquet_glob)
+    available = set(all_cols)
+    core_cols, text_cols = split_columns(all_cols)
+    if "uuid" not in available:
+        raise RuntimeError(f"Expected `uuid` in parquet, got {sorted(available)}")
+    province_col = pick_first_existing(_PROVINCE_CANDIDATES, available)
+    district_col = pick_first_existing(_DISTRICT_CANDIDATES, available)
+    for extra in (province_col, district_col):
+        if extra and extra not in core_cols and extra not in text_cols:
+            core_cols.append(extra)
+
+    pg = create_engine(resolve_dsn(async_=False), future=True)
+    n_inserted = {persona_table: 0, persona_text_table: 0}
+
+    with pg.begin() as con:
+        # core
+        con.execute(text(f'TRUNCATE "{persona_table}"'))
+        cols_str = ", ".join(quote_ident(c) for c in core_cols)
+        rows_iter = mem_con.execute(
+            f"SELECT {cols_str} FROM read_parquet('{parquet_glob}')"
+        )
+        while True:
+            chunk = rows_iter.fetchmany(chunk_size)
+            if not chunk:
+                break
+            placeholders = ", ".join([":" + c for c in core_cols])
+            con.execute(
+                text(
+                    f'INSERT INTO "{persona_table}" ({cols_str}) '
+                    f"VALUES ({placeholders}) ON CONFLICT DO NOTHING"
+                ),
+                [dict(zip(core_cols, r)) for r in chunk],
+            )
+            n_inserted[persona_table] += len(chunk)
+
+        # text
+        if text_cols:
+            con.execute(text(f'TRUNCATE "{persona_text_table}"'))
+            t_cols = ["uuid", *text_cols]
+            t_cols_str = ", ".join(quote_ident(c) for c in t_cols)
+            rows_iter = mem_con.execute(
+                f"SELECT {t_cols_str} FROM read_parquet('{parquet_glob}')"
+            )
+            while True:
+                chunk = rows_iter.fetchmany(chunk_size)
+                if not chunk:
+                    break
+                placeholders = ", ".join([":" + c for c in t_cols])
+                con.execute(
+                    text(
+                        f'INSERT INTO "{persona_text_table}" ({t_cols_str}) '
+                        f"VALUES ({placeholders}) ON CONFLICT DO NOTHING"
+                    ),
+                    [dict(zip(t_cols, r)) for r in chunk],
+                )
+                n_inserted[persona_text_table] += len(chunk)
+
+    mem_con.close()
+    pg.dispose()
+    return {
+        "files": [str(p) for p in files],
+        "n_inserted": n_inserted,
+        "core_columns": core_cols,
+        "text_columns": text_cols,
+        "province_col": province_col,
+        "district_col": district_col,
+    }
+
+
+# ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
 def main(argv: list[str] | None = None) -> int:
@@ -247,7 +337,11 @@ def main(argv: list[str] | None = None) -> int:
         os.environ.get("NEMOTRON_PARQUET_DIR", contracts["nemotron_parquet_dir"])
     )
 
-    parser = argparse.ArgumentParser(description="PolitiKAST DuckDB ingestion")
+    parser = argparse.ArgumentParser(description="PolitiKAST DB ingestion")
+    parser.add_argument(
+        "--backend", choices=["duckdb", "pg"], default=None,
+        help="명시 안 하면 POLITIKAST_PG_DSN/DATABASE_URL 존재 여부로 자동.",
+    )
     parser.add_argument("--db", type=Path, default=default_db)
     parser.add_argument("--parquet-dir", type=Path, default=default_parquet)
     parser.add_argument(
@@ -259,9 +353,32 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
 
-    print(f"[ingest] parquet dir: {args.parquet_dir}")
-    print(f"[ingest] duckdb path: {args.db}")
+    backend = args.backend
+    if backend is None:
+        try:
+            from backend.app.db.session import is_postgres_enabled
 
+            backend = "pg" if is_postgres_enabled() else "duckdb"
+        except Exception:
+            backend = "duckdb"
+
+    print(f"[ingest] parquet dir: {args.parquet_dir}")
+    print(f"[ingest] backend: {backend}")
+    if backend == "pg":
+        info = ingest_to_postgres(
+            parquet_dir=args.parquet_dir,
+            persona_table=args.persona_table,
+            persona_text_table=args.persona_text_table,
+        )
+        print(f"[ingest] files: {len(info['files'])}")
+        print(f"[ingest] n_inserted: {info['n_inserted']}")
+        print(
+            f"[ingest] province_col={info['province_col']!r} "
+            f"district_col={info['district_col']!r}"
+        )
+        return 0
+
+    print(f"[ingest] duckdb path: {args.db}")
     info = ingest(
         db_path=args.db,
         parquet_dir=args.parquet_dir,

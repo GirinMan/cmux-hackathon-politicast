@@ -1,0 +1,63 @@
+[
+  {
+    "event_id": "daegu_mayor_2026_ppp_primary_unify",
+    "source": "custom",
+    "occurs_at": "2026-04-30T17:00:00+09:00",
+    "description": "국민의힘 후보 단일화 (추 vs 유) 경선 결과 발표",
+    "candidate_patches": [
+      {"candidate_id": "c_daegu_ppp_choo", "boost": 0.04, "reason": "단일 후보 확정"},
+      {"candidate_id": "c_daegu_ppp_yoo", "drop_out": true}
+    ],
+    "event_patches": [
+      {"issue": "여권_단일화", "salience": 0.22}
+    ],
+    "prior_p": 0.55,
+    "metadata": {"intuition_label": "여권 단일화"}
+  },
+  {
+    "event_id": "daegu_mayor_2026_tk_megacity",
+    "source": "custom",
+    "occurs_at": "2026-05-10T11:00:00+09:00",
+    "description": "대구·경북 행정통합(TK 메가시티) 추진안 무산",
+    "candidate_patches": [
+      {"candidate_id": "c_daegu_ppp_choo", "boost": -0.03, "reason": "여당 핵심 어젠다 좌초"},
+      {"candidate_id": "c_daegu_dpk", "boost": 0.02}
+    ],
+    "event_patches": [
+      {"issue": "지역_메가시티", "salience": 0.28}
+    ],
+    "prior_p": 0.35,
+    "metadata": {"intuition_label": "지역 메가시티 무산"}
+  },
+  {
+    "event_id": "daegu_mayor_2026_water_supply_crisis",
+    "source": "custom",
+    "occurs_at": "2026-05-19T08:00:00+09:00",
+    "description": "낙동강 취수원 오염 사고 — 대구 시민 식수 비상",
+    "candidate_patches": [
+      {"candidate_id": "c_daegu_ppp_choo", "boost": -0.025, "reason": "현직 책임 부각"},
+      {"candidate_id": "c_daegu_dpk", "boost": 0.02},
+      {"candidate_id": "c_daegu_ourrep", "boost": 0.005}
+    ],
+    "event_patches": [
+      {"issue": "환경_보건", "salience": 0.30}
+    ],
+    "prior_p": 0.20,
+    "metadata": {"intuition_label": "낙동강 취수 사고"}
+  },
+  {
+    "event_id": "daegu_mayor_2026_progressive_third_way",
+    "source": "custom",
+    "occurs_at": "2026-05-26T19:00:00+09:00",
+    "description": "우리공화당 후보 사퇴 — 보수표 결집",
+    "candidate_patches": [
+      {"candidate_id": "c_daegu_ourrep", "drop_out": true},
+      {"candidate_id": "c_daegu_ppp_choo", "boost": 0.025}
+    ],
+    "event_patches": [
+      {"issue": "보수_재결집", "salience": 0.18}
+    ],
+    "prior_p": 0.25,
+    "metadata": {"intuition_label": "보수 제3후보 사퇴"}
+  }
+]

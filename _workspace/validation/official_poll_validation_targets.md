@@ -1,5 +1,10 @@
 # Official Poll Validation Targets
 
+> **Source of truth (post-hackathon):** DuckDB `official_poll` view +
+> `election_result` table (`src/data/ground_truth.py`). Validation metrics
+> are computed by `src/eval/metrics.py`. This document is a human-readable
+> summary; downstream consumers should query the tables / call the loader.
+
 Updated: 2026-04-26 16:12 KST
 
 Purpose: PolitiKAST must validate against official pre-election poll targets before any 2026 local-election forecast is treated as credible. A current-election run without this step is effectively a zero-shot simulation.

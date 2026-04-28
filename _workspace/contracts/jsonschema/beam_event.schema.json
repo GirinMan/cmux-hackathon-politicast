@@ -1,0 +1,67 @@
+{
+  "additionalProperties": false,
+  "description": "Discrete event proposed by an `EventProposer`.\n\nSee module docstring for the official `candidate_patches` / `event_patches`\nshape contract — declarative (primary) and imperative (legacy) are both\naccepted; the splicer routes them appropriately.",
+  "properties": {
+    "event_id": {
+      "title": "Event Id",
+      "type": "string"
+    },
+    "source": {
+      "enum": [
+        "kg_confirmed",
+        "llm_hypothetical",
+        "custom"
+      ],
+      "title": "Source",
+      "type": "string"
+    },
+    "occurs_at": {
+      "format": "date-time",
+      "title": "Occurs At",
+      "type": "string"
+    },
+    "description": {
+      "description": "한국어 라벨, Sankey 노드에 표시",
+      "title": "Description",
+      "type": "string"
+    },
+    "candidate_patches": {
+      "description": "Declarative ({candidate_id, boost|drop_out|reason, …}) is the primary form. Imperative ({op, candidate_id, fields|candidate}) is also supported for run_counterfactual interop.",
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Candidate Patches",
+      "type": "array"
+    },
+    "event_patches": {
+      "description": "Declarative ({issue, salience, …}) is the primary form. Imperative ({op:'add'|'remove', event:{event_id,…}}) is also supported for run_counterfactual interop.",
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Event Patches",
+      "type": "array"
+    },
+    "prior_p": {
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Prior P",
+      "type": "number"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "title": "Metadata",
+      "type": "object"
+    }
+  },
+  "required": [
+    "event_id",
+    "source",
+    "occurs_at",
+    "description",
+    "prior_p"
+  ],
+  "title": "BeamEvent",
+  "type": "object"
+}

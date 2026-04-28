@@ -1,4 +1,9 @@
-"""Ingest NESDC matched poll metadata into DuckDB raw_poll table.
+"""[DEPRECATED 2026-04-26 — Phase 3 정형 어댑터 전환] — see
+``src/ingest/adapters/nesdc_poll.py::NESDCPollAdapter``. 본 스크립트의
+fetch/parse 로직은 어댑터로 이전됐으며 PipelineRunner 가 staging MERGE 를
+책임진다. 본 파일은 어댑터 도입 전 history 보존 + emergency reingest 용.
+
+Ingest NESDC matched poll metadata into DuckDB raw_poll table.
 
 Reads:
   _workspace/snapshots/validation/nesdc_list_raw.json (matches per region)

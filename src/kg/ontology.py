@@ -139,7 +139,7 @@ class PollPublication:
 
 
 # ---------------------------------------------------------------------------
-# P2/P3 enrichment ontology (2026-04-26) — non-candidate political actors and
+# P2/P3 enrichment ontology (Phase 1 KST) — non-candidate political actors and
 # media outlet entities, populated from `_workspace/data/perplexity/{region}.json`.
 # ---------------------------------------------------------------------------
 @dataclass

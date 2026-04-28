@@ -1,0 +1,60 @@
+[
+  {
+    "event_id": "dalseo_gap_2026_ppp_primary_decision",
+    "source": "custom",
+    "occurs_at": "2026-04-29T11:00:00+09:00",
+    "description": "국민의힘 달서갑 보궐 단일후보 확정 (김 vs 홍 경선 종료)",
+    "candidate_patches": [
+      {"candidate_id": "c_dalseo_ppp_kim", "boost": 0.03, "reason": "단일후보 확정"},
+      {"candidate_id": "c_dalseo_ppp_hong", "drop_out": true}
+    ],
+    "event_patches": [
+      {"issue": "여권_단일화", "salience": 0.22}
+    ],
+    "prior_p": 0.55,
+    "metadata": {"intuition_label": "여권 단일화"}
+  },
+  {
+    "event_id": "dalseo_gap_2026_subway_extension",
+    "source": "custom",
+    "occurs_at": "2026-05-07T10:30:00+09:00",
+    "description": "대구 도시철도 1호선 달서구 연장 예타 통과",
+    "candidate_patches": [
+      {"candidate_id": "c_dalseo_ppp_kim", "boost": 0.025, "reason": "지역 SOC 호재"}
+    ],
+    "event_patches": [
+      {"issue": "지역_SOC", "salience": 0.24}
+    ],
+    "prior_p": 0.45,
+    "metadata": {"intuition_label": "지하철 연장 예타 통과"}
+  },
+  {
+    "event_id": "dalseo_gap_2026_dpk_youth_endorsement",
+    "source": "custom",
+    "occurs_at": "2026-05-14T19:00:00+09:00",
+    "description": "지역 청년단체 합동, 민주당 후보 공개 지지",
+    "candidate_patches": [
+      {"candidate_id": "c_dalseo_dpk", "boost": 0.03, "reason": "청년 결집"}
+    ],
+    "event_patches": [
+      {"issue": "청년_정치", "salience": 0.18}
+    ],
+    "prior_p": 0.30,
+    "metadata": {"intuition_label": "청년단체 민주 지지"}
+  },
+  {
+    "event_id": "dalseo_gap_2026_school_redistrict",
+    "source": "custom",
+    "occurs_at": "2026-05-21T09:00:00+09:00",
+    "description": "달서구 학군 재조정안 발표 — 학부모 항의",
+    "candidate_patches": [
+      {"candidate_id": "c_dalseo_ppp_kim", "boost": -0.025, "reason": "여당 책임 인식"},
+      {"candidate_id": "c_dalseo_dpk", "boost": 0.02}
+    ],
+    "event_patches": [
+      {"issue": "교육_학군", "salience": 0.26}
+    ],
+    "prior_p": 0.20,
+    "metadata": {"intuition_label": "학군 재조정 논란"}
+  }
+]

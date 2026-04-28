@@ -1,0 +1,117 @@
+{
+  "$defs": {
+    "BandwagonParams": {
+      "additionalProperties": false,
+      "description": "bandwagon_underdog() utilities.",
+      "properties": {
+        "bandwagon_w": {
+          "default": 0.3,
+          "title": "Bandwagon W",
+          "type": "number"
+        },
+        "underdog_w": {
+          "default": 0.1,
+          "title": "Underdog W",
+          "type": "number"
+        },
+        "trigger_threshold": {
+          "default": 0.1,
+          "title": "Trigger Threshold",
+          "type": "number"
+        },
+        "enable_bandwagon": {
+          "default": true,
+          "title": "Enable Bandwagon",
+          "type": "boolean"
+        },
+        "enable_underdog": {
+          "default": true,
+          "title": "Enable Underdog",
+          "type": "boolean"
+        }
+      },
+      "title": "BandwagonParams",
+      "type": "object"
+    },
+    "ConsensusParams": {
+      "additionalProperties": false,
+      "description": "poll_consensus.consensus() 의 가중치/감쇠 파라미터.",
+      "properties": {
+        "alpha": {
+          "default": 0.5,
+          "title": "Alpha",
+          "type": "number"
+        },
+        "lam": {
+          "default": 0.05,
+          "title": "Lam",
+          "type": "number"
+        },
+        "ref_day": {
+          "default": 0,
+          "title": "Ref Day",
+          "type": "integer"
+        },
+        "smoothing": {
+          "default": 0.0,
+          "title": "Smoothing",
+          "type": "number"
+        },
+        "fieldwork_window_days": {
+          "default": 30,
+          "title": "Fieldwork Window Days",
+          "type": "integer"
+        }
+      },
+      "title": "ConsensusParams",
+      "type": "object"
+    },
+    "EnvDefaults": {
+      "additionalProperties": false,
+      "description": "ElectionEnv 기본 런타임 값.",
+      "properties": {
+        "timesteps": {
+          "default": 4,
+          "title": "Timesteps",
+          "type": "integer"
+        },
+        "n_interviews": {
+          "default": 30,
+          "title": "N Interviews",
+          "type": "integer"
+        },
+        "concurrency": {
+          "default": 8,
+          "title": "Concurrency",
+          "type": "integer"
+        },
+        "base_date_strategy": {
+          "default": "scenario_t_start",
+          "title": "Base Date Strategy",
+          "type": "string"
+        }
+      },
+      "title": "EnvDefaults",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "default": "v1",
+      "title": "Version",
+      "type": "string"
+    },
+    "consensus": {
+      "$ref": "#/$defs/ConsensusParams"
+    },
+    "bandwagon": {
+      "$ref": "#/$defs/BandwagonParams"
+    },
+    "env": {
+      "$ref": "#/$defs/EnvDefaults"
+    }
+  },
+  "title": "SimConstants",
+  "type": "object"
+}

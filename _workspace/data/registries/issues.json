@@ -1,0 +1,22 @@
+{
+  "_doc": "Issue registry — 5 region 시나리오 issues[] 의 합집합 + alias. EntityResolver(rule 단계)와 KG builder 의 Issue 노드 SoT.",
+  "_status": "decided",
+  "version": "v1",
+  "issues": [
+    {"id": "i_judgement",       "name": "이재명 정부 중간평가",       "type": "정치",     "aliases": ["정부 중간평가", "중간평가", "정권 심판", "이재명 정부 평가", "judgement"]},
+    {"id": "i_lee_check",       "name": "이재명 정부 견제 vs 협력",   "type": "정치",     "aliases": ["이재명 정부 견제", "견제 협력", "협력론", "lee_check"]},
+    {"id": "i_housing",         "name": "재개발/주거",                "type": "부동산",   "aliases": ["재개발", "재건축", "주거", "주거 정책", "housing"]},
+    {"id": "i_transport",       "name": "GTX 연장/광역교통",          "type": "지역개발", "aliases": ["GTX", "GTX 연장", "광역교통", "transport"]},
+    {"id": "i_split",           "name": "한동훈 vs 박민식 (보수 표 분열)", "type": "이념",  "aliases": ["보수 분열", "보수 표 분열", "한동훈 박민식", "split"]},
+    {"id": "i_busan_only",      "name": "부산 유일 민주 지역구 사수",   "type": "지역개발", "aliases": ["부산 민주", "부산 유일", "busan_only"]},
+    {"id": "i_han_presidential","name": "한동훈 차기 대권 시험대",     "type": "정치",     "aliases": ["한동훈 대권", "대권 시험대", "han_presidential"]},
+    {"id": "i_tk_identity",     "name": "TK 정체성 vs 변화",          "type": "이념",     "aliases": ["TK 정체성", "TK 변화", "tk_identity"]},
+    {"id": "i_new_office",      "name": "대구 신청사 건립",           "type": "지역개발", "aliases": ["대구 신청사", "신청사 건립", "new_office"]},
+    {"id": "i_kbg_effect",      "name": "김부겸 효과",                "type": "정치",     "aliases": ["김부겸 효과", "kbg_effect", "kim_boo_kyum_effect"]},
+    {"id": "i_jobs",            "name": "광주형 일자리/AI 거점",       "type": "지역개발", "aliases": ["광주형 일자리", "AI 거점", "jobs"]},
+    {"id": "i_518",             "name": "5·18 진상규명",              "type": "역사",     "aliases": ["5·18", "518", "광주 민주화", "진상규명"]},
+    {"id": "i_gov_alliance",    "name": "이재명 정부 협력",            "type": "정치",     "aliases": ["정부 협력", "여당 협력", "gov_alliance"]},
+    {"id": "i_tk_unity",        "name": "TK 보수 결집 vs 분열",        "type": "이념",     "aliases": ["TK 결집", "TK 분열", "보수 결집", "tk_unity"]},
+    {"id": "i_dpk_breakthrough","name": "민주당 침투 (서재헌 4기)",     "type": "지역개발", "aliases": ["민주당 침투", "민주당 약진", "dpk_breakthrough"]}
+  ]
+}

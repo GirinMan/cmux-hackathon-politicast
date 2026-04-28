@@ -1,0 +1,115 @@
+{
+  "$defs": {
+    "ElectionWindow": {
+      "additionalProperties": false,
+      "description": "단일 선거 (region_id) 의 일정.\n\nfieldwork_window 는 선거일 기준 며칠 전부터 여론조사 등록을 받는지의\n상한이다. blackout 은 NESDC 공표 금지 기간 (한국 공직선거법 §108).",
+      "properties": {
+        "region_id": {
+          "title": "Region Id",
+          "type": "string"
+        },
+        "election_id": {
+          "title": "Election Id",
+          "type": "string"
+        },
+        "election_date": {
+          "format": "date",
+          "title": "Election Date",
+          "type": "string"
+        },
+        "position_type": {
+          "title": "Position Type",
+          "type": "string"
+        },
+        "timezone": {
+          "default": "Asia/Seoul",
+          "title": "Timezone",
+          "type": "string"
+        },
+        "fieldwork_start": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fieldwork Start"
+        },
+        "fieldwork_end": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fieldwork End"
+        },
+        "blackout_start": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Blackout Start"
+        },
+        "blackout_end": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Blackout End"
+        }
+      },
+      "required": [
+        "region_id",
+        "election_id",
+        "election_date",
+        "position_type"
+      ],
+      "title": "ElectionWindow",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "region_id → ElectionWindow registry.",
+  "properties": {
+    "version": {
+      "default": "v1",
+      "title": "Version",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "title": "Description",
+      "type": "string"
+    },
+    "windows": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ElectionWindow"
+      },
+      "title": "Windows",
+      "type": "object"
+    }
+  },
+  "title": "ElectionCalendar",
+  "type": "object"
+}

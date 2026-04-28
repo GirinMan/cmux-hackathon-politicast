@@ -1,0 +1,62 @@
+{
+  "$defs": {
+    "AgeBucket": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "min": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min"
+        },
+        "max": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max"
+        }
+      },
+      "required": [
+        "label"
+      ],
+      "title": "AgeBucket",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "properties": {
+    "buckets": {
+      "items": {
+        "$ref": "#/$defs/AgeBucket"
+      },
+      "title": "Buckets",
+      "type": "array"
+    },
+    "unknown_label": {
+      "default": "unknown",
+      "title": "Unknown Label",
+      "type": "string"
+    }
+  },
+  "required": [
+    "buckets"
+  ],
+  "title": "AgeBuckets",
+  "type": "object"
+}

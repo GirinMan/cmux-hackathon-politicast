@@ -1,0 +1,61 @@
+[
+  {
+    "event_id": "busan_buk_gap_2026_indep_han_endorsement",
+    "source": "custom",
+    "occurs_at": "2026-05-04T10:00:00+09:00",
+    "description": "지역 시민단체 연합, 무소속 하정우 후보 공개 지지",
+    "candidate_patches": [
+      {"candidate_id": "c_busan_indep_han", "boost": 0.05, "reason": "시민단체 결집"}
+    ],
+    "event_patches": [
+      {"issue": "지역_정치", "salience": 0.18}
+    ],
+    "prior_p": 0.40,
+    "metadata": {"intuition_label": "무소속 시민단체 지지"}
+  },
+  {
+    "event_id": "busan_buk_gap_2026_pnu_relocation",
+    "source": "custom",
+    "occurs_at": "2026-05-12T14:00:00+09:00",
+    "description": "부산대 캠퍼스 일부 북구 이전안 공식화",
+    "candidate_patches": [
+      {"candidate_id": "c_busan_ppp", "boost": 0.03, "reason": "여당 정책 추진"},
+      {"candidate_id": "c_busan_dpk", "boost": -0.01}
+    ],
+    "event_patches": [
+      {"issue": "지역_개발", "salience": 0.25}
+    ],
+    "prior_p": 0.35,
+    "metadata": {"intuition_label": "부산대 북구 이전"}
+  },
+  {
+    "event_id": "busan_buk_gap_2026_dpk_unity",
+    "source": "custom",
+    "occurs_at": "2026-05-18T19:00:00+09:00",
+    "description": "민주 후보-무소속 하정우 단일화 협상 결렬",
+    "candidate_patches": [
+      {"candidate_id": "c_busan_dpk", "boost": -0.025, "reason": "야권 분열"},
+      {"candidate_id": "c_busan_indep_han", "boost": 0.015}
+    ],
+    "event_patches": [
+      {"issue": "야권_단일화", "salience": 0.22}
+    ],
+    "prior_p": 0.50,
+    "metadata": {"intuition_label": "야권 단일화 결렬"}
+  },
+  {
+    "event_id": "busan_buk_gap_2026_shipyard_closure",
+    "source": "custom",
+    "occurs_at": "2026-05-22T09:30:00+09:00",
+    "description": "북항 인근 중형 조선소 가동 중단 발표",
+    "candidate_patches": [
+      {"candidate_id": "c_busan_ppp", "boost": -0.03, "reason": "여당 책임론"},
+      {"candidate_id": "c_busan_dpk", "boost": 0.02}
+    ],
+    "event_patches": [
+      {"issue": "지역_경제", "salience": 0.24}
+    ],
+    "prior_p": 0.30,
+    "metadata": {"intuition_label": "조선소 가동 중단"}
+  }
+]

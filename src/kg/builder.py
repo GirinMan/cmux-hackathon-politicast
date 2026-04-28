@@ -3,47 +3,26 @@
 입력: ``_workspace/data/scenarios/{region_id}.json`` (data-engineer 산출).
 출력: 글로벌 ``MultiDiGraph`` + ``ScenarioIndex`` (region별 메타).
 
-스키마 (scenario JSON) — 누락 필드는 default로 채움:
+스키마 (scenario JSON) — 누락 필드는 default로 채움. 모든 절대 날짜 기본값은
+``src.kg._calendar_adapter`` (#26) 를 통해 ``ElectionCalendar`` 에 위임한다 —
+빌더 모듈 자체에는 어떤 절대 날짜 리터럴도 없다.
 
-```jsonc
-{
-  "scenario_id": "seoul_mayor_2026",
-  "region_id": "seoul_mayor",
-  "election": {"election_id": "ROK_local_2026", "name": "...",
-               "date": "2026-06-03", "type": "local"},
-  "contest":  {"contest_id": "seoul_mayor_2026",
-               "position_type": "metropolitan_mayor"},
-  "district": {"province": "서울특별시", "district": null, "population": 9700000},
-  "parties":  [{"party_id": "p_dem", "name": "더불어민주당", "ideology": -0.4}, ...],
-  "candidates": [
-    {"candidate_id": "c_kim", "name": "김XX",
-     "party": "p_dem", "withdrawn": false}, ...
-  ],
-  "issues":  [{"issue_id": "i_housing", "name": "부동산", "type": "경제"}],
-  "frames":  [{"frame_id": "f_judgement", "label": "정권심판"}],
-  "events":  [
-    {"event_id": "e1", "type": "ScandalEvent",
-     "ts": "2026-04-10T09:00:00", "source": "조선일보",
-     "title": "X후보 자녀 입시 의혹", "sentiment": -0.4,
-     "severity": 0.7, "credibility": 0.5,
-     "target_candidate_id": "c_kim", "frame_id": "f_judgement",
-     "about": ["c_kim"], "mentions": ["i_education"]}
-  ],
-  "polls": [
-    {"poll_id": 1, "ts": "2026-04-15T00:00:00",
-     "sample_size": 1000, "leader_candidate": "c_kim", "leader_share": 0.42}
-  ],
-  "simulation": {"t_start": "2026-04-01T00:00:00",
-                 "t_end":   "2026-06-03T00:00:00",
-                 "timesteps": 4}
-}
-```
+스키마 핵심 키:
+  - ``region_id``, ``election`` (election_id/name/date/type), ``contest``
+    (contest_id/position_type), ``district`` (province/district/population),
+  - ``parties`` (party_id/name/ideology), ``candidates`` (candidate_id/name/
+    party/withdrawn/background/key_pledges),
+  - ``issues`` (issue_id/name/type), ``frames`` (frame_id/label),
+  - ``events`` (event_id/type/ts/source/title/sentiment/about/mentions/...),
+  - ``polls`` (poll_id/ts/sample_size/leader_candidate/leader_share),
+  - ``simulation`` (t_start/t_end/timesteps).
 """
 
 from __future__ import annotations
 
 import json
 import logging
+import os
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -52,6 +31,62 @@ from typing import Any, Iterable
 import networkx as nx
 
 from src.kg.ontology import EVENT_NODE_TYPES
+from src.kg._calendar_adapter import (
+    get_default_cutoff,
+    get_default_election_date,
+    get_default_t_start,
+    get_election_window,
+)
+
+# Strict mode (task #10): when POLITIKAST_KG_STRICT=1, validate every node
+# attribute dict against the Pydantic mirror in ``src.schemas.kg`` before
+# inserting it into the graph. Off by default — KG ingest tolerates schema
+# drift in production paths; tests opt-in via the env var.
+_STRICT_KG: bool = os.environ.get("POLITIKAST_KG_STRICT", "0").lower() in (
+    "1",
+    "true",
+    "yes",
+)
+
+
+class KGSchemaError(ValueError):
+    """Raised in strict mode when a node fails Pydantic validation."""
+
+
+# Map graph ``type`` attribute → Pydantic model in src.schemas.kg.
+# Lazily resolved on first use so the import does not become mandatory in the
+# default (non-strict) path.
+_PYDANTIC_MODEL_CACHE: dict[str, Any] | None = None
+
+
+def _pydantic_model_for(node_type: str) -> Any | None:
+    global _PYDANTIC_MODEL_CACHE
+    if _PYDANTIC_MODEL_CACHE is None:
+        try:
+            from src.schemas import kg as _kg_schemas
+        except Exception as exc:  # noqa: BLE001
+            log.warning("[kg/strict] schemas.kg import failed: %s", exc)
+            _PYDANTIC_MODEL_CACHE = {}
+            return None
+        _PYDANTIC_MODEL_CACHE = {
+            "Election": _kg_schemas.Election,
+            "Contest": _kg_schemas.Contest,
+            "District": _kg_schemas.District,
+            "Party": _kg_schemas.Party,
+            "Candidate": _kg_schemas.Candidate,
+            "PolicyIssue": _kg_schemas.PolicyIssue,
+            "NarrativeFrame": _kg_schemas.NarrativeFrame,
+            "MediaEvent": _kg_schemas.MediaEvent,
+            "ScandalEvent": _kg_schemas.ScandalEvent,
+            "Investigation": _kg_schemas.Investigation,
+            "Verdict": _kg_schemas.Verdict,
+            "PressConference": _kg_schemas.PressConference,
+            "PollPublication": _kg_schemas.PollPublication,
+            "Person": _kg_schemas.Person,
+            "Source": _kg_schemas.Source,
+            "CohortPrior": _kg_schemas.CohortPrior,
+        }
+    return _PYDANTIC_MODEL_CACHE.get(node_type)
 
 log = logging.getLogger(__name__)
 
@@ -139,8 +174,12 @@ def _normalize_de_scenario(s: dict[str, Any]) -> dict[str, Any]:
     누락된 필드는 default. 전환 결과는 ``_ingest_scenario`` 가 그대로 소비.
     """
     region_id: str = s.get("region_id") or "?"
-    election_date_raw: Any = s.get("election_date") or "2026-06-03"
-    election_date = parse_ts(election_date_raw, default=datetime(2026, 6, 3))
+    cal_window = get_election_window(region_id) if region_id and region_id != "?" else None
+    cal_default_date = (
+        cal_window.election_date if cal_window else get_default_election_date()
+    )
+    election_date_raw: Any = s.get("election_date") or cal_default_date.isoformat()
+    election_date = parse_ts(election_date_raw, default=cal_default_date)
     label: str = s.get("label") or region_id
 
     # ---- election / contest / district
@@ -183,12 +222,19 @@ def _normalize_de_scenario(s: dict[str, Any]) -> dict[str, Any]:
             or s.get("province")
             or label
         ),
-        "district": nested_di.get("district") or s.get("district"),
+        # If `nested_di` is the full District block, ``s.get("district")``
+        # is the same dict — never fall back to it. Only honor a top-level
+        # ``district`` string when no nested block exists.
+        "district": (
+            nested_di.get("district")
+            if nested_di
+            else (s.get("district") if isinstance(s.get("district"), str) else None)
+        ),
         "population": nested_di.get("population") or s.get("population"),
     }
 
     # ---- parties (collect unique party names)
-    # Bug fix (2026-04-26): if `c.party` already looks like a party_id (starts
+    # Bug fix (P1): if `c.party` already looks like a party_id (starts
     # with "p_"), reuse it as-is and pull the human-readable name from
     # `c.party_name`. Otherwise the slugger emits `p_p_dem` etc., which then
     # fails to match Perplexity-derived `Person.party_id="p_dem"` edges.
@@ -220,7 +266,7 @@ def _normalize_de_scenario(s: dict[str, Any]) -> dict[str, Any]:
         cid = c.get("candidate_id") or c.get("id")
         if not cid:
             continue
-        # P0 enrichment (2026-04-26): preserve human-curated profile fields so
+        # P0 enrichment (P1): preserve human-curated profile fields so
         # builder/retriever can surface them to the voter prompt instead of
         # dropping them silently.
         candidates_out.append(
@@ -329,7 +375,7 @@ def _normalize_de_scenario(s: dict[str, Any]) -> dict[str, Any]:
     if "t_end" not in sim:
         sim["t_end"] = election_date_raw
     if "t_start" not in sim:
-        # 시뮬 시작 = 선거일 - 40일 ≈ 4-25 (2026-06-03 기준)
+        # 시뮬 시작 = 선거일 - 40일 (calendar adapter 기본값과 일치).
         sim["t_start"] = (election_date - timedelta(days=40)).isoformat()
     if "timesteps" not in sim:
         sim["timesteps"] = 4
@@ -347,8 +393,8 @@ def _normalize_de_scenario(s: dict[str, Any]) -> dict[str, Any]:
         "events": events_out,
         "polls": polls_out,
         "simulation": sim,
-        # P1 enrichment (2026-04-26): preserve human-curated region notes so
-        # builder/retriever can surface them as a `[지역 정세]` block.
+        # P1 enrichment: preserve human-curated region notes so builder /
+        # retriever can surface them as a `[지역 정세]` block.
         "scenario_notes": s.get("scenario_notes"),
     }
 
@@ -426,7 +472,69 @@ class ScenarioIndex:
 # ---------------------------------------------------------------------------
 # Builder
 # ---------------------------------------------------------------------------
+def _validate_node_attrs(node_id: str, attrs: dict[str, Any]) -> None:
+    """Task #6 + #10: enforce node-level invariants.
+
+    1. Event-typed nodes (firewall scope) MUST carry a ``ts`` attribute that
+       is a ``datetime`` instance. Builder always sets a default via
+       ``parse_ts(..., default=t_start)``, but this guard catches future
+       regressions / direct ``_add_node`` callers that bypass that path.
+    2. When ``POLITIKAST_KG_STRICT=1``, validate ``attrs`` against the
+       Pydantic mirror in ``src.schemas.kg`` (datetime-typed fields are
+       coerced to ISO strings before validation since the mirror's ``ts`` /
+       ``date`` / ``publish_ts`` fields use ``str`` for JSON-friendliness).
+    """
+    node_type = attrs.get("type")
+
+    if node_type in EVENT_NODE_TYPES:
+        ts = attrs.get("ts")
+        if not isinstance(ts, datetime):
+            raise KGSchemaError(
+                f"[kg] event node {node_id!r} (type={node_type}) missing "
+                f"datetime ts; got {type(ts).__name__}={ts!r}"
+            )
+
+    if not _STRICT_KG or not node_type:
+        return
+    model = _pydantic_model_for(node_type)
+    if model is None:
+        return
+    payload: dict[str, Any] = {}
+    for k, v in attrs.items():
+        if isinstance(v, datetime):
+            payload[k] = v.isoformat()
+        else:
+            payload[k] = v
+    # PollPublication mirror declares ``poll_id: int`` for backwards-compat
+    # with the original numeric-id polls, but builder also accepts string
+    # ids for synthetic prediction priors (e.g. "prediction_prior_..."). The
+    # graph still stores the raw value verbatim — strict validation only
+    # cares that the structural shape is right.
+    if node_type == "PollPublication":
+        pid = payload.get("poll_id")
+        if pid is None:
+            # Perplexity-ingested PollPublication nodes are media-event-shaped
+            # (event_id only). Synthesize for validation; graph storage is
+            # untouched.
+            payload["poll_id"] = 0
+        elif isinstance(pid, str):
+            try:
+                payload["poll_id"] = int(pid)
+            except ValueError:
+                payload["poll_id"] = 0
+        if "contest_id" not in payload:
+            payload["contest_id"] = payload.get("region_id", "")
+    try:
+        model.model_validate(payload)
+    except Exception as exc:  # pydantic.ValidationError
+        raise KGSchemaError(
+            f"[kg/strict] node {node_id!r} (type={node_type}) failed "
+            f"Pydantic validation: {exc}"
+        ) from exc
+
+
 def _add_node(G: nx.MultiDiGraph, node_id: str, **attrs: Any) -> None:
+    _validate_node_attrs(node_id, attrs)
     if node_id in G.nodes:
         # 멱등 — 새 attrs 로 덮어쓰기
         G.nodes[node_id].update(attrs)
@@ -482,13 +590,13 @@ def _ingest_scenario(
         label=el.get("name", election_id),
         election_id=election_id,
         name=el.get("name"),
-        date=parse_ts(el.get("date"), default=datetime(2026, 6, 3)),
+        date=parse_ts(el.get("date"), default=get_default_election_date()),
         election_type=el.get("type", "local"),
     )
 
     # ---- District
     d = scenario.get("district") or {}
-    # P1 enrichment (2026-04-26): pull human-written `scenario_notes` (region
+    # P1 enrichment (P1): pull human-written `scenario_notes` (region
     # 정세 한 줄 메모) onto the District node so retriever can surface it as a
     # `[지역 정세]` block. Stored as a string regardless of source shape.
     raw_notes = scenario.get("scenario_notes")
@@ -551,7 +659,7 @@ def _ingest_scenario(
         party_ids[pid] = p_node
 
     # ---- Candidates
-    # P0 enrichment (2026-04-26): persist human-curated `background`,
+    # P0 enrichment (P1): persist human-curated `background`,
     # `key_pledges`, `party_name` fields so KGRetriever can prepend a
     # `[후보 프로필]` block to the voter prompt. Scenario JSON already carries
     # these — without this loop they were dropped, causing voter LLMs to see
@@ -622,8 +730,15 @@ def _ingest_scenario(
 
     # ---- Events
     sim = scenario.get("simulation") or {}
-    t_start = parse_ts(sim.get("t_start"), default=datetime(2026, 4, 1))
-    t_end = parse_ts(sim.get("t_end"), default=datetime(2026, 6, 3))
+    _cal_window = get_election_window(region_id)
+    _default_t_start = (
+        _cal_window.t_start if _cal_window else get_default_t_start()
+    )
+    _default_t_end = (
+        _cal_window.t_end if _cal_window else get_default_election_date()
+    )
+    t_start = parse_ts(sim.get("t_start"), default=_default_t_start)
+    t_end = parse_ts(sim.get("t_end"), default=_default_t_end)
 
     for ev in scenario.get("events", []) or []:
         eid = ev.get("event_id")
@@ -723,7 +838,7 @@ def _ingest_scenario(
 
 
 # ---------------------------------------------------------------------------
-# P2/P3 enrichment — Perplexity-curated facts (2026-04-26)
+# P2/P3 enrichment — Perplexity-curated facts (P1)
 # ---------------------------------------------------------------------------
 def _ingest_cohort_priors(
     G: nx.MultiDiGraph,
@@ -833,12 +948,12 @@ def _ingest_perplexity_facts(
       - ``event_source_links``: list of ``{event_id, source_id}`` to wire the
         ``attributedTo`` relation between an Event node and a Source.
 
-    All event ts are validated against ``cutoff_ts`` (default: 2026-04-26
+    All event ts are validated against ``cutoff_ts`` (default: (Phase 1 KST)
     23:59:59) — Perplexity hallucinations / future-dated rumors are dropped.
 
     Returns counters used for the final summary log.
     """
-    cutoff = cutoff_ts or datetime(2026, 4, 26, 23, 59, 59)
+    cutoff = cutoff_ts or get_default_cutoff()
     region_id = facts.get("region_id")
     applies_to_regions: list[str] = list(facts.get("applies_to_regions") or [])
     # Track A cross-region narrative: when `applies_to_regions` is set, ingest
@@ -945,7 +1060,7 @@ def _ingest_perplexity_facts(
             ev_type = "MediaEvent"
         try:
             sim_meta = index.by_region.get(target_regions[0]) if target_regions else None
-            fallback_ts = sim_meta.t_start if sim_meta else datetime(2026, 4, 1)
+            fallback_ts = sim_meta.t_start if sim_meta else get_default_t_start()
             ts = parse_ts(ev.get("ts"), default=fallback_ts)
         except Exception:
             counters["events_dropped_no_ts"] += 1
@@ -1077,10 +1192,10 @@ def build_kg_from_scenarios(
 ) -> tuple[nx.MultiDiGraph, ScenarioIndex]:
     """디렉토리의 모든 ``*.json`` 시나리오를 union 한 글로벌 KG.
 
-    P2/P3 (2026-04-26): Optionally also ingest Perplexity-curated facts from
+    P2/P3 (P1): Optionally also ingest Perplexity-curated facts from
     ``perplexity_dir`` (Person/Source/extra events). Pass ``None`` to disable.
 
-    Track B (2026-04-26): Optionally ingest CohortPrior nodes from
+    Track B (P1): Optionally ingest CohortPrior nodes from
     ``cohort_prior_dir`` (national + regional voter party-lean priors).
     """
     G = nx.MultiDiGraph()
@@ -1154,6 +1269,149 @@ def build_kg_from_dicts(
     index = ScenarioIndex()
     for s in scenarios:
         _ingest_scenario(G, index, s)
+    return G, index
+
+
+# ---------------------------------------------------------------------------
+# Phase 4 (#77) — region-scoped helper + Neo4j sink
+# ---------------------------------------------------------------------------
+def build_for_region(
+    region_id: str,
+    cutoff: datetime | None = None,
+    *,
+    scenario_dir: Path | str = DEFAULT_SCENARIO_DIR,
+    db_path: Path | str | None = None,
+) -> nx.MultiDiGraph:
+    """Return a region-scoped subgraph for ``backend.app.services.kg_service``.
+
+    Builds the full KG (scenario + Perplexity + cohort + optional staging
+    graft when ``db_path`` is provided), then prunes to nodes that touch
+    ``region_id``. When ``cutoff`` is set, event-typed nodes with
+    ``ts > cutoff`` are dropped to keep the firewall invariant.
+    """
+    if db_path is not None:
+        G, _index = build_with_staging(
+            scenario_dir=scenario_dir, db_path=db_path, region_id=region_id,
+        )
+    else:
+        G, _index = build_kg_from_scenarios(scenario_dir=scenario_dir)
+
+    keep: set[str] = set()
+    for n, attrs in G.nodes(data=True):
+        if attrs.get("region_id") == region_id:
+            keep.add(n)
+    # Pull in 1-hop neighbours so context renders sensibly in the dashboard.
+    for n in list(keep):
+        keep.update(g for _, g in G.out_edges(n))
+        keep.update(s for s, _ in G.in_edges(n))
+
+    sub = G.subgraph(keep).copy()
+    if cutoff is not None:
+        from src.kg.ontology import EVENT_NODE_TYPES as _ET
+        to_drop: list[str] = []
+        for n, attrs in sub.nodes(data=True):
+            if attrs.get("type") not in _ET:
+                continue
+            ts = attrs.get("ts")
+            if isinstance(ts, datetime) and ts > cutoff:
+                to_drop.append(n)
+        sub.remove_nodes_from(to_drop)
+    return sub
+
+
+async def apply_graph_to_neo4j(
+    g: nx.MultiDiGraph,
+    session: Any,
+    *,
+    apply_schema: bool = True,
+    batch_size: int = 200,
+) -> dict[str, int]:
+    """Mirror an in-process networkx KG to a Neo4j session via UNWIND batches.
+
+    Returns ``{nodes_merged, edges_merged, ddl_applied}`` for logging /
+    test assertions. Caller is responsible for opening / closing the
+    session — typically via :func:`backend.app.db.neo4j_session.session_ctx`
+    or the migration tool.
+    """
+    from src.kg.cypher import (
+        group_edges_by_rel,
+        group_nodes_by_label,
+        unwind_merge_edges_query,
+        unwind_merge_nodes_query,
+    )
+    from backend.app.db.neo4j_session import (
+        apply_schema as _apply_schema,
+        run_write,
+    )
+
+    counters = {"nodes_merged": 0, "edges_merged": 0, "ddl_applied": 0}
+    if apply_schema:
+        counters["ddl_applied"] = await _apply_schema(session)
+
+    grouped_nodes = group_nodes_by_label(g)
+    for label, rows in grouped_nodes.items():
+        for i in range(0, len(rows), batch_size):
+            chunk = rows[i : i + batch_size]
+            await run_write(
+                session, unwind_merge_nodes_query(label), {"rows": chunk}
+            )
+            counters["nodes_merged"] += len(chunk)
+
+    grouped_edges = group_edges_by_rel(g)
+    for rel, rows in grouped_edges.items():
+        for i in range(0, len(rows), batch_size):
+            chunk = rows[i : i + batch_size]
+            await run_write(
+                session, unwind_merge_edges_query(rel), {"rows": chunk}
+            )
+            counters["edges_merged"] += len(chunk)
+
+    return counters
+
+
+# ---------------------------------------------------------------------------
+# Phase 3 (#57) — scenario + stg_kg_triple merge
+# ---------------------------------------------------------------------------
+def build_with_staging(
+    scenario_dir: Path | str = DEFAULT_SCENARIO_DIR,
+    db_path: Path | str | None = None,
+    *,
+    perplexity_dir: Path | str | None = DEFAULT_PERPLEXITY_DIR,
+    cohort_prior_dir: Path | str | None = DEFAULT_COHORT_PRIOR_DIR,
+    region_id: str | None = None,
+) -> tuple[nx.MultiDiGraph, ScenarioIndex]:
+    """Build the KG from scenarios, then graft ``stg_kg_triple`` rows on top.
+
+    Policy: **scenario > staging**. ``build_kg_from_scenarios`` runs first
+    and the resulting node set is captured as ``scenario_node_ids``; the
+    staging merger only adds NEW nodes / edges / attribute keys, never
+    overwrites scenario-curated values. When the DB or the table is absent
+    the staging path is a no-op (Phase 3 contract).
+    """
+    G, index = build_kg_from_scenarios(
+        scenario_dir=scenario_dir,
+        perplexity_dir=perplexity_dir,
+        cohort_prior_dir=cohort_prior_dir,
+    )
+
+    try:
+        from src.kg.staging_loader import (
+            load_kg_triples_from_staging,
+            merge_triples_into_graph,
+        )
+    except Exception as exc:  # noqa: BLE001
+        log.warning("[kg/staging] loader import failed (%s) — skip graft", exc)
+        return G, index
+
+    triples = load_kg_triples_from_staging(db_path=db_path, region_id=region_id)
+    if not triples:
+        return G, index
+
+    scenario_node_ids = set(G.nodes)
+    summary = merge_triples_into_graph(
+        G, triples, scenario_node_ids=scenario_node_ids,
+    )
+    log.info("[kg/staging] grafted %d triples: %s", len(triples), summary)
     return G, index
 
 

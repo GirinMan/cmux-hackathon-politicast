@@ -31,29 +31,24 @@ logger = logging.getLogger(__name__)
 # Persona-conditional model routing
 # ---------------------------------------------------------------------------
 # 사용자 결정 (12:11): D 옵션 + 학력 cutoff = bachelor.
-# - voter normal (학사 미만): LITELLM_MODEL_VOTER_NORMAL (default gpt-5.4-nano)
-# - voter educated (학사 이상): LITELLM_MODEL_VOTER_EDUCATED (default gpt-5.4-mini)
-# - interview wave: LITELLM_MODEL_INTERVIEW (default claude-sonnet-4-6, ElectionEnv 적용)
-EDU_BACHELOR_KEYWORDS: tuple[str, ...] = (
-    "학사", "대학교", "대졸", "학부", "bachelor",
-    "석사", "박사", "master", "doctor", "phd",
+# 라우팅 정책은 src.sim.routing 의 RoutingStrategy 로 분리되어 있다.
+# 본 모듈의 정상 경로는 ``DEFAULT_ROUTING.model_for(persona)`` 호출이며,
+# legacy import 호환을 위해 thin shim 도 노출한다.
+from src.sim.routing import (  # noqa: E402
+    DEFAULT_BACHELOR_KEYWORDS as EDU_BACHELOR_KEYWORDS,  # legacy alias
+    DEFAULT_ROUTING,
+    RoutingStrategy,
 )
 
 
 def _is_educated(persona: dict[str, Any]) -> bool:
-    """학사 이상 여부 — 한국어/영어 학력 라벨에 키워드 단순 매치."""
-    edu = (persona.get("education_level") or persona.get("education") or "")
-    if not isinstance(edu, str):
-        edu = str(edu)
-    edu = edu.lower()
-    return any(k in edu for k in EDU_BACHELOR_KEYWORDS)
+    """학사 이상 여부 (legacy shim — RoutingStrategy 로 위임)."""
+    return DEFAULT_ROUTING.is_educated(persona)  # type: ignore[attr-defined]
 
 
 def _model_for_persona(persona: dict[str, Any]) -> str:
-    """Persona 학력에 따라 LiteLLM 모델 식별자 반환."""
-    if _is_educated(persona):
-        return os.environ.get("LITELLM_MODEL_VOTER_EDUCATED", "gpt-5.4-mini")
-    return os.environ.get("LITELLM_MODEL_VOTER_NORMAL", "gpt-5.4-nano")
+    """Persona 학력에 따라 LiteLLM 모델 식별자 반환 (RoutingStrategy 위임)."""
+    return DEFAULT_ROUTING.model_for(persona)
 
 
 # ---------------------------------------------------------------------------

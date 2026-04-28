@@ -92,7 +92,10 @@ def _disable_thinking_kwargs(provider: str, model: str) -> dict[str, Any]:
 # ---------------------------------------------------------------------------
 # Provider derivation
 # ---------------------------------------------------------------------------
-PROVIDER_KEY_ENV = {
+# SoT: `_workspace/contracts/llm_strategy.json` 의 supported_providers 리스트.
+# 컨트랙트 로드에 실패하면 보수적인 fallback 으로 빌드 진행을 허용한다 (해커톤
+# 운영 안정성 우선 — JSON 스키마 검증은 scripts/export_jsonschema.py 에서 따로 수행).
+_FALLBACK_PROVIDER_KEY_ENV: dict[str, str] = {
     "openai": "OPENAI_API_KEYS",
     "gemini": "GEMINI_API_KEYS",
     "anthropic": "ANTHROPIC_API_KEYS",
@@ -101,6 +104,23 @@ PROVIDER_KEY_ENV = {
     "openrouter": "OPENROUTER_API_KEYS",
     # vertex_ai, bedrock: IAM 기반 — 별도 env 불필요
 }
+
+
+def _load_provider_key_env() -> dict[str, str]:
+    try:
+        from src.schemas.llm_strategy import provider_key_env_map  # type: ignore
+
+        mapping = provider_key_env_map()
+        if mapping:
+            return mapping
+    except Exception as e:  # pragma: no cover — contract 부재 시 fallback
+        logger.warning(
+            "llm_strategy contract 로드 실패 — fallback PROVIDER_KEY_ENV 사용: %s", e
+        )
+    return dict(_FALLBACK_PROVIDER_KEY_ENV)
+
+
+PROVIDER_KEY_ENV: dict[str, str] = _load_provider_key_env()
 
 
 def _derive_provider(model: str) -> str:
@@ -424,6 +444,8 @@ class LLMPool:
         system_instruction: str | None = None,
         cache: bool = True,
         model: str | None = None,
+        source_id: str | None = None,
+        prompt_version: str | None = None,
         **extra: Any,
     ) -> str:
         """OpenAI-스타일 messages → 응답 텍스트.
@@ -432,7 +454,16 @@ class LLMPool:
         ``system_instruction`` 명시 시 system 메시지 앞에 prepend.
         ``model`` per-call override (persona-conditional voter, separate interview model 등).
         명시 없으면 ``self.model`` 사용. dev 모드면 어쨌든 DEV_OVERRIDE_MODEL로 덮어씀.
+
+        ``source_id`` / ``prompt_version`` 은 sqlite cache key 에 포함되어
+        adapter 별 cache 격리를 보장한다 (news_article / perplexity / resolver
+        동일 prompt 라도 source_id 가 다르면 별도 entry).
         """
+        # source_id / prompt_version 을 extra 로 병합 — cache_extra 에서 사용.
+        if source_id is not None:
+            extra.setdefault("source_id", source_id)
+        if prompt_version is not None:
+            extra.setdefault("prompt_version", prompt_version)
         # 1) system_instruction 병합
         chat_msgs: list[dict[str, Any]] = []
         if system_instruction:

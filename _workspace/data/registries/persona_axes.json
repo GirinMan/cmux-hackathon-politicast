@@ -1,0 +1,40 @@
+{
+  "_doc": "Persona axis registry (SoT). VoterAgent routing/segment 분석에 쓰이는 축 정의. axis_id는 unique. classifier는 Python 호출 가능한 모듈 경로 hint이며 실 라우팅은 src.sim.routing의 RoutingStrategy 구현이 담당한다.",
+  "_status": "decided",
+  "axes": [
+    {
+      "axis_id": "education",
+      "kind": "ordinal_categorical",
+      "label": "학력",
+      "persona_fields": ["education_level", "education", "edu"],
+      "buckets": ["bachelor_plus", "below_bachelor", "unknown"],
+      "default_routing": "src.sim.routing.EducationLevelRouting"
+    },
+    {
+      "axis_id": "age",
+      "kind": "binned_numeric",
+      "label": "연령",
+      "persona_fields": ["age"],
+      "buckets_ref": "_workspace/data/registries/age_buckets.json"
+    },
+    {
+      "axis_id": "income",
+      "kind": "binned_numeric",
+      "label": "소득",
+      "persona_fields": ["income", "household_income", "annual_income_krw"],
+      "buckets": [
+        {"label": "low",    "min": 0,         "max": 30000000},
+        {"label": "middle", "min": 30000000,  "max": 80000000},
+        {"label": "high",   "min": 80000000,  "max": null}
+      ],
+      "default_routing": "src.sim.routing.IncomeBasedRouting"
+    },
+    {
+      "axis_id": "region",
+      "kind": "categorical",
+      "label": "지역",
+      "persona_fields": ["province", "region", "district", "city"],
+      "buckets_ref": "_workspace/contracts/data_paths.json#regions"
+    }
+  ]
+}

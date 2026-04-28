@@ -1,4 +1,5 @@
 {
+  "schema_version": "v1",
   "scenario_id": "rolling_v2_20260426T054111Z",
   "region_id": "gwangju_mayor",
   "contest_id": "gwangju_mayor_2026",
@@ -620,31 +621,25 @@
     }
   ],
   "meta": {
+    "env": "dev",
+    "started_at": "2026-04-26T05:41:13.931329+00:00",
+    "finished_at": "2026-04-26T05:44:00.895251+00:00",
+    "wall_seconds": 166.96,
+    "policy_version": "v2.0_validation_first",
+    "concurrency": 8,
     "features": [
       "bandwagon",
       "kg_retrieval",
       "second_order",
       "underdog"
     ],
-    "concurrency": 8,
-    "started_at": "2026-04-26T05:41:13.931329+00:00",
-    "policy_version": "v2.0_validation_first",
-    "env": "dev",
+    "effective_provider": "gemini",
+    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
+    "actual_keys_used": 5,
     "llm_cache_enabled": true,
-    "voter_stats": {
-      "calls": 642,
-      "parse_fail": 3,
-      "abstain": 1,
-      "latency_ms_sum": 1288091.2512119724,
-      "calls_by_model": {
-        "nano": 425,
-        "sonnet": 40,
-        "mini": 177
-      },
-      "mean_latency_ms": 2006.4,
-      "parse_fail_rate": 0.0047,
-      "abstain_rate": 0.0016
-    },
+    "final_poll_feedback_enabled": null,
+    "poll_targets_visible_to_agents": null,
+    "counterfactual": null,
     "pool_stats": {
       "provider": "gemini",
       "model": "gemini/gemini-3.1-flash-lite-preview",
@@ -713,14 +708,25 @@
       "cost_tracking_enabled": false,
       "cache_hit_rate": 0.0016
     },
-    "actual_keys_used": 5,
-    "effective_model": "gemini/gemini-3.1-flash-lite-preview",
-    "effective_provider": "gemini",
+    "voter_stats": {
+      "calls": 642,
+      "parse_fail": 3,
+      "abstain": 1,
+      "latency_ms_sum": 1288091.2512119724,
+      "calls_by_model": {
+        "nano": 425,
+        "sonnet": 40,
+        "mini": 177
+      },
+      "mean_latency_ms": 2006.4,
+      "parse_fail_rate": 0.0047,
+      "abstain_rate": 0.0016
+    },
     "official_poll_validation": {
       "target_series": "missing",
-      "as_of_date": null,
       "method_version": "none",
       "cutoff_ts": "2026-04-26T00:00:00+09:00",
+      "as_of_date": null,
       "source_poll_ids": [],
       "metrics": {
         "mae": null,
@@ -728,10 +734,17 @@
         "margin_error": null,
         "leader_match": null
       },
-      "by_candidate": {}
+      "by_candidate": {},
+      "poll_targets_visible_to_agents": null,
+      "prediction_only": null,
+      "counterfactual_prediction": null,
+      "reason": null,
+      "intervention_id": null,
+      "base_region_id": null,
+      "calibration_profile": null,
+      "frozen_params": null,
+      "error": null
     },
-    "finished_at": "2026-04-26T05:44:00.895251+00:00",
-    "wall_seconds": 166.96,
     "original_scenario_id": "gwangju_mayor_2026",
     "finalized_at": "2026-04-26T05:44:17.131430+00:00"
   }

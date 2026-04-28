@@ -1,0 +1,78 @@
+{
+  "$defs": {
+    "TimeWindow": {
+      "additionalProperties": false,
+      "description": "검증/학습 윈도우 (start ≤ end, 둘 다 포함).",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "start": {
+          "format": "date",
+          "title": "Start",
+          "type": "string"
+        },
+        "end": {
+          "format": "date",
+          "title": "End",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "start",
+        "end"
+      ],
+      "title": "TimeWindow",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "region 1개의 4-window split.",
+  "properties": {
+    "region_id": {
+      "title": "Region Id",
+      "type": "string"
+    },
+    "election_date": {
+      "format": "date",
+      "title": "Election Date",
+      "type": "string"
+    },
+    "train_2022": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TimeWindow"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "train_rolling_2026": {
+      "$ref": "#/$defs/TimeWindow"
+    },
+    "validation_holdout": {
+      "$ref": "#/$defs/TimeWindow"
+    },
+    "test_2026": {
+      "$ref": "#/$defs/TimeWindow"
+    },
+    "notes": {
+      "default": "",
+      "title": "Notes",
+      "type": "string"
+    }
+  },
+  "required": [
+    "region_id",
+    "election_date",
+    "train_rolling_2026",
+    "validation_holdout",
+    "test_2026"
+  ],
+  "title": "TemporalSplit",
+  "type": "object"
+}

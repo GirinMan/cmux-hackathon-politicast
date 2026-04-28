@@ -1,9 +1,18 @@
-"""NESDC list scraper for PolitiKAST validation gate.
+"""[DEPRECATED 2026-04-26 — Phase 3 정형 어댑터 전환]
+
+NESDC list scraper for PolitiKAST validation gate.
 
 Iterates list pages for VT026 (제9회 전국동시지방선거) + VT039 (2026년 재·보궐선거)
 and collects rows whose 지역 column matches our 5 regions.
 
 Output: _workspace/snapshots/validation/nesdc_list_raw.json (all matches with metadata)
+
+NOTE
+----
+이 스크립트는 ``src/ingest/adapters/nesdc_poll.py::NESDCPollAdapter`` 로
+대체되었다. 신규 코드는 PipelineRunner 경유로 어댑터를 호출해야 한다.
+본 파일은 ``nesdc_list_raw.json`` 캐시 갱신용으로만 유지된다 (상대 시점:
+hackathon Phase 3+ 에서는 어댑터 정식 채널 사용).
 """
 
 from __future__ import annotations

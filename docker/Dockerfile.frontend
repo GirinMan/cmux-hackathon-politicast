@@ -1,0 +1,38 @@
+# PolitiKAST frontend — Vite + React + TS
+# Multi-stage: deps → build (npm ci + vite build) → nginx serve.
+# 개발 모드는 docker-compose 의 별도 서비스 (vite dev server) 가 처리.
+
+# ----- Stage 1: deps -----
+FROM node:20-alpine AS deps
+WORKDIR /app
+COPY frontend/package.json frontend/package-lock.json* ./
+# package-lock.json 없으면 npm install 로 생성 (CI 첫 실행 시).
+RUN if [ -f package-lock.json ]; then npm ci; else npm install; fi
+
+# ----- Stage 2: build -----
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY frontend/ ./
+COPY _workspace/contracts/ /tmp/contracts/
+# OpenAPI codegen — backend 가 export 한 spec 이 있을 때만.
+RUN if [ -f /tmp/contracts/openapi.json ]; then \
+      cp /tmp/contracts/openapi.json ./openapi.json && npm run gen:api || true; \
+    fi
+RUN npm run build
+
+# ----- Stage 3: serve (nginx) -----
+FROM nginx:1.27-alpine AS serve
+COPY --from=build /app/dist /usr/share/nginx/html
+COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+
+# ----- Stage 4 (alt): dev -----
+# docker compose --profile dev up frontend-dev 시 사용.
+FROM node:20-alpine AS dev
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY frontend/ ./
+EXPOSE 5173
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]

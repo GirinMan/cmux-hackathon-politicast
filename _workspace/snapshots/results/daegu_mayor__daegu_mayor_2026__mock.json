@@ -1,4 +1,5 @@
 {
+  "schema_version": "v1",
   "scenario_id": "daegu_mayor_2026__mock",
   "region_id": "daegu_mayor",
   "contest_id": "daegu_mayor_2026",
@@ -151,16 +152,28 @@
     }
   ],
   "meta": {
+    "env": null,
+    "started_at": "2026-04-26T02:27:53.157899+00:00",
+    "finished_at": "2026-04-26T02:27:53.454649+00:00",
+    "wall_seconds": null,
+    "policy_version": null,
+    "concurrency": 8,
     "features": [
       "kg_retrieval"
     ],
-    "concurrency": 8,
-    "started_at": "2026-04-26T02:27:53.157899+00:00",
+    "effective_provider": null,
+    "effective_model": null,
+    "actual_keys_used": null,
+    "llm_cache_enabled": null,
+    "final_poll_feedback_enabled": null,
+    "poll_targets_visible_to_agents": null,
+    "counterfactual": null,
+    "pool_stats": null,
     "voter_stats": {
       "calls": 40,
       "parse_fail": 0,
       "abstain": 3
     },
-    "finished_at": "2026-04-26T02:27:53.454649+00:00"
+    "official_poll_validation": null
   }
 }

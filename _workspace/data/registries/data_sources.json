@@ -1,0 +1,54 @@
+{
+  "version": "v1",
+  "description": "PolitiKAST ingestion data sources registry. structured = 정형 어댑터(NESDC/선관위), llm = 비정형 추출(뉴스/Perplexity). 각 source 는 src.ingest.adapters.<module> 의 SourceAdapter 인스턴스를 export 한다.",
+  "sources": {
+    "nesdc_poll": {
+      "id": "nesdc_poll",
+      "kind": "structured",
+      "target_kind": "raw_poll",
+      "description": "중앙선거여론조사심의위원회(NESDC) 등록 여론조사 — 정형 메타데이터 + 후보별 share.",
+      "fetcher_module": "src.ingest.adapters.nesdc_poll",
+      "parser_module": "src.ingest.adapters.nesdc_poll",
+      "cadence_hint": "daily",
+      "schema_version": "v1",
+      "enabled": true,
+      "config": {"base_url": "https://www.nesdc.go.kr"}
+    },
+    "nec_candidate": {
+      "id": "nec_candidate",
+      "kind": "structured",
+      "target_kind": "candidate",
+      "description": "중앙선거관리위원회 후보 등록부 — 5 region 후보 식별/공천 정보.",
+      "fetcher_module": "src.ingest.adapters.nec_candidate",
+      "parser_module": "src.ingest.adapters.nec_candidate",
+      "cadence_hint": "weekly",
+      "schema_version": "v1",
+      "enabled": true,
+      "config": {"base_url": "https://www.nec.go.kr"}
+    },
+    "news_article": {
+      "id": "news_article",
+      "kind": "llm",
+      "target_kind": "kg_triple",
+      "description": "뉴스 기사 → LLM 으로 KG triple 추출 (사건/논란/지지선언).",
+      "fetcher_module": "src.ingest.adapters.news_article",
+      "parser_module": "src.ingest.adapters.news_article",
+      "cadence_hint": "event",
+      "schema_version": "v1",
+      "enabled": true,
+      "config": {"max_articles_per_run": 50}
+    },
+    "perplexity": {
+      "id": "perplexity",
+      "kind": "llm",
+      "target_kind": "kg_triple",
+      "description": "Perplexity 검색 결과 → LLM 으로 KG triple 추출 (의제/이슈 컨텍스트).",
+      "fetcher_module": "src.ingest.adapters.perplexity",
+      "parser_module": "src.ingest.adapters.perplexity",
+      "cadence_hint": "manual",
+      "schema_version": "v1",
+      "enabled": true,
+      "config": {}
+    }
+  }
+}

@@ -21,9 +21,21 @@
     "population": 9700000
   },
   "parties": [
-    {"party_id": "p_dem", "name": "더불어민주당", "ideology": -0.4},
-    {"party_id": "p_ppp", "name": "국민의힘", "ideology": 0.5},
-    {"party_id": "p_rebuild", "name": "조국혁신당", "ideology": -0.6}
+    {
+      "party_id": "p_dem",
+      "name": "더불어민주당",
+      "ideology": -0.4
+    },
+    {
+      "party_id": "p_ppp",
+      "name": "국민의힘",
+      "ideology": 0.5
+    },
+    {
+      "party_id": "p_rebuild",
+      "name": "조국혁신당",
+      "ideology": -0.6
+    }
   ],
   "candidates": [
     {
@@ -34,7 +46,10 @@
       "party_name": "더불어민주당",
       "withdrawn": false,
       "background": "전 서울 성동구청장(3선). 2026-04-19 박주민·전현희 누르고 본선 후보 확정. 슬로건 '오세훈 무능 심판'.",
-      "key_pledges": ["기본사회 서울", "지방행정 실무 경험"]
+      "key_pledges": [
+        "기본사회 서울",
+        "지방행정 실무 경험"
+      ]
     },
     {
       "id": "c_seoul_ppp",
@@ -44,7 +59,10 @@
       "party_name": "국민의힘",
       "withdrawn": false,
       "background": "현 서울시장(재선). 2026-04-18 박수민·윤희숙 누르고 국힘 후보 확정. 4선 도전.",
-      "key_pledges": ["현 시정 연속성", "재개발/규제 완화"]
+      "key_pledges": [
+        "현 시정 연속성",
+        "재개발/규제 완화"
+      ]
     },
     {
       "id": "c_seoul_rebuild",
@@ -54,18 +72,42 @@
       "party_name": "조국혁신당",
       "withdrawn": false,
       "background": "[가설 placeholder] 조국혁신당 자체 후보. 진보 표 분산 효과 측정용 더미.",
-      "key_pledges": ["검찰개혁", "정치개혁"]
+      "key_pledges": [
+        "검찰개혁",
+        "정치개혁"
+      ]
     }
   ],
   "issues": [
-    {"issue_id": "i_judgement", "name": "이재명 정부 중간평가", "type": "정치"},
-    {"issue_id": "i_housing",   "name": "재개발/주거",        "type": "부동산"},
-    {"issue_id": "i_transport", "name": "GTX 연장/광역교통",   "type": "지역개발"}
+    {
+      "issue_id": "i_judgement",
+      "name": "이재명 정부 중간평가",
+      "type": "정치"
+    },
+    {
+      "issue_id": "i_housing",
+      "name": "재개발/주거",
+      "type": "부동산"
+    },
+    {
+      "issue_id": "i_transport",
+      "name": "GTX 연장/광역교통",
+      "type": "지역개발"
+    }
   ],
   "frames": [
-    {"frame_id": "f_judgement",   "label": "정권심판"},
-    {"frame_id": "f_continuity",  "label": "현 시정 연속성"},
-    {"frame_id": "f_change",      "label": "변화 요구"}
+    {
+      "frame_id": "f_judgement",
+      "label": "정권심판"
+    },
+    {
+      "frame_id": "f_continuity",
+      "label": "현 시정 연속성"
+    },
+    {
+      "frame_id": "f_change",
+      "label": "변화 요구"
+    }
   ],
   "events": [
     {
@@ -76,7 +118,9 @@
       "title": "오세훈, 국민의힘 서울시장 후보로 최종 선출",
       "sentiment": 0.3,
       "frame_id": "f_continuity",
-      "about": ["c_seoul_ppp"],
+      "about": [
+        "c_seoul_ppp"
+      ],
       "mentions": [],
       "speaker": "박덕흠",
       "party_id": "p_ppp"
@@ -89,34 +133,104 @@
       "title": "정원오, 민주당 서울시장 후보 확정 — 오세훈 무능 심판",
       "sentiment": -0.3,
       "frame_id": "f_judgement",
-      "about": ["c_seoul_dpk"],
+      "about": [
+        "c_seoul_dpk"
+      ],
       "mentions": [],
       "speaker": "정원오",
       "party_id": "p_dem"
     }
   ],
   "seed_events": [
-    {"timestep": 0, "type": "endorsement", "target": "c_seoul_ppp", "polarity": 0.3, "summary": "오세훈, 국민의힘 후보 최종 선출 (4월 18일)"},
-    {"timestep": 0, "type": "endorsement", "target": "c_seoul_dpk", "polarity": 0.3, "summary": "정원오, 민주당 후보 확정 (4월 19일)"},
-    {"timestep": 1, "type": "policy",      "target": "c_seoul_dpk", "polarity": 0.2, "summary": "기본사회 서울 공약 발표"}
+    {
+      "timestep": 0,
+      "type": "endorsement",
+      "target": "c_seoul_ppp",
+      "polarity": 0.3,
+      "summary": "오세훈, 국민의힘 후보 최종 선출 (4월 18일)"
+    },
+    {
+      "timestep": 0,
+      "type": "endorsement",
+      "target": "c_seoul_dpk",
+      "polarity": 0.3,
+      "summary": "정원오, 민주당 후보 확정 (4월 19일)"
+    },
+    {
+      "timestep": 1,
+      "type": "policy",
+      "target": "c_seoul_dpk",
+      "polarity": 0.2,
+      "summary": "기본사회 서울 공약 발표"
+    }
   ],
   "polls": [
-    {"poll_id": 1, "ts": "2026-04-09T00:00:00+09:00", "sample_size": 1000, "leader_candidate": "c_seoul_dpk", "leader_share": 0.456},
-    {"poll_id": 2, "ts": "2026-03-12T00:00:00+09:00", "sample_size": 801,  "leader_candidate": "c_seoul_dpk", "leader_share": 0.44},
-    {"poll_id": 3, "ts": "2026-03-13T00:00:00+09:00", "sample_size": 804,  "leader_candidate": "c_seoul_dpk", "leader_share": 0.38}
+    {
+      "poll_id": 1,
+      "ts": "2026-04-09T00:00:00+09:00",
+      "sample_size": 1000,
+      "leader_candidate": "c_seoul_dpk",
+      "leader_share": 0.456
+    },
+    {
+      "poll_id": 2,
+      "ts": "2026-03-12T00:00:00+09:00",
+      "sample_size": 801,
+      "leader_candidate": "c_seoul_dpk",
+      "leader_share": 0.44
+    },
+    {
+      "poll_id": 3,
+      "ts": "2026-03-13T00:00:00+09:00",
+      "sample_size": 804,
+      "leader_candidate": "c_seoul_dpk",
+      "leader_share": 0.38
+    }
   ],
   "raw_polls": [
-    {"pollster": "뉴스1·가상양자", "mode": "phone", "n": 1000, "day": 0, "quality": 0.7,
-     "shares": {"c_seoul_dpk": 0.456, "c_seoul_ppp": 0.354, "c_seoul_rebuild": 0.05}},
-    {"pollster": "KBS·케이스탯",   "mode": "phone", "n": 801,  "day": -28, "quality": 0.85,
-     "shares": {"c_seoul_dpk": 0.44, "c_seoul_ppp": 0.31, "c_seoul_rebuild": 0.04}},
-    {"pollster": "SBS·입소스",     "mode": "phone", "n": 804,  "day": -27, "quality": 0.85,
-     "shares": {"c_seoul_dpk": 0.38, "c_seoul_ppp": 0.36, "c_seoul_rebuild": 0.04}}
+    {
+      "pollster": "뉴스1·가상양자",
+      "mode": "phone",
+      "n": 1000,
+      "day": 0,
+      "quality": 0.7,
+      "shares": {
+        "c_seoul_dpk": 0.456,
+        "c_seoul_ppp": 0.354,
+        "c_seoul_rebuild": 0.05
+      }
+    },
+    {
+      "pollster": "KBS·케이스탯",
+      "mode": "phone",
+      "n": 801,
+      "day": -28,
+      "quality": 0.85,
+      "shares": {
+        "c_seoul_dpk": 0.44,
+        "c_seoul_ppp": 0.31,
+        "c_seoul_rebuild": 0.04
+      }
+    },
+    {
+      "pollster": "SBS·입소스",
+      "mode": "phone",
+      "n": 804,
+      "day": -27,
+      "quality": 0.85,
+      "shares": {
+        "c_seoul_dpk": 0.38,
+        "c_seoul_ppp": 0.36,
+        "c_seoul_rebuild": 0.04
+      }
+    }
   ],
   "simulation": {
     "t_start": "2026-04-19T00:00:00+09:00",
-    "t_end":   "2026-06-03T00:00:00+09:00",
+    "t_end": "2026-06-03T00:00:00+09:00",
     "timesteps": 4
   },
-  "scenario_notes": "본 시드는 사실 기반 + 가설 placeholder. 폴 수치는 17:00 freeze 전 paper-writer fact-check 가능."
+  "scenario_notes": "본 시드는 사실 기반 + 가설 placeholder. 폴 수치는 17:00 freeze 전 paper-writer fact-check 가능.",
+  "election_date": "2026-06-03",
+  "timezone": "Asia/Seoul"
 }

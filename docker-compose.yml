@@ -1,10 +1,125 @@
 services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: politikast-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-politikast}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-politikast}
+      POSTGRES_DB: ${POSTGRES_DB:-politikast}
+      TZ: Asia/Seoul
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - politikast-pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-politikast} -d ${POSTGRES_DB:-politikast}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.13.0
+    container_name: politikast-mlflow
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Seoul
+      MLFLOW_TRACKING_URI: http://0.0.0.0:5000
+    command: >
+      mlflow server
+      --backend-store-uri postgresql://${POSTGRES_USER:-politikast}:${POSTGRES_PASSWORD:-politikast}@postgres:5432/mlflow
+      --default-artifact-root /mlruns
+      --host 0.0.0.0 --port 5000
+    ports:
+      - "${MLFLOW_PORT:-5000}:5000"
+    volumes:
+      - politikast-mlflow:/mlruns
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "python -c 'import urllib.request; urllib.request.urlopen(\"http://localhost:5000/health\")' || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+
+  neo4j:
+    image: neo4j:5
+    container_name: politikast-neo4j
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: ${NEO4J_AUTH:-neo4j/politikast-dev}
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_dbms_security_procedures_unrestricted: 'apoc.*'
+      TZ: Asia/Seoul
+    ports:
+      - "${NEO4J_HTTP_PORT:-7474}:7474"
+      - "${NEO4J_BOLT_PORT:-7687}:7687"
+    volumes:
+      - politikast-neo4j-data:/data
+      - politikast-neo4j-logs:/logs
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:7474 >/dev/null 2>&1 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    image: politikast-backend:dev
+    container_name: politikast-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      POLITIKAST_PG_DSN: postgresql+asyncpg://${POSTGRES_USER:-politikast}:${POSTGRES_PASSWORD:-politikast}@postgres:5432/${POSTGRES_DB:-politikast}
+      POLITIKAST_API_NEO4J_URI: bolt://neo4j:7687
+      POLITIKAST_API_NEO4J_USER: neo4j
+      POLITIKAST_API_NEO4J_PASSWORD: ${NEO4J_PASSWORD:-politikast-dev}
+      POLITIKAST_API_ENABLE_POSTGRES: "1"
+      POLITIKAST_API_ENABLE_NEO4J: "1"
+    volumes:
+      - .:/app
+      - ${NEMOTRON_PARQUET_DIR:-/Users/girinman/datasets/Nemotron-Personas-Korea/data}:/data/nemotron:ro
+    ports:
+      - "${BACKEND_PORT:-8080}:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      neo4j:
+        condition: service_healthy
+    command: >
+      bash -lc "alembic upgrade head &&
+        uvicorn backend.app.main:app --host 0.0.0.0 --port 8080 --reload"
+
+  frontend:
+    image: node:20-alpine
+    container_name: politikast-frontend
+    working_dir: /app/frontend
+    profiles: ["ui"]
+    depends_on:
+      - backend
+    environment:
+      VITE_API_BASE: http://backend:8080
+    volumes:
+      - .:/app
+    ports:
+      - "${FRONTEND_PORT:-5173}:5173"
+    command: >
+      sh -lc "if [ -f package.json ]; then npm install && npm run dev -- --host 0.0.0.0;
+              else echo 'frontend/package.json missing — fe stream 가 채울 때까지 idle';
+                   tail -f /dev/null; fi"
+
+  # ---- legacy DuckDB / Streamlit dev container (optional, profile=legacy) ----
   app:
     build:
       context: .
       dockerfile: docker/Dockerfile
     image: politikast:dev
     container_name: politikast-app
+    profiles: ["legacy"]
     env_file:
       - .env
     working_dir: /app
@@ -12,8 +127,8 @@ services:
       - .:/app
       - ${NEMOTRON_PARQUET_DIR:-/Users/girinman/datasets/Nemotron-Personas-Korea/data}:/data/nemotron:ro
     ports:
-      - "8501:8501"   # Streamlit
-      - "8888:8888"   # Jupyter (선택)
+      - "8501:8501"
+      - "8888:8888"
     stdin_open: true
     tty: true
     command: bash
@@ -23,6 +138,7 @@ services:
     container_name: politikast-dashboard
     depends_on:
       - app
+    profiles: ["legacy"]
     env_file:
       - .env
     working_dir: /app
@@ -31,7 +147,12 @@ services:
       - ${NEMOTRON_PARQUET_DIR:-/Users/girinman/datasets/Nemotron-Personas-Korea/data}:/data/nemotron:ro
     ports:
       - "8502:8501"
-    profiles: ["ui"]   # `docker compose --profile ui up dashboard`
     command: >
       bash -lc "streamlit run ui/dashboard/app.py
         --server.port=8501 --server.address=0.0.0.0"
+
+volumes:
+  politikast-pg:
+  politikast-neo4j-data:
+  politikast-neo4j-logs:
+  politikast-mlflow:

@@ -1,0 +1,74 @@
+{
+  "additionalProperties": false,
+  "description": "official_poll 테이블 row — 단일 (region, as_of_date, pollster, candidate).",
+  "properties": {
+    "region_id": {
+      "title": "Region Id",
+      "type": "string"
+    },
+    "contest_id": {
+      "title": "Contest Id",
+      "type": "string"
+    },
+    "as_of_date": {
+      "title": "As Of Date",
+      "type": "string"
+    },
+    "pollster": {
+      "title": "Pollster",
+      "type": "string"
+    },
+    "mode": {
+      "default": "phone",
+      "title": "Mode",
+      "type": "string"
+    },
+    "n": {
+      "default": 0,
+      "title": "N",
+      "type": "integer"
+    },
+    "candidate_id": {
+      "title": "Candidate Id",
+      "type": "string"
+    },
+    "share": {
+      "title": "Share",
+      "type": "number"
+    },
+    "source_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Url"
+    },
+    "ingested_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ingested At"
+    }
+  },
+  "required": [
+    "region_id",
+    "contest_id",
+    "as_of_date",
+    "pollster",
+    "candidate_id",
+    "share"
+  ],
+  "title": "OfficialPollSnapshot",
+  "type": "object"
+}

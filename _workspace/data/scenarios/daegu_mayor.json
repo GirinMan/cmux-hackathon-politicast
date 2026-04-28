@@ -21,9 +21,21 @@
     "population": 2380000
   },
   "parties": [
-    {"party_id": "p_dem",       "name": "더불어민주당", "ideology": -0.4},
-    {"party_id": "p_ppp",       "name": "국민의힘",     "ideology": 0.5},
-    {"party_id": "p_ourrep",    "name": "우리공화당",   "ideology": 0.8}
+    {
+      "party_id": "p_dem",
+      "name": "더불어민주당",
+      "ideology": -0.4
+    },
+    {
+      "party_id": "p_ppp",
+      "name": "국민의힘",
+      "ideology": 0.5
+    },
+    {
+      "party_id": "p_ourrep",
+      "name": "우리공화당",
+      "ideology": 0.8
+    }
   ],
   "candidates": [
     {
@@ -34,7 +46,10 @@
       "party_name": "국민의힘",
       "withdrawn": false,
       "background": "전 부총리 겸 기획재정부 장관, 4선 의원(달성). 국힘 본선 경선 2인 진출. 주호영·이진숙 컷오프 후 본경선 후보.",
-      "key_pledges": ["TK 균형발전", "재정/경제 전문성"]
+      "key_pledges": [
+        "TK 균형발전",
+        "재정/경제 전문성"
+      ]
     },
     {
       "id": "c_daegu_ppp_yoo",
@@ -44,7 +59,10 @@
       "party_name": "국민의힘",
       "withdrawn": false,
       "background": "초선 의원(달서갑). 박근혜 측근. 국힘 본경선 후보. (sim에서 추경호와 양자택일 가능)",
-      "key_pledges": ["보수 정통성", "박근혜 사면 정신 계승"]
+      "key_pledges": [
+        "보수 정통성",
+        "박근혜 사면 정신 계승"
+      ]
     },
     {
       "id": "c_daegu_dpk",
@@ -54,7 +72,11 @@
       "party_name": "더불어민주당",
       "withdrawn": false,
       "background": "전 국무총리, 전 행정안전부 장관, 전 대구 수성갑 국회의원(4선). TK 출신 민주당 거물. '김부겸 효과' 가설 검증.",
-      "key_pledges": ["TK 균형발전", "통합/탕평", "이재명 정부 협력"]
+      "key_pledges": [
+        "TK 균형발전",
+        "통합/탕평",
+        "이재명 정부 협력"
+      ]
     },
     {
       "id": "c_daegu_ourrep",
@@ -64,19 +86,47 @@
       "party_name": "우리공화당",
       "withdrawn": false,
       "background": "[placeholder] 보수 표 분산용 더미. 우리공화당 대표.",
-      "key_pledges": ["보수 정통", "박근혜 신원"]
+      "key_pledges": [
+        "보수 정통",
+        "박근혜 신원"
+      ]
     }
   ],
   "issues": [
-    {"issue_id": "i_tk_identity", "name": "TK 정체성 vs 변화",        "type": "이념"},
-    {"issue_id": "i_lee_check",   "name": "이재명 정부 견제 vs 협력", "type": "정치"},
-    {"issue_id": "i_new_office",  "name": "대구 신청사 건립",         "type": "지역개발"},
-    {"issue_id": "i_kbg_effect",  "name": "김부겸 효과",              "type": "정치"}
+    {
+      "issue_id": "i_tk_identity",
+      "name": "TK 정체성 vs 변화",
+      "type": "이념"
+    },
+    {
+      "issue_id": "i_lee_check",
+      "name": "이재명 정부 견제 vs 협력",
+      "type": "정치"
+    },
+    {
+      "issue_id": "i_new_office",
+      "name": "대구 신청사 건립",
+      "type": "지역개발"
+    },
+    {
+      "issue_id": "i_kbg_effect",
+      "name": "김부겸 효과",
+      "type": "정치"
+    }
   ],
   "frames": [
-    {"frame_id": "f_check_lee",       "label": "정권 견제"},
-    {"frame_id": "f_tk_pride",        "label": "TK 정체성"},
-    {"frame_id": "f_unity_outreach",  "label": "통합·중도 확장"}
+    {
+      "frame_id": "f_check_lee",
+      "label": "정권 견제"
+    },
+    {
+      "frame_id": "f_tk_pride",
+      "label": "TK 정체성"
+    },
+    {
+      "frame_id": "f_unity_outreach",
+      "label": "통합·중도 확장"
+    }
   ],
   "events": [
     {
@@ -87,7 +137,10 @@
       "title": "국힘 공관위, 주호영·이진숙 컷오프 — 윤재옥/추경호/유영하/최은석/홍석준/이재만 6명 경선",
       "sentiment": -0.2,
       "frame_id": "f_tk_pride",
-      "about": ["c_daegu_ppp_choo", "c_daegu_ppp_yoo"],
+      "about": [
+        "c_daegu_ppp_choo",
+        "c_daegu_ppp_yoo"
+      ],
       "mentions": [],
       "speaker": "박덕흠",
       "party_id": "p_ppp"
@@ -101,8 +154,13 @@
       "title": "이진숙, 대구시장 예비후보직 사퇴·불출마 — 국민의힘 후보 지원 선언",
       "sentiment": 0.1,
       "frame_id": "f_tk_pride",
-      "about": ["p_ppp"],
-      "mentions": ["i_tk_identity", "i_lee_check"],
+      "about": [
+        "p_ppp"
+      ],
+      "mentions": [
+        "i_tk_identity",
+        "i_lee_check"
+      ],
       "speaker": "이진숙",
       "party_id": "p_ppp"
     },
@@ -114,27 +172,74 @@
       "title": "민주당 김부겸 후보 — 의원 35명 대규모 지원 사격 예고 (사상 초유의 대구 집결)",
       "sentiment": 0.4,
       "frame_id": "f_unity_outreach",
-      "about": ["c_daegu_dpk"],
-      "mentions": ["i_kbg_effect"]
+      "about": [
+        "c_daegu_dpk"
+      ],
+      "mentions": [
+        "i_kbg_effect"
+      ]
     }
   ],
   "seed_events": [
-    {"timestep": 0, "type": "endorsement", "target": "c_daegu_ppp_choo", "polarity": 0.2, "summary": "추경호 본경선 우위"},
-    {"timestep": 0, "type": "endorsement", "target": "c_daegu_dpk",      "polarity": 0.4, "summary": "김부겸 — TK 출신 민주 거물 등판"},
-    {"timestep": 1, "type": "policy",      "target": "c_daegu_dpk",      "polarity": 0.2, "summary": "통합/탕평 메시지 + 의원 35명 대구 집결"},
-    {"timestep": 2, "type": "endorsement", "target": "c_daegu_ppp_choo", "polarity": 0.1, "summary": "이진숙 불출마·국민의힘 후보 지원 → 보수 결집"}
+    {
+      "timestep": 0,
+      "type": "endorsement",
+      "target": "c_daegu_ppp_choo",
+      "polarity": 0.2,
+      "summary": "추경호 본경선 우위"
+    },
+    {
+      "timestep": 0,
+      "type": "endorsement",
+      "target": "c_daegu_dpk",
+      "polarity": 0.4,
+      "summary": "김부겸 — TK 출신 민주 거물 등판"
+    },
+    {
+      "timestep": 1,
+      "type": "policy",
+      "target": "c_daegu_dpk",
+      "polarity": 0.2,
+      "summary": "통합/탕평 메시지 + 의원 35명 대구 집결"
+    },
+    {
+      "timestep": 2,
+      "type": "endorsement",
+      "target": "c_daegu_ppp_choo",
+      "polarity": 0.1,
+      "summary": "이진숙 불출마·국민의힘 후보 지원 → 보수 결집"
+    }
   ],
   "polls": [
-    {"poll_id": 1, "ts": "2026-04-15T00:00:00+09:00", "sample_size": 800, "leader_candidate": "c_daegu_ppp_choo", "leader_share": 0.42}
+    {
+      "poll_id": 1,
+      "ts": "2026-04-15T00:00:00+09:00",
+      "sample_size": 800,
+      "leader_candidate": "c_daegu_ppp_choo",
+      "leader_share": 0.42
+    }
   ],
   "raw_polls": [
-    {"pollster": "PLACEHOLDER", "mode": "phone", "n": 800, "day": 0, "quality": 0.4,
-     "shares": {"c_daegu_ppp_choo": 0.42, "c_daegu_ppp_yoo": 0.08, "c_daegu_dpk": 0.32, "c_daegu_ourrep": 0.05}}
+    {
+      "pollster": "PLACEHOLDER",
+      "mode": "phone",
+      "n": 800,
+      "day": 0,
+      "quality": 0.4,
+      "shares": {
+        "c_daegu_ppp_choo": 0.42,
+        "c_daegu_ppp_yoo": 0.08,
+        "c_daegu_dpk": 0.32,
+        "c_daegu_ourrep": 0.05
+      }
+    }
   ],
   "simulation": {
     "t_start": "2026-04-19T00:00:00+09:00",
-    "t_end":   "2026-06-03T00:00:00+09:00",
+    "t_end": "2026-06-03T00:00:00+09:00",
     "timesteps": 4
   },
-  "scenario_notes": "국힘 본선 후보(추경호 vs 유영하)는 5월 초 확정 예정 — sim에서 양자 분기 가능. 김부겸 효과는 핵심 가설로 KG에서 'TK 출신 민주당' 노드 제공 필요. 이진숙은 2026-04-25 대구시장 예비후보직 사퇴·불출마 및 국민의힘 후보 지원 선언 이후 독자 후보가 아니라 보수 결집 이벤트로 처리한다."
+  "scenario_notes": "국힘 본선 후보(추경호 vs 유영하)는 5월 초 확정 예정 — sim에서 양자 분기 가능. 김부겸 효과는 핵심 가설로 KG에서 'TK 출신 민주당' 노드 제공 필요. 이진숙은 2026-04-25 대구시장 예비후보직 사퇴·불출마 및 국민의힘 후보 지원 선언 이후 독자 후보가 아니라 보수 결집 이벤트로 처리한다.",
+  "election_date": "2026-06-03",
+  "timezone": "Asia/Seoul"
 }

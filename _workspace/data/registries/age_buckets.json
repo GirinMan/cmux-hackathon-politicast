@@ -1,0 +1,12 @@
+{
+  "_doc": "연령 코호트 버킷 (SoT). election_env.py의 _age_group 하드코딩(<30/<40/<50/<60)을 외화. min/max는 [min, max) 반열림 구간 (max=null = 무제한). 표시 라벨은 dashboard/논문 표 공통.",
+  "_status": "decided",
+  "unknown_label": "unknown",
+  "buckets": [
+    {"label": "20s",  "min": 0,  "max": 30},
+    {"label": "30s",  "min": 30, "max": 40},
+    {"label": "40s",  "min": 40, "max": 50},
+    {"label": "50s",  "min": 50, "max": 60},
+    {"label": "60s+", "min": 60, "max": null}
+  ]
+}

@@ -1,4 +1,5 @@
 {
+  "schema_version": "v1",
   "scenario_id": "daegu_mayor_2026__cf_choo_nomination_actual__mock",
   "region_id": "daegu_mayor",
   "contest_id": "daegu_mayor_2026",
@@ -146,6 +147,12 @@
   ],
   "kg_events_used": [],
   "meta": {
+    "env": "prod",
+    "started_at": "2026-04-26T07:47:06.668146+00:00",
+    "finished_at": "2026-04-26T07:47:06.668967+00:00",
+    "wall_seconds": 0.0,
+    "policy_version": "unknown",
+    "concurrency": 8,
     "features": [
       "bandwagon",
       "cohort_prior",
@@ -153,10 +160,9 @@
       "second_order",
       "underdog"
     ],
-    "concurrency": 8,
-    "started_at": "2026-04-26T07:47:06.668146+00:00",
-    "policy_version": "unknown",
-    "env": "prod",
+    "effective_provider": null,
+    "effective_model": null,
+    "actual_keys_used": null,
     "llm_cache_enabled": true,
     "final_poll_feedback_enabled": false,
     "poll_targets_visible_to_agents": false,
@@ -247,6 +253,7 @@
       "poll_targets_visible_to_agents": false,
       "intervention_path": "_workspace/data/interventions/daegu_mayor/choo_nomination_actual.json"
     },
+    "pool_stats": null,
     "voter_stats": {
       "calls": 15,
       "parse_fail": 0,
@@ -263,9 +270,9 @@
     },
     "official_poll_validation": {
       "target_series": "counterfactual_prediction",
-      "as_of_date": null,
       "method_version": "not_applicable",
       "cutoff_ts": "2026-04-19T00:00:00+09:00",
+      "as_of_date": null,
       "source_poll_ids": [
         "https://www.kmib.co.kr/article/view.asp?arcid=0029735129",
         "https://biz.chosun.com/policy/politics/assembly/2026/04/26/VBPPMZGY5ZEX7NOXEBP526PAGU/",
@@ -278,16 +285,16 @@
         "leader_match": null
       },
       "by_candidate": {},
+      "poll_targets_visible_to_agents": false,
+      "prediction_only": null,
       "counterfactual_prediction": true,
       "reason": "After calibration, inject the 2026-04-26 PPP nomination outcome and the 2026-04-25 Lee Jin-sook withdrawal/support event as scenario-local KG events. This is prediction-only inference, not a validation target.",
       "intervention_id": "choo_nomination_actual",
       "base_region_id": "daegu_mayor",
       "calibration_profile": "r6_full_frozen_poll_hidden",
       "frozen_params": true,
-      "poll_targets_visible_to_agents": false
+      "error": null
     },
-    "finished_at": "2026-04-26T07:47:06.668967+00:00",
-    "wall_seconds": 0.0,
     "result_mirror_path": "_workspace/snapshots/daegu_mayor__cf_choo_nomination_actual_result.json",
     "wrote_at": "2026-04-26T07:47:06.669054+00:00"
   }

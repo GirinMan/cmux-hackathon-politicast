@@ -1,0 +1,105 @@
+{
+  "$defs": {
+    "DataSource": {
+      "additionalProperties": false,
+      "description": "단일 데이터 소스 정의 — adapter 가 구현해야 할 계약.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "structured",
+            "llm"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "target_kind": {
+          "enum": [
+            "raw_poll",
+            "candidate",
+            "kg_triple",
+            "issue",
+            "person"
+          ],
+          "title": "Target Kind",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "fetcher_module": {
+          "title": "Fetcher Module",
+          "type": "string"
+        },
+        "parser_module": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parser Module"
+        },
+        "cadence_hint": {
+          "default": "manual",
+          "title": "Cadence Hint",
+          "type": "string"
+        },
+        "schema_version": {
+          "default": "v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "enabled": {
+          "default": true,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "config": {
+          "additionalProperties": true,
+          "title": "Config",
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "target_kind",
+        "fetcher_module"
+      ],
+      "title": "DataSource",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "data_sources.json 의 root.",
+  "properties": {
+    "version": {
+      "default": "v1",
+      "title": "Version",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "title": "Description",
+      "type": "string"
+    },
+    "sources": {
+      "additionalProperties": {
+        "$ref": "#/$defs/DataSource"
+      },
+      "title": "Sources",
+      "type": "object"
+    }
+  },
+  "title": "DataSourceRegistry",
+  "type": "object"
+}

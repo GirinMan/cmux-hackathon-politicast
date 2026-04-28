@@ -1,0 +1,59 @@
+{
+  "additionalProperties": true,
+  "description": "poll_consensus_daily 테이블 row — election_env._consensus_from_duckdb 출력.",
+  "properties": {
+    "contest_id": {
+      "title": "Contest Id",
+      "type": "string"
+    },
+    "region_id": {
+      "title": "Region Id",
+      "type": "string"
+    },
+    "as_of_date": {
+      "title": "As Of Date",
+      "type": "string"
+    },
+    "candidate_id": {
+      "title": "Candidate Id",
+      "type": "string"
+    },
+    "p_hat": {
+      "title": "P Hat",
+      "type": "number"
+    },
+    "var": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Var"
+    },
+    "method_version": {
+      "default": "weighted_v1",
+      "title": "Method Version",
+      "type": "string"
+    },
+    "source_poll_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Poll Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "contest_id",
+    "region_id",
+    "as_of_date",
+    "candidate_id",
+    "p_hat"
+  ],
+  "title": "PollConsensusDaily",
+  "type": "object"
+}

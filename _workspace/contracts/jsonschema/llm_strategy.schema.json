@@ -1,0 +1,162 @@
+{
+  "$defs": {
+    "LLMFallbackEntry": {
+      "additionalProperties": true,
+      "properties": {
+        "order": {
+          "title": "Order",
+          "type": "integer"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "trigger": {
+          "title": "Trigger",
+          "type": "string"
+        },
+        "module": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Module"
+        }
+      },
+      "required": [
+        "order",
+        "label",
+        "trigger"
+      ],
+      "title": "LLMFallbackEntry",
+      "type": "object"
+    },
+    "LLMPrimaryPath": {
+      "additionalProperties": true,
+      "properties": {
+        "package": {
+          "title": "Package",
+          "type": "string"
+        },
+        "wrapper": {
+          "title": "Wrapper",
+          "type": "string"
+        },
+        "model_env": {
+          "title": "Model Env",
+          "type": "string"
+        },
+        "default_model": {
+          "title": "Default Model",
+          "type": "string"
+        },
+        "config": {
+          "additionalProperties": true,
+          "title": "Config",
+          "type": "object"
+        }
+      },
+      "required": [
+        "package",
+        "wrapper",
+        "model_env",
+        "default_model"
+      ],
+      "title": "LLMPrimaryPath",
+      "type": "object"
+    },
+    "LLMProvider": {
+      "additionalProperties": true,
+      "description": "LiteLLM 공급자 화이트리스트 항목.\n\n`key_env` 가 None 이면 IAM 기반 (vertex_ai/bedrock).",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "key_env": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key Env"
+        },
+        "auth": {
+          "title": "Auth",
+          "type": "string"
+        },
+        "model_prefix": {
+          "title": "Model Prefix",
+          "type": "string"
+        },
+        "extra_env": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Extra Env",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "auth",
+        "model_prefix"
+      ],
+      "title": "LLMProvider",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "description": "`_workspace/contracts/llm_strategy.json` 의 단일 파싱 진입점.",
+  "properties": {
+    "decision": {
+      "title": "Decision",
+      "type": "string"
+    },
+    "rationale": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Rationale"
+    },
+    "primary_path": {
+      "$ref": "#/$defs/LLMPrimaryPath"
+    },
+    "supported_providers": {
+      "items": {
+        "$ref": "#/$defs/LLMProvider"
+      },
+      "title": "Supported Providers",
+      "type": "array"
+    },
+    "fallback_chain": {
+      "items": {
+        "$ref": "#/$defs/LLMFallbackEntry"
+      },
+      "title": "Fallback Chain",
+      "type": "array"
+    }
+  },
+  "required": [
+    "decision",
+    "primary_path",
+    "supported_providers"
+  ],
+  "title": "LLMStrategy",
+  "type": "object"
+}

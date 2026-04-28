@@ -1,0 +1,17 @@
+{
+  "version": "v1",
+  "description": "Phase 6 Stage 1 hyperparameter search space (Optuna TPE).",
+  "params": {
+    "bandwagon_weight": {"type": "float", "low": 0.0, "high": 0.5, "default": 0.1},
+    "second_order_weight": {"type": "float", "low": 0.0, "high": 0.3, "default": 0.05},
+    "influence_decay": {"type": "float", "low": 0.7, "high": 1.0, "default": 0.9},
+    "persona_diversity_temp": {"type": "float", "low": 0.5, "high": 1.5, "default": 1.0}
+  },
+  "scoring": {
+    "weights": {"leader_match": 0.5, "normalized_mae": 0.3, "js_divergence": 0.2},
+    "formula": "leader_match*0.5 + (1 - normalized_MAE)*0.3 + (1 - JS_divergence)*0.2",
+    "higher_is_better": true
+  },
+  "n_trials_default": 30,
+  "sampler": "TPE"
+}

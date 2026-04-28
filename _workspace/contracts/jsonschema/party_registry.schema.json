@@ -1,0 +1,52 @@
+{
+  "$defs": {
+    "PartyEntry": {
+      "additionalProperties": true,
+      "description": "단일 정당/버킷 항목.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "display_name": {
+          "title": "Display Name",
+          "type": "string"
+        },
+        "aliases": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Aliases",
+          "type": "array"
+        },
+        "kind": {
+          "default": "party",
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "display_name"
+      ],
+      "title": "PartyEntry",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "description": "`parties.json` 의 단일 진입점.",
+  "properties": {
+    "parties": {
+      "items": {
+        "$ref": "#/$defs/PartyEntry"
+      },
+      "title": "Parties",
+      "type": "array"
+    }
+  },
+  "required": [
+    "parties"
+  ],
+  "title": "PartyRegistry",
+  "type": "object"
+}

@@ -1,5 +1,7 @@
 {
   "_doc": "시뮬레이션 출력 → 대시보드 입력 shape. sim-engineer가 write, dashboard-engineer가 read.",
+  "_sot": "src/schemas/result.py::ScenarioResult — 본 JSON 은 인간 가독성용 요약. 정식 검증/직렬화는 Pydantic 모델을 사용. 변경은 양쪽 모두 갱신.",
+  "_schema_version": "v1",
   "scenario_result": {
     "scenario_id": "string",
     "region_id": "string",

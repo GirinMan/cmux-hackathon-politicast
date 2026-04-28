@@ -1,0 +1,63 @@
+{
+  "$defs": {
+    "CandidateEntry": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "party_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Party Id"
+        },
+        "aliases": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Aliases",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "CandidateEntry",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "description": "`candidates.json` 의 root.",
+  "properties": {
+    "version": {
+      "default": "v1",
+      "title": "Version",
+      "type": "string"
+    },
+    "regions": {
+      "additionalProperties": {
+        "items": {
+          "$ref": "#/$defs/CandidateEntry"
+        },
+        "type": "array"
+      },
+      "title": "Regions",
+      "type": "object"
+    }
+  },
+  "title": "CandidateRegistry",
+  "type": "object"
+}

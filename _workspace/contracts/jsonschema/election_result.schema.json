@@ -1,0 +1,88 @@
+{
+  "additionalProperties": false,
+  "description": "election_result 테이블 row — 선거일 확정 개표 결과.",
+  "properties": {
+    "region_id": {
+      "title": "Region Id",
+      "type": "string"
+    },
+    "contest_id": {
+      "title": "Contest Id",
+      "type": "string"
+    },
+    "election_date": {
+      "title": "Election Date",
+      "type": "string"
+    },
+    "candidate_id": {
+      "title": "Candidate Id",
+      "type": "string"
+    },
+    "vote_share": {
+      "title": "Vote Share",
+      "type": "number"
+    },
+    "votes": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Votes"
+    },
+    "turnout": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Turnout"
+    },
+    "is_winner": {
+      "default": false,
+      "title": "Is Winner",
+      "type": "boolean"
+    },
+    "source_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Url"
+    },
+    "ingested_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ingested At"
+    }
+  },
+  "required": [
+    "region_id",
+    "contest_id",
+    "election_date",
+    "candidate_id",
+    "vote_share"
+  ],
+  "title": "ElectionResult",
+  "type": "object"
+}

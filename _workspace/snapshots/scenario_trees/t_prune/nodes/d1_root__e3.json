@@ -1,0 +1,13 @@
+{
+  "scenario_id": "seoul_mayor_2026__beam_e3",
+  "final_outcome": {
+    "winner": "c_a",
+    "vote_share_by_candidate": {
+      "c_a": 0.55,
+      "c_b": 0.45
+    }
+  },
+  "meta": {
+    "shim": true
+  }
+}

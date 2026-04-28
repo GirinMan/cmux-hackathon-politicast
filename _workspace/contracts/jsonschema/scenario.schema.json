@@ -1,0 +1,563 @@
+{
+  "$defs": {
+    "Candidate": {
+      "additionalProperties": true,
+      "description": "시나리오 후보. `id` 와 `candidate_id` 둘 다 받는다.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "candidate_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Id"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "party": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Party"
+        },
+        "party_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Party Name"
+        },
+        "withdrawn": {
+          "default": false,
+          "title": "Withdrawn",
+          "type": "boolean"
+        },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Background"
+        },
+        "key_pledges": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Key Pledges",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "Candidate",
+      "type": "object"
+    },
+    "Contest": {
+      "additionalProperties": true,
+      "properties": {
+        "contest_id": {
+          "title": "Contest Id",
+          "type": "string"
+        },
+        "position_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Position Type"
+        },
+        "election_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Election Id"
+        },
+        "region_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Region Id"
+        }
+      },
+      "required": [
+        "contest_id"
+      ],
+      "title": "Contest",
+      "type": "object"
+    },
+    "District": {
+      "additionalProperties": true,
+      "properties": {
+        "province": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Province"
+        },
+        "district": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "District"
+        },
+        "population": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Population"
+        }
+      },
+      "title": "District",
+      "type": "object"
+    },
+    "Election": {
+      "additionalProperties": true,
+      "properties": {
+        "election_id": {
+          "title": "Election Id",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Date"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Type"
+        }
+      },
+      "required": [
+        "election_id"
+      ],
+      "title": "Election",
+      "type": "object"
+    },
+    "Issue": {
+      "additionalProperties": true,
+      "properties": {
+        "issue_id": {
+          "title": "Issue Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "type": {
+          "default": "기타",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "issue_id",
+        "name"
+      ],
+      "title": "Issue",
+      "type": "object"
+    },
+    "NarrativeFrame": {
+      "additionalProperties": true,
+      "properties": {
+        "frame_id": {
+          "title": "Frame Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "frame_id",
+        "label"
+      ],
+      "title": "NarrativeFrame",
+      "type": "object"
+    },
+    "Party": {
+      "additionalProperties": true,
+      "properties": {
+        "party_id": {
+          "title": "Party Id",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "ideology": {
+          "default": 0.0,
+          "title": "Ideology",
+          "type": "number"
+        }
+      },
+      "required": [
+        "party_id"
+      ],
+      "title": "Party",
+      "type": "object"
+    },
+    "SeedEvent": {
+      "additionalProperties": true,
+      "description": "ElectionEnv._build_context 가 timestep≤t 필터링에 사용하는 정형 이벤트.",
+      "properties": {
+        "timestep": {
+          "default": 0,
+          "title": "Timestep",
+          "type": "integer"
+        },
+        "type": {
+          "default": "event",
+          "title": "Type",
+          "type": "string"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target"
+        },
+        "polarity": {
+          "default": 0.0,
+          "title": "Polarity",
+          "type": "number"
+        },
+        "summary": {
+          "default": "",
+          "title": "Summary",
+          "type": "string"
+        }
+      },
+      "title": "SeedEvent",
+      "type": "object"
+    },
+    "SimulationWindow": {
+      "additionalProperties": true,
+      "properties": {
+        "t_start": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "T Start"
+        },
+        "t_end": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "T End"
+        },
+        "timesteps": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timesteps"
+        }
+      },
+      "title": "SimulationWindow",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "description": "시나리오 시드 — _workspace/data/scenarios/{region_id}.json 의 root.",
+  "properties": {
+    "schema_version": {
+      "default": "v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "scenario_id": {
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "region_id": {
+      "title": "Region Id",
+      "type": "string"
+    },
+    "contest_id": {
+      "title": "Contest Id",
+      "type": "string"
+    },
+    "label": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Label"
+    },
+    "gov_approval": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Gov Approval"
+    },
+    "election": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Election"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "contest": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Contest"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "district": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/District"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "parties": {
+      "items": {
+        "$ref": "#/$defs/Party"
+      },
+      "title": "Parties",
+      "type": "array"
+    },
+    "candidates": {
+      "items": {
+        "$ref": "#/$defs/Candidate"
+      },
+      "title": "Candidates",
+      "type": "array"
+    },
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/Issue"
+      },
+      "title": "Issues",
+      "type": "array"
+    },
+    "frames": {
+      "items": {
+        "$ref": "#/$defs/NarrativeFrame"
+      },
+      "title": "Frames",
+      "type": "array"
+    },
+    "events": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Events",
+      "type": "array"
+    },
+    "seed_events": {
+      "items": {
+        "$ref": "#/$defs/SeedEvent"
+      },
+      "title": "Seed Events",
+      "type": "array"
+    },
+    "polls": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Polls",
+      "type": "array"
+    },
+    "raw_polls": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Raw Polls",
+      "type": "array"
+    },
+    "simulation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SimulationWindow"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "election_date": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Election Date"
+    },
+    "scenario_notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Scenario Notes"
+    }
+  },
+  "required": [
+    "scenario_id",
+    "region_id",
+    "contest_id"
+  ],
+  "title": "Scenario",
+  "type": "object"
+}

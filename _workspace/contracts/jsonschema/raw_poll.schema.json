@@ -1,0 +1,73 @@
+{
+  "additionalProperties": true,
+  "description": "단일 여론조사 row — 시나리오 raw_polls[] 의 한 항목.",
+  "properties": {
+    "pollster": {
+      "title": "Pollster",
+      "type": "string"
+    },
+    "mode": {
+      "default": "phone",
+      "title": "Mode",
+      "type": "string"
+    },
+    "n": {
+      "default": 1000,
+      "title": "N",
+      "type": "integer"
+    },
+    "day": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Day"
+    },
+    "ts": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ts"
+    },
+    "quality": {
+      "default": 1.0,
+      "title": "Quality",
+      "type": "number"
+    },
+    "shares": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Shares",
+      "type": "object"
+    },
+    "poll_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Poll Id"
+    }
+  },
+  "required": [
+    "pollster"
+  ],
+  "title": "RawPoll",
+  "type": "object"
+}

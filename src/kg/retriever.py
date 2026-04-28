@@ -36,7 +36,7 @@ _PERSONA_RELEVANT_ISSUE_KEYWORDS: dict[str, tuple[str, ...]] = {
     "복지": ("노인", "복지", "장애", "돌봄", "보육", "연금"),
     "안보": ("군", "안보", "국방", "한미", "북한"),
     "지역개발": ("개발", "교통", "철도", "지하철", "GTX", "균형발전", "광역", "신청사"),
-    # 담론/정체성 (data-engineer 2026-04-26 재분류 반영)
+    # 담론/정체성 (data-engineer Phase 1 KST 재분류 반영)
     "정치": (
         "시민", "투표", "정치", "선거", "정당", "정권", "민주주의",
         "진보", "보수", "참여", "여당", "야당", "공약", "토론",
@@ -240,7 +240,7 @@ class KGRetriever:
         return meta.t_to_realtime(t)
 
     # ------------------------------------------------------------------
-    # P0/P1 enrichment helpers (2026-04-26) — surface candidate profile +
+    # P0/P1 enrichment helpers (P1) — surface candidate profile +
     # region context that scenario JSON already carries but voter prompt
     # was previously missing.
     # ------------------------------------------------------------------
@@ -278,7 +278,7 @@ class KGRetriever:
         return "[후보 프로필]\n" + "\n".join(lines)
 
     # ------------------------------------------------------------------
-    # Track B (2026-04-26) — CohortPrior lookup. Voters have age + sex; this
+    # Track B (P1) — CohortPrior lookup. Voters have age + sex; this
     # returns the most-specific Korean polling cohort prior so the LLM grounds
     # its prior in real Korean party-lean cross-tab data (not American
     # "younger=progressive" defaults).
@@ -370,7 +370,7 @@ class KGRetriever:
             return None
         candidates.sort(key=lambda x: -x[0])
         prior = candidates[0][1]
-        # sim-engineer interop (2026-04-26): augment with `block_text` /
+        # sim-engineer interop (P1): augment with `block_text` /
         # `cohort_label` / `source` / `n_polls` so `ElectionEnv._render_cohort_prior`
         # picks up our pre-rendered block via its duck-typed fallback path.
         try:
@@ -570,7 +570,7 @@ class KGRetriever:
             RetrievalResult — context_text 는 voter prompt 에 그대로 주입.
             firewall 보장: ``cutoff = meta.t_to_realtime(t)`` 이후 이벤트는 결과에 없음.
 
-        P0/P1 enrichment (2026-04-26): context_text now starts with
+        P0/P1 enrichment (P1): context_text now starts with
         ``[후보 프로필]`` + ``[지역 정세]`` blocks (time-invariant, sourced from
         the human-curated scenario JSON), then the firewall-filtered event
         bullets. This breaks the "id | name (party_id)" minimalism that was
@@ -773,3 +773,124 @@ class StubRetriever:
 
     def cutoff_for(self, region_id: str, t: int) -> Optional[datetime]:
         return None
+
+
+# ---------------------------------------------------------------------------
+# Phase 3 (#59) — opt-in factory honouring POLITIKAST_KG_USE_STAGING
+# ---------------------------------------------------------------------------
+def _staging_enabled() -> bool:
+    import os
+    return os.environ.get("POLITIKAST_KG_USE_STAGING", "0").lower() in (
+        "1", "true", "yes",
+    )
+
+
+# ---------------------------------------------------------------------------
+# Phase 4 (#78) — Cypher equivalents for retriever's hot-path queries.
+# These return strings + parameter dicts so they can be issued against
+# Neo4j by ``backend.app.services.kg_service`` while the in-process
+# networkx implementation continues to satisfy the simulation hot-path.
+# ---------------------------------------------------------------------------
+def subgraph_at_cypher(region_id: str, cutoff: datetime, k: int = 5) -> tuple[str, dict[str, Any]]:
+    """Return ``(query, params)`` for a Neo4j-backed equivalent of
+    :py:meth:`KGRetriever.subgraph_at` event scoring.
+
+    The query emits the top-``k`` event nodes attached to ``region_id`` whose
+    ``ts <= cutoff``, ordered by ``ts`` desc as a recency proxy. Persona
+    relevance scoring stays in-process (executor-side) — Cypher returns the
+    candidate set, the consumer ranks.
+    """
+    query = (
+        "MATCH (n) "
+        "WHERE n.region_id = $region_id "
+        "  AND n.ts IS NOT NULL "
+        "  AND n.ts <= $cutoff "
+        "  AND any(l IN labels(n) WHERE l IN $event_labels) "
+        "RETURN n.node_id AS node_id, labels(n) AS labels, "
+        "       n.event_id AS event_id, n.ts AS ts, "
+        "       n.title AS title, n.sentiment AS sentiment, "
+        "       n.frame_id AS frame_id "
+        "ORDER BY n.ts DESC "
+        "LIMIT $k"
+    )
+    from src.kg.ontology import EVENT_NODE_TYPES
+    params: dict[str, Any] = {
+        "region_id": region_id,
+        "cutoff": cutoff.isoformat(),
+        "event_labels": sorted(EVENT_NODE_TYPES),
+        "k": int(k),
+    }
+    return query, params
+
+
+def get_cohort_prior_cypher(
+    region_id: Optional[str], age_band: str, gender: str,
+) -> tuple[str, dict[str, Any]]:
+    """Cypher for :py:meth:`KGRetriever.get_cohort_prior` resolution. Returns
+    the most-specific ``CohortPrior`` for ``(region_id, age_band, gender)``
+    with the same scoring rule as the in-process implementation."""
+    query = (
+        "MATCH (n:CohortPrior) "
+        "WHERE n.region_id = $region_id OR n.scope = 'national' "
+        "WITH n, "
+        "  ((CASE WHEN n.region_id = $region_id THEN 100 ELSE 0 END) "
+        " + (CASE WHEN coalesce(n.scope,'national') = 'national' THEN 10 ELSE 0 END) "
+        " + (CASE WHEN n.age_band = $age_band THEN 30 "
+        "         WHEN n.age_band = 'ALL' THEN 5 ELSE -100 END) "
+        " + (CASE WHEN n.gender = $gender THEN 20 "
+        "         WHEN n.gender = 'ALL' THEN 3 ELSE -100 END)) AS score "
+        "WHERE score > 0 "
+        "RETURN n LIMIT 1"
+    )
+    return query, {
+        "region_id": region_id,
+        "age_band": age_band,
+        "gender": gender,
+    }
+
+
+def events_used_summary_cypher(region_id: str, cutoff: datetime) -> tuple[str, dict[str, Any]]:
+    """Cypher version of :py:meth:`KGRetriever.events_used_summary` (used by
+    snapshot serialisation in the FastAPI scenario route)."""
+    from src.kg.ontology import EVENT_NODE_TYPES
+    query = (
+        "MATCH (n) "
+        "WHERE n.region_id = $region_id "
+        "  AND any(l IN labels(n) WHERE l IN $event_labels) "
+        "  AND n.ts IS NOT NULL AND n.ts <= $cutoff "
+        "OPTIONAL MATCH (n)-[:about]->(t) "
+        "RETURN n.event_id AS event_id, n.type AS type, "
+        "       coalesce(t.candidate_id, t.party_id, t.name, '') AS target "
+        "ORDER BY n.ts"
+    )
+    return query, {
+        "region_id": region_id,
+        "cutoff": cutoff.isoformat(),
+        "event_labels": sorted(EVENT_NODE_TYPES),
+    }
+
+
+def make_retriever(
+    *,
+    db_path: Any = None,
+    region_id: Optional[str] = None,
+    **kwargs: Any,
+) -> "KGRetriever":
+    """Construct a :class:`KGRetriever` honoring the staging opt-in flag.
+
+    Default (``POLITIKAST_KG_USE_STAGING`` unset / ``0``): identical to
+    Phase 2 — only ``build_kg_from_scenarios`` is used. Setting the variable
+    to ``1`` switches to :func:`src.kg.builder.build_with_staging`, which
+    layers ``stg_kg_triple`` rows on top of the curated scenario KG (with
+    scenario > staging precedence).
+
+    Phase 3 contract: when staging is enabled but the DB / table is absent,
+    this remains a no-op — sim-engineer's existing path stays green.
+    """
+    if _staging_enabled():
+        from src.kg.builder import build_with_staging
+        G, index = build_with_staging(db_path=db_path, region_id=region_id)
+    else:
+        from src.kg.builder import build_kg_from_scenarios
+        G, index = build_kg_from_scenarios()
+    return KGRetriever(G, index, **kwargs)

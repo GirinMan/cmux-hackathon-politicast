@@ -1,0 +1,232 @@
+{
+  "$defs": {
+    "TimeWindow": {
+      "additionalProperties": false,
+      "description": "검증/학습 윈도우 (start ≤ end, 둘 다 포함).",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "start": {
+          "format": "date",
+          "title": "Start",
+          "type": "string"
+        },
+        "end": {
+          "format": "date",
+          "title": "End",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "start",
+        "end"
+      ],
+      "title": "TimeWindow",
+      "type": "object"
+    },
+    "ValidationMetrics": {
+      "additionalProperties": false,
+      "description": "공식 여론조사 vs 시뮬 비교 4종 지표.",
+      "properties": {
+        "mae": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mae"
+        },
+        "rmse": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rmse"
+        },
+        "margin_error": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Margin Error"
+        },
+        "leader_match": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Leader Match"
+        },
+        "brier": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Brier"
+        },
+        "ece": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ece"
+        },
+        "js_divergence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Js Divergence"
+        },
+        "collapse_flag": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Collapse Flag"
+        }
+      },
+      "title": "ValidationMetrics",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Phase 6 validation harness 의 1회 실행 결과.\n\nmetrics 는 evaluate_scenario_result() 가 반환하는 8 종 지표를 그대로\n재사용한다 (mae/rmse/margin/leader/brier/ece/js/collapse).",
+  "properties": {
+    "region_id": {
+      "title": "Region Id",
+      "type": "string"
+    },
+    "contest_id": {
+      "title": "Contest Id",
+      "type": "string"
+    },
+    "train_window": {
+      "$ref": "#/$defs/TimeWindow"
+    },
+    "test_window": {
+      "$ref": "#/$defs/TimeWindow"
+    },
+    "sim_params": {
+      "additionalProperties": true,
+      "title": "Sim Params",
+      "type": "object"
+    },
+    "metrics": {
+      "$ref": "#/$defs/ValidationMetrics"
+    },
+    "n_personas": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "N Personas"
+    },
+    "n_timesteps": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "N Timesteps"
+    },
+    "sim_result_ref": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sim Result Ref"
+    },
+    "mlflow_run_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Mlflow Run Id"
+    },
+    "firewall_passed": {
+      "default": true,
+      "title": "Firewall Passed",
+      "type": "boolean"
+    },
+    "notes": {
+      "default": "",
+      "title": "Notes",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "region_id",
+    "contest_id",
+    "train_window",
+    "test_window"
+  ],
+  "title": "ValidationReport",
+  "type": "object"
+}

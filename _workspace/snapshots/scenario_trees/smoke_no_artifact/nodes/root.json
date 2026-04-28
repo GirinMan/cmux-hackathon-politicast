@@ -1,0 +1,154 @@
+{
+  "scenario_id": "seoul_mayor_2026",
+  "region_id": "seoul_mayor",
+  "contest_id": "seoul_mayor_2026",
+  "timestep_count": 1,
+  "persona_n": 4,
+  "candidates": [
+    {
+      "id": "c_seoul_dpk",
+      "name": "정원오",
+      "party": "p_dem"
+    },
+    {
+      "id": "c_seoul_ppp",
+      "name": "오세훈",
+      "party": "p_ppp"
+    },
+    {
+      "id": "c_seoul_rebuild",
+      "name": "한민수",
+      "party": "p_rebuild"
+    }
+  ],
+  "poll_trajectory": [
+    {
+      "timestep": 0,
+      "date": "2026-04-19",
+      "support_by_candidate": {
+        "c_seoul_dpk": 1.0,
+        "c_seoul_ppp": 0.0,
+        "c_seoul_rebuild": 0.0
+      },
+      "turnout_intent": 1.0,
+      "consensus_var": 0.22222222222222224
+    }
+  ],
+  "final_outcome": {
+    "turnout": 0.75,
+    "vote_share_by_candidate": {
+      "c_seoul_dpk": 1.0,
+      "c_seoul_ppp": 0.0,
+      "c_seoul_rebuild": 0.0
+    },
+    "winner": "c_seoul_dpk",
+    "n_responses": 4,
+    "n_abstain": 1
+  },
+  "demographics_breakdown": {
+    "by_age_group": {
+      "60s+": {
+        "c_seoul_dpk": 1.0
+      },
+      "30s": {
+        "c_seoul_dpk": 1.0
+      },
+      "20s": {
+        "c_seoul_dpk": 1.0
+      }
+    },
+    "by_education": {
+      "4년제 대학교": {
+        "c_seoul_dpk": 1.0
+      },
+      "고등학교": {
+        "c_seoul_dpk": 0.5
+      },
+      "2~3년제 전문대학": {
+        "c_seoul_dpk": 1.0
+      }
+    },
+    "by_district": {
+      "서울-도봉구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-강동구": {
+        "c_seoul_dpk": 1.0
+      },
+      "서울-마포구": {
+        "c_seoul_dpk": 1.0
+      }
+    }
+  },
+  "virtual_interviews": [],
+  "kg_events_used": [],
+  "meta": {
+    "features": [
+      "bandwagon",
+      "cohort_prior",
+      "kg_retrieval",
+      "second_order",
+      "underdog"
+    ],
+    "concurrency": 8,
+    "started_at": "2026-04-28T06:34:15.013403+00:00",
+    "policy_version": "unknown",
+    "env": "prod",
+    "llm_cache_enabled": true,
+    "final_poll_feedback_enabled": false,
+    "poll_targets_visible_to_agents": false,
+    "counterfactual": null,
+    "voter_stats": {
+      "calls": 8,
+      "parse_fail": 0,
+      "abstain": 1,
+      "latency_ms_sum": 0.6315000355243683,
+      "calls_by_model": {
+        "mini": 2,
+        "nano": 6
+      },
+      "mean_latency_ms": 0.1,
+      "parse_fail_rate": 0.0,
+      "abstain_rate": 0.125
+    },
+    "official_poll_validation": {
+      "target_series": "scenario_fallback_v1",
+      "as_of_date": "2026-04-07",
+      "method_version": "scenario_fallback_v1",
+      "cutoff_ts": "2026-04-19T00:00:00+09:00",
+      "source_poll_ids": [
+        "KBS·케이스탯",
+        "SBS·입소스"
+      ],
+      "metrics": {
+        "mae": 0.3185,
+        "rmse": 0.371,
+        "margin_error": 0.9045,
+        "leader_match": true,
+        "brier": null,
+        "ece": null,
+        "js_divergence": null,
+        "collapse_flag": null
+      },
+      "by_candidate": {
+        "c_seoul_dpk": {
+          "simulated_share": 1.0,
+          "official_consensus": 0.5223,
+          "error": 0.4777
+        },
+        "c_seoul_ppp": {
+          "simulated_share": 0.0,
+          "official_consensus": 0.4268,
+          "error": -0.4268
+        },
+        "c_seoul_rebuild": {
+          "simulated_share": 0.0,
+          "official_consensus": 0.051,
+          "error": -0.051
+        }
+      }
+    },
+    "finished_at": "2026-04-28T06:34:15.022831+00:00",
+    "wall_seconds": 0.01
+  }
+}

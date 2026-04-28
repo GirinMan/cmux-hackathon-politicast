@@ -1,0 +1,4 @@
+import { jsxs as _jsxs, jsx as _jsx } from "react/jsx-runtime";
+export default function PersonaCard({ persona }) {
+    return (_jsxs("article", { className: "card persona-card", children: [_jsxs("header", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }, children: [_jsxs("strong", { children: ["#", persona.persona_id.slice(0, 8)] }), _jsxs("span", { className: "muted", children: [persona.age ?? '–', " \u00B7 ", persona.gender ?? '–'] })] }), _jsxs("div", { className: "muted", style: { fontSize: '0.85rem' }, children: [persona.province ?? '–', " ", persona.district ?? '', " \u00B7 ", persona.education ?? '–'] }), _jsx("p", { style: { marginTop: '0.5rem', fontSize: '0.9rem', lineHeight: 1.4 }, children: persona.summary || _jsx("em", { className: "muted", children: "no summary" }) })] }));
+}

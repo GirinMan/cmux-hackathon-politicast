@@ -1,0 +1,76 @@
+{
+  "additionalProperties": false,
+  "description": "Parameters fed into `BeamSearch.expand()` — frozen on the artifact.",
+  "properties": {
+    "beam_width": {
+      "description": "top-W kept per depth",
+      "minimum": 1,
+      "title": "Beam Width",
+      "type": "integer"
+    },
+    "beam_depth": {
+      "description": "max depth (root excluded)",
+      "minimum": 1,
+      "title": "Beam Depth",
+      "type": "integer"
+    },
+    "k_propose": {
+      "default": 3,
+      "description": "events proposed per leaf",
+      "minimum": 1,
+      "title": "K Propose",
+      "type": "integer"
+    },
+    "proposer": {
+      "default": "composite",
+      "enum": [
+        "kg",
+        "llm",
+        "custom",
+        "composite"
+      ],
+      "title": "Proposer",
+      "type": "string"
+    },
+    "seed": {
+      "default": 11,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "sample_n": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sample N"
+    },
+    "timesteps": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Timesteps"
+    },
+    "strict_temporal": {
+      "default": true,
+      "title": "Strict Temporal",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "beam_width",
+    "beam_depth"
+  ],
+  "title": "BeamConfig",
+  "type": "object"
+}
