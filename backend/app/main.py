@@ -22,9 +22,6 @@ from .settings import get_settings
 
 logger = logging.getLogger("backend")
 
-# Mutating verbs that require origin/referer verification beyond CORS.
-_MUTATING_METHODS = {"POST", "PUT", "PATCH", "DELETE"}
-
 # Paths that authenticate via mechanisms other than the anonymous cookie and
 # therefore should not be subjected to the origin guard.
 _ORIGIN_GUARD_SKIP_PREFIXES = (
@@ -68,17 +65,25 @@ def create_app() -> FastAPI:
 
     @app.middleware("http")
     async def origin_guard(request: Request, call_next):
-        """CSRF defense for cookie-authenticated mutating endpoints.
+        """CSRF + cookie-auth data-exfil defense.
 
-        SameSite=Lax cookie 가 cross-site auto-send 를 막지만, same-site
-        frame attack / 구형 브라우저 / non-browser client 가 cookie 갈취 후
-        write 호출하는 경우를 추가로 차단한다. CORS allow_origins 와 동일
-        화이트리스트에 Origin 또는 Referer 가 속해야 통과.
+        Anonymous ``politikast_uid`` 쿠키 인증은 GET 응답에도 PII (사용자
+        프로필 / 작성 글 등) 를 담는다. 쿠키 누설 + non-browser client 가
+        조용히 read-out 하는 시나리오를 막기 위해 mutating verbs 뿐 아니라
+        모든 method 에 동일한 Origin/Referer 화이트리스트 검사를 적용한다.
 
-        Skip: GET/OPTIONS/HEAD, /internal/* (service token), /admin/* (JWT),
-        그리고 health/docs.
+        통과 조건 (둘 중 하나만 만족):
+        - ``Origin`` 헤더 ∈ ``cors_origin_list``
+        - ``Referer`` 헤더의 origin ∈ ``cors_origin_list``
+
+        Skip:
+        - ``OPTIONS`` (CORS preflight 는 CORSMiddleware 가 처리)
+        - ``/internal/*``  (service token 인증, ambient cookie 사용 안 함)
+        - ``/admin/*``     (JWT bearer 인증, ambient cookie 사용 안 함)
+        - ``/health``, ``/docs``, ``/redoc``, ``/openapi.json``
+          (정적/공개 — 인증 cookie 와 무관)
         """
-        if request.method not in _MUTATING_METHODS:
+        if request.method == "OPTIONS":
             return await call_next(request)
         path = request.url.path
         if any(path.startswith(p) for p in _ORIGIN_GUARD_SKIP_PREFIXES):

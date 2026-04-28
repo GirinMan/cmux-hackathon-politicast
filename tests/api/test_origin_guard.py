@@ -68,10 +68,42 @@ def test_post_with_referer_disallowed_origin_blocked(client: TestClient) -> None
     assert r.status_code == 403
 
 
-def test_get_request_skips_guard(client: TestClient) -> None:
-    """GET endpoints stay reachable without Origin (idempotent reads)."""
+def test_get_without_origin_or_referer_is_blocked(client: TestClient) -> None:
+    """Cookie-auth GET 도 Origin/Referer 없으면 차단 — anonymous_uid 누설 시
+    non-browser 가 PII 를 read-out 하는 경로를 봉쇄."""
     r = client.get("/api/v1/board/topics")
+    assert r.status_code == 403
+    assert "CSRF guard" in r.json()["detail"]
+
+
+def test_get_with_allowed_origin_passes_guard(client: TestClient) -> None:
+    r = client.get(
+        "/api/v1/board/topics",
+        headers={"Origin": "http://localhost:5173"},
+    )
     assert r.status_code != 403
+
+
+def test_get_with_disallowed_origin_blocked(client: TestClient) -> None:
+    r = client.get(
+        "/api/v1/board/topics",
+        headers={"Origin": "http://evil.example"},
+    )
+    assert r.status_code == 403
+
+
+def test_get_with_referer_only_passes_guard(client: TestClient) -> None:
+    r = client.get(
+        "/api/v1/board/topics",
+        headers={"Referer": "http://localhost:5173/board"},
+    )
+    assert r.status_code != 403
+
+
+def test_get_health_skips_guard(client: TestClient) -> None:
+    """/health is public — no Origin required."""
+    r = client.get("/health")
+    assert r.status_code == 200
 
 
 def test_internal_path_skips_guard(client: TestClient) -> None:
