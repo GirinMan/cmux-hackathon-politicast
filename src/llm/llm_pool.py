@@ -48,6 +48,12 @@ logger = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CACHE_PATH = REPO_ROOT / "_workspace" / "db" / "llm_cache.sqlite"
+
+# .env 를 모듈 import 시점에 로드 — DEFAULT_MODEL / DEV_OVERRIDE_MODEL 등
+# module-level 상수가 평가되기 전에 LITELLM_* 환경변수가 채워져야 한다.
+# override=False 라 shell export 가 우선되며, 누락된 키만 .env 에서 보충.
+load_dotenv(REPO_ROOT / ".env", override=False)
+
 DEFAULT_MODEL = os.environ.get(
     "LITELLM_MODEL",
     os.environ.get("GEMINI_MODEL", "gemini/gemini-3.1-flash-lite-preview"),
