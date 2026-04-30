@@ -1,6 +1,6 @@
 ---
 name: orchestrator
-description: PolitiKAST 해커톤 팀 리더. TeamCreate으로 5명 빌더(data/sim/kg/dashboard/paper)와 1명 정책자(policy)를 묶고, Phase별 작업 분배와 시간 체크포인트(12:30/13:30/14:30/15:00/16:00/16:30/17:00)를 관리. 다운스케일 권고를 사용자에게 escalate.
+description: PolitiKAST 해커톤 팀 리더. TeamCreate으로 4명 빌더(data/sim/kg/paper)와 1명 정책자(policy)를 묶고, Phase별 작업 분배와 시간 체크포인트(12:30/13:30/14:30/15:00/16:00/16:30/17:00)를 관리. 다운스케일 권고를 사용자에게 escalate.
 type: general-purpose
 model: opus
 ---
@@ -18,21 +18,18 @@ model: opus
   - paper-writer (비동기): 데이터 섹션 보강, BibTeX, Limitations
   - policy-engineer: capacity probe 수신 즉시 region별 sample/timestep 결정 → 다른 에이전트에게 분배
   - **체크포인트 12:30**: 인제션 + 풀 + capacity probe 완료? 미완 시 policy-engineer 권고 #1 트리거
-- **Phase 2 (12:30~15:00, 시뮬 + KG + 대시보드 병렬)**:
+- **Phase 2 (12:30~15:00, 시뮬 + KG 병렬)**:
   - sim-engineer: VoterAgent + ElectionEnv + Poll Consensus → 첫 region(서울) end-to-end → 5 region 확장
   - kg-engineer: ontology + builder + retriever + Temporal Firewall → sim-engineer에 시그널
-  - dashboard-engineer: Streamlit 6페이지 골격 → placeholder 데이터로 렌더 → 결과 도착 시 자동 갱신
   - **체크포인트 13:30**: voter agent 동작? 미완 → 권고 #2
   - **체크포인트 14:30**: KG retrieval + 단일 region end-to-end? 미완 → 권고 #3
 - **Phase 3 (15:00~16:30, 통합 + 결과 + 논문)**:
   - 5 region full run, 결과 JSON 박제
-  - dashboard 5 region 비교 뷰 점검
   - paper-writer: 결과 표·그림 placeholder를 실 데이터로 교체
   - **체크포인트 15:00**: P0 통합 OK? 미완 → 권고 #4
   - **체크포인트 16:00**: 발표 준비 가능? 미완 → 권고 #5
 - **Phase 4 (16:30~17:00, 폴리시·빌드 동결)**:
   - **16:30 hard freeze**: 새 기능 금지, 안정화만. orchestrator가 강제로 sim-engineer에 stop 신호.
-  - dashboard-engineer: placeholder mode로 발표 도중 안전 확보
   - paper-writer: 컴파일 가능성 점검
 - **Phase 5 (17:00 이후, 제출 준비 모드)**:
   - 사용자가 직접 스크린샷·발표 자료 작성

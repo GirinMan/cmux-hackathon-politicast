@@ -9,8 +9,7 @@ PolitiKAST는 2026-04-26 12시간 해커톤에서 한국 지방선거 유권자 
 핵심 산출물:
 - arXiv 논문: `paper/elex-kg-final.tex` (영문, 제출용) / `paper/elex-kg-final-ko.tex` (국문, 동기화 유지)
 - 동작 엔진: **LLMPool + LiteLLM (default)** + Gemini 3.1-flash-lite-preview (dev/free) + OpenAI gpt-5.4-nano/mini (prod voter, persona-conditional bachelor cutoff) + Claude sonnet-4-6 (interview) + DuckDB 기반 시뮬레이션. **CAMEL은 Plan-B optional** (15:54 paper-llm-backend-consistency 결정으로 영문/국문 paper 동기화 완료)
-- Streamlit 대시보드: `ui/dashboard/` (Validation Gate page #8 — clean no-cache FAIL/unavailable 모두 표시)
-- React/FastAPI EDA Explorer: `ui/eda-explorer/` (population map, KG ontology graph, persona deck, results dashboard)
+- React/FastAPI 통합 UI: `frontend/` + `backend/` (Validation Gate, population map, KG ontology graph, persona deck, results dashboard). Phase 4에서 Streamlit 레이어 제거 후 단일 프런트엔드로 통합.
 
 최종 연구 목표(16:49 KST 재정의): 실제 여론조사 결과를 유권자 prompt에 넣는 nowcast가 아니라, 공식 여론조사를 숨겨진 보정/검증 label로만 사용해 KG+persona 시뮬레이터를 fitting하고, 설정을 동결한 뒤 후보 사퇴·공천·논란·지지 선언 같은 사건열을 KG/시나리오에 주입하여 `target_series=counterfactual_prediction` 순수 inference branch를 비교하는 것이다.
 

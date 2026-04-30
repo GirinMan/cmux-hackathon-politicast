@@ -76,9 +76,8 @@ make dev
 Python 만으로 백엔드를 띄우고, 프론트는 별도 터미널에서 vite dev:
 
 ```bash
-# 1) Python 가상환경
-python -m venv .venv
-.venv/bin/pip install -r docker/requirements.txt
+# 1) Python 의존성 (uv 사용 — `.venv/`를 자동 생성)
+uv sync
 
 # 2) Postgres + Neo4j 만 컨테이너로
 make db-up
@@ -174,7 +173,7 @@ docker compose start neo4j
 | 증상 | 원인 / 해결 |
 |---|---|
 | `make dev` 가 backend 에서 502 | `make migrate-db` 가 끝나기 전에 backend 가 떴습니다 — `docker compose logs backend` 확인 후 재기동. |
-| `pytest` 가 `ModuleNotFoundError: sqlalchemy` | `.venv/bin/pip install -r docker/requirements.txt` 재실행. Docker 모드에서는 발생하지 않습니다. |
+| `pytest` 가 `ModuleNotFoundError: sqlalchemy` | `uv sync` 재실행. Docker 모드에서는 발생하지 않습니다. |
 | Frontend 에서 401 | `.env` 의 `POLITIKAST_API_INTERNAL_SERVICE_TOKEN` 이 비어 있거나 backend 와 다릅니다. |
 | Neo4j 미러 후 firewall LEAK 경고 | KG 시나리오 시드 또는 staging triple 에 미래 ts 가 들어왔습니다 — `_workspace/snapshots/...` 의 audit 결과 확인. |
 | LLM 호출 비용 폭주 | `LLM_COST_THRESHOLD_*` 환경 변수 + `POLITIKAST_LLM_CACHE=1` 로 캐시 사용. 검증 게이트 실행은 반드시 `=0` 으로. |

@@ -374,7 +374,7 @@ This design is more reliable than relying solely on the LLM's reported knowledge
 
 \subsection{Visualization and Analysis Layer}
 
-On top of the simulation engine, the harness defines a planned Streamlit visualization layer. The Docker runtime includes the required Python dashboard dependencies and a \texttt{docker compose} dashboard profile that expects \texttt{ui/dashboard/app.py}; however, the \texttt{ui/} implementation is not present in the current repository snapshot. The intended visualization layer exposes:
+On top of the simulation engine, the harness defines a visualization layer served by a FastAPI backend (\texttt{backend/}) and a Vite + React frontend (\texttt{frontend/}); both are wired into \texttt{docker-compose.yml}. The intended visualization layer exposes:
 
 \begin{itemize}
   \item Interactive maps of turnout and vote shares by district and ballot.
@@ -734,7 +734,7 @@ This appendix consolidates the configuration and capacity decisions needed to re
 \subsection{Runtime Stack}
 
 \begin{itemize}
-  \item Python 3.11 with \texttt{litellm>=1.50}, \texttt{duckdb}, \texttt{networkx}, and \texttt{streamlit}. \texttt{camel-ai>=0.2.90} is retained as an optional Plan-B layer for framework-managed agent state or tool calls.
+  \item Python 3.11 with \texttt{litellm>=1.50}, \texttt{duckdb}, \texttt{networkx}, and \texttt{fastapi}; the visualization frontend is a separate Vite + React app. Dependencies are managed via \texttt{uv} (\texttt{pyproject.toml} + \texttt{uv.lock}). \texttt{camel-ai>=0.2.90} is retained as an optional Plan-B layer for framework-managed agent state or tool calls.
   \item Storage: DuckDB at \path{_workspace/db/politikast.duckdb}; SQLite LLM cache at \path{_workspace/db/llm_cache.sqlite}, keyed by persona, scenario hash, and timestep.
   \item LLM backend: LiteLLM is the multi-provider abstraction layer. The default voter-loop model is \path{gemini/gemini-3.1-flash-lite-preview} (thinking forced off); it is swappable via \texttt{LITELLM\_MODEL} to OpenAI, Anthropic, Azure OpenAI, Vertex AI, AWS Bedrock, Groq, OpenRouter, or other LiteLLM-supported providers. The production routing splits work persona-conditionally: voters with sub-bachelor education target \texttt{openai/gpt-5.4-nano}, voters at or above bachelor target \texttt{openai/gpt-5.4-mini}, and the virtual-interview path targets \texttt{anthropic/claude-sonnet-4-6}; in the development environment (\texttt{POLITIKAST\_ENV=dev}) all calls are auto-routed to Gemini Flash Lite for free path validation. JSON-mode responses use max concurrency 16.
   \item Cost guard: \texttt{LLMPool} maintains per-provider cost counters and enforces hard USD ceilings of \$50 (OpenAI), \$20 (Anthropic), and \$5 (Gemini). Any call that would exceed its provider's threshold raises \texttt{LLMCostThresholdError} and aborts the run immediately, preventing silent overruns; setting \texttt{POLITIKAST\_ENV=dev} routes all calls to Gemini Flash Lite for free path validation while keeping the same threshold contract.

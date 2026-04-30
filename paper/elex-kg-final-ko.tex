@@ -382,7 +382,7 @@ U^{\text{base}}_{i,b,k} = \beta_b^\top f(x_i) + \phi_b \, \text{PartyAffinity}(p
 
 \subsection{시각화 및 분석 계층}
 
-시뮬레이션 엔진 위에 하네스는 계획된 Streamlit 시각화 계층을 정의한다. Docker 런타임에는 필요한 Python 대시보드 의존성과 \texttt{ui/dashboard/app.py}를 기대하는 \texttt{docker compose} 대시보드 profile이 포함되어 있지만, 현재 저장소 스냅샷에는 \texttt{ui/} 구현이 없다. 의도된 시각화 계층은 다음을 노출한다.
+시뮬레이션 엔진 위에 하네스는 FastAPI 백엔드(\texttt{backend/})와 Vite + React 프런트엔드(\texttt{frontend/})로 구성된 시각화 계층을 정의한다. 두 서비스 모두 \texttt{docker-compose.yml}에 등록되어 있다. 의도된 시각화 계층은 다음을 노출한다.
 
 \begin{itemize}
   \item 선거구·직위별 투표율과 득표율의 인터랙티브 지도.
@@ -696,7 +696,7 @@ R6 full 실행은 Track B CohortPrior 노드(전국 연령 $\times$ 성별 prior
 \subsection{런타임 스택}
 
 \begin{itemize}
-  \item Python 3.11, \texttt{litellm>=1.50}, \texttt{duckdb}, \texttt{networkx}, \texttt{streamlit}. \texttt{camel-ai>=0.2.90}은 framework 관리 에이전트 상태나 도구 호출이 필요한 경우를 위한 선택적 Plan B 계층으로 유지된다.
+  \item Python 3.11, \texttt{litellm>=1.50}, \texttt{duckdb}, \texttt{networkx}, \texttt{fastapi}; 시각화 프런트엔드는 별도의 Vite + React 앱이다. 의존성은 \texttt{uv}(\texttt{pyproject.toml} + \texttt{uv.lock})로 관리한다. \texttt{camel-ai>=0.2.90}은 framework 관리 에이전트 상태나 도구 호출이 필요한 경우를 위한 선택적 Plan B 계층으로 유지된다.
   \item 저장소: \texttt{\_workspace/db/politikast.duckdb}의 DuckDB, \texttt{(persona\_id, scenario\_hash, timestep)}로 키가 정해지는 \texttt{\_workspace/db/llm\_cache.sqlite}의 SQLite LLM 캐시.
   \item LLM backend: LiteLLM은 다중 provider 추상화 계층이다. 기본 개발 모형은 \texttt{gemini/gemini-3.1-flash-lite-preview}(thinking off)이며, \texttt{LITELLM\_MODEL} 환경변수를 통해 application code 변경 없이 OpenAI, Anthropic, Azure OpenAI, Vertex AI, AWS Bedrock, Groq, OpenRouter 또는 다른 LiteLLM 지원 provider로 전환할 수 있다. JSON-mode 응답과 최대 동시성 16을 사용한다.
 \end{itemize}

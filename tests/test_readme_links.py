@@ -99,9 +99,10 @@ def test_readme_points_to_three_doc_subpages():
 
 
 def test_no_legacy_streamlit_url_in_readme():
-    """Phase 4 archived Streamlit; README must not advertise it as live."""
+    """Streamlit was removed in Phase 4; the React frontend (port 5173)
+    is the live UI surface. Guard prevents accidental re-advertisement."""
     readme = (_REPO_ROOT / "README.md").read_text(encoding="utf-8")
-    for forbidden in ("streamlit run", ":8501"):
-        assert forbidden not in readme, (
-            f"README still references archived Streamlit surface: {forbidden!r}"
+    for forbidden in ("streamlit run", ":8501", "streamlit"):
+        assert forbidden not in readme.lower(), (
+            f"README references removed Streamlit surface: {forbidden!r}"
         )

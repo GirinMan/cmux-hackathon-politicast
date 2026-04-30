@@ -44,15 +44,15 @@ BibTeX key: `li2023camel`
 URL: https://docs.camel-ai.org/key_modules/societies
 요약: CAMEL societies 문서는 여러 agent가 role, task, environment를 공유하며 협업하는 구성을 설명한다. 단일 LLM 호출보다 agent 간 메시지 흐름과 task decomposition을 명시적으로 모델링하는 데 초점이 있다.
 
-PolitiKAST 활용 포인트: 5개 region simulation을 같은 contract로 반복 실행할 때 society template을 두고 region seed만 교체한다. phase별 로그를 `_workspace/snapshots`에 남기면 논문 reproducibility와 dashboard replay에 같이 쓸 수 있다.
+PolitiKAST 활용 포인트: 5개 region simulation을 같은 contract로 반복 실행할 때 society template을 두고 region seed만 교체한다. phase별 로그를 `_workspace/snapshots`에 남기면 논문 reproducibility와 frontend replay에 같이 쓸 수 있다.
 BibTeX key: `camelai2026societies`
 
-**CAMEL Multi-agent Streamlit UI**
+**CAMEL Multi-agent UI 예시 (외부 참고)**
 URL: https://github.com/camel-ai/multi-agent-streamlit-ui
-요약: CAMEL 기반 multi-agent system을 Streamlit UI로 노출하는 예시 저장소다. agent 대화 상태를 사람이 관찰할 수 있는 대시보드로 만드는 데 참고할 수 있다.
+요약: CAMEL 기반 multi-agent system을 웹 UI로 노출하는 외부 예시 저장소(이름은 streamlit이지만 PolitiKAST는 React/FastAPI 스택을 사용한다). agent 대화 상태를 사람이 관찰할 수 있는 대시보드 구성의 선행 예시.
 
-PolitiKAST 활용 포인트: `ui/dashboard`에서 region별 agent trace, 최종 vote trajectory, 정책 이슈별 stance drift를 보여주는 구조의 선행 예시로 사용한다. 해커톤 시간상 코어 엔진을 우선하고 UI는 read-only result explorer로 제한하는 것이 현실적이다.
-BibTeX key: `camelai2026streamlitUi`
+PolitiKAST 활용 포인트: React `frontend/`에서 region별 agent trace, 최종 vote trajectory, 정책 이슈별 stance drift를 보여주는 구조의 선행 예시. 해커톤 시간상 코어 엔진을 우선하고 UI는 read-only result explorer로 제한하는 것이 현실적이다.
+BibTeX key: `camelai2026multiAgentUi`
 
 ## Gemini API / google-generativeai (rate limit, structured output)
 
@@ -74,7 +74,7 @@ BibTeX key: `google2026geminiStructuredOutput`
 URL: https://ai.google.dev/gemini-api/docs/libraries
 요약: Google 공식 문서는 Gemini API 개발에 `google-genai` SDK를 권장하며, legacy Python package인 `google-generativeai`는 2025년 11월 30일 이후 적극 유지보수 대상이 아니라고 안내한다. 최신 문서와 예시는 `from google import genai` 형태를 사용한다.
 
-PolitiKAST 활용 포인트: `docker/requirements.txt`에는 가능하면 `google-genai`를 사용하고, 기존 CAMEL adapter가 `google-generativeai`를 요구하는 경우에만 compatibility layer로 격리한다. 논문/README에는 SDK 이름을 정확히 구분한다.
+PolitiKAST 활용 포인트: `pyproject.toml`에는 가능하면 `google-genai`를 사용하고, 기존 CAMEL adapter가 `google-generativeai`를 요구하는 경우에만 compatibility layer로 격리한다. 논문/README에는 SDK 이름을 정확히 구분한다.
 BibTeX key: `google2026geminiLibraries`
 
 ## DuckDB / parquet ingestion
@@ -121,14 +121,7 @@ URL: https://www.ontotext.com/knowledgehub/case-studies/rappler-created-first-ph
 PolitiKAST 활용 포인트: 한국 지방선거 이슈 문서, 후보 공약, 지역 이슈를 KG로 묶고, dashboard에서 "왜 이 persona가 이 후보로 이동했는가"를 graph path로 보여주는 UX 근거가 된다.
 BibTeX key: `ontotext2024rapplerPoliticsKg`
 
-## Streamlit / 대시보드 도구
-
-**Streamlit Caching and State**
-URL: https://docs.streamlit.io/develop/api-reference/caching-and-state
-요약: Streamlit은 user interaction마다 스크립트를 다시 실행하므로, `st.cache_data`, `st.cache_resource`, `st.session_state`가 대시보드 성능과 상태 관리의 핵심이다. 데이터프레임 변환과 DB query는 cache_data, DuckDB connection 같은 전역 리소스는 cache_resource에 맞다.
-
-PolitiKAST 활용 포인트: `ui/dashboard`는 snapshot JSON과 DuckDB query 결과를 캐시하고, region/agent/issue 선택 상태를 session_state에 둔다. build freeze 이후에는 입력 기능을 막고 read-only explorer로 유지한다.
-BibTeX key: `streamlit2026cachingState`
+## 대시보드 / 시각화 도구
 
 **Election Data Visualization Basics**
 URL: https://electionsgroup.com/resource/data-visualization-basics/

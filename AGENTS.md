@@ -2,7 +2,7 @@
 
 **프로젝트:** PolitiKAST — Political Knowledge-Augmented Multi-Agent Simulation of Voter Trajectories for Korean Local Elections
 **저자:** Seongjin Lee (BHSN)
-**산출물:** arXiv 논문(`paper/elex-kg-final.tex`) + 동작 엔진(CAMEL+Gemini+DuckDB) + Streamlit 대시보드
+**산출물:** arXiv 논문(`paper/elex-kg-final.tex`) + 동작 엔진(CAMEL+Gemini+DuckDB) + FastAPI 백엔드 + React 프론트엔드
 **제출 데드라인:** 17:00 KST 빌드 동결, 이후 제출 준비
 
 **Jira:** 현재 프로젝트는 해커톤 로컬 프로젝트이므로 Jira 티켓을 고려하지 않는다.
@@ -55,11 +55,13 @@ _workspace/
   research/          # camel_gemini_compat.md (백그라운드 조사 결과)
   snapshots/         # 결과 JSON, KG export, figures
 src/                 # 빌드 산출물 (data/llm/sim/kg)
-ui/dashboard/        # Streamlit
+backend/             # FastAPI 앱
+frontend/            # Vite + React UI
 paper/               # elex-kg-final.tex / .pdf (paper-writer가 갱신)
 docs/references/     # hackathon_guide.md, perplexity 대화록 등 참고자료
-docker/              # Dockerfile, requirements.txt
-docker-compose.yml   # 런타임 환경 (app + dashboard 서비스)
+docker/              # Dockerfile.backend / Dockerfile.frontend
+pyproject.toml       # uv 기반 Python 의존성 (uv lock → uv.lock)
+docker-compose.yml   # 런타임 환경 (postgres/neo4j/mlflow/backend/frontend)
 .env                 # GEMINI_API_KEYS 등 (gitignored, .env.example 참조)
 ```
 

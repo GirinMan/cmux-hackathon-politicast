@@ -132,7 +132,7 @@ uv run scripts/schema_probe.py       # 컬럼 26 + 카디널리티 (shard 0)
 - 위치: `/Users/girinman/repos/cmux-hackathon-politicast/ui/eda-explorer/`
 - 백엔드: FastAPI on `:8235` (DuckDB 공유 — `_workspace/db/politikast.duckdb` 우선, parquet fallback)
 - 프론트엔드: Vite + React + TS + Tailwind + ECharts on `:8234`
-- 메인 PolitiKAST Streamlit 앱과 호환: HTTP API 호출 또는 iframe 임베드
+- 메인 PolitiKAST FastAPI/React 앱과 호환: HTTP API 호출 또는 iframe 임베드
 
 빌드 완료 후 이 INDEX 갱신.
 

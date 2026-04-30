@@ -51,7 +51,7 @@ PolitiKAST reframes the same task as a falsifiable scientific protocol:
 | Models claim forecasts they have not validated | Hidden-label validation gate; `prediction-only` flag is mechanically required until MAE / leader-agreement gates pass |
 | Future poll results leak into earlier prompts | **Temporal Information Firewall**: every KG fact carries a `cutoff_ts`; a voter at time `t` only sees facts with `τ ≤ t`. Self-test 7 / 7 PASS |
 | LLMs default to US-English political stereotypes ("young = progressive") | **CohortPrior nodes** (age × gender × region, 15 source-backed priors from Gallup Korea, SisaIN, KStat, RealMeter, Hankyoreh) injected directly into voter prompts |
-| Successful runs are publicized while failures vanish | Failed gates, prediction-only regions, and KG narrative gaps are explicitly surfaced in the Streamlit Validation Gate page and in the paper's results table |
+| Successful runs are publicized while failures vanish | Failed gates, prediction-only regions, and KG narrative gaps are explicitly surfaced in the React frontend's Validation Gate view and in the paper's results table |
 
 ---
 

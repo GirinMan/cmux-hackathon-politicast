@@ -34,7 +34,7 @@ MiroFish multi-agent prediction 엔진의 README/DeepWiki/제품 사이트, swar
 중앙선관위·KOSIS·갤럽·리얼미터 공식 데이터, 6.3 지방선거(서울/광주/대구/의왕/보궐) 보도, 후보·정당·정치사건. **데이터 인제션 매핑(DuckDB 테이블/필드)**, **시나리오 시드**, **이벤트 KG 노드**, **결과 검증** 단계의 1차 소스.
 
 ### [도구·프레임워크 → tooling.md](./tooling.md)
-Nemotron-Personas-Korea(라이센스/스키마/BibTeX), CAMEL multi-agent, Gemini API rate limit·structured output, DuckDB, NetworkX/GraphRAG/Neo4j, Streamlit, scipy/sklearn/statsmodels. **VoterAgent / GeminiPool / KG builder / 대시보드** 모듈에 직접 매핑되는 구현 레퍼런스.
+Nemotron-Personas-Korea(라이센스/스키마/BibTeX), CAMEL multi-agent, Gemini API rate limit·structured output, DuckDB, NetworkX/GraphRAG/Neo4j, FastAPI/React, scipy/sklearn/statsmodels. **VoterAgent / GeminiPool / KG builder / 대시보드** 모듈에 직접 매핑되는 구현 레퍼런스.
 
 ---
 
